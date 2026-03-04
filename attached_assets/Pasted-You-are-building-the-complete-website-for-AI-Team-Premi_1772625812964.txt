@@ -1,0 +1,254 @@
+You are building the complete website for **AI Team Premium BD (AITPBD)** — a Bangladesh-based AI subscription and digital services business.
+
+---
+
+## 🌐 PROJECT OVERVIEW
+
+**Business Name:** AI Team Premium BD (AITPBD)
+**Website Domain:** aiteampremiumbd.com
+**Tagline:** "Affordable premium AI subscriptions + dedicated Bangla support for Bangladesh users — no extra VAT, fast delivery, trusted access."
+**Owner:** Refat Ara Rumi
+**WhatsApp:** +880 1533-262758 → https://wa.me/8801533262758
+**Facebook:** facebook.com/AITPBD
+**Instagram:** instagram.com/ai_team_premium_bd
+
+---
+
+## 🎯 DESIGN INSTRUCTIONS
+
+- Import the Figma design file I am providing. Use it as the **exact visual reference**.
+- The design is **mobile-first**. Build for mobile first, then scale up for desktop.
+- Stack: **HTML + CSS + JavaScript** (or React if needed for dynamic pricing tables). Keep it fast and SEO-optimized.
+- No placeholder content. Everything must be REAL content from this prompt.
+- Remove any fake content (e.g., "Alex Mitchell / Infinity Studio" testimonial, "EcoBrand / UrbanFit / TechFlow" fake projects). Replace with real AITPBD content below.
+
+---
+
+## 📄 PAGES TO BUILD
+
+Build ALL of the following pages:
+
+### 1. Home Page — `/`
+**H1:** "Bangladesh's Trusted AI Subscription Team"
+**Meta Title:** "AI Team Premium BD | Buy ChatGPT, Claude, Gemini in Bangladesh | Pay bKash"
+**Meta Description:** "Buy ChatGPT Plus, Claude Pro, Gemini Advanced & more at Bangladesh's lowest prices. Pay bKash/Nagad. 15-min delivery. Bangla support. AI Team Premium BD."
+
+**Sections:**
+- **Hero:** Headline: "Premium AI Tools. BD Prices. bKash Payment." → Sub: "ChatGPT Plus from ৳399/mo. Claude Pro from ৳599/mo. Delivered in 15 minutes." → CTA Button: "Order on WhatsApp" → https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+an+AI+tool+subscription
+- **Trust Bar:** "5–15 min delivery | bKash/Nagad accepted | No extra VAT | WhatsApp support | Replacement guarantee"
+- **Featured Offers (Pricing Cards):**
+  - 🟢 Solo (Student/Freelancer) — ৳399/mo — ChatGPT Plus Shared — 5–15 min delivery — WhatsApp CTA
+  - 🔵 Pro (Coder/Designer/Researcher) — ৳950/mo — ChatGPT Premium Shared — 5–15 min delivery — WhatsApp CTA
+  - 🟣 Team (Agency/Startup) — ৳699/seat/mo — ChatGPT Team Shared — 5–15 min delivery — WhatsApp CTA
+  - 💎 AI Tools Vault — ৳1,990/mo — ChatGPT Plus + Claude Pro + Gemini Advanced — 6 hr delivery — WhatsApp CTA
+- **What We Offer (Service Grid):**
+  - AI Subscriptions (ChatGPT, Claude, Gemini, Perplexity, Grok, Canva, Grammarly, Midjourney)
+  - Brand Design (logo, identity, guidelines)
+  - Web Development (modern, fast, SEO)
+  - Digital Marketing (growth, content, campaigns)
+  - App Development (mobile-first)
+  - AI Consultancy (1:1 sessions, team workshops)
+- **Why AITPBD (Differentiators):**
+  1. No extra VAT at checkout — VAT-inclusive pricing
+  2. bKash / Nagad / Bank Transfer — no international card needed
+  3. 5–15 min delivery for shared seats
+  4. Bangla + English WhatsApp support
+  5. Replacement guarantee within 24h SLA
+  6. Free AI consultation: "Which tool is right for you?"
+- **Social Proof:** Section with real testimonials (if none yet, use placeholder cards with "⭐⭐⭐⭐⭐ — Verified AITPBD Customer" style)
+- **FAQ Preview (3 questions):**
+  - "কতক্ষণে পাবো?" → "Shared seat: 5–15 মিনিট। Personal seat: 2–4 ঘণ্টা।"
+  - "কীভাবে পে করবো?" → "bKash, Nagad, বা Bank Transfer। কোনো international card লাগবে না।"
+  - "ব্যান হওয়ার ভয় নেই?" → "আমাদের device rules মানলে কোনো সমস্যা নেই। Rules দেওয়া হয় delivery-তে।"
+- **Bottom CTA Section:** "Ready to start? Message us on WhatsApp" → Big WhatsApp Button
+
+---
+
+### 2. AI Subscriptions Page — `/ai-subscriptions`
+**H1:** "AI Subscription Service in Bangladesh — All Premium Tools (2026)"
+**Meta Title:** "AI Subscription Service Bangladesh | 4 Brands, All Tools, Lowest Price | AIPS, SAVEONSUB, AIPT, AITPBD"
+**Meta Description:** "Buy ChatGPT, Claude, Gemini, Perplexity, Midjourney & more at Bangladesh's lowest prices. 4 trusted brands. Pay bKash. WhatsApp support."
+
+**Full pricing table for all tools:**
+| Tool | Seat Type | Price (BDT) | Delivery |
+|---|---|---|---|
+| ChatGPT Plus | Shared (8 users) | ৳399/mo | 5–15 min |
+| ChatGPT Plus | Premium Shared (2–3 users) | ৳950/mo | 5–15 min |
+| ChatGPT Plus | Personal | ৳2,950/mo | 2–4 hrs |
+| ChatGPT Team | Shared (7 users) | ৳699/mo | 5–15 min |
+| ChatGPT Team | Premium Shared | ৳1,299/mo | 4–12 hrs |
+| ChatGPT Pro | Premium Shared | ৳4,500/mo | 4–12 hrs |
+| Claude Pro | Shared / Personal | ৳599/mo | 2–4 hrs |
+| Google Gemini Advanced | Shared / Personal | ৳499/mo | 2–4 hrs |
+| Perplexity Pro | Shared / Personal | ৳499/mo | 2–4 hrs |
+| Grok | Shared / Personal | ৳499/mo | 2–4 hrs |
+| Canva Pro | Personal | ৳599–৳1,199/mo | 2–4 hrs |
+| Grammarly Premium | Personal | ৳499–৳999/mo | 2–4 hrs |
+
+Each row has a "Buy via WhatsApp" button linking to:
+https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+[TOOL_NAME]
+
+**Shared seat rules callout box:**
+"1 device per seat | No password changes | No extra sharing | Rules violation = warranty void"
+
+---
+
+### 3. Services Page — `/services`
+**H1:** "Digital Services for Bangladesh Businesses"
+**Meta Title:** "Web Design, Brand & App Development Bangladesh | AI Team Premium BD"
+**Meta Description:** "Brand design, web development, digital marketing, and app development in Bangladesh. Custom proposals. WhatsApp support. Pay bKash."
+
+**Service Cards:**
+1. **Brand Design** — Logo, identity system, brand guidelines, creative direction → CTA: Start a Project
+2. **Web Development** — Modern, fast, SEO-optimized websites → CTA: Start a Project
+3. **Digital Marketing** — Growth strategy, content, campaign execution → CTA: Start a Project
+4. **App Development** — Mobile-first apps and product builds → CTA: Start a Project
+5. **AI Consultancy** — 1:1 AI implementation sprint (3 sessions) — ৳9,900 one-time → CTA: Book Now
+6. **AI Tools Setup** — We set up, configure, and onboard your team → CTA: Ask on WhatsApp
+
+---
+
+### 4. Pricing Page — `/pricing`
+**H1:** "Simple, Honest Pricing — No Hidden Fees"
+**Meta Title:** "AI Subscription Pricing Bangladesh | ChatGPT, Claude, Gemini BD Price 2026"
+**Meta Description:** "See all AI subscription prices in Bangladesh. ChatGPT from ৳399, Claude from ৳599. bKash accepted. No VAT surprise. AI Team Premium BD."
+
+**3 Package Cards:**
+- 🟢 **Solo** — ৳399–৳699/mo — Students & Freelancers — ChatGPT Shared, onboarding guide, WhatsApp support
+- 🔵 **Pro** — ৳950–৳2,950/mo — Coders, Designers, Researchers — Premium Shared or Personal, priority support
+- 🟣 **Team** — ৳699–৳3,899/seat/mo — Agencies, Startups — Team invite, dedicated WhatsApp group
+
+**AI Tools Vault Card:**
+- 💎 **AI Tools Vault** — ৳1,990/mo — ChatGPT Plus + Claude Pro + Gemini Advanced, all 3 tools, 6-hr delivery
+
+**Payment Methods Row:** bKash • Nagad • Bank Transfer logos/icons
+
+---
+
+### 5. About Page — `/about`
+**H1:** "We Are AI Team Premium BD"
+**Content:**
+"AI Team Premium BD (AITPBD) is a Bangladesh-based digital services team. We help individuals and businesses access premium AI tools at affordable BD prices — and we build the websites, brands, and apps they need to grow.
+
+Founded by Refat Ara Rumi, AITPBD operates out of Dhaka and serves students, freelancers, researchers, coders, designers, and agencies across Bangladesh.
+
+**Our Promise:**
+- No extra VAT at checkout
+- bKash and Nagad payment accepted
+- 5–15 minute delivery for shared seats
+- Bangla + English WhatsApp support
+- Replacement guarantee within SLA"
+
+**Team:** Founder — Refat Ara Rumi
+
+---
+
+### 6. Contact / Start a Project Page — `/start-a-project`
+**H1:** "Let's Build Something Great Together"
+**Meta Title:** "Contact AI Team Premium BD | Free Consultation | Start a Project | WhatsApp Dhaka"
+**Meta Description:** "Ready to start? Contact AI Team Premium BD for a free consultation — web, brand, app, digital marketing, or AI tools. WhatsApp response within 2 hours. Pay bKash/Nagad."
+
+**Primary CTA (largest element on page):**
+→ WhatsApp Button: https://wa.me/8801533262758?text=Hi%2C+I+want+to+start+a+project+with+AITPBD
+
+**3-Step Process:**
+1. 💬 Consult — Tell us what you need (free 15–30 min call)
+2. 📋 Proposal — We send a custom scope + price
+3. 🚀 Start — You approve, we begin
+
+**Services Menu:** Web | Brand | App | Marketing | AI Subscriptions | AI Consultancy
+
+**Payment Methods:** bKash • Nagad • Bank Transfer — No USD card needed
+
+**Response Promise:** WhatsApp response within 2 business hours
+
+**Contact Form (simple):**
+- Name
+- WhatsApp Number
+- What do you need? (textarea)
+- Submit button → sends to emon@emonhossain.pro or triggers WhatsApp
+
+**FAQ:**
+- "How much does it cost?" → "We create custom proposals. Most projects start from ৳5,000."
+- "How long does a project take?" → "Simple websites: 7–14 days. Custom apps: 4–8 weeks."
+- "Can I pay in bKash?" → "Yes. bKash, Nagad, and Bank Transfer all accepted."
+- "Do you offer refunds?" → "Yes. Refund terms are discussed in the proposal before you pay."
+
+---
+
+### 7. Privacy Policy — `/privacy-policy`
+**H1:** "Privacy Policy"
+**Content (standard, customize for BD):**
+- What data we collect (name, WhatsApp, email, payment confirmation)
+- How we use it (delivery, support, renewals)
+- We do not sell data to third parties
+- Data retention: kept for 12 months after last transaction
+- Contact for privacy: wa.me/8801533262758
+
+---
+
+### 8. Terms of Service — `/terms`
+**H1:** "Terms of Service"
+**Key sections:**
+- Shared seat rules: 1 device per user, no password changes, no extra sharing
+- Warranty void if: ToS violation, abusive usage, multiple device logins
+- Refund policy: Full refund within 24h if access not delivered; refund within 48h if unresolved
+- Replacement SLA: 24h for shared seats, 12h priority for Pro/Team
+- Governing law: Bangladesh
+
+---
+
+### 9. Tool Pages (SEO) — `/tools/chatgpt`, `/tools/claude`, `/tools/gemini`, `/tools/grammarly`
+
+**ChatGPT page `/tools/chatgpt`:**
+- H1: "ChatGPT Plus Price in Bangladesh (2026)"
+- Meta: "Buy ChatGPT Plus in Bangladesh from ৳399/mo. bKash/Nagad payment. 15-min delivery. AI Team Premium BD."
+- What is it (EN + BN), Key features, Pros, Cons, BD pricing, How to buy, CTA
+
+**Claude page `/tools/claude`:**
+- H1: "Claude Pro Price in Bangladesh (2026)"
+- Pricing from ৳599/mo, 200K context, best for coders + researchers
+
+**Gemini page `/tools/gemini`:**
+- H1: "Google Gemini Advanced Price in Bangladesh (2026)"
+- From ৳499/mo, Google Workspace integration, Google One 2TB included
+
+**Grammarly page `/tools/grammarly`:**
+- H1: "Grammarly Premium Price in Bangladesh (2026)"
+- From ৳499/mo, students + freelancers, plagiarism checker
+
+---
+
+## ⚙️ TECHNICAL REQUIREMENTS
+
+1. **SEO:** Every page must have: `<title>`, `<meta name="description">`, `<meta property="og:title">`, `<meta property="og:description">`, canonical URL, H1 tag.
+2. **Speed:** Optimize images, use lazy loading, minimize JS/CSS.
+3. **Mobile-first:** All pages must work perfectly on 375px screen width.
+4. **WhatsApp CTA:** Every page must have a floating WhatsApp button (bottom-right, always visible on mobile).
+5. **Navigation:** Header with: Logo | AI Subscriptions | Services | Pricing | About | Contact (WhatsApp button)
+6. **Footer:** Brand name | Links: Home, AI Subscriptions, Services, Pricing, About, Privacy Policy, Terms | WhatsApp | Facebook | Instagram | "© 2026 AI Team Premium BD"
+7. **Favicon:** Use the logo from the Figma file.
+8. **No broken links.** All WhatsApp links must use the format: `https://wa.me/8801533262758?text=...`
+9. **Bengali text:** Use proper Unicode Bengali characters (৳ for taka, Bangla text where specified).
+10. **Color scheme and typography:** Follow the Figma design exactly.
+
+---
+
+## 🚫 DO NOT INCLUDE
+- Any fake testimonials (Alex Mitchell, Infinity Studio, etc.)
+- Any fake project names (EcoBrand, UrbanFit, TechFlow)
+- Any fake statistics or made-up customer counts
+- Any content not in this prompt or the Figma file
+
+---
+
+## ✅ FINAL CHECKLIST BEFORE DONE
+- [ ] All 9 pages built and linked
+- [ ] Floating WhatsApp button on every page
+- [ ] All prices in ৳ BDT
+- [ ] All WhatsApp links tested and correct
+- [ ] Mobile view tested on 375px
+- [ ] Meta tags on every page
+- [ ] No placeholder/fake content anywhere
+- [ ] Navigation works on all pages
+- [ ] Footer on all pages

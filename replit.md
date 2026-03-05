@@ -112,7 +112,24 @@ A comprehensive website for AI Team Premium BD (AITPBD), Bangladesh's premium AI
 - Storage: `server/storage.ts`
 
 ## Hooks
-- `use-page-meta.ts` — sets document.title and meta description per page
+- `use-page-meta.ts` — sets document.title, meta description, og:title, og:description, twitter:title, twitter:description per page
+
+## UI Conventions
+- **Navbar logo**: `LogoHorizontal size="sm"` (compact, 28px icon + text side-by-side)
+- **Footer logo**: `LogoHorizontal size="md"` (slightly larger, white colors on dark bg)
+- **Hero logo** (Home page only): `LogoStacked size="xl"` (the large animated display logo)
+- **Dropdown hover**: `hover:bg-blue-50` on each dropdown item link
+- **Footer grid**: `grid-cols-2 md:grid-cols-12` — brand col-span-4, each link col col-span-2
+- **Hero image**: `loading="eager" fetchpriority="high"` for LCP performance
+- **Sticky CTA**: `StickyMobileCTABar` (default export) — single export, md:hidden
+
+## SEO & Meta (index.html)
+- Full Open Graph tags (og:title, og:description, og:image, og:url, og:type)
+- Twitter Card (summary_large_image)
+- Canonical URL: https://aiteampremiumbd.com
+- theme-color: #0F172A
+- apple-touch-icon
+- Preconnect to Google Fonts (Inter + Hind Siliguri)
 
 ## Key Rules (Business Logic)
 - bKash/Nagad payment numbers shared ONLY via WhatsApp (never public)

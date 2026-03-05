@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Phone, MapPin, Facebook, Instagram, Users, MessageCircle, ChevronUp, ArrowUpRight } from "lucide-react";
-import { BRAND, LogoStacked, WhatsAppIcon } from "@/components/brand/LogoIcons";
+import { BRAND, LogoHorizontal, WhatsAppIcon } from "@/components/brand/LogoIcons";
 
 const SOCIAL_LINKS = [
   { label: "WhatsApp", url: "https://wa.me/8801533262758", icon: <WhatsAppIcon size={15} color="currentColor" /> },
@@ -76,9 +76,9 @@ export function Footer() {
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
-          <div className="md:col-span-3">
-            <LogoStacked size="sm" iconColor={BRAND.white} textColor={BRAND.white} />
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-6">
+          <div className="col-span-2 md:col-span-4">
+            <LogoHorizontal size="md" iconColor={BRAND.white} textColor={BRAND.white} />
             <p className="mt-5 max-w-xs" style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.84rem", lineHeight: 1.7 }}>
               Affordable premium AI subscriptions + dedicated Bangla support for Bangladesh users — no extra VAT, fast delivery, trusted access.
             </p>
@@ -115,7 +115,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 col-span-1">
             <FooterHeading>Company</FooterHeading>
             <FooterLinks links={[
               { label: "Home", to: "/" },
@@ -126,7 +126,7 @@ export function Footer() {
             ]} />
           </div>
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 col-span-1">
             <FooterHeading>AI Tools</FooterHeading>
             <FooterLinks links={[
               { label: "ChatGPT Plans", to: "/chatgpt-plans" },
@@ -139,7 +139,7 @@ export function Footer() {
             ]} />
           </div>
 
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 col-span-1">
             <FooterHeading>Services</FooterHeading>
             <FooterLinks links={[
               { label: "AI Ops Sprint", to: "/services/ai-ops-sprint" },
@@ -150,7 +150,7 @@ export function Footer() {
             ]} />
           </div>
 
-          <div className="md:col-span-3">
+          <div className="md:col-span-2 col-span-1">
             <FooterHeading>Legal</FooterHeading>
             <FooterLinks links={[
               { label: "Refund Policy", to: "/refund-policy" },

@@ -72,7 +72,7 @@ export default function Home() {
     <Layout>
       <section className="relative overflow-hidden" style={{ background: BRAND.navy }}>
         <div className="absolute inset-0">
-          <img src={IMG_HERO} alt="" className="w-full h-full object-cover" style={{ opacity: 0.15, mixBlendMode: "luminosity" }} loading="lazy" />
+          <img src={IMG_HERO} alt="" className="w-full h-full object-cover" style={{ opacity: 0.15, mixBlendMode: "luminosity" }} loading="eager" fetchpriority="high" />
           <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${BRAND.navy} 0%, rgba(15,23,42,0.6) 50%, ${BRAND.navy} 100%)` }} />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-24 pb-28 md:pt-32 md:pb-36">
@@ -194,7 +194,12 @@ export default function Home() {
                 </div>
                 <h3 className="mb-3" style={{ color: BRAND.navy, fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.3 }}>{svc.title}</h3>
                 <p style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.85rem", lineHeight: 1.65 }}>{svc.desc}</p>
-                <Link href="/services" data-testid={`link-service-${svc.title.toLowerCase().replace(/\s+/g, '-')}`} className="mt-5 inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: BRAND.blue, fontSize: "0.8rem", fontWeight: 600, textDecoration: "none" }}>
+                <Link
+                  href={svc.title === "AI Subscriptions" ? "/pricing" : svc.title === "AI Consultancy" ? "/support" : `/services/${svc.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  data-testid={`link-service-${svc.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="mt-5 inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                  style={{ color: BRAND.blue, fontSize: "0.8rem", fontWeight: 600, textDecoration: "none" }}
+                >
                   Learn more <ChevronRight size={14} />
                 </Link>
               </div>

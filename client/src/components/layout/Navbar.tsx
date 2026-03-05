@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown, Layers, Briefcase } from "lucide-react";
-import { BRAND, LogoStacked, WhatsAppIcon } from "@/components/brand/LogoIcons";
+import { BRAND, LogoHorizontal, WhatsAppIcon } from "@/components/brand/LogoIcons";
 
 const CATEGORIES_MENU = [
   {
@@ -76,7 +76,7 @@ export function Navbar() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="flex items-center justify-between" style={{ height: 80 }}>
           <Link href="/" className="flex-shrink-0" style={{ textDecoration: "none" }} data-testid="link-logo">
-            <LogoStacked size="sm" iconColor={BRAND.blue} textColor={BRAND.navy} />
+            <LogoHorizontal size="sm" iconColor={BRAND.blue} textColor={BRAND.navy} />
           </Link>
 
           <nav className="hidden md:flex items-center gap-0.5">
@@ -310,7 +310,7 @@ function DropdownItem({ href, name, desc, onMouseEnter, onMouseLeave }: { href: 
     <Link
       href={href}
       data-testid={`link-dropdown-${name.toLowerCase().replace(/[^a-z0-9]/g, '-').slice(0, 30)}`}
-      className="flex items-start gap-2 px-4 py-2.5 transition-all"
+      className="flex items-start gap-2 px-4 py-2.5 transition-colors hover:bg-blue-50 rounded-lg mx-1"
       style={{ textDecoration: "none" }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}

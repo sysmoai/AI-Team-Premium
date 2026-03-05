@@ -219,6 +219,11 @@
   }
 }
 
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes pulse-ring {
   0% { transform: scale(0.8); opacity: 0.5; }
   100% { transform: scale(1.3); opacity: 0; }

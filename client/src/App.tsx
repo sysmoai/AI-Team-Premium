@@ -33,6 +33,18 @@ import BusinessShared from "./pages/chatgpt/BusinessShared";
 import BusinessPremiumShared from "./pages/chatgpt/BusinessPremiumShared";
 import BusinessPersonalLike from "./pages/chatgpt/BusinessPersonalLike";
 import ProPremiumShared from "./pages/chatgpt/ProPremiumShared";
+import ClaudePlans from "./pages/ClaudePlans";
+import GeminiPlans from "./pages/GeminiPlans";
+import GrammarlyPlans from "./pages/GrammarlyPlans";
+import CanvaPlans from "./pages/CanvaPlans";
+import PerplexityPlans from "./pages/PerplexityPlans";
+import GrokPlans from "./pages/GrokPlans";
+import AIToolsVault from "./pages/AIToolsVault";
+import AIOpsSprint from "./pages/services/AIOpsSprint";
+import BrandDesign from "./pages/services/BrandDesign";
+import WebDevelopment from "./pages/services/WebDevelopment";
+import DigitalMarketing from "./pages/services/DigitalMarketing";
+import AppDevelopment from "./pages/services/AppDevelopment";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -56,9 +68,21 @@ function Router() {
         <Route path="/chatgpt/business-premium-shared" component={BusinessPremiumShared} />
         <Route path="/chatgpt/business-personal-like" component={BusinessPersonalLike} />
         <Route path="/chatgpt/pro-premium-shared" component={ProPremiumShared} />
-        <Route path="/ai-subscriptions" component={AISubscriptions} />
+        <Route path="/claude-plans" component={ClaudePlans} />
+        <Route path="/gemini-plans" component={GeminiPlans} />
+        <Route path="/grammarly-plans" component={GrammarlyPlans} />
+        <Route path="/canva-plans" component={CanvaPlans} />
+        <Route path="/perplexity-plans" component={PerplexityPlans} />
+        <Route path="/grok-plans" component={GrokPlans} />
+        <Route path="/ai-tools-vault" component={AIToolsVault} />
+        <Route path="/services/ai-ops-sprint" component={AIOpsSprint} />
+        <Route path="/services/brand-design" component={BrandDesign} />
+        <Route path="/services/web-development" component={WebDevelopment} />
+        <Route path="/services/digital-marketing" component={DigitalMarketing} />
+        <Route path="/services/app-development" component={AppDevelopment} />
         <Route path="/support" component={Services} />
         <Route path="/services" component={Services} />
+        <Route path="/ai-subscriptions" component={AISubscriptions} />
         <Route path="/pricing" component={Pricing} />
         <Route path="/about" component={About} />
         <Route path="/start-a-project" component={Contact} />

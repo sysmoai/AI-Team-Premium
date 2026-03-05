@@ -1,0 +1,329 @@
+You are updating the AI Team Premium BD website. Read every instruction carefully and execute all tasks. DO NOT break anything that is already working. DO NOT remove existing pages. DO NOT touch homepage hero, existing reviews, or FAQ section.
+
+==================================================
+TASK 1: UPDATE NAVIGATION BAR
+==================================================
+
+Replace the current nav links with this new structure:
+
+LEFT SIDE OF NAV:
+- Logo (unchanged)
+
+NAV LINKS (in this order):
+1. "Categories" → DROPDOWN MENU (see structure below)
+2. "Services" → DROPDOWN MENU (see structure below)
+3. "Support" → /support
+4. "About" → /about
+
+--- CATEGORIES DROPDOWN STRUCTURE ---
+
+▼ Categories
+  ├── 🤖 AI Tools
+  │     ├── ChatGPT Premium Subscriptions → /chatgpt-plans
+  │     ├── Claude Plans → /claude-plans
+  │     ├── Google Gemini Advanced → /gemini-plans
+  │     ├── Perplexity Pro → /perplexity-plans
+  │     ├── Grok → /grok-plans
+  │     ├── Grammarly Premium → /grammarly-plans
+  │     └── Canva Pro → /canva-plans
+  ├── 💎 Bundles
+  │     └── AI Tools Vault (৳1,990) → /ai-tools-vault
+  └── 🛒 All Plans & Pricing → /pricing
+
+--- SERVICES DROPDOWN STRUCTURE ---
+
+▼ Services
+  ├── 🤝 AI Ops Sprint (1:1) → /services/ai-ops-sprint
+  ├── 🎓 AI Coaching & Support → /support
+  ├── 🎨 Brand Design → /services/brand-design
+  ├── 🌐 Web Development → /services/web-development
+  ├── 📢 Digital Marketing → /services/digital-marketing
+  └── 📱 App Development → /services/app-development
+
+RIGHT SIDE NAV: Keep "Get Started" button → links to https://wa.me/8801533262758
+
+Make the dropdowns work on hover (desktop) and tap (mobile). Style them to match the existing dark-themed design with smooth fade-in animation.
+
+==================================================
+TASK 2: CREATE /claude-plans PAGE
+==================================================
+
+Create a new page at /claude-plans styled exactly like /chatgpt-plans.
+
+PAGE TITLE: "বাংলাদেশে Claude — ৳৫৯৯ থেকে শুরু"
+Subtitle: "Anthropic's Claude Pro — Best for research, coding, and long documents. bKash/Nagad payment. Instant delivery."
+
+PLANS TO DISPLAY:
+
+Plan 1: Claude Pro — Shared Seat
+- Price: ৳599/month
+- Delivery: 2–4 hours
+- Seats: 2–3 seats
+- Features: 200K token context, Long PDF analysis, Code generation, Projects feature
+- Tag: "Popular for Researchers"
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+Claude+Pro+Shared+%E2%98%85599%2Fmo
+
+Plan 2: Claude Pro — Personal Seat
+- Price: ৳2,500/month
+- Delivery: 2–4 hours
+- Seats: 1 (your own account)
+- Features: Full personal access, 200K context, Max security, No sharing
+- Tag: "For Coders & Privacy"
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+Claude+Pro+Personal+Seat
+
+ABOUT SECTION TEXT:
+"Claude হলো Anthropic-এর AI — লম্বা ডকুমেন্ট বিশ্লেষণ, কোডিং, এবং একাডেমিক লেখার জন্য সেরা। বাংলাদেশ থেকে সরাসরি কিনতে গেলে international card লাগে। আমাদের কাছ থেকে bKash/Nagad-এ কিনুন।"
+
+WHO IS IT FOR: Researchers, Coders, Academic Writers, Freelancers, Legal professionals
+
+Add FAQ section at bottom with at least 8 questions relevant to Claude.
+
+==================================================
+TASK 3: CREATE /gemini-plans PAGE
+==================================================
+
+Create a new page at /gemini-plans styled like /chatgpt-plans.
+
+PAGE TITLE: "বাংলাদেশে Google Gemini Advanced — ৳৪৯৯ থেকে শুরু"
+Subtitle: "Google's AI with 1M token context + Google Workspace integration. bKash/Nagad. Fast delivery."
+
+PLANS TO DISPLAY:
+
+Plan 1: Gemini Advanced — Shared Seat
+- Price: ৳499/month
+- Delivery: 2–4 hours
+- Features: Gemini 1.5 Pro, Google One 2TB storage, Gmail/Docs/Sheets integration, Real-time Google Search
+- Tag: "Best for Google Users"
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+Gemini+Advanced+%E2%98%85499%2Fmo
+
+Plan 2: Gemini Advanced — Personal Seat
+- Price: ৳1,800/month
+- Delivery: 2–4 hours
+- Features: Personal account, Full Google One 2TB, Gemini in all Google apps
+- Tag: "Full Google Integration"
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+Gemini+Advanced+Personal
+
+ABOUT: "Google Gemini হলো Google-এর AI — Gmail, Docs, Sheets-এর সাথে সরাসরি কাজ করে। Students ও Researchers-দের জন্য আদর্শ।"
+
+WHO IS IT FOR: Students, Researchers, Google Workspace users, Content Creators
+
+==================================================
+TASK 4: CREATE /grammarly-plans PAGE
+==================================================
+
+Create a new page at /grammarly-plans.
+
+PAGE TITLE: "বাংলাদেশে Grammarly Premium — ৳৪৯৯ থেকে শুরু"
+Subtitle: "AI writing assistant — grammar, tone, clarity, plagiarism check. bKash/Nagad accepted."
+
+PLANS:
+
+Plan 1: Grammarly Premium — Individual
+- Price: ৳499/month
+- Delivery: 2–4 hours
+- Features: Advanced grammar check, Tone detection, Clarity suggestions, Plagiarism checker, AI writing assistance
+- Tag: "Best for Students"
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+Grammarly+Premium+%E2%98%85499%2Fmo
+
+Plan 2: Grammarly Premium — Annual (Best Value)
+- Price: ৳3,999/year (৳333/mo)
+- Delivery: 2–4 hours
+- Features: All Premium features, 12 months
+- Tag: "Save 33%"
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+Grammarly+Premium+Annual
+
+WHO IS IT FOR: Students, Freelancers, Researchers, Content writers, Academic writers
+
+==================================================
+TASK 5: CREATE /canva-plans PAGE
+==================================================
+
+PAGE TITLE: "বাংলাদেশে Canva Pro — ৳৫৯৯ থেকে শুরু"
+Subtitle: "Full Canva Pro with AI image generation, premium templates, and Magic Write. bKash/Nagad."
+
+PLANS:
+
+Plan 1: Canva Pro — Monthly
+- Price: ৳599/month
+- Delivery: 2–4 hours
+- Features: All premium templates, AI Magic Write, Magic Edit, Background remover, Brand kit, 1TB storage, 100M+ assets
+- Tag: "Best for Designers"
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+Canva+Pro+%E2%98%85599%2Fmo
+
+Plan 2: Canva Pro — Annual
+- Price: ৳4,999/year (৳416/mo)
+- Delivery: 2–4 hours
+- Features: All pro features, 12 months
+- Tag: "Best Value"
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+Canva+Pro+Annual
+
+WHO IS IT FOR: Designers, Content Creators, Social media managers, Freelancers, Agencies
+
+==================================================
+TASK 6: CREATE /perplexity-plans PAGE
+==================================================
+
+PAGE TITLE: "বাংলাদেশে Perplexity Pro — ৳৪৯৯ থেকে শুরু"
+Subtitle: "AI-powered search with deep research. Unlimited Pro searches. bKash/Nagad."
+
+PLANS:
+
+Plan 1: Perplexity Pro — Shared
+- Price: ৳499/month
+- Features: Unlimited Pro searches, Deep research, GPT-4o + Claude access, File uploads, Image generation
+- Tag: "Best for Researchers"
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+Perplexity+Pro+%E2%98%85499%2Fmo
+
+==================================================
+TASK 7: CREATE /grok-plans PAGE
+==================================================
+
+PAGE TITLE: "বাংলাদেশে Grok — ৳৪৯৯ থেকে শুরু"
+Subtitle: "xAI's Grok — real-time data, unfiltered responses, X/Twitter integration. bKash/Nagad."
+
+PLANS:
+
+Plan 1: Grok — Shared Access
+- Price: ৳499/month
+- Features: Real-time internet data, Unfiltered AI responses, X integration, Grok-3 model
+- Tag: "Real-time AI"
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+Grok+Access+%E2%98%85499%2Fmo
+
+==================================================
+TASK 8: CREATE /ai-tools-vault PAGE
+==================================================
+
+PAGE TITLE: "AI Tools Vault — ৳১,৯৯০/মাস"
+Subtitle: "ChatGPT Plus + Claude Pro + Gemini Advanced — একসাথে সবচেয়ে সাশ্রয়ী মূল্যে।"
+
+BUNDLE DETAILS:
+- Price: ৳1,990/month
+- What's included:
+  ✅ ChatGPT Plus access
+  ✅ Claude Pro access
+  ✅ Gemini Advanced access
+  ✅ Onboarding for all 3 tools
+  ✅ Priority WhatsApp support
+  ✅ Setup guide for each tool
+- Delivery: 6 hours
+- Savings: ৳1,497 worth individually → save ৳493
+- Seat type: Personal
+- Refund: Full refund within 24 hours if access not delivered
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo
+
+Add comparison: "আলাদা কিনলে কত লাগত?" table:
+- ChatGPT Plus: ৳599
+- Claude Pro: ৳599
+- Gemini Advanced: ৳499
+- Total: ৳1,697
+- Vault Price: ৳1,990 (value) → Actually: show ৳1,497 retail vs ৳1,990 Vault, save ৳-493 (show it as a value bundle, best for getting all 3)
+
+Note: Reframe as "Best value for power users who need all 3 tools"
+
+==================================================
+TASK 9: CREATE /pricing PAGE (or update if exists)
+==================================================
+
+Create a comprehensive pricing page at /pricing showing ALL products in a clean grid:
+
+SECTION 1: AI Chat Tools
+- ChatGPT Plus Shared — ৳399/mo
+- ChatGPT Plus Premium Shared — ৳950/mo
+- ChatGPT Plus Personal — ৳2,950/mo
+- ChatGPT Business Shared — ৳699/mo
+- ChatGPT Business Premium Shared — ৳1,299/mo
+- ChatGPT Business Personal-like — ৳3,899/mo
+- ChatGPT Pro Premium Shared — ৳4,500/mo
+- Claude Pro Shared — ৳599/mo
+- Google Gemini Advanced — ৳499/mo
+- Perplexity Pro — ৳499/mo
+- Grok — ৳499/mo
+
+SECTION 2: Productivity & Creative Tools
+- Grammarly Premium — ৳499/mo
+- Canva Pro — ৳599/mo
+
+SECTION 3: Bundles
+- AI Tools Vault (ChatGPT + Claude + Gemini) — ৳1,990/mo
+
+SECTION 4: Services
+- AI Coaching Session — ৳799/hour
+- AI Ops Sprint (1:1 Implementation, 3 sessions) — ৳9,900 one-time
+
+Each card has: Name, Price, "Order on WhatsApp" CTA button.
+
+Each WhatsApp CTA should pre-fill a relevant message. Use format:
+https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+[PRODUCT+NAME]
+
+==================================================
+TASK 10: CREATE /services/ai-ops-sprint PAGE
+==================================================
+
+PAGE TITLE: "AI Ops Sprint — ৳৯,৯০০ (1:1 Implementation)"
+Subtitle: "AI নিজের business-এ implement করুন — 3টি expert session-এ।"
+
+DETAILS:
+- Price: ৳9,900 (one-time)
+- What's included:
+  ✅ 1:1 AI implementation sprint (3 sessions via WhatsApp/Zoom)
+  ✅ Workflow audit: কোথায় AI সবচেয়ে বেশি সময় বাঁচাবে
+  ✅ Custom AI toolstack recommendation (tools + setup)
+  ✅ 3 ready-to-use prompt templates for your business
+  ✅ 30-day follow-up support (WhatsApp)
+- Delivery: 3 sessions over 72 hours
+- Best for: Freelancers, SME owners, Agency founders
+- Refund: Full refund before first session
+- WhatsApp CTA: https://wa.me/8801533262758?text=Hi%2C+I+want+AI+Ops+Sprint+1%3A1+Implementation+%E2%98%859900
+
+FAQ for this page (at least 5 questions about the service)
+
+==================================================
+TASK 11: UPDATE FOOTER
+==================================================
+
+Update the footer "AI Tools" column with correct links:
+- ChatGPT Plans → /chatgpt-plans
+- Claude Plans → /claude-plans
+- Gemini Advanced → /gemini-plans
+- Grammarly Premium → /grammarly-plans
+- Canva Pro → /canva-plans
+- Perplexity Pro → /perplexity-plans
+- AI Tools Vault → /ai-tools-vault
+
+Add a new "Services" column to the footer:
+- AI Ops Sprint → /services/ai-ops-sprint
+- AI Coaching → /support
+- Brand Design → /services/brand-design
+- Web Development → /services/web-development
+- Digital Marketing → /services/digital-marketing
+
+==================================================
+DESIGN RULES (DO NOT VIOLATE)
+==================================================
+
+1. ALL new pages must match the existing dark-themed design exactly
+2. Every page must have a WhatsApp floating button (already exists, keep it)
+3. Every page must have a top hero section with WhatsApp CTA
+4. Every product page must end with a "Ready to order?" section with WhatsApp button
+5. Use the same card style as /chatgpt-plans
+6. All prices in ৳ (BDT Taka symbol)
+7. Mix Bangla and English naturally — like the existing pages
+8. Mobile-first, fully responsive
+9. DO NOT remove anything from existing pages
+10. Keep homepage exactly as-is — only update the nav
+
+==================================================
+BRAND INFO (use in all pages)
+==================================================
+
+Brand: AI Team Premium BD (AITPBD)
+WhatsApp: +880 1533-262758
+Facebook: facebook.com/AITPBD
+Instagram: instagram.com/ai_team_premium_bd
+Positioning: "Affordable premium AI subscriptions + dedicated Bangla support for Bangladesh users — no extra VAT, fast delivery, trusted access."
+Payment: bKash, Nagad, Bank Transfer
+Delivery: Shared seats 5–15 min, Personal seats 2–4 hours, Bundles 4–6 hours
+
+==================================================
+EXECUTE ALL TASKS IN ORDER. CONFIRM EACH PAGE CREATED.
+==================================================

@@ -2,45 +2,67 @@ import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { Link } from "wouter";
-import { Check, Star, ArrowUpRight, Clock, ChevronRight } from "lucide-react";
-import { chatgptPlans } from "@/lib/plans";
+import { ArrowUpRight } from "lucide-react";
 
-const SERVICE_PLANS = [
+const waBase = "https://wa.me/8801533262758?text=";
+const enc = encodeURIComponent;
+
+const SECTIONS = [
   {
-    name: "Starter",
-    desc: "For freelancers and solo entrepreneurs.",
-    price: "Custom",
-    features: ["1 AI Subscription", "Basic branding", "Standard support", "48h delivery"],
-    popular: false,
+    title: "🤖 AI Chat Tools",
+    subtitle: "Official access · bKash/Nagad · Fast delivery",
+    items: [
+      { name: "ChatGPT Plus — Shared", price: "৳399/mo", href: "/chatgpt/plus-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Shared ৳399/mo") },
+      { name: "ChatGPT Plus — Premium Shared", price: "৳950/mo", href: "/chatgpt/plus-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Premium Shared ৳950/mo") },
+      { name: "ChatGPT Plus — Personal Seat", price: "৳2,950/mo", href: "/chatgpt/plus-personal-seat", wa: waBase + enc("Hi, I want ChatGPT Plus Personal Seat ৳2,950/mo") },
+      { name: "ChatGPT Business — Shared", price: "৳699/mo", href: "/chatgpt/business-shared", wa: waBase + enc("Hi, I want ChatGPT Business Shared ৳699/mo") },
+      { name: "ChatGPT Business — Premium Shared", price: "৳1,299/mo", href: "/chatgpt/business-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Business Premium Shared ৳1,299/mo") },
+      { name: "ChatGPT Business — Personal-like", price: "৳3,899/mo", href: "/chatgpt/business-personal-like", wa: waBase + enc("Hi, I want ChatGPT Business Personal-like ৳3,899/mo") },
+      { name: "ChatGPT Pro — Premium Shared", price: "৳4,500/mo", href: "/chatgpt/pro-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Pro Premium Shared ৳4,500/mo") },
+      { name: "Claude Pro — Shared", price: "৳599/mo", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Shared ৳599/mo") },
+      { name: "Google Gemini Advanced — Shared", price: "৳499/mo", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Shared ৳499/mo") },
+      { name: "Perplexity Pro", price: "৳499/mo", href: "/perplexity-plans", wa: waBase + enc("Hi, I want Perplexity Pro ৳499/mo") },
+      { name: "Grok (xAI)", price: "৳499/mo", href: "/grok-plans", wa: waBase + enc("Hi, I want Grok Access ৳499/mo") },
+    ],
   },
   {
-    name: "Growth",
-    desc: "For growing businesses needing serious tools.",
-    price: "Custom",
-    features: ["3 AI Subscriptions", "Complete brand identity", "Landing page website", "SEO setup", "Priority WhatsApp support"],
-    popular: true,
+    title: "🎨 Productivity & Creative Tools",
+    subtitle: "Writing, design & creative AI — bKash/Nagad accepted",
+    items: [
+      { name: "Grammarly Premium — Monthly", price: "৳499/mo", href: "/grammarly-plans", wa: waBase + enc("Hi, I want Grammarly Premium ৳499/mo") },
+      { name: "Canva Pro — Monthly", price: "৳599/mo", href: "/canva-plans", wa: waBase + enc("Hi, I want Canva Pro ৳599/mo") },
+    ],
   },
   {
-    name: "Agency",
-    desc: "Full-scale solution for established teams.",
-    price: "Custom",
-    features: ["Unlimited shared AI tools", "Full stack web app", "Marketing campaign", "Custom AI workflows", "24/7 dedicated support"],
-    popular: false,
+    title: "💎 Bundles",
+    subtitle: "Best value — multiple tools, one payment",
+    items: [
+      { name: "AI Tools Vault (ChatGPT + Claude + Gemini)", price: "৳1,990/mo", href: "/ai-tools-vault", wa: waBase + enc("Hi, I want AI Tools Vault ৳1,990/mo") },
+    ],
+  },
+  {
+    title: "🤝 Services",
+    subtitle: "Expert 1:1 AI coaching and implementation",
+    items: [
+      { name: "AI Coaching Session", price: "৳799/hour", href: "/support", wa: waBase + enc("Hi, I want to book an AI Coaching Session ৳799/hr") },
+      { name: "AI Ops Sprint — 1:1 Implementation (3 sessions)", price: "৳9,900 one-time", href: "/services/ai-ops-sprint", wa: waBase + enc("Hi, I want AI Ops Sprint 1:1 Implementation ৳9,900") },
+    ],
   },
 ];
 
 export default function Pricing() {
   usePageMeta({
-    title: "Pricing",
-    description: "Transparent AI subscription and digital service pricing in BDT. Pay via bKash or Nagad. ChatGPT Plus from ৳399/mo.",
+    title: "All Pricing — AI Tools & Services | AI Team Premium BD",
+    description: "Complete pricing for all AI tools and services. ChatGPT Plus from ৳399/mo, Claude, Gemini, Canva, Grammarly, AI Ops Sprint. Pay via bKash/Nagad.",
   });
+
   return (
     <Layout>
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
           <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Pricing</p>
-          <h1 style={{ color: BRAND.navy, fontSize: "clamp(1.6rem, 4vw, 2.5rem)", fontWeight: 700, lineHeight: 1.15 }}>
-            Simple, Transparent Pricing
+          <h1 style={{ color: BRAND.navy, fontSize: "clamp(1.8rem, 4vw, 2.8rem)", fontWeight: 800, lineHeight: 1.15 }}>
+            সব Products & Services
           </h1>
           <p className="mt-4 mx-auto max-w-xl" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.95rem", lineHeight: 1.65 }}>
             All prices in BDT. Pay via bKash, Nagad, or Bank Transfer. No hidden fees.
@@ -48,144 +70,68 @@ export default function Pricing() {
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-14">
-            <h2 style={{ color: BRAND.navy, fontSize: "1.5rem", fontWeight: 700 }}>AI Subscription Plans</h2>
-            <p className="mt-2" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.88rem" }}>Instant delivery, real access, no credit card needed</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-            {chatgptPlans.map((plan) => (
-              <div
-                key={plan.slug}
-                className="relative flex flex-col rounded-2xl p-7 hover-elevate transition-all"
-                style={{
-                  background: BRAND.white,
-                  border: plan.slug === 'plus-premium-shared' ? `2px solid ${BRAND.blue}` : "1px solid rgba(37,99,235,0.06)",
-                  boxShadow: plan.slug === 'plus-premium-shared' ? "0 8px 32px rgba(37,99,235,0.12)" : undefined,
-                }}
-              >
-                {plan.badge && (
-                  <span
-                    className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full px-3 py-1 text-white"
-                    style={{ background: plan.slug === 'plus-premium-shared' ? BRAND.blue : BRAND.navy, fontSize: "0.68rem", fontWeight: 600 }}
-                  >
-                    <Star size={11} fill="#fff" /> {plan.badge}
-                  </span>
-                )}
-                <p style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem", fontWeight: 600, marginBottom: 4 }}>{plan.tier}</p>
-                <p style={{ color: BRAND.navy, fontSize: "2rem", fontWeight: 700, lineHeight: 1 }}>
-                  {plan.priceLabel.split('/')[0]}<span style={{ fontSize: "0.85rem", fontWeight: 400, opacity: 0.5 }}>/{plan.priceLabel.split('/')[1]}</span>
-                </p>
-                <p className="mt-2 flex items-center gap-1.5" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.82rem" }}>
-                  {plan.title}
-                </p>
-                <p className="mt-1 flex items-center gap-1.5" style={{ color: BRAND.blue, fontSize: "0.75rem", fontWeight: 500 }}>
-                  <Clock size={12} /> {plan.deliverySLA} delivery
-                </p>
-                <ul className="mt-6 space-y-3 flex-1">
-                   {/* Features were not in chatgptPlans, I will add generic ones or we can just leave empty/add 3 basics */}
-                  <li className="flex items-center gap-2" style={{ fontSize: "0.82rem", color: BRAND.navy, opacity: 0.6 }}>
-                    <Check size={14} color={BRAND.blue} strokeWidth={3} /> Official {plan.plan} Access
-                  </li>
-                  <li className="flex items-center gap-2" style={{ fontSize: "0.82rem", color: BRAND.navy, opacity: 0.6 }}>
-                    <Check size={14} color={BRAND.blue} strokeWidth={3} /> {plan.deviceRule}
-                  </li>
-                  <li className="flex items-center gap-2" style={{ fontSize: "0.82rem", color: BRAND.navy, opacity: 0.6 }}>
-                    <Check size={14} color={BRAND.blue} strokeWidth={3} /> {plan.warranty.split('.')[0]}
-                  </li>
-                </ul>
-                <a
-                  href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+order+${encodeURIComponent(plan.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid={`button-plan-${plan.slug}`}
-                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full py-3 transition-all"
+      {SECTIONS.map((section) => (
+        <section key={section.title} className="py-16 border-b" style={{ borderColor: "rgba(37,99,235,0.06)" }}>
+          <div className="mx-auto max-w-7xl px-6 lg:px-10">
+            <div className="mb-10">
+              <h2 style={{ color: BRAND.navy, fontSize: "1.4rem", fontWeight: 700 }}>{section.title}</h2>
+              <p className="mt-1" style={{ color: BRAND.navy, opacity: 0.45, fontSize: "0.85rem" }}>{section.subtitle}</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {section.items.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex flex-col rounded-2xl p-6 transition-all"
                   style={{
-                    background: plan.slug === 'plus-premium-shared' ? BRAND.blue : BRAND.navy,
-                    color: BRAND.white,
-                    fontSize: "0.85rem",
-                    fontWeight: 600,
-                    textDecoration: "none",
+                    background: BRAND.white,
+                    border: "1px solid rgba(37,99,235,0.08)",
+                    boxShadow: "0 2px 8px rgba(15,23,42,0.04)",
                   }}
                 >
-                  <WhatsAppIcon size={14} color="#fff" /> Order Now
-                </a>
-                <Link href={`/chatgpt/${plan.slug}`} className="mt-3 text-center text-xs font-medium hover:underline" style={{ color: BRAND.blue }}>
-                  View Details
-                </Link>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Link href="/chatgpt-plans" className="inline-flex items-center gap-1 font-semibold hover:underline" style={{ color: BRAND.blue }}>
-              Compare All Plans <ChevronRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20" style={{ background: BRAND.sky }}>
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-14">
-            <h2 style={{ color: BRAND.navy, fontSize: "1.5rem", fontWeight: 700 }}>Service Packages</h2>
-            <p className="mt-2" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.88rem" }}>Custom-quoted based on your needs</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <div
-              className="relative flex flex-col rounded-2xl p-7"
-              style={{
-                background: BRAND.white,
-                border: "1px solid rgba(37,99,235,0.06)",
-              }}
-            >
-              <h3 style={{ color: BRAND.navy, fontSize: "1.15rem", fontWeight: 700 }}>Digital Services</h3>
-              <p className="mt-1" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.82rem", minHeight: 36 }}>Custom solutions for Brand Design, Web Dev & Marketing.</p>
-              <p className="mt-3" style={{ color: BRAND.navy, fontSize: "1.8rem", fontWeight: 700 }}>Custom Quote</p>
-              <ul className="mt-5 space-y-3 flex-1">
-                <li className="flex items-center gap-2" style={{ fontSize: "0.82rem", color: BRAND.navy, opacity: 0.6 }}>
-                  <Check size={14} color={BRAND.blue} strokeWidth={3} /> Logo & Identity
-                </li>
-                <li className="flex items-center gap-2" style={{ fontSize: "0.82rem", color: BRAND.navy, opacity: 0.6 }}>
-                  <Check size={14} color={BRAND.blue} strokeWidth={3} /> SEO Optimized Web
-                </li>
-                <li className="flex items-center gap-2" style={{ fontSize: "0.82rem", color: BRAND.navy, opacity: 0.6 }}>
-                  <Check size={14} color={BRAND.blue} strokeWidth={3} /> AI Implementation
-                </li>
-              </ul>
-              <Link
-                href="/services"
-                data-testid="link-digital-services"
-                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full py-3 transition-all"
-                style={{
-                  background: BRAND.navy,
-                  color: BRAND.white,
-                  fontSize: "0.85rem",
-                  fontWeight: 600,
-                  textDecoration: "none",
-                }}
-              >
-                Learn More <ArrowUpRight size={14} />
-              </Link>
+                  <p className="font-semibold flex-1" style={{ color: BRAND.navy, fontSize: "0.92rem", lineHeight: 1.4 }}>{item.name}</p>
+                  <p className="mt-3 font-extrabold" style={{ color: BRAND.blue, fontSize: "1.2rem" }}>{item.price}</p>
+                  <div className="mt-4 flex flex-col gap-2">
+                    <a
+                      href={item.wa}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`button-order-${item.name.toLowerCase().replace(/\s+/g, '-').slice(0, 30)}`}
+                      className="inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 font-semibold text-white text-sm"
+                      style={{ background: "#25D366" }}
+                    >
+                      <WhatsAppIcon size={13} color="#fff" /> Order Now
+                    </a>
+                    {item.href && (
+                      <Link
+                        href={item.href}
+                        className="inline-flex items-center justify-center gap-1 rounded-full py-2 font-medium text-xs"
+                        style={{ color: BRAND.blue, border: `1px solid rgba(37,99,235,0.2)` }}
+                      >
+                        Details <ArrowUpRight size={12} />
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
 
-      <section className="py-16">
-        <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
-          <h3 style={{ color: BRAND.navy, fontSize: "1.2rem", fontWeight: 600 }}>Looking just for individual tools?</h3>
-          <p className="mt-2" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.88rem" }}>
-            Browse our full catalog of AI subscriptions with individual pricing.
-          </p>
-          <Link
-            href="/ai-subscriptions"
-            data-testid="link-pricing-subscriptions"
-            className="mt-5 inline-flex items-center gap-2 rounded-full px-6 py-2.5 transition-all"
-            style={{ border: `1px solid ${BRAND.navy}`, color: BRAND.navy, fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}
+      <section className="py-20" style={{ background: BRAND.navy }}>
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="text-3xl font-extrabold text-white mb-4">কোন product নিবেন বুঝতে পারছেন না?</h2>
+          <p className="text-white/50 mb-8">WhatsApp-এ জিজ্ঞেস করুন — আমরা সঠিক plan বেছে দেব।</p>
+          <a
+            href="https://wa.me/8801533262758"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="button-pricing-cta"
+            className="inline-flex items-center gap-3 rounded-full px-10 py-4 font-bold text-white text-lg"
+            style={{ background: "#25D366" }}
           >
-            View All Subscriptions <ArrowUpRight size={14} />
-          </Link>
+            <WhatsAppIcon size={22} color="#fff" /> WhatsApp-এ কথা বলুন
+          </a>
         </div>
       </section>
     </Layout>

@@ -1,0 +1,177 @@
+import { Layout } from "@/components/layout/Layout";
+import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
+import { usePageMeta } from "@/hooks/use-page-meta";
+import { Check, Shield, Zap, Star, Clock, Package } from "lucide-react";
+
+const INCLUDED = [
+  "ChatGPT Plus access (shared seat)",
+  "Claude Pro access (shared seat)",
+  "Gemini Advanced access (shared seat)",
+  "Onboarding guide for all 3 tools",
+  "Priority WhatsApp support",
+  "Setup guide for each tool",
+];
+
+const COMPARISON = [
+  { tool: "ChatGPT Plus", individual: "৳599" },
+  { tool: "Claude Pro", individual: "৳599" },
+  { tool: "Gemini Advanced", individual: "৳499" },
+];
+
+export default function AIToolsVault() {
+  usePageMeta({
+    title: "AI Tools Vault — ৳1,990/mo | AI Team Premium BD",
+    description: "Get ChatGPT Plus + Claude Pro + Gemini Advanced in one bundle. Best value for power users. bKash/Nagad. AI Team Premium BD.",
+  });
+
+  return (
+    <Layout>
+      <section className="py-20" style={{ backgroundColor: BRAND.sky }}>
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6" style={{ background: "rgba(37,99,235,0.1)", color: BRAND.blue, fontSize: "0.78rem", fontWeight: 600 }}>
+            <Package size={13} /> Bundle · Best Value for Power Users
+          </div>
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style={{ color: BRAND.navy }}>
+            AI Tools Vault — <span style={{ color: BRAND.blue }}>৳১,৯৯০</span>/মাস
+          </h1>
+          <p className="text-lg mb-10 max-w-3xl mx-auto" style={{ color: BRAND.navy, opacity: 0.6 }}>
+            ChatGPT Plus + Claude Pro + Gemini Advanced — একসাথে সবচেয়ে সাশ্রয়ী মূল্যে।
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-hero-vault"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-bold text-white text-base"
+              style={{ background: "#25D366" }}
+            >
+              <WhatsAppIcon size={18} color="#fff" /> Order on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-4 border-b" style={{ background: BRAND.white }}>
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            {[
+              { icon: <Package size={16} color={BRAND.blue} />, text: "3 Tools in 1" },
+              { icon: <Clock size={16} color={BRAND.blue} />, text: "6hr Delivery" },
+              { icon: <Shield size={16} color={BRAND.blue} />, text: "30-Day Warranty" },
+              { icon: <Zap size={16} color={BRAND.blue} />, text: "bKash / Nagad" },
+            ].map((item) => (
+              <div key={item.text} className="flex items-center justify-center gap-2 py-3">
+                {item.icon}
+                <span style={{ color: BRAND.navy, fontSize: "0.82rem", fontWeight: 600 }}>{item.text}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="grid md:grid-cols-2 gap-10 items-start">
+            <div
+              className="rounded-2xl p-8 relative"
+              style={{ background: BRAND.white, border: `2px solid ${BRAND.blue}`, boxShadow: "0 8px 32px rgba(37,99,235,0.12)" }}
+            >
+              <span
+                className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full px-4 py-1 text-white"
+                style={{ background: BRAND.blue, fontSize: "0.72rem", fontWeight: 700 }}
+              >
+                <Star size={11} fill="#fff" /> Best Value Bundle
+              </span>
+              <h2 style={{ color: BRAND.navy, fontSize: "1.3rem", fontWeight: 700 }}>AI Tools Vault</h2>
+              <p className="mt-1" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.8rem" }}>3 Premium AI Tools — 1 Package</p>
+              <div className="mt-4 flex items-baseline gap-1">
+                <span style={{ color: BRAND.navy, fontSize: "2.8rem", fontWeight: 800 }}>৳1,990</span>
+                <span style={{ color: BRAND.navy, opacity: 0.4, fontSize: "0.9rem" }}>/month</span>
+              </div>
+              <div className="flex items-center gap-1.5 mt-1 mb-6" style={{ color: BRAND.blue, fontSize: "0.78rem", fontWeight: 500 }}>
+                <Clock size={13} /> Delivery: 6 hours
+              </div>
+              <ul className="space-y-3 mb-8">
+                {INCLUDED.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5" style={{ fontSize: "0.88rem", color: BRAND.navy, opacity: 0.75 }}>
+                    <Check size={15} color={BRAND.blue} strokeWidth={2.5} className="mt-0.5 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-order-vault"
+                className="w-full inline-flex items-center justify-center gap-2 rounded-full py-3.5 font-bold text-white text-base"
+                style={{ background: BRAND.blue }}
+              >
+                <WhatsAppIcon size={16} color="#fff" /> Order on WhatsApp
+              </a>
+              <p className="mt-3 text-center text-xs" style={{ color: BRAND.navy, opacity: 0.4 }}>Full refund within 24h if access not delivered.</p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold mb-2" style={{ color: BRAND.navy }}>আলাদা কিনলে কত লাগত?</h3>
+              <p className="mb-6 text-sm" style={{ color: BRAND.navy, opacity: 0.55 }}>তিনটি tool আলাদাভাবে কেনা vs Vault bundle:</p>
+              <div className="rounded-2xl overflow-hidden border" style={{ borderColor: "rgba(37,99,235,0.10)" }}>
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr style={{ background: BRAND.sky }}>
+                      <th className="text-left px-5 py-3 font-semibold" style={{ color: BRAND.navy }}>Tool</th>
+                      <th className="text-right px-5 py-3 font-semibold" style={{ color: BRAND.navy }}>Individual</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {COMPARISON.map((row, i) => (
+                      <tr key={row.tool} style={{ borderTop: "1px solid rgba(37,99,235,0.06)", background: i % 2 === 0 ? BRAND.white : "rgba(239,246,255,0.4)" }}>
+                        <td className="px-5 py-3" style={{ color: BRAND.navy, opacity: 0.75 }}>{row.tool}</td>
+                        <td className="px-5 py-3 text-right font-medium" style={{ color: BRAND.navy }}>{row.individual}/mo</td>
+                      </tr>
+                    ))}
+                    <tr style={{ borderTop: `2px solid ${BRAND.blue}`, background: BRAND.sky }}>
+                      <td className="px-5 py-3 font-bold" style={{ color: BRAND.navy }}>Total (individual)</td>
+                      <td className="px-5 py-3 text-right font-bold" style={{ color: BRAND.navy }}>৳1,697/mo</td>
+                    </tr>
+                    <tr style={{ background: BRAND.blue }}>
+                      <td className="px-5 py-3 font-bold text-white">🎁 Vault Bundle</td>
+                      <td className="px-5 py-3 text-right font-bold text-white">৳1,990/mo</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div
+                className="mt-5 rounded-xl p-4"
+                style={{ background: "rgba(37,99,235,0.06)", border: `1px solid rgba(37,99,235,0.15)` }}
+              >
+                <p className="text-sm font-semibold" style={{ color: BRAND.navy }}>কেন Vault নেবেন?</p>
+                <p className="text-sm mt-1" style={{ color: BRAND.navy, opacity: 0.65 }}>
+                  একটি payment, একটি WhatsApp support channel, এবং সব ৩টি AI tool একসাথে। Power users যাদের সব AI model দরকার — তাদের জন্য Vault সবচেয়ে সুবিধাজনক।
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20" style={{ background: BRAND.navy }}>
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="text-3xl font-extrabold text-white mb-4">অর্ডার করতে প্রস্তুত?</h2>
+          <p className="text-white/50 mb-8">WhatsApp-এ মেসেজ করুন — ৫ মিনিটে সাড়া পাবেন।</p>
+          <a
+            href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="button-final-cta"
+            className="inline-flex items-center gap-3 rounded-full px-10 py-4 font-bold text-white text-lg"
+            style={{ background: "#25D366" }}
+          >
+            <WhatsAppIcon size={22} color="#fff" /> WhatsApp-এ অর্ডার করুন
+          </a>
+        </div>
+      </section>
+    </Layout>
+  );
+}

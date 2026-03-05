@@ -4,7 +4,7 @@ import { BRAND, LogoStacked, WhatsAppIcon } from "@/components/brand/LogoIcons";
 
 const SOCIAL_LINKS = [
   { label: "WhatsApp", url: "https://wa.me/8801533262758", icon: <WhatsAppIcon size={15} color="currentColor" /> },
-  { label: "Facebook", url: "https://facebook.com/AITPBD", icon: <Facebook size={15} strokeWidth={2} /> },
+  { label: "Facebook", url: "https://www.facebook.com/profile.php?id=61586742067282", icon: <Facebook size={15} strokeWidth={2} /> },
   { label: "Facebook Group", url: "https://www.facebook.com/groups/333019393218410", icon: <Users size={15} strokeWidth={2} /> },
   { label: "Messenger", url: "https://www.facebook.com/messages/t/61586742067282/", icon: <MessageCircle size={15} strokeWidth={2} /> },
   { label: "Instagram", url: "https://instagram.com/ai_team_premium_bd", icon: <Instagram size={15} strokeWidth={2} /> },
@@ -77,7 +77,7 @@ export function Footer() {
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
-          <div className="md:col-span-4">
+          <div className="md:col-span-3">
             <LogoStacked size="sm" iconColor={BRAND.white} textColor={BRAND.white} />
             <p className="mt-5 max-w-xs" style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.84rem", lineHeight: 1.7 }}>
               Affordable premium AI subscriptions + dedicated Bangla support for Bangladesh users — no extra VAT, fast delivery, trusted access.
@@ -125,35 +125,48 @@ export function Footer() {
               { label: "About", to: "/about" },
             ]} />
           </div>
+
           <div className="md:col-span-2">
             <FooterHeading>AI Tools</FooterHeading>
             <FooterLinks links={[
-              { label: "ChatGPT Plus", to: "/tools/chatgpt" },
-              { label: "Canva", to: "/tools/canva" },
-              { label: "Midjourney", to: "/tools/midjourney" },
-              { label: "Perplexity", to: "/tools/perplexity" },
-              { label: "Grok", to: "/tools/grok" },
-              { label: "GitHub Copilot", to: "/tools/copilot" },
-              { label: "AI Vault", to: "/tools/vault" },
+              { label: "ChatGPT Plans", to: "/chatgpt-plans" },
+              { label: "Claude Plans", to: "/claude-plans" },
+              { label: "Gemini Advanced", to: "/gemini-plans" },
+              { label: "Grammarly Premium", to: "/grammarly-plans" },
+              { label: "Canva Pro", to: "/canva-plans" },
+              { label: "Perplexity Pro", to: "/perplexity-plans" },
+              { label: "AI Tools Vault", to: "/ai-tools-vault" },
             ]} />
           </div>
+
           <div className="md:col-span-2">
+            <FooterHeading>Services</FooterHeading>
+            <FooterLinks links={[
+              { label: "AI Ops Sprint", to: "/services/ai-ops-sprint" },
+              { label: "AI Coaching", to: "/support" },
+              { label: "Brand Design", to: "/services/brand-design" },
+              { label: "Web Development", to: "/services/web-development" },
+              { label: "Digital Marketing", to: "/services/digital-marketing" },
+            ]} />
+          </div>
+
+          <div className="md:col-span-3">
             <FooterHeading>Legal</FooterHeading>
             <FooterLinks links={[
+              { label: "Refund Policy", to: "/refund-policy" },
               { label: "Privacy Policy", to: "/privacy-policy" },
               { label: "Terms of Service", to: "/terms" },
-              { label: "Refund Policy", to: "/refund-policy" },
               { label: "Contact", to: "/start-a-project" },
             ]} />
-          </div>
-          <div className="md:col-span-2">
-            <FooterHeading>Quick Reach</FooterHeading>
-            <FooterLinks links={[
-              { label: "WhatsApp Chat", to: "https://wa.me/8801533262758", external: true },
-              { label: "Call Us", to: "tel:+8801533262758", external: true },
-              { label: "Facebook", to: "https://facebook.com/AITPBD", external: true },
-              { label: "Instagram", to: "https://instagram.com/ai_team_premium_bd", external: true },
-            ]} />
+            <div className="mt-6">
+              <FooterHeading>Quick Reach</FooterHeading>
+              <FooterLinks links={[
+                { label: "WhatsApp Chat", to: "https://wa.me/8801533262758", external: true },
+                { label: "Call Us", to: "tel:+8801533262758", external: true },
+                { label: "Facebook", to: "https://www.facebook.com/profile.php?id=61586742067282", external: true },
+                { label: "Instagram", to: "https://instagram.com/ai_team_premium_bd", external: true },
+              ]} />
+            </div>
           </div>
         </div>
       </div>

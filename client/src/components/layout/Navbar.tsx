@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown, Layers, Briefcase } from "lucide-react";
 import { BRAND, LogoHorizontal, WhatsAppIcon } from "@/components/brand/LogoIcons";
+import { config } from "@/lib/config";
 
 const CATEGORIES_MENU = [
   {
@@ -141,7 +142,7 @@ export function Navbar() {
           </nav>
 
           <a
-            href="https://wa.me/8801533262758"
+            href={config.whatsappGeneral}
             target="_blank"
             rel="noopener noreferrer"
             data-testid="link-nav-contact"
@@ -231,7 +232,7 @@ export function Navbar() {
               );
             })}
             <a
-              href="https://wa.me/8801533262758"
+              href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="link-mobile-contact"

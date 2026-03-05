@@ -2,7 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { BRAND, LogoStacked, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { Link } from "wouter";
-import { Users, Shield, Lightbulb, ArrowUpRight } from "lucide-react";
+import { Users, Shield, Lightbulb, ArrowUpRight, MessageCircle } from "lucide-react";
+import { config } from "@/lib/config";
 
 const VALUES = [
   { icon: Shield, title: "Trust & Transparency", desc: "We deliver exactly what we promise. No hidden fees, no fake accounts. 100% genuine official subscriptions." },
@@ -80,24 +81,34 @@ export default function About() {
           <p className="mt-3" style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.92rem", lineHeight: 1.6 }}>
             Ready to take your digital capabilities to the next level?
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-8">
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
             <a
-              href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+know+more+about+AITPBD"
+              href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="button-about-whatsapp"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3 transition-all"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all hover:scale-[1.02] active:scale-95"
               style={{ background: "#25D366", color: "#fff", fontSize: "0.88rem", fontWeight: 600, textDecoration: "none" }}
             >
-              <WhatsAppIcon size={16} color="#fff" /> Chat on WhatsApp
+              <WhatsAppIcon size={16} color="#fff" /> WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-about-messenger"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all hover:scale-[1.02] active:scale-95"
+              style={{ background: "#0084FF", color: "#fff", fontSize: "0.88rem", fontWeight: 600, textDecoration: "none" }}
+            >
+              <MessageCircle size={16} color="#fff" /> Messenger
             </a>
             <Link
               href="/start-a-project"
               data-testid="link-about-contact"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3 transition-all"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all"
               style={{ border: "1px solid rgba(255,255,255,0.15)", color: BRAND.white, fontSize: "0.88rem", fontWeight: 500, textDecoration: "none" }}
             >
-              Contact Us <ArrowUpRight size={14} />
+              Contact <ArrowUpRight size={14} />
             </Link>
           </div>
         </div>

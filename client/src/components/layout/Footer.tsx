@@ -2,12 +2,14 @@ import { Link } from "wouter";
 import { Phone, MapPin, Facebook, Instagram, Users, MessageCircle, ChevronUp, ArrowUpRight } from "lucide-react";
 import { BRAND, LogoHorizontal, WhatsAppIcon } from "@/components/brand/LogoIcons";
 
+import { config } from "@/lib/config";
+
 const SOCIAL_LINKS = [
-  { label: "WhatsApp", url: "https://wa.me/8801533262758", icon: <WhatsAppIcon size={15} color="currentColor" /> },
-  { label: "Facebook", url: "https://www.facebook.com/profile.php?id=61586742067282", icon: <Facebook size={15} strokeWidth={2} /> },
-  { label: "Facebook Group", url: "https://www.facebook.com/groups/333019393218410", icon: <Users size={15} strokeWidth={2} /> },
-  { label: "Messenger", url: "https://www.facebook.com/messages/t/61586742067282/", icon: <MessageCircle size={15} strokeWidth={2} /> },
-  { label: "Instagram", url: "https://instagram.com/ai_team_premium_bd", icon: <Instagram size={15} strokeWidth={2} /> },
+  { label: "WhatsApp", url: config.whatsappUrl, icon: <WhatsAppIcon size={15} color="currentColor" /> },
+  { label: "Messenger", url: config.messenger, icon: <MessageCircle size={15} strokeWidth={2} /> },
+  { label: "Facebook", url: config.fbPage, icon: <Facebook size={15} strokeWidth={2} /> },
+  { label: "Facebook Group", url: config.fbGroup, icon: <Users size={15} strokeWidth={2} /> },
+  { label: "Instagram", url: config.instagram, icon: <Instagram size={15} strokeWidth={2} /> },
 ];
 
 export function Footer() {
@@ -37,36 +39,32 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-3 flex-shrink-0 flex-wrap">
             <a
-              href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+start+a+project+with+AITPBD"
+              href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="link-footer-whatsapp"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 transition-all"
-              style={{
-                background: "#25D366",
-                color: "#fff",
-                fontSize: "0.85rem",
-                fontWeight: 600,
-                textDecoration: "none",
-                whiteSpace: "nowrap" as const,
-              }}
+              className="inline-flex items-center gap-2 rounded-full px-5 py-3 transition-all hover:scale-[1.02] active:scale-95"
+              style={{ background: "#25D366", color: "#fff", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const }}
             >
               <WhatsAppIcon size={16} color="#fff" />
-              WhatsApp Us
+              WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="link-footer-messenger"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-3 transition-all hover:scale-[1.02] active:scale-95"
+              style={{ background: "#0084FF", color: "#fff", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const }}
+            >
+              <MessageCircle size={16} color="#fff" />
+              Messenger
             </a>
             <Link
               href="/start-a-project"
               data-testid="link-footer-contact"
-              className="inline-flex items-center gap-2 rounded-full px-6 py-3 transition-all"
-              style={{
-                background: "rgba(255,255,255,0.1)",
-                color: BRAND.white,
-                fontSize: "0.85rem",
-                fontWeight: 600,
-                textDecoration: "none",
-                whiteSpace: "nowrap" as const,
-                border: "1px solid rgba(255,255,255,0.1)",
-              }}
+              className="inline-flex items-center gap-2 rounded-full px-5 py-3 transition-all"
+              style={{ background: "rgba(255,255,255,0.1)", color: BRAND.white, fontSize: "0.85rem", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const, border: "1px solid rgba(255,255,255,0.1)" }}
             >
               All Channels
               <ArrowUpRight size={14} strokeWidth={2.5} />
@@ -161,10 +159,11 @@ export function Footer() {
             <div className="mt-6">
               <FooterHeading>Quick Reach</FooterHeading>
               <FooterLinks links={[
-                { label: "WhatsApp Chat", to: "https://wa.me/8801533262758", external: true },
-                { label: "Call Us", to: "tel:+8801533262758", external: true },
-                { label: "Facebook", to: "https://www.facebook.com/profile.php?id=61586742067282", external: true },
-                { label: "Instagram", to: "https://instagram.com/ai_team_premium_bd", external: true },
+                { label: "WhatsApp Chat", to: config.whatsappGeneral, external: true },
+                { label: "Messenger", to: config.messenger, external: true },
+                { label: "Call Us", to: `tel:${config.phone}`, external: true },
+                { label: "Facebook", to: config.fbPage, external: true },
+                { label: "Instagram", to: config.instagram, external: true },
               ]} />
             </div>
           </div>

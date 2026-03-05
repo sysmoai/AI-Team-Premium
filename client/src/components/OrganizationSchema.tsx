@@ -1,3 +1,5 @@
+import { config } from "@/lib/config";
+
 export function OrganizationSchema() {
   const schema = {
     "@context": "https://schema.org",
@@ -6,13 +8,15 @@ export function OrganizationSchema() {
     "url": "https://aiteampremiumbd.com",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+8801533262758",
+      "telephone": config.phone,
       "contactType": "sales",
       "availableLanguage": ["Bengali", "English"]
     },
     "areaServed": "BD",
     "sameAs": [
-      "https://www.facebook.com/profile.php?id=61586742067282"
+      config.fbPage,
+      config.fbGroup,
+      config.instagram,
     ]
   };
 

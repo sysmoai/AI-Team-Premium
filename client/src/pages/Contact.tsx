@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { config } from "@/lib/config";
 import { Phone, MapPin, Facebook, Instagram, Users, MessageCircle, Send, ArrowUpRight } from "lucide-react";
 
 const CHANNELS = [
@@ -17,11 +18,11 @@ const CHANNELS = [
 ];
 
 const SOCIAL = [
-  { icon: <WhatsAppIcon size={15} color="currentColor" />, label: "WhatsApp", url: "https://wa.me/8801533262758" },
-  { icon: <Facebook size={15} strokeWidth={2} />, label: "Facebook", url: "https://facebook.com/AITPBD" },
-  { icon: <Users size={15} strokeWidth={2} />, label: "FB Group", url: "https://www.facebook.com/groups/333019393218410" },
-  { icon: <MessageCircle size={15} strokeWidth={2} />, label: "Messenger", url: "https://www.facebook.com/messages/t/61586742067282/" },
-  { icon: <Instagram size={15} strokeWidth={2} />, label: "Instagram", url: "https://instagram.com/ai_team_premium_bd" },
+  { icon: <WhatsAppIcon size={15} color="currentColor" />, label: "WhatsApp", url: config.whatsappGeneral },
+  { icon: <MessageCircle size={15} strokeWidth={2} />, label: "Messenger", url: config.messenger },
+  { icon: <Facebook size={15} strokeWidth={2} />, label: "Facebook", url: config.fbPage },
+  { icon: <Users size={15} strokeWidth={2} />, label: "FB Group", url: config.fbGroup },
+  { icon: <Instagram size={15} strokeWidth={2} />, label: "Instagram", url: config.instagram },
 ];
 
 const SERVICE_OPTIONS = [
@@ -75,7 +76,7 @@ export default function Contact() {
           <div className="grid lg:grid-cols-5 gap-12">
             <div className="lg:col-span-2 space-y-8">
               <a
-                href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+start+a+project+with+AITPBD"
+                href={config.whatsappGeneral}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="button-contact-whatsapp"
@@ -86,6 +87,22 @@ export default function Contact() {
                 <div>
                   <p style={{ color: "#fff", fontSize: "0.95rem", fontWeight: 600 }}>Chat on WhatsApp</p>
                   <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.78rem" }}>Fastest response — usually within minutes</p>
+                </div>
+                <ArrowUpRight size={18} color="#fff" className="ml-auto" />
+              </a>
+
+              <a
+                href={config.messenger}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-contact-messenger"
+                className="flex items-center gap-3 rounded-2xl p-5 transition-all"
+                style={{ background: "#0084FF", textDecoration: "none" }}
+              >
+                <MessageCircle size={24} color="#fff" />
+                <div>
+                  <p style={{ color: "#fff", fontSize: "0.95rem", fontWeight: 600 }}>Chat on Messenger</p>
+                  <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.78rem" }}>Also fast — Facebook Messenger</p>
                 </div>
                 <ArrowUpRight size={18} color="#fff" className="ml-auto" />
               </a>

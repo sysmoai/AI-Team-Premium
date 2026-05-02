@@ -1,7 +1,8 @@
 import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import { Check, Shield, Zap, Star, Clock, Package } from "lucide-react";
+import { Check, Shield, Zap, Star, Clock, Package, MessageCircle } from "lucide-react";
+import { config } from "@/lib/config";
 
 const INCLUDED = [
   "ChatGPT Plus access (shared seat)",
@@ -43,10 +44,20 @@ export default function AIToolsVault() {
               target="_blank"
               rel="noopener noreferrer"
               data-testid="button-hero-vault"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-bold text-white text-base"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
               style={{ background: "#25D366" }}
             >
-              <WhatsAppIcon size={18} color="#fff" /> Order on WhatsApp
+              <WhatsAppIcon size={18} color="#fff" /> WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-hero-vault-messenger"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
+              style={{ background: "#0084FF" }}
+            >
+              <MessageCircle size={18} color="#fff" /> Messenger
             </a>
           </div>
         </div>
@@ -106,9 +117,19 @@ export default function AIToolsVault() {
                 rel="noopener noreferrer"
                 data-testid="button-order-vault"
                 className="w-full inline-flex items-center justify-center gap-2 rounded-full py-3.5 font-bold text-white text-base"
-                style={{ background: BRAND.blue }}
+                style={{ background: "#25D366" }}
               >
                 <WhatsAppIcon size={16} color="#fff" /> Order on WhatsApp
+              </a>
+              <a
+                href={config.messenger}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-order-vault-messenger"
+                className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-full py-2.5 font-semibold text-white text-sm"
+                style={{ background: "#0084FF" }}
+              >
+                <MessageCircle size={14} color="#fff" /> Or message on Messenger
               </a>
               <p className="mt-3 text-center text-xs" style={{ color: BRAND.navy, opacity: 0.4 }}>Full refund within 24h if access not delivered.</p>
             </div>
@@ -159,17 +180,29 @@ export default function AIToolsVault() {
       <section className="py-20" style={{ background: BRAND.navy }}>
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-extrabold text-white mb-4">অর্ডার করতে প্রস্তুত?</h2>
-          <p className="text-white/50 mb-8">WhatsApp-এ মেসেজ করুন — ৫ মিনিটে সাড়া পাবেন।</p>
-          <a
-            href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="button-final-cta"
-            className="inline-flex items-center gap-3 rounded-full px-10 py-4 font-bold text-white text-lg"
-            style={{ background: "#25D366" }}
-          >
-            <WhatsAppIcon size={22} color="#fff" /> WhatsApp-এ অর্ডার করুন
-          </a>
+          <p className="text-white/50 mb-8">WhatsApp বা Messenger-এ মেসেজ করুন — ৫ মিনিটে সাড়া পাবেন।</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-final-cta"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
+              style={{ background: "#25D366" }}
+            >
+              <WhatsAppIcon size={20} color="#fff" /> WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-final-cta-messenger"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
+              style={{ background: "#0084FF" }}
+            >
+              <MessageCircle size={20} color="#fff" /> Messenger
+            </a>
+          </div>
         </div>
       </section>
     </Layout>

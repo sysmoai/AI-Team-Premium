@@ -4,6 +4,7 @@ import { BRAND, LogoStacked, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { chatgptPlans } from "@/lib/plans";
 import { SupportUpsell } from "@/components/SupportUpsell";
+import { config } from "@/lib/config";
 import {
   ArrowUpRight,
   Check,
@@ -14,6 +15,7 @@ import {
   LineChart,
   Smartphone,
   MessageSquare,
+  MessageCircle,
   Star,
   Shield,
   Zap,
@@ -88,22 +90,33 @@ export default function Home() {
             <p className="mt-6 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.55)", fontSize: "1.05rem", lineHeight: 1.75 }}>
               ChatGPT Plus, Pro & Business at Bangladesh-friendly prices. Instant delivery. bKash & Nagad accepted.
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-4 mt-10">
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-10">
               <a
-                href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+an+AI+tool+subscription"
+                href={config.whatsappGeneral}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="button-hero-whatsapp"
-                className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 transition-all hover-elevate"
+                className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
                 style={{ background: "#25D366", color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
               >
                 <WhatsAppIcon size={18} color="#fff" />
-                Order on WhatsApp
+                WhatsApp
+              </a>
+              <a
+                href={config.messenger}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-hero-messenger"
+                className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
+                style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
+              >
+                <MessageCircle size={18} color="#fff" />
+                Messenger
               </a>
               <Link
                 href="/chatgpt-plans"
                 data-testid="link-hero-chatgpt-plans"
-                className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 transition-all hover-elevate"
+                className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
                 style={{ background: BRAND.blue, color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
               >
                 ChatGPT Plans
@@ -111,7 +124,7 @@ export default function Home() {
               <Link
                 href="/ai-subscriptions"
                 data-testid="link-hero-subscriptions"
-                className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 transition-all hover-elevate"
+                className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
                 style={{ border: "1px solid rgba(255,255,255,0.15)", color: BRAND.white, fontSize: "0.9rem", fontWeight: 500, textDecoration: "none" }}
               >
                 View All Tools
@@ -155,17 +168,28 @@ export default function Home() {
                   <p className="mt-1 flex items-center gap-1.5" style={{ color: BRAND.blue, fontSize: "0.75rem", fontWeight: 500 }}>
                     <Clock size={12} /> {o.deliverySLA} delivery
                   </p>
-                  <a
-                    href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(o.title)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid={`button-offer-${o.slug}`}
-                    className="mt-auto pt-5 inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 transition-all"
-                    style={{ background: BRAND.blue, color: BRAND.white, fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}
-                  >
-                    <WhatsAppIcon size={14} color="#fff" />
-                    Order Now
-                  </a>
+                  <div className="mt-auto pt-5 flex gap-2">
+                    <a
+                      href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(o.title)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`button-offer-${o.slug}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full px-3 py-2.5 transition-all"
+                      style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
+                    >
+                      <WhatsAppIcon size={13} color="#fff" /> WhatsApp
+                    </a>
+                    <a
+                      href={config.messenger}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`button-offer-msg-${o.slug}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full px-3 py-2.5 transition-all"
+                      style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
+                    >
+                      <MessageCircle size={13} color="#fff" /> Messenger
+                    </a>
+                  </div>
                 </div>
               );
             })}
@@ -276,23 +300,35 @@ export default function Home() {
       <section style={{ background: BRAND.navy }}>
         <div className="mx-auto max-w-4xl px-6 lg:px-10 py-24 text-center">
           <h2 style={{ color: BRAND.white, fontSize: "clamp(1.5rem, 4vw, 2.4rem)", fontWeight: 700, lineHeight: 1.15 }}>
-            Ready to start? Message us on WhatsApp
+            Ready to start? Message us now
           </h2>
           <p className="mt-4 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.95rem", lineHeight: 1.7 }}>
             Get your premium AI subscription delivered in minutes, or start a digital project with our team.
           </p>
-          <a
-            href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+an+AI+tool+subscription"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="button-bottom-cta-whatsapp"
-            className="inline-flex items-center gap-3 rounded-full px-10 py-4 mt-10 transition-all"
-            style={{ background: "#25D366", color: "#fff", fontSize: "1.05rem", fontWeight: 600, textDecoration: "none" }}
-          >
-            <WhatsAppIcon size={22} color="#fff" />
-            Order on WhatsApp
-            <ArrowUpRight size={18} strokeWidth={2.5} />
-          </a>
+          <div className="flex flex-wrap justify-center gap-3 mt-10">
+            <a
+              href={config.whatsappGeneral}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-bottom-cta-whatsapp"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 transition-all"
+              style={{ background: "#25D366", color: "#fff", fontSize: "1.05rem", fontWeight: 600, textDecoration: "none" }}
+            >
+              <WhatsAppIcon size={20} color="#fff" />
+              WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-bottom-cta-messenger"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 transition-all"
+              style={{ background: "#0084FF", color: "#fff", fontSize: "1.05rem", fontWeight: 600, textDecoration: "none" }}
+            >
+              <MessageCircle size={20} color="#fff" />
+              Messenger
+            </a>
+          </div>
         </div>
       </section>
     </Layout>

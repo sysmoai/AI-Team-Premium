@@ -2,7 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { Link } from "wouter";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { config } from "@/lib/config";
 
 const waBase = "https://wa.me/8801533262758?text=";
 const enc = encodeURIComponent;
@@ -91,16 +92,28 @@ export default function Pricing() {
                   <p className="font-semibold flex-1" style={{ color: BRAND.navy, fontSize: "0.92rem", lineHeight: 1.4 }}>{item.name}</p>
                   <p className="mt-3 font-extrabold" style={{ color: BRAND.blue, fontSize: "1.2rem" }}>{item.price}</p>
                   <div className="mt-4 flex flex-col gap-2">
-                    <a
-                      href={item.wa}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-testid={`button-order-${item.name.toLowerCase().replace(/\s+/g, '-').slice(0, 30)}`}
-                      className="inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 font-semibold text-white text-sm"
-                      style={{ background: "#25D366" }}
-                    >
-                      <WhatsAppIcon size={13} color="#fff" /> Order Now
-                    </a>
+                    <div className="flex gap-2">
+                      <a
+                        href={item.wa}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`button-order-${item.name.toLowerCase().replace(/\s+/g, '-').slice(0, 30)}`}
+                        className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 font-semibold text-white text-xs"
+                        style={{ background: "#25D366" }}
+                      >
+                        <WhatsAppIcon size={12} color="#fff" /> WhatsApp
+                      </a>
+                      <a
+                        href={config.messenger}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`button-msg-${item.name.toLowerCase().replace(/\s+/g, '-').slice(0, 30)}`}
+                        className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 font-semibold text-white text-xs"
+                        style={{ background: "#0084FF" }}
+                      >
+                        <MessageCircle size={12} color="#fff" /> Messenger
+                      </a>
+                    </div>
                     {item.href && (
                       <Link
                         href={item.href}
@@ -121,17 +134,29 @@ export default function Pricing() {
       <section className="py-20" style={{ background: BRAND.navy }}>
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-extrabold text-white mb-4">কোন product নিবেন বুঝতে পারছেন না?</h2>
-          <p className="text-white/50 mb-8">WhatsApp-এ জিজ্ঞেস করুন — আমরা সঠিক plan বেছে দেব।</p>
-          <a
-            href="https://wa.me/8801533262758"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="button-pricing-cta"
-            className="inline-flex items-center gap-3 rounded-full px-10 py-4 font-bold text-white text-lg"
-            style={{ background: "#25D366" }}
-          >
-            <WhatsAppIcon size={22} color="#fff" /> WhatsApp-এ কথা বলুন
-          </a>
+          <p className="text-white/50 mb-8">WhatsApp বা Messenger-এ জিজ্ঞেস করুন — আমরা সঠিক plan বেছে দেব।</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href={config.whatsappGeneral}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-pricing-cta"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
+              style={{ background: "#25D366" }}
+            >
+              <WhatsAppIcon size={20} color="#fff" /> WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-pricing-cta-messenger"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
+              style={{ background: "#0084FF" }}
+            >
+              <MessageCircle size={20} color="#fff" /> Messenger
+            </a>
+          </div>
         </div>
       </section>
     </Layout>

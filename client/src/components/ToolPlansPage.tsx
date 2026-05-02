@@ -1,8 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import { Check, Clock, Shield, Star, Users, Zap } from "lucide-react";
+import { Check, Clock, Shield, Star, Users, Zap, MessageCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { config } from "@/lib/config";
 
 export interface ToolPlan {
   name: string;
@@ -44,18 +45,28 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
           <p className="text-lg mb-10 max-w-3xl mx-auto" style={{ color: BRAND.navy, opacity: 0.6 }}>{data.subtitle}</p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
-              href="https://wa.me/8801533262758"
+              href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="button-hero-whatsapp"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-bold text-white text-base transition-all"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base transition-all"
               style={{ background: "#25D366" }}
             >
-              <WhatsAppIcon size={18} color="#fff" /> Order on WhatsApp
+              <WhatsAppIcon size={18} color="#fff" /> WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-hero-messenger"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base transition-all"
+              style={{ background: "#0084FF" }}
+            >
+              <MessageCircle size={18} color="#fff" /> Messenger
             </a>
             <a
               href="#plans"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-semibold text-base transition-all"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-base transition-all"
               style={{ background: BRAND.white, color: BRAND.navy, border: `1px solid rgba(37,99,235,0.15)` }}
             >
               View Plans ↓
@@ -130,16 +141,28 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href={plan.whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-testid={`button-order-${i}`}
-                  className="mt-7 inline-flex items-center justify-center gap-2 rounded-full py-3.5 font-bold text-white transition-all"
-                  style={{ background: plan.popular ? BRAND.blue : "#25D366", fontSize: "0.9rem" }}
-                >
-                  <WhatsAppIcon size={16} color="#fff" /> Order on WhatsApp
-                </a>
+                <div className="mt-7 flex flex-col gap-2">
+                  <a
+                    href={plan.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid={`button-order-${i}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full py-3.5 font-bold text-white transition-all"
+                    style={{ background: plan.popular ? BRAND.blue : "#25D366", fontSize: "0.9rem" }}
+                  >
+                    <WhatsAppIcon size={16} color="#fff" /> Order on WhatsApp
+                  </a>
+                  <a
+                    href={config.messenger}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid={`button-order-messenger-${i}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full py-2.5 font-semibold transition-all"
+                    style={{ background: "#0084FF", color: "#fff", fontSize: "0.82rem" }}
+                  >
+                    <MessageCircle size={14} color="#fff" /> Or Messenger
+                  </a>
+                </div>
               </div>
             ))}
           </div>
@@ -184,17 +207,29 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
       <section className="py-20" style={{ background: BRAND.navy }}>
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-extrabold text-white mb-4">অর্ডার করতে প্রস্তুত?</h2>
-          <p className="text-white/50 mb-8">WhatsApp-এ মেসেজ করুন — ৫ মিনিটে সাড়া পাবেন।</p>
-          <a
-            href="https://wa.me/8801533262758"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="button-final-cta"
-            className="inline-flex items-center gap-3 rounded-full px-10 py-4 font-bold text-white text-lg"
-            style={{ background: "#25D366" }}
-          >
-            <WhatsAppIcon size={22} color="#fff" /> WhatsApp-এ অর্ডার করুন
-          </a>
+          <p className="text-white/50 mb-8">WhatsApp বা Messenger-এ মেসেজ করুন — ৫ মিনিটে সাড়া পাবেন।</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href={config.whatsappGeneral}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-final-cta"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
+              style={{ background: "#25D366" }}
+            >
+              <WhatsAppIcon size={20} color="#fff" /> WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-final-cta-messenger"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
+              style={{ background: "#0084FF" }}
+            >
+              <MessageCircle size={20} color="#fff" /> Messenger
+            </a>
+          </div>
         </div>
       </section>
     </Layout>

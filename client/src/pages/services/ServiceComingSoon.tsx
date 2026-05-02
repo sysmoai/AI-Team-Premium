@@ -2,6 +2,8 @@ import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { Link } from "wouter";
+import { MessageCircle } from "lucide-react";
+import { config } from "@/lib/config";
 
 interface Props {
   title: string;
@@ -27,15 +29,25 @@ export default function ServiceComingSoon({ title, banglaTitle, description, emo
               target="_blank"
               rel="noopener noreferrer"
               data-testid="button-service-whatsapp"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-bold text-white text-base"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
               style={{ background: "#25D366" }}
             >
-              <WhatsAppIcon size={18} color="#fff" /> WhatsApp-এ জিজ্ঞেস করুন
+              <WhatsAppIcon size={18} color="#fff" /> WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-service-messenger"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
+              style={{ background: "#0084FF" }}
+            >
+              <MessageCircle size={18} color="#fff" /> Messenger
             </a>
             <Link
               href="/start-a-project"
               data-testid="link-service-contact"
-              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 font-semibold text-base"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-base"
               style={{ background: BRAND.white, color: BRAND.navy, border: `1px solid rgba(37,99,235,0.15)` }}
             >
               Send a Request

@@ -235,12 +235,22 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                       className="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#22c35e] text-white py-4 rounded-xl font-bold transition-all shadow-md active:scale-[0.98]"
                       data-testid={`button-order-whatsapp-${slug}`}
                     >
-                      <WhatsAppIcon size={24} />
+                      <WhatsAppIcon size={22} />
                       Order on WhatsApp
+                    </a>
+                    <a
+                      href={config.messenger}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 flex items-center justify-center gap-3 w-full bg-[#0084FF] hover:bg-[#0071db] text-white py-3.5 rounded-xl font-bold transition-all shadow-md active:scale-[0.98]"
+                      data-testid={`button-order-messenger-${slug}`}
+                    >
+                      <MessageSquare size={20} />
+                      Or Order on Messenger
                     </a>
                     
                     <p className="mt-4 text-[10px] text-center text-muted-foreground leading-tight">
-                      By clicking "Order on WhatsApp", you agree to our Terms of Service and Refund Policy.
+                      By ordering, you agree to our Terms of Service and Refund Policy.
                     </p>
                   </div>
                 </div>
@@ -263,16 +273,26 @@ export function PlanDetail({ slug }: PlanDetailProps) {
       </div>
 
       {/* 8. STICKY MOBILE CTA BAR */}
-      <div className="fixed bottom-0 left-0 right-0 z-[100] md:hidden bg-white/80 backdrop-blur-lg border-t p-4 pb-safe">
+      <div className="fixed bottom-0 left-0 right-0 z-[100] md:hidden bg-white/90 backdrop-blur-lg border-t p-3 pb-safe flex gap-2">
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white py-3.5 rounded-xl font-bold shadow-lg"
+          className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-xl font-bold shadow-lg text-sm"
           data-testid={`button-sticky-whatsapp-${slug}`}
         >
-          <WhatsAppIcon size={20} />
-          WhatsApp এ অর্ডার করুন
+          <WhatsAppIcon size={18} />
+          WhatsApp
+        </a>
+        <a
+          href={config.messenger}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 flex items-center justify-center gap-2 bg-[#0084FF] text-white py-3 rounded-xl font-bold shadow-lg text-sm"
+          data-testid={`button-sticky-messenger-${slug}`}
+        >
+          <MessageSquare size={18} />
+          Messenger
         </a>
       </div>
     </Layout>

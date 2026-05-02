@@ -4,8 +4,9 @@ import { chatgptPlans } from "@/lib/plans";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { Layout } from "@/components/layout/Layout";
-import { Clock, Check, ArrowUpRight, Star } from "lucide-react";
+import { Clock, Check, ArrowUpRight, Star, MessageCircle } from "lucide-react";
 import { Link } from "wouter";
+import { config } from "@/lib/config";
 
 export default function ChatGPT() {
   usePageMeta({
@@ -71,21 +72,40 @@ export default function ChatGPT() {
                     <Check size={14} color={BRAND.blue} className="mt-0.5 shrink-0" strokeWidth={3} /> {plan.duration} access
                   </li>
                 </ul>
-                <a
-                  href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(plan.title)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2 rounded-full py-3 transition-all"
-                  style={{
-                    background: plan.badge === "Most Popular" ? BRAND.blue : BRAND.navy,
-                    color: BRAND.white,
-                    fontSize: "0.85rem",
-                    fontWeight: 600,
-                    textDecoration: "none",
-                  }}
-                >
-                  <WhatsAppIcon size={14} color="#fff" /> Order Now
-                </a>
+                <div className="mt-6 flex flex-col gap-2">
+                  <a
+                    href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(plan.title)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid={`button-wa-${plan.slug}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full py-3 transition-all"
+                    style={{
+                      background: "#25D366",
+                      color: BRAND.white,
+                      fontSize: "0.85rem",
+                      fontWeight: 600,
+                      textDecoration: "none",
+                    }}
+                  >
+                    <WhatsAppIcon size={14} color="#fff" /> Order on WhatsApp
+                  </a>
+                  <a
+                    href={config.messenger}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid={`button-msg-${plan.slug}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full py-2.5 transition-all"
+                    style={{
+                      background: "#0084FF",
+                      color: BRAND.white,
+                      fontSize: "0.78rem",
+                      fontWeight: 600,
+                      textDecoration: "none",
+                    }}
+                  >
+                    <MessageCircle size={13} color="#fff" /> Or Messenger
+                  </a>
+                </div>
               </div>
             ))}
           </div>

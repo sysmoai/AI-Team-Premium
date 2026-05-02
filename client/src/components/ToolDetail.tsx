@@ -1,8 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import { Check, Clock, ArrowUpRight } from "lucide-react";
+import { Check, Clock, ArrowUpRight, MessageCircle } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
+import { config } from "@/lib/config";
 
 interface ToolPlan {
   label: string;
@@ -54,17 +55,30 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                   </li>
                 ))}
               </ul>
-              <a
-                href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(name)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-testid="button-tool-order-whatsapp"
-                className="mt-8 inline-flex items-center gap-2 rounded-full px-8 py-3 transition-all"
-                style={{ background: "#25D366", color: "#fff", fontSize: "0.88rem", fontWeight: 600, textDecoration: "none" }}
-              >
-                <WhatsAppIcon size={16} color="#fff" />
-                Order on WhatsApp
-              </a>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(name)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="button-tool-order-whatsapp"
+                  className="inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all"
+                  style={{ background: "#25D366", color: "#fff", fontSize: "0.88rem", fontWeight: 600, textDecoration: "none" }}
+                >
+                  <WhatsAppIcon size={16} color="#fff" />
+                  Order on WhatsApp
+                </a>
+                <a
+                  href={config.messenger}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="button-tool-order-messenger"
+                  className="inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all"
+                  style={{ background: "#0084FF", color: "#fff", fontSize: "0.88rem", fontWeight: 600, textDecoration: "none" }}
+                >
+                  <MessageCircle size={16} color="#fff" />
+                  Messenger
+                </a>
+              </div>
             </div>
 
             <div className="space-y-5">
@@ -94,17 +108,28 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                       </div>
                     ))}
                   </div>
-                  <a
-                    href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(name)}+${plan.type}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-testid={`button-plan-${plan.type.toLowerCase()}`}
-                    className="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-full py-2.5 transition-all"
-                    style={{ background: BRAND.blue, color: BRAND.white, fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}
-                  >
-                    <WhatsAppIcon size={13} color="#fff" /> Order {plan.type}
-                    <ArrowUpRight size={12} />
-                  </a>
+                  <div className="mt-5 flex gap-2">
+                    <a
+                      href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(name)}+${plan.type}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`button-plan-${plan.type.toLowerCase()}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
+                      style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
+                    >
+                      <WhatsAppIcon size={13} color="#fff" /> WhatsApp
+                    </a>
+                    <a
+                      href={config.messenger}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`button-plan-messenger-${plan.type.toLowerCase()}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
+                      style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
+                    >
+                      <MessageCircle size={13} color="#fff" /> Messenger
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>

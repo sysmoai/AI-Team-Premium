@@ -1,9 +1,10 @@
 import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import { Clock, Check, ArrowUpRight } from "lucide-react";
+import { Clock, Check, ArrowUpRight, MessageCircle } from "lucide-react";
 import { Link } from "wouter";
 import { chatgptPlans } from "@/lib/plans";
+import { config } from "@/lib/config";
 
 const SUBS = [
   { name: "ChatGPT Plus", type: "Shared", price: "৳399", period: "/mo", delivery: "5-15 min", link: "/tools/chatgpt" },
@@ -71,23 +72,36 @@ export default function AISubscriptions() {
                     <Clock size={13} strokeWidth={2} /> {sub.deliverySLA} delivery
                   </li>
                 </ul>
-                <div className="mt-5 flex gap-2">
+                <div className="mt-5 flex flex-col gap-2">
+                  <div className="flex gap-2">
+                    <a
+                      href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(sub.title)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`button-wa-chatgpt-${i}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
+                      style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
+                    >
+                      <WhatsAppIcon size={13} color="#fff" /> WhatsApp
+                    </a>
+                    <a
+                      href={config.messenger}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`button-msg-chatgpt-${i}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
+                      style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
+                    >
+                      <MessageCircle size={13} color="#fff" /> Messenger
+                    </a>
+                  </div>
                   <Link
                     href={`/tools/chatgpt`}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
-                    style={{ border: `1px solid ${BRAND.blue}`, color: BRAND.blue, fontSize: "0.8rem", fontWeight: 600, textDecoration: "none" }}
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full py-2 transition-all"
+                    style={{ border: `1px solid ${BRAND.blue}`, color: BRAND.blue, fontSize: "0.75rem", fontWeight: 600, textDecoration: "none" }}
                   >
                     Details <ArrowUpRight size={12} />
                   </Link>
-                  <a
-                    href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(sub.title)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
-                    style={{ background: BRAND.blue, color: BRAND.white, fontSize: "0.8rem", fontWeight: 600, textDecoration: "none" }}
-                  >
-                    <WhatsAppIcon size={13} color="#fff" /> Order
-                  </a>
                 </div>
               </div>
             ))}
@@ -122,23 +136,36 @@ export default function AISubscriptions() {
                     <Clock size={13} strokeWidth={2} /> {sub.delivery} delivery
                   </li>
                 </ul>
-                <div className="mt-5 flex gap-2">
+                <div className="mt-5 flex flex-col gap-2">
+                  <div className="flex gap-2">
+                    <a
+                      href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(sub.name)}+${sub.type}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`button-wa-other-${i}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
+                      style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
+                    >
+                      <WhatsAppIcon size={13} color="#fff" /> WhatsApp
+                    </a>
+                    <a
+                      href={config.messenger}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-testid={`button-msg-other-${i}`}
+                      className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
+                      style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
+                    >
+                      <MessageCircle size={13} color="#fff" /> Messenger
+                    </a>
+                  </div>
                   <Link
                     href={sub.link}
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
-                    style={{ border: `1px solid ${BRAND.blue}`, color: BRAND.blue, fontSize: "0.8rem", fontWeight: 600, textDecoration: "none" }}
+                    className="inline-flex items-center justify-center gap-1.5 rounded-full py-2 transition-all"
+                    style={{ border: `1px solid ${BRAND.blue}`, color: BRAND.blue, fontSize: "0.75rem", fontWeight: 600, textDecoration: "none" }}
                   >
                     Details <ArrowUpRight size={12} />
                   </Link>
-                  <a
-                    href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(sub.name)}+${sub.type}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
-                    style={{ background: BRAND.blue, color: BRAND.white, fontSize: "0.8rem", fontWeight: 600, textDecoration: "none" }}
-                  >
-                    <WhatsAppIcon size={13} color="#fff" /> Order
-                  </a>
                 </div>
               </div>
             ))}
@@ -147,15 +174,28 @@ export default function AISubscriptions() {
           <div className="mt-16 rounded-2xl p-8 text-center" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.06)" }}>
             <h3 style={{ color: BRAND.navy, fontSize: "1.1rem", fontWeight: 600 }}>Need a tool not listed here?</h3>
             <p className="mt-2" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.88rem" }}>We can procure almost any digital subscription for you.</p>
-            <a
-              href="https://wa.me/8801533262758?text=Hi%2C+I+need+a+custom+AI+tool+subscription"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-flex items-center gap-2 rounded-full px-6 py-2.5 transition-all"
-              style={{ background: BRAND.navy, color: BRAND.white, fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}
-            >
-              Request Custom Tool
-            </a>
+            <div className="mt-5 flex flex-wrap justify-center gap-2">
+              <a
+                href="https://wa.me/8801533262758?text=Hi%2C+I+need+a+custom+AI+tool+subscription"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-custom-wa"
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 transition-all"
+                style={{ background: "#25D366", color: BRAND.white, fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}
+              >
+                <WhatsAppIcon size={14} color="#fff" /> WhatsApp
+              </a>
+              <a
+                href={config.messenger}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="button-custom-msg"
+                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 transition-all"
+                style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}
+              >
+                <MessageCircle size={14} color="#fff" /> Messenger
+              </a>
+            </div>
           </div>
         </div>
       </section>

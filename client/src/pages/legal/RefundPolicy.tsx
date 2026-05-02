@@ -3,6 +3,7 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { Layout } from "@/components/layout/Layout";
 import { ChevronRight, ShieldCheck, RefreshCw, Clock, MessageCircle } from "lucide-react";
+import { config } from "@/lib/config";
 
 export default function RefundPolicy() {
   usePageMeta({
@@ -134,11 +135,23 @@ export default function RefundPolicy() {
                   href="https://wa.me/8801533262758?text=Hi%2C+I+have+a+question+about+refund/replacement"
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-testid="button-refund-whatsapp"
                   className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl text-white font-bold transition-transform hover:scale-[1.02]"
                   style={{ background: "#25D366" }}
                 >
                   <WhatsAppIcon size={20} />
-                  Contact Support
+                  Contact on WhatsApp
+                </a>
+                <a
+                  href={config.messenger}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-testid="button-refund-messenger"
+                  className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl text-white font-bold transition-transform hover:scale-[1.02]"
+                  style={{ background: "#0084FF" }}
+                >
+                  <MessageCircle size={20} />
+                  Contact on Messenger
                 </a>
                 <div className="pt-4 border-t border-slate-200">
                   <p className="text-xs text-muted-foreground">

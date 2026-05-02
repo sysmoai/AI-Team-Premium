@@ -149,14 +149,28 @@ export default function ChatGPTPlans() {
           <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-3xl mx-auto">
             Get official ChatGPT Plus, Business, and Pro subscriptions with local bKash/Nagad payment and instant delivery.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button size="lg" className="h-12 px-8 text-lg font-bold gap-2" asChild data-testid="button-hero-whatsapp">
-              <a href={config.whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5" />
-                WhatsApp Order
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="h-12 px-8 text-lg font-bold gap-2" onClick={() => planRefs.current["plus-shared"]?.scrollIntoView({ behavior: 'smooth' })} data-testid="button-hero-plans">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={config.whatsappGeneral}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-hero-whatsapp"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
+              style={{ background: "#25D366" }}
+            >
+              <WhatsAppIcon size={18} color="#fff" /> WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-hero-messenger"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
+              style={{ background: "#0084FF" }}
+            >
+              <MessageCircle className="w-5 h-5" /> Messenger
+            </a>
+            <Button size="lg" variant="outline" className="h-12 px-7 text-base font-bold gap-2" onClick={() => planRefs.current["plus-shared"]?.scrollIntoView({ behavior: 'smooth' })} data-testid="button-hero-plans">
               প্যাকগুলো দেখুন
               <ChevronDown className="w-5 h-5" />
             </Button>
@@ -246,13 +260,27 @@ export default function ChatGPTPlans() {
                         </li>
                       </ul>
                     </CardContent>
-                    <CardFooter className="flex flex-col gap-3 pb-8">
-                      <Button className="w-full font-bold gap-2" asChild data-testid={`button-order-${plan.slug}`}>
-                        <a href={config.whatsappUrl} target="_blank" rel="noopener noreferrer">
-                          <MessageCircle className="w-4 h-4" />
-                          Order on WhatsApp
-                        </a>
-                      </Button>
+                    <CardFooter className="flex flex-col gap-2 pb-8">
+                      <a
+                        href={`${config.whatsappUrl}?text=${encodeURIComponent((config as any).whatsappPlanTemplates?.[plan.slug] || `Hi, I want to order ${plan.title}`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`button-order-${plan.slug}`}
+                        className="w-full inline-flex items-center justify-center gap-2 rounded-md py-2.5 font-bold text-white text-sm"
+                        style={{ background: "#25D366" }}
+                      >
+                        <WhatsAppIcon size={15} color="#fff" /> Order on WhatsApp
+                      </a>
+                      <a
+                        href={config.messenger}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid={`button-order-msg-${plan.slug}`}
+                        className="w-full inline-flex items-center justify-center gap-2 rounded-md py-2.5 font-bold text-white text-sm"
+                        style={{ background: "#0084FF" }}
+                      >
+                        <MessageCircle className="w-4 h-4" /> Or Messenger
+                      </a>
                       <Button variant="ghost" className="w-full text-blue-600" asChild data-testid={`link-details-${plan.slug}`}>
                         <Link href={`/chatgpt/${plan.slug}`}>
                           Details & Rules <ArrowRight className="ml-2 w-4 h-4" />
@@ -396,14 +424,28 @@ export default function ChatGPTPlans() {
       <section className="py-20 border-t bg-gray-50">
         <div className="container px-4 mx-auto text-center">
           <h2 className="text-3xl font-bold mb-10">আজই আপনার ChatGPT প্যাকটি বুঝে নিন</h2>
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
-            <Button size="lg" className="h-14 px-10 text-xl font-bold gap-3" asChild data-testid="footer-whatsapp">
-              <a href={config.whatsappUrl} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-6 h-6" />
-                Order on WhatsApp
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="h-14 px-10 text-xl font-bold gap-3" asChild data-testid="footer-facebook">
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+            <a
+              href={config.whatsappGeneral}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="footer-whatsapp"
+              className="inline-flex items-center gap-3 rounded-md h-14 px-8 text-lg font-bold text-white"
+              style={{ background: "#25D366" }}
+            >
+              <WhatsAppIcon size={22} color="#fff" /> WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="footer-messenger"
+              className="inline-flex items-center gap-3 rounded-md h-14 px-8 text-lg font-bold text-white"
+              style={{ background: "#0084FF" }}
+            >
+              <MessageCircle className="w-6 h-6" /> Messenger
+            </a>
+            <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold gap-3" asChild data-testid="footer-facebook">
               <a href={config.facebook} target="_blank" rel="noopener noreferrer">
                 Facebook Page
               </a>

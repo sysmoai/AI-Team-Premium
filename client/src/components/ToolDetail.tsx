@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import { Check, Clock, MessageCircle, ShieldCheck, Zap, CreditCard, Headphones, ChevronDown } from "lucide-react";
+import { Check, Clock, MessageCircle, ShieldCheck, Zap, CreditCard, Headphones, ChevronDown, Image, Video, Cpu, FileText } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
@@ -16,6 +16,29 @@ interface ToolPlan {
   specs: { label: string; value: string }[];
 }
 
+interface SpecTable {
+  title: string;
+  emoji: string;
+  rows: { label: string; free: string; pro: string }[];
+}
+
+interface UseCase {
+  emoji: string;
+  title: string;
+  who: string;
+  makes: string;
+  timeSaved: string;
+  prompt: string;
+}
+
+interface CompetitorRow {
+  feature: string;
+  thisProduct: string;
+  chatgpt: string;
+  claude: string;
+  gemini: string;
+}
+
 interface ToolDetailProps {
   name: string;
   tagline: string;
@@ -25,6 +48,10 @@ interface ToolDetailProps {
   features: string[];
   plans: ToolPlan[];
   path?: string;
+  specTables?: SpecTable[];
+  useCases?: UseCase[];
+  competitorRows?: CompetitorRow[];
+  extendedFaqs?: { q: string; a: string }[];
 }
 
 const TOOL_PATH_BY_NAME: Record<string, string> = {
@@ -36,8 +63,13 @@ const TOOL_PATH_BY_NAME: Record<string, string> = {
   "Midjourney": "/tools/midjourney",
   "Perplexity Pro": "/tools/perplexity",
   "Grok Premium": "/tools/grok",
+  "SuperGrok": "/tools/supergrok",
   "GitHub Copilot": "/tools/copilot",
   "AI Tools Vault": "/tools/vault",
+  "Google AI Pro": "/tools/google-ai-pro",
+  "Leonardo AI": "/tools/leonardo",
+  "Runway ML": "/tools/runway",
+  "Kling AI": "/tools/kling",
 };
 
 const TRUST_ITEMS = [
@@ -47,7 +79,7 @@ const TRUST_ITEMS = [
   { icon: Headphones, label: "Bangla + English support" },
 ];
 
-export function ToolDetail({ name, tagline, description, accentColor, icon: Icon, features, plans, path: pathProp }: ToolDetailProps) {
+export function ToolDetail({ name, tagline, description, accentColor, icon: Icon, features, plans, path: pathProp, specTables, useCases, competitorRows, extendedFaqs }: ToolDetailProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const path = pathProp || TOOL_PATH_BY_NAME[name] || `/tools/${name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`;
   usePageMeta({ title: `${name} Bangladesh — bKash/Nagad`, description, path });
@@ -57,12 +89,13 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
     : 0;
   const cheapestPlan = plans.find((p) => parseInt(p.price.replace(/[^0-9]/g, ""), 10) === minPrice) || plans[0];
 
-  const toolFaqs = [
+  const autoFaqs = [
     { q: `How much does ${name} cost in Bangladesh?`, a: `${name} starts at ${cheapestPlan?.price || "৳399"}${cheapestPlan?.period || "/mo"} from AI Team Premium BD, payable in BDT via bKash or Nagad. No international card needed.` },
     { q: `How do I buy ${name} with bKash or Nagad?`, a: `Message AI Team Premium BD on WhatsApp (+880 1533-262758) with the plan you want. We confirm price, share the bKash/Nagad number privately, and deliver login or invite details within ${cheapestPlan?.delivery || "5–15 minutes"}.` },
     { q: `Is ${name} from AI Team Premium BD official?`, a: `Yes. AI Team Premium BD provides official ${name} subscriptions sourced through legitimate channels. No cracked or fake access — fully working features and a 30-day replacement warranty.` },
     { q: `Can I use ${name} in Bangla?`, a: "Yes. Most premium AI tools sold by AI Team Premium BD — including ChatGPT, Claude, and Gemini — generate high-quality Bangla responses. Our support team also assists in Bangla and English." },
   ];
+  const toolFaqs = extendedFaqs ? [...autoFaqs, ...extendedFaqs] : autoFaqs;
 
   return (
     <Layout>
@@ -83,12 +116,11 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
       />
       <FAQSchema items={toolFaqs} />
 
-      {/* HERO — dark gradient with accent glow */}
+      {/* HERO */}
       <section style={{ background: `linear-gradient(135deg, ${BRAND.navy} 0%, #1a2d5a 100%)`, position: "relative", overflow: "hidden" }}>
         <div style={{ position: "absolute", top: -120, right: -80, width: 500, height: 500, background: accentColor, opacity: 0.07, borderRadius: "50%", filter: "blur(90px)", pointerEvents: "none" }} />
         <div style={{ position: "absolute", bottom: -100, left: -60, width: 320, height: 320, background: BRAND.blue, opacity: 0.05, borderRadius: "50%", filter: "blur(70px)", pointerEvents: "none" }} />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-20 pb-24 text-center">
-          {/* Icon */}
           <div className="inline-flex items-center justify-center rounded-3xl mb-7" style={{ width: 88, height: 88, background: `${accentColor}1A`, border: `1.5px solid ${accentColor}38` }}>
             <Icon size={44} color={accentColor} strokeWidth={1.4} />
           </div>
@@ -99,8 +131,6 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
           <p className="mt-5 mx-auto max-w-lg" style={{ color: "rgba(255,255,255,0.52)", fontSize: "1.02rem", lineHeight: 1.75 }}>
             {description}
           </p>
-
-          {/* Direct-answer block (GEO) */}
           <div className="mt-8 mx-auto max-w-2xl rounded-2xl p-5 text-left" style={{ background: "rgba(255,255,255,0.06)", border: `1px solid ${accentColor}28` }}>
             <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "0.93rem", lineHeight: 1.72 }}>
               <strong style={{ color: BRAND.white }}>{name}</strong> is available in Bangladesh from AI Team Premium BD starting at{" "}
@@ -109,8 +139,6 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
               <strong style={{ color: BRAND.white }}>{cheapestPlan?.delivery}</strong> with a 30-day replacement warranty and Bangla + English WhatsApp support.
             </p>
           </div>
-
-          {/* CTAs */}
           <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
             <a
               href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(name)}`}
@@ -156,7 +184,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
       </section>
 
       {/* FEATURES + PLANS */}
-      <section className="py-16 pb-28">
+      <section className="py-16 pb-20">
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
           <div className="grid lg:grid-cols-2 gap-14 items-start">
             {/* Features */}
@@ -187,7 +215,6 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                       border: idx === 0 ? `1.5px solid ${accentColor}42` : "1px solid rgba(37,99,235,0.09)",
                     }}
                   >
-                    {/* Accent top bar */}
                     <div style={{ height: 4, background: idx === 0 ? `linear-gradient(90deg, ${accentColor}, ${accentColor}80)` : "rgba(37,99,235,0.1)" }} />
                     <div className="p-7" style={{ background: BRAND.white }}>
                       <div className="flex items-center justify-between mb-3">
@@ -245,8 +272,122 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
         </div>
       </section>
 
+      {/* SPEC TABLES (optional) */}
+      {specTables && specTables.length > 0 && (
+        <section className="py-16" style={{ background: BRAND.sky }}>
+          <div className="mx-auto max-w-6xl px-6 lg:px-10">
+            <h2 className="text-center mb-12" style={{ color: BRAND.navy, fontSize: "1.5rem", fontWeight: 700 }}>
+              Full Feature Breakdown
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {specTables.map((table) => (
+                <div key={table.title} className="rounded-2xl overflow-hidden" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+                  <div className="px-6 py-4 flex items-center gap-3" style={{ background: `${accentColor}0D`, borderBottom: `1px solid ${accentColor}18` }}>
+                    <span style={{ fontSize: "1.25rem" }}>{table.emoji}</span>
+                    <h3 style={{ color: BRAND.navy, fontSize: "0.95rem", fontWeight: 700 }}>{table.title}</h3>
+                  </div>
+                  <table className="w-full" style={{ borderCollapse: "collapse" }}>
+                    <thead>
+                      <tr style={{ borderBottom: "1px solid rgba(37,99,235,0.06)" }}>
+                        <th className="text-left px-6 py-2.5" style={{ color: BRAND.navy, opacity: 0.4, fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", width: "42%" }}>Feature</th>
+                        <th className="text-center px-3 py-2.5" style={{ color: BRAND.navy, opacity: 0.4, fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>Free</th>
+                        <th className="text-center px-3 py-2.5" style={{ color: accentColor, fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em" }}>Pro / Paid</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {table.rows.map((row, i) => (
+                        <tr key={row.label} style={{ borderBottom: i < table.rows.length - 1 ? "1px solid rgba(37,99,235,0.05)" : "none" }}>
+                          <td className="px-6 py-3" style={{ color: BRAND.navy, fontSize: "0.82rem", fontWeight: 500 }}>{row.label}</td>
+                          <td className="px-3 py-3 text-center" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.8rem" }}>{row.free}</td>
+                          <td className="px-3 py-3 text-center" style={{ color: accentColor, fontSize: "0.8rem", fontWeight: 600 }}>{row.pro}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* USE CASES (optional) */}
+      {useCases && useCases.length > 0 && (
+        <section className="py-16">
+          <div className="mx-auto max-w-6xl px-6 lg:px-10">
+            <h2 className="text-center mb-3" style={{ color: BRAND.navy, fontSize: "1.5rem", fontWeight: 700 }}>
+              Real Use Cases — What You Can Make
+            </h2>
+            <p className="text-center mb-12" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.92rem" }}>
+              Concrete examples for students, freelancers and businesses in Bangladesh
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {useCases.map((uc) => (
+                <div key={uc.title} className="rounded-2xl p-6" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.07)" }}>
+                  <div className="text-3xl mb-3">{uc.emoji}</div>
+                  <h3 className="mb-2" style={{ color: BRAND.navy, fontSize: "1rem", fontWeight: 700 }}>{uc.title}</h3>
+                  <div className="space-y-2 mt-3">
+                    <div className="flex items-start gap-2">
+                      <span style={{ color: BRAND.blue, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.05em", flexShrink: 0, paddingTop: 2 }}>WHO</span>
+                      <span style={{ color: BRAND.navy, opacity: 0.65, fontSize: "0.8rem" }}>{uc.who}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span style={{ color: BRAND.blue, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.05em", flexShrink: 0, paddingTop: 2 }}>MAKES</span>
+                      <span style={{ color: BRAND.navy, fontSize: "0.8rem", fontWeight: 500 }}>{uc.makes}</span>
+                    </div>
+                    <div className="flex items-start gap-2">
+                      <span style={{ color: accentColor, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.05em", flexShrink: 0, paddingTop: 2 }}>SAVES</span>
+                      <span style={{ color: accentColor, fontSize: "0.8rem", fontWeight: 600 }}>{uc.timeSaved}</span>
+                    </div>
+                  </div>
+                  <div className="mt-4 rounded-xl px-4 py-3" style={{ background: `${accentColor}0A`, border: `1px solid ${accentColor}18` }}>
+                    <p style={{ color: BRAND.navy, opacity: 0.55, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.05em", marginBottom: 4 }}>EXAMPLE PROMPT</p>
+                    <p style={{ color: BRAND.navy, fontSize: "0.78rem", fontStyle: "italic", lineHeight: 1.5 }}>&ldquo;{uc.prompt}&rdquo;</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* COMPETITOR TABLE (optional) */}
+      {competitorRows && competitorRows.length > 0 && (
+        <section className="py-16" style={{ background: BRAND.sky }}>
+          <div className="mx-auto max-w-6xl px-6 lg:px-10">
+            <h2 className="text-center mb-10" style={{ color: BRAND.navy, fontSize: "1.5rem", fontWeight: 700 }}>
+              {name} vs Competitors — Who Wins Where?
+            </h2>
+            <div className="rounded-2xl overflow-x-auto" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+              <table className="w-full" style={{ borderCollapse: "collapse", minWidth: 600 }}>
+                <thead>
+                  <tr style={{ background: `${accentColor}0D`, borderBottom: `1.5px solid ${accentColor}22` }}>
+                    <th className="text-left px-6 py-4" style={{ color: BRAND.navy, fontSize: "0.78rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Feature</th>
+                    <th className="px-4 py-4 text-center" style={{ color: accentColor, fontSize: "0.78rem", fontWeight: 700 }}>{name}</th>
+                    <th className="px-4 py-4 text-center" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem", fontWeight: 700 }}>ChatGPT</th>
+                    <th className="px-4 py-4 text-center" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem", fontWeight: 700 }}>Claude</th>
+                    <th className="px-4 py-4 text-center" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem", fontWeight: 700 }}>Gemini</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {competitorRows.map((row, i) => (
+                    <tr key={row.feature} style={{ borderBottom: i < competitorRows.length - 1 ? "1px solid rgba(37,99,235,0.05)" : "none" }}>
+                      <td className="px-6 py-3.5" style={{ color: BRAND.navy, fontSize: "0.85rem", fontWeight: 600 }}>{row.feature}</td>
+                      <td className="px-4 py-3.5 text-center" style={{ color: accentColor, fontSize: "0.82rem", fontWeight: 600 }}>{row.thisProduct}</td>
+                      <td className="px-4 py-3.5 text-center" style={{ color: BRAND.navy, opacity: 0.55, fontSize: "0.82rem" }}>{row.chatgpt}</td>
+                      <td className="px-4 py-3.5 text-center" style={{ color: BRAND.navy, opacity: 0.55, fontSize: "0.82rem" }}>{row.claude}</td>
+                      <td className="px-4 py-3.5 text-center" style={{ color: BRAND.navy, opacity: 0.55, fontSize: "0.82rem" }}>{row.gemini}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* FAQ ACCORDION */}
-      <section className="py-16" style={{ background: BRAND.sky }}>
+      <section className="py-16" style={{ background: competitorRows ? BRAND.white : BRAND.sky }}>
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
           <h2 className="mb-8 text-center" style={{ color: BRAND.navy, fontSize: "1.4rem", fontWeight: 700 }}>
             Frequently Asked Questions

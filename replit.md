@@ -58,6 +58,11 @@ A comprehensive website for AI Team Premium BD (AITPBD), Bangladesh's premium AI
 | `/tools/microsoft365` | Microsoft 365 Copilot | `client/src/pages/tools/Microsoft365.tsx` |
 | `/tools/linkedin` | LinkedIn Premium | `client/src/pages/tools/LinkedIn.tsx` |
 | `/tools/elevenlabs` | ElevenLabs Voice AI | `client/src/pages/tools/ElevenLabs.tsx` |
+| `/tools/supergrok` | SuperGrok by xAI | `client/src/pages/tools/SuperGrok.tsx` |
+| `/tools/google-ai-pro` | Google AI Pro | `client/src/pages/tools/GoogleAIPro.tsx` |
+| `/tools/leonardo` | Leonardo AI | `client/src/pages/tools/Leonardo.tsx` |
+| `/tools/runway` | Runway ML | `client/src/pages/tools/Runway.tsx` |
+| `/tools/kling` | Kling AI | `client/src/pages/tools/Kling.tsx` |
 
 ## Key Components
 - `Layout` — Navbar + main + Footer + FloatingWhatsApp + StickyMobileCTA + OrganizationSchema

@@ -1,0 +1,557 @@
+## ═══════════════════════════════════════════
+
+## RESEARCH PROTOCOL — HOW TO DETECT LIVE PRODUCT INFO
+
+## ═══════════════════════════════════════════
+
+<aside>
+🔍
+
+**FOR EVERY PRODUCT, follow this exact research sequence.** Do not skip any step. Do not assume any number.
+
+</aside>
+
+### 📡 RESEARCH SEQUENCE (Execute for Each Product)
+
+```
+STEP 1: IDENTIFY
+├─ Product name (e.g., SuperGrok, ChatGPT Plus, Perplexity Pro, Google AI Pro)
+├─ Parent company (e.g., xAI, OpenAI, Perplexity AI, Google DeepMind)
+├─ Official pricing page URL
+├─ Official features/help documentation URL
+└─ Current date for version tracking
+
+STEP 2: PRICING (EXACT)
+├─ Official monthly USD price
+├─ Annual plan (if any) and discount
+├─ Free tier limits
+├─ Premium tier price(s)
+├─ Enterprise/Heavy tier price
+└─ → Calculate AITPBD BDT prices:
+|   Shared seat = Official USD × 15–18% (margin built for shared cost)
+|   Personal seat = Official USD × ~110% (BDT conversion + service fee)
+|   Example: $30 SuperGrok → Shared ৳499, Personal ৳3,990
+
+STEP 3: FEATURES (EXHAUSTIVE)
+├─ AI Models included
+├─ Context window (tokens)
+├─ Reasoning/thinking capabilities
+├─ Web search capabilities
+├─ Voice/camera mode
+├─ File uploads (types, size limits, count)
+├─ Custom agents/assistants
+├─ Connectors/integrations
+├─ Memory/personalization
+├─ Special modes (Deep Research, Big Brain, Canvas, etc.)
+├─ Coding capabilities (Codex, agent mode, etc.)
+└─ Any platform-exclusive features
+
+STEP 4: AI IMAGE GENERATION (EXACT LIMITS)
+├─ Can it generate images? YES/NO
+├─ Image generation engine name (e.g., Aurora, DALL·E 3, Nano Banana, Imagine 4)
+├─ Max resolution
+├─ FREE tier: images per day
+├─ PRO tier: images per day
+├─ Speed (seconds per generation)
+├─ Variations per prompt
+├─ Image editing capabilities
+├─ Reference image upload
+└─ Any special modes (Agent Mode, etc.)
+
+STEP 5: AI VIDEO GENERATION (EXACT LIMITS)
+├─ Can it generate videos? YES/NO
+├─ Video engine name
+├─ Max duration per video (seconds)
+├─ Max resolution (480p, 720p, 1080p)
+├─ FREE tier: videos per day
+├─ PRO tier: videos per day
+├─ Text-to-video? YES/NO
+├─ Image-to-video? YES/NO
+├─ Multi-clip stitching? YES/NO
+└─ Agent mode for video? YES/NO
+
+STEP 6: REAL USE-CASES (CONCRETE, WITH EXAMPLES)
+├─ Academic Research use-case + example output
+├─ Business use-case + example output
+├─ Content Creation use-case + example output
+├─ Coding use-case + example output
+├─ Design use-case + example output
+├─ Student use-case + example output
+└─ For EACH use-case: what they MAKE, how long, what they SAVE
+
+STEP 7: COMPETITIVE POSITIONING
+├─ Unique differentiator vs ChatGPT
+├─ Unique differentiator vs Claude
+├─ Unique differentiator vs Gemini
+├─ Best for which Bangladesh segment?
+└─ "Why buy THIS tool from AITPBD?"
+
+STEP 8: AITPBD PRICING FINAL
+├─ Shared seat price (BDT/mo)
+├─ Personal seat price (BDT/mo)
+├─ Users per shared seat
+├─ Delivery SLA
+├─ Device rules
+├─ Warranty (30 days standard)
+└─ WhatsApp CTA link
+```
+
+---
+
+## ═══════════════════════════════════════════
+
+## OUTPUT FORMAT — COMPLETE PRODUCT PAGE TEMPLATE
+
+## ═══════════════════════════════════════════
+
+<aside>
+📄
+
+**USE THIS EXACT TEMPLATE for every product page you generate.** Fill every section. If a feature does not exist for this product, write "Not available" — do NOT omit the section.
+
+</aside>
+
+```markdown
+# [PRODUCT NAME] — [TAGLINE] | AI Team Premium BD
+## AITPBD Price: Shared [৳XXX]/mo · Personal [৳X,XXX]/mo · bKash/Nagad · [X] min delivery
+
+---
+
+## 📋 SEO + AIO Meta
+
+**Primary Page Title:** [Product Name] in Bangladesh — Official BDT Price, Features & How to Buy [Current Year] | AI Team Premium BD
+
+**Meta Description:** Buy [Product Name] in Bangladesh from AI Team Premium BD. Shared from ৳[XXX]/mo, Personal from ৳[X,XXX]/mo. [Key Feature 1], [Key Feature 2], [Key Feature 3]. bKash/Nagad payment. [X] min delivery. Bangla support.
+
+**Target Keywords (English — 20):**
+1. [product name] price bangladesh
+2. buy [product name] bd
+3. [product name] subscription bangladesh
+4. [product name] bkash
+5. [product name] nagad
+6. [product name] shared seat bangladesh
+7. [product name] personal account bangladesh
+8. [product name] price bdt
+9. cheap [product name] bangladesh
+10. [product name] vs [competitor] bangladesh
+11. [product name] image generation bd
+12. [product name] video generation bd
+13. [product name] ai images per day
+14. [product name] ai video limit
+15. [product name] features [current year]
+16. [product name] for students bangladesh
+17. [product name] for freelancers bangladesh
+18. [product name] for business bangladesh
+19. best [product name] alternative bangladesh
+20. how to buy [product name] bangladesh
+
+**Bangla Keywords (10):**
+1. [product name bn] দাম বাংলাদেশ
+2. [product name bn] কিনতে চাই
+3. [product name bn] বিকাশ
+4. [product name bn] সাবস্ক্রিপশন
+5. [product name bn] শেয়ার্ড অ্যাকাউন্ট
+6. [product name bn] ইমেজ জেনারেশন
+7. [product name bn] ভিডিও জেনারেশন
+8. [product name bn] ফিচার
+9. [product name bn] রিভিউ
+10. [product name bn] কেনার নিয়ম
+
+**AIO Summary (for AI search engines):**
+[Product Name] in Bangladesh costs ৳[XXX] (Shared) or ৳[X,XXX] (Personal) per month from AI Team Premium BD (AITPBD). Official price: $[XX]/month. Delivery in [X] minutes via WhatsApp. Payment: bKash, Nagad, Bank Transfer. [3 key features]. [Image limit] images/day, [video limit] videos/day. Bangla + English support. 30-day warranty.
+
+---
+
+## 🤖 [Product Name] — Feature Summary Card
+
+<callout icon="[emoji]" color="[color]_bg">
+	**[Product Name]** by **[Company]** | Official Price: **$[XX]/month** (~৳[X,XXX])
+	**AITPBD Price:** Shared = **৳[XXX]/month** | Personal = **৳[X,XXX]/month**
+	**Best For:** [segment 1], [segment 2], [segment 3]
+</callout>
+
+---
+
+## 💰 Full Plan Comparison — All Tiers (Official vs AITPBD)
+
+| Tier | Official USD Price | AITPBD Shared (BDT) | AITPBD Personal (BDT) | Chat Messages | Image Gen | Video Gen | Deep Research | Best For |
+|---|---|---|---|---|---|---|---|---|
+| **Free** | $0 | — | — | Limited | [X]/day | [X]/day | Basic | Trial only |
+| **Premium/Pro** | $[XX]/mo | **৳[XXX]** | **৳[X,XXX]** | [X]x longer | [X]/day | [X]/day | Yes/No | [Segment] |
+| **Heavy/Max** | $[XXX]/mo | — | — | Unlimited | Unlimited | [X]/day | Max | Power users |
+
+> ⚠️ **Last Verified:** [Current Date]. Limits may change. Check official site for latest.
+
+---
+
+## 🎯 What You Can ACTUALLY Do With [Product Name]
+
+### 💬 1. AI Chat & Reasoning
+
+| Feature | Free Tier | Pro Tier |
+|---|---|---|
+| **AI Model** | [Model Name] | [Model Name] |
+| **Context Window** | [X]K tokens | [X]K tokens |
+| **Reasoning/Thinking** | [Description] | [Description] |
+| **Web Search** | [Yes/Limited/No] | [Yes/Full] |
+| **Real-time Integration** | [Description] | [Description] |
+| **Voice Mode** | [Description] | [Description] |
+| **File Upload** | [Types, size, count] | [Types, size, count] |
+| **Custom Assistants** | [Description] | [Description] |
+| **Memory/Personalization** | [Description] | [Description] |
+| **Connectors/Integrations** | [Description] | [Description] |
+
+### 🖼️ 2. AI Image Generation
+
+| Feature | Free Tier | Pro Tier |
+|---|---|---|
+| **Image Engine** | [Name] | [Name] |
+| **Images Per Day** | [X] per day | [X] per day |
+| **Max Resolution** | [X]K | [X]K |
+| **Generation Speed** | [X] seconds | [X] seconds |
+| **Variations Per Prompt** | [X] | [X] |
+| **Image Editing** | [Yes/No] — [capabilities] | [Yes/No] — [capabilities] |
+| **Reference Image Upload** | [Yes/No] | [Yes/No] — up to [X] images |
+| **Restyle/Transform** | [Yes/No] | [Yes/No] |
+
+### 🎬 3. AI Video Generation
+
+| Feature | Free Tier | Pro Tier |
+|---|---|---|
+| **Video Engine** | [Name] | [Name] |
+| **Videos Per Day** | [X] per day | [X] per day |
+| **Max Duration** | [X] seconds | [X] seconds |
+| **Max Resolution** | [480p/720p/1080p] | [480p/720p/1080p] |
+| **Text-to-Video** | [Yes/No] | [Yes/No] |
+| **Image-to-Video** | [Yes/No] | [Yes/No] |
+| **Multi-Clip Stitching** | [Yes/No] | [Yes/No] |
+| **Agent Mode** | [Yes/No] | [Yes/No] |
+
+### 🔧 4. Other Capabilities
+
+| Feature | Free Tier | Pro Tier |
+|---|---|---|
+| **Coding/Code Generation** | [Description] | [Description] |
+| **Data Analysis** | [Description] | [Description] |
+| **Document Analysis** | [Description] | [Description] |
+| **Language Support** | [Languages] | [Languages] |
+| **API Access** | [Yes/No] | [Yes/No] |
+| **Team Collaboration** | [Description] | [Description] |
+| **Privacy/Data Training** | [Description] | [Description] |
+| **Security Certifications** | [None/SOC2/HIPAA/etc] | [SOC2/HIPAA/etc] |
+
+---
+
+## 🔥 7 REAL USE-CASES (What Customers Actually Make)
+
+### Use Case 1: 🎓 Academic Research
+
+| Detail | Value |
+|---|---|
+| **WHO** | PhD students, Masters students, researchers |
+| **WHAT THEY MAKE** | [Concrete deliverable — e.g., 20-page systematic literature review with 50+ citations] |
+| **TIME SAVED** | [X] hours → [X] minutes |
+| **EXAMPLE PROMPT** | [Actual prompt they'd use] |
+| **EXPECTED OUTPUT** | [Description of what they get back] |
+| **BANGLADESH RELEVANCE** | [Why this matters specifically for BD students/researchers] |
+
+### Use Case 2: 💼 Business Intelligence
+
+| Detail | Value |
+|---|---|
+| **WHO** | SME founders, startup CEOs, e-commerce owners |
+| **WHAT THEY MAKE** | [Concrete deliverable] |
+| **TIME SAVED** | [X] hours → [X] minutes |
+| **EXAMPLE PROMPT** | [Actual prompt] |
+| **EXPECTED OUTPUT** | [Description] |
+
+### Use Case 3: 🎨 Content Creation & Design
+
+| Detail | Value |
+|---|---|
+| **WHO** | Designers, social media marketers, YouTubers |
+| **WHAT THEY MAKE** | [Concrete deliverable] |
+| **TIME SAVED** | [X] hours → [X] minutes |
+| **EXAMPLE PROMPT** | [Actual prompt] |
+| **EXPECTED OUTPUT** | [Description] |
+
+### Use Case 4: 💻 Coding & Development
+
+| Detail | Value |
+|---|---|
+| **WHO** | Freelance developers, software engineers, CS students |
+| **WHAT THEY MAKE** | [Concrete deliverable] |
+| **TIME SAVED** | [X] hours → [X] minutes |
+| **EXAMPLE PROMPT** | [Actual prompt] |
+| **EXPECTED OUTPUT** | [Description] |
+
+### Use Case 5: 📰 Journalism & Research
+
+| Detail | Value |
+|---|---|
+| **WHO** | Journalists, content writers, researchers |
+| **WHAT THEY MAKE** | [Concrete deliverable] |
+| **TIME SAVED** | [X] hours → [X] minutes |
+| **EXAMPLE PROMPT** | [Actual prompt] |
+| **EXPECTED OUTPUT** | [Description] |
+
+### Use Case 6: 🎬 Video Production
+
+| Detail | Value |
+|---|---|
+| **WHO** | Video creators, TikTok/YouTube/Reels creators |
+| **WHAT THEY MAKE** | [Concrete deliverable] |
+| **TIME SAVED** | [X] hours/days → minutes |
+| **EXAMPLE PROMPT** | [Actual prompt] |
+| **EXPECTED OUTPUT** | [Description] |
+
+### Use Case 7: 🧠 Strategy & Brainstorming
+
+| Detail | Value |
+|---|---|
+| **WHO** | Founders, consultants, product managers |
+| **WHAT THEY MAKE** | [Concrete deliverable] |
+| **TIME SAVED** | [X] hours → [X] minutes |
+| **EXAMPLE PROMPT** | [Actual prompt] |
+| **EXPECTED OUTPUT** | [Description] |
+
+---
+
+## ⚔️ [Product Name] vs Competitors — Who Wins Where?
+
+| Feature | [Product Name] | ChatGPT (OpenAI) | Claude (Anthropic) | Gemini (Google) | Perplexity |
+|---|---|---|---|---|---|
+| **AI Chat Model** | [Model] | GPT-5.3 Instant | Claude Opus 4.6 | Gemini 3.1 Pro | [Model] |
+| **Context Window** | [X]K tokens | 128K tokens | 200K tokens | 1M tokens | [X]K |
+| **Image Generation** | [Yes/No + quality] | DALL·E 3 / Images 2.0 | No native | Nano Banana | Yes (basic) |
+| **Video Generation** | [Yes/No + quality] | Sora (limited) | No | VO 3.1 | No |
+| **Real-time Search** | [Yes/No + source] | Web browsing | Web search | Google Search | Core feature |
+| **Unique Killer Feature** | [What makes THIS tool special] | Custom GPTs | 200K context | Google ecosystem | Citations |
+| **Best For in Bangladesh** | [Segment] | [Segment] | [Segment] | [Segment] | [Segment] |
+| **AITPBD Price (Shared)** | **৳[XXX]/mo** | ৳399/mo | ৳599/mo | ৳449/mo | ৳349/mo |
+| **AITPBD Price (Personal)** | **৳[X,XXX]/mo** | ৳2,950/mo | ৳2,950/mo | ৳1,299/mo | ৳899/mo |
+
+---
+
+## 📦 AITPBD Pricing & Delivery
+
+### 🟢 Shared Seat (Best Value — Students, Freelancers)
+
+| Detail | Value |
+|---|---|
+| **Price** | **৳[XXX]/month** |
+| **Users** | [X] users per seat |
+| **Delivery Time** | 5–15 minutes after payment |
+| **Device Rule** | 1 device per user — no switching |
+| **Warranty** | 30 days (replacement if access breaks due to our error) |
+| **Payment** | bKash, Nagad, Bank Transfer |
+| **Support** | WhatsApp + Email (Bangla + English) |
+
+### 🔵 Personal Seat (Full Ownership — Professionals)
+
+| Detail | Value |
+|---|---|
+| **Price** | **৳[X,XXX]/month** |
+| **Users** | 1 user — YOUR OWN account |
+| **Delivery Time** | 2–4 hours after payment |
+| **Account Control** | Full — password, settings, email all yours |
+| **Warranty** | 30 days |
+| **Payment** | bKash, Nagad, Bank Transfer |
+
+### 🔒 Shared Seat Rules (Non-Negotiable)
+
+- ✅ 1 device per user — no switching
+- ❌ No password or security changes (instant warranty void)
+- ❌ No email or recovery modifications
+- ❌ No sharing beyond allocated seats
+- ✅ 30-day warranty
+
+---
+
+## ❓ Frequently Asked Questions — [Product Name] Bangladesh [Current Year]
+
+**1. How much does [Product Name] cost in Bangladesh?**
+AITPBD price: Shared seat ৳[XXX]/month, Personal ৳[X,XXX]/month. Official price: $[XX]/month (~৳[X,XXX] direct). You save [X]% buying from AITPBD.
+
+**2. How many AI images can I generate per day with [Product Name]?**
+[Specific answer with exact number or range]. Free tier: [X]/day. Pro tier: [X]/day (or unlimited with fair use).
+
+**3. How many AI videos can I generate?**
+[Specific answer]. Max duration: [X] seconds per video at [resolution].
+
+**4. Can I pay with bKash or Nagad?**
+Yes! AITPBD accepts bKash, Nagad, and Bank Transfer. Payment instructions shared via WhatsApp.
+
+**5. How fast is delivery?**
+Shared seat: 5–15 minutes after payment confirmation. Personal seat: 2–4 hours.
+
+**6. Is this an official reseller account?**
+AITPBD is a local access facilitator — solving USD payment and delivery friction for Bangladesh customers. We are not an official reseller.
+
+**7. Can I use [Product Name] on multiple devices?**
+Shared seat: No — strictly 1 device per user. Personal seat: Yes — your own account, no device limits.
+
+**8. What happens if access stops working?**
+30-day warranty. If access breaks due to our error, we replace within [SLA]. If banned due to rule violation (multi-device, password change), warranty is void.
+
+**9. What's the difference between Shared and Personal seat?**
+Shared = you share the account with [X] other users, lower price, strict 1-device rule. Personal = your own account, full control, higher price.
+
+**10. How do I buy?**
+WhatsApp: [+880 1533-262758](https://wa.me/8801533262758). Message: "[Product Name] [Shared/Personal] নিতে চাই।" We'll confirm and share payment details.
+
+**11. What AI model does [Product Name] use?**
+[Answer with current model name and version].
+
+**12. Can [Product Name] read PDFs and documents?**
+[Specific answer with file types and size limits].
+
+**13. Does [Product Name] have Bangla language support?**
+[Answer based on actual capability].
+
+**14. What is [Product Name]'s unique advantage over ChatGPT?**
+[Specific differentiator with example].
+
+**15. Is there a free trial?**
+[Answer about free tier availability and how to access].
+
+---
+
+## 📱 How to Buy — 3 Steps
+
+**Step 1:** WhatsApp [+880 1533-262758](https://wa.me/8801533262758)
+
+**Step 2:** Message: "[Product Name] [Shared/Personal] নিতে চাই"
+
+**Step 3:** Pay via bKash/Nagad → Get access in [X] minutes!
+
+[WhatsApp Direct Link: Buy [Product Name] Shared — ৳[XXX]](https://wa.me/8801533262758?text=[Product+Name]+Shared+৳[XXX]+নিতে+চাই)
+
+[WhatsApp Direct Link: Buy [Product Name] Personal — ৳[X,XXX]](https://wa.me/8801533262758?text=[Product+Name]+Personal+৳[X,XXX]+নিতে+চাই)
+
+---
+
+## 📊 JSON-LD Structured Data (Copy for Website)
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "[Product Name] — Shared Seat",
+  "description": "[Product Name] subscription in Bangladesh from AI Team Premium BD. Shared seat at ৳[XXX]/month with [key features].",
+  "brand": {
+    "@type": "Brand",
+    "name": "[Company Name]"
+  },
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Shared Seat",
+      "price": "[XXX]",
+      "priceCurrency": "BDT",
+      "priceValidUntil": "[Current Year + 1]-12-31",
+      "availability": "https://schema.org/InStock"
+    },
+    {
+      "@type": "Offer",
+      "name": "Personal Seat",
+      "price": "[XXXX]",
+      "priceCurrency": "BDT",
+      "priceValidUntil": "[Current Year + 1]-12-31",
+      "availability": "https://schema.org/InStock"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "ratingCount": "10000"
+  }
+}
+</script>
+
+---
+
+## 📝 Page Metadata (For [aiteampremiumbd.com](http://aiteampremiumbd.com) CMS)
+
+```
+
+{
+
+"slug": "[product-slug]",
+
+"route": "/[product-slug]",
+
+"category": "[category]",
+
+"productName": "[Product Name]",
+
+"company": "[Company]",
+
+"officialPriceUSD": [XX],
+
+"aitpbdPriceShared": [XXX],
+
+"aitpbdPricePersonal": [XXXX],
+
+"imageGenLimitPerDay": [XX],
+
+"videoGenLimitPerDay": [XX],
+
+"lastVerified": "[YYYY-MM-DD]",
+
+"modelVersion": "[Model Version]",
+
+"seatType": ["shared", "personal"],
+
+"keywordsEnglish": [...20 keywords...],
+
+"keywordsBangla": [...10 keywords...]
+
+}
+
+```
+
+---
+
+> **Generated by AITPBD Product Intelligence Agent v1.0** | Last updated: [Current Date]
+> **Verified against:** [List of official sources used]
+```
+
+---
+
+## ═══════════════════════════════════════════
+
+## PRODUCT INTELLIGENCE TARGET LIST
+
+## ═══════════════════════════════════════════
+
+### 🔥 Execute NOW — Generate These Pages (Priority Order)
+
+| # | Product | Company | Official Price | AITPBD Shared | AITPBD Personal | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | **SuperGrok** | xAI | $30/mo | ৳499/mo | ৳3,990/mo | ⚡ RUN FIRST |
+| 2 | **ChatGPT Plus** | OpenAI | $20/mo | ৳399/mo | ৳2,950/mo | ⚡ HIGH |
+| 3 | **ChatGPT Pro** | OpenAI | $200/mo | ৳4,500/mo | — | ⚡ HIGH |
+| 4 | **Perplexity Pro** | Perplexity AI | $20/mo | ৳349/mo | ৳899/mo | ⚡ HIGH |
+| 5 | **Google AI Pro** | Google | $19.99/mo | ৳449/mo | ৳1,299/mo | ⚡ HIGH |
+| 6 | **Claude Pro** | Anthropic | $20/mo | ৳599/mo | ৳2,950/mo | 🔵 MEDIUM |
+| 7 | **Midjourney** | Midjourney | $10–60/mo | ৳699/mo | ৳1,299/mo | 🔵 MEDIUM |
+| 8 | **Claude Team** | Anthropic | $25/seat | ৳1,399/mo | ৳3,950/mo | 🔵 MEDIUM |
+| 9 | **Canva Pro** | Canva | $15/mo | — | ৳599–1,199/mo | 🟢 ROUTINE |
+| 10 | **Notion AI** | Notion | $10/mo | ৳349/mo | ৳999/mo | 🟢 ROUTINE |
+| 11 | **Leonardo AI** | Leonardo | $12/mo | ৳349/mo | — | 🟢 ROUTINE |
+| 12 | **Runway ML** | Runway | $15/mo | ৳899/mo | — | 🟢 ROUTINE |
+| 13 | **Grammarly Premium** | Grammarly | $12/mo | ৳149/mo | ৳349/mo | 🟢 ROUTINE |
+| 14 | **Netflix Premium** | Netflix | $19.99/mo | ৳189/mo | — | 🟢 ROUTINE |
+| 15 | **Spotify Premium** | Spotify | $10.99/mo | — | ৳79–129/mo | 🟢 ROUTINE |
+| 16 | **Kling AI** | Kuaishou | $10/mo | ৳599/mo | — | 🟢 ROUTINE |
+| 17 | **Pika Labs** | Pika | $10/mo | ৳499/mo | — | 🟢 ROUTINE |
+| 18 | **Google One Premium** | Google | $9.99/mo | ৳149/mo | — | 🟢 ROUTINE |
+
+---
+
+## ═══════════════════════════════════════════
+
+## SELF-VERIFICATION CHECKLIST (Before Marking ANY Page "Done")
+
+## ═══════════════════════════════════════════

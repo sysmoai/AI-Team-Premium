@@ -10,27 +10,29 @@ const CATEGORIES_MENU = [
     items: [
       { name: "ChatGPT Premium Subscriptions", href: "/chatgpt-plans", desc: "৳৩৯৯–৳৪,৫০০/mo · 7 plans" },
       { name: "Claude Pro", href: "/claude-plans", desc: "৳৫৯৯/mo · Long docs & coding" },
-      { name: "Google Gemini Advanced", href: "/gemini-plans", desc: "৳৪৯৯/mo · Google Workspace" },
+      { name: "Google AI Pro", href: "/tools/google-ai-pro", desc: "৳৪৪৯/mo · Gemini 2.5 + NotebookLM + 2TB" },
+      { name: "SuperGrok (xAI)", href: "/tools/supergrok", desc: "৳৪৯৯/mo · Unlimited images + live X data" },
       { name: "Perplexity Pro", href: "/perplexity-plans", desc: "৳৫৯৯/mo · AI-powered search" },
-      { name: "Grok Premium", href: "/grok-plans", desc: "৳৬৯৯/mo · Real-time data + Aurora" },
     ],
   },
   {
-    group: "🎨 Creative & Productivity",
+    group: "🎨 Creative & AI Image / Video",
+    items: [
+      { name: "Midjourney", href: "/tools/midjourney", desc: "৳১,২০০/mo · AI image generation v7" },
+      { name: "Leonardo AI", href: "/tools/leonardo", desc: "৳৩৪৯/mo · 20+ models, unlimited creativity" },
+      { name: "Runway ML", href: "/tools/runway", desc: "৳৮৯৯/mo · Professional AI video studio" },
+      { name: "Kling AI", href: "/tools/kling", desc: "৳৫৯৯/mo · 5-min videos + lip sync" },
+      { name: "Canva Pro", href: "/canva-plans", desc: "৳৩৫০/mo · Magic Studio + Dream Lab" },
+    ],
+  },
+  {
+    group: "✍️ Writing & Productivity",
     items: [
       { name: "Grammarly Premium", href: "/grammarly-plans", desc: "৳৮০০/mo · AI writing assistant" },
-      { name: "Canva Pro", href: "/canva-plans", desc: "৳৩৫০/mo · Magic Studio + Dream Lab" },
-      { name: "Midjourney", href: "/tools/midjourney", desc: "৳১,২০০/mo · AI image generation v7" },
       { name: "ElevenLabs Voice AI", href: "/tools/elevenlabs", desc: "৳৬৯৯/mo · Bangla voice & dubbing" },
       { name: "Notion AI", href: "/tools/notion", desc: "৳৪৫০/mo · AI workspace & notes" },
-    ],
-  },
-  {
-    group: "💻 Developer & Professional",
-    items: [
       { name: "GitHub Copilot", href: "/tools/copilot", desc: "৳১,২০০/mo · AI code assistant" },
       { name: "Microsoft 365 Copilot", href: "/tools/microsoft365", desc: "৳৮৯৯/mo · Word, Excel, Teams + AI" },
-      { name: "LinkedIn Premium", href: "/tools/linkedin", desc: "৳৯৯৯/mo · InMail, job insights, learning" },
     ],
   },
   {

@@ -30,6 +30,11 @@ import NotionPage from "./pages/tools/Notion";
 import Microsoft365Page from "./pages/tools/Microsoft365";
 import LinkedInPage from "./pages/tools/LinkedIn";
 import ElevenLabsPage from "./pages/tools/ElevenLabs";
+import SuperGrok from "./pages/tools/SuperGrok";
+import GoogleAIPro from "./pages/tools/GoogleAIPro";
+import LeonardoPage from "./pages/tools/Leonardo";
+import RunwayPage from "./pages/tools/Runway";
+import KlingPage from "./pages/tools/Kling";
 import PlusShared from "./pages/chatgpt/PlusShared";
 import PlusPremiumShared from "./pages/chatgpt/PlusPremiumShared";
 import PlusPersonalSeat from "./pages/chatgpt/PlusPersonalSeat";
@@ -107,6 +112,11 @@ function Router() {
         <Route path="/tools/microsoft365" component={Microsoft365Page} />
         <Route path="/tools/linkedin" component={LinkedInPage} />
         <Route path="/tools/elevenlabs" component={ElevenLabsPage} />
+        <Route path="/tools/supergrok" component={SuperGrok} />
+        <Route path="/tools/google-ai-pro" component={GoogleAIPro} />
+        <Route path="/tools/leonardo" component={LeonardoPage} />
+        <Route path="/tools/runway" component={RunwayPage} />
+        <Route path="/tools/kling" component={KlingPage} />
         <Route component={NotFound} />
       </Switch>
     </>

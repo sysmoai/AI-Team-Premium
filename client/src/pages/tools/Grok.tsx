@@ -14,7 +14,7 @@ export default function Grok() {
         "Think mode: extended chain-of-thought reasoning",
         "DeepSearch: real-time web + X (Twitter) data synthesis",
         "Aurora image generation — photorealistic AI images",
-        "1,000,000 token context window for long documents",
+        "1,000,000 token context window for long documents and codebases",
         "Real-time information without knowledge cut-off",
         "Code generation, analysis and debugging",
         "Voice mode — natural conversation in Bangla and English",

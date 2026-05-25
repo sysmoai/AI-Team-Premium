@@ -10,7 +10,7 @@ export default function SuperGrok() {
       accentColor="#7C3AED"
       icon={Cpu}
       features={[
-        "Grok 3 — xAI's flagship model, outperforms GPT-4o and Claude Sonnet on benchmarks",
+        "Grok 3 — xAI's flagship model, competitive with GPT-4.5 and Claude Sonnet on benchmarks",
         "Big Brain mode — extended deep reasoning for math, science, and complex logic",
         "DeepSearch — real-time synthesis of X/Twitter data + entire web",
         "Aurora image generation — unlimited photorealistic AI images per month",
@@ -153,10 +153,10 @@ export default function SuperGrok() {
         },
       ]}
       competitorRows={[
-        { feature: "AI Model", thisProduct: "Grok 3 (xAI)", chatgpt: "GPT-4o", claude: "Claude Sonnet 4", gemini: "Gemini 2.5 Pro" },
+        { feature: "AI Model", thisProduct: "Grok 3 (xAI)", chatgpt: "GPT-4.5 / o4-mini", claude: "Claude Sonnet 4", gemini: "Gemini 2.5 Pro" },
         { feature: "Context Window", thisProduct: "1M tokens", chatgpt: "128K tokens", claude: "200K tokens", gemini: "1M tokens" },
         { feature: "Real-time X/Twitter Data", thisProduct: "✅ Full live", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
-        { feature: "Image Generation", thisProduct: "✅ Unlimited (Aurora)", chatgpt: "Limited (DALL·E)", claude: "❌ No", gemini: "✅ Yes (Imagen 4)" },
+        { feature: "Image Generation", thisProduct: "✅ Unlimited (Aurora)", chatgpt: "GPT-image-1 (limited)", claude: "❌ No", gemini: "✅ Yes (Imagen 4)" },
         { feature: "Video Generation", thisProduct: "✅ Yes (beta)", chatgpt: "Limited (Sora)", claude: "❌ No", gemini: "✅ Yes (Veo 2)" },
         { feature: "Deep Reasoning", thisProduct: "✅ Big Brain", chatgpt: "✅ o3/o4-mini", claude: "✅ Extended Thinking", gemini: "✅ Flash Thinking" },
         { feature: "Knowledge Cut-off", thisProduct: "✅ None (live)", chatgpt: "Apr 2024", claude: "Apr 2024", gemini: "✅ Live (Google)" },

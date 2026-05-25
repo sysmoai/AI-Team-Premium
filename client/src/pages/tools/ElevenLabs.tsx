@@ -6,11 +6,11 @@ export default function ElevenLabsPage() {
     <ToolDetail
       name="ElevenLabs Voice AI"
       tagline="in Bangladesh"
-      description="ElevenLabs is the world's most realistic AI voice generator — creating natural-sounding speech in Bangla, English, and 29 languages. Perfect for BD YouTubers, educators, and content creators. Clone voices, dub videos, generate podcasts — from ৳699/month via bKash/Nagad."
+      description="ElevenLabs is the world's most realistic AI voice generator — creating natural-sounding speech in Bangla, English, and 32+ languages. Perfect for BD YouTubers, educators, and content creators. Clone voices, dub videos, generate podcasts — from ৳699/month via bKash/Nagad."
       accentColor="#F97316"
       icon={Mic}
       features={[
-        "29 languages including Bangla and English text-to-speech",
+        "32+ languages including Bangla and English text-to-speech",
         "100,000 characters/month — enough for 10+ YouTube videos",
         "Voice cloning — replicate any voice from a 30-second sample",
         "30+ ultra-realistic AI voices (male, female, formal, casual)",
@@ -29,7 +29,7 @@ export default function ElevenLabsPage() {
           type: "Shared",
           specs: [
             { label: "Usage", value: "100K characters/mo" },
-            { label: "Languages", value: "29 incl. Bangla" },
+            { label: "Languages", value: "32+ incl. Bangla" },
             { label: "Payment", value: "bKash / Nagad" },
           ],
         },

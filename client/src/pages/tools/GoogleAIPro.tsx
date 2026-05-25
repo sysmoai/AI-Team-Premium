@@ -154,9 +154,9 @@ export default function GoogleAIPro() {
         },
       ]}
       competitorRows={[
-        { feature: "AI Model", thisProduct: "Gemini 2.5 Pro Ultra", chatgpt: "GPT-4o", claude: "Claude Sonnet 4", gemini: "Gemini 2.5 Pro (same base)" },
+        { feature: "AI Model", thisProduct: "Gemini 2.5 Pro Ultra", chatgpt: "GPT-4.5 / o4-mini", claude: "Claude Sonnet 4", gemini: "Gemini 2.5 Pro (same base)" },
         { feature: "Context Window", thisProduct: "1M tokens", chatgpt: "128K tokens", claude: "200K tokens", gemini: "1M tokens" },
-        { feature: "Image Generation", thisProduct: "✅ Imagen 4 (~50/day)", chatgpt: "Limited DALL·E", claude: "❌ No", gemini: "✅ Imagen 4" },
+        { feature: "Image Generation", thisProduct: "✅ Imagen 4 (~50/day)", chatgpt: "GPT-image-1 (limited)", claude: "❌ No", gemini: "✅ Imagen 4" },
         { feature: "Video Generation", thisProduct: "✅ Veo 2 (1080p)", chatgpt: "Limited Sora", claude: "❌ No", gemini: "✅ Veo 2" },
         { feature: "Deep Research", thisProduct: "✅ 30+ sources", chatgpt: "✅ Yes", claude: "✅ Yes", gemini: "✅ Yes" },
         { feature: "NotebookLM Plus", thisProduct: "✅ 500 sources", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },

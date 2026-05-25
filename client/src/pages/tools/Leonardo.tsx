@@ -129,8 +129,8 @@ export default function LeonardoPage() {
         },
       ]}
       competitorRows={[
-        { feature: "Image Quality", thisProduct: "⭐⭐⭐⭐⭐ (specialist)", chatgpt: "⭐⭐⭐ (DALL·E)", claude: "❌ No generation", gemini: "⭐⭐⭐⭐ (Imagen 4)" },
-        { feature: "Models Available", thisProduct: "20+ fine-tuned", chatgpt: "DALL·E 3 only", claude: "None", gemini: "Imagen 4 only" },
+        { feature: "Image Quality", thisProduct: "⭐⭐⭐⭐⭐ (specialist)", chatgpt: "⭐⭐⭐⭐ (GPT-image-1)", claude: "❌ No generation", gemini: "⭐⭐⭐⭐ (Imagen 4)" },
+        { feature: "Models Available", thisProduct: "20+ fine-tuned", chatgpt: "GPT-image-1", claude: "None", gemini: "Imagen 4 only" },
         { feature: "Image-to-Image", thisProduct: "✅ Full ControlNet", chatgpt: "Basic", claude: "❌ No", gemini: "Basic" },
         { feature: "Canvas / Inpainting", thisProduct: "✅ Professional", chatgpt: "Limited", claude: "❌ No", gemini: "Basic" },
         { feature: "Animate Image (Video)", thisProduct: "✅ 4-sec clips", chatgpt: "Via Sora", claude: "❌ No", gemini: "✅ Veo 2" },

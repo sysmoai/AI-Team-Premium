@@ -10,7 +10,7 @@ export default function Vault() {
       accentColor="#F59E0B"
       icon={Zap}
       features={[
-        "ChatGPT Plus (GPT-4o, DALL-E 3, voice mode, browsing, Custom GPTs)",
+        "ChatGPT Plus (GPT-4.5 / o4-mini, GPT-image-1 image generation, Canvas, Advanced Voice Mode, Deep Research, Custom GPTs)",
         "Claude Pro — Claude Sonnet 4 with Extended Thinking & 200K context",
         "Gemini Advanced — Gemini 2.5 Pro with Deep Research & 1M context",
         "All three shared seats delivered via single WhatsApp order",

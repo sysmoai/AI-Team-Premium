@@ -6,7 +6,7 @@ export default function Copilot() {
     <ToolDetail
       name="GitHub Copilot"
       tagline="Your AI Pair Programmer"
-      description="The AI coding tool used by over 1.8 million developers. Real-time code completion, Copilot Chat, autonomous Copilot Agents, pull-request summaries and test generation — upgraded privately on your GitHub account, payable via bKash/Nagad."
+      description="The AI coding tool used by over 2 million developers. Real-time code completion, Copilot Chat, autonomous Copilot Agents, pull-request summaries and test generation — upgraded privately on your GitHub account, payable via bKash/Nagad."
       accentColor="#24292F"
       icon={SiGithub as any}
       features={[

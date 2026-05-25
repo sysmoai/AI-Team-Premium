@@ -6,14 +6,14 @@ export default function Perplexity() {
     <ToolDetail
       name="Perplexity Pro"
       tagline="Search Redefined"
-      description="The world's most powerful AI answer engine. Sonar Pro with Deep Research, real-time web citations, multi-model access (GPT-4o, Claude, Gemini), unlimited file uploads and Perplexity Assistant voice mode."
+      description="The world's most powerful AI answer engine. Sonar Pro with Deep Research, real-time web citations, multi-model access (o4-mini, GPT-4.5, Claude Sonnet 4, Gemini 2.5 Pro), unlimited file uploads and Perplexity Assistant voice mode."
       accentColor="#20B2AA"
       icon={Search}
       features={[
         "Sonar Pro — Perplexity's fastest and most accurate model",
         "Deep Research: autonomous multi-step research with cited reports",
         "Real-time web search with numbered citations",
-        "Switch between GPT-4o, Claude 4 Sonnet, Gemini 2.5 Pro and more",
+        "Switch between o4-mini, GPT-4.5, Claude Sonnet 4, Gemini 2.5 Pro, and Sonar",
         "Upload and analyse unlimited PDFs, spreadsheets and documents",
         "Perplexity Assistant — voice-based AI assistant",
         "Visualisations: charts, diagrams and timelines in answers",

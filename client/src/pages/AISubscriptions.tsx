@@ -5,6 +5,7 @@ import { Clock, Check, ArrowUpRight, MessageCircle } from "lucide-react";
 import { Link } from "wouter";
 import { chatgptPlans } from "@/lib/plans";
 import { config } from "@/lib/config";
+import { BreadcrumbSchema, JsonLd } from "@/components/seo/JsonLd";
 
 const SUBS = [
   { name: "ChatGPT Plus", type: "Shared", price: "৳399", period: "/mo", delivery: "5-15 min", link: "/tools/chatgpt" },
@@ -21,12 +22,37 @@ const SUBS = [
 
 export default function AISubscriptions() {
   usePageMeta({
-    title: "All AI Subscriptions",
-    description: "Browse all premium AI subscriptions — ChatGPT, Claude, Gemini, Grammarly, Perplexity & more. Pay via bKash/Nagad. Fast delivery in Bangladesh.",
+    title: "All AI Subscriptions in Bangladesh — ChatGPT, Claude, Gemini & 10+ Tools",
+    description: "Browse all premium AI subscriptions in Bangladesh — ChatGPT Plus (৳399/mo), Claude Pro, Gemini Advanced, Grammarly, Canva, Midjourney, Perplexity & more. Pay via bKash/Nagad. 5–15 min delivery.",
+    path: "/ai-subscriptions",
   });
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "AI Subscriptions Available in Bangladesh from AI Team Premium BD",
+    "numberOfItems": SUBS.length,
+    "itemListElement": SUBS.map((s, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://aiteampremiumbd.com${s.link}`,
+      "name": `${s.name} Bangladesh`,
+    })),
+  };
 
   return (
     <Layout>
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "AI Subscriptions", path: "/ai-subscriptions" }]} />
+      <JsonLd data={itemListSchema} />
+      <section className="py-8" style={{ background: BRAND.sky }}>
+        <div className="mx-auto max-w-5xl px-6 lg:px-10">
+          <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+            <p style={{ color: BRAND.navy, fontSize: "1rem", lineHeight: 1.7, fontWeight: 500 }}>
+              <strong>AI Team Premium BD</strong> sells 10+ official premium AI subscriptions in Bangladesh — <strong>ChatGPT Plus from ৳399/mo</strong>, Claude Pro (৳599), Gemini Advanced (৳499), Grammarly Premium, Canva Pro, Midjourney, Perplexity Pro, Grok Premium, GitHub Copilot, and the AI Tools Vault bundle — payable in BDT via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>, with 5–15 minute delivery and a 30-day replacement warranty.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
           <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>AI Subscriptions</p>

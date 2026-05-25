@@ -5,6 +5,7 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { chatgptPlans } from "@/lib/plans";
 import { SupportUpsell } from "@/components/SupportUpsell";
 import { config } from "@/lib/config";
+import { FAQSchema, JsonLd } from "@/components/seo/JsonLd";
 import {
   ArrowUpRight,
   Check,
@@ -63,7 +64,19 @@ export default function Home() {
   usePageMeta({
     title: "AI Team Premium BD — ChatGPT, Claude & AI Tools in Bangladesh",
     description: "Buy ChatGPT Plus from ৳399/mo. Claude Pro, Gemini Advanced & more. Pay via bKash/Nagad. 5-15 min delivery. Bangladesh's #1 AI subscription provider.",
+    path: "/",
   });
+  const homeFaqs = FAQS.map((f) => ({ q: f.q, a: f.a }));
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "AI Team Premium BD — Premium AI Subscriptions in Bangladesh",
+    "url": "https://aiteampremiumbd.com/",
+    "description":
+      "AI Team Premium BD sells official ChatGPT Plus, Pro, Business, Claude Pro, Gemini Advanced, Canva Pro, Grammarly Premium, Midjourney and other premium AI subscriptions in Bangladesh, payable via bKash and Nagad, with 5–15 minute delivery and a 30-day replacement warranty.",
+    "inLanguage": ["en", "bn"],
+    "isPartOf": { "@id": "https://aiteampremiumbd.com/#website" },
+  };
   const featuredPlans = [
     chatgptPlans.find(p => p.slug === 'plus-shared'),
     chatgptPlans.find(p => p.slug === 'plus-premium-shared'),
@@ -72,6 +85,8 @@ export default function Home() {
 
   return (
     <Layout>
+      <JsonLd data={collectionPageSchema} />
+      <FAQSchema items={homeFaqs} />
       <section className="relative overflow-hidden" style={{ background: BRAND.navy }}>
         <div className="absolute inset-0">
           <img src={IMG_HERO} alt="" className="w-full h-full object-cover" style={{ opacity: 0.15, mixBlendMode: "luminosity" }} loading="eager" fetchpriority="high" />
@@ -135,7 +150,18 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-24" style={{ background: `linear-gradient(to top, ${BRAND.white}, transparent)` }} />
       </section>
 
-      <section className="relative -mt-8 z-10">
+      {/* DIRECT ANSWER BLOCK (GEO: answer-first, 40-60 words, statistics) */}
+      <section className="relative -mt-8 z-10 mb-12">
+        <div className="mx-auto max-w-5xl px-6 lg:px-10">
+          <div className="rounded-2xl p-6 md:p-8 mb-4" style={{ background: BRAND.white, boxShadow: "0 8px 40px rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.06)" }}>
+            <p style={{ color: BRAND.navy, fontSize: "1.02rem", lineHeight: 1.7, fontWeight: 500 }}>
+              <strong>AI Team Premium BD (AITPBD)</strong> is Bangladesh's leading provider of official premium AI subscriptions — ChatGPT Plus from <strong>৳399/month</strong>, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via <strong>bKash and Nagad</strong>, with <strong>5–15 minute delivery</strong>, a <strong>30-day replacement warranty</strong>, and Bangla + English WhatsApp support, serving over <strong>10,000+ Bangladeshi users</strong> since 2024.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative z-10">
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="rounded-2xl p-6 md:p-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-8 text-center" style={{ background: BRAND.white, boxShadow: "0 8px 40px rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.06)" }}>
             {["5-15 min delivery", "bKash/Nagad accepted", "No extra VAT", "WhatsApp support", "Replacement guarantee"].map((t) => (

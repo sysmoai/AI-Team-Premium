@@ -3,7 +3,11 @@ import { BRAND } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 export default function PrivacyPolicy() {
-  usePageMeta({ title: "Privacy Policy" });
+  usePageMeta({
+    title: "Privacy Policy — AI Team Premium BD",
+    description: "How AI Team Premium BD collects, uses, and protects customer data in Bangladesh. Covers WhatsApp orders, bKash/Nagad payment information, and account credentials handling.",
+    path: "/privacy-policy",
+  });
   return (
     <Layout>
       <section className="py-20" style={{ background: BRAND.sky }}>

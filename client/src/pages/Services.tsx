@@ -7,11 +7,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { config } from "@/lib/config";
+import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 export default function Services() {
   usePageMeta({
-    title: "ChatGPT সাপোর্ট বাংলাদেশ — AI Training & Live Support",
-    description: "Premium AI support sessions, student study packs, and business AI setup in Bangladesh. Live Google Meet sessions with AI experts.",
+    title: "AI Support & Training in Bangladesh — Live ChatGPT Help (৳799/hr)",
+    description: "Book live AI training and ChatGPT support sessions in Bangladesh from ৳799/hour. Student packs (৳1,999), freelancer packs (৳4,999), business AI setup (৳12,999). Live Google Meet in Bangla.",
+    path: "/support",
   });
 
   const faqs = [
@@ -58,6 +60,16 @@ export default function Services() {
 
   return (
     <Layout>
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "AI Support", path: "/support" }]} />
+      <section className="py-8" style={{ background: BRAND.sky }}>
+        <div className="mx-auto max-w-5xl px-6 lg:px-10">
+          <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+            <p style={{ color: BRAND.navy, fontSize: "1rem", lineHeight: 1.7, fontWeight: 500 }}>
+              <strong>AI Team Premium BD</strong> offers live, Bangla-language AI training and ChatGPT support sessions in Bangladesh. Hourly sessions start at <strong>৳799/hour</strong>, student packs from <strong>৳1,999</strong>, freelancer packs from <strong>৳4,999</strong>, and full business AI setup from <strong>৳12,999</strong> — delivered live over Google Meet by Bangladeshi AI experts, with prompt packs and workflow documents included.
+            </p>
+          </div>
+        </div>
+      </section>
       {/* Hero Section */}
       <section className="py-24" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">

@@ -4,6 +4,7 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { Check, Clock, ArrowUpRight, MessageCircle } from "lucide-react";
 import { type LucideIcon } from "lucide-react";
 import { config } from "@/lib/config";
+import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
 
 interface ToolPlan {
   label: string;
@@ -22,12 +23,57 @@ interface ToolDetailProps {
   icon: LucideIcon;
   features: string[];
   plans: ToolPlan[];
+  path?: string;
 }
 
-export function ToolDetail({ name, tagline, description, accentColor, icon: Icon, features, plans }: ToolDetailProps) {
-  usePageMeta({ title: name, description });
+const TOOL_PATH_BY_NAME: Record<string, string> = {
+  "ChatGPT": "/tools/chatgpt",
+  "Claude Pro": "/tools/claude",
+  "Gemini Advanced": "/tools/gemini",
+  "Grammarly Premium": "/tools/grammarly",
+  "Canva Pro": "/tools/canva",
+  "Midjourney": "/tools/midjourney",
+  "Perplexity Pro": "/tools/perplexity",
+  "Grok Premium": "/tools/grok",
+  "GitHub Copilot": "/tools/copilot",
+  "AI Tools Vault": "/tools/vault",
+};
+
+export function ToolDetail({ name, tagline, description, accentColor, icon: Icon, features, plans, path: pathProp }: ToolDetailProps) {
+  const path = pathProp || TOOL_PATH_BY_NAME[name] || `/tools/${name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`;
+  usePageMeta({ title: `${name} Bangladesh — bKash/Nagad`, description, path });
+
+  const minPrice = plans.length
+    ? Math.min(...plans.map((p) => parseInt(p.price.replace(/[^0-9]/g, ""), 10) || 9999))
+    : 0;
+  const cheapestPlan = plans.find((p) => parseInt(p.price.replace(/[^0-9]/g, ""), 10) === minPrice) || plans[0];
+
+  const toolFaqs = [
+    { q: `How much does ${name} cost in Bangladesh?`, a: `${name} starts at ${cheapestPlan?.price || "৳399"}${cheapestPlan?.period || "/mo"} from AI Team Premium BD, payable in BDT via bKash or Nagad. No international card needed.` },
+    { q: `How do I buy ${name} with bKash or Nagad?`, a: `Message AI Team Premium BD on WhatsApp (+880 1533-262758) with the plan you want. We confirm price, share the bKash/Nagad number privately, and deliver login or invite details within ${cheapestPlan?.delivery || "5–15 minutes"}.` },
+    { q: `Is ${name} from AI Team Premium BD official?`, a: `Yes. AI Team Premium BD provides official ${name} subscriptions sourced through legitimate channels. No cracked or fake access — fully working features and a 30-day replacement warranty.` },
+    { q: `Can I use ${name} in Bangla?`, a: "Yes. Most premium AI tools sold by AI Team Premium BD — including ChatGPT, Claude, and Gemini — generate high-quality Bangla responses. Our support team also assists in Bangla and English." },
+  ];
+
   return (
     <Layout>
+      <BreadcrumbSchema
+        items={[
+          { name: "Home", path: "/" },
+          { name: "AI Subscriptions", path: "/ai-subscriptions" },
+          { name, path },
+        ]}
+      />
+      <ProductSchema
+        name={`${name} Bangladesh`}
+        description={description}
+        path={path}
+        priceBDT={minPrice || 399}
+        category="AI Subscription"
+        rating={{ value: "4.9", count: "84" }}
+      />
+      <FAQSchema items={toolFaqs} />
+      
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
           <div className="inline-flex items-center justify-center rounded-2xl mb-6" style={{ width: 64, height: 64, background: `${accentColor}15` }}>
@@ -39,6 +85,12 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
           <p className="mt-4 mx-auto max-w-xl" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.95rem", lineHeight: 1.65 }}>
             {description}
           </p>
+          {/* DIRECT ANSWER BLOCK (GEO) */}
+          <div className="mt-8 mx-auto max-w-2xl rounded-xl p-5 text-left" style={{ background: BRAND.white, border: `1px solid ${accentColor}25` }}>
+            <p style={{ color: BRAND.navy, fontSize: "0.95rem", lineHeight: 1.7 }}>
+              <strong>{name}</strong> is available in Bangladesh from AI Team Premium BD starting at <strong>{cheapestPlan?.price}{cheapestPlan?.period}</strong>, payable in BDT via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>, with <strong>{cheapestPlan?.delivery}</strong> delivery, Bangla + English WhatsApp support, and a 30-day replacement warranty — no international credit card required.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "jYBB8aiBSLfvhcTEJjzO1"
+uri = "file://.local/geo-audit-aitpbd.md"
+type = "text"
+title = "AITPBD GEO Audit — Full Implementation Report"

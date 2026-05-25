@@ -53,8 +53,9 @@ const SECTIONS = [
 
 export default function Pricing() {
   usePageMeta({
-    title: "All Pricing — AI Tools & Services | AI Team Premium BD",
-    description: "Complete pricing for all AI tools and services. ChatGPT Plus from ৳399/mo, Claude, Gemini, Canva, Grammarly, AI Ops Sprint. Pay via bKash/Nagad.",
+    title: "AI Tools Pricing in Bangladesh — All Plans from ৳399/mo",
+    description: "Complete BDT pricing for all AI tools and services from AI Team Premium BD. ChatGPT Plus ৳399/mo, Claude, Gemini, Canva, Grammarly, AI Ops Sprint. Pay via bKash/Nagad.",
+    path: "/pricing",
   });
 
   return (

@@ -3,7 +3,11 @@ import { BRAND } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
 export default function TermsOfService() {
-  usePageMeta({ title: "Terms of Service" });
+  usePageMeta({
+    title: "Terms of Service — AI Team Premium BD",
+    description: "Terms governing the purchase and use of AI subscriptions and support services from AI Team Premium BD in Bangladesh. Includes usage rules for shared plans, warranty conditions, and dispute resolution.",
+    path: "/terms",
+  });
   return (
     <Layout>
       <section className="py-20" style={{ background: BRAND.sky }}>

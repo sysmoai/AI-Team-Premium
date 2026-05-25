@@ -42,8 +42,9 @@ const SERVICE_OPTIONS = [
 
 export default function Contact() {
   usePageMeta({
-    title: "Start a Project — Contact Us",
-    description: "Get in touch with AI Team Premium BD. Order AI subscriptions or start a digital project. WhatsApp: +880 1533-262758",
+    title: "Contact AI Team Premium BD — Order on WhatsApp (+880 1533-262758)",
+    description: "Order ChatGPT, Claude, Gemini and AI subscriptions in Bangladesh. WhatsApp +880 1533-262758 or fill out the form. We reply within 5–15 minutes during 9 AM–11 PM BST.",
+    path: "/start-a-project",
   });
 
   const form = useForm<InsertContact>({

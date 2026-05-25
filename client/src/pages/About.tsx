@@ -4,6 +4,7 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { Link } from "wouter";
 import { Users, Shield, Lightbulb, ArrowUpRight, MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
+import { BreadcrumbSchema, JsonLd } from "@/components/seo/JsonLd";
 
 const VALUES = [
   { icon: Shield, title: "Trust & Transparency", desc: "We deliver exactly what we promise. No hidden fees, no fake accounts. 100% genuine official subscriptions." },
@@ -13,11 +14,30 @@ const VALUES = [
 
 export default function About() {
   usePageMeta({
-    title: "About Us",
-    description: "Learn about AI Team Premium BD — Bangladesh's trusted provider of premium AI subscriptions and digital services.",
+    title: "About AI Team Premium BD — Bangladesh's #1 AI Subscription Provider",
+    description: "AI Team Premium BD (AITPBD), founded in 2024, is Bangladesh's leading provider of official ChatGPT, Claude, Gemini and AI subscriptions, serving 10,000+ users in BDT via bKash and Nagad.",
+    path: "/about",
   });
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "url": "https://aiteampremiumbd.com/about",
+    "name": "About AI Team Premium BD",
+    "description": "AI Team Premium BD (AITPBD), founded in 2024 in Dhaka, Bangladesh, is the country's leading reseller of official premium AI subscriptions — ChatGPT, Claude, Gemini and more — payable in BDT via bKash and Nagad.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "AI Team Premium BD",
+      "alternateName": "AITPBD",
+      "foundingDate": "2024",
+      "url": "https://aiteampremiumbd.com",
+      "areaServed": "BD",
+    },
+  };
+
   return (
     <Layout>
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "About", path: "/about" }]} />
+      <JsonLd data={aboutPageSchema} />
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
           <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>About Us</p>
@@ -34,14 +54,38 @@ export default function About() {
           </div>
 
           <div className="space-y-8" style={{ color: BRAND.navy, opacity: 0.65, fontSize: "0.95rem", lineHeight: 1.8 }}>
+            {/* DIRECT ANSWER BLOCK (GEO) */}
+            <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.sky, opacity: 1 }}>
+              <p style={{ color: BRAND.navy, opacity: 1, fontSize: "1rem", lineHeight: 1.7, fontWeight: 500 }}>
+                <strong>AI Team Premium BD (AITPBD)</strong>, founded in <strong>2024</strong> and based in <strong>Dhaka, Bangladesh</strong>, is the country's leading reseller of official premium AI subscriptions, having served over <strong>10,000 users</strong> with a 4.9/5 average satisfaction rating across <strong>300+ verified reviews</strong>. We accept bKash, Nagad, Rocket and Bank Transfer in BDT, deliver in 5–15 minutes, and guarantee replacement within 24 hours.
+              </p>
+            </div>
+
             <div>
               <h2 className="mb-4" style={{ color: BRAND.navy, opacity: 1, fontSize: "1.4rem", fontWeight: 700 }}>Who We Are</h2>
               <p>
-                AI Team Premium BD (AITPBD) started with a simple mission: to bridge the gap between global AI technology and the Bangladeshi market. We noticed that many talented professionals, students, and businesses in Bangladesh were struggling to access premium global AI tools due to international payment restrictions.
+                AI Team Premium BD (AITPBD) started in 2024 with a simple mission: to bridge the gap between global AI technology and the Bangladeshi market. We noticed that many talented professionals, students, and businesses in Bangladesh were struggling to access premium global AI tools due to international payment restrictions — over 95% of Bangladeshi users do not hold an international credit card capable of recurring USD billing.
               </p>
               <p className="mt-4">
-                We solve this by acting as your trusted local partner. We provide genuine, official access to tools like ChatGPT Plus, Claude Pro, Gemini Advanced, and more — allowing you to pay in BDT via accessible methods like bKash and Nagad.
+                We solve this by acting as your trusted local partner. We provide genuine, official access to tools like <strong>ChatGPT Plus, ChatGPT Pro, ChatGPT Business, Claude Pro, Gemini Advanced, Canva Pro, Grammarly Premium, Midjourney, Perplexity Pro, Grok Premium and GitHub Copilot</strong> — allowing you to pay in BDT via accessible methods like bKash and Nagad.
               </p>
+            </div>
+
+            <div>
+              <h2 className="mb-4" style={{ color: BRAND.navy, opacity: 1, fontSize: "1.4rem", fontWeight: 700 }}>By the Numbers</h2>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 not-prose">
+                {[
+                  { n: "10,000+", l: "Users served" },
+                  { n: "4.9 / 5", l: "Average rating" },
+                  { n: "5–15 min", l: "Median delivery" },
+                  { n: "24 h", l: "Replacement SLA" },
+                ].map((s) => (
+                  <div key={s.l} className="rounded-2xl p-5 text-center" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+                    <p style={{ color: BRAND.blue, fontSize: "1.3rem", fontWeight: 700, opacity: 1 }}>{s.n}</p>
+                    <p className="mt-1" style={{ color: BRAND.navy, opacity: 0.6, fontSize: "0.78rem" }}>{s.l}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div>

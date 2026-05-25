@@ -25,7 +25,7 @@ import {
 import { useState, useRef } from "react";
 
 export default function ChatGPTPlans() {
-  usePageMeta({
+  usePageMeta({ path: "/chatgpt-plans",
     title: "ChatGPT Plans in Bangladesh 2026 — ৳৩৯৯ থেকে",
     description: "বাংলাদেশে সরাসরি bKash/Nagad দিয়ে ChatGPT Plus, Business এবং Pro সাবস্ক্রিপশন কিনুন। ৫-১৫ মিনিটে ডেলিভারি ও ৩০ দিনের ওয়ারেন্টি।"
   });
@@ -106,21 +106,6 @@ export default function ChatGPTPlans() {
     return <span className="text-sm font-medium">{val}</span>;
   };
 
-  const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "AI Team Premium BD",
-    "url": "https://aiteampremiumbd.com",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+8801533262758",
-      "contactType": "sales",
-      "availableLanguage": ["Bengali", "English"]
-    },
-    "areaServed": "BD",
-    "sameAs": ["https://www.facebook.com/profile.php?id=61586742067282"]
-  };
-
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -137,7 +122,6 @@ export default function ChatGPTPlans() {
   return (
     <Layout>
     <div className="flex flex-col gap-0 pb-20">
-      <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
 
       {/* 1. HERO */}

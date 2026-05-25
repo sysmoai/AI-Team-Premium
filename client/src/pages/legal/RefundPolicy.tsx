@@ -7,8 +7,9 @@ import { config } from "@/lib/config";
 
 export default function RefundPolicy() {
   usePageMeta({
-    title: "Refund & Replacement Policy",
-    description: "Our commitment to quality and fairness. Learn about our 30-day warranty, replacement process, and refund terms for AI subscriptions and support sessions."
+    title: "Refund & Replacement Policy — 30-Day Warranty | AI Team Premium BD",
+    description: "AI Team Premium BD's refund and replacement policy for AI subscriptions in Bangladesh. 30-day warranty, 24-hour replacement SLA, and 15-minute refund window for support sessions if the issue cannot be solved.",
+    path: "/refund-policy",
   });
 
   return (

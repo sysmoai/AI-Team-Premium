@@ -54,6 +54,10 @@ A comprehensive website for AI Team Premium BD (AITPBD), Bangladesh's premium AI
 | `/tools/grok` | Grok Premium | `client/src/pages/tools/Grok.tsx` |
 | `/tools/copilot` | GitHub Copilot | `client/src/pages/tools/Copilot.tsx` |
 | `/tools/vault` | AI Tools Vault bundle | `client/src/pages/tools/Vault.tsx` |
+| `/tools/notion` | Notion AI | `client/src/pages/tools/Notion.tsx` |
+| `/tools/microsoft365` | Microsoft 365 Copilot | `client/src/pages/tools/Microsoft365.tsx` |
+| `/tools/linkedin` | LinkedIn Premium | `client/src/pages/tools/LinkedIn.tsx` |
+| `/tools/elevenlabs` | ElevenLabs Voice AI | `client/src/pages/tools/ElevenLabs.tsx` |
 
 ## Key Components
 - `Layout` — Navbar + main + Footer + FloatingWhatsApp + StickyMobileCTA + OrganizationSchema

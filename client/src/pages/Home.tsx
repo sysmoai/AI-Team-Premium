@@ -24,6 +24,10 @@ import {
   CreditCard,
   Headphones,
   RefreshCw,
+  GraduationCap,
+  Briefcase,
+  Building2,
+  Video,
 } from "lucide-react";
 
 const IMG_HERO =
@@ -175,6 +179,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* WHO IS THIS FOR — PERSONA SECTION */}
+      <section className="py-20" style={{ background: BRAND.sky }}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="text-center mb-14">
+            <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Designed For</p>
+            <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>কাদের জন্য AITPBD?</h2>
+            <p className="mt-4 max-w-lg mx-auto" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.9rem", lineHeight: 1.65 }}>Whether you're a student, freelancer, business, or creator — we have the right AI tool for you.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: GraduationCap, title: "Students", tagline: "৳399/mo থেকে শুরু", tools: "ChatGPT · Grammarly · Perplexity", desc: "Assignment writing, research summaries, IELTS prep, thesis — let AI do the heavy lifting while you focus on understanding.", color: "#16A34A", link: "/tools/chatgpt" },
+              { icon: Briefcase, title: "Freelancers", tagline: "Fiverr & Upwork-এ এগিয়ে থাকুন", tools: "Claude Pro · Canva Pro · Midjourney", desc: "Faster proposals, better content, stunning visuals — outperform competitors on Fiverr and Upwork with AI-powered work.", color: BRAND.blue, link: "/ai-subscriptions" },
+              { icon: Building2, title: "Businesses", tagline: "Team-wide AI দক্ষতা", tools: "ChatGPT Business · Copilot · Gemini", desc: "Equip your entire team with AI tools. Boost productivity, automate reports, and get live Bangla AI training for your staff.", color: "#7C3AED", link: "/chatgpt-plans" },
+              { icon: Video, title: "Content Creators", tagline: "ভাইরাল কন্টেন্ট বানান", tools: "Midjourney · ElevenLabs · Canva", desc: "AI-generated images, voice-overs in Bangla, thumbnail design — create professional content without a studio or equipment.", color: "#F59E0B", link: "/tools/midjourney" },
+            ].map((p) => (
+              <Link key={p.title} href={p.link} style={{ textDecoration: "none" }} data-testid={`card-persona-${p.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                <div className="rounded-2xl p-7 h-full flex flex-col hover-elevate transition-all cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
+                  <div className="inline-flex items-center justify-center rounded-xl mb-5" style={{ width: 52, height: 52, background: `${p.color}18` }}>
+                    <p.icon size={24} color={p.color} strokeWidth={1.8} />
+                  </div>
+                  <p style={{ color: p.color, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>{p.tagline}</p>
+                  <h3 className="mt-1 mb-3" style={{ color: BRAND.navy, fontSize: "1.1rem", fontWeight: 700 }}>{p.title}</h3>
+                  <p className="mb-4 flex-1" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.82rem", lineHeight: 1.65 }}>{p.desc}</p>
+                  <p style={{ color: p.color, fontSize: "0.72rem", fontWeight: 600 }}>{p.tools}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-center mb-16">
@@ -230,6 +265,47 @@ export default function Home() {
       </section>
 
       <SupportUpsell />
+
+      {/* HOW TO ORDER — 3 STEPS */}
+      <section className="py-20">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="text-center mb-14">
+            <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>How It Works</p>
+            <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>৩ ধাপে AI Subscription নিন</h2>
+            <p className="mt-4 max-w-md mx-auto" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.9rem", lineHeight: 1.65 }}>No credit card setup, no registration. Just WhatsApp → Pay → Get access.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+            {[
+              { step: "01", icon: MessageCircle, color: "#25D366", title: "Message on WhatsApp", desc: "Tell us which AI tool you want. We confirm price and payment details within 5 minutes — in Bangla or English." },
+              { step: "02", icon: CreditCard, color: BRAND.blue, title: "Pay via bKash or Nagad", desc: "We share the bKash/Nagad number privately. Pay in BDT. No international card, no hidden fees, no registration." },
+              { step: "03", icon: Zap, color: "#F59E0B", title: "Get Access Instantly", desc: "Shared plans delivered in 5–15 minutes. Personal plans in 2–4 hours. Your AI tool is ready — we guide setup." },
+            ].map((s) => (
+              <div key={s.step} className="flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-2xl mb-5 flex items-center justify-center" style={{ background: `${s.color}15`, border: `2px solid ${s.color}30` }}>
+                  <s.icon size={32} color={s.color} strokeWidth={1.8} />
+                </div>
+                <div className="inline-flex items-center justify-center w-7 h-7 rounded-full mb-4" style={{ background: s.color }}>
+                  <span style={{ color: "#fff", fontSize: "0.65rem", fontWeight: 800 }}>{s.step}</span>
+                </div>
+                <h3 className="text-lg font-bold mb-3" style={{ color: BRAND.navy }}>{s.title}</h3>
+                <p style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.85rem", lineHeight: 1.7 }}>{s.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-14 text-center">
+            <a
+              href={config.whatsappGeneral}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-how-to-order-cta"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-4 transition-all font-bold text-white"
+              style={{ background: "#25D366", fontSize: "1rem" }}
+            >
+              <WhatsAppIcon size={18} color="#fff" /> Start on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
 
       <section style={{ background: BRAND.sky }} className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">

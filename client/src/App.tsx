@@ -26,6 +26,10 @@ import Perplexity from "./pages/tools/Perplexity";
 import Grok from "./pages/tools/Grok";
 import Copilot from "./pages/tools/Copilot";
 import Vault from "./pages/tools/Vault";
+import NotionPage from "./pages/tools/Notion";
+import Microsoft365Page from "./pages/tools/Microsoft365";
+import LinkedInPage from "./pages/tools/LinkedIn";
+import ElevenLabsPage from "./pages/tools/ElevenLabs";
 import PlusShared from "./pages/chatgpt/PlusShared";
 import PlusPremiumShared from "./pages/chatgpt/PlusPremiumShared";
 import PlusPersonalSeat from "./pages/chatgpt/PlusPersonalSeat";
@@ -99,6 +103,10 @@ function Router() {
         <Route path="/tools/grok" component={Grok} />
         <Route path="/tools/copilot" component={Copilot} />
         <Route path="/tools/vault" component={Vault} />
+        <Route path="/tools/notion" component={NotionPage} />
+        <Route path="/tools/microsoft365" component={Microsoft365Page} />
+        <Route path="/tools/linkedin" component={LinkedInPage} />
+        <Route path="/tools/elevenlabs" component={ElevenLabsPage} />
         <Route component={NotFound} />
       </Switch>
     </>

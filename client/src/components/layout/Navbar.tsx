@@ -6,26 +6,37 @@ import { config } from "@/lib/config";
 
 const CATEGORIES_MENU = [
   {
-    group: "🤖 AI Tools",
+    group: "🤖 AI Chat & Research",
     items: [
       { name: "ChatGPT Premium Subscriptions", href: "/chatgpt-plans", desc: "৳৩৯৯–৳৪,৫০০/mo · 7 plans" },
-      { name: "Claude Plans", href: "/claude-plans", desc: "৳৫৯৯/mo · Long docs & coding" },
+      { name: "Claude Pro", href: "/claude-plans", desc: "৳৫৯৯/mo · Long docs & coding" },
       { name: "Google Gemini Advanced", href: "/gemini-plans", desc: "৳৪৯৯/mo · Google Workspace" },
-      { name: "Perplexity Pro", href: "/perplexity-plans", desc: "৳৪৯৯/mo · AI-powered search" },
-      { name: "Grok", href: "/grok-plans", desc: "৳৪৯৯/mo · Real-time data" },
-      { name: "Grammarly Premium", href: "/grammarly-plans", desc: "৳৪৯৯/mo · AI writing assistant" },
-      { name: "Canva Pro", href: "/canva-plans", desc: "৳৫৯৯/mo · AI design tools" },
+      { name: "Perplexity Pro", href: "/perplexity-plans", desc: "৳৫৯৯/mo · AI-powered search" },
+      { name: "Grok Premium", href: "/grok-plans", desc: "৳৬৯৯/mo · Real-time data + Aurora" },
     ],
   },
   {
-    group: "💎 Bundles",
+    group: "🎨 Creative & Productivity",
+    items: [
+      { name: "Grammarly Premium", href: "/grammarly-plans", desc: "৳৮০০/mo · AI writing assistant" },
+      { name: "Canva Pro", href: "/canva-plans", desc: "৳৩৫০/mo · Magic Studio + Dream Lab" },
+      { name: "Midjourney", href: "/tools/midjourney", desc: "৳১,২০০/mo · AI image generation v7" },
+      { name: "ElevenLabs Voice AI", href: "/tools/elevenlabs", desc: "৳৬৯৯/mo · Bangla voice & dubbing" },
+      { name: "Notion AI", href: "/tools/notion", desc: "৳৪৫০/mo · AI workspace & notes" },
+    ],
+  },
+  {
+    group: "💻 Developer & Professional",
+    items: [
+      { name: "GitHub Copilot", href: "/tools/copilot", desc: "৳১,২০০/mo · AI code assistant" },
+      { name: "Microsoft 365 Copilot", href: "/tools/microsoft365", desc: "৳৮৯৯/mo · Word, Excel, Teams + AI" },
+      { name: "LinkedIn Premium", href: "/tools/linkedin", desc: "৳৯৯৯/mo · InMail, job insights, learning" },
+    ],
+  },
+  {
+    group: "💎 Bundles & All Plans",
     items: [
       { name: "AI Tools Vault", href: "/ai-tools-vault", desc: "৳১,৯৯০/mo · ChatGPT + Claude + Gemini" },
-    ],
-  },
-  {
-    group: "🛒 All Plans",
-    items: [
       { name: "All Plans & Pricing", href: "/pricing", desc: "Compare every product & service" },
     ],
   },

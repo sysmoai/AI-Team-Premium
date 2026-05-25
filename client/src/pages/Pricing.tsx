@@ -18,8 +18,8 @@ const PRICING_FAQS = [
 
 const SECTIONS = [
   {
-    title: "🤖 AI Chat Tools",
-    subtitle: "Official access · bKash/Nagad · Fast delivery",
+    title: "🤖 AI Chat & Research Tools",
+    subtitle: "Official access · bKash/Nagad · 5–15 min delivery",
     items: [
       { name: "ChatGPT Plus — Shared", price: "৳399/mo", href: "/chatgpt/plus-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Shared ৳399/mo") },
       { name: "ChatGPT Plus — Premium Shared", price: "৳950/mo", href: "/chatgpt/plus-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Premium Shared ৳950/mo") },
@@ -29,17 +29,32 @@ const SECTIONS = [
       { name: "ChatGPT Business — Personal-like", price: "৳3,899/mo", href: "/chatgpt/business-personal-like", wa: waBase + enc("Hi, I want ChatGPT Business Personal-like ৳3,899/mo") },
       { name: "ChatGPT Pro — Premium Shared", price: "৳4,500/mo", href: "/chatgpt/pro-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Pro Premium Shared ৳4,500/mo") },
       { name: "Claude Pro — Shared", price: "৳599/mo", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Shared ৳599/mo") },
-      { name: "Google Gemini Advanced — Shared", price: "৳499/mo", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Shared ৳499/mo") },
-      { name: "Perplexity Pro", price: "৳499/mo", href: "/perplexity-plans", wa: waBase + enc("Hi, I want Perplexity Pro ৳499/mo") },
-      { name: "Grok (xAI)", price: "৳499/mo", href: "/grok-plans", wa: waBase + enc("Hi, I want Grok Access ৳499/mo") },
+      { name: "Claude Pro — Personal", price: "৳2,400/mo", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Personal ৳2,400/mo") },
+      { name: "Gemini Advanced — Shared", price: "৳499/mo", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Shared ৳499/mo") },
+      { name: "Gemini Advanced — Personal", price: "৳2,300/mo", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Personal ৳2,300/mo") },
+      { name: "Perplexity Pro — Shared", price: "৳599/mo", href: "/perplexity-plans", wa: waBase + enc("Hi, I want Perplexity Pro Shared ৳599/mo") },
+      { name: "Grok Premium — Shared", price: "৳699/mo", href: "/grok-plans", wa: waBase + enc("Hi, I want Grok Premium Shared ৳699/mo") },
     ],
   },
   {
-    title: "🎨 Productivity & Creative Tools",
+    title: "🎨 Creative & Productivity Tools",
     subtitle: "Writing, design & creative AI — bKash/Nagad accepted",
     items: [
-      { name: "Grammarly Premium — Monthly", price: "৳499/mo", href: "/grammarly-plans", wa: waBase + enc("Hi, I want Grammarly Premium ৳499/mo") },
-      { name: "Canva Pro — Monthly", price: "৳599/mo", href: "/canva-plans", wa: waBase + enc("Hi, I want Canva Pro ৳599/mo") },
+      { name: "Grammarly Premium — Monthly", price: "৳800/mo", href: "/grammarly-plans", wa: waBase + enc("Hi, I want Grammarly Premium ৳800/mo") },
+      { name: "Canva Pro — Team Seat", price: "৳350/mo", href: "/canva-plans", wa: waBase + enc("Hi, I want Canva Pro ৳350/mo") },
+      { name: "Midjourney — Shared", price: "৳1,200/mo", href: "/tools/midjourney", wa: waBase + enc("Hi, I want Midjourney Shared ৳1,200/mo") },
+      { name: "ElevenLabs Voice AI", price: "৳699/mo", href: "/tools/elevenlabs", wa: waBase + enc("Hi, I want ElevenLabs Voice AI ৳699/mo") },
+      { name: "Notion AI — Team Seat", price: "৳450/mo", href: "/tools/notion", wa: waBase + enc("Hi, I want Notion AI ৳450/mo") },
+    ],
+  },
+  {
+    title: "💻 Developer & Professional Tools",
+    subtitle: "Coding, career & office AI — bKash/Nagad accepted",
+    items: [
+      { name: "GitHub Copilot — Private", price: "৳1,200/mo", href: "/tools/copilot", wa: waBase + enc("Hi, I want GitHub Copilot ৳1,200/mo") },
+      { name: "Microsoft 365 + Copilot — Shared", price: "৳899/mo", href: "/tools/microsoft365", wa: waBase + enc("Hi, I want Microsoft 365 Copilot Shared ৳899/mo") },
+      { name: "LinkedIn Premium Career", price: "৳999/mo", href: "/tools/linkedin", wa: waBase + enc("Hi, I want LinkedIn Premium Career ৳999/mo") },
+      { name: "LinkedIn Premium Business", price: "৳1,800/mo", href: "/tools/linkedin", wa: waBase + enc("Hi, I want LinkedIn Premium Business ৳1,800/mo") },
     ],
   },
   {
@@ -50,10 +65,16 @@ const SECTIONS = [
     ],
   },
   {
-    title: "🤝 Services",
+    title: "🤝 AI Training & Services",
     subtitle: "Expert 1:1 AI coaching and implementation",
     items: [
       { name: "AI Coaching Session", price: "৳799/hour", href: "/support", wa: waBase + enc("Hi, I want to book an AI Coaching Session ৳799/hr") },
+      { name: "Student Smart Study Pack", price: "৳1,999 one-time", href: "/support", wa: waBase + enc("Hi, I want the Student Smart Study Pack ৳1,999") },
+      { name: "Student Pro Pack", price: "৳3,999 one-time", href: "/support", wa: waBase + enc("Hi, I want the Student Pro Pack ৳3,999") },
+      { name: "Freelancer Fast Pack", price: "৳4,999 one-time", href: "/support", wa: waBase + enc("Hi, I want the Freelancer Fast Pack ৳4,999") },
+      { name: "Freelancer Agency Pack", price: "৳9,999 one-time", href: "/support", wa: waBase + enc("Hi, I want the Freelancer Agency Pack ৳9,999") },
+      { name: "Business AI Setup Pack", price: "৳12,999 one-time", href: "/support", wa: waBase + enc("Hi, I want the Business AI Setup Pack ৳12,999") },
+      { name: "360 AI Solution", price: "৳24,999+", href: "/support", wa: waBase + enc("Hi, I want the 360 AI Solution ৳24,999+") },
       { name: "AI Ops Sprint — 1:1 Implementation (3 sessions)", price: "৳9,900 one-time", href: "/services/ai-ops-sprint", wa: waBase + enc("Hi, I want AI Ops Sprint 1:1 Implementation ৳9,900") },
     ],
   },

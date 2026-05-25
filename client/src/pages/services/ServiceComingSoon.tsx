@@ -4,6 +4,7 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { Link } from "wouter";
 import { MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
+import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 interface Props {
   title: string;
@@ -11,13 +12,23 @@ interface Props {
   description: string;
   emoji: string;
   whatsappText: string;
+  path: string;
 }
 
-export default function ServiceComingSoon({ title, banglaTitle, description, emoji, whatsappText }: Props) {
-  usePageMeta({ title: `${title} | AI Team Premium BD`, description });
+export default function ServiceComingSoon({ title, banglaTitle, description, emoji, whatsappText, path }: Props) {
+  usePageMeta({
+    title: `${title} in Bangladesh — AI Team Premium BD`,
+    description,
+    path,
+  });
 
   return (
     <Layout>
+      <BreadcrumbSchema items={[
+        { name: "Home", path: "/" },
+        { name: "Services", path: "/support" },
+        { name: title, path },
+      ]} />
       <section className="py-32" style={{ backgroundColor: BRAND.sky }}>
         <div className="mx-auto max-w-2xl px-6 text-center">
           <div className="text-6xl mb-6">{emoji}</div>

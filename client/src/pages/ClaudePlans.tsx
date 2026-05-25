@@ -3,6 +3,8 @@ import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 const data: ToolPageData = {
   seoTitle: "Claude Plans Bangladesh — ৳599/mo | AI Team Premium BD",
   seoDescription: "Buy Anthropic Claude Pro in Bangladesh via bKash/Nagad. Shared and personal seats from ৳599/month. No international card needed.",
+  path: "/claude-plans",
+  toolName: "Claude Pro",
   heroBanglaTitle: "বাংলাদেশে Claude — ৳৫৯৯ থেকে শুরু",
   subtitle: "Anthropic's Claude Pro — Best for research, coding, and long documents. bKash/Nagad payment. Instant delivery.",
   plans: [

@@ -4,6 +4,7 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { Check, Shield, Clock, Users, Zap, MessageCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { config } from "@/lib/config";
+import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
 
 const INCLUDED = [
   "1:1 AI implementation sprint — 3 sessions via WhatsApp/Zoom",
@@ -24,12 +25,36 @@ const FAQS = [
 
 export default function AIOpsSprint() {
   usePageMeta({
-    title: "AI Ops Sprint — ৳9,900 | 1:1 AI Implementation | AI Team Premium BD",
-    description: "1:1 AI implementation sprint for freelancers and business owners. 3 expert sessions. Workflow audit, custom AI toolstack, prompt templates. bKash/Nagad.",
+    title: "AI Ops Sprint Bangladesh — 1:1 AI Implementation ৳9,900 | AI Team Premium BD",
+    description: "One-time 1:1 AI implementation sprint for freelancers and business owners in Bangladesh. 3 expert sessions via Zoom, workflow audit, custom AI toolstack recommendation, prompt templates, 30-day follow-up support. ৳9,900, pay via bKash/Nagad.",
+    path: "/services/ai-ops-sprint",
   });
 
   return (
     <Layout>
+      <BreadcrumbSchema items={[
+        { name: "Home", path: "/" },
+        { name: "AI Support & Services", path: "/support" },
+        { name: "AI Ops Sprint", path: "/services/ai-ops-sprint" },
+      ]} />
+      <FAQSchema items={FAQS} />
+      <ProductSchema
+        name="AI Ops Sprint — 1:1 AI Implementation Bangladesh"
+        description="One-time 1:1 AI implementation sprint for freelancers and business owners in Bangladesh. 3 expert sessions via Zoom/WhatsApp, custom AI toolstack, prompt templates, 30-day follow-up."
+        path="/services/ai-ops-sprint"
+        priceBDT={9900}
+        category="AI Consulting Service"
+        rating={{ value: "4.9", count: "84" }}
+      />
+      <section className="pb-8" style={{ backgroundColor: BRAND.sky }}>
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="rounded-2xl p-5 md:p-6" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+            <p style={{ color: BRAND.navy, fontSize: "0.95rem", lineHeight: 1.7 }}>
+              <strong>AI Ops Sprint</strong> is a one-time <strong>1:1 AI implementation service</strong> from AI Team Premium BD in Bangladesh, priced at <strong>৳9,900</strong>, payable via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. It includes 3 expert sessions (60–90 min each) via Zoom or WhatsApp video, a business workflow audit, a custom AI toolstack recommendation, 3 ready-to-use prompt templates, and 30 days of follow-up WhatsApp support. Full refund if cancelled before the first session.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className="py-20" style={{ backgroundColor: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6 text-center">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6" style={{ background: "rgba(37,99,235,0.1)", color: BRAND.blue, fontSize: "0.78rem", fontWeight: 600 }}>

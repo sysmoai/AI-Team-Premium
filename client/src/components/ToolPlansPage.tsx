@@ -4,6 +4,7 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { Check, Clock, Shield, Star, Users, Zap, MessageCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { config } from "@/lib/config";
+import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
 
 export interface ToolPlan {
   name: string;
@@ -27,13 +28,35 @@ export interface ToolPageData {
   whoIsItFor: string[];
   faqs: { q: string; a: string }[];
   toolEmoji?: string;
+  path: string;
+  toolName: string;
 }
 
 export default function ToolPlansPage({ data }: { data: ToolPageData }) {
-  usePageMeta({ title: data.seoTitle, description: data.seoDescription });
+  usePageMeta({ title: data.seoTitle, description: data.seoDescription, path: data.path });
+
+  const cheapestPlan = data.plans.reduce((min, p) =>
+    parseInt(p.price.replace(/[^0-9]/g, ""), 10) < parseInt(min.price.replace(/[^0-9]/g, ""), 10) ? p : min
+  );
+  const minPrice = parseInt(cheapestPlan.price.replace(/[^0-9]/g, ""), 10);
 
   return (
     <Layout>
+      <BreadcrumbSchema items={[
+        { name: "Home", path: "/" },
+        { name: "AI Subscriptions", path: "/ai-subscriptions" },
+        { name: data.toolName, path: data.path },
+      ]} />
+      <FAQSchema items={data.faqs} />
+      <ProductSchema
+        name={`${data.toolName} Bangladesh`}
+        description={data.seoDescription}
+        path={data.path}
+        priceBDT={minPrice}
+        category="AI Subscription"
+        rating={{ value: "4.9", count: "84" }}
+      />
+
       <section className="py-20 overflow-hidden" style={{ backgroundColor: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6 text-center">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6" style={{ background: "rgba(37,99,235,0.1)", color: BRAND.blue, fontSize: "0.78rem", fontWeight: 600 }}>
@@ -71,6 +94,17 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
             >
               View Plans ↓
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Direct-answer block (GEO) */}
+      <section className="pb-8" style={{ background: BRAND.sky }}>
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="rounded-2xl p-5 md:p-6" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+            <p style={{ color: BRAND.navy, fontSize: "0.95rem", lineHeight: 1.7 }}>
+              <strong>{data.toolName}</strong> is available in Bangladesh from <strong>AI Team Premium BD</strong> starting at <strong>{cheapestPlan.price}</strong>, payable in BDT via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. Access delivered within <strong>{cheapestPlan.delivery}</strong>, with a 30-day replacement warranty. No international credit card required.
+            </p>
           </div>
         </div>
       </section>

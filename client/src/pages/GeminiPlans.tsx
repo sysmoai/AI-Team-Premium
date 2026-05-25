@@ -3,6 +3,8 @@ import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 const data: ToolPageData = {
   seoTitle: "Google Gemini Advanced Bangladesh — ৳499/mo | AI Team Premium BD",
   seoDescription: "Buy Google Gemini Advanced in Bangladesh via bKash/Nagad. Shared and personal seats from ৳499/month. Google Workspace integration.",
+  path: "/gemini-plans",
+  toolName: "Google Gemini Advanced",
   heroBanglaTitle: "বাংলাদেশে Google Gemini Advanced — ৳৪৯৯ থেকে শুরু",
   subtitle: "Google's AI with 1M token context + Google Workspace integration. bKash/Nagad. Fast delivery.",
   plans: [

@@ -3,6 +3,7 @@ import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { Check, Shield, Zap, Star, Clock, Package, MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
+import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
 
 const INCLUDED = [
   "ChatGPT Plus access (shared seat)",
@@ -19,14 +20,46 @@ const COMPARISON = [
   { tool: "Gemini Advanced", individual: "৳499" },
 ];
 
+const VAULT_FAQS = [
+  { q: "What is the AI Tools Vault bundle from AI Team Premium BD?", a: "The AI Tools Vault is a bundle that gives you shared-seat access to three top AI tools — ChatGPT Plus, Claude Pro, and Gemini Advanced — together for ৳1,990/month, paid in BDT via bKash or Nagad. It includes a priority setup guide and a single WhatsApp support channel for all three tools." },
+  { q: "How much does the AI Tools Vault cost in Bangladesh?", a: "The AI Tools Vault costs ৳1,990/month from AI Team Premium BD. You can pay in BDT using bKash, Nagad, Rocket or Bank Transfer — no international credit card required." },
+  { q: "How long does delivery take for the AI Tools Vault?", a: "Vault bundle access is set up within 6 hours after payment confirmation. AI Team Premium BD confirms via WhatsApp at +880 1533-262758." },
+  { q: "Is there a warranty on the AI Tools Vault?", a: "Yes. All three tools carry a 30-day replacement warranty. If any access stops working due to our fault, we replace it within 24 hours at no extra charge." },
+  { q: "Can I buy just one tool instead of the full Vault?", a: "Yes. ChatGPT Plus starts at ৳399/mo, Claude Pro at ৳599/mo, and Gemini Advanced at ৳499/mo individually. The Vault is ideal if you want all three with single-channel support and onboarding." },
+];
+
 export default function AIToolsVault() {
   usePageMeta({
-    title: "AI Tools Vault — ৳1,990/mo | AI Team Premium BD",
-    description: "Get ChatGPT Plus + Claude Pro + Gemini Advanced in one bundle. Best value for power users. bKash/Nagad. AI Team Premium BD.",
+    title: "AI Tools Vault Bangladesh — ChatGPT + Claude + Gemini Bundle ৳1,990/mo",
+    description: "Get ChatGPT Plus, Claude Pro and Gemini Advanced together in one bundle for ৳1,990/month in Bangladesh. Pay via bKash/Nagad. 6-hour delivery, 30-day warranty. AI Team Premium BD.",
+    path: "/ai-tools-vault",
   });
 
   return (
     <Layout>
+      <BreadcrumbSchema items={[
+        { name: "Home", path: "/" },
+        { name: "AI Subscriptions", path: "/ai-subscriptions" },
+        { name: "AI Tools Vault", path: "/ai-tools-vault" },
+      ]} />
+      <FAQSchema items={VAULT_FAQS} />
+      <ProductSchema
+        name="AI Tools Vault Bangladesh — ChatGPT + Claude + Gemini Bundle"
+        description="ChatGPT Plus, Claude Pro and Gemini Advanced in one bundle for ৳1,990/month. Pay in BDT via bKash or Nagad. 6-hour delivery, 30-day warranty."
+        path="/ai-tools-vault"
+        priceBDT={1990}
+        category="AI Subscription Bundle"
+        rating={{ value: "4.9", count: "84" }}
+      />
+      <section className="pb-8" style={{ backgroundColor: BRAND.sky }}>
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="rounded-2xl p-5 md:p-6" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+            <p style={{ color: BRAND.navy, fontSize: "0.95rem", lineHeight: 1.7 }}>
+              The <strong>AI Tools Vault</strong> from <strong>AI Team Premium BD</strong> bundles <strong>ChatGPT Plus + Claude Pro + Gemini Advanced</strong> into a single plan for <strong>৳1,990/month</strong> in Bangladesh, payable in BDT via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. Access is delivered within <strong>6 hours</strong>, with a 30-day replacement warranty and priority WhatsApp support — no international credit card required.
+            </p>
+          </div>
+        </div>
+      </section>
       <section className="py-20" style={{ backgroundColor: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6 text-center">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6" style={{ background: "rgba(37,99,235,0.1)", color: BRAND.blue, fontSize: "0.78rem", fontWeight: 600 }}>

@@ -5,6 +5,7 @@ import { Check, Clock, MessageCircle, ShieldCheck, Zap, CreditCard, Headphones, 
 import { type LucideIcon } from "lucide-react";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
+import { PriceCompare } from "@/components/PriceCompare";
 import { useState } from "react";
 
 interface ToolPlan {
@@ -287,6 +288,12 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                           <MessageCircle size={13} color="#fff" /> Messenger
                         </a>
                       </div>
+                      <PriceCompare
+                        toolName={name}
+                        planLabel={plan.label}
+                        planPriceBDT={plan.price}
+                        accentColor={accentColor}
+                      />
                     </div>
                   </div>
                 ))}

@@ -315,4 +315,26 @@
     <priority>0.40</priority>
   </url>
 
+  <!-- ── TOOL COMPARISON HUB ── -->
+  <url>
+    <loc>https://aiteampremiumbd.com/compare</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- ── POPULAR TOOL COMPARISONS ── -->
+  <url><loc>https://aiteampremiumbd.com/compare/claude-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/gemini-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/claude-vs-gemini</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/chatgpt-vs-perplexity</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/grok-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/midjourney-vs-leonardo</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/runway-vs-kling</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/copilot-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/notion-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/grammarly-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/claude-vs-perplexity</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
+  <url><loc>https://aiteampremiumbd.com/compare/midjourney-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
+
 </urlset>

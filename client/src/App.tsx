@@ -37,6 +37,7 @@ import LeonardoPage from "./pages/tools/Leonardo";
 import RunwayPage from "./pages/tools/Runway";
 import KlingPage from "./pages/tools/Kling";
 import AuditDashboard from "./pages/admin/AuditDashboard";
+import ComparePage from "./pages/Compare";
 import PlusShared from "./pages/chatgpt/PlusShared";
 import PlusPremiumShared from "./pages/chatgpt/PlusPremiumShared";
 import PlusPersonalSeat from "./pages/chatgpt/PlusPersonalSeat";
@@ -120,6 +121,8 @@ function Router() {
         <Route path="/tools/runway" component={RunwayPage} />
         <Route path="/tools/kling" component={KlingPage} />
         <Route path="/admin/audit" component={AuditDashboard} />
+        <Route path="/compare" component={ComparePage} />
+        <Route path="/compare/:slug" component={ComparePage} />
         <Route component={NotFound} />
       </Switch>
     </>

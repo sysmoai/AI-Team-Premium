@@ -2,15 +2,14 @@ import { motion } from "framer-motion";
 import { WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
+import { useContextualWhatsAppUrl } from "@/lib/whatsapp";
 
 interface FloatingWhatsAppProps {
   productWhatsAppText?: string;
 }
 
 export function FloatingWhatsApp({ productWhatsAppText }: FloatingWhatsAppProps) {
-  const waUrl = productWhatsAppText
-    ? `https://wa.me/8801533262758?text=${encodeURIComponent(productWhatsAppText)}`
-    : config.whatsappGeneral;
+  const waUrl = useContextualWhatsAppUrl(productWhatsAppText);
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-2.5 md:bottom-8 md:right-8">

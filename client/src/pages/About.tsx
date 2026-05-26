@@ -32,12 +32,33 @@ export default function About() {
     "name": "About AI Team Premium BD",
     "description": "AI Team Premium BD (AITPBD), founded in 2024 in Dhaka, Bangladesh, is the country's leading reseller of official premium AI subscriptions — ChatGPT, Claude, Gemini and more — payable in BDT via bKash and Nagad.",
     "mainEntity": {
-      "@type": "Organization",
+      "@type": "LocalBusiness",
       "name": "AI Team Premium BD",
       "alternateName": "AITPBD",
       "foundingDate": "2024",
       "url": "https://aiteampremiumbd.com",
-      "areaServed": "BD",
+      "telephone": "+8801533262758",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dhaka",
+        "addressCountry": "BD",
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "09:00",
+          "closes": "23:00",
+        }
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Bangladesh",
+      },
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61586742067282",
+        "https://www.instagram.com/ai_team_premium_bd/",
+      ],
     },
   };
 

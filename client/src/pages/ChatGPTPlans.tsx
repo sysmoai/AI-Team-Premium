@@ -40,7 +40,7 @@ export default function ChatGPTPlans() {
   };
 
   const trustItems = [
-    { icon: <Zap className="w-5 h-5" />, text: "⚡ Instant Delivery (5-15 min)" },
+    { icon: <Zap className="w-5 h-5" />, text: "⚡ Plus/Pro: 5-15 min · Business: 12 hrs" },
     { icon: <CreditCard className="w-5 h-5" />, text: "💳 bKash/Nagad" },
     { icon: <MessageCircle className="w-5 h-5" />, text: "💬 WhatsApp Support" },
     { icon: <ShieldCheck className="w-5 h-5" />, text: "🛡️ 30-Day Warranty" },

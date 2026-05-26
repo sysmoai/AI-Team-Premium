@@ -2,12 +2,13 @@ import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { supportOffers, memberships } from "@/lib/support-offers";
-import { Check, ArrowUpRight, Clock, Star, Users, Briefcase, GraduationCap, ShieldCheck, MessageCircle } from "lucide-react";
+import { Check, ArrowUpRight, Clock, Star, Users, Briefcase, GraduationCap, ShieldCheck, MessageCircle, Paintbrush, Code, TrendingUp, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
+import { Link } from "wouter";
 
 export default function Services() {
   usePageMeta({
@@ -72,10 +73,38 @@ export default function Services() {
       />
       <section className="py-8" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
+          <div className="flex items-center gap-2 justify-center mb-4">
+            <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(34,197,94,0.1)", color: "#16a34a", fontSize: "0.78rem" }}>
+              <Clock size={12} /> সকাল ৯টা – রাত ১১টা · ৭ দিন · 9 AM – 11 PM BST · 7 days a week
+            </span>
+          </div>
           <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
             <p style={{ color: BRAND.navy, fontSize: "1rem", lineHeight: 1.7, fontWeight: 500 }}>
               <strong>AI Team Premium BD</strong> offers live, Bangla-language AI training and ChatGPT support sessions in Bangladesh. Hourly sessions start at <strong>৳799/hour</strong>, student packs from <strong>৳1,999</strong>, freelancer packs from <strong>৳4,999</strong>, and full business AI setup from <strong>৳12,999</strong> — delivered live over Google Meet by Bangladeshi AI experts, with prompt packs and workflow documents included.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16" style={{ background: BRAND.white }}>
+        <div className="mx-auto max-w-5xl px-6 lg:px-10">
+          <h2 className="text-2xl font-bold mb-3 text-center" style={{ color: BRAND.navy }}>Digital Services</h2>
+          <p className="text-center text-sm mb-10" style={{ color: BRAND.navy, opacity: 0.5 }}>Brand design, web development, digital marketing, and app development — all in one place.</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            {[
+              { icon: Paintbrush, label: "Brand Design", sub: "from ৳4,999", href: "/services/brand-design", emoji: "🎨" },
+              { icon: Code, label: "Web Development", sub: "from ৳7,999", href: "/services/web-development", emoji: "🌐" },
+              { icon: TrendingUp, label: "Digital Marketing", sub: "from ৳9,999/mo", href: "/services/digital-marketing", emoji: "📢" },
+              { icon: Smartphone, label: "App Development", sub: "from ৳29,999", href: "/services/app-development", emoji: "📱" },
+            ].map((svc) => (
+              <Link key={svc.href} href={svc.href} data-testid={`card-service-${svc.label.toLowerCase().replace(/\s+/g, '-')}`}>
+                <div className="rounded-2xl p-5 text-center cursor-pointer transition-all hover:shadow-md" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.08)" }}>
+                  <div className="text-3xl mb-2">{svc.emoji}</div>
+                  <div className="font-bold text-sm mb-1" style={{ color: BRAND.navy }}>{svc.label}</div>
+                  <div className="text-xs" style={{ color: BRAND.blue, fontWeight: 600 }}>{svc.sub}</div>
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

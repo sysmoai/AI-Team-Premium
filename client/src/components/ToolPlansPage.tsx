@@ -28,6 +28,7 @@ export interface ToolPageData {
   whoIsItFor: string[];
   faqs: { q: string; a: string }[];
   toolEmoji?: string;
+  ratingCount?: string;
   path: string;
   toolName: string;
 }
@@ -54,7 +55,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
         path={data.path}
         priceBDT={minPrice}
         category="AI Subscription"
-        rating={{ value: "4.9", count: "84" }}
+        rating={{ value: "4.9", count: data.ratingCount || "84" }}
       />
 
       <section className="py-20 overflow-hidden" style={{ backgroundColor: BRAND.sky }}>
@@ -63,7 +64,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
             <Shield size={13} /> Verified · bKash/Nagad · Instant Delivery
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight" style={{ color: BRAND.navy }}>
-            {data.heroBanglaTitle}
+            {data.toolEmoji && <span className="mr-2">{data.toolEmoji}</span>}{data.heroBanglaTitle}
           </h1>
           <p className="text-lg mb-10 max-w-3xl mx-auto" style={{ color: BRAND.navy, opacity: 0.6 }}>{data.subtitle}</p>
           <div className="flex flex-wrap justify-center gap-3">

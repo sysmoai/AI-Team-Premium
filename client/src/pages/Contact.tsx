@@ -10,7 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { config } from "@/lib/config";
-import { Phone, MapPin, Facebook, Instagram, Users, MessageCircle, Send, ArrowUpRight } from "lucide-react";
+import { Phone, MapPin, Facebook, Instagram, Users, MessageCircle, Send, ArrowUpRight, Clock } from "lucide-react";
 import { BreadcrumbSchema, FAQSchema } from "@/components/seo/JsonLd";
 
 const CONTACT_FAQS = [
@@ -20,7 +20,7 @@ const CONTACT_FAQS = [
 ];
 
 const CHANNELS = [
-  { icon: Phone, label: "WhatsApp / Phone", value: "+880 1533-262758", sub: "Available 24/7", url: "tel:+8801533262758" },
+  { icon: Phone, label: "WhatsApp / Phone", value: "+880 1533-262758", sub: "9 AM – 11 PM BST · 7 days", url: "tel:+8801533262758" },
   { icon: MapPin, label: "Location", value: "Dhaka, Bangladesh", sub: null, url: null },
 ];
 
@@ -62,7 +62,7 @@ const SERVICE_OPTIONS = [
 export default function Contact() {
   usePageMeta({
     title: "Contact AI Team Premium BD — Order on WhatsApp (+880 1533-262758)",
-    description: "Order ChatGPT, Claude, Gemini and AI subscriptions in Bangladesh. WhatsApp +880 1533-262758 or fill out the form. We reply within 5–15 minutes during 9 AM–11 PM BST.",
+    description: "Order ChatGPT, Claude, Gemini and AI subscriptions in Bangladesh. WhatsApp +880 1533-262758 or fill out the form. Open 9 AM–11 PM BST, 7 days. We reply within 5–15 minutes.",
     path: "/start-a-project",
   });
 
@@ -90,6 +90,11 @@ export default function Contact() {
           <p className="mt-4 mx-auto max-w-xl" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.95rem", lineHeight: 1.65 }}>
             Need AI subscriptions, a website, or a brand makeover? Reach out — fastest response on WhatsApp.
           </p>
+          <div className="mt-5 flex items-center gap-2 justify-center">
+            <span data-testid="badge-operating-hours" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(34,197,94,0.1)", color: "#16a34a", fontSize: "0.78rem" }}>
+              <Clock size={12} /> সকাল ৯টা – রাত ১১টা · ৭ দিন · 9 AM – 11 PM BST · 7 days
+            </span>
+          </div>
         </div>
       </section>
 

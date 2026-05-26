@@ -34,7 +34,7 @@ export default function AIOpsSprint() {
     <Layout>
       <BreadcrumbSchema items={[
         { name: "Home", path: "/" },
-        { name: "AI Support & Services", path: "/support" },
+        { name: "AI Support & Services", path: "/services" },
         { name: "AI Ops Sprint", path: "/services/ai-ops-sprint" },
       ]} />
       <FAQSchema items={FAQS} />

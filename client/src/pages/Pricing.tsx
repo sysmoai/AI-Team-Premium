@@ -29,10 +29,10 @@ const SECTIONS = [
       { name: "ChatGPT Business — Personal-like", price: "৳3,899/mo", href: "/chatgpt/business-personal-like", wa: waBase + enc("Hi, I want ChatGPT Business Personal-like ৳3,899/mo") },
       { name: "ChatGPT Pro — Premium Shared", price: "৳4,500/mo", href: "/chatgpt/pro-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Pro Premium Shared ৳4,500/mo") },
       { name: "Claude Pro — Shared", price: "৳599/mo", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Shared ৳599/mo") },
-      { name: "Claude Pro — Personal", price: "৳2,400/mo", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Personal ৳2,400/mo") },
+      { name: "Claude Pro — Personal", price: "৳2,500/mo", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Personal ৳2,500/mo") },
       { name: "Gemini Advanced — Shared", price: "৳499/mo", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Shared ৳499/mo") },
-      { name: "Gemini Advanced — Personal", price: "৳2,300/mo", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Personal ৳2,300/mo") },
-      { name: "Perplexity Pro — Shared", price: "৳599/mo", href: "/perplexity-plans", wa: waBase + enc("Hi, I want Perplexity Pro Shared ৳599/mo") },
+      { name: "Gemini Advanced — Personal", price: "৳1,800/mo", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Personal ৳1,800/mo") },
+      { name: "Perplexity Pro — Shared", price: "৳499/mo", href: "/perplexity-plans", wa: waBase + enc("Hi, I want Perplexity Pro Shared ৳499/mo") },
       { name: "SuperGrok — Shared (Unlimited Aurora images)", price: "৳499/mo", href: "/tools/supergrok", wa: waBase + enc("Hi, I want SuperGrok Shared ৳499/mo") },
       { name: "SuperGrok — Personal Seat", price: "৳3,990/mo", href: "/tools/supergrok", wa: waBase + enc("Hi, I want SuperGrok Personal ৳3,990/mo") },
       { name: "Google AI Pro — Shared (Gemini 2.5 + NotebookLM)", price: "৳449/mo", href: "/tools/google-ai-pro", wa: waBase + enc("Hi, I want Google AI Pro Shared ৳449/mo") },
@@ -62,8 +62,8 @@ const SECTIONS = [
     title: "✍️ Writing, Productivity & Office AI",
     subtitle: "Boost your work with AI writing and productivity tools",
     items: [
-      { name: "Grammarly Premium — Monthly", price: "৳800/mo", href: "/grammarly-plans", wa: waBase + enc("Hi, I want Grammarly Premium ৳800/mo") },
-      { name: "Canva Pro — Team Seat", price: "৳350/mo", href: "/canva-plans", wa: waBase + enc("Hi, I want Canva Pro ৳350/mo") },
+      { name: "Grammarly Premium — Monthly", price: "৳499/mo", href: "/grammarly-plans", wa: waBase + enc("Hi, I want Grammarly Premium ৳499/mo") },
+      { name: "Canva Pro — Monthly", price: "৳599/mo", href: "/canva-plans", wa: waBase + enc("Hi, I want Canva Pro ৳599/mo") },
       { name: "ElevenLabs Voice AI", price: "৳699/mo", href: "/tools/elevenlabs", wa: waBase + enc("Hi, I want ElevenLabs Voice AI ৳699/mo") },
       { name: "Notion AI — Team Seat", price: "৳450/mo", href: "/tools/notion", wa: waBase + enc("Hi, I want Notion AI ৳450/mo") },
       { name: "GitHub Copilot — Private", price: "৳1,200/mo", href: "/tools/copilot", wa: waBase + enc("Hi, I want GitHub Copilot ৳1,200/mo") },
@@ -121,7 +121,8 @@ export default function Pricing() {
             সব Products & Services
           </h1>
           <p className="mt-4 mx-auto max-w-xl" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.95rem", lineHeight: 1.65 }}>
-            All prices in BDT. Pay via bKash, Nagad, or Bank Transfer. No hidden fees.
+            All prices in BDT. Pay via bKash, Nagad, or Bank Transfer. No hidden fees.{" "}
+            <Link href="/refund-policy" style={{ color: BRAND.blue }}>Refund Policy →</Link>
           </p>
         </div>
       </section>

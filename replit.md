@@ -63,6 +63,17 @@ A comprehensive website for AI Team Premium BD (AITPBD), Bangladesh's premium AI
 | `/tools/leonardo` | Leonardo AI | `client/src/pages/tools/Leonardo.tsx` |
 | `/tools/runway` | Runway ML | `client/src/pages/tools/Runway.tsx` |
 | `/tools/kling` | Kling AI | `client/src/pages/tools/Kling.tsx` |
+| `/services/brand-design` | Brand Design service page | `client/src/pages/services/BrandDesign.tsx` |
+| `/services/web-development` | Web Development service page | `client/src/pages/services/WebDevelopment.tsx` |
+| `/services/digital-marketing` | Digital Marketing service page | `client/src/pages/services/DigitalMarketing.tsx` |
+| `/services/app-development` | App Development service page | `client/src/pages/services/AppDevelopment.tsx` |
+| `/claude-plans` | Claude Pro plans | `client/src/pages/ClaudePlans.tsx` |
+| `/gemini-plans` | Gemini Advanced plans | `client/src/pages/GeminiPlans.tsx` |
+| `/grammarly-plans` | Grammarly Premium plans | `client/src/pages/GrammarlyPlans.tsx` |
+| `/canva-plans` | Canva Pro plans | `client/src/pages/CanvaPlans.tsx` |
+| `/perplexity-plans` | Perplexity Pro plans | `client/src/pages/PerplexityPlans.tsx` |
+| `/grok-plans` | Grok plans | `client/src/pages/GrokPlans.tsx` |
+| `/ai-tools-vault` | AI Tools Vault bundle detail | `client/src/pages/AIToolsVault.tsx` |
 
 ## Key Components
 - `Layout` — Navbar + main + Footer + FloatingWhatsApp + StickyMobileCTA + OrganizationSchema

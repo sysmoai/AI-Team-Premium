@@ -5,6 +5,7 @@ import { Check, Clock, Shield, Star, Users, Zap, MessageCircle } from "lucide-re
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 export interface ToolPlan {
   name: string;
@@ -72,6 +73,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(data.toolName, undefined, undefined, "tool-hero")}
               data-testid="button-hero-whatsapp"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base transition-all"
               style={{ background: "#25D366" }}
@@ -82,6 +84,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(data.toolName, "tool-hero")}
               data-testid="button-hero-messenger"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base transition-all"
               style={{ background: "#0084FF" }}
@@ -181,6 +184,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
                     href={plan.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick(data.toolName, plan.name, plan.price, "tool-plan")}
                     data-testid={`button-order-${i}`}
                     className="inline-flex items-center justify-center gap-2 rounded-full py-3.5 font-bold text-white transition-all"
                     style={{ background: plan.popular ? BRAND.blue : "#25D366", fontSize: "0.9rem" }}
@@ -191,6 +195,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
                     href={config.messenger}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackMessengerClick(data.toolName, "tool-plan")}
                     data-testid={`button-order-messenger-${i}`}
                     className="inline-flex items-center justify-center gap-2 rounded-full py-2.5 font-semibold transition-all"
                     style={{ background: "#0084FF", color: "#fff", fontSize: "0.82rem" }}
@@ -248,6 +253,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(data.toolName, undefined, undefined, "tool-bottom-cta")}
               data-testid="button-final-cta"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
               style={{ background: "#25D366" }}
@@ -258,6 +264,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(data.toolName, "tool-bottom-cta")}
               data-testid="button-final-cta-messenger"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
               style={{ background: "#0084FF" }}

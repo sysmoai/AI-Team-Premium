@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown, Layers, Briefcase, Sun, Moon } from "lucide-react";
 import { BRAND, LogoHorizontal, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { config } from "@/lib/config";
+import { trackWhatsAppClick } from "@/lib/analytics";
 import { useTheme } from "@/components/ThemeProvider";
 
 const CATEGORIES_MENU = [
@@ -184,6 +185,7 @@ export function Navbar() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "navbar-desktop")}
               data-testid="link-nav-contact"
               className="relative inline-flex items-center gap-2 rounded-full px-5 py-2.5 transition-all animate-pulse-ring"
               style={{ background: "#25D366", color: "#fff", fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}
@@ -301,6 +303,7 @@ export function Navbar() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "navbar-mobile")}
               data-testid="link-mobile-contact"
               className="mt-3 flex items-center justify-center gap-2 rounded-xl px-5 py-3"
               style={{ background: "#25D366", color: "#fff", fontSize: "0.95rem", fontWeight: 600, textDecoration: "none" }}

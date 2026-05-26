@@ -6,6 +6,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Clock, Check, MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
 import { PriceCompare } from "@/components/PriceCompare";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 
 // TOOL_META — structured snapshot consumed by /compare/:slug
@@ -109,6 +110,7 @@ export default function ChatGPT() {
                     href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(plan.title)}`}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick("ChatGPT", plan.title, plan.priceLabel, "tool-chatgpt")}
                     data-testid={`button-wa-${plan.slug}`}
                     className="inline-flex items-center justify-center gap-2 rounded-full py-3 transition-all"
                     style={{
@@ -125,6 +127,7 @@ export default function ChatGPT() {
                     href={config.messenger}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackMessengerClick("ChatGPT", "tool-chatgpt")}
                     data-testid={`button-msg-${plan.slug}`}
                     className="inline-flex items-center justify-center gap-2 rounded-full py-2.5 transition-all"
                     style={{

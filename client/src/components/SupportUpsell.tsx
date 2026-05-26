@@ -4,6 +4,7 @@ import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { Link } from "wouter";
 import { MessageCircle, ArrowRight } from "lucide-react";
 import { config } from "@/lib/config";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 export function SupportUpsell() {
   return (
@@ -29,6 +30,7 @@ export function SupportUpsell() {
             href={config.whatsappGeneral}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "support-upsell")}
             data-testid="button-book-support"
             className="inline-flex items-center justify-center gap-2 rounded-full h-11 px-5 font-bold text-white text-sm"
             style={{ background: "#25D366" }}
@@ -39,6 +41,7 @@ export function SupportUpsell() {
             href={config.messenger}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackMessengerClick(undefined, "support-upsell")}
             data-testid="button-book-support-messenger"
             className="inline-flex items-center justify-center gap-2 rounded-full h-11 px-5 font-bold text-white text-sm"
             style={{ background: "#0084FF" }}

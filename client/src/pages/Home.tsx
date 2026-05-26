@@ -6,6 +6,7 @@ import { chatgptPlans } from "@/lib/plans";
 import { SupportUpsell } from "@/components/SupportUpsell";
 import { config } from "@/lib/config";
 import { FAQSchema, JsonLd, BreadcrumbSchema } from "@/components/seo/JsonLd";
+import { trackWhatsAppClick, trackMessengerClick, trackHeroClick } from "@/lib/analytics";
 import {
   Check,
   ChevronRight,
@@ -113,6 +114,7 @@ export default function Home() {
                 href={config.whatsappGeneral}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackHeroClick("whatsapp", "home-hero")}
                 data-testid="button-hero-whatsapp"
                 className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
                 style={{ background: "#25D366", color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
@@ -124,6 +126,7 @@ export default function Home() {
                 href={config.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackMessengerClick(undefined, "home-hero")}
                 data-testid="button-hero-messenger"
                 className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
                 style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
@@ -233,6 +236,7 @@ export default function Home() {
                       href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(o.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick(o.title, undefined, o.priceLabel, "home-offer")}
                       data-testid={`button-offer-${o.slug}`}
                       className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full px-3 py-2.5 transition-all"
                       style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
@@ -243,6 +247,7 @@ export default function Home() {
                       href={config.messenger}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackMessengerClick(o.title, "home-offer")}
                       data-testid={`button-offer-msg-${o.slug}`}
                       className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full px-3 py-2.5 transition-all"
                       style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
@@ -295,6 +300,7 @@ export default function Home() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "home-how-to-order")}
               data-testid="button-how-to-order-cta"
               className="inline-flex items-center gap-2 rounded-full px-8 py-4 transition-all font-bold text-white"
               style={{ background: "#25D366", fontSize: "1rem" }}
@@ -447,6 +453,7 @@ export default function Home() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "home-bottom-cta")}
               data-testid="button-bottom-cta-whatsapp"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 transition-all"
               style={{ background: "#25D366", color: "#fff", fontSize: "1.05rem", fontWeight: 600, textDecoration: "none" }}
@@ -458,6 +465,7 @@ export default function Home() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(undefined, "home-bottom-cta")}
               data-testid="button-bottom-cta-messenger"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 transition-all"
               style={{ background: "#0084FF", color: "#fff", fontSize: "1.05rem", fontWeight: 600, textDecoration: "none" }}

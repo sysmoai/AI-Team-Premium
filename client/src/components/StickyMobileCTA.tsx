@@ -2,6 +2,7 @@ import { WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
 import { useContextualWhatsAppUrl } from "@/lib/whatsapp";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 export default function StickyMobileCTABar() {
   const waUrl = useContextualWhatsAppUrl();
@@ -12,6 +13,7 @@ export default function StickyMobileCTABar() {
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "sticky-mobile")}
         data-testid="button-sticky-whatsapp"
         className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl active:scale-[0.98] transition-transform"
         style={{ background: "#25D366", color: "#fff", fontWeight: 700, fontSize: "0.9rem", textDecoration: "none" }}
@@ -23,6 +25,7 @@ export default function StickyMobileCTABar() {
         href={config.messenger}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackMessengerClick(undefined, "sticky-mobile")}
         data-testid="button-sticky-messenger"
         className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl active:scale-[0.98] transition-transform"
         style={{ background: "#0084FF", color: "#fff", fontWeight: 700, fontSize: "0.9rem", textDecoration: "none" }}

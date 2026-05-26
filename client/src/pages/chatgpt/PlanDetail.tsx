@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { SupportUpsell } from "@/components/SupportUpsell";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 interface PlanDetailProps {
   slug: string;
@@ -265,6 +266,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick(plan.title, undefined, plan.priceLabel, "plan-detail")}
                       className="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#22c35e] text-white py-4 rounded-xl font-bold transition-all shadow-md active:scale-[0.98]"
                       data-testid={`button-order-whatsapp-${slug}`}
                     >
@@ -275,6 +277,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                       href={config.messenger}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackMessengerClick(plan.title, "plan-detail")}
                       className="mt-3 flex items-center justify-center gap-3 w-full bg-[#0084FF] hover:bg-[#0071db] text-white py-3.5 rounded-xl font-bold transition-all shadow-md active:scale-[0.98]"
                       data-testid={`button-order-messenger-${slug}`}
                     >
@@ -311,6 +314,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackWhatsAppClick(plan.title, undefined, plan.priceLabel, "plan-detail-sticky")}
           className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-xl font-bold shadow-lg text-sm"
           data-testid={`button-sticky-whatsapp-${slug}`}
         >
@@ -321,6 +325,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
           href={config.messenger}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackMessengerClick(plan.title, "plan-detail-sticky")}
           className="flex-1 flex items-center justify-center gap-2 bg-[#0084FF] text-white py-3 rounded-xl font-bold shadow-lg text-sm"
           data-testid={`button-sticky-messenger-${slug}`}
         >

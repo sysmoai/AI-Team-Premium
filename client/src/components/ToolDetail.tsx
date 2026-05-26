@@ -6,6 +6,7 @@ import { type LucideIcon } from "lucide-react";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
 import { PriceCompare } from "@/components/PriceCompare";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { LastVerifiedStamp } from "@/components/LastVerifiedStamp";
 import { useState } from "react";
 
@@ -173,6 +174,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
               href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(name)}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(name, undefined, undefined, "tool-detail-hero")}
               data-testid="button-tool-order-whatsapp"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all"
               style={{ background: "#25D366", color: "#fff", fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
@@ -184,6 +186,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(name, "tool-detail-hero")}
               data-testid="button-tool-order-messenger"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all"
               style={{ background: "#0084FF", color: "#fff", fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
@@ -275,6 +278,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                           href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(name)}+${plan.type}`}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => trackWhatsAppClick(name, plan.type, plan.price, "tool-detail-plan")}
                           data-testid={`button-plan-${plan.type.toLowerCase()}`}
                           className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
                           style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
@@ -285,6 +289,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                           href={config.messenger}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={() => trackMessengerClick(name, "tool-detail-plan")}
                           data-testid={`button-plan-messenger-${plan.type.toLowerCase()}`}
                           className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
                           style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
@@ -547,6 +552,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
               href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(name)}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(name, undefined, undefined, "tool-detail-bottom")}
               data-testid="button-tool-final-cta-whatsapp"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
               style={{ background: "#25D366" }}
@@ -557,6 +563,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(name, "tool-detail-bottom")}
               data-testid="button-tool-final-cta-messenger"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
               style={{ background: "#0084FF" }}

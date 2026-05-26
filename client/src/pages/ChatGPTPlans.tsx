@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { chatgptPlans } from "@/lib/plans";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { config } from "@/lib/config";
 import { SupportUpsell } from "@/components/SupportUpsell";
 import { Layout } from "@/components/layout/Layout";
@@ -136,6 +137,7 @@ export default function ChatGPTPlans() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "chatgpt-hero")}
               data-testid="button-hero-whatsapp"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
               style={{ background: "#25D366" }}
@@ -146,6 +148,7 @@ export default function ChatGPTPlans() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(undefined, "chatgpt-hero")}
               data-testid="button-hero-messenger"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
               style={{ background: "#0084FF" }}
@@ -247,6 +250,7 @@ export default function ChatGPTPlans() {
                         href={`${config.whatsappUrl}?text=${encodeURIComponent((config as any).whatsappPlanTemplates?.[plan.slug] || `Hi, I want to order ${plan.title}`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackWhatsAppClick("ChatGPT", plan.title, plan.priceLabel, "chatgpt-plan")}
                         data-testid={`button-order-${plan.slug}`}
                         className="w-full inline-flex items-center justify-center gap-2 rounded-md py-2.5 font-bold text-white text-sm"
                         style={{ background: "#25D366" }}
@@ -257,6 +261,7 @@ export default function ChatGPTPlans() {
                         href={config.messenger}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackMessengerClick("ChatGPT", "chatgpt-plan")}
                         data-testid={`button-order-msg-${plan.slug}`}
                         className="w-full inline-flex items-center justify-center gap-2 rounded-md py-2.5 font-bold text-white text-sm"
                         style={{ background: "#0084FF" }}
@@ -411,6 +416,7 @@ export default function ChatGPTPlans() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "chatgpt-bottom-cta")}
               data-testid="footer-whatsapp"
               className="inline-flex items-center gap-3 rounded-md h-14 px-8 text-lg font-bold text-white"
               style={{ background: "#25D366" }}
@@ -421,6 +427,7 @@ export default function ChatGPTPlans() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(undefined, "chatgpt-bottom-cta")}
               data-testid="footer-messenger"
               className="inline-flex items-center gap-3 rounded-md h-14 px-8 text-lg font-bold text-white"
               style={{ background: "#0084FF" }}

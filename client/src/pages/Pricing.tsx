@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { ArrowUpRight, MessageCircle, Clock } from "lucide-react";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 const waBase = "https://wa.me/8801533262758?text=";
 const enc = encodeURIComponent;
@@ -129,6 +130,7 @@ export default function Pricing() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "pricing-hero")}
               data-testid="button-pricing-hero-whatsapp"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white text-sm"
               style={{ background: "#25D366" }}
@@ -139,6 +141,7 @@ export default function Pricing() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(undefined, "pricing-hero")}
               data-testid="button-pricing-hero-messenger"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white text-sm"
               style={{ background: "#0084FF" }}
@@ -188,6 +191,7 @@ export default function Pricing() {
                         href={item.wa}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackWhatsAppClick(item.name, undefined, item.price, "pricing-card")}
                         data-testid={`button-order-${item.name.toLowerCase().replace(/\s+/g, '-').slice(0, 30)}`}
                         className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 font-semibold text-white text-xs"
                         style={{ background: "#25D366" }}
@@ -198,6 +202,7 @@ export default function Pricing() {
                         href={config.messenger}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackMessengerClick(item.name, "pricing-card")}
                         data-testid={`button-msg-${item.name.toLowerCase().replace(/\s+/g, '-').slice(0, 30)}`}
                         className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 font-semibold text-white text-xs"
                         style={{ background: "#0084FF" }}
@@ -231,6 +236,7 @@ export default function Pricing() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "pricing-bottom-cta")}
               data-testid="button-pricing-cta"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
               style={{ background: "#25D366" }}
@@ -241,6 +247,7 @@ export default function Pricing() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(undefined, "pricing-bottom-cta")}
               data-testid="button-pricing-cta-messenger"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
               style={{ background: "#0084FF" }}

@@ -3,6 +3,7 @@ import { WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
 import { useContextualWhatsAppUrl } from "@/lib/whatsapp";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 interface FloatingWhatsAppProps {
   productWhatsAppText?: string;
@@ -17,6 +18,7 @@ export function FloatingWhatsApp({ productWhatsAppText }: FloatingWhatsAppProps)
         href={config.messenger}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackMessengerClick(undefined, "floating")}
         data-testid="button-messenger-floating"
         aria-label="Chat on Messenger"
         className="group relative flex items-center justify-center rounded-full transition-transform hover:-translate-y-1"
@@ -38,6 +40,7 @@ export function FloatingWhatsApp({ productWhatsAppText }: FloatingWhatsAppProps)
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "floating")}
         data-testid="button-whatsapp-floating"
         aria-label="Chat on WhatsApp"
         whileTap={{ scale: 0.95 }}

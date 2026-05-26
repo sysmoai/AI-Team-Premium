@@ -12,6 +12,7 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { config } from "@/lib/config";
 import { Phone, MapPin, Facebook, Instagram, Users, MessageCircle, Send, ArrowUpRight, Clock, CreditCard, Zap } from "lucide-react";
 import { BreadcrumbSchema, FAQSchema } from "@/components/seo/JsonLd";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 const CONTACT_FAQS = [
   { q: "How do I order from AI Team Premium BD?", a: "The fastest way is WhatsApp at +880 1533-262758 — we typically reply within 5 minutes. You can also message on Facebook Messenger or fill out the contact form on this page." },
@@ -25,8 +26,8 @@ const CHANNELS = [
 ];
 
 const SOCIAL = [
-  { icon: <WhatsAppIcon size={15} color="currentColor" />, label: "WhatsApp", url: config.whatsappGeneral },
-  { icon: <MessageCircle size={15} strokeWidth={2} />, label: "Messenger", url: config.messenger },
+  { icon: <WhatsAppIcon size={15} color="currentColor" />, label: "WhatsApp", url: config.whatsappGeneral, track: () => trackWhatsAppClick(undefined, undefined, undefined, "contact-social") },
+  { icon: <MessageCircle size={15} strokeWidth={2} />, label: "Messenger", url: config.messenger, track: () => trackMessengerClick(undefined, "contact-social") },
   { icon: <Facebook size={15} strokeWidth={2} />, label: "Facebook", url: config.fbPage },
   { icon: <Users size={15} strokeWidth={2} />, label: "FB Group", url: config.fbGroup },
   { icon: <Instagram size={15} strokeWidth={2} />, label: "Instagram", url: config.instagram },
@@ -166,6 +167,7 @@ export default function Contact() {
                       href={s.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={s.track}
                       aria-label={s.label}
                       data-testid={`link-contact-social-${s.label.toLowerCase().replace(/\s+/g, '-')}`}
                       className="inline-flex items-center justify-center rounded-lg transition-all"

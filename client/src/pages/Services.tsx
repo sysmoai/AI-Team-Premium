@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { Link } from "wouter";
 
 export default function Services() {
@@ -123,6 +124,7 @@ export default function Services() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "services-hero")}
               data-testid="button-book-now"
               className="inline-flex items-center gap-2 rounded-full px-7 h-12 font-bold text-white text-base"
               style={{ background: "#25D366" }}
@@ -133,6 +135,7 @@ export default function Services() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(undefined, "services-hero")}
               data-testid="button-book-now-messenger"
               className="inline-flex items-center gap-2 rounded-full px-7 h-12 font-bold text-white text-base"
               style={{ background: "#0084FF" }}
@@ -239,6 +242,7 @@ export default function Services() {
                             href={config.whatsappGeneral}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() => trackWhatsAppClick(offer.title, undefined, offer.priceLabel, "services-offer")}
                             data-testid={`button-order-${offer.slug}`}
                             className="w-full inline-flex items-center justify-center gap-2 rounded-full h-11 font-bold text-white text-sm"
                             style={{ background: "#25D366" }}
@@ -249,6 +253,7 @@ export default function Services() {
                             href={config.messenger}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() => trackMessengerClick(offer.title, "services-offer")}
                             data-testid={`button-order-msg-${offer.slug}`}
                             className="w-full inline-flex items-center justify-center gap-2 rounded-full h-10 font-bold text-white text-sm"
                             style={{ background: "#0084FF" }}
@@ -287,6 +292,7 @@ export default function Services() {
                     href={config.whatsappGeneral}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackWhatsAppClick(m.title, undefined, m.priceLabel, "services-membership")}
                     data-testid={`button-join-${m.slug}`}
                     className="w-full inline-flex items-center justify-center gap-2 rounded-full h-11 font-bold text-white text-sm"
                     style={{ background: "#25D366" }}
@@ -297,6 +303,7 @@ export default function Services() {
                     href={config.messenger}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackMessengerClick(m.title, "services-membership")}
                     data-testid={`button-join-msg-${m.slug}`}
                     className="w-full inline-flex items-center justify-center gap-2 rounded-full h-10 font-bold text-white text-sm"
                     style={{ background: "#0084FF" }}
@@ -374,6 +381,7 @@ export default function Services() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "services-bottom-cta")}
               data-testid="button-final-whatsapp"
               className="inline-flex items-center gap-2 rounded-full px-10 h-14 font-bold text-white text-lg"
               style={{ background: "#25D366" }}
@@ -384,6 +392,7 @@ export default function Services() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(undefined, "services-bottom-cta")}
               data-testid="button-final-messenger"
               className="inline-flex items-center gap-2 rounded-full px-10 h-14 font-bold text-white text-lg"
               style={{ background: "#0084FF" }}

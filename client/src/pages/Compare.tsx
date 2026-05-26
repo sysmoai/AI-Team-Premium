@@ -6,6 +6,7 @@ import { BreadcrumbSchema, FAQSchema, JsonLd } from "@/components/seo/JsonLd";
 import { COMPARE_TOOLS, POPULAR_PAIRS, parseComparePair, recommend, rowWinner, type CompareTool } from "@/lib/tool-compare";
 import { config } from "@/lib/config";
 import { Check, ArrowRight, Trophy, Sparkles, Scale } from "lucide-react";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function ComparePage() {
   const { slug } = useParams<{ slug?: string }>();
@@ -223,6 +224,7 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
                 href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AITPBD — I read your ${a.name} vs ${b.name} comparison. Please send pricing for ${winner.name}.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick(winner.name, undefined, undefined, "compare-winner")}
                 data-testid="button-whatsapp-winner"
                 className="mt-5 inline-flex items-center gap-2 rounded-xl px-5 py-2.5"
                 style={{ background: "#25D366", color: "#fff", fontWeight: 600, fontSize: "0.9rem" }}
@@ -241,6 +243,7 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
                 href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AITPBD — I read your ${a.name} vs ${b.name} comparison. Please help me pick the right one for my use case.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick(`${a.name} vs ${b.name}`, undefined, undefined, "compare-advice")}
                 data-testid="button-whatsapp-advice"
                 className="mt-5 inline-flex items-center gap-2 rounded-xl px-5 py-2.5"
                 style={{ background: "#25D366", color: "#fff", fontWeight: 600, fontSize: "0.9rem" }}

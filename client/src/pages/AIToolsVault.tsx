@@ -4,6 +4,7 @@ import { usePageMeta } from "@/hooks/use-page-meta";
 import { Check, Shield, Zap, Clock, Package, MessageCircle, Star } from "lucide-react";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 const INCLUDED = [
   "ChatGPT Plus access (shared seat)",
@@ -79,6 +80,7 @@ export default function AIToolsVault() {
               href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("AI Tools Vault", undefined, "৳1,990/mo", "vault-hero")}
               data-testid="button-hero-vault"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
               style={{ background: "#25D366" }}
@@ -89,6 +91,7 @@ export default function AIToolsVault() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick("AI Tools Vault", "vault-hero")}
               data-testid="button-hero-vault-messenger"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
               style={{ background: "#0084FF" }}
@@ -151,6 +154,7 @@ export default function AIToolsVault() {
                 href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("AI Tools Vault", undefined, "৳1,990/mo", "vault-card")}
                 data-testid="button-order-vault"
                 className="w-full inline-flex items-center justify-center gap-2 rounded-full py-3.5 font-bold text-white text-base"
                 style={{ background: "#25D366" }}
@@ -161,6 +165,7 @@ export default function AIToolsVault() {
                 href={config.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackMessengerClick("AI Tools Vault", "vault-card")}
                 data-testid="button-order-vault-messenger"
                 className="mt-2 w-full inline-flex items-center justify-center gap-2 rounded-full py-2.5 font-semibold text-white text-sm"
                 style={{ background: "#0084FF" }}
@@ -229,6 +234,7 @@ export default function AIToolsVault() {
               href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("AI Tools Vault", undefined, "৳1,990/mo", "vault-bottom-cta")}
               data-testid="button-final-cta"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
               style={{ background: "#25D366" }}
@@ -239,6 +245,7 @@ export default function AIToolsVault() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick("AI Tools Vault", "vault-bottom-cta")}
               data-testid="button-final-cta-messenger"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
               style={{ background: "#0084FF" }}

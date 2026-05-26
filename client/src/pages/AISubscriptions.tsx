@@ -6,6 +6,7 @@ import { Link } from "wouter";
 import { chatgptPlans } from "@/lib/plans";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, JsonLd, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 const AI_SUB_FAQS = [
   { q: "Which AI tools does AI Team Premium BD sell in Bangladesh?", a: "AI Team Premium BD sells 18+ premium AI subscriptions: ChatGPT Plus (৳399/mo), Claude Pro (৳599/mo), Google AI Pro (৳449/mo), SuperGrok (৳499/mo), Gemini Advanced (৳499/mo), Perplexity Pro (৳599/mo), Midjourney (৳1,200/mo), Leonardo AI (৳349/mo), Runway ML (৳899/mo), Kling AI (৳599/mo), Grammarly Premium (৳499/mo), Canva Pro (৳599/mo), ElevenLabs Voice AI (৳699/mo), Notion AI (৳450/mo), GitHub Copilot (৳1,200/mo), Microsoft 365 Copilot (৳899/mo), LinkedIn Premium (৳999/mo), and the AI Tools Vault bundle (৳1,990/mo) — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer." },
@@ -93,6 +94,7 @@ export default function AISubscriptions() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "ai-sub-hero")}
               data-testid="button-ai-sub-hero-whatsapp"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white text-sm"
               style={{ background: "#25D366" }}
@@ -103,6 +105,7 @@ export default function AISubscriptions() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(undefined, "ai-sub-hero")}
               data-testid="button-ai-sub-hero-messenger"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white text-sm"
               style={{ background: "#0084FF" }}
@@ -152,6 +155,7 @@ export default function AISubscriptions() {
                       href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(sub.title)}`}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick(sub.title, undefined, sub.priceLabel, "ai-sub-card")}
                       data-testid={`button-wa-chatgpt-${i}`}
                       className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
                       style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
@@ -162,6 +166,7 @@ export default function AISubscriptions() {
                       href={config.messenger}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackMessengerClick(sub.title, "ai-sub-card")}
                       data-testid={`button-msg-chatgpt-${i}`}
                       className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
                       style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
@@ -216,6 +221,7 @@ export default function AISubscriptions() {
                       href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(sub.name)}+${sub.type}`}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackWhatsAppClick(sub.name, sub.type, sub.price, "ai-sub-card")}
                       data-testid={`button-wa-other-${i}`}
                       className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
                       style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
@@ -226,6 +232,7 @@ export default function AISubscriptions() {
                       href={config.messenger}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => trackMessengerClick(sub.name, "ai-sub-card")}
                       data-testid={`button-msg-other-${i}`}
                       className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
                       style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
@@ -253,6 +260,7 @@ export default function AISubscriptions() {
                 href="https://wa.me/8801533262758?text=Hi%2C+I+need+a+custom+AI+tool+subscription"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackWhatsAppClick("Custom AI Tool", undefined, undefined, "ai-sub-custom")}
                 data-testid="button-custom-wa"
                 className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 transition-all"
                 style={{ background: "#25D366", color: BRAND.white, fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}
@@ -263,6 +271,7 @@ export default function AISubscriptions() {
                 href={config.messenger}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackMessengerClick("Custom AI Tool", "ai-sub-custom")}
                 data-testid="button-custom-msg"
                 className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 transition-all"
                 style={{ background: "#0084FF", color: BRAND.white, fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}

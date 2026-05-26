@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { Users, Shield, Lightbulb, ArrowUpRight, MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, JsonLd, FAQSchema } from "@/components/seo/JsonLd";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 const ABOUT_FAQS = [
   { q: "What is AI Team Premium BD (AITPBD)?", a: "AI Team Premium BD (AITPBD), founded in 2024 and based in Dhaka, Bangladesh, is the country's trusted local access provider of premium AI subscriptions including ChatGPT Plus, Claude Pro, Gemini Advanced, Grammarly Premium, Canva Pro, and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer." },
@@ -159,6 +160,7 @@ export default function About() {
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "about-bottom-cta")}
               data-testid="button-about-whatsapp"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all hover:scale-[1.02] active:scale-95"
               style={{ background: "#25D366", color: "#fff", fontSize: "0.88rem", fontWeight: 600, textDecoration: "none" }}
@@ -169,6 +171,7 @@ export default function About() {
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(undefined, "about-bottom-cta")}
               data-testid="button-about-messenger"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3 transition-all hover:scale-[1.02] active:scale-95"
               style={{ background: "#0084FF", color: "#fff", fontSize: "0.88rem", fontWeight: 600, textDecoration: "none" }}

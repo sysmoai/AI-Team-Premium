@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema } from "@/components/seo/JsonLd";
+import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 interface Props {
   title: string;
@@ -39,6 +40,7 @@ export default function ServiceComingSoon({ title, banglaTitle, description, emo
               href={`https://wa.me/8801533262758?text=${encodeURIComponent(whatsappText)}`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(title, undefined, undefined, "service-coming-soon")}
               data-testid="button-service-whatsapp"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
               style={{ background: "#25D366" }}
@@ -49,6 +51,7 @@ export default function ServiceComingSoon({ title, banglaTitle, description, emo
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackMessengerClick(title, "service-coming-soon")}
               data-testid="button-service-messenger"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
               style={{ background: "#0084FF" }}

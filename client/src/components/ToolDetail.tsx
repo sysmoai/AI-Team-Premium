@@ -138,7 +138,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
         path={path}
         priceBDT={minPrice || 399}
         category="AI Subscription"
-        rating={{ value: "4.9", count: "84" }}
+
       />
       <FAQSchema items={toolFaqs} />
 
@@ -279,7 +279,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                           className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
                           style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
                         >
-                          <WhatsAppIcon size={13} color="#fff" /> WhatsApp
+                          <WhatsAppIcon size={13} color="#fff" /> Order on WhatsApp
                         </a>
                         <a
                           href={config.messenger}
@@ -533,6 +533,36 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL BOTTOM CTA */}
+      <section className="py-20" style={{ background: BRAND.navy }}>
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="text-3xl font-extrabold text-white mb-4">Ready to order {name}?</h2>
+          <p className="text-white/50 mb-8">WhatsApp বা Messenger-এ মেসেজ করুন — ৫ মিনিটে সাড়া পাবেন।</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <a
+              href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(name)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-tool-final-cta-whatsapp"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
+              style={{ background: "#25D366" }}
+            >
+              <WhatsAppIcon size={20} color="#fff" /> Order on WhatsApp
+            </a>
+            <a
+              href={config.messenger}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="button-tool-final-cta-messenger"
+              className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
+              style={{ background: "#0084FF" }}
+            >
+              <MessageCircle size={20} color="#fff" /> Messenger
+            </a>
           </div>
         </div>
       </section>

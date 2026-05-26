@@ -2,13 +2,13 @@ import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
   seoTitle: "Claude Plans Bangladesh — ৳599/mo | AI Team Premium BD",
-  seoDescription: "Buy Anthropic Claude Pro (Claude Sonnet 4) in Bangladesh via bKash/Nagad. Shared and personal seats from ৳599/month. Extended Thinking, 200K context. No international card needed.",
+  seoDescription: "Buy Anthropic Claude Pro (Claude Sonnet 3.5) in Bangladesh via bKash/Nagad. Shared and personal seats from ৳599/month. Extended Thinking, 200K context. No international card needed.",
   path: "/claude-plans",
   toolName: "Claude Pro",
   toolEmoji: "🧠",
   ratingCount: "98",
   heroBanglaTitle: "বাংলাদেশে Claude — ৳৫৯৯ থেকে শুরু",
-  subtitle: "Anthropic's Claude Sonnet 4 (May 2026) — Extended Thinking, 200K context window. Best for research, coding, long documents and academic writing. bKash/Nagad payment. Shared or Personal.",
+  subtitle: "Anthropic's Claude Sonnet 3.5 — Extended Thinking, 200K context window. Best for research, coding, long documents and academic writing. bKash/Nagad payment. Shared or Personal.",
   plans: [
     {
       name: "Claude Pro — Shared Seat",
@@ -18,7 +18,7 @@ const data: ToolPageData = {
       tag: "Popular for Researchers",
       popular: true,
       features: [
-        "Claude Sonnet 4 — Anthropic's May 2026 model",
+        "Claude Sonnet 3.5 — Anthropic's latest model",
         "200K token context window (read entire books)",
         "Extended Thinking for deep step-by-step reasoning",
         "Long PDF & document analysis",
@@ -36,7 +36,7 @@ const data: ToolPageData = {
       tag: "For Coders & Privacy",
       features: [
         "Full personal Anthropic account",
-        "Claude Sonnet 4 — latest model",
+        "Claude Sonnet 3.5 — latest model",
         "200K context window",
         "Maximum privacy — no sharing",
         "Your own Projects & chat history",
@@ -47,11 +47,11 @@ const data: ToolPageData = {
     },
   ],
   aboutText:
-    "Claude হলো Anthropic-এর AI — লম্বা ডকুমেন্ট বিশ্লেষণ, কোডিং, এবং একাডেমিক লেখার জন্য সেরা। Claude Sonnet 4 (May 2026) Extended Thinking সহ আসে যা complex problems step-by-step solve করতে পারে। বাংলাদেশ থেকে সরাসরি কিনতে গেলে international card লাগে। আমাদের কাছ থেকে bKash/Nagad-এ কিনুন।",
+    "Claude হলো Anthropic-এর AI — লম্বা ডকুমেন্ট বিশ্লেষণ, কোডিং, এবং একাডেমিক লেখার জন্য সেরা। Claude Sonnet 3.5 Extended Thinking সহ আসে যা complex problems step-by-step solve করতে পারে। বাংলাদেশ থেকে সরাসরি কিনতে গেলে international card লাগে। আমাদের কাছ থেকে bKash/Nagad-এ কিনুন।",
   whoIsItFor: ["Researchers", "Coders", "Academic Writers", "Freelancers", "Legal Professionals", "Students"],
   faqs: [
     { q: "Claude কী এবং ChatGPT থেকে কীভাবে আলাদা?", a: "Claude হলো Anthropic-এর AI যা 200K token context window সহ আসে — দীর্ঘ ডকুমেন্ট পড়া ও বিশ্লেষণে Claude অনেক ভালো। ChatGPT-র মতো সাধারণ কাজের পাশাপাশি legal, academic ও technical writing-এ Claude বিশেষ দক্ষ।" },
-    { q: "Claude Sonnet 4 কি নতুন model?", a: "হ্যাঁ, Claude Sonnet 4 হলো Anthropic-এর May 2026-এ release হওয়া সর্বশেষ model। এটি Extended Thinking, coding benchmark-এ উল্লেখযোগ্য improvement এবং better instruction following সহ আসে।" },
+    { q: "Claude Sonnet 3.5 কি নতুন model?", a: "হ্যাঁ, Claude Sonnet 3.5 হলো Anthropic-এর সর্বশেষ model। এটি Extended Thinking, coding benchmark-এ উল্লেখযোগ্য improvement এবং better instruction following সহ আসে।" },
     { q: "Extended Thinking কী?", a: "Extended Thinking mode-এ Claude complex problems solve করার আগে step-by-step চিন্তা করে। Math, coding, research — যেকোনো জটিল বিষয়ে আরও accurate এবং nuanced answer দেয়।" },
     { q: "Shared seat মানে কী?", a: "Shared seat মানে একটি Claude Pro account আমরা ২-৩ জনের মধ্যে নিরাপদভাবে share করি। প্রতিটি user আলাদা conversation করতে পারেন। আপনি password পাবেন না — আমরা secure login setup করে দিই।" },
     { q: "Shared এবং Personal Seat-এর মধ্যে কোনটি নেব?", a: "যদি privacy এবং নিজের projects/history চান, তাহলে Personal Seat (৳2,500/mo)। কম বাজেটে শুধু Claude ব্যবহার করতে চাইলে Shared (৳599/mo) যথেষ্ট।" },

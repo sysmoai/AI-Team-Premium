@@ -97,7 +97,7 @@ export const TOOL_META = {
   "category": "writing",
   "priceBdt": 499,
   "priceLabel": "৳499/mo",
-  "model": "GPT-5 + Claude Sonnet 4.5",
+  "model": "GPT-4.5 + Claude Sonnet 3.5",
   "contextWindow": "Your entire workspace",
   "multimodal": "Text, file uploads",
   "banglaQuality": "⭐⭐⭐⭐",

@@ -67,7 +67,7 @@ const FAQS = [
 export default function Home() {
   usePageMeta({
     title: "AI Team Premium BD — ChatGPT, Claude & AI Tools in Bangladesh",
-    description: "Buy ChatGPT Plus from ৳399/mo. Claude Pro, Gemini Advanced & more. Pay via bKash/Nagad. 5-15 min delivery. Bangladesh's #1 AI subscription provider.",
+    description: "Buy ChatGPT Plus from ৳399/mo. Claude Pro, Gemini Advanced & more. Pay via bKash/Nagad. 5-15 min delivery. Bangladesh's trusted AI subscription provider.",
     path: "/",
   });
   const homeFaqs = FAQS.map((f) => ({ q: f.q, a: f.a }));
@@ -77,7 +77,7 @@ export default function Home() {
     "name": "AI Team Premium BD — Premium AI Subscriptions in Bangladesh",
     "url": "https://aiteampremiumbd.com/",
     "description":
-      "AI Team Premium BD sells official ChatGPT Plus, Pro, Business, Claude Pro, Gemini Advanced, Canva Pro, Grammarly Premium, Midjourney and other premium AI subscriptions in Bangladesh, payable via bKash and Nagad, with 5–15 minute delivery and a 30-day replacement warranty.",
+      "AI Team Premium BD sells premium ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly Premium, Midjourney and other premium AI subscriptions in Bangladesh, payable via bKash and Nagad, with 5–15 minute delivery and a 30-day replacement warranty.",
     "inLanguage": ["en", "bn"],
     "isPartOf": { "@id": "https://aiteampremiumbd.com/#website" },
   };
@@ -94,7 +94,7 @@ export default function Home() {
       <FAQSchema items={homeFaqs} />
       <section className="relative overflow-hidden" style={{ background: BRAND.navy }}>
         <div className="absolute inset-0">
-          <img src={IMG_HERO} alt="AI Team Premium BD — Bangladesh's #1 AI subscription provider, offering ChatGPT Plus, Claude Pro, and Gemini Advanced payable via bKash and Nagad" className="w-full h-full object-cover" style={{ opacity: 0.15, mixBlendMode: "luminosity" }} loading="eager" fetchpriority="high" />
+          <img src={IMG_HERO} alt="AI Team Premium BD — Bangladesh's trusted AI subscription provider, offering ChatGPT Plus, Claude Pro, and Gemini Advanced payable via bKash and Nagad" className="w-full h-full object-cover" style={{ opacity: 0.15, mixBlendMode: "luminosity" }} loading="eager" fetchPriority="high" />
           <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${BRAND.navy} 0%, rgba(15,23,42,0.6) 50%, ${BRAND.navy} 100%)` }} />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-24 pb-28 md:pt-32 md:pb-36">
@@ -120,7 +120,7 @@ export default function Home() {
                 style={{ background: "#25D366", color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
               >
                 <WhatsAppIcon size={18} color="#fff" />
-                WhatsApp
+                Order on WhatsApp
               </a>
               <a
                 href={config.messenger}
@@ -160,7 +160,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="rounded-2xl p-6 md:p-8 mb-4" style={{ background: BRAND.white, boxShadow: "0 8px 40px rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.06)" }}>
             <p style={{ color: BRAND.navy, fontSize: "1.02rem", lineHeight: 1.7, fontWeight: 500 }}>
-              <strong>AI Team Premium BD (AITPBD)</strong> is Bangladesh's leading provider of official premium AI subscriptions — ChatGPT Plus from <strong>৳399/month</strong>, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via <strong>bKash and Nagad</strong>, with <strong>5–15 minute delivery</strong>, a <strong>30-day replacement warranty</strong>, and Bangla + English WhatsApp support, serving over <strong>10,000+ Bangladeshi users</strong> since 2024.
+              <strong>AI Team Premium BD (AITPBD)</strong> is Bangladesh's leading provider of premium AI subscriptions — ChatGPT Plus from <strong>৳399/month</strong>, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via <strong>bKash and Nagad</strong>, with <strong>5–15 minute delivery</strong>, a <strong>30-day replacement warranty</strong>, and Bangla + English WhatsApp support, serving <strong>thousands of Bangladeshi users</strong> since 2024.
             </p>
           </div>
         </div>
@@ -191,7 +191,7 @@ export default function Home() {
             {[
               { icon: GraduationCap, title: "Students", tagline: "৳399/mo থেকে শুরু", tools: "ChatGPT · Grammarly · Perplexity", desc: "Assignment writing, research summaries, IELTS prep, thesis — let AI do the heavy lifting while you focus on understanding.", color: "#16A34A", link: "/tools/chatgpt" },
               { icon: Briefcase, title: "Freelancers", tagline: "Fiverr & Upwork-এ এগিয়ে থাকুন", tools: "Claude Pro · Canva Pro · Midjourney", desc: "Faster proposals, better content, stunning visuals — outperform competitors on Fiverr and Upwork with AI-powered work.", color: BRAND.blue, link: "/ai-subscriptions" },
-              { icon: Building2, title: "Businesses", tagline: "Team-wide AI দক্ষতা", tools: "ChatGPT Business · Copilot · Gemini", desc: "Equip your entire team with AI tools. Boost productivity, automate reports, and get live Bangla AI training for your staff.", color: "#7C3AED", link: "/chatgpt-plans" },
+              { icon: Building2, title: "Businesses", tagline: "Team-wide AI দক্ষতা", tools: "ChatGPT Team · Copilot · Gemini", desc: "Equip your entire team with AI tools. Boost productivity, automate reports, and get live Bangla AI training for your staff.", color: "#7C3AED", link: "/chatgpt-plans" },
               { icon: Video, title: "Content Creators", tagline: "ভাইরাল কন্টেন্ট বানান", tools: "Midjourney · ElevenLabs · Canva", desc: "AI-generated images, voice-overs in Bangla, thumbnail design — create professional content without a studio or equipment.", color: "#F59E0B", link: "/tools/midjourney" },
             ].map((p) => (
               <Link key={p.title} href={p.link} style={{ textDecoration: "none" }} data-testid={`card-persona-${p.title.toLowerCase().replace(/\s+/g, '-')}`}>
@@ -239,7 +239,7 @@ export default function Home() {
                       className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full px-3 py-2.5 transition-all"
                       style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
                     >
-                      <WhatsAppIcon size={13} color="#fff" /> WhatsApp
+                      <WhatsAppIcon size={13} color="#fff" /> Order on WhatsApp
                     </a>
                     <a
                       href={config.messenger}
@@ -301,7 +301,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 rounded-full px-8 py-4 transition-all font-bold text-white"
               style={{ background: "#25D366", fontSize: "1rem" }}
             >
-              <WhatsAppIcon size={18} color="#fff" /> Start on WhatsApp
+              <WhatsAppIcon size={18} color="#fff" /> Order on WhatsApp
             </a>
           </div>
         </div>

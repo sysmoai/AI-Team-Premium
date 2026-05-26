@@ -27,12 +27,11 @@ function StatCard({ end, suffix = "", label, decimals = 0 }: StatCardProps) {
   );
 }
 
-const STATS = [
-  { end: 2500, suffix: "+", label: "Happy Customers" },
-  { end: 4.9, suffix: "★", label: "Average Rating", decimals: 1 },
-  { end: 99, suffix: "%", label: "Delivery Success" },
-  { end: 64, suffix: "", label: "Districts Served" },
-  { end: 8, suffix: " min", label: "Avg Delivery Time" },
+const STATS: { end: number; suffix: string; label: string; decimals?: number }[] = [
+  { end: 18, suffix: "+", label: "AI Tools Available" },
+  { end: 24, suffix: "/7", label: "WhatsApp Support" },
+  { end: 30, suffix: "+", label: "Day Replacement" },
+  { end: 4, suffix: "+", label: "Payment Methods" },
 ];
 
 const BUY_STEPS = [
@@ -74,7 +73,7 @@ export function TrustAndBuySection({ productName, whatsappText }: TrustAndBuySec
         <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-6">Trusted by Bangladesh</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {STATS.map((s, i) => (
-            <StatCard key={i} end={s.end} suffix={s.suffix} label={s.label} decimals={s.decimals} />
+            <StatCard key={i} end={s.end} suffix={s.suffix} label={s.label} decimals={s.decimals ?? 0} />
           ))}
         </div>
       </div>
@@ -126,7 +125,7 @@ export function TrustAndBuySection({ productName, whatsappText }: TrustAndBuySec
             style={{ background: "#25D366", textDecoration: "none" }}
           >
             <WhatsAppIcon size={18} color="#fff" />
-            Start Order on WhatsApp
+            Order on WhatsApp
           </a>
         </div>
       </div>

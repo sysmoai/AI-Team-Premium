@@ -7,7 +7,7 @@ import { config } from "@/lib/config";
 import { BreadcrumbSchema, JsonLd, FAQSchema } from "@/components/seo/JsonLd";
 
 const ABOUT_FAQS = [
-  { q: "What is AI Team Premium BD (AITPBD)?", a: "AI Team Premium BD (AITPBD), founded in 2024 and based in Dhaka, Bangladesh, is the country's leading reseller of official premium AI subscriptions including ChatGPT Plus, Claude Pro, Gemini Advanced, Grammarly Premium, Canva Pro, and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer." },
+  { q: "What is AI Team Premium BD (AITPBD)?", a: "AI Team Premium BD (AITPBD), founded in 2024 and based in Dhaka, Bangladesh, is the country's trusted local access provider of premium AI subscriptions including ChatGPT Plus, Claude Pro, Gemini Advanced, Grammarly Premium, Canva Pro, and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer." },
   { q: "How long has AI Team Premium BD been in business?", a: "AI Team Premium BD was founded in 2024 and has since served a growing community of users across Bangladesh, with a strong track record of fast delivery and reliable 30-day replacement guarantees." },
   { q: "Is AI Team Premium BD a legitimate seller of AI subscriptions?", a: "Yes. AI Team Premium BD sells 100% genuine official AI subscriptions — not cracked, not fake. Every subscription includes a 30-day replacement warranty, 24-hour SLA, and Bangla-language customer support via WhatsApp at +880 1533-262758." },
   { q: "Where is AI Team Premium BD located?", a: "AI Team Premium BD is based in Dhaka, Bangladesh, and serves customers across the entire country. Contact us via WhatsApp at +880 1533-262758 or through our Facebook page." },
@@ -21,7 +21,7 @@ const VALUES = [
 
 export default function About() {
   usePageMeta({
-    title: "About AI Team Premium BD — Bangladesh's #1 AI Subscription Provider",
+    title: "About AI Team Premium BD — Bangladesh's Trusted AI Subscription Provider",
     description: "AI Team Premium BD (AITPBD), founded in 2024, is Bangladesh's leading provider of 18+ official AI subscriptions — ChatGPT, Claude, Gemini, Midjourney, SuperGrok & more — payable in BDT via bKash and Nagad.",
     path: "/about",
   });
@@ -30,7 +30,7 @@ export default function About() {
     "@type": "AboutPage",
     "url": "https://aiteampremiumbd.com/about",
     "name": "About AI Team Premium BD",
-    "description": "AI Team Premium BD (AITPBD), founded in 2024 in Dhaka, Bangladesh, is the country's leading reseller of official premium AI subscriptions — ChatGPT, Claude, Gemini and more — payable in BDT via bKash and Nagad.",
+    "description": "AI Team Premium BD (AITPBD), founded in 2024 in Dhaka, Bangladesh, is the country's trusted local access provider of premium AI subscriptions — ChatGPT, Claude, Gemini and more — payable in BDT via bKash and Nagad.",
     "mainEntity": {
       "@type": "LocalBusiness",
       "name": "AI Team Premium BD",
@@ -86,7 +86,7 @@ export default function About() {
             {/* DIRECT ANSWER BLOCK (GEO) */}
             <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.sky, opacity: 1 }}>
               <p style={{ color: BRAND.navy, opacity: 1, fontSize: "1rem", lineHeight: 1.7, fontWeight: 500 }}>
-                <strong>AI Team Premium BD (AITPBD)</strong>, founded in <strong>2024</strong> and based in <strong>Dhaka, Bangladesh</strong>, is the country's leading reseller of official premium AI subscriptions. We sell <strong>18+ AI tools</strong> — ChatGPT, Claude, Gemini, Midjourney, SuperGrok, Google AI Pro, Leonardo, Runway, Kling and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer. We deliver in 5–15 minutes and guarantee replacement within 24 hours.
+                <strong>AI Team Premium BD (AITPBD)</strong>, founded in <strong>2024</strong> and based in <strong>Dhaka, Bangladesh</strong>, is the country's trusted local access provider of premium AI subscriptions. We sell <strong>a wide range of AI tools</strong> — ChatGPT, Claude, Gemini, Midjourney, SuperGrok, Google AI Pro, Leonardo, Runway, Kling and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer. We deliver in 5–15 minutes and guarantee replacement within 24 hours.
               </p>
             </div>
 
@@ -96,7 +96,7 @@ export default function About() {
                 AI Team Premium BD (AITPBD) started in 2024 with a simple mission: to bridge the gap between global AI technology and the Bangladeshi market. We noticed that many talented professionals, students, and businesses in Bangladesh were struggling to access premium global AI tools due to international payment restrictions — over 95% of Bangladeshi users do not hold an international credit card capable of recurring USD billing.
               </p>
               <p className="mt-4">
-                We solve this by acting as your trusted local partner. We provide genuine, official access to tools like <strong>ChatGPT Plus, ChatGPT Pro, ChatGPT Business, Claude Pro, Gemini Advanced, Google AI Pro, SuperGrok, Midjourney, Leonardo AI, Runway ML, Kling AI, Canva Pro, Grammarly Premium, Perplexity Pro, ElevenLabs and GitHub Copilot</strong> — allowing you to pay in BDT via accessible methods like bKash and Nagad.
+                We solve this by acting as your trusted local partner. We provide genuine access to tools like <strong>ChatGPT Plus, ChatGPT Pro, ChatGPT Team, Claude Pro, Gemini Advanced, Google AI Pro, SuperGrok, Midjourney, Leonardo AI, Runway ML, Kling AI, Canva Pro, Grammarly Premium, Perplexity Pro, ElevenLabs and GitHub Copilot</strong> — allowing you to pay in BDT via accessible methods like bKash and Nagad.
               </p>
             </div>
 

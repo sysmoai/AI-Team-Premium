@@ -57,7 +57,7 @@ export default function ChatGPTPlans() {
   ];
 
   const faqs = [
-    { q: "ChatGPT Plus কী?", a: "ChatGPT Plus হলো OpenAI-এর একটি paid subscription যা GPT-4.5 ও o4-mini (limited GPT-5), GPT-image-1 image generation, Canvas collaborative writing/coding, Advanced Voice Mode with video, web browsing, file upload, Deep Research, Custom GPTs সহ অনেক advanced feature দেয়। Free-এর তুলনায় অনেক দ্রুত এবং শক্তিশালী।" },
+    { q: "ChatGPT Plus কী?", a: "ChatGPT Plus হলো OpenAI-এর একটি paid subscription যা GPT-4.5 ও o3-mini (latest GPT model), GPT-image-1 image generation, Canvas collaborative writing/coding, Advanced Voice Mode with video, web browsing, file upload, Deep Research, Custom GPTs সহ অনেক advanced feature দেয়। Free-এর তুলনায় অনেক দ্রুত এবং শক্তিশালী।" },
     { q: "Shared Seat মানে কী?", a: "Shared Seat মানে একটি account-এ আমরা limited number of users add করি। এটি cost কমায়, কিন্তু একটি device থেকে ব্যবহার করতে হবে এবং password জানার সুযোগ নেই।" },
     { q: "Personal Seat Shared-এর চেয়ে আলাদা কীভাবে?", a: "Personal Seat মানে account টি আপনার নিজের নামে। আপনি password জানেন, যেকোনো device থেকে login করতে পারেন, billing আপনার control-এ। তবে দাম বেশি।" },
     { q: "কতক্ষণে access পাবো?", a: "Shared ও Pro plan-এ payment confirm হলে ৫-১৫ মিনিটের মধ্যে WhatsApp-এ login details পাঠানো হয়। Business plan-এ সর্বোচ্চ ১২ ঘন্টা লাগতে পারে।" },
@@ -68,12 +68,12 @@ export default function ChatGPTPlans() {
     { q: "Password change করতে পারবো?", a: "Shared account-এ password change করা strictly prohibited — এতে warranty void হয়। Personal Seat-এ আপনি যা খুশি করতে পারেন।" },
     { q: "Refund policy কী?", a: "Subscription ফি refundable নয়। তবে কাজ না করলে আমরা 24 ঘন্টার মধ্যে replace করি। বিস্তারিত আমাদের Refund Policy পেজে আছে।" },
     { q: "30-day warranty মানে কী?", a: "আপনি যে 30 দিনের জন্য সাবস্ক্রিপশন নিয়েছেন, সেই পুরো সময় account কাজ না করলে আমরা replace করব। Misuse হলে warranty প্রযোজ্য নয়।" },
-    { q: "ChatGPT Pro কি Plus থেকে ভালো?", a: "হ্যাঁ, Pro সবচেয়ে শক্তিশালী plan। GPT-5 unlimited access, o3 Pro ও o4-pro reasoning, 256K context, unlimited usage, priority speed — সব কিছুতেই Pro এগিয়ে। তবে দামও বেশি (৳৪,৫০০)।" },
-    { q: "Business Plan কি Plus থেকে আলাদা?", a: "ChatGPT Business-এ admin console, SSO, 60+ integrations, HIPAA eligibility আছে। এটি team/workspace model। ChatGPT Plus individual use-এর জন্য।" },
+    { q: "ChatGPT Pro কি Plus থেকে ভালো?", a: "হ্যাঁ, Pro সবচেয়ে শক্তিশালী plan। latest GPT model unlimited access, o3 Pro reasoning, 256K context, unlimited usage, priority speed — সব কিছুতেই Pro এগিয়ে। তবে দামও বেশি (৳৪,৫০০)।" },
+    { q: "Business Plan কি Plus থেকে আলাদা?", a: "ChatGPT Team-এ admin console, SSO, 60+ integrations, HIPAA eligibility আছে। এটি team/workspace model। ChatGPT Plus individual use-এর জন্য।" },
     { q: "কীভাবে order করবো?", a: "WhatsApp-এ মেসেজ করুন বা Facebook-এ যোগাযোগ করুন। আমরা plan confirm করে bKash/Nagad নম্বর দেব। Payment হলে ৫-১৫ মিনিটে access পাবেন।" },
     { q: "Memory feature কি আছে?", a: "হ্যাঁ, ChatGPT Plus-এ memory feature available। ChatGPT আপনার previous conversations মনে রাখবে এবং personalized response দেবে।" },
     { q: "Image generation কি কাজ করবে?", a: "হ্যাঁ! Plus, Pro এবং Business সব plan-এই GPT-image-1 image generation available। এটি DALL-E 3-এর চেয়ে উন্নত এবং আরও realistic।" },
-    { q: "GPT-4.5 কি GPT-5 থেকে আলাদা?", a: "হ্যাঁ। GPT-4.5 ও o4-mini হলো ChatGPT Plus-এর standard model। GPT-5 শুধু Pro plan-এ unlimited access আছে — এটি OpenAI-এর সবচেয়ে শক্তিশালী model।" },
+    { q: "GPT-4.5 কি latest GPT model থেকে আলাদা?", a: "হ্যাঁ। GPT-4.5 ও o3-mini হলো ChatGPT Plus-এর standard model। latest GPT model শুধু Pro plan-এ unlimited access আছে — এটি OpenAI-এর সবচেয়ে শক্তিশালী model।" },
     { q: "Upgrade করা যাবে?", a: "হ্যাঁ! বর্তমান plan শেষ হলে বা মাঝপথে upgrade করতে চাইলে WhatsApp-এ জানান। আমরা difference calculate করে upgrade করে দেব।" },
     { q: "বাংলায় support পাবো?", a: "অবশ্যই! আমাদের পুরো team বাংলায় communicate করে। ১০০% Bangla support।" },
     { q: "Login করতে না পারলে কী করবো?", a: "সঙ্গে সঙ্গে WhatsApp-এ জানান। আমরা ৩০ মিনিটের মধ্যে সমস্যা সমাধান করব বা নতুন access দেব।" },
@@ -85,7 +85,7 @@ export default function ChatGPTPlans() {
   ];
 
   const comparisonFeatures = [
-    { name: "GPT model access", free: "Basic", plus: "GPT-4.5 / o4-mini (limited GPT-5)", pro: "GPT-5 Unlimited", business: "GPT-4.5 / o4-mini" },
+    { name: "GPT model access", free: "Basic", plus: "GPT-4.5 / o3-mini (latest GPT model)", pro: "latest GPT model Unlimited", business: "GPT-4.5 / o3-mini" },
     { name: "Image generation (GPT-image-1)", free: false, plus: true, pro: true, business: true },
     { name: "Web browsing", free: false, plus: true, pro: true, business: true },
     { name: "File uploads", free: false, plus: true, pro: true, business: true },
@@ -119,7 +119,7 @@ export default function ChatGPTPlans() {
         path="/chatgpt-plans"
         priceBDT={399}
         category="AI Subscription"
-        rating={{ value: "4.9", count: "84" }}
+
       />
     <div className="flex flex-col gap-0 pb-20">
 
@@ -141,7 +141,7 @@ export default function ChatGPTPlans() {
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
               style={{ background: "#25D366" }}
             >
-              <WhatsAppIcon size={18} color="#fff" /> WhatsApp
+              <WhatsAppIcon size={18} color="#fff" /> Order on WhatsApp
             </a>
             <a
               href={config.messenger}
@@ -416,7 +416,7 @@ export default function ChatGPTPlans() {
               className="inline-flex items-center gap-3 rounded-md h-14 px-8 text-lg font-bold text-white"
               style={{ background: "#25D366" }}
             >
-              <WhatsAppIcon size={22} color="#fff" /> WhatsApp
+              <WhatsAppIcon size={22} color="#fff" /> Order on WhatsApp
             </a>
             <a
               href={config.messenger}
@@ -429,7 +429,7 @@ export default function ChatGPTPlans() {
               <MessageCircle className="w-6 h-6" /> Messenger
             </a>
             <Button size="lg" variant="outline" className="h-14 px-8 text-lg font-bold gap-3" asChild data-testid="footer-facebook">
-              <a href={config.facebook} target="_blank" rel="noopener noreferrer">
+              <a href={config.fbPage} target="_blank" rel="noopener noreferrer">
                 Facebook Page
               </a>
             </Button>

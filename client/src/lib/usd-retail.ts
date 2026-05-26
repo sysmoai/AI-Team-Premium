@@ -13,9 +13,9 @@ export const USD_RETAIL: Record<string, number> = {
   "ChatGPT::ChatGPT Plus — Shared Seat": 20,
   "ChatGPT::ChatGPT Plus — Premium Shared": 20,
   "ChatGPT::ChatGPT Plus — Personal Seat": 20,
-  "ChatGPT::ChatGPT Business — Shared": 25,
-  "ChatGPT::ChatGPT Business — Premium Shared": 25,
-  "ChatGPT::ChatGPT Business — Personal-like": 25,
+  "ChatGPT::ChatGPT Team — Shared": 25,
+  "ChatGPT::ChatGPT Team — Premium Shared": 25,
+  "ChatGPT::ChatGPT Team — Personal-like": 25,
   "ChatGPT::ChatGPT Pro — Premium Shared": 200,
 
   // Claude Pro (anthropic.com/pricing)

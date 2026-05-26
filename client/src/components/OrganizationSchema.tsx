@@ -17,7 +17,7 @@ export function OrganizationSchema() {
         "height": 512,
       },
       "description":
-        "AI Team Premium BD (AITPBD) is Bangladesh's premium provider of official AI subscriptions — ChatGPT Plus, Pro, Business, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via bKash and Nagad with 5-15 minute delivery and a 30-day replacement warranty.",
+        "AI Team Premium BD (AITPBD) is Bangladesh's premium provider of AI subscriptions — ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via bKash and Nagad with 5-15 minute delivery and a 30-day replacement warranty.",
       "foundingDate": "2024",
       "areaServed": {
         "@type": "Country",
@@ -48,7 +48,7 @@ export function OrganizationSchema() {
       "knowsAbout": [
         "ChatGPT Plus Bangladesh",
         "ChatGPT Pro Bangladesh",
-        "ChatGPT Business Bangladesh",
+        "ChatGPT Team Bangladesh",
         "Claude Pro Bangladesh",
         "Gemini Advanced Bangladesh",
         "Canva Pro Bangladesh",
@@ -82,13 +82,7 @@ export function OrganizationSchema() {
         "opens": "09:00",
         "closes": "23:00",
       },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "327",
-        "bestRating": "5",
-        "worstRating": "1",
-      },
+
     },
     {
       "@type": "WebSite",

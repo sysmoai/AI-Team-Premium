@@ -101,7 +101,7 @@ export const TOOL_META = {
   "category": "code",
   "priceBdt": 599,
   "priceLabel": "৳599/mo",
-  "model": "GPT-5 + Claude Sonnet 4.5 + Gemini 3",
+  "model": "GPT-4.5 + Claude Sonnet 3.5 + Gemini 2.5 Pro",
   "contextWindow": "Full-file + workspace context",
   "multimodal": "Code, comments, chat",
   "banglaQuality": "N/A",
@@ -116,7 +116,7 @@ export const TOOL_META = {
   "bestUseCase": "Developers, software engineers",
   "bestFor": [
     "Inline code completion in VS Code, JetBrains, Neovim",
-    "Multi-model: GPT-5 + Claude Sonnet 4.5 + Gemini",
+    "Multi-model: GPT-4.5 + Claude Sonnet 3.5 + Gemini",
     "Chat with your repo (Copilot Workspace)",
     "Best for daily developer productivity"
   ],

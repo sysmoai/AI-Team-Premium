@@ -81,7 +81,7 @@ export default function BrandDesign() {
         path="/services/brand-design"
         priceBDT={4999}
         category="Design Service"
-        rating={{ value: "4.9", count: "84" }}
+
       />
 
       <section className="py-20" style={{ background: BRAND.sky }}>

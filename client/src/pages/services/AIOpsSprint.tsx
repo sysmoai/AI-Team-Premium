@@ -44,7 +44,7 @@ export default function AIOpsSprint() {
         path="/services/ai-ops-sprint"
         priceBDT={9900}
         category="AI Consulting Service"
-        rating={{ value: "4.9", count: "84" }}
+
       />
       <section className="pb-8" style={{ backgroundColor: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6">

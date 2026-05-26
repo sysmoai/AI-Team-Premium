@@ -1,6 +1,6 @@
 const WA_BASE = "https://wa.me/8801533262758";
 const WA_GENERAL_TEXT = encodeURIComponent(
-  "Hi! I want help from AI Team Premium BD.\n\n1) My name:\n2) What I need (ChatGPT / Claude / Support / Service / Other):\n3) Budget range (optional):"
+  "Hi! I want help from AI Team Premium BD.\n\n1) My name:\n2) What I need (ChatGPT / Claude / Support / Service / Other):\n3) Budget range (optional):\n4) How urgent (today / this week):"
 );
 
 export const config = {
@@ -25,9 +25,9 @@ export const config = {
     "plus-shared":            "Hi! I want to order 'ChatGPT Plus Shared (৳399/mo)' from AI Team Premium BD. Please share payment details (bKash/Nagad).",
     "plus-premium-shared":    "Hi! I want to order 'ChatGPT Plus Premium Shared (৳950/mo)'. How do I pay and get access?",
     "plus-personal-seat":     "Hi! I want my own ChatGPT Plus account — 'Plus Personal Seat (৳2,950/mo)'. Is it available?",
-    "business-shared":        "Hi! I want the 'ChatGPT Business Shared (৳699/mo)' plan. Please guide me.",
-    "business-premium-shared":"Hi! I want 'ChatGPT Business Premium Shared (৳1,299/mo)'. What are the next steps?",
-    "business-personal-like": "Hi! I want 'ChatGPT Business Personal-like (৳3,899/mo)'. How do I get started?",
+    "business-shared":        "Hi! I want the 'ChatGPT Team Shared (৳699/mo)' plan. Please guide me.",
+    "business-premium-shared":"Hi! I want 'ChatGPT Team Premium Shared (৳1,299/mo)'. What are the next steps?",
+    "business-personal-like": "Hi! I want 'ChatGPT Team Personal-like (৳3,899/mo)'. How do I get started?",
     "pro-premium-shared":     "Hi! I want the most powerful plan — 'ChatGPT Pro Premium Shared (৳4,500/mo)'. Is it ready?"
   },
 

@@ -10,7 +10,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { config } from "@/lib/config";
-import { Phone, MapPin, Facebook, Instagram, Users, MessageCircle, Send, ArrowUpRight, Clock } from "lucide-react";
+import { Phone, MapPin, Facebook, Instagram, Users, MessageCircle, Send, ArrowUpRight, Clock, CreditCard, Zap } from "lucide-react";
 import { BreadcrumbSchema, FAQSchema } from "@/components/seo/JsonLd";
 
 const CONTACT_FAQS = [
@@ -90,9 +90,15 @@ export default function Contact() {
           <p className="mt-4 mx-auto max-w-xl" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.95rem", lineHeight: 1.65 }}>
             Need AI subscriptions, a website, or a brand makeover? Reach out — fastest response on WhatsApp.
           </p>
-          <div className="mt-5 flex items-center gap-2 justify-center">
+          <div className="mt-5 flex items-center gap-2 justify-center flex-wrap">
             <span data-testid="badge-operating-hours" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(34,197,94,0.1)", color: "#16a34a", fontSize: "0.78rem" }}>
               <Clock size={12} /> সকাল ৯টা – রাত ১১টা · ৭ দিন · 9 AM – 11 PM BST · 7 days
+            </span>
+            <span data-testid="badge-payment-methods" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(37,99,235,0.08)", color: BRAND.blue, fontSize: "0.78rem" }}>
+              <CreditCard size={12} /> Pay via bKash, Nagad, or Bank Transfer
+            </span>
+            <span data-testid="badge-delivery-time" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(245,158,11,0.08)", color: "#d97706", fontSize: "0.78rem" }}>
+              <Zap size={12} /> Delivery: 5–15 minutes
             </span>
           </div>
         </div>

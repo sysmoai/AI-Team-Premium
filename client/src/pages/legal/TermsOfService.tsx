@@ -30,7 +30,7 @@ export default function TermsOfService() {
 
           <div>
             <h2 className="mb-3" style={{ fontSize: "1.15rem", fontWeight: 700 }}>2. Nature of Service</h2>
-            <p style={{ opacity: 0.65 }}>AI Team Premium BD acts as a <strong>procurement proxy and reseller</strong> for official AI subscriptions. We do not represent OpenAI, Anthropic, Google, Grammarly, Canva, or any other platform. All subscriptions sold are genuine and official. We are not affiliated with any AI company unless explicitly stated.</p>
+            <p style={{ opacity: 0.65 }}>AI Team Premium BD acts as a <strong>procurement proxy and local access provider</strong> for official AI subscriptions. We do not represent OpenAI, Anthropic, Google, Grammarly, Canva, or any other platform. All subscriptions sold are genuine and official. We are not affiliated with any AI company unless explicitly stated.</p>
           </div>
 
           <div>

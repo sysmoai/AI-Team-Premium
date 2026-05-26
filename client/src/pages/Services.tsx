@@ -69,7 +69,7 @@ export default function Services() {
         path="/support"
         priceBDT={799}
         category="AI Training Service"
-        rating={{ value: "4.9", count: "84" }}
+
       />
       <section className="py-8" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6 lg:px-10">

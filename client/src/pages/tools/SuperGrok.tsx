@@ -169,12 +169,12 @@ export default function SuperGrok() {
         },
       ]}
       competitorRows={[
-        { feature: "AI Model", thisProduct: "Grok 3 (xAI)", chatgpt: "GPT-4.5 / o4-mini", claude: "Claude Sonnet 4", gemini: "Gemini 2.5 Pro" },
+        { feature: "AI Model", thisProduct: "Grok 3 (xAI)", chatgpt: "GPT-4.5 / o3-mini", claude: "Claude Sonnet 3.5", gemini: "Gemini 2.5 Pro" },
         { feature: "Context Window", thisProduct: "1M tokens", chatgpt: "128K tokens", claude: "200K tokens", gemini: "1M tokens" },
         { feature: "Real-time X/Twitter Data", thisProduct: "✅ Full live", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
         { feature: "Image Generation", thisProduct: "✅ Unlimited (Aurora)", chatgpt: "GPT-image-1 (limited)", claude: "❌ No", gemini: "✅ Yes (Imagen 4)" },
         { feature: "Video Generation", thisProduct: "✅ Yes (beta)", chatgpt: "Limited (Sora)", claude: "❌ No", gemini: "✅ Yes (Veo 2)" },
-        { feature: "Deep Reasoning", thisProduct: "✅ Big Brain", chatgpt: "✅ o3/o4-mini", claude: "✅ Extended Thinking", gemini: "✅ Flash Thinking" },
+        { feature: "Deep Reasoning", thisProduct: "✅ Big Brain", chatgpt: "✅ o3-mini", claude: "✅ Extended Thinking", gemini: "✅ Flash Thinking" },
         { feature: "Knowledge Cut-off", thisProduct: "✅ None (live)", chatgpt: "Apr 2024", claude: "Apr 2024", gemini: "✅ Live (Google)" },
         { feature: "Voice Mode (Bangla)", thisProduct: "✅ Yes", chatgpt: "✅ Advanced Voice", claude: "❌ No voice", gemini: "✅ Gemini Live" },
         { feature: "File Upload (PDF/docs)", thisProduct: "✅ Images, PDFs", chatgpt: "✅ Full range", claude: "✅ Full, 200K ctx", gemini: "✅ Full range" },

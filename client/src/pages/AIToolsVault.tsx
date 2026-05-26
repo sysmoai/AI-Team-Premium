@@ -167,7 +167,7 @@ export default function AIToolsVault() {
               >
                 <MessageCircle size={14} color="#fff" /> Or message on Messenger
               </a>
-              <p className="mt-3 text-center text-xs" style={{ color: BRAND.navy, opacity: 0.4 }}>Full refund within 24h if access not delivered.</p>
+              <p className="mt-3 text-center text-xs" style={{ color: BRAND.navy, opacity: 0.4 }}>Free replacement or account credit within 24h if access is not delivered.</p>
             </div>
 
             <div>

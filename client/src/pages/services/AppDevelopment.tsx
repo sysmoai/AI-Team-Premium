@@ -56,7 +56,7 @@ export default function AppDevelopment() {
         path="/services/app-development"
         priceBDT={29999}
         category="App Development Service"
-        rating={{ value: "4.9", count: "84" }}
+
       />
 
       <section className="py-20" style={{ background: BRAND.sky }}>

@@ -55,7 +55,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
         path={data.path}
         priceBDT={minPrice}
         category="AI Subscription"
-        rating={{ value: "4.9", count: data.ratingCount || "84" }}
+
       />
 
       <section className="py-20 overflow-hidden" style={{ backgroundColor: BRAND.sky }}>
@@ -76,7 +76,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base transition-all"
               style={{ background: "#25D366" }}
             >
-              <WhatsAppIcon size={18} color="#fff" /> WhatsApp
+              <WhatsAppIcon size={18} color="#fff" /> Order on WhatsApp
             </a>
             <a
               href={config.messenger}
@@ -252,7 +252,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
               style={{ background: "#25D366" }}
             >
-              <WhatsAppIcon size={20} color="#fff" /> WhatsApp
+              <WhatsAppIcon size={20} color="#fff" /> Order on WhatsApp
             </a>
             <a
               href={config.messenger}

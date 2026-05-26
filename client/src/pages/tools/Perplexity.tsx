@@ -54,9 +54,9 @@ const PERPLEXITY_USE_CASES = [
     emoji: "🌐",
     title: "Multi-Model AI Comparison",
     who: "AI power users, researchers, content creators",
-    makes: "Use o4-mini, Claude Sonnet 4, GPT-4.5, and Gemini 2.5 Pro from one interface",
+    makes: "Use o3-mini, Claude Sonnet 3.5, GPT-4.5, and Gemini 2.5 Pro from one interface",
     timeSaved: "4 subscriptions (৳2,000+) → ৳599 all-in-one",
-    prompt: "Switch to Claude Sonnet 4: Write a detailed analysis of Bangladesh's garment industry in 2025 with trade data — then compare with GPT-4.5's version",
+    prompt: "Switch to Claude Sonnet 3.5: Write a detailed analysis of Bangladesh's garment industry in 2025 with trade data — then compare with GPT-4.5's version",
   },
 ];
 
@@ -78,7 +78,7 @@ const PERPLEXITY_COMPETITOR_ROWS = [
 
 const PERPLEXITY_FAQS = [
   { q: "What makes Perplexity Pro different from just using Google?", a: "Google shows you a list of links — you still have to read every page yourself. Perplexity Pro reads the top sources, synthesises the key information, and gives you a cited answer in seconds. With Deep Research, it goes further — autonomously searching 30+ sources and writing a comprehensive report. Think of it as Google + a research assistant working together." },
-  { q: "Which AI models can I access with Perplexity Pro?", a: "Perplexity Pro lets you switch between: Sonar Pro (Perplexity's own model), OpenAI's o4-mini and GPT-4.5, Anthropic's Claude Sonnet 4, and Google's Gemini 2.5 Pro — all from one interface. This means you get the equivalent of 4 AI subscriptions in one, making it extremely cost-effective for power users who want to compare model outputs." },
+  { q: "Which AI models can I access with Perplexity Pro?", a: "Perplexity Pro lets you switch between: Sonar Pro (Perplexity's own model), OpenAI's o3-mini and GPT-4.5, Anthropic's Claude Sonnet 3.5, and Google's Gemini 2.5 Pro — all from one interface. This means you get the equivalent of 4 AI subscriptions in one, making it extremely cost-effective for power users who want to compare model outputs." },
   { q: "What is Perplexity Deep Research and how is it different from regular search?", a: "Deep Research is Perplexity's autonomous research agent. You give it a complex research question, and it autonomously runs dozens of searches, evaluates sources, synthesises findings, and writes a structured report — typically 500–2,000 words with citations. This takes 2–5 minutes but produces work that would take a professional researcher hours. Perfect for thesis research, market analysis, and investment due diligence." },
   { q: "Can I upload documents and ask Perplexity questions about them?", a: "Yes. Perplexity Pro allows unlimited file uploads — PDFs, spreadsheets, Word documents, and images. You can ask questions about the document content and Perplexity will answer with citations from the specific sections of your uploaded file. This is useful for analysing research papers, business reports, contracts, and textbooks." },
   { q: "Does Perplexity Pro work well for Bangla language searches?", a: "Perplexity Pro handles Bangla searches reasonably well — you can ask questions in Bangla and receive answers in Bangla with citations. For research on Bangladesh-specific topics (economy, politics, culture), Perplexity often finds more relevant recent sources than ChatGPT since it searches the live web. However, for purely Bangla writing tasks, Claude or ChatGPT may produce more natural prose." },
@@ -87,7 +87,7 @@ const PERPLEXITY_FAQS = [
   { q: "Can Perplexity Pro create charts and visualisations?", a: "Yes. When you ask data-related questions, Perplexity Pro can auto-generate charts, timelines, and comparison tables directly in the answer. For example, ask about 'Bangladesh GDP growth 2015–2025' and Perplexity can show you a chart alongside the cited statistics. This feature sets it apart from text-only AI chat tools." },
   { q: "How many searches can I do per day with Perplexity Pro?", a: "Perplexity Pro Shared (৳599/mo) gives you 300+ Pro searches per day — enough for the heaviest research workflows. Deep Research queries count as multiple searches (typically 5–10) due to their complexity. Normal web-grounded searches have virtually no limit for reasonable usage." },
   { q: "Is Perplexity Pro useful for software developers in Bangladesh?", a: "Absolutely. Perplexity Pro is a developer's research superpower — you can ask technical questions and get answers grounded in official documentation, Stack Overflow, GitHub, and dev blogs. Unlike ChatGPT which might give outdated code examples, Perplexity searches current docs. Ask about Next.js 15, Python 3.13, or any framework released after ChatGPT's knowledge cutoff and Perplexity gives you current answers." },
-  { q: "What is the difference between Sonar Pro and other models in Perplexity?", a: "Sonar Pro is Perplexity's own model — optimised specifically for web-search-grounded answers. It's the fastest option and best for general research questions. The alternative models (GPT-4.5, Claude Sonnet 4, Gemini 2.5 Pro) are better for creative writing, complex reasoning, and tasks requiring more nuanced language generation. You can switch between models in settings." },
+  { q: "What is the difference between Sonar Pro and other models in Perplexity?", a: "Sonar Pro is Perplexity's own model — optimised specifically for web-search-grounded answers. It's the fastest option and best for general research questions. The alternative models (GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro) are better for creative writing, complex reasoning, and tasks requiring more nuanced language generation. You can switch between models in settings." },
 ];
 
 
@@ -97,7 +97,7 @@ export const TOOL_META = {
   "category": "search",
   "priceBdt": 549,
   "priceLabel": "৳549/mo",
-  "model": "GPT-5, Claude Sonnet 4.5, Gemini 3 (you pick)",
+  "model": "GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro (you pick)",
   "contextWindow": "Varies by chosen model",
   "multimodal": "Text, image upload, file upload",
   "banglaQuality": "⭐⭐⭐⭐",
@@ -113,7 +113,7 @@ export const TOOL_META = {
   "bestFor": [
     "Research with cited sources",
     "Real-time web + academic search",
-    "Picking which AI model answers (GPT-5, Claude, Gemini)",
+    "Picking which AI model answers (GPT-4.5, Claude, Gemini)",
     "Quick factual lookups, not creative work"
   ],
   "weaknesses": [
@@ -127,14 +127,14 @@ export default function Perplexity() {
     <ToolDetail
       name="Perplexity Pro"
       tagline="Search Redefined"
-      description="The world's most powerful AI answer engine. Sonar Pro with Deep Research, real-time web citations, multi-model access (o4-mini, GPT-4.5, Claude Sonnet 4, Gemini 2.5 Pro), unlimited file uploads and Perplexity Assistant voice mode."
+      description="The world's most powerful AI answer engine. Sonar Pro with Deep Research, real-time web citations, multi-model access (o3-mini, GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro), unlimited file uploads and Perplexity Assistant voice mode."
       accentColor="#20B2AA"
       icon={Search}
       features={[
         "Sonar Pro — Perplexity's fastest and most accurate model",
         "Deep Research: autonomous multi-step research with cited reports",
         "Real-time web search with numbered citations",
-        "Switch between o4-mini, GPT-4.5, Claude Sonnet 4, Gemini 2.5 Pro",
+        "Switch between o3-mini, GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro",
         "Upload and analyse unlimited PDFs, spreadsheets and documents",
         "Perplexity Assistant — voice-based AI assistant",
         "Visualisations: charts, diagrams and timelines in answers",

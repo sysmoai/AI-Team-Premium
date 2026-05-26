@@ -56,7 +56,7 @@ export default function WebDevelopment() {
         path="/services/web-development"
         priceBDT={7999}
         category="Web Development Service"
-        rating={{ value: "4.9", count: "84" }}
+
       />
 
       <section className="py-20" style={{ background: BRAND.sky }}>

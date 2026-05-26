@@ -61,7 +61,7 @@ const GEMINI_USE_CASES = [
 ];
 
 const GEMINI_COMPETITOR_ROWS = [
-  { feature: "AI Model", thisProduct: "Gemini 2.5 Pro (Ultra)", chatgpt: "GPT-4o / o4-mini", claude: "Claude Sonnet 4", gemini: "Gemini 2.0 Flash (free)" },
+  { feature: "AI Model", thisProduct: "Gemini 2.5 Pro (Ultra)", chatgpt: "GPT-4o / o3-mini", claude: "Claude Sonnet 3.5", gemini: "Gemini 2.0 Flash (free)" },
   { feature: "Context Window", thisProduct: "1,000,000 tokens", chatgpt: "128K tokens", claude: "200K tokens", gemini: "32K tokens (free)" },
   { feature: "Deep Research", thisProduct: "✅ 30+ sources", chatgpt: "✅ Yes", claude: "✅ Yes", gemini: "❌ No (free)" },
   { feature: "Image Generation", thisProduct: "✅ Imagen 4 (~50/day)", chatgpt: "GPT-image-1 (limited)", claude: "❌ None", gemini: "❌ No (free)" },
@@ -97,7 +97,7 @@ export const TOOL_META = {
   "category": "chat",
   "priceBdt": 449,
   "priceLabel": "৳449/mo",
-  "model": "Gemini 3 Pro",
+  "model": "Gemini 2.5 Pro",
   "contextWindow": "1,000,000 tokens",
   "multimodal": "Text, image, video, voice, code",
   "banglaQuality": "⭐⭐⭐⭐⭐",
@@ -105,7 +105,7 @@ export const TOOL_META = {
   "accuracy": "⭐⭐⭐⭐",
   "pricingTier": "Mainstream",
   "brand": "Google",
-  "tagline": "Gemini 3 + Google ecosystem",
+  "tagline": "Gemini 2.5 Pro + Google ecosystem",
   "toolPath": "/tools/google-ai-pro",
   "iconName": "Star",
   "accent": "#4285F4",

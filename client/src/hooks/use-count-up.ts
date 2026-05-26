@@ -22,7 +22,7 @@ export function useCountUp({ end, duration = 1800, start = 0, decimals = 0 }: Us
           startedRef.current = true;
           const startTime = performance.now();
 
-          function tick(now: number) {
+          const tick = (now: number) => {
             const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const eased = 1 - Math.pow(1 - progress, 3);
@@ -31,7 +31,7 @@ export function useCountUp({ end, duration = 1800, start = 0, decimals = 0 }: Us
             if (progress < 1) {
               requestAnimationFrame(tick);
             }
-          }
+          };
 
           requestAnimationFrame(tick);
         }

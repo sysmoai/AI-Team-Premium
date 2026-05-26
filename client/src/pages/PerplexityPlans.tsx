@@ -2,13 +2,13 @@ import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
   seoTitle: "Perplexity Pro Bangladesh — ৳499/mo | AI Team Premium BD",
-  seoDescription: "Buy Perplexity Pro in Bangladesh via bKash/Nagad. AI-powered search with unlimited deep research from ৳499/month. Access o4-mini, GPT-4.5, Claude Sonnet 4, Gemini 2.5 Pro.",
+  seoDescription: "Buy Perplexity Pro in Bangladesh via bKash/Nagad. AI-powered search with unlimited deep research from ৳499/month. Access o3-mini, GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro.",
   path: "/perplexity-plans",
   toolName: "Perplexity Pro",
   toolEmoji: "🔍",
   ratingCount: "76",
   heroBanglaTitle: "বাংলাদেশে Perplexity Pro — ৳৪৯৯ থেকে শুরু",
-  subtitle: "AI-powered answer engine with Deep Research, real-time web citations, and access to o4-mini, GPT-4.5, Claude Sonnet 4, and Gemini 2.5 Pro — all in one search interface. bKash/Nagad.",
+  subtitle: "AI-powered answer engine with Deep Research, real-time web citations, and access to o3-mini, GPT-4.5, Claude Sonnet 3.5, and Gemini 2.5 Pro — all in one search interface. bKash/Nagad.",
   plans: [
     {
       name: "Perplexity Pro — Shared Access",
@@ -20,7 +20,7 @@ const data: ToolPageData = {
       features: [
         "Unlimited Pro search queries with citations",
         "Deep Research — autonomous multi-step reports",
-        "Switch between o4-mini, GPT-4.5, Claude Sonnet 4, Gemini 2.5 Pro",
+        "Switch between o3-mini, GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro",
         "File uploads & analysis (PDF, Word, Excel)",
         "AI image generation",
         "Perplexity Assistant — voice AI mode",
@@ -31,12 +31,12 @@ const data: ToolPageData = {
     },
   ],
   aboutText:
-    "Perplexity Pro হলো AI-powered search engine যা real-time web data সহ detailed research করতে পারে। এটি o4-mini, GPT-4.5, Claude Sonnet 4 ও Gemini 2.5 Pro সবগুলো model একসাথে use করে এবং প্রতিটি answer-এ citation দেয়। Shared access-এ প্রতিটি session সম্পূর্ণ independent — কোনো persistent search history users-দের মধ্যে share হয় না। Researchers ও students-দের জন্য এটি অত্যন্ত শক্তিশালী tool।",
+    "Perplexity Pro হলো AI-powered search engine যা real-time web data সহ detailed research করতে পারে। এটি o3-mini, GPT-4.5, Claude Sonnet 3.5 ও Gemini 2.5 Pro সবগুলো model একসাথে use করে এবং প্রতিটি answer-এ citation দেয়। Shared access-এ প্রতিটি session সম্পূর্ণ independent — কোনো persistent search history users-দের মধ্যে share হয় না। Researchers ও students-দের জন্য এটি অত্যন্ত শক্তিশালী tool।",
   whoIsItFor: ["Researchers", "Students", "Journalists", "Content Creators", "Academics", "Freelancers"],
   faqs: [
     { q: "Perplexity Pro কী এবং Google-এর চেয়ে কীভাবে আলাদা?", a: "Perplexity Pro শুধু link দেখায় না — সে real-time web data পড়ে আপনাকে summarized answer দেয় এবং সব source cite করে। Google search-এর চেয়ে অনেক বেশি smart এবং time-efficient।" },
     { q: "Deep Research mode কী?", a: "Deep Research-এ Perplexity কয়েক ডজন source পড়ে একটি comprehensive research report তৈরি করে। Academic paper-এর মতো detailed answer পাওয়া যায়।" },
-    { q: "কোন AI models access পাওয়া যায়?", a: "Pro-তে o4-mini, GPT-4.5, Claude Sonnet 4, Gemini 2.5 Pro — সব model switch করে ব্যবহার করা যায়।" },
+    { q: "কোন AI models access পাওয়া যায়?", a: "Pro-তে o3-mini, GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro — সব model switch করে ব্যবহার করা যায়।" },
     { q: "Shared account-এ কি আমার search history অন্যরা দেখতে পাবে?", a: "না। Shared access মানে শুধু account credential শেয়ার হয়, কিন্তু প্রতিটি session সম্পূর্ণ independent। Users-দের মধ্যে কোনো persistent search history share হয় না।" },
     { q: "Delivery কতক্ষণ লাগে?", a: "২-৪ ঘণ্টার মধ্যে access দেওয়া হয়।" },
     { q: "File upload করা যায়?", a: "হ্যাঁ, PDF, Word, Excel upload করে AI-দের দিয়ে analyze করানো যায়।" },

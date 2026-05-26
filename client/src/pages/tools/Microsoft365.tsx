@@ -97,7 +97,7 @@ export const TOOL_META = {
   "category": "writing",
   "priceBdt": 1499,
   "priceLabel": "৳1,499/mo",
-  "model": "GPT-5 + Microsoft Graph",
+  "model": "GPT-4.5 + Microsoft Graph",
   "contextWindow": "Your M365 workspace",
   "multimodal": "Text, spreadsheets, slides, email",
   "banglaQuality": "⭐⭐⭐⭐",

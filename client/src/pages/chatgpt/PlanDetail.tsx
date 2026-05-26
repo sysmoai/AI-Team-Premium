@@ -43,8 +43,8 @@ export function PlanDetail({ slug }: PlanDetailProps) {
   const whatsappUrl = `${config.whatsappUrl}?text=${encodeURIComponent(whatsappMessage)}`;
 
   const features = {
-    plus: ["GPT-4.5 / o4-mini Access (limited GPT-5)", "GPT-image-1 Image Generation", "Canvas Collaborative Writing & Coding", "Advanced Voice Mode with Video", "Web Browsing & Deep Research", "File Uploads & Analysis", "Custom GPTs"],
-    pro: ["Everything in Plus", "GPT-5 Unlimited Access", "o3 Pro & o4-pro Reasoning", "256K Context Window", "Priority Server Access", "Unlimited Usage", "Higher Rate Limits"],
+    plus: ["GPT-4.5 / o3-mini Access (latest GPT model)", "GPT-image-1 Image Generation", "Canvas Collaborative Writing & Coding", "Advanced Voice Mode with Video", "Web Browsing & Deep Research", "File Uploads & Analysis", "Custom GPTs"],
+    pro: ["Everything in Plus", "latest GPT model Unlimited Access", "o3 Pro Reasoning", "256K Context Window", "Priority Server Access", "Unlimited Usage", "Higher Rate Limits"],
     business: ["Admin Console", "SSO / SAML", "60+ Integrations", "HIPAA Eligibility", "Shared Workspaces", "Team Management"],
   };
 
@@ -73,7 +73,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
         path={`/chatgpt/${plan.slug}`}
         priceBDT={plan.priceBDT}
         category="AI Subscription / ChatGPT"
-        rating={{ value: "4.9", count: "127" }}
+
       />
       <FAQSchema items={planFaqs} />
 

@@ -174,10 +174,14 @@ export function Footer() {
       </div>
 
       <div className="border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.75rem" }}>
-            &copy; {new Date().getFullYear()} AI Team Premium BD. All rights reserved.
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-col items-center justify-between gap-3">
+          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.68rem", textAlign: "center", maxWidth: "640px", lineHeight: 1.5 }}>
+            AI Team Premium BD is not affiliated with OpenAI, Anthropic, Google, Canva, Grammarly, Midjourney, Perplexity, xAI, Microsoft, or other third-party tool providers.
           </p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full">
+            <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.75rem" }}>
+              &copy; {new Date().getFullYear()} AI Team Premium BD. All rights reserved.
+            </p>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="inline-flex items-center gap-1.5 transition-opacity"
@@ -197,6 +201,7 @@ export function Footer() {
           </button>
         </div>
       </div>
+    </div>
     </footer>
   );
 }

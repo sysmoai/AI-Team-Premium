@@ -55,7 +55,7 @@ export const chatgptPlans = [
   },
   {
     slug: "business-shared",
-    title: "ChatGPT Business — Shared",
+    title: "ChatGPT Team — Shared",
     plan: "Business",
     tier: "Shared",
     priceBDT: 699,
@@ -73,7 +73,7 @@ export const chatgptPlans = [
   },
   {
     slug: "business-premium-shared",
-    title: "ChatGPT Business — Premium Shared",
+    title: "ChatGPT Team — Premium Shared",
     plan: "Business",
     tier: "Premium Shared",
     priceBDT: 1299,
@@ -91,7 +91,7 @@ export const chatgptPlans = [
   },
   {
     slug: "business-personal-like",
-    title: "ChatGPT Business — Personal-like",
+    title: "ChatGPT Team — Personal-like",
     plan: "Business",
     tier: "Personal-like",
     priceBDT: 3899,

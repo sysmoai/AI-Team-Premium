@@ -77,7 +77,7 @@ export default function DigitalMarketing() {
         path="/services/digital-marketing"
         priceBDT={9999}
         category="Digital Marketing Service"
-        rating={{ value: "4.9", count: "84" }}
+
       />
 
       <section className="py-20" style={{ background: BRAND.sky }}>

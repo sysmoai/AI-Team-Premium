@@ -73,7 +73,7 @@ const CANVA_COMPETITOR_ROWS = [
   { feature: "Team Collaboration", thisProduct: "✅ Real-time co-editing", chatgpt: "❌ None", claude: "❌ None", gemini: "Google Slides only" },
   { feature: "Magic Write (AI Copy)", thisProduct: "✅ Built-in AI copywriting", chatgpt: "✅ Excellent", claude: "✅ Excellent", gemini: "✅ Good" },
   { feature: "Presentation Mode", thisProduct: "✅ Built-in presenter view", chatgpt: "❌ None", claude: "❌ None", gemini: "Google Slides" },
-  { feature: "AITPBD Shared Price", thisProduct: "৳350/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
+  { feature: "AITPBD Shared Price", thisProduct: "৳599/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
 ];
 
 const CANVA_FAQS = [
@@ -84,7 +84,7 @@ const CANVA_FAQS = [
   { q: "What is the Canva Brand Kit and why is it important for businesses?", a: "Brand Kit lets you upload your logo, set your brand colours, and select your brand fonts. Every new design automatically uses these brand elements — team members can't accidentally use wrong colours or fonts. For Bangladeshi businesses managing consistent branding across social media, print materials, and presentations, this is a massive time-saver." },
   { q: "Does Canva Pro include video editing?", a: "Yes. Canva Pro includes a full video editor — you can trim, cut, add transitions, add text overlays, include background music (from 1M+ audio tracks), and use AI-powered video features. You can also create animated presentations, short social videos, YouTube intros, and Instagram Reels directly in Canva." },
   { q: "Can I schedule social media posts with Canva Pro?", a: "Yes. Canva Pro includes a built-in social media scheduler. Design your post in Canva, then schedule it to publish automatically to Instagram, Facebook, Twitter/X, LinkedIn, Pinterest, TikTok, and more — up to 8 platforms simultaneously. No need for separate tools like Buffer or Hootsuite for basic scheduling." },
-  { q: "How many people can share one Canva Pro team seat?", a: "For the Team Seat plan (৳350/mo), the seat is added to one Canva account. AITPBD manages this through an official team, so your seat is exclusive to you — others in the team don't affect your designs or brand kit. Your designs are private to your own account within the team." },
+  { q: "How many people can share one Canva Pro team seat?", a: "For the Team Seat plan (৳599/mo), the seat is added to one Canva account. AITPBD manages this through an official team, so your seat is exclusive to you — others in the team don't affect your designs or brand kit. Your designs are private to your own account within the team." },
   { q: "Does Canva Pro include Canva Docs and Canva Websites?", a: "Yes. Canva Pro includes all Canva products — Canva Design, Canva Docs (AI-powered document creation), Canva Websites (publish a website directly from a Canva design), Canva Presentations, and Canva Video. Pro features apply across all of them, giving you an all-in-one creative suite." },
   { q: "Is Canva Pro worth it for Bangladeshi freelancers and students?", a: "Absolutely. For freelancers, Canva Pro pays for itself with the first client project — professional designs worth ৳3,000–10,000 in design fees take 30 minutes. For students, the presentation templates and academic design tools eliminate the need for a graphic designer for assignments and group projects. At ৳350/month from AITPBD, it's the most cost-effective design tool available." },
   { q: "Can I download Canva designs without a watermark?", a: "Yes. Canva Free watermarks premium elements in downloaded files. Canva Pro removes all watermarks from every premium element — your downloads are clean, professional files in PNG, JPG, PDF, MP4, and GIF formats. You can also download in multiple resolutions and file types simultaneously with Canva Pro." },
@@ -95,8 +95,8 @@ const CANVA_FAQS = [
 export const TOOL_META = {
   "slug": "canva",
   "category": "image",
-  "priceBdt": 399,
-  "priceLabel": "৳399/mo",
+  "priceBdt": 599,
+  "priceLabel": "৳599/mo",
   "model": "Canva Magic Studio (multi-model)",
   "contextWindow": "N/A (design tool)",
   "multimodal": "Text, image, video, templates",
@@ -148,7 +148,7 @@ export default function Canva() {
       plans={[
         {
           label: "Canva Pro — Team Seat",
-          price: "৳350",
+          price: "৳599",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Team",
@@ -175,7 +175,7 @@ export default function Canva() {
         {
           title: "Design & AI Features",
           emoji: "🎨",
-          tier2Label: "Shared (৳499/mo)",
+          tier2Label: "Shared (৳599/mo)",
           tier3Label: "Personal (৳1,299/mo)",
           rows: [
             { label: "Premium Templates", free: "250,000", pro: "610,000+ (daily updates)", premium: "610,000+ (daily updates)" },
@@ -191,7 +191,7 @@ export default function Canva() {
         {
           title: "Publishing & Collaboration",
           emoji: "📤",
-          tier2Label: "Shared (৳499/mo)",
+          tier2Label: "Shared (৳599/mo)",
           tier3Label: "Personal (৳1,299/mo)",
           rows: [
             { label: "Social Media Scheduler", free: "No", pro: "8+ platforms", premium: "8+ platforms (own account)" },

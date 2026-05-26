@@ -14,7 +14,7 @@ export const TOOL_META = {
   "category": "chat",
   "priceBdt": 399,
   "priceLabel": "৳399/mo",
-  "model": "GPT-5 + o4-mini reasoning",
+  "model": "GPT-4.5 + o3-mini reasoning",
   "contextWindow": "128K tokens",
   "multimodal": "Text, image, voice, files",
   "banglaQuality": "⭐⭐⭐⭐ (very good)",

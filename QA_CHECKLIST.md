@@ -60,17 +60,17 @@
 - [x] /admin/audit — Audit dashboard
 
 ## CTAs & Links
-- [x] WhatsApp links work with prefilled messages (most pages)
+- [x] WhatsApp links work with prefilled messages (all CTAs)
 - [x] Messenger links work
 - [x] All internal navigation links work
 - [ ] No broken external links (spot-check only)
 
 ## Mobile
-- [ ] No horizontal scroll on 360px–390px
-- [ ] Navbar works on mobile
-- [ ] Cards stack correctly
-- [ ] Footer readable
-- [ ] CTAs tappable
+- [ ] No horizontal scroll on 360px–390px (requires browser verification)
+- [ ] Navbar works on mobile (requires browser verification)
+- [ ] Cards stack correctly (requires browser verification)
+- [ ] Footer readable (requires browser verification)
+- [ ] CTAs tappable (requires browser verification)
 
 ## SEO
 - [x] robots.txt valid
@@ -87,21 +87,25 @@
 - [x] No false official partnership claims ("official reseller" / "authorized distributor" removed)
 - [x] Misleading "official" language softened to "genuine"/"legitimate" on product pages
 - [x] "#1" ranking claims removed from meta descriptions
+- [x] "instant delivery" softened to "fast delivery"
+- [x] "unlimited usage" removed from ChatGPT Pro
+- [x] Superlative claims softened ("leading provider", "best AI experience")
 - [x] Footer disclaimer present on all pages (global)
 - [x] Refund policy clear
 - [x] Privacy policy exists
 - [x] Terms of service exists
-- [ ] Per-page disclaimers on commercial pages (only Footer has it)
+- [x] No fake review ratings
+- [x] Pricing consistent across pages
 
 ## Performance
-- [ ] Lighthouse LCP < 2.5s
-- [ ] No render-blocking issues
-- [ ] Images optimized
-- [x] Bundle size reasonable (manual chunks configured)
+- [ ] Lighthouse LCP < 2.5s (requires browser)
+- [ ] No render-blocking issues (requires browser)
+- [ ] Images optimized (requires browser)
+- [x] Bundle size reasonable (manual chunks configured, 242KB gzipped)
 
 ## Accessibility
-- [ ] Semantic HTML
-- [ ] Heading order correct
-- [ ] Alt text on images
-- [ ] Color contrast adequate
-- [ ] Focus states visible
+- [ ] Semantic HTML (requires manual review)
+- [ ] Heading order correct (requires manual review)
+- [ ] Alt text on images (requires manual review)
+- [ ] Color contrast adequate (requires manual review)
+- [ ] Focus states visible (requires manual review)

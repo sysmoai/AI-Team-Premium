@@ -1,6 +1,12 @@
 import { storage } from "./storage";
 import { RETIRED_MODELS } from "./audit-seed";
+import { TOOL_PAGE_CONTENT } from "./audit-page-content";
 import type { ProductRegistry } from "@shared/schema";
+
+// AITPBD pricing formula: USD price × rate × margin = BDT retail.
+// Used to surface a recalculated BDT figure when USD drift is detected.
+const USD_BDT_RATE = 121.5;
+const AITPBD_MARGIN = 1.85;
 
 /**
  * 8-phase audit protocol.
@@ -106,12 +112,17 @@ export async function runAuditForProduct(productId: number): Promise<{ ok: boole
   // (the latter is the "freshly observed" value — null if not yet scraped).
   const observedPrice = typeof baseline.currentPriceUsd === "number" ? (baseline.currentPriceUsd as number) : null;
   if (observedPrice !== null && product.baselinePriceUsd != null && observedPrice !== product.baselinePriceUsd) {
-    // PHASE 4: classify — any price change is at least the product's priority
+    // PHASE 4: classify — any price change is at least the product's priority.
+    // Recalculate BDT retail so the operator sees the new selling price immediately.
+    const oldBdt = Math.round(product.baselinePriceUsd * USD_BDT_RATE * AITPBD_MARGIN);
+    const newBdt = Math.round(observedPrice * USD_BDT_RATE * AITPBD_MARGIN);
+    const deltaUsd = observedPrice - product.baselinePriceUsd;
+    const deltaBdt = newBdt - oldBdt;
     await storage.createAuditIssue({
       productId,
       phase: 4,
       issueType: "price_change",
-      description: `Price drift for ${product.name}: baseline $${product.baselinePriceUsd}/mo vs observed $${observedPrice}/mo. AITPBD BDT prices need recalculation.`,
+      description: `Price drift for ${product.name}: $${product.baselinePriceUsd} → $${observedPrice}/mo (Δ $${deltaUsd}). Recalculated AITPBD BDT: ৳${oldBdt} → ৳${newBdt}/mo (Δ ৳${deltaBdt}) at rate ${USD_BDT_RATE}, margin ${AITPBD_MARGIN}×. Update all listings.`,
       severity: product.priority,
       status: "open",
     });
@@ -119,44 +130,54 @@ export async function runAuditForProduct(productId: number): Promise<{ ok: boole
       productId,
       phase: 3,
       field: "price_usd",
-      oldValue: String(product.baselinePriceUsd),
-      newValue: String(observedPrice),
+      oldValue: `$${product.baselinePriceUsd} (৳${oldBdt})`,
+      newValue: `$${observedPrice} (৳${newBdt})`,
       sourceUrl: primaryUrl,
       severity: product.priority,
       status: "flagged",
-      notes: `Recalculate BDT pricing (delta ${observedPrice - product.baselinePriceUsd})`,
+      notes: `BDT recalculated: ৳${oldBdt} → ৳${newBdt} (rate ${USD_BDT_RATE}, margin ${AITPBD_MARGIN}×)`,
     });
     issuesCreated++;
     logsCreated++;
   }
 
-  // ===== PHASE 5: Retired model watchlist — scan ALL baseline string content =====
-  const allStrings = collectStrings(baseline).join(" | ");
-  if (allStrings) {
-    const retiredHits = Array.from(new Set(scanRetiredModels(allStrings)));
-    for (const m of retiredHits) {
-      await storage.createAuditIssue({
-        productId,
-        phase: 5,
-        issueType: "retired_model",
-        description: `Retired model "${m}" detected in baseline content for ${product.name}. Update to current model.`,
-        severity: "P0",
-        status: "open",
-      });
-      await storage.createAuditLogEntry({
-        productId,
-        phase: 5,
-        field: "model",
-        oldValue: m,
-        newValue: null,
-        sourceUrl: primaryUrl,
-        severity: "P0",
-        status: "flagged",
-        notes: "Retired model name found in baseline content scan",
-      });
-      issuesCreated++;
-      logsCreated++;
-    }
+  // ===== PHASE 5: Retired model watchlist =====
+  // Scan BOTH the registry baseline (model/feature metadata) AND the actual
+  // tool-page content snapshot. The page-content scan is what catches a real
+  // /tools/* page that still advertises a deprecated model name.
+  const baselineText = collectStrings(baseline).join(" | ");
+  const pageText = TOOL_PAGE_CONTENT[product.slug] || "";
+  const hitsBaseline = baselineText ? scanRetiredModels(baselineText) : [];
+  const hitsPage = pageText ? scanRetiredModels(pageText) : [];
+  const seen = new Set<string>();
+  for (const [m, source] of [
+    ...hitsBaseline.map((m) => [m, "baseline"] as const),
+    ...hitsPage.map((m) => [m, "tool_page"] as const),
+  ]) {
+    const key = `${m}::${source}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    await storage.createAuditIssue({
+      productId,
+      phase: 5,
+      issueType: "retired_model",
+      description: `Retired model "${m}" detected in ${source === "tool_page" ? `tool page content (/tools/${product.slug})` : "baseline metadata"} for ${product.name}. Update to current model.`,
+      severity: "P0",
+      status: "open",
+    });
+    await storage.createAuditLogEntry({
+      productId,
+      phase: 5,
+      field: source === "tool_page" ? "page_content_model" : "baseline_model",
+      oldValue: m,
+      newValue: null,
+      sourceUrl: primaryUrl,
+      severity: "P0",
+      status: "flagged",
+      notes: `Retired model found in ${source} scan`,
+    });
+    issuesCreated++;
+    logsCreated++;
   }
 
   // ===== PHASE 7: Cycle log =====

@@ -17,7 +17,9 @@ const STALE: Record<string, { color: string; emoji: string; label: string }> = {
   rotten: { color: "#EF4444", emoji: "🔴", label: "Rotten" },
 };
 
-// Tool display name → registry slug. Stable mapping avoids string-match drift.
+// Tool display name → registry slug. Only entries that map to an ACTUAL
+// product in product_registry are listed. Tools without a registry entry
+// intentionally render no stamp (rather than show wrong metadata).
 const TOOL_NAME_TO_SLUG: Record<string, string> = {
   "ChatGPT": "chatgpt-plus",
   "Claude Pro": "claude-pro",
@@ -27,18 +29,14 @@ const TOOL_NAME_TO_SLUG: Record<string, string> = {
   "Canva Pro": "canva-pro",
   "Midjourney": "midjourney",
   "Perplexity Pro": "perplexity-pro",
-  "Grok Premium": "supergrok",
   "SuperGrok": "supergrok",
+  "Grok Premium": "supergrok",
   "GitHub Copilot": "copilot-pro",
   "GitHub Copilot Pro": "copilot-pro",
-  "AI Tools Vault": "chatgpt-plus",
   "Leonardo AI": "leonardo-ai",
   "Runway ML": "runway-ml",
   "Kling AI": "kling-ai",
   "Notion AI": "notion-ai",
-  "Microsoft 365 Copilot": "copilot-pro",
-  "LinkedIn Premium": "chatgpt-plus",
-  "ElevenLabs": "chatgpt-plus",
 };
 
 function fmt(d: string | null): string {
@@ -53,7 +51,8 @@ export function LastVerifiedStamp({ toolName }: { toolName: string }) {
     staleTime: 5 * 60 * 1000,
   });
   const slug = TOOL_NAME_TO_SLUG[toolName];
-  const product = slug ? data?.find((p) => p.slug === slug) : undefined;
+  if (!slug) return null;
+  const product = data?.find((p) => p.slug === slug);
   if (!product) return null;
   const stale = STALE[product.staleScore] || STALE.fresh;
   return (

@@ -236,7 +236,7 @@ export default function Services() {
                         </div>
                         <div className="flex flex-col gap-2">
                           <a
-                            href={config.whatsappUrl}
+                            href={config.whatsappGeneral}
                             target="_blank"
                             rel="noopener noreferrer"
                             data-testid={`button-order-${offer.slug}`}
@@ -284,7 +284,7 @@ export default function Services() {
                 </div>
                 <div className="flex flex-col gap-2">
                   <a
-                    href={config.whatsappUrl}
+                    href={config.whatsappGeneral}
                     target="_blank"
                     rel="noopener noreferrer"
                     data-testid={`button-join-${m.slug}`}

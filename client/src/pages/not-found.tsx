@@ -1,9 +1,16 @@
 import { Layout } from "@/components/layout/Layout";
 import { BRAND } from "@/components/brand/LogoIcons";
+import { usePageMeta } from "@/hooks/use-page-meta";
 import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
+  usePageMeta({
+    title: "Page Not Found — AI Team Premium BD",
+    description: "The page you are looking for does not exist. Browse AI subscriptions, tools, and services at AI Team Premium BD.",
+    path: "/404",
+  });
+
   return (
     <Layout>
       <section className="py-32">

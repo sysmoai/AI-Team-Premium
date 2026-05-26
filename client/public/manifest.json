@@ -1,0 +1,21 @@
+{
+  "name": "AI Team Premium BD",
+  "short_name": "AITPBD",
+  "description": "ChatGPT, Claude & AI Tools in Bangladesh. Pay via bKash/Nagad.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0F172A",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

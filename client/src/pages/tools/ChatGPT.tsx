@@ -43,7 +43,7 @@ export const TOOL_META = {
 export default function ChatGPT() {
   usePageMeta({
     title: "ChatGPT Plus & Business Subscriptions",
-    description: "Official ChatGPT Plus, Business and Pro subscriptions in Bangladesh. ৳399 to ৳4,500/mo. bKash & Nagad accepted. Instant delivery.",
+    description: "Genuine ChatGPT Plus, Team and Pro subscriptions in Bangladesh. ৳399 to ৳4,500/mo. bKash & Nagad accepted. Instant delivery.",
   });
 
   return (
@@ -57,7 +57,7 @@ export default function ChatGPT() {
             ChatGPT <span style={{ color: "#16A34A" }}>in Bangladesh</span>
           </h1>
           <p className="mt-4 mx-auto max-w-xl" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.95rem", lineHeight: 1.65 }}>
-            Official ChatGPT Plus, Business and Pro subscriptions. Instant delivery via WhatsApp. Pay with bKash/Nagad.
+            Genuine ChatGPT Plus, Team and Pro subscriptions. Instant delivery via WhatsApp. Pay with bKash/Nagad.
           </p>
         </div>
       </section>

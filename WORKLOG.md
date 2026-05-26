@@ -56,7 +56,43 @@
 ### Dead Files Detected
 - `client/public/images/` contains what appears to be an entire separate React app (brand design system). This is served as static files but may be unused by the main app. Investigate removal.
 
-## Deployment Status
+## 2026-05-26 — Production Readiness & Legal/Trust Fixes
+
+### Fixes Applied
+1. **Pricing.tsx TS Error** — Added `delivery` property to all 16 items in AI Chat & Research Tools section. Build now passes.
+2. **Services.tsx WhatsApp CTAs** — Changed `config.whatsappUrl` (no text) → `config.whatsappGeneral` (prefilled message) for support packages and membership cards.
+3. **Misleading "Official" Language Removed** — Replaced with "Genuine", "Authentic", or "Legitimate" on:
+   - `tools/ChatGPT.tsx` (description + hero)
+   - `tools/Canva.tsx` (5 occurrences: FAQ, description, features, specs)
+   - `tools/Grammarly.tsx` (FAQ)
+   - `tools/Claude.tsx` (FAQ)
+   - `chatgpt/PlanDetail.tsx` (2 occurrences)
+4. **"#1" Claims Removed** — Removed "Bangladesh's #1 AI subscription provider" from `index.html` meta descriptions (OG + Twitter).
+5. **Missing SEO Assets Created**:
+   - `client/public/apple-touch-icon.png` (copied from favicon.png)
+   - `client/public/manifest.json`
+   - Added `<link rel="manifest">` to `index.html`
+6. **NotFound Page Meta** — Added `usePageMeta` to 404 page with proper title and description.
+7. **No "official reseller" / "authorized distributor" language remains** in codebase.
+
+### Files Changed
+- `client/src/pages/Pricing.tsx`
+- `client/src/pages/Services.tsx`
+- `client/src/pages/tools/ChatGPT.tsx`
+- `client/src/pages/tools/Canva.tsx`
+- `client/src/pages/tools/Grammarly.tsx`
+- `client/src/pages/tools/Claude.tsx`
+- `client/src/pages/chatgpt/PlanDetail.tsx`
+- `client/src/pages/not-found.tsx`
+- `client/index.html`
+- `client/public/apple-touch-icon.png` (new)
+- `client/public/manifest.json` (new)
+
+### Build Verification
+- ✅ `npm run check` — passes (0 errors)
+- ✅ `npm run build` — passes
+
+### Deployment Status
 - **Platform:** GCP Cloud Run
 - **Project:** sysmoai-hq-prod
 - **Service URL:** https://ai-team-premium-bd-1005103726650.us-central1.run.app

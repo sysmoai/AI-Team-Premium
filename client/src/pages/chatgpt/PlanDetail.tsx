@@ -99,7 +99,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                   {plan.title}
                 </h1>
                 <p className="mt-4 text-lg text-muted-foreground">
-                  Official {plan.plan} features tailored for Bangladesh users with local payment support.
+                  Genuine {plan.plan} features tailored for Bangladesh users with local payment support.
                 </p>
                 {/* DIRECT ANSWER BLOCK (GEO) */}
                 <div className="mt-6 rounded-xl p-5 border" style={{ background: "#EFF6FF", borderColor: "rgba(37,99,235,0.15)" }}>
@@ -126,7 +126,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                       )}
                       {plan.accessType === "workspace-invite" && (
                         <p>
-                          <strong>Note:</strong> Official minimum 2 seats when buying directly from OpenAI. 
+                          <strong>Note:</strong> OpenAI's official minimum is 2 seats when buying directly. 
                           Our tiers are local service wrappers provided via Workspace invite model.
                         </p>
                       )}

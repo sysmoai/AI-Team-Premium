@@ -1,6 +1,38 @@
 import { ToolDetail } from "@/components/ToolDetail";
 import { Video } from "lucide-react";
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "kling",
+  "category": "video",
+  "priceBdt": 899,
+  "priceLabel": "৳899/mo",
+  "model": "Kling 2.5",
+  "contextWindow": "N/A (video gen)",
+  "multimodal": "Text-to-video, image-to-video, lip-sync",
+  "banglaQuality": "N/A",
+  "speed": "~90 sec per 5-sec clip",
+  "accuracy": "⭐⭐⭐⭐",
+  "pricingTier": "Mainstream",
+  "brand": "Kuaishou",
+  "tagline": "Long-form AI video, China-native",
+  "toolPath": "/tools/kling",
+  "iconName": "Video",
+  "accent": "#06B6D4",
+  "bestUseCase": "Long-form storytelling, social video, ads",
+  "bestFor": [
+    "Longer clips (up to 2 min vs Runway's 10 sec)",
+    "Realistic human motion & physics",
+    "Cheaper credit costs than Runway",
+    "Strong lip-sync for talking-head videos"
+  ],
+  "weaknesses": [
+    "UI primarily in Chinese (translated)",
+    "Less established creative ecosystem"
+  ]
+} as const;
+
 export default function KlingPage() {
   return (
     <ToolDetail

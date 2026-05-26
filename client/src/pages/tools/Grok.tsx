@@ -90,6 +90,38 @@ const GROK_FAQS = [
   { q: "Is Grok better than ChatGPT for Bangladesh users?", a: "SuperGrok has specific advantages: unlimited Aurora image generation (ChatGPT limits this), real-time X/Twitter data intelligence (no ChatGPT equivalent), and Grok Video generation. ChatGPT has a larger ecosystem of custom GPTs, plugins, and Canvas. For visual content creators and social media researchers who need live X data, SuperGrok wins on unique features. For document analysis, coding workflows, and general AI tasks, ChatGPT and Claude remain strong alternatives." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "grok",
+  "category": "chat",
+  "priceBdt": 999,
+  "priceLabel": "৳999/mo",
+  "model": "Grok 4 + Grok 4 Heavy",
+  "contextWindow": "256K tokens",
+  "multimodal": "Text, image, voice",
+  "banglaQuality": "⭐⭐⭐",
+  "speed": "Fast",
+  "accuracy": "⭐⭐⭐⭐",
+  "pricingTier": "Premium",
+  "brand": "xAI",
+  "tagline": "Grok 4 — uncensored & X-native",
+  "toolPath": "/tools/supergrok",
+  "iconName": "Sparkles",
+  "accent": "#1DA1F2",
+  "bestUseCase": "Power users wanting fewer guardrails",
+  "bestFor": [
+    "Less restrictive answers on edgy topics",
+    "Real-time X (Twitter) data and trends",
+    "Grok 4 Heavy multi-agent reasoning",
+    "DeepSearch live web research"
+  ],
+  "weaknesses": [
+    "Most expensive of the chat AIs",
+    "Smaller ecosystem of apps & plugins"
+  ]
+} as const;
+
 export default function Grok() {
   return (
     <ToolDetail

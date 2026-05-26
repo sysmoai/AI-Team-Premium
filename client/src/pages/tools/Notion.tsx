@@ -90,6 +90,38 @@ const NOTION_FAQS = [
   { q: "Can Notion integrate with other tools I use?", a: "Yes. Notion has native integrations with Slack (send notifications), GitHub (link pull requests to tasks), Jira (sync issues), Google Drive (embed files), Calendly (embed booking), Figma (embed designs), and many more. The Notion API allows custom integrations with any tool that has an API. For Bangladeshi teams using a mix of tools, Notion serves as the central hub that connects everything." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "notion",
+  "category": "writing",
+  "priceBdt": 499,
+  "priceLabel": "৳499/mo",
+  "model": "GPT-5 + Claude Sonnet 4.5",
+  "contextWindow": "Your entire workspace",
+  "multimodal": "Text, file uploads",
+  "banglaQuality": "⭐⭐⭐⭐",
+  "speed": "Fast",
+  "accuracy": "⭐⭐⭐⭐",
+  "pricingTier": "Affordable",
+  "brand": "Notion",
+  "tagline": "AI inside your knowledge base",
+  "toolPath": "/tools/notion",
+  "iconName": "FileText",
+  "accent": "#000000",
+  "bestUseCase": "Teams, knowledge workers, PMs",
+  "bestFor": [
+    "Q&A across your entire Notion workspace",
+    "Auto-summarise meeting notes & docs",
+    "AI Connectors to Slack, Google Drive, GitHub",
+    "Best for team knowledge workflows"
+  ],
+  "weaknesses": [
+    "Only useful if you already live in Notion",
+    "Standalone writing weaker than ChatGPT / Claude"
+  ]
+} as const;
+
 export default function NotionPage() {
   return (
     <ToolDetail

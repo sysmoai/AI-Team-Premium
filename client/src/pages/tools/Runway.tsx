@@ -1,6 +1,38 @@
 import { ToolDetail } from "@/components/ToolDetail";
 import { Film } from "lucide-react";
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "runway",
+  "category": "video",
+  "priceBdt": 1499,
+  "priceLabel": "৳1,499/mo",
+  "model": "Gen-4 + Gen-4 Turbo",
+  "contextWindow": "N/A (video gen)",
+  "multimodal": "Text-to-video, image-to-video, video-to-video",
+  "banglaQuality": "N/A",
+  "speed": "~60 sec per 5-sec clip",
+  "accuracy": "⭐⭐⭐⭐⭐",
+  "pricingTier": "Premium",
+  "brand": "Runway",
+  "tagline": "AI video — Gen-4 cinema quality",
+  "toolPath": "/tools/runway",
+  "iconName": "Video",
+  "accent": "#FF6B6B",
+  "bestUseCase": "Filmmakers, ad agencies, content studios",
+  "bestFor": [
+    "Text-to-video with cinematic motion",
+    "Image-to-video (animate stills)",
+    "Pro-grade timeline editor + green screen",
+    "Hollywood-used motion brush controls"
+  ],
+  "weaknesses": [
+    "Limited free credits, paid plans add up",
+    "Shorter clip lengths than Kling"
+  ]
+} as const;
+
 export default function RunwayPage() {
   return (
     <ToolDetail

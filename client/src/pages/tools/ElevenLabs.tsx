@@ -90,6 +90,39 @@ const ELEVENLABS_FAQS = [
   { q: "How is ElevenLabs delivered and can I use it immediately?", a: "After payment confirmation on WhatsApp, we deliver ElevenLabs Creator credentials within 5–15 minutes (Shared plan) or 2–4 hours (Personal plan). You log in at elevenlabs.io, and all Creator features are immediately available — no additional setup or downloads needed. The platform is browser-based and works on any device." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "elevenlabs",
+  "category": "video",
+  "priceBdt": 999,
+  "priceLabel": "৳999/mo",
+  "model": "Eleven Multilingual v2 + Turbo",
+  "contextWindow": "N/A (audio gen)",
+  "multimodal": "Text-to-speech, voice clone, dubbing",
+  "banglaQuality": "⭐⭐⭐ (limited)",
+  "speed": "Real-time streaming",
+  "accuracy": "⭐⭐⭐⭐⭐",
+  "pricingTier": "Premium",
+  "brand": "ElevenLabs",
+  "tagline": "Most realistic AI voice generator",
+  "toolPath": "/tools/elevenlabs",
+  "iconName": "Mic",
+  "accent": "#F5A623",
+  "bestUseCase": "Podcasters, YouTubers, audiobook creators",
+  "bestFor": [
+    "Ultra-realistic text-to-speech in 30+ languages",
+    "Voice cloning (your own or stock voices)",
+    "Long-form audiobook & podcast generation",
+    "AI dubbing across languages",
+    "Sound effects generation"
+  ],
+  "weaknesses": [
+    "No native video — audio only",
+    "Bangla voice quality lags English"
+  ]
+} as const;
+
 export default function ElevenLabsPage() {
   return (
     <ToolDetail

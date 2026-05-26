@@ -90,6 +90,39 @@ const GEMINI_FAQS = [
   { q: "How do I receive my Gemini Advanced access after paying on WhatsApp?", a: "For the Shared Seat (৳449/mo): we send you login credentials within 5–15 minutes of payment confirmation. For the Personal Seat (৳2,300/mo): we need your Google email address and process the upgrade to your account within 2–4 hours. You'll receive a Google notification confirming the Gemini Advanced upgrade." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "gemini",
+  "category": "chat",
+  "priceBdt": 449,
+  "priceLabel": "৳449/mo",
+  "model": "Gemini 3 Pro",
+  "contextWindow": "1,000,000 tokens",
+  "multimodal": "Text, image, video, voice, code",
+  "banglaQuality": "⭐⭐⭐⭐⭐",
+  "speed": "Very fast",
+  "accuracy": "⭐⭐⭐⭐",
+  "pricingTier": "Mainstream",
+  "brand": "Google",
+  "tagline": "Gemini 3 + Google ecosystem",
+  "toolPath": "/tools/google-ai-pro",
+  "iconName": "Star",
+  "accent": "#4285F4",
+  "bestUseCase": "Heavy Google Workspace users, video creators",
+  "bestFor": [
+    "Largest context window in the industry (1M tokens)",
+    "Real-time Google Search integration",
+    "Veo 3 video generation included",
+    "Gmail, Docs & Drive integration",
+    "2 TB Google One storage bundled"
+  ],
+  "weaknesses": [
+    "Less polished writing voice than Claude",
+    "Smaller plugin ecosystem than ChatGPT"
+  ]
+} as const;
+
 export default function Gemini() {
   return (
     <ToolDetail

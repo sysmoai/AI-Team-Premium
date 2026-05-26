@@ -90,6 +90,39 @@ const VAULT_FAQS = [
   { q: "Are there any usage limits on the Vault bundle tools?", a: "The tools in the Vault bundle are the standard Shared Seat tiers with all Pro features enabled. Usage limits match the standard Pro tiers for each tool: ChatGPT Plus (unlimited GPT-4o for normal use), Claude Pro (5× more than free), Gemini Advanced (unlimited for normal use). Heavy-use power users who send 200+ long messages per day on a single tool may experience occasional slowdowns during peak hours." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "vault",
+  "category": "chat",
+  "priceBdt": 1999,
+  "priceLabel": "৳1,999/mo",
+  "model": "10+ AI tools combined",
+  "contextWindow": "Varies per tool",
+  "multimodal": "Text, image, code, design",
+  "banglaQuality": "⭐⭐⭐⭐⭐",
+  "speed": "Tool-dependent",
+  "accuracy": "⭐⭐⭐⭐⭐",
+  "pricingTier": "Bundle (best value)",
+  "brand": "AITPBD bundle",
+  "tagline": "10+ premium AI tools in one bundle",
+  "toolPath": "/tools/vault",
+  "iconName": "Layers",
+  "accent": "#2563EB",
+  "bestUseCase": "Heavy AI users, freelancers, startups",
+  "bestFor": [
+    "Access to ChatGPT Plus, Claude, Gemini, Perplexity together",
+    "Massive savings vs buying each separately",
+    "Includes Midjourney, Grammarly, Canva and more",
+    "Single bKash/Nagad payment",
+    "Best for power users + small agencies"
+  ],
+  "weaknesses": [
+    "Shared seats only — not personal accounts",
+    "Some tools rotate based on demand"
+  ]
+} as const;
+
 export default function Vault() {
   return (
     <ToolDetail

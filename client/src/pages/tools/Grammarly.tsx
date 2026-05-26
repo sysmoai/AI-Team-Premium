@@ -95,6 +95,38 @@ const GRAMMARLY_EXTENDED_FAQS = [
   { q: "How is Grammarly Premium delivered by AITPBD?", a: "Grammarly Premium from AITPBD is upgraded directly on your own Grammarly account — we need your Grammarly email address. Delivery takes 1–2 hours after payment confirmation on WhatsApp. Your existing documents, account settings, and history are preserved. The upgrade is official and comes with a 30-day replacement warranty." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "grammarly",
+  "category": "writing",
+  "priceBdt": 449,
+  "priceLabel": "৳449/mo",
+  "model": "Grammarly AI + GPT integrations",
+  "contextWindow": "N/A (assistive)",
+  "multimodal": "Text only",
+  "banglaQuality": "❌ Not supported",
+  "speed": "Real-time",
+  "accuracy": "⭐⭐⭐⭐⭐ (grammar)",
+  "pricingTier": "Affordable",
+  "brand": "Grammarly",
+  "tagline": "Writing assistant for grammar & tone",
+  "toolPath": "/tools/grammarly",
+  "iconName": "Edit3",
+  "accent": "#15C39A",
+  "bestUseCase": "Students, writers, ESL professionals",
+  "bestFor": [
+    "Real-time grammar, spelling, punctuation fixes",
+    "Tone detection (formal vs friendly)",
+    "Plagiarism checker built in",
+    "Works everywhere — browser, Word, Gmail"
+  ],
+  "weaknesses": [
+    "English only — no Bangla support",
+    "Not a generative AI, only assistive"
+  ]
+} as const;
+
 export default function Grammarly() {
   return (
     <ToolDetail

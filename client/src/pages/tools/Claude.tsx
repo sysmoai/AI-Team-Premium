@@ -90,6 +90,39 @@ const CLAUDE_FAQS = [
   { q: "Does Claude Pro include access to all Claude models?", a: "Claude Pro gives access to Claude Sonnet 4 — Anthropic's current most capable model — with Extended Thinking enabled. It also allows switching to Claude Haiku for faster responses. As Anthropic releases new models (Claude Opus 4, etc.), Pro subscribers get priority access before free users." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "claude",
+  "category": "chat",
+  "priceBdt": 599,
+  "priceLabel": "৳599/mo",
+  "model": "Claude Sonnet 4.5 + Opus 4",
+  "contextWindow": "200K tokens (~150K words)",
+  "multimodal": "Text, image, PDF, spreadsheets",
+  "banglaQuality": "⭐⭐⭐⭐⭐",
+  "speed": "Fast — Extended Thinking adds delay",
+  "accuracy": "⭐⭐⭐⭐⭐",
+  "pricingTier": "Premium",
+  "brand": "Anthropic",
+  "tagline": "Best AI for long-form writing & analysis",
+  "toolPath": "/tools/claude",
+  "iconName": "Brain",
+  "accent": "#D97757",
+  "bestUseCase": "Writers, researchers, senior devs",
+  "bestFor": [
+    "Long-form essays, thesis & academic writing",
+    "Analysing huge PDFs / books (200K context)",
+    "Nuanced reasoning with Extended Thinking",
+    "Code review of large multi-file projects",
+    "Professional tone, less 'AI-sounding' output"
+  ],
+  "weaknesses": [
+    "No native image generation",
+    "Slightly stricter than ChatGPT on some topics"
+  ]
+} as const;
+
 export default function Claude() {
   return (
     <ToolDetail

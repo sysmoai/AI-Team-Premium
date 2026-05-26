@@ -93,6 +93,38 @@ const MIDJOURNEY_EXTENDED_FAQS = [
   { q: "Can Bangladeshi designers use Midjourney commercially for client work?", a: "Yes. Paid Midjourney plans include commercial usage rights — you can use generated images for client projects, sell designs, use in advertising, and create commercial products. The only restriction is you cannot claim copyright ownership over the raw AI-generated image (the copyright status of pure AI art is still legally evolving globally), but you can use the images commercially for any project. Many Bangladeshi designers on Fiverr and Upwork build entire businesses using Midjourney." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "midjourney",
+  "category": "image",
+  "priceBdt": 999,
+  "priceLabel": "৳999/mo",
+  "model": "Midjourney v7",
+  "contextWindow": "N/A (image gen)",
+  "multimodal": "Text-to-image, image-to-image",
+  "banglaQuality": "N/A",
+  "speed": "~30 sec per image",
+  "accuracy": "⭐⭐⭐⭐⭐ (artistic)",
+  "pricingTier": "Premium",
+  "brand": "Midjourney",
+  "tagline": "Best AI image generator (artistic)",
+  "toolPath": "/tools/midjourney",
+  "iconName": "Image",
+  "accent": "#7F5AF0",
+  "bestUseCase": "Designers, marketers, content creators",
+  "bestFor": [
+    "Stylised, artistic images & concept art",
+    "Marketing visuals with cinematic quality",
+    "Character design, illustrations, posters",
+    "Web interface + Discord workflow"
+  ],
+  "weaknesses": [
+    "Not as photorealistic as some competitors",
+    "Less precise text-in-image than DALL-E / Ideogram"
+  ]
+} as const;
+
 export default function Midjourney() {
   return (
     <ToolDetail

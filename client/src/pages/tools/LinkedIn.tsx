@@ -90,6 +90,39 @@ const LINKEDIN_FAQS = [
   { q: "Can I cancel LinkedIn Premium through AITPBD after one month?", a: "Yes. LinkedIn Premium from AITPBD is month-to-month — you pay for one month at a time via bKash or Nagad. You can choose not to renew after any month. Since it's a private upgrade on your own account, your LinkedIn data, connections, and history remain intact even if you downgrade to Free. Simply don't pay for the next month to revert." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "linkedin",
+  "category": "writing",
+  "priceBdt": 899,
+  "priceLabel": "৳899/mo",
+  "model": "LinkedIn AI (writing assist)",
+  "contextWindow": "Your profile + network",
+  "multimodal": "Text, profile data",
+  "banglaQuality": "⭐⭐⭐",
+  "speed": "Real-time",
+  "accuracy": "⭐⭐⭐⭐",
+  "pricingTier": "Mainstream",
+  "brand": "LinkedIn",
+  "tagline": "Career & business networking with AI",
+  "toolPath": "/tools/linkedin",
+  "iconName": "Linkedin",
+  "accent": "#0A66C2",
+  "bestUseCase": "Job seekers, recruiters, B2B sales",
+  "bestFor": [
+    "InMail messages to anyone on LinkedIn",
+    "Who's Viewed Your Profile (last 90 days)",
+    "AI-assisted profile + cover letter writing",
+    "LinkedIn Learning (20,000+ courses)",
+    "Top Applicant + salary insights"
+  ],
+  "weaknesses": [
+    "Not a general-purpose AI tool",
+    "Value depends on active job search / sales"
+  ]
+} as const;
+
 export default function LinkedInPage() {
   return (
     <ToolDetail

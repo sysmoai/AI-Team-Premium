@@ -90,6 +90,38 @@ const PERPLEXITY_FAQS = [
   { q: "What is the difference between Sonar Pro and other models in Perplexity?", a: "Sonar Pro is Perplexity's own model — optimised specifically for web-search-grounded answers. It's the fastest option and best for general research questions. The alternative models (GPT-4.5, Claude Sonnet 4, Gemini 2.5 Pro) are better for creative writing, complex reasoning, and tasks requiring more nuanced language generation. You can switch between models in settings." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "perplexity",
+  "category": "search",
+  "priceBdt": 549,
+  "priceLabel": "৳549/mo",
+  "model": "GPT-5, Claude Sonnet 4.5, Gemini 3 (you pick)",
+  "contextWindow": "Varies by chosen model",
+  "multimodal": "Text, image upload, file upload",
+  "banglaQuality": "⭐⭐⭐⭐",
+  "speed": "Very fast — search-first design",
+  "accuracy": "⭐⭐⭐⭐⭐ (cited sources)",
+  "pricingTier": "Mainstream",
+  "brand": "Perplexity",
+  "tagline": "AI search engine with sources",
+  "toolPath": "/tools/perplexity",
+  "iconName": "Search",
+  "accent": "#20B8CD",
+  "bestUseCase": "Researchers, students, journalists",
+  "bestFor": [
+    "Research with cited sources",
+    "Real-time web + academic search",
+    "Picking which AI model answers (GPT-5, Claude, Gemini)",
+    "Quick factual lookups, not creative work"
+  ],
+  "weaknesses": [
+    "Not designed for long creative writing",
+    "Limited image / video generation"
+  ]
+} as const;
+
 export default function Perplexity() {
   return (
     <ToolDetail

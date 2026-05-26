@@ -1,6 +1,38 @@
 import { ToolDetail } from "@/components/ToolDetail";
 import { Palette } from "lucide-react";
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "leonardo",
+  "category": "image",
+  "priceBdt": 699,
+  "priceLabel": "৳699/mo",
+  "model": "Flux + Phoenix + custom models",
+  "contextWindow": "N/A (image gen)",
+  "multimodal": "Text-to-image, image-to-image, canvas",
+  "banglaQuality": "N/A",
+  "speed": "~15 sec per image",
+  "accuracy": "⭐⭐⭐⭐ (photoreal)",
+  "pricingTier": "Mainstream",
+  "brand": "Leonardo",
+  "tagline": "Game-asset & production-ready images",
+  "toolPath": "/tools/leonardo",
+  "iconName": "Image",
+  "accent": "#FBBF24",
+  "bestUseCase": "Game devs, product designers, ad creators",
+  "bestFor": [
+    "Game assets, sprites, environment art",
+    "Photorealistic Flux + Phoenix models",
+    "Fine control with custom-trained models",
+    "Cheaper than Midjourney for high volume"
+  ],
+  "weaknesses": [
+    "Less iconic / cinematic than Midjourney by default",
+    "Steeper learning curve for best results"
+  ]
+} as const;
+
 export default function LeonardoPage() {
   return (
     <ToolDetail

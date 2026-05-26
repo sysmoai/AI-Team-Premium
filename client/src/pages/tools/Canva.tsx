@@ -90,6 +90,39 @@ const CANVA_FAQS = [
   { q: "Can I download Canva designs without a watermark?", a: "Yes. Canva Free watermarks premium elements in downloaded files. Canva Pro removes all watermarks from every premium element — your downloads are clean, professional files in PNG, JPG, PDF, MP4, and GIF formats. You can also download in multiple resolutions and file types simultaneously with Canva Pro." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "canva",
+  "category": "image",
+  "priceBdt": 399,
+  "priceLabel": "৳399/mo",
+  "model": "Canva Magic Studio (multi-model)",
+  "contextWindow": "N/A (design tool)",
+  "multimodal": "Text, image, video, templates",
+  "banglaQuality": "⭐⭐⭐⭐ (text in designs)",
+  "speed": "Real-time editor",
+  "accuracy": "⭐⭐⭐⭐",
+  "pricingTier": "Affordable",
+  "brand": "Canva",
+  "tagline": "Drag-and-drop design with AI Magic Studio",
+  "toolPath": "/tools/canva",
+  "iconName": "Palette",
+  "accent": "#00C4CC",
+  "bestUseCase": "Marketers, students, small business owners",
+  "bestFor": [
+    "Social media graphics, presentations, posters",
+    "Magic Write, Magic Edit, Magic Design AI tools",
+    "100M+ premium templates, photos, elements",
+    "Brand Kit + team collaboration",
+    "Background remover and Magic Resize"
+  ],
+  "weaknesses": [
+    "Not a true generative image AI — template-first",
+    "Less artistic control than Midjourney / Leonardo"
+  ]
+} as const;
+
 export default function Canva() {
   return (
     <ToolDetail

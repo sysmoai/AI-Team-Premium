@@ -7,6 +7,39 @@ import { Clock, Check, MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
 import { PriceCompare } from "@/components/PriceCompare";
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "chatgpt",
+  "category": "chat",
+  "priceBdt": 399,
+  "priceLabel": "৳399/mo",
+  "model": "GPT-5 + o4-mini reasoning",
+  "contextWindow": "128K tokens",
+  "multimodal": "Text, image, voice, files",
+  "banglaQuality": "⭐⭐⭐⭐ (very good)",
+  "speed": "Fast (sub-second first token)",
+  "accuracy": "⭐⭐⭐⭐⭐",
+  "pricingTier": "Mainstream",
+  "brand": "OpenAI",
+  "tagline": "The most popular AI assistant",
+  "toolPath": "/tools/chatgpt",
+  "iconName": "Sparkles",
+  "accent": "#10A37F",
+  "bestUseCase": "All-rounder for students, freelancers, business",
+  "bestFor": [
+    "General-purpose Q&A and brainstorming",
+    "Image generation (DALL-E 3 included)",
+    "Custom GPTs and the GPT Store",
+    "Voice conversations (Advanced Voice Mode)",
+    "Plugin & code-interpreter workflows"
+  ],
+  "weaknesses": [
+    "Shorter context window than Claude / Gemini",
+    "Stricter content filters than Grok"
+  ]
+} as const;
+
 export default function ChatGPT() {
   usePageMeta({
     title: "ChatGPT Plus & Business Subscriptions",

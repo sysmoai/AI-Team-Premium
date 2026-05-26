@@ -94,6 +94,38 @@ const COPILOT_EXTENDED_FAQS = [
   { q: "How many developers can use one GitHub Copilot account?", a: "The GitHub Copilot plan from AITPBD (৳1,200/mo) is activated on your personal GitHub account — it's a single-user licence. This gives you Copilot across all your repositories, both personal and where you're a contributor. GitHub Copilot Business (multi-seat for teams) requires separate pricing — contact us on WhatsApp for team pricing." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "copilot",
+  "category": "code",
+  "priceBdt": 599,
+  "priceLabel": "৳599/mo",
+  "model": "GPT-5 + Claude Sonnet 4.5 + Gemini 3",
+  "contextWindow": "Full-file + workspace context",
+  "multimodal": "Code, comments, chat",
+  "banglaQuality": "N/A",
+  "speed": "Real-time completions",
+  "accuracy": "⭐⭐⭐⭐⭐",
+  "pricingTier": "Mainstream",
+  "brand": "GitHub",
+  "tagline": "AI pair-programmer in your IDE",
+  "toolPath": "/tools/copilot",
+  "iconName": "Code2",
+  "accent": "#171717",
+  "bestUseCase": "Developers, software engineers",
+  "bestFor": [
+    "Inline code completion in VS Code, JetBrains, Neovim",
+    "Multi-model: GPT-5 + Claude Sonnet 4.5 + Gemini",
+    "Chat with your repo (Copilot Workspace)",
+    "Best for daily developer productivity"
+  ],
+  "weaknesses": [
+    "Not as good at standalone analysis as Claude",
+    "Limited to coding context"
+  ]
+} as const;
+
 export default function Copilot() {
   return (
     <ToolDetail

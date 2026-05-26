@@ -90,6 +90,39 @@ const M365_FAQS = [
   { q: "How do I get Microsoft 365 Copilot from AITPBD?", a: "Message AI Team Premium BD on WhatsApp (+880 1533-262758) with 'I want Microsoft 365 Copilot'. We'll confirm which plan (Shared ৳899 or Personal ৳3,500) you need, take payment via bKash or Nagad, and deliver login credentials within 2–4 hours. The Shared plan is ready instantly; the Personal plan requires creating or upgrading a Microsoft account." },
 ];
 
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "microsoft365",
+  "category": "writing",
+  "priceBdt": 1499,
+  "priceLabel": "৳1,499/mo",
+  "model": "GPT-5 + Microsoft Graph",
+  "contextWindow": "Your M365 workspace",
+  "multimodal": "Text, spreadsheets, slides, email",
+  "banglaQuality": "⭐⭐⭐⭐",
+  "speed": "Fast (in-app)",
+  "accuracy": "⭐⭐⭐⭐",
+  "pricingTier": "Premium",
+  "brand": "Microsoft",
+  "tagline": "Copilot inside Word, Excel, PowerPoint, Outlook",
+  "toolPath": "/tools/microsoft365",
+  "iconName": "Briefcase",
+  "accent": "#0078D4",
+  "bestUseCase": "Office workers, analysts, managers",
+  "bestFor": [
+    "Drafting documents in Word with Copilot",
+    "Excel formulas, charts and data analysis",
+    "Auto-generating PowerPoint slides from prompts",
+    "Outlook email summaries and replies",
+    "Teams meeting transcripts and recap"
+  ],
+  "weaknesses": [
+    "Locked to the Microsoft 365 ecosystem",
+    "Expensive vs standalone chat AIs"
+  ]
+} as const;
+
 export default function Microsoft365Page() {
   return (
     <ToolDetail

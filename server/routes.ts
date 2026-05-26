@@ -3,6 +3,8 @@ import type { Server } from "http";
 import { storage } from "./storage";
 import { api } from "@shared/routes";
 import { z } from "zod";
+import { runAuditForProduct, runAuditAll, staleScoreFor } from "./audit-engine";
+import { PRODUCT_SEED } from "./audit-seed";
 
 const FALLBACK_USD_BDT = 121.5;
 const RATE_TTL_MS = 24 * 60 * 60 * 1000;
@@ -44,6 +46,11 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  // Seed product registry on startup (no-op if rows exist)
+  storage.seedProductRegistry(PRODUCT_SEED).catch((err) => {
+    console.error("[audit-seed] failed:", err);
+  });
+
   app.get("/api/exchange-rate", async (_req, res) => {
     const now = Date.now();
     const fresh = now - rateCache.fetchedAt < RATE_TTL_MS && rateCache.source !== "fallback";
@@ -76,6 +83,94 @@ export async function registerRoutes(
         });
       }
       return res.status(500).json({ message: "Internal Server Error" });
+    }
+  });
+
+  // ===== AUDIT DASHBOARD API =====
+  app.get("/api/admin/audit/dashboard", async (_req, res) => {
+    try {
+      const summary = await storage.getAuditDashboardSummary();
+      res.json(summary);
+    } catch (err) {
+      console.error("[audit] dashboard:", err);
+      res.status(500).json({ message: "Failed to load dashboard" });
+    }
+  });
+
+  app.get("/api/admin/audit/products", async (_req, res) => {
+    try {
+      const products = await storage.getProductRegistry();
+      const withScores = products.map((p) => ({
+        ...p,
+        staleScore: staleScoreFor(p),
+      }));
+      res.json(withScores);
+    } catch (err) {
+      console.error("[audit] products:", err);
+      res.status(500).json({ message: "Failed to load products" });
+    }
+  });
+
+  app.get("/api/admin/audit/log", async (req, res) => {
+    try {
+      const limit = Math.min(parseInt(String(req.query.limit || "100"), 10) || 100, 500);
+      const offset = parseInt(String(req.query.offset || "0"), 10) || 0;
+      const productId = req.query.productId ? parseInt(String(req.query.productId), 10) : undefined;
+      const severity = req.query.severity ? String(req.query.severity) : undefined;
+      const status = req.query.status ? String(req.query.status) : undefined;
+      const log = await storage.getAuditLog({ limit, offset, productId, severity, status });
+      res.json(log);
+    } catch (err) {
+      console.error("[audit] log:", err);
+      res.status(500).json({ message: "Failed to load log" });
+    }
+  });
+
+  app.get("/api/admin/audit/issues", async (req, res) => {
+    try {
+      const severity = req.query.severity ? String(req.query.severity) : undefined;
+      const status = req.query.status ? String(req.query.status) : "open";
+      const issues = await storage.getAuditIssues({ severity, status });
+      res.json(issues);
+    } catch (err) {
+      console.error("[audit] issues:", err);
+      res.status(500).json({ message: "Failed to load issues" });
+    }
+  });
+
+  app.post("/api/admin/audit/run/:productId", async (req, res) => {
+    try {
+      const id = parseInt(req.params.productId, 10);
+      if (!Number.isFinite(id)) return res.status(400).json({ message: "Invalid productId" });
+      const result = await runAuditForProduct(id);
+      if (!result.ok) return res.status(404).json({ message: "Product not found" });
+      res.json(result);
+    } catch (err) {
+      console.error("[audit] run:", err);
+      res.status(500).json({ message: "Audit failed" });
+    }
+  });
+
+  app.post("/api/admin/audit/run-all", async (_req, res) => {
+    try {
+      const result = await runAuditAll();
+      res.json(result);
+    } catch (err) {
+      console.error("[audit] run-all:", err);
+      res.status(500).json({ message: "Audit failed" });
+    }
+  });
+
+  app.patch("/api/admin/audit/issues/:id/resolve", async (req, res) => {
+    try {
+      const id = parseInt(req.params.id, 10);
+      if (!Number.isFinite(id)) return res.status(400).json({ message: "Invalid id" });
+      const issue = await storage.resolveAuditIssue(id);
+      if (!issue) return res.status(404).json({ message: "Issue not found" });
+      res.json(issue);
+    } catch (err) {
+      console.error("[audit] resolve:", err);
+      res.status(500).json({ message: "Failed to resolve issue" });
     }
   });
 

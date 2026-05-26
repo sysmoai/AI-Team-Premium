@@ -36,6 +36,7 @@ import GoogleAIPro from "./pages/tools/GoogleAIPro";
 import LeonardoPage from "./pages/tools/Leonardo";
 import RunwayPage from "./pages/tools/Runway";
 import KlingPage from "./pages/tools/Kling";
+import AuditDashboard from "./pages/admin/AuditDashboard";
 import PlusShared from "./pages/chatgpt/PlusShared";
 import PlusPremiumShared from "./pages/chatgpt/PlusPremiumShared";
 import PlusPersonalSeat from "./pages/chatgpt/PlusPersonalSeat";
@@ -118,6 +119,7 @@ function Router() {
         <Route path="/tools/leonardo" component={LeonardoPage} />
         <Route path="/tools/runway" component={RunwayPage} />
         <Route path="/tools/kling" component={KlingPage} />
+        <Route path="/admin/audit" component={AuditDashboard} />
         <Route component={NotFound} />
       </Switch>
     </>

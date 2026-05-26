@@ -6,6 +6,7 @@ import { type LucideIcon } from "lucide-react";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
 import { PriceCompare } from "@/components/PriceCompare";
+import { LastVerifiedStamp } from "@/components/LastVerifiedStamp";
 import { useState } from "react";
 
 interface ToolPlan {
@@ -156,6 +157,9 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
           <p className="mt-5 mx-auto max-w-lg" style={{ color: "rgba(255,255,255,0.52)", fontSize: "1.02rem", lineHeight: 1.75 }}>
             {description}
           </p>
+          <div className="mt-5 flex justify-center">
+            <LastVerifiedStamp toolName={name} />
+          </div>
           <div className="mt-8 mx-auto max-w-2xl rounded-2xl p-5 text-left" style={{ background: "rgba(255,255,255,0.06)", border: `1px solid ${accentColor}28` }}>
             <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "0.93rem", lineHeight: 1.72 }}>
               <strong style={{ color: BRAND.white }}>{name}</strong> is available in Bangladesh from AI Team Premium BD starting at{" "}

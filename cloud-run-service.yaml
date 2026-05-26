@@ -1,0 +1,56 @@
+# EMON CORTEX OS — AI Team Premium BD Cloud Run Service
+# Deploy: gcloud run services replace cloud-run-service.yaml --region=us-central1
+# Prerequisites: Artifact Registry repo created, image pushed
+
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ai-team-premium-bd
+  annotations:
+    run.googleapis.com/ingress: all
+spec:
+  template:
+    metadata:
+      annotations:
+        run.googleapis.com/execution-environment: gen2
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "10"
+        run.googleapis.com/cpu-throttling: "false"
+    spec:
+      containerConcurrency: 80
+      timeoutSeconds: 30
+      containers:
+        - image: us-central1-docker.pkg.dev/sysmoai-hq-prod/cortex/ai-team-premium-bd:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: ai-team-premium-bd-db-url
+                  key: latest
+          resources:
+            limits:
+              cpu: "1"
+              memory: "512Mi"
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+          startupProbe:
+            httpGet:
+              path: /api/health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            failureThreshold: 12
+          livenessProbe:
+            httpGet:
+              path: /api/health
+              port: 8080
+            periodSeconds: 10
+            failureThreshold: 3
+  traffic:
+    - percent: 100
+      latestRevision: true

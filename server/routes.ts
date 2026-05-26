@@ -5,6 +5,10 @@ import { api } from "@shared/routes";
 import { z } from "zod";
 import { runAuditForProduct, runAuditAll, staleScoreFor } from "./audit-engine";
 import { PRODUCT_SEED } from "./audit-seed";
+import { db } from "./db";
+import { sql } from "drizzle-orm";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 const FALLBACK_USD_BDT = 121.5;
 const RATE_TTL_MS = 24 * 60 * 60 * 1000;
@@ -46,6 +50,11 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
+  // Health check for Cloud Run / load balancer probes
+  app.get("/api/health", (_req, res) => {
+    res.status(200).json({ status: "ok", service: "ai-team-premium-bd", timestamp: new Date().toISOString() });
+  });
+
   // Seed product registry on startup (no-op if rows exist)
   storage.seedProductRegistry(PRODUCT_SEED).catch((err) => {
     console.error("[audit-seed] failed:", err);
@@ -162,6 +171,18 @@ export async function registerRoutes(
     } catch (err) {
       console.error("[audit] run-all:", err);
       res.status(500).json({ message: "Audit failed" });
+    }
+  });
+
+  app.post("/api/admin/migrate", async (_req, res) => {
+    try {
+      const migrationPath = join(process.cwd(), "migrations", "0001_init.sql");
+      const sqlContent = readFileSync(migrationPath, "utf-8");
+      await db.execute(sql.raw(sqlContent));
+      res.json({ message: "Migration completed successfully" });
+    } catch (err: any) {
+      console.error("[migrate] failed:", err);
+      res.status(500).json({ message: "Migration failed", error: err.message });
     }
   });
 

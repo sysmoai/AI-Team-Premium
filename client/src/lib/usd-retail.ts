@@ -9,6 +9,15 @@
  * Add new plans here; the widget gracefully hides if no entry is found.
  */
 export const USD_RETAIL: Record<string, number> = {
+  // ChatGPT (openai.com/chatgpt/pricing — Plus $20, Business $25/seat, Pro $200)
+  "ChatGPT::ChatGPT Plus — Shared Seat": 20,
+  "ChatGPT::ChatGPT Plus — Premium Shared": 20,
+  "ChatGPT::ChatGPT Plus — Personal Seat": 20,
+  "ChatGPT::ChatGPT Business — Shared": 25,
+  "ChatGPT::ChatGPT Business — Premium Shared": 25,
+  "ChatGPT::ChatGPT Business — Personal-like": 25,
+  "ChatGPT::ChatGPT Pro — Premium Shared": 200,
+
   // Claude Pro (anthropic.com/pricing)
   "Claude Pro::Claude Pro — Shared": 20,
   "Claude Pro::Claude Pro — Personal": 20,

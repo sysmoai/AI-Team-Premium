@@ -1,12 +1,11 @@
-import { ToolDetail } from "@/components/ToolDetail";
 import { MessageSquare } from "lucide-react";
 import { chatgptPlans } from "@/lib/plans";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { Layout } from "@/components/layout/Layout";
-import { Clock, Check, ArrowUpRight, Star, MessageCircle } from "lucide-react";
-import { Link } from "wouter";
+import { Clock, Check, MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
+import { PriceCompare } from "@/components/PriceCompare";
 
 export default function ChatGPT() {
   usePageMeta({
@@ -106,6 +105,12 @@ export default function ChatGPT() {
                     <MessageCircle size={13} color="#fff" /> Or Messenger
                   </a>
                 </div>
+                <PriceCompare
+                  toolName="ChatGPT"
+                  planLabel={plan.title}
+                  planPriceBDT={plan.priceLabel}
+                  accentColor={plan.color === 'blue' ? BRAND.blue : plan.color === 'purple' ? '#7C3AED' : plan.color === 'green' ? '#16A34A' : plan.color === 'orange' ? '#F59E0B' : '#EF4444'}
+                />
               </div>
             ))}
           </div>

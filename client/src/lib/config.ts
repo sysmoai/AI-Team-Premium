@@ -18,7 +18,7 @@ export const config = {
   instagram: "https://www.instagram.com/ai_team_premium_bd/",
 
   supportFormUrl: "/start-a-project",
-  lastVerified: "2026-03-05",
+  lastVerified: "2026-05-25",
   officialPricingUrl: "https://chatgpt.com/pricing/",
 
   whatsappPlanTemplates: {

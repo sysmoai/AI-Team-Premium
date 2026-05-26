@@ -362,10 +362,10 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "10,000+", label: "Active Subscribers" },
+              { value: "18+", label: "Premium AI Tools" },
               { value: "৳399", label: "Starting Price / mo" },
               { value: "5–15 min", label: "Avg. Delivery Time" },
-              { value: "4.9 ★", label: "Customer Rating" },
+              { value: "30 days", label: "Replacement Warranty" },
             ].map((stat) => (
               <div key={stat.label}>
                 <p style={{ color: BRAND.white, fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)", fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1 }}>{stat.value}</p>
@@ -390,7 +390,7 @@ export default function Home() {
                 role: "Freelance Graphic Designer, Dhaka",
               },
               {
-                review: "The AI Tools Vault bundle is insane value — ChatGPT, Claude and Gemini all in one subscription. Saves me almost ৳600 compared to buying separately. The support on WhatsApp is also very responsive.",
+                review: "The AI Tools Vault bundle is perfect — ChatGPT, Claude and Gemini all in one subscription. One WhatsApp order and all three were ready within 6 hours. The support on WhatsApp is also very responsive.",
                 name: "Tasnia Rahman",
                 role: "Content Manager, Chittagong",
               },

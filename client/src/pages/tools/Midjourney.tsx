@@ -1,6 +1,14 @@
 import { ToolDetail } from "@/components/ToolDetail";
 import { Image } from "lucide-react";
 
+const MIDJOURNEY_FAQS = [
+  { q: "বাংলাদেশে Midjourney কীভাবে কিনবো?", a: "AI Team Premium BD-এর মাধ্যমে ৳১,২০০/মাসে shared Midjourney access পান। bKash বা Nagad-এ পেমেন্ট করুন — ৫-১৫ মিনিটে WhatsApp-এ Discord invite পাঠানো হবে।" },
+  { q: "Midjourney v7 কী নতুন এনেছে?", a: "Midjourney v7 আগের version-গুলোর চেয়ে অনেক বেশি photorealistic। Character consistency, improved lighting, better text rendering এবং faster generation এই version-এর প্রধান উন্নতি।" },
+  { q: "Midjourney Discord ছাড়া ব্যবহার করা যায়?", a: "হ্যাঁ! Midjourney-র নিজস্ব web interface (midjourney.com) আছে যেখানে browser থেকে সরাসরি images generate করা যায়। Discord bot-ও available।" },
+  { q: "Character Reference (--cref) কী কাজ করে?", a: "--cref parameter দিয়ে একটি reference image-এর character-কে নতুন scene বা style-এ বসানো যায়। Consistent character design-এর জন্য এটি অত্যন্ত কার্যকর — character sheet, comic, product mockup-এ বহুল ব্যবহৃত।" },
+  { q: "Shared Midjourney account কি safe?", a: "হ্যাঁ। Shared account-এ আপনার generated images আপনার নিজস্ব gallery-তে থাকে। অন্য users শুধু public gallery-তে দেখতে পারে (যদি Stealth mode না থাকে)। বাংলাদেশে হাজারো ডিজাইনার এই পদ্ধতিতে ব্যবহার করছেন।" },
+];
+
 export default function Midjourney() {
   return (
     <ToolDetail
@@ -34,6 +42,7 @@ export default function Midjourney() {
           ],
         },
       ]}
+      extendedFaqs={MIDJOURNEY_FAQS}
     />
   );
 }

@@ -1,6 +1,14 @@
 import { ToolDetail } from "@/components/ToolDetail";
 import { PenTool } from "lucide-react";
 
+const GRAMMARLY_FAQS = [
+  { q: "Grammarly Premium কি বাংলাদেশে ব্যবহার করা যায়?", a: "হ্যাঁ! AI Team Premium BD-এর মাধ্যমে আপনার নিজের Grammarly account-এ Premium upgrade করা হয়। ৳৮০০/মাসে bKash বা Nagad-এ পেমেন্ট করুন — ১-২ ঘন্টায় access পাবেন।" },
+  { q: "GrammarlyGO কী?", a: "GrammarlyGO হলো Grammarly-র generative AI feature। এটি পুরো paragraph rewrite করতে, emails draft করতে এবং context-aware suggestions দিতে পারে — শুধু একটি prompt দিলেই হয়।" },
+  { q: "Grammarly কোথায় কোথায় কাজ করে?", a: "Grammarly Premium Chrome extension হিসেবে Gmail, Google Docs, Twitter/X, LinkedIn এবং যেকোনো website-এ কাজ করে। আলাদা desktop app আছে Windows ও Mac-এর জন্য। Microsoft Word ও Outlook-এ native add-in আছে।" },
+  { q: "Plagiarism checker কতটা accurate?", a: "Grammarly-র plagiarism checker ১৬ billion+ web pages ও academic database-এর বিরুদ্ধে text compare করে। এটি student assignments ও blog posts-এর জন্য বিশ্বাসযোগ্য এবং widely accepted।" },
+  { q: "Grammarly Premium vs Free-এর পার্থক্য কী?", a: "Free version শুধু basic grammar fix করে। Premium-এ advanced punctuation, clarity suggestions, tone detection, vocabulary enhancement, GrammarlyGO AI rewriting এবং plagiarism checker সব পাবেন।" },
+];
+
 export default function Grammarly() {
   return (
     <ToolDetail
@@ -34,6 +42,7 @@ export default function Grammarly() {
           ],
         },
       ]}
+      extendedFaqs={GRAMMARLY_FAQS}
     />
   );
 }

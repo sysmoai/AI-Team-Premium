@@ -1,7 +1,7 @@
 import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import { Check, Shield, Zap, Star, Clock, Package, MessageCircle } from "lucide-react";
+import { Check, Shield, Zap, Clock, Package, MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
 
@@ -14,10 +14,11 @@ const INCLUDED = [
   "Setup guide for each tool",
 ];
 
-const COMPARISON = [
-  { tool: "ChatGPT Plus", individual: "৳599" },
-  { tool: "Claude Pro", individual: "৳599" },
-  { tool: "Gemini Advanced", individual: "৳499" },
+const WHY_VAULT = [
+  { icon: "🚀", title: "One Order", desc: "A single WhatsApp message gets you all three tools — no juggling 3 separate orders." },
+  { icon: "💬", title: "One Support Channel", desc: "Questions about any of the three tools? One WhatsApp number handles everything." },
+  { icon: "⚡", title: "Priority Delivery", desc: "All three seats set up within 6 hours — guaranteed." },
+  { icon: "🛡️", title: "30-Day Warranty", desc: "Every tool in the bundle carries a full 30-day replacement warranty." },
 ];
 
 const VAULT_FAQS = [
@@ -49,7 +50,7 @@ export default function AIToolsVault() {
         path="/ai-tools-vault"
         priceBDT={1990}
         category="AI Subscription Bundle"
-        rating={{ value: "4.9", count: "84" }}
+        rating={{ value: "4.8", count: "12" }}
       />
       <section className="pb-8" style={{ backgroundColor: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6">
@@ -69,7 +70,7 @@ export default function AIToolsVault() {
             AI Tools Vault — <span style={{ color: BRAND.blue }}>৳১,৯৯০</span>/মাস
           </h1>
           <p className="text-lg mb-10 max-w-3xl mx-auto" style={{ color: BRAND.navy, opacity: 0.6 }}>
-            ChatGPT Plus + Claude Pro + Gemini Advanced — একসাথে সবচেয়ে সাশ্রয়ী মূল্যে।
+            ChatGPT Plus + Claude Pro + Gemini Advanced — এক order, এক payment, এক support channel।
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
@@ -125,7 +126,7 @@ export default function AIToolsVault() {
                 className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full px-4 py-1 text-white"
                 style={{ background: BRAND.blue, fontSize: "0.72rem", fontWeight: 700 }}
               >
-                <Star size={11} fill="#fff" /> Best Value Bundle
+                <Package size={11} fill="#fff" /> Convenience Bundle
               </span>
               <h2 style={{ color: BRAND.navy, fontSize: "1.3rem", fontWeight: 700 }}>AI Tools Vault</h2>
               <p className="mt-1" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.8rem" }}>3 Premium AI Tools — 1 Package</p>
@@ -168,42 +169,18 @@ export default function AIToolsVault() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: BRAND.navy }}>আলাদা কিনলে কত লাগত?</h3>
-              <p className="mb-6 text-sm" style={{ color: BRAND.navy, opacity: 0.55 }}>তিনটি tool আলাদাভাবে কেনা vs Vault bundle:</p>
-              <div className="rounded-2xl overflow-hidden border" style={{ borderColor: "rgba(37,99,235,0.10)" }}>
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr style={{ background: BRAND.sky }}>
-                      <th className="text-left px-5 py-3 font-semibold" style={{ color: BRAND.navy }}>Tool</th>
-                      <th className="text-right px-5 py-3 font-semibold" style={{ color: BRAND.navy }}>Individual</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {COMPARISON.map((row, i) => (
-                      <tr key={row.tool} style={{ borderTop: "1px solid rgba(37,99,235,0.06)", background: i % 2 === 0 ? BRAND.white : "rgba(239,246,255,0.4)" }}>
-                        <td className="px-5 py-3" style={{ color: BRAND.navy, opacity: 0.75 }}>{row.tool}</td>
-                        <td className="px-5 py-3 text-right font-medium" style={{ color: BRAND.navy }}>{row.individual}/mo</td>
-                      </tr>
-                    ))}
-                    <tr style={{ borderTop: `2px solid ${BRAND.blue}`, background: BRAND.sky }}>
-                      <td className="px-5 py-3 font-bold" style={{ color: BRAND.navy }}>Total (individual)</td>
-                      <td className="px-5 py-3 text-right font-bold" style={{ color: BRAND.navy }}>৳1,697/mo</td>
-                    </tr>
-                    <tr style={{ background: BRAND.blue }}>
-                      <td className="px-5 py-3 font-bold text-white">🎁 Vault Bundle</td>
-                      <td className="px-5 py-3 text-right font-bold text-white">৳1,990/mo</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div
-                className="mt-5 rounded-xl p-4"
-                style={{ background: "rgba(37,99,235,0.06)", border: `1px solid rgba(37,99,235,0.15)` }}
-              >
-                <p className="text-sm font-semibold" style={{ color: BRAND.navy }}>কেন Vault নেবেন?</p>
-                <p className="text-sm mt-1" style={{ color: BRAND.navy, opacity: 0.65 }}>
-                  একটি payment, একটি WhatsApp support channel, এবং সব ৩টি AI tool একসাথে। Power users যাদের সব AI model দরকার — তাদের জন্য Vault সবচেয়ে সুবিধাজনক।
-                </p>
+              <h3 className="text-xl font-bold mb-2" style={{ color: BRAND.navy }}>কেন AI Tools Vault?</h3>
+              <p className="mb-6 text-sm" style={{ color: BRAND.navy, opacity: 0.55 }}>এক order-এ তিনটি top AI tool — সহজে, দ্রুত, এবং এক support channel-এ।</p>
+              <div className="space-y-4">
+                {WHY_VAULT.map((item) => (
+                  <div key={item.title} className="rounded-xl p-4 flex items-start gap-3" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+                    <span style={{ fontSize: "1.4rem", lineHeight: 1 }}>{item.icon}</span>
+                    <div>
+                      <p className="font-semibold" style={{ color: BRAND.navy, fontSize: "0.9rem" }}>{item.title}</p>
+                      <p style={{ color: BRAND.navy, opacity: 0.55, fontSize: "0.82rem", lineHeight: 1.5 }}>{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

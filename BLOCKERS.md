@@ -16,18 +16,8 @@
 - ✅ External image dependency removed (hero-bg.jpg local)
 - ✅ Code pushed to fork: https://github.com/sysmoaigit/AITeamPremiumBD
 
-## Active Blocker — Category B: Missing Deployment Credential (Partially Resolved)
-
-### GitHub Push to Upstream Repo
-- **Classification:** B (Missing deployment credential)
-- **Issue:** `sysmoaigit` cannot push directly to `github.com/sysmoai/AITeamPremiumBD`
-- **Error:** `remote: Permission to sysmoai/AITeamPremiumBD.git denied to sysmoaigit. fatal: unable to access... 403`
-- **Workaround applied:** Forked repo to `github.com/sysmoaigit/AITeamPremiumBD` and pushed all 11 commits there
-- **Commits now available at:** https://github.com/sysmoaigit/AITeamPremiumBD/commits/main
-- **Exact action needed from owner:**
-  1. Option A: Grant `sysmoaigit` write access to `sysmoai/AITeamPremiumBD` → Settings → Collaborators → Add `sysmoaigit` with Write role
-  2. Option B: Merge from fork — visit https://github.com/sysmoai/AITeamPremiumBD/compare/main...sysmoaigit:AITeamPremiumBD:main and create a pull request
-  3. Option C: Push manually from owner account
+## Active Blocker — Category B: Missing Deployment Credential (Resolved ✅)
+- **Resolution:** Push to `sysmoai/AITeamPremiumBD` succeeded. All 16 commits from 2026-05-26 are now live on origin/main.
 
 ## Non-Blockers (Observations)
 - Mobile breakpoint verification requires browser/Playwright (external tool limitation)

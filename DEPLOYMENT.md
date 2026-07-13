@@ -8,7 +8,7 @@
 | **Project** | sysmoai-hq-prod |
 | **Region** | us-central1 |
 | **Service URL** | https://ai-team-premium-bd-1005103726650.us-central1.run.app |
-| **Latest Revision** | ai-team-premium-bd-00009-8jg |
+| **Latest Revision** | ai-team-premium-bd-00010-rsk |
 | **Database** | Supabase PostgreSQL (ai-team-premium-bd) |
 | **Registry** | us-central1-docker.pkg.dev/sysmoai-hq-prod/cortex/ai-team-premium-bd |
 

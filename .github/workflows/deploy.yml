@@ -35,6 +35,9 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Route, SEO, claims, and domain audit
+        run: npm run audit
+
   deploy:
     needs: build-and-test
     if: github.ref == 'refs/heads/main'

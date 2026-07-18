@@ -1,4 +1,4 @@
-const SITE_URL = "https://aiteampremiumbd.com";
+import { SITE_URL } from "@/lib/config";
 
 interface JsonLdProps {
   data: object;

@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { SITE_URL } from "@/lib/config";
 
 interface PageMeta {
   title: string;
@@ -7,7 +8,6 @@ interface PageMeta {
 }
 
 const BASE = "AI Team Premium BD";
-const SITE_URL = "https://aiteampremiumbd.com";
 
 function setMeta(selector: string, value: string) {
   const el = document.querySelector<HTMLMetaElement>(selector);

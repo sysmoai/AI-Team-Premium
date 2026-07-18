@@ -1,6 +1,4 @@
-import { config } from "@/lib/config";
-
-const SITE_URL = "https://aiteampremiumbd.com";
+import { config, SITE_URL } from "@/lib/config";
 
 export function OrganizationSchema() {
   const graph = [
@@ -17,8 +15,7 @@ export function OrganizationSchema() {
         "height": 512,
       },
       "description":
-        "AI Team Premium BD (AITPBD) is Bangladesh's premium provider of AI subscriptions — ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via bKash and Nagad with 5-15 minute delivery and a 30-day replacement warranty.",
-      "foundingDate": "2024",
+        "AI Team Premium BD (AITPBD) provides AI subscription access, setup assistance, and Bangla support for customers in Bangladesh.",
       "areaServed": {
         "@type": "Country",
         "name": "Bangladesh",
@@ -46,18 +43,12 @@ export function OrganizationSchema() {
       ],
       "sameAs": [config.fbPage, config.fbGroup, config.instagram],
       "knowsAbout": [
-        "ChatGPT Plus Bangladesh",
-        "ChatGPT Pro Bangladesh",
-        "ChatGPT Team Bangladesh",
-        "Claude Pro Bangladesh",
-        "Gemini Advanced Bangladesh",
-        "Canva Pro Bangladesh",
-        "Grammarly Premium Bangladesh",
-        "Midjourney Bangladesh",
-        "Perplexity Pro Bangladesh",
-        "GitHub Copilot Bangladesh",
-        "AI tools bKash payment",
-        "AI subscription Nagad",
+        "ChatGPT subscriptions in Bangladesh",
+        "Claude subscriptions in Bangladesh",
+        "Google AI subscriptions in Bangladesh",
+        "Canva subscriptions in Bangladesh",
+        "AI tools with local payment support",
+        "AI setup and Bangla support",
       ],
     },
     {
@@ -67,22 +58,14 @@ export function OrganizationSchema() {
       "image": `${SITE_URL}/favicon.png`,
       "url": SITE_URL,
       "telephone": config.phone,
-      "priceRange": "৳399–৳24,999",
       "currenciesAccepted": "BDT",
-      "paymentAccepted": "bKash, Nagad, Rocket, Bank Transfer",
+      "paymentAccepted": "bKash, Nagad, Bank Transfer",
       "areaServed": { "@type": "Country", "name": "Bangladesh" },
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "BD",
         "addressRegion": "Dhaka",
       },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        "opens": "09:00",
-        "closes": "23:00",
-      },
-
     },
     {
       "@type": "WebSite",

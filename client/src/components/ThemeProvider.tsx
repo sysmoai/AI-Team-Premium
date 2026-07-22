@@ -23,7 +23,7 @@ export function useTheme() {
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>(() => {
     try {
-      const stored = localStorage.getItem("aitpbd-theme") as Theme | null;
+      const stored = localStorage.getItem("aitp-theme") as Theme | null;
       if (stored === "light" || stored === "dark" || stored === "system") return stored;
     } catch {}
     return "system";
@@ -60,7 +60,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   function setTheme(t: Theme) {
     setThemeState(t);
     try {
-      localStorage.setItem("aitpbd-theme", t);
+      localStorage.setItem("aitp-theme", t);
     } catch {}
   }
 

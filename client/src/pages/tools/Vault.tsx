@@ -73,7 +73,7 @@ const VAULT_COMPETITOR_ROWS = [
   { feature: "Context Windows", thisProduct: "128K + 200K + 1M tokens", chatgpt: "128K only", claude: "200K only", gemini: "1M only" },
   { feature: "Voice Modes", thisProduct: "ChatGPT AVM + Gemini Live", chatgpt: "Advanced Voice only", claude: "❌ No voice", gemini: "Gemini Live only" },
   { feature: "Delivery Time", thisProduct: "All 3 within 6 hours", chatgpt: "5–15 min", claude: "5–15 min", gemini: "5–15 min" },
-  { feature: "AITPBD Bundle Price", thisProduct: "৳1,990/mo", chatgpt: "৳399/mo only", claude: "৳599/mo only", gemini: "৳449/mo only" },
+  { feature: "AITP Bundle Price", thisProduct: "৳1,990/mo", chatgpt: "৳399/mo only", claude: "৳599/mo only", gemini: "৳449/mo only" },
 ];
 
 const VAULT_FAQS = [
@@ -104,7 +104,7 @@ export const TOOL_META = {
   "speed": "Tool-dependent",
   "accuracy": "⭐⭐⭐⭐⭐",
   "pricingTier": "Bundle (best value)",
-  "brand": "AITPBD bundle",
+  "brand": "AITP bundle",
   "tagline": "10+ premium AI tools in one bundle",
   "toolPath": "/tools/vault",
   "iconName": "Layers",

@@ -8,8 +8,8 @@ import { config } from "@/lib/config";
 
 export default function RefundPolicy() {
   usePageMeta({
-    title: "Refund & Replacement Policy — 30-Day Warranty | AI Team Premium BD",
-    description: "AI Team Premium BD's refund and replacement policy for AI subscriptions, support sessions, and digital services in Bangladesh. 30-day warranty, 24-hour replacement SLA, milestone-based digital service terms.",
+    title: "Refund & Replacement Policy — 30-Day Warranty | AI Team Premium",
+    description: "AI Team Premium's refund and replacement policy for AI subscriptions, support sessions, and digital services in Bangladesh. 30-day warranty, 24-hour replacement SLA, milestone-based digital service terms.",
     path: "/refund-policy",
   });
 
@@ -27,7 +27,7 @@ export default function RefundPolicy() {
             <p className="text-lg opacity-80" style={{ color: BRAND.navy }}>
               We strive to provide a reliable AI experience in Bangladesh. This policy outlines our commitment to your satisfaction, the rules for subscriptions, support sessions, and all digital services.
             </p>
-            <p className="text-sm opacity-50 mt-3" style={{ color: BRAND.navy }}>Effective: May 2026 · aiteampremiumbd.com</p>
+            <p className="text-sm opacity-50 mt-3" style={{ color: BRAND.navy }}>Effective: May 2026 · aiteampremium.com</p>
           </div>
         </div>
       </section>
@@ -153,7 +153,7 @@ export default function RefundPolicy() {
                   <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Before campaign launch:</strong> Full refund of that month's retainer.</li>
                     <li><strong>After campaign launch:</strong> Non-refundable. Monthly engagements auto-renew unless cancelled 7 days before the next billing date.</li>
-                    <li><strong>Ad spend:</strong> Ad budgets paid directly to Facebook/Google are managed by the client's own account and are subject to those platforms' policies — not refundable through AITPBD.</li>
+                    <li><strong>Ad spend:</strong> Ad budgets paid directly to Facebook/Google are managed by the client's own account and are subject to those platforms' policies — not refundable through AITP.</li>
                   </ul>
                   <p>If we fail to deliver agreed-upon monthly deliverables (e.g., content calendar, campaign report), we will provide a credit or bonus month at our discretion.</p>
                 </div>

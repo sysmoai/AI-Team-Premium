@@ -1,4 +1,4 @@
-const SITE_URL = "https://aiteampremiumbd.com";
+const SITE_URL = "https://aiteampremium.com";
 
 interface JsonLdProps {
   data: object;
@@ -67,7 +67,7 @@ export function ProductSchema({
   path,
   priceBDT,
   image,
-  brand = "AI Team Premium BD",
+  brand = "AI Team Premium",
   category = "AI Subscription",
   rating,
 }: ProductSchemaProps) {
@@ -88,7 +88,7 @@ export function ProductSchema({
       "price": String(priceBDT).replace(/[^0-9.]/g, ""),
       "availability": "https://schema.org/InStock",
       "areaServed": "BD",
-      "seller": { "@type": "Organization", "name": "AI Team Premium BD" },
+      "seller": { "@type": "Organization", "name": "AI Team Premium" },
     },
   };
   if (rating) {

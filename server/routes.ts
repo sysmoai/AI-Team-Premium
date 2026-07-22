@@ -57,7 +57,7 @@ export async function registerRoutes(
     const uptimeMs = Date.now() - startTime;
     res.status(200).json({
       status: "ok",
-      service: "ai-team-premium-bd",
+      service: "ai-team-premium",
       environment: process.env.NODE_ENV || "unknown",
       uptime: Math.floor(uptimeMs / 1000),
       timestamp: new Date().toISOString(),
@@ -67,7 +67,7 @@ export async function registerRoutes(
   // Version endpoint (safe, no secrets)
   app.get("/api/version", (_req, res) => {
     res.status(200).json({
-      name: "ai-team-premium-bd",
+      name: "ai-team-premium",
       version: process.env.npm_package_version || "1.0.0",
       node: process.version,
       environment: process.env.NODE_ENV || "unknown",

@@ -6,8 +6,8 @@ interface PageMeta {
   path?: string;
 }
 
-const BASE = "AI Team Premium BD";
-const SITE_URL = "https://aiteampremiumbd.com";
+const BASE = "AI Team Premium";
+const SITE_URL = "https://aiteampremium.com";
 
 function setMeta(selector: string, value: string) {
   const el = document.querySelector<HTMLMetaElement>(selector);

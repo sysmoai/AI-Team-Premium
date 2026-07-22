@@ -10,7 +10,7 @@
 ## 2026-07-13 — Push Blocker Resolved + Redeploy
 
 ### Resolution
-- ✅ GitHub push blocker resolved — all 17 commits pushed to `sysmoai/AITeamPremiumBD/main`
+- ✅ GitHub push blocker resolved — all 17 commits pushed to `sysmoai/AI-Team-Premium/main`
 - ✅ Cloud Run redeployed — revision `00010-rsk` (was `00009-8jg`, now serves all post-launch readiness changes)
 - ✅ Live health check: `{"status":"ok","environment":"production","uptime":XX}`
 - ✅ Live version check: `{"name":"ai-team-premium","version":"1.0.0","node":"v20.20.2"}`

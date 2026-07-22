@@ -1,10 +1,10 @@
 const WA_BASE = "https://wa.me/8801533262758";
 const WA_GENERAL_TEXT = encodeURIComponent(
-  "Hi! I want help from AI Team Premium BD.\n\n1) My name:\n2) What I need (ChatGPT / Claude / Support / Service / Other):\n3) Preferred payment: bKash / Nagad / Bank Transfer\n4) How urgent (today / this week):\n5) Please confirm availability and payment details."
+  "Hi! I want help from AI Team Premium.\n\n1) My name:\n2) What I need (ChatGPT / Claude / Support / Service / Other):\n3) Preferred payment: bKash / Nagad / Bank Transfer\n4) How urgent (today / this week):\n5) Please confirm availability and payment details."
 );
 
 export const config = {
-  brand: "AI Team Premium BD",
+  brand: "AI Team Premium",
   phone: "+8801533262758",
   phoneDisplay: "+880 1533-262758",
 
@@ -22,7 +22,7 @@ export const config = {
   officialPricingUrl: "https://chatgpt.com/pricing/",
 
   whatsappPlanTemplates: {
-    "plus-shared":            "Hi! I want to order 'ChatGPT Plus Shared (৳399/mo)' from AI Team Premium BD. Please share payment details (bKash/Nagad).",
+    "plus-shared":            "Hi! I want to order 'ChatGPT Plus Shared (৳399/mo)' from AI Team Premium. Please share payment details (bKash/Nagad).",
     "plus-premium-shared":    "Hi! I want to order 'ChatGPT Plus Premium Shared (৳950/mo)'. How do I pay and get access?",
     "plus-personal-seat":     "Hi! I want my own ChatGPT Plus account — 'Plus Personal Seat (৳2,950/mo)'. Is it available?",
     "business-shared":        "Hi! I want the 'ChatGPT Team Shared (৳699/mo)' plan. Please guide me.",
@@ -32,7 +32,7 @@ export const config = {
   },
 
   whatsappSupportTemplates: {
-    "entry":      "Hi! I need a 1-hour AI Support session (৳799) from AI Team Premium BD. When are you available?",
+    "entry":      "Hi! I need a 1-hour AI Support session (৳799) from AI Team Premium. When are you available?",
     "student":    "Hi! I'm a student and I want the 'Student Smart Study Pack' (৳1,999). Please guide me.",
     "freelancer": "Hi! I'm a freelancer and I want the 'Freelancer Fast Delivery Pack' (৳4,999). Please guide me.",
     "business":   "Hi! I want 'Business AI Setup' (৳12,999) for my team. When can we schedule a Google Meet?",

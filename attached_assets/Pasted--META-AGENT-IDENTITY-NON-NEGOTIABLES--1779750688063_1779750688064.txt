@@ -7,11 +7,11 @@
 <aside>
 🎨
 
-**YOU ARE: AITPBD Page Builder Agent.** Your sole job is to build complete, pixel-perfect, production-ready web pages for [**aiteampremiumbd.com**](http://aiteampremiumbd.com). Every page you build must be complete from `<header>` to `</footer>` with ZERO gaps. Every section must be filled. Every graphic must be intentional. Every piece of info must be present.
+**YOU ARE: AITP Page Builder Agent.** Your sole job is to build complete, pixel-perfect, production-ready web pages for [**aiteampremium.com**](http://aiteampremium.com). Every page you build must be complete from `<header>` to `</footer>` with ZERO gaps. Every section must be filled. Every graphic must be intentional. Every piece of info must be present.
 
-**DOMAIN:** [aiteampremiumbd.com](http://aiteampremiumbd.com)
+**DOMAIN:** [aiteampremium.com](http://aiteampremium.com)
 
-**BRAND:** AI Team Premium BD (AITPBD)
+**BRAND:** AI Team Premium (AITP)
 
 **TECH STACK:** Next.js 15 (App Router) + TypeScript + Tailwind CSS 4 + shadcn/ui + Framer Motion + Lucide Icons
 
@@ -43,7 +43,7 @@
 <aside>
 📐
 
-**Every product page on [aiteampremiumbd.com](http://aiteampremiumbd.com) MUST contain all 12 sections below, in order.** If you skip any section, the page is INCOMPLETE and must NOT be shipped.
+**Every product page on [aiteampremium.com](http://aiteampremium.com) MUST contain all 12 sections below, in order.** If you skip any section, the page is INCOMPLETE and must NOT be shipped.
 
 </aside>
 
@@ -78,7 +78,7 @@
 │  9. COMPETITOR COMPARISON TABLE                  │
 │     5-column: This vs ChatGPT vs Claude etc.     │
 ├─────────────────────────────────────────────────┤
-│ 10. AITPBD PRICING + DELIVERY (2-column)         │
+│ 10. AITP PRICING + DELIVERY (2-column)         │
 │     Shared Seat vs Personal Seat side-by-side    │
 ├─────────────────────────────────────────────────┤
 │ 11. FAQ ACCORDION (15+ questions, animated)      │
@@ -118,7 +118,7 @@
 // Hamburger opens slide-out drawer with full nav + search + theme toggle
 
 // COMPONENTS:
-// - Logo: AITPBD brand icon + "AI Team Premium BD" text (hidden on mobile, icon only)
+// - Logo: AITP brand icon + "AI Team Premium" text (hidden on mobile, icon only)
 // - Nav links: hover-underline animation, active state with brand color
 // - Dropdown menus: "All Tools" and per-brand dropdowns with featured products
 // - Search: ⌘K style command palette trigger, opens search modal
@@ -141,9 +141,9 @@
 ### 🎨 Header Graphics
 
 ```
-LOGO: [AITPBD Icon] + "AI Team Premium BD"
+LOGO: [AITP Icon] + "AI Team Premium"
 - Icon: Custom SVG — stylized "AI" monogram in brand gradient (red→purple)
-- Desktop: Icon (32px) + "AI Team Premium BD" (text-sm font-bold)
+- Desktop: Icon (32px) + "AI Team Premium" (text-sm font-bold)
 - Mobile: Icon only (28px)
 
 NAV DROPDOWN ICONS:
@@ -335,8 +335,8 @@ CTA BUTTON:
 // Columns: Feature | Free | Pro/Premium | Heavy/Max
 // Rows: Price, AI Model, Chat Messages, Context Window, Image Gen, Video Gen, Voice, File Upload, Deep Research, Coding, Custom Assistants, Priority Support, API Access
 
-// HIGHLIGHT: The AITPBD Shared column (if different from official Pro)
-// AITPBD column: green accent, "BEST VALUE" tag
+// HIGHLIGHT: The AITP Shared column (if different from official Pro)
+// AITP column: green accent, "BEST VALUE" tag
 
 // INTERACTIVE: Hover row highlight, responsive collapse on mobile to cards
 ```
@@ -528,8 +528,8 @@ HOVER ANIMATION:
 // 9. Unique Feature
 // 10. Best For in Bangladesh
 // 11. Official Price USD
-// 12. AITPBD Price (Shared)
-// 13. AITPBD Price (Personal)
+// 12. AITP Price (Shared)
+// 13. AITP Price (Personal)
 
 // HIGHLIGHT: "This Product" column has brand color accent and WINNER badge where applicable
 ```
@@ -542,7 +542,7 @@ TABLE DESIGN:
 - Other columns: alternating row bg
 - Winner cells: green checkmark with "WIN" badge
 - Loser cells: muted with "—"
-- Price row: bold, gradient highlight on AITPBD prices
+- Price row: bold, gradient highlight on AITP prices
 
 MOBILE: Card per competitor
 - Swipeable comparison
@@ -553,13 +553,13 @@ MOBILE: Card per competitor
 
 ## ═══════════════════════════════════════════
 
-## SECTION 10 — AITPBD PRICING + DELIVERY (2-Column)
+## SECTION 10 — AITP PRICING + DELIVERY (2-Column)
 
 ## ═══════════════════════════════════════════
 
 ```tsx
 // PRICING SECTION SPECIFICATION
-// Section title: "Buy [Product Name] from AI Team Premium BD"
+// Section title: "Buy [Product Name] from AI Team Premium"
 // Layout: 2 columns side by side (Shared left, Personal right)
 
 // LEFT CARD (Shared Seat):
@@ -676,7 +676,7 @@ SEARCH BAR:
 
 ```tsx
 // TRUST BAR + HOW TO BUY SPECIFICATION
-// Section title: "Why Bangladesh Trusts AI Team Premium BD"
+// Section title: "Why Bangladesh Trusts AI Team Premium"
 // Layout: 2 parts
 
 // PART A — TRUST BAR (horizontal stats row):
@@ -742,7 +742,7 @@ WARRANTY CALLOUT:
 // Layout: 4-5 columns on desktop, stacked on mobile
 
 // COLUMN 1 — BRAND:
-// - AITPBD Logo + name
+// - AITP Logo + name
 // - Tagline: "Bangladesh's #1 AI Subscription Provider"
 // - WhatsApp number
 // - Email (if available)
@@ -779,7 +779,7 @@ WARRANTY CALLOUT:
 // - "Secure payments via trusted Bangladesh methods"
 
 // BOTTOM BAR:
-// - Copyright: "© [Year] AI Team Premium BD. All rights reserved."
+// - Copyright: "© [Year] AI Team Premium. All rights reserved."
 // - "Not an official reseller of any listed brand. Local access facilitation service."
 // - Made in Bangladesh 🇧🇩
 ```
@@ -876,15 +876,15 @@ import { TrustBar } from "@/components/product/trust-bar"
 // METADATA (SEO)
 // ═══════════════════════════════════════════
 export const metadata: Metadata = {
-  title: "[Product Name] Price in Bangladesh [Year] — Shared from ৳[XXX]/mo | AI Team Premium BD",
-  description: "Buy [Product Name] in Bangladesh from AI Team Premium BD. Shared from ৳[XXX]/mo, Personal from ৳[X,XXX]/mo. [Key Feature 1], [Key Feature 2], [Key Feature 3]. bKash/Nagad. [X] min delivery. Bangla support.",
+  title: "[Product Name] Price in Bangladesh [Year] — Shared from ৳[XXX]/mo | AI Team Premium",
+  description: "Buy [Product Name] in Bangladesh from AI Team Premium. Shared from ৳[XXX]/mo, Personal from ৳[X,XXX]/mo. [Key Feature 1], [Key Feature 2], [Key Feature 3]. bKash/Nagad. [X] min delivery. Bangla support.",
   alternates: {
-    canonical: "https://aiteampremiumbd.com/[product-slug]",
+    canonical: "https://aiteampremium.com/[product-slug]",
   },
   openGraph: {
     title: "[Product Name] — Bangladesh Price [Year]",
     description: "[Meta description]",
-    url: "https://aiteampremiumbd.com/[product-slug]",
+    url: "https://aiteampremium.com/[product-slug]",
     locale: "bn_BD",
     type: "website",
   },
@@ -1159,12 +1159,12 @@ const productData = {
 
   // FAQ
   faq: [
-    { q: "How much does [Product] cost in Bangladesh?", a: "AITPBD price: Shared seat ৳[XXX]/month, Personal ৳[X,XXX]/month. Official price: $[XX]/month (~৳[X,XXX] direct). You save [X]% buying from AITPBD." },
+    { q: "How much does [Product] cost in Bangladesh?", a: "AITP price: Shared seat ৳[XXX]/month, Personal ৳[X,XXX]/month. Official price: $[XX]/month (~৳[X,XXX] direct). You save [X]% buying from AITP." },
     { q: "How many AI images can I generate per day?", a: "[Specific answer]. Free tier: [X]/day. Pro tier: [X]/day (or unlimited with fair use)." },
     { q: "How many AI videos can I generate?", a: "[Specific answer]. Max duration: [X] seconds per video at [resolution]." },
-    { q: "Can I pay with bKash or Nagad?", a: "Yes! AITPBD accepts bKash, Nagad, and Bank Transfer. Payment instructions shared via WhatsApp." },
+    { q: "Can I pay with bKash or Nagad?", a: "Yes! AITP accepts bKash, Nagad, and Bank Transfer. Payment instructions shared via WhatsApp." },
     { q: "How fast is delivery?", a: "Shared seat: 5–15 minutes after payment. Personal seat: 2–4 hours." },
-    { q: "Is this an official reseller account?", a: "AITPBD is a local access facilitator — solving USD payment friction for Bangladesh customers. We are not an official reseller." },
+    { q: "Is this an official reseller account?", a: "AITP is a local access facilitator — solving USD payment friction for Bangladesh customers. We are not an official reseller." },
     { q: "Can I use on multiple devices?", a: "Shared seat: No — strictly 1 device. Personal seat: Yes — your own account, no limits." },
     { q: "What happens if access stops?", a: "30-day warranty. If access breaks due to our error, we replace within [SLA]. Rule violations void warranty." },
     { q: "Shared vs Personal — difference?", a: "Shared = share with [X] users, lower price, 1-device rule. Personal = your own account, full control." },
@@ -1210,7 +1210,7 @@ export default function ProductPage() {
             "@context": "https://schema.org",
             "@type": "Product",
             name: `${productData.name} — Shared Seat`,
-            description: `${productData.name} subscription in Bangladesh from AI Team Premium BD.`,
+            description: `${productData.name} subscription in Bangladesh from AI Team Premium.`,
             brand: { "@type": "Brand", name: productData.company },
             offers: [
               {
@@ -1477,6 +1477,6 @@ export default function ProductPage() {
 <aside>
 🎨
 
-**END OF PAGE BUILDER AGENT PROMPT.** This prompt contains the complete specification for building every page on [aiteampremiumbd.com](http://aiteampremiumbd.com) — header, footer, hero, all 12 content sections, floating WhatsApp, graphics, animations, dark mode, mobile responsiveness, SEO, and accessibility. Paste into any AI coding agent to produce complete, production-ready pages. Zero gaps. All sections. All graphics wise. All info up to date.
+**END OF PAGE BUILDER AGENT PROMPT.** This prompt contains the complete specification for building every page on [aiteampremium.com](http://aiteampremium.com) — header, footer, hero, all 12 content sections, floating WhatsApp, graphics, animations, dark mode, mobile responsiveness, SEO, and accessibility. Paste into any AI coding agent to produce complete, production-ready pages. Zero gaps. All sections. All graphics wise. All info up to date.
 
 </aside>

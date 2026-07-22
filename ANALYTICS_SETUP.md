@@ -36,7 +36,7 @@ VITE_MICROSOFT_CLARITY_ID=XXXXXXXXXX
 Add env vars to the Cloud Run service:
 
 ```bash
-gcloud run services update ai-team-premium-bd \
+gcloud run services update ai-team-premium \
   --set-env-vars "VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX" \
   --set-env-vars "VITE_GTM_ID=GTM-XXXXXX" \
   --set-env-vars "VITE_META_PIXEL_ID=XXXXXXXXXX" \
@@ -50,7 +50,7 @@ gcloud run services update ai-team-premium-bd \
 
 ```bash
 npm run build
-gcloud run deploy ai-team-premium-bd \
+gcloud run deploy ai-team-premium \
   --source . \
   --region us-central1 \
   --project sysmoai-hq-prod

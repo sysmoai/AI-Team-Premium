@@ -1,4 +1,4 @@
-# AI Team Premium BD — Support Playbook
+# AI Team Premium — Support Playbook
 
 **Purpose:** Quick-reference guide for handling customer inquiries via WhatsApp and Messenger.
 
@@ -11,7 +11,7 @@
 When a customer messages for the first time:
 
 ```
-Hi! Welcome to AI Team Premium BD. 🇧🇩
+Hi! Welcome to AI Team Premium. 🇧🇩
 
 I'm here to help you get premium AI tools with local payment support.
 
@@ -201,7 +201,7 @@ Full details: https://ai-team-premium-bd-1005103726650.us-central1.run.app/refun
 1. Confirm issue is resolved
 2. Ask for confirmation: "Is everything working now?"
 3. Offer additional help: "Anything else I can help with?"
-4. Close positively: "Thanks for choosing AI Team Premium BD! 🙏"
+4. Close positively: "Thanks for choosing AI Team Premium! 🙏"
 
 ---
 

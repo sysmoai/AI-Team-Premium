@@ -1,4 +1,4 @@
-=== REPLIT AGENT MEGA-PROMPT: AI TEAM PREMIUM BD — FULL WEBSITE UPDATE ===
+=== REPLIT AGENT MEGA-PROMPT: AI TEAM PREMIUM — FULL WEBSITE UPDATE ===
 
 You are a senior full-stack engineer, conversion copywriter, and SEO specialist.
 Your job: update the EXISTING AI Team Premium website to become Bangladesh's #1 ChatGPT subscription + AI support destination.

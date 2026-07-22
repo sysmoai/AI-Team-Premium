@@ -56,7 +56,7 @@ const ELEVENLABS_USE_CASES = [
     who: "Ad agencies, marketing teams, small businesses",
     makes: "Professional radio-quality voiceovers for Facebook video ads, TV commercials, and online campaigns",
     timeSaved: "Voice artist per ad ৳5,000 → ৳0",
-    prompt: "Create a 30-second radio ad voiceover: 'AI Team Premium BD-তে ChatGPT Plus পাচ্ছেন মাত্র ৳৩৯৯/মাসে, bKash-এ পেমেন্ট করুন' — energetic male voice, Bengali",
+    prompt: "Create a 30-second radio ad voiceover: 'AI Team Premium-তে ChatGPT Plus পাচ্ছেন মাত্র ৳৩৯৯/মাসে, bKash-এ পেমেন্ট করুন' — energetic male voice, Bengali",
   },
 ];
 
@@ -73,7 +73,7 @@ const ELEVENLABS_COMPETITOR_ROWS = [
   { feature: "Audio Download Format", thisProduct: "MP3, WAV, PCM", chatgpt: "N/A", claude: "N/A", gemini: "Limited" },
   { feature: "Real-time Streaming TTS", thisProduct: "✅ Yes, low latency", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
   { feature: "Voice Design (custom)", thisProduct: "✅ Design new voice from text", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
-  { feature: "AITPBD Shared Price", thisProduct: "৳699/mo (100K chars)", chatgpt: "৳399/mo (text AI only)", claude: "৳599/mo (text AI only)", gemini: "৳449/mo (text AI + basic TTS)" },
+  { feature: "AITP Shared Price", thisProduct: "৳699/mo (100K chars)", chatgpt: "৳399/mo (text AI only)", claude: "৳599/mo (text AI only)", gemini: "৳449/mo (text AI + basic TTS)" },
 ];
 
 const ELEVENLABS_FAQS = [

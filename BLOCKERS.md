@@ -14,10 +14,10 @@
 - ✅ Audit script passes 55/55
 - ✅ SEO assets created (apple-touch-icon.png, manifest.json)
 - ✅ External image dependency removed (hero-bg.jpg local)
-- ✅ Code pushed to fork: https://github.com/sysmoaigit/AITeamPremiumBD
+- ✅ Code pushed to fork: https://github.com/sysmoaigit/AI-Team-Premium
 
 ## Active Blocker — Category B: Missing Deployment Credential (Resolved ✅)
-- **Resolution:** Push to `sysmoai/AITeamPremiumBD` succeeded. All 16 commits from 2026-05-26 are now live on origin/main.
+- **Resolution:** Push to `sysmoai/AI-Team-Premium` succeeded. All 16 commits from 2026-05-26 are now live on origin/main.
 
 ## Non-Blockers (Observations)
 - Mobile breakpoint verification requires browser/Playwright (external tool limitation)

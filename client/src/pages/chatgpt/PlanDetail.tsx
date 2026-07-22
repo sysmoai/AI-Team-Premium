@@ -20,7 +20,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
   const [, setLocation] = useLocation();
 
   usePageMeta({
-    title: plan ? `${plan.title} Bangladesh — ৳${plan.priceBDT}` : "ChatGPT Plan — AI Team Premium BD",
+    title: plan ? `${plan.title} Bangladesh — ৳${plan.priceBDT}` : "ChatGPT Plan — AI Team Premium",
     description: plan
       ? `Buy ${plan.title} in Bangladesh for ${plan.priceLabel}. ${plan.deliverySLA} delivery via bKash/Nagad. 30-day replacement warranty. ${plan.targetBuyer}.`
       : "Get premium ChatGPT subscriptions in Bangladesh.",
@@ -53,9 +53,9 @@ export function PlanDetail({ slug }: PlanDetailProps) {
 
   const planFaqs = [
     { q: `How long does ${plan.title} delivery take?`, a: `Our standard delivery time for ${plan.title} is ${plan.deliverySLA}. Once payment is verified via bKash or Nagad on WhatsApp, we send the login details or workspace invite directly to your WhatsApp.` },
-    { q: `How much does ${plan.title} cost in Bangladesh?`, a: `${plan.title} costs ${plan.priceLabel} for a ${plan.duration} subscription from AI Team Premium BD, payable in BDT via bKash, Nagad, Rocket or Bank Transfer — no international credit card required.` },
+    { q: `How much does ${plan.title} cost in Bangladesh?`, a: `${plan.title} costs ${plan.priceLabel} for a ${plan.duration} subscription from AI Team Premium, payable in BDT via bKash, Nagad, Rocket or Bank Transfer — no international credit card required.` },
     { q: `Is there a warranty on ${plan.title}?`, a: `Yes. We provide a full 30-day replacement warranty. If the account fails for any non-misuse reason, we replace it within 24 hours. ${plan.warranty}` },
-    { q: `Can I pay for ${plan.title} via bKash or Nagad?`, a: "Yes. AI Team Premium BD accepts bKash, Nagad, Rocket and Bank Transfer in BDT. Payment numbers are shared privately on WhatsApp after you confirm your order." },
+    { q: `Can I pay for ${plan.title} via bKash or Nagad?`, a: "Yes. AI Team Premium accepts bKash, Nagad, Rocket and Bank Transfer in BDT. Payment numbers are shared privately on WhatsApp after you confirm your order." },
     { q: `Who is ${plan.title} best for?`, a: `${plan.title} is best for ${plan.targetBuyer}. It includes ${plan.seats} seat${typeof plan.seats === "number" && plan.seats > 1 ? "s" : ""}, ${plan.deviceRule.toLowerCase()}, and ${plan.deliverySLA} delivery.` },
   ];
 
@@ -70,7 +70,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
       />
       <ProductSchema
         name={plan.title}
-        description={`${plan.title} subscription in Bangladesh from AI Team Premium BD. ${plan.priceLabel}, ${plan.duration}, ${plan.deliverySLA} delivery via bKash/Nagad. ${plan.targetBuyer}.`}
+        description={`${plan.title} subscription in Bangladesh from AI Team Premium. ${plan.priceLabel}, ${plan.duration}, ${plan.deliverySLA} delivery via bKash/Nagad. ${plan.targetBuyer}.`}
         path={`/chatgpt/${plan.slug}`}
         priceBDT={plan.priceBDT}
         category="AI Subscription / ChatGPT"
@@ -105,7 +105,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                 {/* DIRECT ANSWER BLOCK (GEO) */}
                 <div className="mt-6 rounded-xl p-5 border" style={{ background: "#EFF6FF", borderColor: "rgba(37,99,235,0.15)" }}>
                   <p style={{ color: BRAND.navy, fontSize: "0.96rem", lineHeight: 1.7 }}>
-                    <strong>{plan.title}</strong> costs <strong>{plan.priceLabel}</strong> ({plan.duration}) from AI Team Premium BD in Bangladesh. It is a {plan.tier.toLowerCase()} {plan.plan} plan with <strong>{plan.seats} seat{typeof plan.seats === "number" && plan.seats > 1 ? "s" : ""}</strong>, <strong>{plan.deliverySLA}</strong> delivery via bKash/Nagad, a 30-day replacement warranty, and is best suited for <strong>{plan.targetBuyer}</strong>.
+                    <strong>{plan.title}</strong> costs <strong>{plan.priceLabel}</strong> ({plan.duration}) from AI Team Premium in Bangladesh. It is a {plan.tier.toLowerCase()} {plan.plan} plan with <strong>{plan.seats} seat{typeof plan.seats === "number" && plan.seats > 1 ? "s" : ""}</strong>, <strong>{plan.deliverySLA}</strong> delivery via bKash/Nagad, a 30-day replacement warranty, and is best suited for <strong>{plan.targetBuyer}</strong>.
                   </p>
                 </div>
               </div>

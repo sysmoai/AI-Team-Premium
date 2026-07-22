@@ -4,8 +4,8 @@
 **Auditor:** Kimi Code (autonomous production engineering)
 **Branch:** main
 **Commit:** 94d327e
-**Live URL:** https://ai-team-premium-bd-1005103726650.us-central1.run.app
-**Cloud Run Revision:** ai-team-premium-bd-00007-4qp
+**Live URL:** https://ai-team-premium-1005103726650.us-central1.run.app
+**Cloud Run Revision:** ai-team-premium-00007-4qp
 
 ---
 

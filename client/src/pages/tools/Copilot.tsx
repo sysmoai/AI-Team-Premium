@@ -73,14 +73,14 @@ const COPILOT_COMPETITOR_ROWS = [
   { feature: "Bangla Comment → Code", thisProduct: "✅ Understands Bangla comments", chatgpt: "✅ Excellent", claude: "✅ Excellent", gemini: "✅ Good" },
   { feature: "Works On Private Repos", thisProduct: "✅ Yes, stays in your IDE", chatgpt: "Upload to chatgpt.com", claude: "Upload to claude.ai", gemini: "Google servers" },
   { feature: "Mobile / Web Coding", thisProduct: "✅ GitHub.com Copilot", chatgpt: "✅ ChatGPT web", claude: "✅ Claude.ai web", gemini: "✅ Gemini web" },
-  { feature: "AITPBD Price", thisProduct: "৳1,200/mo (Private)", chatgpt: "৳399/mo (text AI)", claude: "৳599/mo (text AI)", gemini: "৳449/mo (text AI)" },
+  { feature: "AITP Price", thisProduct: "৳1,200/mo (Private)", chatgpt: "৳399/mo (text AI)", claude: "৳599/mo (text AI)", gemini: "৳449/mo (text AI)" },
 ];
 
 const COPILOT_BASE_FAQS = [
   { q: "GitHub Copilot কি VS Code-এ কাজ করে?", a: "হ্যাঁ! GitHub Copilot VS Code, JetBrains IDE (IntelliJ, PyCharm, WebStorm), Neovim, Xcode এবং GitHub.com-এ সরাসরি কাজ করে। Extension install করলেই real-time code suggestions শুরু হয়।" },
   { q: "GitHub Copilot-এ কোন AI model ব্যবহার করা হয়?", a: "GitHub Copilot একাধিক model সাপোর্ট করে — GPT-4.1, Claude Sonnet, এবং Gemini 2.5। আপনি settings থেকে পছন্দের model বেছে নিতে পারবেন।" },
   { q: "Copilot Agents কী করে?", a: "Copilot Agents হলো autonomous coding mode। এটি feature request, bug fix বা refactor-এর জন্য নিজেই multiple files পড়ে, plan তৈরি করে এবং কোড লেখে — শুধু approve করলেই হয়।" },
-  { q: "বাংলাদেশে GitHub Copilot কীভাবে কিনবো?", a: "AI Team Premium BD-এর মাধ্যমে ৳১,২০০/মাসে আপনার নিজের GitHub account-এ Copilot সক্রিয় করুন — bKash বা Nagad-এ পেমেন্ট, ২-৪ ঘন্টায় delivery।" },
+  { q: "বাংলাদেশে GitHub Copilot কীভাবে কিনবো?", a: "AI Team Premium-এর মাধ্যমে ৳১,২০০/মাসে আপনার নিজের GitHub account-এ Copilot সক্রিয় করুন — bKash বা Nagad-এ পেমেন্ট, ২-৪ ঘন্টায় delivery।" },
   { q: "Copilot কি free GitHub account-এ চলবে?", a: "হ্যাঁ, আপনার free GitHub account-এই Copilot activate করা হবে। আলাদা paid GitHub plan লাগবে না।" },
 ];
 
@@ -91,7 +91,7 @@ const COPILOT_EXTENDED_FAQS = [
   { q: "What is Copilot Chat and how is it different from inline completion?", a: "Copilot Chat is a conversational AI panel in VS Code and JetBrains — you ask questions in natural language and get answers about your code. Use it to: explain what a function does, suggest refactors for a selected block, generate documentation, debug errors (paste the error message and ask what's wrong), or ask 'How do I implement authentication in this Express app?'. It's like having a senior developer available via chat in your IDE." },
   { q: "Can GitHub Copilot help Bangladeshi developers get better at coding?", a: "Yes — Copilot is also a learning tool. When it suggests code you wouldn't have written yourself, you can ask Copilot Chat 'Explain why you wrote it this way' or 'What does this pattern do?' This accelerates learning by showing you real-world code patterns and best practices in context. Many Bangladeshi CS students use Copilot to understand how experienced developers structure code for different problems." },
   { q: "What is Copilot Autofix and how does it improve code security?", a: "Copilot Autofix is a GitHub Advanced Security feature that automatically detects security vulnerabilities in pull requests (SQL injection, XSS, hardcoded secrets, etc.) and suggests one-click code fixes. Instead of just flagging an issue, Copilot writes the corrected code and explains why the original was vulnerable. For Bangladeshi developers building fintech or health apps where security is critical, this catches issues before they reach production." },
-  { q: "How many developers can use one GitHub Copilot account?", a: "The GitHub Copilot plan from AITPBD (৳1,200/mo) is activated on your personal GitHub account — it's a single-user licence. This gives you Copilot across all your repositories, both personal and where you're a contributor. GitHub Copilot Business (multi-seat for teams) requires separate pricing — contact us on WhatsApp for team pricing." },
+  { q: "How many developers can use one GitHub Copilot account?", a: "The GitHub Copilot plan from AITP (৳1,200/mo) is activated on your personal GitHub account — it's a single-user licence. This gives you Copilot across all your repositories, both personal and where you're a contributor. GitHub Copilot Business (multi-seat for teams) requires separate pricing — contact us on WhatsApp for team pricing." },
 ];
 
 

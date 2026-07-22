@@ -62,8 +62,8 @@ const FAQS = [
 
 export default function BrandDesign() {
   usePageMeta({
-    title: "Brand Design Services Bangladesh — Logo & Identity from ৳4,999 | AI Team Premium BD",
-    description: "Professional brand design in Bangladesh from ৳4,999. Logo design, brand identity, social media kit, business card. 5-day turnaround. Pay via bKash/Nagad. AI Team Premium BD.",
+    title: "Brand Design Services Bangladesh — Logo & Identity from ৳4,999 | AI Team Premium",
+    description: "Professional brand design in Bangladesh from ৳4,999. Logo design, brand identity, social media kit, business card. 5-day turnaround. Pay via bKash/Nagad. AI Team Premium.",
     path: "/services/brand-design",
   });
 
@@ -77,7 +77,7 @@ export default function BrandDesign() {
       <FAQSchema items={FAQS} />
       <ProductSchema
         name="Brand Design Services Bangladesh"
-        description="Professional logo design, brand identity, and social media kit from ৳4,999. Pay via bKash/Nagad. AI Team Premium BD."
+        description="Professional logo design, brand identity, and social media kit from ৳4,999. Pay via bKash/Nagad. AI Team Premium."
         path="/services/brand-design"
         priceBDT={4999}
         category="Design Service"
@@ -96,7 +96,7 @@ export default function BrandDesign() {
             আপনার brand-এর জন্য professional logo, identity system, এবং social media kit — ৫ দিনে delivery।
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Brand+Design+services+from+AITPBD" target="_blank" rel="noopener noreferrer" data-testid="button-hero-brand" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#25D366" }}>
+            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Brand+Design+services+from+AITP" target="_blank" rel="noopener noreferrer" data-testid="button-hero-brand" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#25D366" }}>
               <WhatsAppIcon size={18} color="#fff" /> WhatsApp
             </a>
             <a href={config.messenger} target="_blank" rel="noopener noreferrer" data-testid="button-hero-brand-messenger" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#0084FF" }}>
@@ -204,7 +204,7 @@ export default function BrandDesign() {
           <p className="text-white/50 mb-2">সকাল ৯টা – রাত ১১টা · সপ্তাহের ৭ দিন · বাংলা/English support</p>
           <p className="text-white/50 mb-8">WhatsApp বা Messenger-এ message করুন।</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Brand+Design+services+from+AITPBD" target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-brand" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#25D366" }}>
+            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Brand+Design+services+from+AITP" target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-brand" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#25D366" }}>
               <WhatsAppIcon size={20} color="#fff" /> WhatsApp
             </a>
             <a href={config.messenger} target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-brand-messenger" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#0084FF" }}>

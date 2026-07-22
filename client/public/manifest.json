@@ -1,6 +1,6 @@
 {
-  "name": "AI Team Premium BD",
-  "short_name": "AITPBD",
+  "name": "AI Team Premium",
+  "short_name": "AITP",
   "description": "ChatGPT, Claude & AI Tools in Bangladesh. Pay via bKash/Nagad.",
   "start_url": "/",
   "display": "standalone",

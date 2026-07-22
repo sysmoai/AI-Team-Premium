@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Route & Link Audit Script for AI Team Premium BD
+ * Route & Link Audit Script for AI Team Premium
  * Checks: route existence, SEO files, WhatsApp link integrity
  */
 
@@ -29,7 +29,7 @@ let failed = 0;
 function ok(msg) { passed++; console.log(`  ✅ ${msg}`); }
 function fail(msg) { failed++; console.log(`  ❌ ${msg}`); }
 
-console.log("\n=== AI Team Premium BD — Route & Quality Audit ===\n");
+console.log("\n=== AI Team Premium — Route & Quality Audit ===\n");
 
 // 1. SEO files
 console.log("1. SEO FILES");

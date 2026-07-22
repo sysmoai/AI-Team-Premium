@@ -7,10 +7,10 @@
 | **Platform** | GCP Cloud Run (gen2) |
 | **Project** | sysmoai-hq-prod |
 | **Region** | us-central1 |
-| **Service URL** | https://ai-team-premium-bd-1005103726650.us-central1.run.app |
-| **Latest Revision** | ai-team-premium-bd-00010-rsk |
-| **Database** | Supabase PostgreSQL (ai-team-premium-bd) |
-| **Registry** | us-central1-docker.pkg.dev/sysmoai-hq-prod/cortex/ai-team-premium-bd |
+| **Service URL** | https://ai-team-premium-1005103726650.us-central1.run.app |
+| **Latest Revision** | ai-team-premium-00010-rsk |
+| **Database** | Supabase PostgreSQL (ai-team-premium) |
+| **Registry** | us-central1-docker.pkg.dev/sysmoai-hq-prod/cortex/ai-team-premium |
 
 ## Tech Stack
 
@@ -49,7 +49,7 @@ npm run db:push
 
 | Variable | Source | Purpose |
 |----------|--------|---------|
-| `DATABASE_URL` | GCP Secret Manager (`ai-team-premium-bd-db-url`) | PostgreSQL connection |
+| `DATABASE_URL` | GCP Secret Manager (`ai-team-premium-db-url`) | PostgreSQL connection |
 | `NODE_ENV` | set in Dockerfile / runtime | production/development |
 | `PORT` | set in Dockerfile (8080) | HTTP server port |
 
@@ -59,11 +59,11 @@ npm run db:push
 
 ```bash
 # 1. Build and push Docker image
-gcloud builds submit --tag us-central1-docker.pkg.dev/sysmoai-hq-prod/cortex/ai-team-premium-bd:latest
+gcloud builds submit --tag us-central1-docker.pkg.dev/sysmoai-hq-prod/cortex/ai-team-premium:latest
 
 # 2. Deploy to Cloud Run
-gcloud run deploy ai-team-premium-bd \
-  --image us-central1-docker.pkg.dev/sysmoai-hq-prod/cortex/ai-team-premium-bd:latest \
+gcloud run deploy ai-team-premium \
+  --image us-central1-docker.pkg.dev/sysmoai-hq-prod/cortex/ai-team-premium:latest \
   --region us-central1 \
   --project sysmoai-hq-prod
 ```
@@ -79,9 +79,9 @@ gcloud run deploy ai-team-premium-bd \
 | Resource | Name | Status |
 |----------|------|--------|
 | Artifact Registry | `cortex` repo | ✅ |
-| Cloud Run Service | `ai-team-premium-bd` | ✅ |
-| Secret Manager | `ai-team-premium-bd-db-url` | ✅ |
-| Supabase Project | `ai-team-premium-bd` | ✅ |
+| Cloud Run Service | `ai-team-premium` | ✅ |
+| Secret Manager | `ai-team-premium-db-url` | ✅ |
+| Supabase Project | `ai-team-premium` | ✅ |
 | Cloud Build | Enabled | ✅ |
 
 ## Health & Monitoring
@@ -89,7 +89,7 @@ gcloud run deploy ai-team-premium-bd \
 - **Health endpoint:** `GET /api/health`
 - **Startup probe:** `/api/health`
 - **Liveness probe:** `/api/health`
-- **Response:** `{"status":"ok","service":"ai-team-premium-bd","timestamp":"..."}`
+- **Response:** `{"status":"ok","service":"ai-team-premium","timestamp":"..."}`
 
 ## Migration
 

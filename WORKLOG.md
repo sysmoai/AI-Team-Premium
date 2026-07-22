@@ -1,4 +1,4 @@
-# AI Team Premium BD — Work Log
+# AI Team Premium — Work Log
 
 ## Current Branch: main
 ## Current Commit: 69e0dca

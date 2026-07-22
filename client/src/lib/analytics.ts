@@ -1,5 +1,5 @@
 /**
- * Analytics Configuration for AI Team Premium BD
+ * Analytics Configuration for AI Team Premium
  *
  * Supports optional tracking via environment variables:
  * - VITE_GA_MEASUREMENT_ID  → Google Analytics 4

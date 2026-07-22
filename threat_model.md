@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-AITPBD is a publicly deployed marketing and lead-capture site for selling AI subscriptions and AI support services in Bangladesh. The stack is React/Vite on the client, a small Express backend on Node.js, and PostgreSQL via Drizzle ORM. In production, `NODE_ENV` is assumed to be `production`, the site is served over platform-managed TLS, and the deployment is public (`https://aiteampremiumbd.com`).
+AITP is a publicly deployed marketing and lead-capture site for selling AI subscriptions and AI support services in Bangladesh. The stack is React/Vite on the client, a small Express backend on Node.js, and PostgreSQL via Drizzle ORM. In production, `NODE_ENV` is assumed to be `production`, the site is served over platform-managed TLS, and the deployment is public (`https://aiteampremium.com`).
 
 The production application appears to have a narrow server-side surface: one public contact-submission API plus static delivery of the SPA. Development-only tooling such as Vite dev middleware should be treated as out of scope unless production reachability is demonstrated.
 

@@ -73,7 +73,7 @@ const GEMINI_COMPETITOR_ROWS = [
   { feature: "Bangla Language Quality", thisProduct: "⭐⭐⭐⭐⭐", chatgpt: "⭐⭐⭐⭐", claude: "⭐⭐⭐⭐", gemini: "⭐⭐⭐ (free)" },
   { feature: "File Upload Types", thisProduct: "PDFs, images, video, audio", chatgpt: "PDFs, images, docs", claude: "PDFs, images, docs", gemini: "Images only (free)" },
   { feature: "Knowledge Freshness", thisProduct: "✅ Real-time Google Search", chatgpt: "Apr 2024 cutoff", claude: "Apr 2024 cutoff", gemini: "Partial (free)" },
-  { feature: "AITPBD Shared Price", thisProduct: "৳449/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "Free (limited)" },
+  { feature: "AITP Shared Price", thisProduct: "৳449/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "Free (limited)" },
 ];
 
 const GEMINI_FAQS = [

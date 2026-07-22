@@ -1,5 +1,5 @@
 #!/bin/bash
-# AI Team Premium BD Health Check
+# AI Team Premium Health Check
 # Part of CORTEX OS — Continuous monitoring
 
 set -e
@@ -16,7 +16,7 @@ if [ -z "$SERVICE_URL" ]; then
   exit 1
 fi
 
-echo "=== AI Team Premium BD Health Check · $(date '+%Y-%m-%d %H:%M:%S') ==="
+echo "=== AI Team Premium Health Check · $(date '+%Y-%m-%d %H:%M:%S') ==="
 echo "URL: $SERVICE_URL"
 echo ""
 

@@ -13,7 +13,7 @@ const enc = encodeURIComponent;
 const PRICING_FAQS = [
   { q: "What is the cheapest AI subscription price in Bangladesh from AI Team Premium?", a: "ChatGPT Plus Shared costs ৳499/month — the cheapest plan available. Pay in BDT via bKash, Nagad, Rocket or Bank Transfer, and get access within 5–15 minutes." },
   { q: "How do I order and what payment methods are accepted?", a: "Message on WhatsApp (+880 1533-262758), pick a plan from the pricing list, pay via bKash, Nagad, Rocket or Bank Transfer, and receive access within 5–15 minutes (shared plans) or up to 6 hours (bundles)." },
-  { q: "Does AI Team Premium accept bKash and Nagad for all plans?", a: "Yes. Every AI subscription and service from AI Team Premium — from ChatGPT Plus at ৳399/mo to AI Ops Sprint at ৳9,900 — is payable in BDT via bKash, Nagad, Rocket or Bank Transfer. No international credit card required." },
+  { q: "Does AI Team Premium accept bKash and Nagad for all plans?", a: "Yes. Every AI subscription and service from AI Team Premium — from ChatGPT Plus at ৳499/mo to AI Ops Sprint at ৳9,900 — is payable in BDT via bKash, Nagad, Rocket or Bank Transfer. No international credit card required." },
   { q: "What is included in the AI Tools Vault bundle?", a: "The AI Tools Vault (৳1,990/month) includes shared access to ChatGPT Plus, Claude Pro, and Gemini Advanced — three top AI tools in one plan, with priority setup and a single WhatsApp support channel." },
 ];
 
@@ -22,7 +22,7 @@ const SECTIONS = [
     title: "🤖 AI Chat & Research Tools",
     subtitle: "Genuine access · bKash/Nagad · 5–15 min delivery",
     items: [
-      { name: "ChatGPT Plus — Shared", price: "৳499/mo", delivery: "5–15 min", href: "/chatgpt/plus-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Shared ৳399/mo") },
+      { name: "ChatGPT Plus — Shared", price: "৳499/mo", delivery: "5–15 min", href: "/chatgpt/plus-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Shared ৳499/mo") },
       { name: "ChatGPT Plus — Premium Shared", price: "৳999/mo", delivery: "5–15 min", href: "/chatgpt/plus-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Premium Shared ৳950/mo") },
       { name: "ChatGPT Plus — Personal Seat", price: "৳2,990/mo", delivery: "2–4 hr", href: "/chatgpt/plus-personal-seat", wa: waBase + enc("Hi, I want ChatGPT Plus Personal Seat ৳2,950/mo") },
       { name: "ChatGPT Team — Shared", price: "৳1,799/mo", delivery: "5–15 min", href: "/chatgpt/business-shared", wa: waBase + enc("Hi, I want ChatGPT Team Shared ৳699/mo") },

@@ -73,7 +73,7 @@ const CLAUDE_COMPETITOR_ROWS = [
   { feature: "Usage Limits (Paid)", thisProduct: "5× more than free", chatgpt: "GPT-4o limited", claude: "Very limited (free)", gemini: "High limits" },
   { feature: "Projects / Memory", thisProduct: "✅ Projects feature", chatgpt: "✅ Memory", claude: "❌ No (free)", gemini: "✅ Gems" },
   { feature: "API Access", thisProduct: "Via Anthropic API", chatgpt: "Via OpenAI API", claude: "Limited (free)", gemini: "Via Google AI" },
-  { feature: "AITPBD Shared Price", thisProduct: "৳599/mo", chatgpt: "৳399/mo", claude: "Free (limited)", gemini: "৳449/mo" },
+  { feature: "AITP Shared Price", thisProduct: "৳599/mo", chatgpt: "৳399/mo", claude: "Free (limited)", gemini: "৳449/mo" },
 ];
 
 const CLAUDE_FAQS = [
@@ -86,7 +86,7 @@ const CLAUDE_FAQS = [
   { q: "What's the difference between Claude Shared and Claude Personal plan?", a: "The Shared plan (৳599/mo) gives you access via a shared account — you use the full Claude Pro features but share the account with a small number of other users. The Personal plan (৳2,500/mo) upgrades your own email address to Claude Pro — fully private, no sharing, and your data stays linked to your own Anthropic account." },
   { q: "Is there a usage limit on Claude Pro?", a: "Claude Pro gives you approximately 5× more usage than the free tier, which handles all normal workloads. Heavy usage (sending 100+ long messages per day) may hit soft limits during peak hours, causing a temporary slowdown. For most students, freelancers, and professionals using Claude for daily work, the Pro limit is more than sufficient." },
   { q: "Can I use Claude for coding projects in multiple files?", a: "Yes. Claude Pro with Extended Thinking can handle large multi-file codebases. You can paste multiple files into a single conversation and ask Claude to understand the codebase structure, find bugs, or add new features. For Bangladeshi developers working on large projects, this makes Claude an excellent alternative to GitHub Copilot for code review and architecture discussions." },
-  { q: "How fast is delivery for Claude Pro from AI Team Premium BD?", a: "For the Shared plan, delivery is 5–15 minutes after payment confirmation on WhatsApp. For the Personal plan (upgrade to your own account), delivery takes 2–4 hours as we need to process the upgrade through legitimate channels. Both plans include a 30-day replacement warranty and 24/7 WhatsApp support in Bangla and English." },
+  { q: "How fast is delivery for Claude Pro from AI Team Premium?", a: "For the Shared plan, delivery is 5–15 minutes after payment confirmation on WhatsApp. For the Personal plan (upgrade to your own account), delivery takes 2–4 hours as we need to process the upgrade through legitimate channels. Both plans include a 30-day replacement warranty and 24/7 WhatsApp support in Bangla and English." },
   { q: "Does Claude Pro include access to all Claude models?", a: "Claude Pro gives access to Claude Sonnet 3.5 — Anthropic's current most capable model — with Extended Thinking enabled. It also allows switching to Claude Haiku for faster responses. As Anthropic releases new models (Claude Opus 4, etc.), Pro subscribers get priority access before free users." },
 ];
 

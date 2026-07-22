@@ -177,7 +177,7 @@ NODE_ENV=production node dist/index.cjs
 
 ## External Blockers
 
-1. **GitHub push permissions** — `sysmoaigit` lacks write access to `sysmoai/AITeamPremiumBD`
+1. **GitHub push permissions** — `sysmoaigit` lacks write access to `sysmoai/AI-Team-Premium`
    - Action: Repo owner (Emon) must grant write access or push manually
 
 ## Non-Blockers

@@ -73,11 +73,11 @@ const GRAMMARLY_COMPETITOR_ROWS = [
   { feature: "Writing Goals Setting", thisProduct: "✅ Audience, intent, style", chatgpt: "❌ No goal system", claude: "❌ No goal system", gemini: "❌ No goal system" },
   { feature: "Vocabulary Enhancement", thisProduct: "✅ Word-level suggestions", chatgpt: "On request", claude: "On request", gemini: "On request" },
   { feature: "Bangla Writing Help", thisProduct: "❌ English only", chatgpt: "✅ Excellent Bangla", claude: "✅ Excellent Bangla", gemini: "✅ Excellent Bangla" },
-  { feature: "AITPBD Price", thisProduct: "৳499/mo (private)", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
+  { feature: "AITP Price", thisProduct: "৳499/mo (private)", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
 ];
 
 const GRAMMARLY_BASE_FAQS = [
-  { q: "Grammarly Premium কি বাংলাদেশে ব্যবহার করা যায়?", a: "হ্যাঁ! AI Team Premium BD-এর মাধ্যমে আপনার নিজের Grammarly account-এ Premium upgrade করা হয়। ৳৮০০/মাসে bKash বা Nagad-এ পেমেন্ট করুন — ১-২ ঘন্টায় access পাবেন।" },
+  { q: "Grammarly Premium কি বাংলাদেশে ব্যবহার করা যায়?", a: "হ্যাঁ! AI Team Premium-এর মাধ্যমে আপনার নিজের Grammarly account-এ Premium upgrade করা হয়। ৳৮০০/মাসে bKash বা Nagad-এ পেমেন্ট করুন — ১-২ ঘন্টায় access পাবেন।" },
   { q: "GrammarlyGO কী?", a: "GrammarlyGO হলো Grammarly-র generative AI feature। এটি পুরো paragraph rewrite করতে, emails draft করতে এবং context-aware suggestions দিতে পারে — শুধু একটি prompt দিলেই হয়।" },
   { q: "Grammarly কোথায় কোথায় কাজ করে?", a: "Grammarly Premium Chrome extension হিসেবে Gmail, Google Docs, Twitter/X, LinkedIn এবং যেকোনো website-এ কাজ করে। আলাদা desktop app আছে Windows ও Mac-এর জন্য। Microsoft Word ও Outlook-এ native add-in আছে।" },
   { q: "Plagiarism checker কতটা accurate?", a: "Grammarly-র plagiarism checker ১৬ billion+ web pages ও academic database-এর বিরুদ্ধে text compare করে। এটি student assignments ও blog posts-এর জন্য বিশ্বাসযোগ্য এবং widely accepted।" },
@@ -92,7 +92,7 @@ const GRAMMARLY_EXTENDED_FAQS = [
   { q: "How does Grammarly help with academic writing at Bangladeshi universities?", a: "For university students, Grammarly Premium offers academic-style guidance — it can be set to 'Academic' writing goal, which enforces formal vocabulary, flags colloquialisms, and checks for plagiarism. Many Bangladeshi private universities accept Grammarly's plagiarism score as a self-certification tool. For thesis and research paper writing, Grammarly is essential for non-native English writers aiming for high standards." },
   { q: "Can I use Grammarly on my mobile phone?", a: "Yes. Grammarly has an iOS and Android keyboard that works system-wide — in WhatsApp, email apps, LinkedIn, Twitter, and any app where you type. The Grammarly keyboard replaces your standard keyboard and shows grammar and spelling suggestions in real-time on mobile. For Bangladeshi professionals writing English messages on the go, this is extremely useful." },
   { q: "What is the Writing Goals feature in Grammarly?", a: "Writing Goals lets you tell Grammarly who you're writing for and why: Audience (general public, expert, knowledgeable), Formality (formal, informal), Domain (academic, business, creative, casual), Tone (informative, analytical, persuasive). Once set, Grammarly tailors all its suggestions to match your specific writing context — making suggestions appropriate for a USAID report completely different from a casual blog post." },
-  { q: "How is Grammarly Premium delivered by AITPBD?", a: "Grammarly Premium from AITPBD is upgraded directly on your own Grammarly account — we need your Grammarly email address. Delivery takes 1–2 hours after payment confirmation on WhatsApp. Your existing documents, account settings, and history are preserved. The upgrade is genuine and comes with a 30-day replacement warranty." },
+  { q: "How is Grammarly Premium delivered by AITP?", a: "Grammarly Premium from AITP is upgraded directly on your own Grammarly account — we need your Grammarly email address. Delivery takes 1–2 hours after payment confirmation on WhatsApp. Your existing documents, account settings, and history are preserved. The upgrade is genuine and comes with a 30-day replacement warranty." },
 ];
 
 

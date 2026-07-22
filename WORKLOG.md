@@ -2,8 +2,8 @@
 
 ## Current Branch: main
 ## Current Commit: 69e0dca
-## Deployed URL: https://ai-team-premium-bd-1005103726650.us-central1.run.app
-## Cloud Run Revision: ai-team-premium-bd-00010-rsk
+## Deployed URL: https://ai-team-premium-1005103726650.us-central1.run.app
+## Cloud Run Revision: ai-team-premium-00010-rsk
 
 ---
 
@@ -13,7 +13,7 @@
 - ✅ GitHub push blocker resolved — all 17 commits pushed to `sysmoai/AITeamPremiumBD/main`
 - ✅ Cloud Run redeployed — revision `00010-rsk` (was `00009-8jg`, now serves all post-launch readiness changes)
 - ✅ Live health check: `{"status":"ok","environment":"production","uptime":XX}`
-- ✅ Live version check: `{"name":"ai-team-premium-bd","version":"1.0.0","node":"v20.20.2"}`
+- ✅ Live version check: `{"name":"ai-team-premium","version":"1.0.0","node":"v20.20.2"}`
 - ✅ BLOCKERS.md updated — all blockers resolved
 - ✅ DEPLOYMENT.md updated — revision reflects live deployment
 
@@ -32,7 +32,7 @@
 - **npm run check:** ✅ passes (0 errors)
 - **npm run build:** ✅ passes
 - **Live health:** ✅ {status: "ok", environment: "production", uptime: 21}
-- **Live version:** ✅ {name: "ai-team-premium-bd", version: "1.0.0", node: "v20.20.2"}
+- **Live version:** ✅ {name: "ai-team-premium", version: "1.0.0", node: "v20.20.2"}
 
 ### Phase 2: Analytics Foundation
 - Created `client/src/lib/analytics.ts` — central analytics config

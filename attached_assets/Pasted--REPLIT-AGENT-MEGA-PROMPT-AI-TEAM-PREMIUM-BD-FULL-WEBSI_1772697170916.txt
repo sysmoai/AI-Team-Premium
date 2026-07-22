@@ -1,7 +1,7 @@
 === REPLIT AGENT MEGA-PROMPT: AI TEAM PREMIUM BD — FULL WEBSITE UPDATE ===
 
 You are a senior full-stack engineer, conversion copywriter, and SEO specialist.
-Your job: update the EXISTING AI Team Premium BD website to become Bangladesh's #1 ChatGPT subscription + AI support destination.
+Your job: update the EXISTING AI Team Premium website to become Bangladesh's #1 ChatGPT subscription + AI support destination.
 
 Do NOT rebuild from scratch. Work with the existing Next.js + Tailwind codebase.
 
@@ -9,8 +9,8 @@ Do NOT rebuild from scratch. Work with the existing Next.js + Tailwind codebase.
 CONTEXT
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Brand: AI Team Premium BD
-Website: aiteampremiumbd.com
+Brand: AI Team Premium
+Website: aiteampremium.com
 Market: Bangladesh (Bangla-first, price-sensitive, bKash/Nagad payments)
 Goal: Sell ChatGPT subscriptions (৳399–৳4,500/mo) + Premium Human Support (৳799–৳24,999)
 Revenue target: $15,000/month
@@ -290,7 +290,7 @@ export const memberships = [
 5) Create /lib/config.ts:
 
 export const config = {
-  brand: "AI Team Premium BD",
+  brand: "AI Team Premium",
   whatsapp: "+8801533262758",
   whatsappUrl: "https://wa.me/8801533262758",
   facebook: "https://www.facebook.com/profile.php?id=61586742067282",
@@ -575,7 +575,7 @@ STEP 3 — REFUND & POLICY PAGE
      * Support fee refundable if requested within 15 min of session start
      * Tools/subscription fees never refundable
      * No refund if: wrong info provided, no-show, non-implementation
-   - SEO meta: "AI Team Premium BD Refund Policy — ChatGPT Subscriptions & Support"
+   - SEO meta: "AI Team Premium Refund Policy — ChatGPT Subscriptions & Support"
 
 2) Link from:
    - Footer (always visible)
@@ -589,44 +589,44 @@ STEP 4 — SEO + SCHEMA (CRITICAL FOR RANKING)
 A) Page-level SEO (unique per page)
 
 /chatgpt-plans:
-  title: "ChatGPT Plans in Bangladesh 2026 — ৳399 থেকে | AI Team Premium BD"
-  description: "বাংলাদেশে ChatGPT Plus, Pro ও Business কিনুন ৳399 থেকে। Instant delivery, bKash/Nagad, WhatsApp support। AI Team Premium BD।"
+  title: "ChatGPT Plans in Bangladesh 2026 — ৳399 থেকে | AI Team Premium"
+  description: "বাংলাদেশে ChatGPT Plus, Pro ও Business কিনুন ৳399 থেকে। Instant delivery, bKash/Nagad, WhatsApp support। AI Team Premium।"
 
 /chatgpt/plus-shared:
-  title: "ChatGPT Plus Shared Seat ৳399/মাস — Bangladesh | AI Team Premium BD"
+  title: "ChatGPT Plus Shared Seat ৳399/মাস — Bangladesh | AI Team Premium"
   description: "ChatGPT Plus shared access ৳399/মাসে। GPT-5.3 Instant + Agent mode + Codex + Sora। 5-15 মিনিটে delivery। bKash/Nagad।"
 
 /chatgpt/plus-premium-shared:
-  title: "ChatGPT Plus Premium Shared ৳950/মাস — Stable | AI Team Premium BD"
+  title: "ChatGPT Plus Premium Shared ৳950/মাস — Stable | AI Team Premium"
   description: "Stable ChatGPT Plus access ৳950/মাসে। মাত্র 2-3 জন per account। Fast response, less congestion।"
 
 /chatgpt/plus-personal-seat:
-  title: "নিজের ChatGPT Plus Account ৳2,950/মাস — Bangladesh | AI Team Premium BD"
+  title: "নিজের ChatGPT Plus Account ৳2,950/মাস — Bangladesh | AI Team Premium"
   description: "আপনার নিজের ChatGPT Plus account। Full control, memory, history। Official billing আপনার নামে।"
 
 /chatgpt/business-shared:
-  title: "ChatGPT Business Shared ৳699/মাস — Team Plan BD | AI Team Premium BD"
+  title: "ChatGPT Business Shared ৳699/মাস — Team Plan BD | AI Team Premium"
   description: "ChatGPT Business (formerly Team) ৳699 থেকে। Admin console, SSO, 60+ integrations। Workspace invite model।"
 
 /chatgpt/business-premium-shared:
-  title: "ChatGPT Business Premium Shared ৳1,299/মাস | AI Team Premium BD"
+  title: "ChatGPT Business Premium Shared ৳1,299/মাস | AI Team Premium"
   description: "Stable ChatGPT Business access ৳1,299/মাসে। 2-3 users, premium quality workspace।"
 
 /chatgpt/business-personal-like:
-  title: "ChatGPT Business Dedicated ৳3,899/মাস | AI Team Premium BD"
+  title: "ChatGPT Business Dedicated ৳3,899/মাস | AI Team Premium"
   description: "Dedicated ChatGPT Business experience। 1 user, full workspace features, admin controls।"
 
 /chatgpt/pro-premium-shared:
-  title: "ChatGPT Pro Bangladesh ৳4,500/মাস — GPT-5.2 Pro | AI Team Premium BD"
+  title: "ChatGPT Pro Bangladesh ৳4,500/মাস — GPT-5.2 Pro | AI Team Premium"
   description: "Unlimited GPT-5.2 Pro access। ChatGPT Pulse exclusive। 128K context। Most powerful ChatGPT plan।"
 
 /support:
-  title: "ChatGPT সাপোর্ট বাংলাদেশ — AI Training & Live Support | AI Team Premium BD"
+  title: "ChatGPT সাপোর্ট বাংলাদেশ — AI Training & Live Support | AI Team Premium"
   description: "বাংলায় ChatGPT শিখুন। লাইভ Google Meet সেশন। Prompt pack + workflow। ৳799/ঘন্টা থেকে। Student, Freelancer, Business packages।"
 
 /refund-policy:
-  title: "Refund & Replacement Policy — AI Team Premium BD"
-  description: "AI Team Premium BD refund and replacement policy for ChatGPT subscriptions and support services."
+  title: "Refund & Replacement Policy — AI Team Premium"
+  description: "AI Team Premium refund and replacement policy for ChatGPT subscriptions and support services."
 
 B) Schema Markup (JSON-LD)
 
@@ -634,8 +634,8 @@ On EVERY page, add Organization schema:
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "AI Team Premium BD",
-  "url": "https://aiteampremiumbd.com",
+  "name": "AI Team Premium",
+  "url": "https://aiteampremium.com",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+8801533262758",

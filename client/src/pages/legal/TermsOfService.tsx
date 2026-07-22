@@ -6,8 +6,8 @@ import { config } from "@/lib/config";
 
 export default function TermsOfService() {
   usePageMeta({
-    title: "Terms of Service — AI Team Premium BD",
-    description: "Terms governing the purchase and use of AI subscriptions and support services from AI Team Premium BD in Bangladesh. Includes usage rules for shared plans, warranty conditions, and dispute resolution.",
+    title: "Terms of Service — AI Team Premium",
+    description: "Terms governing the purchase and use of AI subscriptions and support services from AI Team Premium in Bangladesh. Includes usage rules for shared plans, warranty conditions, and dispute resolution.",
     path: "/terms",
   });
   return (
@@ -16,7 +16,7 @@ export default function TermsOfService() {
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
           <h1 style={{ color: BRAND.navy, fontSize: "clamp(1.6rem, 4vw, 2.2rem)", fontWeight: 700 }}>Terms of Service</h1>
-          <p className="mt-3" style={{ color: BRAND.navy, opacity: 0.45, fontSize: "0.85rem" }}>Effective date: May 2026 · AI Team Premium BD · aiteampremiumbd.com</p>
+          <p className="mt-3" style={{ color: BRAND.navy, opacity: 0.45, fontSize: "0.85rem" }}>Effective date: May 2026 · AI Team Premium · aiteampremium.com</p>
         </div>
       </section>
 
@@ -25,12 +25,12 @@ export default function TermsOfService() {
 
           <div>
             <h2 className="mb-3" style={{ fontSize: "1.15rem", fontWeight: 700 }}>1. Acceptance of Terms</h2>
-            <p style={{ opacity: 0.65 }}>By accessing <strong>aiteampremiumbd.com</strong>, ordering via WhatsApp (+880 1533-262758), Facebook, or any other channel, you agree to be bound by these Terms of Service. If you do not agree, please do not place an order. These terms apply to all users in Bangladesh and internationally.</p>
+            <p style={{ opacity: 0.65 }}>By accessing <strong>aiteampremium.com</strong>, ordering via WhatsApp (+880 1533-262758), Facebook, or any other channel, you agree to be bound by these Terms of Service. If you do not agree, please do not place an order. These terms apply to all users in Bangladesh and internationally.</p>
           </div>
 
           <div>
             <h2 className="mb-3" style={{ fontSize: "1.15rem", fontWeight: 700 }}>2. Nature of Service</h2>
-            <p style={{ opacity: 0.65 }}>AI Team Premium BD acts as a <strong>procurement proxy and local access provider</strong> for official AI subscriptions. We do not represent OpenAI, Anthropic, Google, Grammarly, Canva, or any other platform. All subscriptions sold are genuine and official. We are not affiliated with any AI company unless explicitly stated.</p>
+            <p style={{ opacity: 0.65 }}>AI Team Premium acts as a <strong>procurement proxy and local access provider</strong> for official AI subscriptions. We do not represent OpenAI, Anthropic, Google, Grammarly, Canva, or any other platform. All subscriptions sold are genuine and official. We are not affiliated with any AI company unless explicitly stated.</p>
           </div>
 
           <div>
@@ -80,12 +80,12 @@ export default function TermsOfService() {
 
           <div>
             <h2 className="mb-3" style={{ fontSize: "1.15rem", fontWeight: 700 }}>8. Intellectual Property</h2>
-            <p style={{ opacity: 0.65 }}>All content on this website — text, graphics, logos, and design — is the property of AI Team Premium BD unless otherwise noted. You may not reproduce, distribute, or commercially exploit any content without written permission.</p>
+            <p style={{ opacity: 0.65 }}>All content on this website — text, graphics, logos, and design — is the property of AI Team Premium unless otherwise noted. You may not reproduce, distribute, or commercially exploit any content without written permission.</p>
           </div>
 
           <div>
             <h2 className="mb-3" style={{ fontSize: "1.15rem", fontWeight: 700 }}>9. Limitation of Liability</h2>
-            <p style={{ opacity: 0.65 }}>AI Team Premium BD is not liable for: (a) changes made by AI platforms (OpenAI, Anthropic, Google, etc.) to their products, pricing, or availability; (b) any indirect, incidental, or consequential damages arising from the use or inability to use our products; (c) data loss, account suspension, or service interruption caused by the underlying AI platforms.</p>
+            <p style={{ opacity: 0.65 }}>AI Team Premium is not liable for: (a) changes made by AI platforms (OpenAI, Anthropic, Google, etc.) to their products, pricing, or availability; (b) any indirect, incidental, or consequential damages arising from the use or inability to use our products; (c) data loss, account suspension, or service interruption caused by the underlying AI platforms.</p>
           </div>
 
           <div>

@@ -182,7 +182,7 @@ export default function GoogleAIPro() {
         { feature: "Real-Time Voice Mode", thisProduct: "✅ Gemini Live", chatgpt: "✅ Advanced Voice Mode", claude: "❌ No", gemini: "❌ No (free)" },
         { feature: "Audio Podcast Generation", thisProduct: "✅ NotebookLM podcasts", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No (free)" },
         { feature: "Text Accuracy in Images", thisProduct: "⭐⭐⭐⭐⭐ (Google Imagen 4)", chatgpt: "⭐⭐⭐⭐", claude: "❌ No images", gemini: "❌ No (free)" },
-        { feature: "AITPBD Shared Price", thisProduct: "৳449/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "Free (limited)" },
+        { feature: "AITP Shared Price", thisProduct: "৳449/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "Free (limited)" },
       ]}
       extendedFaqs={[
         { q: "What is the difference between Google AI Pro and Gemini Advanced?", a: "Google AI Pro (formerly Google One AI Premium) is a bundle that includes Gemini Advanced (Gemini 2.5 Pro Ultra), NotebookLM Plus, Imagen 4 image generation, Veo 2 video generation, AND 2TB Google Drive storage. Gemini Advanced alone is just the chat interface — Google AI Pro includes everything." },
@@ -195,7 +195,7 @@ export default function GoogleAIPro() {
         { q: "How does Imagen 4 compare to Midjourney for Bangladeshi users?", a: "Imagen 4 is Google's best text-to-image model — particularly strong at accurate text rendering within images (a weakness for most competitors), photorealistic product photography, and following precise prompts. Midjourney v7 generally produces more artistic, diverse, and visually stunning outputs for creative work. For e-commerce product images with accurate Bangla text overlays, Imagen 4 wins. For artistic and creative imagery, Midjourney wins." },
         { q: "What is the difference between Google AI Pro Shared and Personal plans?", a: "The Shared Seat (৳449/mo) gives you full Gemini 2.5 Pro features, Imagen 4, Veo 2, NotebookLM Plus, and 2TB Drive — through a shared infrastructure. The Personal Seat (৳1,299/mo) upgrades your own Google account, giving you Gemini integration in your personal Gmail, Docs, Sheets, and Slides — plus all the AI features on your private Google account." },
         { q: "Can I use Google AI Pro to build a research podcast for my class?", a: "Yes. NotebookLM Plus's Audio Overview feature generates a realistic podcast-style conversation where two AI hosts discuss and summarise your uploaded research materials. You upload your lecture notes or research papers, and NotebookLM creates an audio podcast you can listen to while commuting or studying. Bangladeshi students and educators find this excellent for creating supplementary study audio." },
-        { q: "How is Google AI Pro delivered by AITPBD?", a: "Shared Seat (৳449/mo): we deliver login credentials within 5–15 minutes of payment on WhatsApp. Personal Seat (৳1,299/mo): we need your Google account email and process the Google One AI Premium upgrade within 2–4 hours. You'll receive a Google confirmation email and your account immediately shows Gemini Advanced enabled with 2TB storage." },
+        { q: "How is Google AI Pro delivered by AITP?", a: "Shared Seat (৳449/mo): we deliver login credentials within 5–15 minutes of payment on WhatsApp. Personal Seat (৳1,299/mo): we need your Google account email and process the Google One AI Premium upgrade within 2–4 hours. You'll receive a Google confirmation email and your account immediately shows Gemini Advanced enabled with 2TB storage." },
       ]}
     />
   );

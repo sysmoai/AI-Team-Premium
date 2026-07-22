@@ -37,8 +37,8 @@ const FAQS = [
 
 export default function AppDevelopment() {
   usePageMeta({
-    title: "App Development Bangladesh — Mobile App from ৳29,999 | AI Team Premium BD",
-    description: "Professional iOS & Android app development in Bangladesh from ৳29,999. React Native, e-commerce apps, booking apps, MVP builds. Pay via bKash/Nagad. AI Team Premium BD.",
+    title: "App Development Bangladesh — Mobile App from ৳29,999 | AI Team Premium",
+    description: "Professional iOS & Android app development in Bangladesh from ৳29,999. React Native, e-commerce apps, booking apps, MVP builds. Pay via bKash/Nagad. AI Team Premium.",
     path: "/services/app-development",
   });
 
@@ -52,7 +52,7 @@ export default function AppDevelopment() {
       <FAQSchema items={FAQS} />
       <ProductSchema
         name="App Development Services Bangladesh"
-        description="Professional iOS and Android app development from ৳29,999. React Native, e-commerce, booking apps. Pay via bKash/Nagad. AI Team Premium BD."
+        description="Professional iOS and Android app development from ৳29,999. React Native, e-commerce, booking apps. Pay via bKash/Nagad. AI Team Premium."
         path="/services/app-development"
         priceBDT={29999}
         category="App Development Service"
@@ -71,7 +71,7 @@ export default function AppDevelopment() {
             iOS এবং Android উভয়ের জন্য cross-platform app — MVP থেকে full e-commerce app পর্যন্ত।
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+App+Development+services+from+AITPBD" target="_blank" rel="noopener noreferrer" data-testid="button-hero-app" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#25D366" }}>
+            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+App+Development+services+from+AITP" target="_blank" rel="noopener noreferrer" data-testid="button-hero-app" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#25D366" }}>
               <WhatsAppIcon size={18} color="#fff" /> WhatsApp
             </a>
             <a href={config.messenger} target="_blank" rel="noopener noreferrer" data-testid="button-hero-app-messenger" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#0084FF" }}>
@@ -166,7 +166,7 @@ export default function AppDevelopment() {
           <p className="text-white/50 mb-2">সকাল ৯টা – রাত ১১টা · সপ্তাহের ৭ দিন</p>
           <p className="text-white/50 mb-8">আপনার app idea নিয়ে WhatsApp করুন — free consultation দেওয়া হবে।</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+App+Development+services+from+AITPBD" target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-app" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#25D366" }}>
+            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+App+Development+services+from+AITP" target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-app" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#25D366" }}>
               <WhatsAppIcon size={20} color="#fff" /> WhatsApp
             </a>
             <a href={config.messenger} target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-app-messenger" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#0084FF" }}>

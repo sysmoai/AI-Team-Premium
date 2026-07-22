@@ -3,10 +3,10 @@ import { RETIRED_MODELS } from "./audit-seed";
 import { TOOL_PAGE_CONTENT } from "./audit-page-content";
 import type { ProductRegistry } from "@shared/schema";
 
-// AITPBD pricing formula: USD price × rate × margin = BDT retail.
+// AITP pricing formula: USD price × rate × margin = BDT retail.
 // Used to surface a recalculated BDT figure when USD drift is detected.
 const USD_BDT_RATE = 121.5;
-const AITPBD_MARGIN = 1.85;
+const AITP_MARGIN = 1.85;
 
 /**
  * 8-phase audit protocol.
@@ -114,15 +114,15 @@ export async function runAuditForProduct(productId: number): Promise<{ ok: boole
   if (observedPrice !== null && product.baselinePriceUsd != null && observedPrice !== product.baselinePriceUsd) {
     // PHASE 4: classify — any price change is at least the product's priority.
     // Recalculate BDT retail so the operator sees the new selling price immediately.
-    const oldBdt = Math.round(product.baselinePriceUsd * USD_BDT_RATE * AITPBD_MARGIN);
-    const newBdt = Math.round(observedPrice * USD_BDT_RATE * AITPBD_MARGIN);
+    const oldBdt = Math.round(product.baselinePriceUsd * USD_BDT_RATE * AITP_MARGIN);
+    const newBdt = Math.round(observedPrice * USD_BDT_RATE * AITP_MARGIN);
     const deltaUsd = observedPrice - product.baselinePriceUsd;
     const deltaBdt = newBdt - oldBdt;
     await storage.createAuditIssue({
       productId,
       phase: 4,
       issueType: "price_change",
-      description: `Price drift for ${product.name}: $${product.baselinePriceUsd} → $${observedPrice}/mo (Δ $${deltaUsd}). Recalculated AITPBD BDT: ৳${oldBdt} → ৳${newBdt}/mo (Δ ৳${deltaBdt}) at rate ${USD_BDT_RATE}, margin ${AITPBD_MARGIN}×. Update all listings.`,
+      description: `Price drift for ${product.name}: $${product.baselinePriceUsd} → $${observedPrice}/mo (Δ $${deltaUsd}). Recalculated AITP BDT: ৳${oldBdt} → ৳${newBdt}/mo (Δ ৳${deltaBdt}) at rate ${USD_BDT_RATE}, margin ${AITP_MARGIN}×. Update all listings.`,
       severity: product.priority,
       status: "open",
     });
@@ -135,7 +135,7 @@ export async function runAuditForProduct(productId: number): Promise<{ ok: boole
       sourceUrl: primaryUrl,
       severity: product.priority,
       status: "flagged",
-      notes: `BDT recalculated: ৳${oldBdt} → ৳${newBdt} (rate ${USD_BDT_RATE}, margin ${AITPBD_MARGIN}×)`,
+      notes: `BDT recalculated: ৳${oldBdt} → ৳${newBdt} (rate ${USD_BDT_RATE}, margin ${AITP_MARGIN}×)`,
     });
     issuesCreated++;
     logsCreated++;

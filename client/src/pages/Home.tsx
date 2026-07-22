@@ -161,7 +161,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="rounded-2xl p-6 md:p-8 mb-4" style={{ background: BRAND.white, boxShadow: "0 8px 40px rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.06)" }}>
             <p style={{ color: BRAND.navy, fontSize: "1.02rem", lineHeight: 1.7, fontWeight: 500 }}>
-              <strong>AI Team Premium (AITP)</strong> is a local access provider of premium AI subscriptions in Bangladesh — ChatGPT Plus from <strong>৳399/month</strong>, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via <strong>bKash and Nagad</strong>, with <strong>5–15 minute delivery</strong>, a <strong>30-day replacement warranty</strong>, and Bangla + English WhatsApp support, serving <strong>Bangladeshi users</strong> since 2024.
+              <strong>AI Team Premium (AITP)</strong> is a local access provider of premium AI subscriptions in Bangladesh — ChatGPT Plus from <strong>৳499/month</strong>, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via <strong>bKash and Nagad</strong>, with <strong>5–15 minute delivery</strong>, a <strong>30-day replacement warranty</strong>, and Bangla + English WhatsApp support, serving <strong>Bangladeshi users</strong> since 2024.
             </p>
           </div>
         </div>

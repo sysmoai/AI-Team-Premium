@@ -27,7 +27,7 @@ import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/Jso
 
 export default function ChatGPTPlans() {
   usePageMeta({ path: "/chatgpt-plans",
-    title: "ChatGPT Plans in Bangladesh 2026 — ৳৩৯৯ থেকে",
+    title: "ChatGPT Plans in Bangladesh 2026 — ৳৪৯৯ থেকে",
     description: "বাংলাদেশে সরাসরি bKash/Nagad দিয়ে ChatGPT Plus, Business এবং Pro সাবস্ক্রিপশন কিনুন। ৫-১৫ মিনিটে ডেলিভারি ও ৩০ দিনের ওয়ারেন্টি।"
   });
 
@@ -78,7 +78,7 @@ export default function ChatGPTPlans() {
     { q: "বাংলায় support পাবো?", a: "অবশ্যই! আমাদের পুরো team বাংলায় communicate করে। ১০০% Bangla support।" },
     { q: "Login করতে না পারলে কী করবো?", a: "সঙ্গে সঙ্গে WhatsApp-এ জানান। আমরা ৩০ মিনিটের মধ্যে সমস্যা সমাধান করব বা নতুন access দেব।" },
     { q: "Business plan-এর জন্য কি team members লাগবে?", a: "Business plan workspace invite model-এ কাজ করে। আপনাকে workspace-এ invite করা হবে। OpenAI directly minimum 2 seats বিক্রি করে, কিন্তু আমরা local pricing-এ দিই।" },
-    { q: "কোন plan টি আমার জন্য সবচেয়ে ভালো?", a: "Student/beginner হলে Plus Shared (৳৩৯৯)। Freelancer/creator হলে Plus Premium Shared (৳৯৫০)। Power user হলে Plus Personal (৳২,৯৫০) বা Pro (৳৪,৫০০)। Team হলে Business plan।" },
+    { q: "কোন plan টি আমার জন্য সবচেয়ে ভালো?", a: "Student/beginner হলে Plus Shared (৳৪৯৯)। Freelancer/creator হলে Plus Premium Shared (৳৯৯৯)। Power user হলে Plus Personal (৳২,৯৫০) বা Pro (৳৪,৫০০)। Team হলে Business plan।" },
     { q: "Security কতটুকু নিরাপদ?", a: "আমরা trusted accounts ব্যবহার করি। Shared account-এ আপনার personal data সুরক্ষিত — অন্য users আপনার conversation দেখতে পারে না।" },
     { q: "প্রতি মাসে কি automatically renew হবে?", a: "না। প্রতিটি subscription ৩০ দিনের জন্য। Renewal চাইলে WhatsApp-এ আগেই জানান।" },
     { q: "ChatGPT কি বাংলায় কথা বলতে পারে?", a: "হ্যাঁ! ChatGPT বাংলায় চমৎকার responses দেয়। আপনি বাংলায় প্রশ্ন করুন, বাংলায় উত্তর পাবেন।" },
@@ -115,7 +115,7 @@ export default function ChatGPTPlans() {
       <FAQSchema items={faqs} />
       <ProductSchema
         name="ChatGPT Plus Bangladesh"
-        description="Genuine ChatGPT Plus subscription in Bangladesh from ৳399/month. Pay via bKash, Nagad, Rocket or Bank Transfer. 5-15 min delivery, 30-day warranty. AI Team Premium."
+        description="Genuine ChatGPT Plus subscription in Bangladesh from ৳499/month. Pay via bKash, Nagad, Rocket or Bank Transfer. 5-15 min delivery, 30-day warranty. AI Team Premium."
         path="/chatgpt-plans"
         priceBDT={399}
         category="AI Subscription"

@@ -1,4 +1,4 @@
-# AI Team Premium BD — QA Checklist
+# AI Team Premium — QA Checklist
 
 ## Build & Type Safety
 - [x] `npm run check` passes with 0 errors

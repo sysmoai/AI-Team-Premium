@@ -1,7 +1,7 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Grok Bangladesh — ৳499/mo | AI Team Premium BD",
+  seoTitle: "Grok Bangladesh — ৳499/mo | AI Team Premium",
   seoDescription: "Buy Grok (xAI) in Bangladesh via bKash/Nagad. Shared access from ৳499/month, Personal Seat from ৳3,990/month. Real-time data, DeepSearch, Aurora image generation.",
   path: "/grok-plans",
   toolName: "Grok",
@@ -64,7 +64,7 @@ const data: ToolPageData = {
     { q: "Refund policy কী?", a: "Subscription fee refundable নয়, কিন্তু access না পেলে 24 ঘণ্টায় replace করা হবে।" },
     { q: "SuperGrok থেকে Grok কীভাবে আলাদা?", a: "SuperGrok হলো xAI-এর সর্বোচ্চ tier — unlimited Think mode, unlimited DeepSearch, এবং xAI API access সহ। Grok হলো standard premium tier যা সাধারণ users-দের জন্য যথেষ্ট।" },
     { q: "Grok কি real-time stock price দিতে পারে?", a: "হ্যাঁ, Grok real-time web data access করে বলে latest stock prices, market trends, এবং financial news সরাসরি দিতে পারে।" },
-    { q: "AI Team Premium BD থেকে কেন কিনব?", a: "কারণ আমরা বাংলাদেশ থেকে bKash/Nagad-এ payment গ্রহণ করি। International card ছাড়া Grok পাওয়ার সবচেয়ে সহজ উপায়। 30 দিনের warranty এবং Bangla support।" },
+    { q: "AI Team Premium থেকে কেন কিনব?", a: "কারণ আমরা বাংলাদেশ থেকে bKash/Nagad-এ payment গ্রহণ করি। International card ছাড়া Grok পাওয়ার সবচেয়ে সহজ উপায়। 30 দিনের warranty এবং Bangla support।" },
   ],
 };
 

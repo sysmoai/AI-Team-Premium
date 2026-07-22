@@ -20,8 +20,8 @@ export default function ComparePage() {
 
 function ComparisonNotFound({ slug }: { slug: string }) {
   usePageMeta({
-    title: "Comparison not found | AITPBD",
-    description: "We don't have this AI tool comparison yet. Browse popular comparisons from AI Team Premium BD.",
+    title: "Comparison not found | AITP",
+    description: "We don't have this AI tool comparison yet. Browse popular comparisons from AI Team Premium.",
     path: `/compare/${slug}`,
   });
   return (
@@ -44,7 +44,7 @@ function ComparisonNotFound({ slug }: { slug: string }) {
 
 function ComparisonHub({ onPick }: { onPick: (slug: string) => void }) {
   usePageMeta({
-    title: "Compare AI Tools — ChatGPT vs Claude vs Gemini in Bangladesh | AITPBD",
+    title: "Compare AI Tools — ChatGPT vs Claude vs Gemini in Bangladesh | AITP",
     description: "Side-by-side AI tool comparisons. ChatGPT vs Claude, Midjourney vs Leonardo, Runway vs Kling and more — pick the right premium AI for your Bangladesh workflow.",
     path: "/compare",
   });
@@ -150,15 +150,15 @@ function specRows(a: CompareTool, b: CompareTool) {
 function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug: string }) {
   const rec = recommend(a, b);
   const winner: CompareTool | null = rec.kind === "winner" ? (rec.winnerSlug === a.slug ? a : b) : null;
-  const title = `${a.name} vs ${b.name} in Bangladesh — Price, Features, Verdict | AITPBD`;
-  const description = `Side-by-side comparison of ${a.name} (${a.priceFromLabel}) and ${b.name} (${b.priceFromLabel}). Specs, Bangla quality, best use cases and which to buy from AI Team Premium BD.`;
+  const title = `${a.name} vs ${b.name} in Bangladesh — Price, Features, Verdict | AITP`;
+  const description = `Side-by-side comparison of ${a.name} (${a.priceFromLabel}) and ${b.name} (${b.priceFromLabel}). Specs, Bangla quality, best use cases and which to buy from AI Team Premium.`;
   usePageMeta({ title, description, path: `/compare/${slug}` });
 
   const faqs = [
     { q: `Which is better: ${a.name} or ${b.name}?`, a: rec.reason },
-    { q: `What is the price difference between ${a.name} and ${b.name} in Bangladesh?`, a: `From AI Team Premium BD, ${a.name} starts at ${a.priceFromLabel} and ${b.name} starts at ${b.priceFromLabel}. Both are payable via bKash or Nagad with 5–15 minute delivery and a 30-day replacement warranty.` },
+    { q: `What is the price difference between ${a.name} and ${b.name} in Bangladesh?`, a: `From AI Team Premium, ${a.name} starts at ${a.priceFromLabel} and ${b.name} starts at ${b.priceFromLabel}. Both are payable via bKash or Nagad with 5–15 minute delivery and a 30-day replacement warranty.` },
     { q: `Can I use ${a.name} and ${b.name} in Bangla?`, a: `${a.name}: ${a.specs.banglaQuality}. ${b.name}: ${b.specs.banglaQuality}.` },
-    { q: `How do I buy ${a.name} or ${b.name} in Bangladesh?`, a: `Message AI Team Premium BD on WhatsApp (+880 1533-262758) with the tool and plan you want. We send the bKash/Nagad number privately, confirm payment, and deliver login or invite details within 5–15 minutes.` },
+    { q: `How do I buy ${a.name} or ${b.name} in Bangladesh?`, a: `Message AI Team Premium on WhatsApp (+880 1533-262758) with the tool and plan you want. We send the bKash/Nagad number privately, confirm payment, and deliver login or invite details within 5–15 minutes.` },
   ];
 
   const rows = specRows(a, b);
@@ -197,7 +197,7 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
             <span style={{ color: b.accent }}>{b.name}</span>
           </h1>
           <p className="mt-4 mx-auto max-w-2xl" style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.98rem", lineHeight: 1.65 }}>
-            Side-by-side comparison from AI Team Premium BD — specs, prices in BDT, Bangla support and a recommended pick for Bangladeshi users.
+            Side-by-side comparison from AI Team Premium — specs, prices in BDT, Bangla support and a recommended pick for Bangladeshi users.
           </p>
         </div>
       </section>
@@ -221,7 +221,7 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
               </div>
               <p style={{ color: BRAND.navy, opacity: 0.78, fontSize: "0.95rem", lineHeight: 1.65 }}>{rec.reason}</p>
               <a
-                href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AITPBD — I read your ${a.name} vs ${b.name} comparison. Please send pricing for ${winner.name}.`)}`}
+                href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AITP — I read your ${a.name} vs ${b.name} comparison. Please send pricing for ${winner.name}.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick(winner.name, undefined, undefined, "compare-winner")}
@@ -240,7 +240,7 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
               </div>
               <p style={{ color: BRAND.navy, opacity: 0.78, fontSize: "0.95rem", lineHeight: 1.65 }}>{rec.reason}</p>
               <a
-                href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AITPBD — I read your ${a.name} vs ${b.name} comparison. Please help me pick the right one for my use case.`)}`}
+                href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AITP — I read your ${a.name} vs ${b.name} comparison. Please help me pick the right one for my use case.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick(`${a.name} vs ${b.name}`, undefined, undefined, "compare-advice")}
@@ -248,7 +248,7 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
                 className="mt-5 inline-flex items-center gap-2 rounded-xl px-5 py-2.5"
                 style={{ background: "#25D366", color: "#fff", fontWeight: 600, fontSize: "0.9rem" }}
               >
-                <WhatsAppIcon size={16} /> Ask AITPBD which is right for you
+                <WhatsAppIcon size={16} /> Ask AITP which is right for you
               </a>
             </div>
           )}

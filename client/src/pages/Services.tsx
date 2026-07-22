@@ -66,7 +66,7 @@ export default function Services() {
       <FAQSchema items={faqs} />
       <ProductSchema
         name="AI Training Sessions Bangladesh"
-        description="Live Bangla AI training and ChatGPT support sessions from ৳799/hour. Student packs (৳1,999), freelancer packs (৳4,999), business AI setup (৳12,999). AI Team Premium BD."
+        description="Live Bangla AI training and ChatGPT support sessions from ৳799/hour. Student packs (৳1,999), freelancer packs (৳4,999), business AI setup (৳12,999). AI Team Premium."
         path="/support"
         priceBDT={799}
         category="AI Training Service"
@@ -81,7 +81,7 @@ export default function Services() {
           </div>
           <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
             <p style={{ color: BRAND.navy, fontSize: "1rem", lineHeight: 1.7, fontWeight: 500 }}>
-              <strong>AI Team Premium BD</strong> offers live, Bangla-language AI training and ChatGPT support sessions in Bangladesh. Hourly sessions start at <strong>৳799/hour</strong>, student packs from <strong>৳1,999</strong>, freelancer packs from <strong>৳4,999</strong>, and full business AI setup from <strong>৳12,999</strong> — delivered live over Google Meet by Bangladeshi AI experts, with prompt packs and workflow documents included.
+              <strong>AI Team Premium</strong> offers live, Bangla-language AI training and ChatGPT support sessions in Bangladesh. Hourly sessions start at <strong>৳799/hour</strong>, student packs from <strong>৳1,999</strong>, freelancer packs from <strong>৳4,999</strong>, and full business AI setup from <strong>৳12,999</strong> — delivered live over Google Meet by Bangladeshi AI experts, with prompt packs and workflow documents included.
             </p>
           </div>
         </div>

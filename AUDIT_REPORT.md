@@ -1,4 +1,4 @@
-# AI Team Premium BD — Production Audit Report
+# AI Team Premium — Production Audit Report
 
 **Date:** 2026-05-26
 **Auditor:** Kimi Code (autonomous production engineering)

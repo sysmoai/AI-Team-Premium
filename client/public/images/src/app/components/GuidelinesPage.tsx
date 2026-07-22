@@ -36,7 +36,7 @@ export function GuidelinesPage() {
           className="mt-3 max-w-2xl"
           style={{ color: BRAND.navy, opacity: 0.6, fontSize: "0.95rem" }}
         >
-          Rules for consistent application of the AI Team Premium BD identity
+          Rules for consistent application of the AI Team Premium identity
           across all touchpoints.
         </p>
       </div>
@@ -455,7 +455,7 @@ export function GuidelinesPage() {
                   AI Solutions Lead
                 </p>
                 <p style={{ fontSize: "0.7rem", color: BRAND.blue }}>
-                  hello@aiteampremiumbd.com
+                  hello@aiteampremium.com
                 </p>
               </div>
             </div>

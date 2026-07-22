@@ -14,15 +14,15 @@ const PAGE_MESSAGES: Record<string, string> = {
   "/chatgpt/pro-premium-shared":     config.whatsappPlanTemplates["pro-premium-shared"],
 
   // ── ChatGPT plans hub ──────────────────────────────────────────────────────
-  "/chatgpt-plans": "Hi! I'm looking at ChatGPT plans from AI Team Premium. Which plan do you recommend for me? (Budget: ৳399–৳4,500/mo)",
+  "/chatgpt-plans": "Hi! I'm looking at ChatGPT plans from AI Team Premium. Which plan do you recommend for me? (Budget: ৳499–৳4,990/mo)",
 
   // ── Other plan hub pages ───────────────────────────────────────────────────
-  "/claude-plans":      "Hi! I want Claude Pro from AI Team Premium. What plans are available? (Shared ৳599/mo · Personal ৳2,500/mo)",
-  "/gemini-plans":      "Hi! I want Gemini Advanced from AI Team Premium. How do I subscribe? (Shared ৳499/mo · Personal ৳1,800/mo)",
-  "/grammarly-plans":   "Hi! I want Grammarly Premium from AI Team Premium. What are the options? (৳499/mo)",
-  "/canva-plans":       "Hi! I want Canva Pro from AI Team Premium. Please guide me. (৳599/mo)",
-  "/perplexity-plans":  "Hi! I want Perplexity Pro from AI Team Premium. How do I get access? (Shared ৳499/mo)",
-  "/grok-plans":        "Hi! I want Grok from AI Team Premium. What plans do you offer? (Shared ৳499/mo)",
+  "/claude-plans":      "Hi! I want Claude Pro from AI Team Premium. What plans are available? (Shared ৳599/mo · Personal ৳2,990/mo)",
+  "/gemini-plans":      "Hi! I want Gemini Advanced from AI Team Premium. How do I subscribe? (Shared ৳599/mo · Personal ৳2,990/mo)",
+  "/grammarly-plans":   "Hi! I want Grammarly Premium from AI Team Premium. What are the options? (৳399/mo)",
+  "/canva-plans":       "Hi! I want Canva Pro from AI Team Premium. Please guide me. (৳399/mo)",
+  "/perplexity-plans":  "Hi! I want Perplexity Pro from AI Team Premium. How do I get access? (Shared ৳699/mo)",
+  "/grok-plans":        "Hi! I want Grok from AI Team Premium. What plans do you offer? (Shared ৳699/mo)",
   "/ai-tools-vault":    "Hi! I'm interested in the AI Tools Vault bundle from AI Team Premium. What's included and how do I pay? (৳1,990/mo)",
 
   // ── AI tool detail pages ───────────────────────────────────────────────────
@@ -32,7 +32,7 @@ const PAGE_MESSAGES: Record<string, string> = {
   "/tools/supergrok":    "Hi! I want SuperGrok (xAI) from AI Team Premium. Is it available? How do I order? (Starts at ৳499/mo)",
   "/tools/grok":         "Hi! I want Grok Premium from AI Team Premium. What are the plans and pricing? (Starts at ৳499/mo)",
   "/tools/midjourney":   "Hi! I want Midjourney from AI Team Premium. How do I subscribe? (Starts at ৳1,200/mo)",
-  "/tools/grammarly":    "Hi! I want Grammarly Premium from AI Team Premium. Please share payment details. (৳499/mo)",
+  "/tools/grammarly":    "Hi! I want Grammarly Premium from AI Team Premium. Please share payment details. (৳399/mo)",
   "/tools/canva":        "Hi! I want Canva Pro from AI Team Premium. How do I get access? (Starts at ৳599/mo)",
   "/tools/perplexity":   "Hi! I want Perplexity Pro from AI Team Premium. How do I subscribe? (Starts at ৳499/mo)",
   "/tools/copilot":      "Hi! I want GitHub Copilot from AI Team Premium. What plans are available? (Starts at ৳1,200/mo)",

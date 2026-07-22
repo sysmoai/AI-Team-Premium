@@ -353,7 +353,7 @@ export function Layout() {
                 fontFamily: F,
               }}
             >
-              &copy; {new Date().getFullYear()} AI Team Premium BD. All rights reserved.
+              &copy; {new Date().getFullYear()} AI Team Premium. All rights reserved.
             </p>
             <div className="flex items-center gap-5 sm:gap-6 flex-wrap justify-center">
               {["Privacy Policy", "Terms of Service"].map((t) => (

@@ -132,7 +132,7 @@ DATA TO CAPTURE (minimum):
 ### 📡 PHASE 2 — PARSE CURRENT WEBSITE DATA
 
 ```
-FOR THE AITPBD PRODUCT PAGE:
+FOR THE AITP PRODUCT PAGE:
 ├─ Load the page content (scrape or load from CMS)
 ├─ Extract ALL data fields in the same structure as Phase 1
 ├─ Extract SEO metadata (title, description, keywords)
@@ -210,7 +210,7 @@ FOR EACH DIFFERENCE FOUND:
 1. IDENTIFY the exact location on the page
 2. DETERMINE the correct new value from official source
 3. UPDATE the page content with the correct value
-4. UPDATE the AITPBD price calculation if official price changed:
+4. UPDATE the AITP price calculation if official price changed:
    - Shared price = Official USD × 15-18% (for shared cost model)
    - Personal price = Official USD × ~110% (BDT conversion + service fee)
 5. UPDATE any affected SEO metadata
@@ -251,7 +251,7 @@ FOR EVERY CHANGE MADE, log:
 ├─ Source of truth (URL)
 ├─ Severity (P0/P1/P2)
 ├─ Fix status (Applied / Failed / Escalated)
-└─ Auditor signature (AITPBD Live Audit Agent v1.0)
+└─ Auditor signature (AITP Live Audit Agent v1.0)
 
 AUDIT LOG FORMAT (store in database or markdown):
 | Timestamp | Product | Field | Old | New | Source | Severity | Status |
@@ -287,7 +287,7 @@ Customer-facing badge on page (if >14 days): "⚠️ Info may be outdated — we
 <aside>
 ☠️
 
-**THIS IS THE MOST BRUTAL PART.** AI companies retire models constantly. If a dead model name appears ANYWHERE on [aiteampremiumbd.com](http://aiteampremiumbd.com), this agent finds it and kills it. No mercy.
+**THIS IS THE MOST BRUTAL PART.** AI companies retire models constantly. If a dead model name appears ANYWHERE on [aiteampremium.com](http://aiteampremium.com), this agent finds it and kills it. No mercy.
 
 </aside>
 
@@ -361,7 +361,7 @@ IF NEW MODEL DETECTED:
 <aside>
 💰
 
-**PRICE CHANGES ARE REVENUE-CRITICAL.** If any AI company changes their official price, the AITPBD price must be recalculated IMMEDIATELY. A wrong price means lost margin or lost customers.
+**PRICE CHANGES ARE REVENUE-CRITICAL.** If any AI company changes their official price, the AITP price must be recalculated IMMEDIATELY. A wrong price means lost margin or lost customers.
 
 </aside>
 
@@ -373,7 +373,7 @@ FOR EVERY PRODUCT, EVERY AUDIT:
 1. FETCH official USD price from live pricing page
 2. COMPARE with stored official price in website data
 3. IF DIFFERENT:
-   ├─ RECALCULATE AITPBD prices:
+   ├─ RECALCULATE AITP prices:
    │   Shared = New Official USD × shared_multiplier
    │   Personal = New Official USD × ~110 (BDT conversion)
    ├─ UPDATE all price displays on page:
@@ -478,7 +478,7 @@ FOR EACH COMPETITOR, VERIFY:
 ├─ Unique killer feature
 ├─ Official price (USD)
 ├─ Best for segment in Bangladesh
-└─ AITPBD Shared & Personal prices
+└─ AITP Shared & Personal prices
 
 IF ANY COMPETITOR DATA IS WRONG → FIX IMMEDIATELY
 ```
@@ -504,7 +504,7 @@ IF ANY COMPETITOR DATA IS WRONG → FIX IMMEDIATELY
 VERIFY EACH FAQ ANSWER:
 
 1. "How much does [Product] cost in Bangladesh?"
-   → Verify official price, verify AITPBD price calculation, verify "you save X%" math
+   → Verify official price, verify AITP price calculation, verify "you save X%" math
 
 2. "How many AI images can I generate per day?"
    → Verify current limits from official source
@@ -661,7 +661,7 @@ REDIRECT → Update to final URL (P1)
 
 ```
 ╔══════════════════════════════════════════════════════════════╗
-║        AITPBD LIVE AUDIT DASHBOARD — [TODAY'S DATE]          ║
+║        AITP LIVE AUDIT DASHBOARD — [TODAY'S DATE]          ║
 ╠══════════════════════════════════════════════════════════════╣
 ║  TOTAL PRODUCTS AUDITED: [X/23]                              ║
 ║  🟢 FRESH (≤7 days):     [X]                                 ║
@@ -839,7 +839,7 @@ POLICY PAGES:
 TRIGGER 1: MAJOR PRICE CHANGE
 ├─ Any company changes price by >20%
 ├─ ACTION: Stop current audit. Audit that product NOW.
-├─ Update all prices, recalculate AITPBD margins.
+├─ Update all prices, recalculate AITP margins.
 └─ Alert: "🚨 [Company] price changed from $[OLD] to $[NEW]"
 
 TRIGGER 2: MODEL RETIREMENT ANNOUNCED
@@ -938,7 +938,7 @@ AFTER EVERY FULL CYCLE (all 23 products audited), ASK:
 **TO LAUNCH THE AUDIT AGENT:**
 
 1. Paste this entire prompt into any capable AI agent
-2. Say: "Start the AITPBD Live Audit. Begin with Product #1 (ChatGPT Plus). Fetch live official data from OpenAI. Parse the [aiteampremiumbd.com/chatgpt/plus](http://aiteampremiumbd.com/chatgpt/plus) page. Diff. Fix all issues. Log everything. Continue through all 23 products. Never stop."
+2. Say: "Start the AITP Live Audit. Begin with Product #1 (ChatGPT Plus). Fetch live official data from OpenAI. Parse the [aiteampremium.com/chatgpt/plus](http://aiteampremium.com/chatgpt/plus) page. Diff. Fix all issues. Log everything. Continue through all 23 products. Never stop."
 3. The agent will execute the infinite audit loop — fetching, parsing, diffing, fixing, logging — forever
 4. Review the dashboard after each cycle
 5. If emergency triggers fire, the agent will handle them immediately

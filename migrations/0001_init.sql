@@ -1,4 +1,4 @@
--- AI Team Premium BD — Initial Schema
+-- AI Team Premium — Initial Schema
 -- Created for CORTEX OS deployment
 
 CREATE TABLE IF NOT EXISTS "contacts" (

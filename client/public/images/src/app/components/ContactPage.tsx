@@ -54,14 +54,14 @@ const FB_PAGE_URL = "https://www.facebook.com/profile.php?id=61586742067282";
 const FB_GROUP_URL = "https://www.facebook.com/groups/333019393218410";
 const INSTAGRAM_URL = "https://www.instagram.com/ai_team_premium_bd/";
 
-const NEW_CUSTOMER_TEMPLATE = `Hi! I want help from AI Team Premium BD.
+const NEW_CUSTOMER_TEMPLATE = `Hi! I want help from AI Team Premium.
 1) My name:
 2) Business / page link (if any):
 3) What I need (Brand / Website / Marketing / App):
 4) Deadline:
 5) Budget range (optional):`;
 
-const EXISTING_CUSTOMER_TEMPLATE = `Hi! I already worked with AI Team Premium BD.
+const EXISTING_CUSTOMER_TEMPLATE = `Hi! I already worked with AI Team Premium.
 1) My name:
 2) Project / service name:
 3) What is the issue / request:
@@ -94,7 +94,7 @@ export function ContactPage() {
               fontFamily: F,
             }}
           >
-            Connect with AI Team Premium BD
+            Connect with AI Team Premium
           </h1>
           <p
             className="mt-3 mx-auto"
@@ -201,14 +201,14 @@ export function ContactPage() {
               <SocialRow
                 icon={<Facebook size={17} color="#1877F2" strokeWidth={2} />}
                 label="Facebook Page"
-                handle="AI Team Premium BD"
+                handle="AI Team Premium"
                 url={FB_PAGE_URL}
                 accent="#1877F2"
               />
               <SocialRow
                 icon={<Users size={17} color="#1877F2" strokeWidth={2} />}
                 label="Facebook Group"
-                handle="AITPBD Community"
+                handle="AITP Community"
                 url={FB_GROUP_URL}
                 accent="#1877F2"
               />
@@ -289,7 +289,7 @@ export function ContactPage() {
                 fontFamily: F,
               }}
             >
-              <strong style={{ fontWeight: 600, opacity: 1 }}>Brand firewall: AITPBD-only.</strong>{" "}
+              <strong style={{ fontWeight: 600, opacity: 1 }}>Brand firewall: AITP-only.</strong>{" "}
               This is the single source of truth for contact links.
             </p>
           </div>

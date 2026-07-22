@@ -61,7 +61,7 @@ function fmtDate(d: string | Date | null | undefined): string {
 }
 
 export default function AuditDashboard() {
-  usePageMeta({ title: "Content Audit Dashboard — AITPBD Internal", description: "Internal content audit dashboard." });
+  usePageMeta({ title: "Content Audit Dashboard — AITP Internal", description: "Internal content audit dashboard." });
   const [issueSev, setIssueSev] = useState<string>("all");
   const [logSev, setLogSev] = useState<string>("all");
   const [logProductId, setLogProductId] = useState<string>("all");

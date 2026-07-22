@@ -65,7 +65,7 @@ const FAQS = [
 
 export default function Home() {
   usePageMeta({
-    title: "AI Team Premium BD — ChatGPT, Claude & AI Tools in Bangladesh",
+    title: "AI Team Premium — ChatGPT, Claude & AI Tools in Bangladesh",
     description: "Buy ChatGPT Plus from ৳399/mo. Claude Pro, Gemini Advanced & more. Pay via bKash/Nagad. 5-15 min delivery. Bangladesh's trusted AI subscription provider.",
     path: "/",
   });
@@ -73,12 +73,12 @@ export default function Home() {
   const collectionPageSchema = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "AI Team Premium BD — Premium AI Subscriptions in Bangladesh",
-    "url": "https://aiteampremiumbd.com/",
+    "name": "AI Team Premium — Premium AI Subscriptions in Bangladesh",
+    "url": "https://aiteampremium.com/",
     "description":
-      "AI Team Premium BD sells premium ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly Premium, Midjourney and other premium AI subscriptions in Bangladesh, payable via bKash and Nagad, with 5–15 minute delivery and a 30-day replacement warranty.",
+      "AI Team Premium sells premium ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly Premium, Midjourney and other premium AI subscriptions in Bangladesh, payable via bKash and Nagad, with 5–15 minute delivery and a 30-day replacement warranty.",
     "inLanguage": ["en", "bn"],
-    "isPartOf": { "@id": "https://aiteampremiumbd.com/#website" },
+    "isPartOf": { "@id": "https://aiteampremium.com/#website" },
   };
   const featuredPlans = [
     chatgptPlans.find(p => p.slug === 'plus-shared'),
@@ -93,7 +93,7 @@ export default function Home() {
       <FAQSchema items={homeFaqs} />
       <section className="relative overflow-hidden" style={{ background: BRAND.navy }}>
         <div className="absolute inset-0">
-          <img src={IMG_HERO} alt="AI Team Premium BD — Bangladesh's trusted AI subscription provider, offering ChatGPT Plus, Claude Pro, and Gemini Advanced payable via bKash and Nagad" className="w-full h-full object-cover" style={{ opacity: 0.15, mixBlendMode: "luminosity" }} loading="eager" fetchPriority="high" />
+          <img src={IMG_HERO} alt="AI Team Premium — Bangladesh's trusted AI subscription provider, offering ChatGPT Plus, Claude Pro, and Gemini Advanced payable via bKash and Nagad" className="w-full h-full object-cover" style={{ opacity: 0.15, mixBlendMode: "luminosity" }} loading="eager" fetchPriority="high" />
           <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${BRAND.navy} 0%, rgba(15,23,42,0.6) 50%, ${BRAND.navy} 100%)` }} />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-24 pb-28 md:pt-32 md:pb-36">
@@ -161,7 +161,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="rounded-2xl p-6 md:p-8 mb-4" style={{ background: BRAND.white, boxShadow: "0 8px 40px rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.06)" }}>
             <p style={{ color: BRAND.navy, fontSize: "1.02rem", lineHeight: 1.7, fontWeight: 500 }}>
-              <strong>AI Team Premium BD (AITPBD)</strong> is a local access provider of premium AI subscriptions in Bangladesh — ChatGPT Plus from <strong>৳399/month</strong>, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via <strong>bKash and Nagad</strong>, with <strong>5–15 minute delivery</strong>, a <strong>30-day replacement warranty</strong>, and Bangla + English WhatsApp support, serving <strong>Bangladeshi users</strong> since 2024.
+              <strong>AI Team Premium (AITP)</strong> is a local access provider of premium AI subscriptions in Bangladesh — ChatGPT Plus from <strong>৳399/month</strong>, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via <strong>bKash and Nagad</strong>, with <strong>5–15 minute delivery</strong>, a <strong>30-day replacement warranty</strong>, and Bangla + English WhatsApp support, serving <strong>Bangladeshi users</strong> since 2024.
             </p>
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-center mb-14">
             <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Designed For</p>
-            <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>কাদের জন্য AITPBD?</h2>
+            <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>কাদের জন্য AITP?</h2>
             <p className="mt-4 max-w-lg mx-auto" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.9rem", lineHeight: 1.65 }}>Whether you're a student, freelancer, business, or creator — we have the right AI tool for you.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -342,7 +342,7 @@ export default function Home() {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-center mb-16">
-            <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Why AITPBD</p>
+            <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Why AITP</p>
             <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>Bangladesh's Trusted AI Team</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -399,7 +399,7 @@ export default function Home() {
                 role: "Content Manager, Chittagong",
               },
               {
-                review: "I've been using AITPBD for 6 months for GitHub Copilot and Claude Pro. The 30-day replacement guarantee is real — they replaced my slot once within an hour when there was an issue. Highly reliable.",
+                review: "I've been using AITP for 6 months for GitHub Copilot and Claude Pro. The 30-day replacement guarantee is real — they replaced my slot once within an hour when there was an issue. Highly reliable.",
                 name: "Mehedi Hossain",
                 role: "Software Developer, Rajshahi",
               },

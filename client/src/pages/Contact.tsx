@@ -15,9 +15,9 @@ import { BreadcrumbSchema, FAQSchema } from "@/components/seo/JsonLd";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 const CONTACT_FAQS = [
-  { q: "How do I order from AI Team Premium BD?", a: "The fastest way is WhatsApp at +880 1533-262758 — we typically reply within 5 minutes. You can also message on Facebook Messenger or fill out the contact form on this page." },
-  { q: "What is the WhatsApp number for AI Team Premium BD?", a: "AI Team Premium BD's WhatsApp and phone number is +880 1533-262758. We are available from 9 AM to 11 PM Bangladesh Standard Time, 7 days a week." },
-  { q: "How quickly does AI Team Premium BD respond?", a: "We typically respond on WhatsApp within 5 minutes during 9 AM–11 PM BST. Most shared plan orders are delivered within 5–15 minutes of payment confirmation." },
+  { q: "How do I order from AI Team Premium?", a: "The fastest way is WhatsApp at +880 1533-262758 — we typically reply within 5 minutes. You can also message on Facebook Messenger or fill out the contact form on this page." },
+  { q: "What is the WhatsApp number for AI Team Premium?", a: "AI Team Premium's WhatsApp and phone number is +880 1533-262758. We are available from 9 AM to 11 PM Bangladesh Standard Time, 7 days a week." },
+  { q: "How quickly does AI Team Premium respond?", a: "We typically respond on WhatsApp within 5 minutes during 9 AM–11 PM BST. Most shared plan orders are delivered within 5–15 minutes of payment confirmation." },
 ];
 
 const CHANNELS = [
@@ -62,7 +62,7 @@ const SERVICE_OPTIONS = [
 
 export default function Contact() {
   usePageMeta({
-    title: "Contact AI Team Premium BD — Order on WhatsApp (+880 1533-262758)",
+    title: "Contact AI Team Premium — Order on WhatsApp (+880 1533-262758)",
     description: "Order ChatGPT, Claude, Gemini and AI subscriptions in Bangladesh. WhatsApp +880 1533-262758 or fill out the form. Open 9 AM–11 PM BST, 7 days. We reply within 5–15 minutes.",
     path: "/start-a-project",
   });

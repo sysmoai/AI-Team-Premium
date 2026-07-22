@@ -73,7 +73,7 @@ const M365_COMPETITOR_ROWS = [
   { feature: "Bangla Language Support", thisProduct: "✅ Word spell check in Bangla", chatgpt: "⭐⭐⭐⭐", claude: "⭐⭐⭐⭐", gemini: "⭐⭐⭐⭐⭐" },
   { feature: "Microsoft OneNote", thisProduct: "✅ Full access", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
   { feature: "Microsoft Access (database)", thisProduct: "✅ Included (PC)", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
-  { feature: "AITPBD Shared Price", thisProduct: "৳899/mo", chatgpt: "৳399/mo (text AI only)", claude: "৳599/mo (text AI only)", gemini: "৳449/mo (Google suite)" },
+  { feature: "AITP Shared Price", thisProduct: "৳899/mo", chatgpt: "৳399/mo (text AI only)", claude: "৳599/mo (text AI only)", gemini: "৳449/mo (Google suite)" },
 ];
 
 const M365_FAQS = [
@@ -87,7 +87,7 @@ const M365_FAQS = [
   { q: "Can I use Microsoft 365 offline without internet in Bangladesh?", a: "Yes. Microsoft 365 desktop apps (Word, Excel, PowerPoint, Outlook) work fully offline. Your files are stored locally and sync to OneDrive when you reconnect to internet. This is a major advantage over Google Workspace (which requires internet for most features) for Bangladeshi professionals with inconsistent connectivity or who travel to areas with poor network." },
   { q: "Does Microsoft 365 include Microsoft Access and Publisher?", a: "Microsoft 365 Business includes all core apps — Word, Excel, PowerPoint, Outlook, Teams, OneNote, and OneDrive. Microsoft Access (database tool) is included for Windows users only. Microsoft Publisher has been discontinued as of October 2026. For the full app list, the Shared plan covers all apps a Bangladeshi business professional needs daily." },
   { q: "Is Microsoft 365 Copilot better than ChatGPT for office work?", a: "Microsoft 365 Copilot has a unique advantage: it integrates directly inside your Word, Excel, and PowerPoint files — you don't need to copy-paste between apps. It also accesses your company's data (if using Business plan): your SharePoint files, Outlook emails, Teams messages. ChatGPT is better as a general AI assistant for open-ended tasks. For pure productivity in Microsoft Office apps, Copilot is purpose-built and more powerful." },
-  { q: "How do I get Microsoft 365 Copilot from AITPBD?", a: "Message AI Team Premium BD on WhatsApp (+880 1533-262758) with 'I want Microsoft 365 Copilot'. We'll confirm which plan (Shared ৳899 or Personal ৳3,500) you need, take payment via bKash or Nagad, and deliver login credentials within 2–4 hours. The Shared plan is ready instantly; the Personal plan requires creating or upgrading a Microsoft account." },
+  { q: "How do I get Microsoft 365 Copilot from AITP?", a: "Message AI Team Premium on WhatsApp (+880 1533-262758) with 'I want Microsoft 365 Copilot'. We'll confirm which plan (Shared ৳899 or Personal ৳3,500) you need, take payment via bKash or Nagad, and deliver login credentials within 2–4 hours. The Shared plan is ready instantly; the Personal plan requires creating or upgrading a Microsoft account." },
 ];
 
 

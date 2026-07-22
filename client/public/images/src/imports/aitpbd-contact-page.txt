@@ -1,13 +1,13 @@
-PROMPT — AITPBD (AI Team Premium BD) — CONTACT PAGE (FIGMA)
+PROMPT — AITP (AI Team Premium) — CONTACT PAGE (FIGMA)
 
 ROLE
 You are a UI designer in Figma.
 
 GOAL
-Design a clean, mobile-first “Contact / Connect with us” section for the brand **AI Team Premium BD (AITPBD)**. It must look trustworthy, simple, and easy to act on.
+Design a clean, mobile-first “Contact / Connect with us” section for the brand **AI Team Premium (AITP)**. It must look trustworthy, simple, and easy to act on.
 
 BRAND
-- Name: AI Team Premium BD (AITPBD)
+- Name: AI Team Premium (AITP)
 - Primary action: WhatsApp chat
 - Tone: clear, professional, Bangladesh-first
 
@@ -21,7 +21,7 @@ CONTACT LINKS (SOURCE OF TRUTH)
 
 CONTENT TO INCLUDE (IN THIS ORDER)
 1) Header
-   - Title: “Connect with AI Team Premium BD”
+   - Title: “Connect with AI Team Premium”
    - Subtitle: “Fastest response: WhatsApp”
 2) Quick contact (primary block)
    - WhatsApp button (primary CTA)
@@ -33,20 +33,20 @@ CONTENT TO INCLUDE (IN THIS ORDER)
    - Instagram
 4) “What to send” (two collapsible / accordion blocks)
    A) New customer message template:
-      “Hi! I want help from AI Team Premium BD.
+      “Hi! I want help from AI Team Premium.
        1) My name:
        2) Business / page link (if any):
        3) What I need (Brand / Website / Marketing / App):
        4) Deadline:
        5) Budget range (optional):”
    B) Existing customer support template:
-      “Hi! I already worked with AI Team Premium BD.
+      “Hi! I already worked with AI Team Premium.
        1) My name:
        2) Project / service name:
        3) What is the issue / request:
        4) Urgency (Today / This week / Not urgent):”
 5) Trust note (small footer/callout)
-   - “Brand firewall: AITPBD-only. This is the single source of truth for contact links.”
+   - “Brand firewall: AITP-only. This is the single source of truth for contact links.”
 
 DESIGN REQUIREMENTS
 - Mobile-first layout first, then a desktop version.
@@ -58,8 +58,8 @@ DESIGN REQUIREMENTS
 - Keep it minimal. No extra sections.
 
 FRAMES TO CREATE
-1) Frame: “AITPBD / Contact / Mobile” — 390×844
-2) Frame: “AITPBD / Contact / Desktop” — 1440×900
+1) Frame: “AITP / Contact / Mobile” — 390×844
+2) Frame: “AITP / Contact / Desktop” — 1440×900
 
 COMPONENTS TO CREATE (AS REUSABLE)
 - Button/Primary (WhatsApp CTA)

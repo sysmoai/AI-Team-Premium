@@ -65,7 +65,7 @@ export function BrandPage() {
               fontFamily: F,
             }}
           >
-            The complete visual identity for AI Team Premium BD — icon mark,
+            The complete visual identity for AI Team Premium — icon mark,
             logo lockups, color palette, and usage guidelines.
           </p>
 

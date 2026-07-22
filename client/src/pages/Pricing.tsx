@@ -99,7 +99,7 @@ const SECTIONS = [
 export default function Pricing() {
   usePageMeta({
     title: "AI Tools Pricing in Bangladesh — All Plans from ৳399/mo",
-    description: "Complete BDT pricing for all AI tools and services from AI Team Premium. ChatGPT Plus ৳399/mo, Claude, Gemini, Canva, Grammarly, AI Ops Sprint. Pay via bKash/Nagad.",
+    description: "Complete BDT pricing for all AI tools and services from AI Team Premium. ChatGPT Plus ৳499/mo, Claude, Gemini, Canva, Grammarly, AI Ops Sprint. Pay via bKash/Nagad.",
     path: "/pricing",
   });
 
@@ -109,7 +109,7 @@ export default function Pricing() {
       <FAQSchema items={PRICING_FAQS} />
       <ProductSchema
         name="AI Tools Pricing Bangladesh — All Plans from ৳399/mo"
-        description="Complete BDT pricing for AI subscriptions and services from AI Team Premium. ChatGPT Plus ৳399/mo, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, AI Ops Sprint. Pay via bKash/Nagad."
+        description="Complete BDT pricing for AI subscriptions and services from AI Team Premium. ChatGPT Plus ৳499/mo, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, AI Ops Sprint. Pay via bKash/Nagad."
         path="/pricing"
         priceBDT={399}
         category="AI Subscription"
@@ -156,7 +156,7 @@ export default function Pricing() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="rounded-2xl p-5 md:p-6" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
             <p style={{ color: BRAND.navy, fontSize: "0.95rem", lineHeight: 1.7 }}>
-              <strong>AI Team Premium</strong> offers AI subscriptions in Bangladesh starting at <strong>৳399/month</strong> (ChatGPT Plus Shared) up to <strong>৳9,900</strong> (AI Ops Sprint 1:1 implementation). All prices are in BDT, payable via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. Shared plans deliver in 5–15 minutes. No international credit card required.
+              <strong>AI Team Premium</strong> offers AI subscriptions in Bangladesh starting at <strong>৳499/month</strong> (ChatGPT Plus Shared) up to <strong>৳9,900</strong> (AI Ops Sprint 1:1 implementation). All prices are in BDT, payable via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. Shared plans deliver in 5–15 minutes. No international credit card required.
             </p>
           </div>
         </div>

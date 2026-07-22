@@ -107,7 +107,7 @@ export default function ToolPlansPage({ data }: { data: ToolPageData }) {
         <div className="mx-auto max-w-5xl px-6">
           <div className="rounded-2xl p-5 md:p-6" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
             <p style={{ color: BRAND.navy, fontSize: "0.95rem", lineHeight: 1.7 }}>
-              <strong>{data.toolName}</strong> is available in Bangladesh from <strong>AI Team Premium BD</strong> starting at <strong>{cheapestPlan.price}</strong>, payable in BDT via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. Access delivered within <strong>{cheapestPlan.delivery}</strong>, with a 30-day replacement warranty. No international credit card required.
+              <strong>{data.toolName}</strong> is available in Bangladesh from <strong>AI Team Premium</strong> starting at <strong>{cheapestPlan.price}</strong>, payable in BDT via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. Access delivered within <strong>{cheapestPlan.delivery}</strong>, with a 30-day replacement warranty. No international credit card required.
             </p>
           </div>
         </div>

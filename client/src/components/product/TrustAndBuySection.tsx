@@ -64,7 +64,7 @@ interface TrustAndBuySectionProps {
 }
 
 export function TrustAndBuySection({ productName, whatsappText }: TrustAndBuySectionProps) {
-  const waText = whatsappText ?? `Hi! I want to order ${productName ?? "a subscription"} from AI Team Premium BD. Please share payment details.`;
+  const waText = whatsappText ?? `Hi! I want to order ${productName ?? "a subscription"} from AI Team Premium. Please share payment details.`;
   const waUrl = `https://wa.me/8801533262758?text=${encodeURIComponent(waText)}`;
 
   return (

@@ -8,10 +8,10 @@ import { BreadcrumbSchema, JsonLd, FAQSchema } from "@/components/seo/JsonLd";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 const ABOUT_FAQS = [
-  { q: "What is AI Team Premium BD (AITPBD)?", a: "AI Team Premium BD (AITPBD), founded in 2024 and based in Dhaka, Bangladesh, is the country's trusted local access provider of premium AI subscriptions including ChatGPT Plus, Claude Pro, Gemini Advanced, Grammarly Premium, Canva Pro, and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer." },
-  { q: "How long has AI Team Premium BD been in business?", a: "AI Team Premium BD was founded in 2024 and has since served a growing community of users across Bangladesh, with a strong track record of fast delivery and reliable 30-day replacement guarantees." },
-  { q: "Is AI Team Premium BD a legitimate seller of AI subscriptions?", a: "Yes. AI Team Premium BD sells 100% genuine AI subscriptions — not cracked, not fake. Every subscription includes a 30-day replacement warranty, 24-hour SLA, and Bangla-language customer support via WhatsApp at +880 1533-262758." },
-  { q: "Where is AI Team Premium BD located?", a: "AI Team Premium BD is based in Dhaka, Bangladesh, and serves customers across the entire country. Contact us via WhatsApp at +880 1533-262758 or through our Facebook page." },
+  { q: "What is AI Team Premium (AITP)?", a: "AI Team Premium (AITP), founded in 2024 and based in Dhaka, Bangladesh, is the country's trusted local access provider of premium AI subscriptions including ChatGPT Plus, Claude Pro, Gemini Advanced, Grammarly Premium, Canva Pro, and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer." },
+  { q: "How long has AI Team Premium been in business?", a: "AI Team Premium was founded in 2024 and has since served a growing community of users across Bangladesh, with a strong track record of fast delivery and reliable 30-day replacement guarantees." },
+  { q: "Is AI Team Premium a legitimate seller of AI subscriptions?", a: "Yes. AI Team Premium sells 100% genuine AI subscriptions — not cracked, not fake. Every subscription includes a 30-day replacement warranty, 24-hour SLA, and Bangla-language customer support via WhatsApp at +880 1533-262758." },
+  { q: "Where is AI Team Premium located?", a: "AI Team Premium is based in Dhaka, Bangladesh, and serves customers across the entire country. Contact us via WhatsApp at +880 1533-262758 or through our Facebook page." },
 ];
 
 const VALUES = [
@@ -22,22 +22,22 @@ const VALUES = [
 
 export default function About() {
   usePageMeta({
-    title: "About AI Team Premium BD — AI Subscriptions in Bangladesh",
-    description: "AI Team Premium BD (AITPBD), founded in 2024, provides genuine AI subscriptions in Bangladesh — ChatGPT, Claude, Gemini, Midjourney, SuperGrok & more — payable in BDT via bKash and Nagad.",
+    title: "About AI Team Premium — AI Subscriptions in Bangladesh",
+    description: "AI Team Premium (AITP), founded in 2024, provides genuine AI subscriptions in Bangladesh — ChatGPT, Claude, Gemini, Midjourney, SuperGrok & more — payable in BDT via bKash and Nagad.",
     path: "/about",
   });
   const aboutPageSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "url": "https://aiteampremiumbd.com/about",
-    "name": "About AI Team Premium BD",
-    "description": "AI Team Premium BD (AITPBD), founded in 2024 in Dhaka, Bangladesh, is the country's trusted local access provider of premium AI subscriptions — ChatGPT, Claude, Gemini and more — payable in BDT via bKash and Nagad.",
+    "url": "https://aiteampremium.com/about",
+    "name": "About AI Team Premium",
+    "description": "AI Team Premium (AITP), founded in 2024 in Dhaka, Bangladesh, is the country's trusted local access provider of premium AI subscriptions — ChatGPT, Claude, Gemini and more — payable in BDT via bKash and Nagad.",
     "mainEntity": {
       "@type": "LocalBusiness",
-      "name": "AI Team Premium BD",
-      "alternateName": "AITPBD",
+      "name": "AI Team Premium",
+      "alternateName": "AITP",
       "foundingDate": "2024",
-      "url": "https://aiteampremiumbd.com",
+      "url": "https://aiteampremium.com",
       "telephone": "+8801533262758",
       "address": {
         "@type": "PostalAddress",
@@ -72,7 +72,7 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
           <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>About Us</p>
           <h1 style={{ color: BRAND.navy, fontSize: "clamp(1.6rem, 4vw, 2.5rem)", fontWeight: 700, lineHeight: 1.15 }}>
-            About AI Team Premium BD
+            About AI Team Premium
           </h1>
         </div>
       </section>
@@ -87,14 +87,14 @@ export default function About() {
             {/* DIRECT ANSWER BLOCK (GEO) */}
             <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.sky, opacity: 1 }}>
               <p style={{ color: BRAND.navy, opacity: 1, fontSize: "1rem", lineHeight: 1.7, fontWeight: 500 }}>
-                <strong>AI Team Premium BD (AITPBD)</strong>, founded in <strong>2024</strong> and based in <strong>Dhaka, Bangladesh</strong>, is the country's trusted local access provider of premium AI subscriptions. We sell <strong>a wide range of AI tools</strong> — ChatGPT, Claude, Gemini, Midjourney, SuperGrok, Google AI Pro, Leonardo, Runway, Kling and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer. We deliver in 5–15 minutes and guarantee replacement within 24 hours.
+                <strong>AI Team Premium (AITP)</strong>, founded in <strong>2024</strong> and based in <strong>Dhaka, Bangladesh</strong>, is the country's trusted local access provider of premium AI subscriptions. We sell <strong>a wide range of AI tools</strong> — ChatGPT, Claude, Gemini, Midjourney, SuperGrok, Google AI Pro, Leonardo, Runway, Kling and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer. We deliver in 5–15 minutes and guarantee replacement within 24 hours.
               </p>
             </div>
 
             <div>
               <h2 className="mb-4" style={{ color: BRAND.navy, opacity: 1, fontSize: "1.4rem", fontWeight: 700 }}>Who We Are</h2>
               <p>
-                AI Team Premium BD (AITPBD) started in 2024 with a simple mission: to bridge the gap between global AI technology and the Bangladeshi market. We noticed that many talented professionals, students, and businesses in Bangladesh were struggling to access premium global AI tools due to international payment restrictions — over 95% of Bangladeshi users do not hold an international credit card capable of recurring USD billing.
+                AI Team Premium (AITP) started in 2024 with a simple mission: to bridge the gap between global AI technology and the Bangladeshi market. We noticed that many talented professionals, students, and businesses in Bangladesh were struggling to access premium global AI tools due to international payment restrictions — over 95% of Bangladeshi users do not hold an international credit card capable of recurring USD billing.
               </p>
               <p className="mt-4">
                 We solve this by acting as your trusted local partner. We provide genuine access to tools like <strong>ChatGPT Plus, ChatGPT Pro, ChatGPT Team, Claude Pro, Gemini Advanced, Google AI Pro, SuperGrok, Midjourney, Leonardo AI, Runway ML, Kling AI, Canva Pro, Grammarly Premium, Perplexity Pro, ElevenLabs and GitHub Copilot</strong> — allowing you to pay in BDT via accessible methods like bKash and Nagad.
@@ -121,7 +121,7 @@ export default function About() {
             <div>
               <h2 className="mb-4" style={{ color: BRAND.navy, opacity: 1, fontSize: "1.4rem", fontWeight: 700 }}>More Than Just Tools</h2>
               <p>
-                As our client base grew, so did their needs. Today, AITPBD is a full-fledged digital agency. Our team of expert designers, developers, and marketers help brands build their digital identity from the ground up. Whether you need a stunning new logo, a high-performance web application, or an AI-driven marketing campaign, we have the expertise to deliver.
+                As our client base grew, so did their needs. Today, AITP is a full-fledged digital agency. Our team of expert designers, developers, and marketers help brands build their digital identity from the ground up. Whether you need a stunning new logo, a high-performance web application, or an AI-driven marketing campaign, we have the expertise to deliver.
               </p>
             </div>
           </div>

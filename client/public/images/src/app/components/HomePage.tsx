@@ -69,7 +69,7 @@ const STATS = [
 const TESTIMONIALS = [
   {
     quote:
-      "AI Team Premium BD transformed our data operations. Their ML models reduced our processing time by 60% and opened revenue streams we didn't know existed.",
+      "AI Team Premium transformed our data operations. Their ML models reduced our processing time by 60% and opened revenue streams we didn't know existed.",
     name: "Sarah Chen",
     role: "CTO, NexaFinance",
     stars: 5,
@@ -477,7 +477,7 @@ export function HomePage() {
             <div className="rounded-2xl overflow-hidden">
               <ImageWithFallback
                 src={IMG_TEAM}
-                alt="AI Team Premium BD team"
+                alt="AI Team Premium team"
                 className="w-full h-auto block rounded-2xl"
               />
             </div>
@@ -517,7 +517,7 @@ export function HomePage() {
                   fontFamily: F,
                 }}
               >
-                AI Team Premium BD brings together researchers, engineers, and
+                AI Team Premium brings together researchers, engineers, and
                 strategists who share a single mission: making AI work for real
                 businesses. We combine deep technical expertise with pragmatic
                 business understanding.

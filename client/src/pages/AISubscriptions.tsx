@@ -9,11 +9,11 @@ import { BreadcrumbSchema, JsonLd, FAQSchema, ProductSchema } from "@/components
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 const AI_SUB_FAQS = [
-  { q: "Which AI tools does AI Team Premium BD sell in Bangladesh?", a: "AI Team Premium BD sells 18+ premium AI subscriptions: ChatGPT Plus (৳399/mo), Claude Pro (৳599/mo), Google AI Pro (৳449/mo), SuperGrok (৳499/mo), Gemini Advanced (৳499/mo), Perplexity Pro (৳599/mo), Midjourney (৳1,200/mo), Leonardo AI (৳349/mo), Runway ML (৳899/mo), Kling AI (৳599/mo), Grammarly Premium (৳499/mo), Canva Pro (৳599/mo), ElevenLabs Voice AI (৳699/mo), Notion AI (৳450/mo), GitHub Copilot (৳1,200/mo), Microsoft 365 Copilot (৳899/mo), LinkedIn Premium (৳999/mo), and the AI Tools Vault bundle (৳1,990/mo) — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer." },
-  { q: "How do I buy an AI subscription in Bangladesh without an international credit card?", a: "AI Team Premium BD lets you pay in BDT via bKash, Nagad, Rocket or Bank Transfer. Message on WhatsApp (+880 1533-262758), choose a plan, pay, and get access within 5–15 minutes for most tools." },
+  { q: "Which AI tools does AI Team Premium sell in Bangladesh?", a: "AI Team Premium sells 18+ premium AI subscriptions: ChatGPT Plus (৳399/mo), Claude Pro (৳599/mo), Google AI Pro (৳449/mo), SuperGrok (৳499/mo), Gemini Advanced (৳499/mo), Perplexity Pro (৳599/mo), Midjourney (৳1,200/mo), Leonardo AI (৳349/mo), Runway ML (৳899/mo), Kling AI (৳599/mo), Grammarly Premium (৳499/mo), Canva Pro (৳599/mo), ElevenLabs Voice AI (৳699/mo), Notion AI (৳450/mo), GitHub Copilot (৳1,200/mo), Microsoft 365 Copilot (৳899/mo), LinkedIn Premium (৳999/mo), and the AI Tools Vault bundle (৳1,990/mo) — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer." },
+  { q: "How do I buy an AI subscription in Bangladesh without an international credit card?", a: "AI Team Premium lets you pay in BDT via bKash, Nagad, Rocket or Bank Transfer. Message on WhatsApp (+880 1533-262758), choose a plan, pay, and get access within 5–15 minutes for most tools." },
   { q: "What is the cheapest AI subscription available in Bangladesh?", a: "Leonardo AI Shared starts at ৳349/month and ChatGPT Plus Shared at ৳399/month — both paid via bKash/Nagad with 5-15 minute delivery and a 30-day replacement warranty." },
-  { q: "Does AI Team Premium BD deliver AI subscriptions quickly?", a: "Yes. Most shared plans (ChatGPT, Claude, Gemini, Google AI Pro, SuperGrok, Perplexity, Leonardo, Runway, Kling, Notion, ElevenLabs, Canva) are delivered within 5–15 minutes. Professional tools like GitHub Copilot, Microsoft 365, and LinkedIn Premium take 2–4 hours." },
-  { q: "Can I get AI video generation tools in Bangladesh via bKash?", a: "Yes — AI Team Premium BD offers Runway ML (৳899/mo, Gen-3 Alpha cinematic video) and Kling AI (৳599/mo, up to 5-minute realistic videos) — both payable via bKash/Nagad with 5-15 minute delivery." },
+  { q: "Does AI Team Premium deliver AI subscriptions quickly?", a: "Yes. Most shared plans (ChatGPT, Claude, Gemini, Google AI Pro, SuperGrok, Perplexity, Leonardo, Runway, Kling, Notion, ElevenLabs, Canva) are delivered within 5–15 minutes. Professional tools like GitHub Copilot, Microsoft 365, and LinkedIn Premium take 2–4 hours." },
+  { q: "Can I get AI video generation tools in Bangladesh via bKash?", a: "Yes — AI Team Premium offers Runway ML (৳899/mo, Gen-3 Alpha cinematic video) and Kling AI (৳599/mo, up to 5-minute realistic videos) — both payable via bKash/Nagad with 5-15 minute delivery." },
 ];
 
 const SUBS = [
@@ -40,7 +40,7 @@ const SUBS = [
 
 export default function AISubscriptions() {
   usePageMeta({
-    title: "All AI Subscriptions in Bangladesh — ChatGPT, Claude & 18+ AI Tools | AITPBD",
+    title: "All AI Subscriptions in Bangladesh — ChatGPT, Claude & 18+ AI Tools | AITP",
     description: "Browse 18+ premium AI subscriptions in Bangladesh — ChatGPT Plus (৳399/mo), Claude Pro, Google AI Pro, SuperGrok, Runway ML, Kling AI, Leonardo AI, Grammarly, Canva & more. Pay via bKash/Nagad. 5–15 min delivery.",
     path: "/ai-subscriptions",
   });
@@ -48,12 +48,12 @@ export default function AISubscriptions() {
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "AI Subscriptions Available in Bangladesh from AI Team Premium BD",
+    "name": "AI Subscriptions Available in Bangladesh from AI Team Premium",
     "numberOfItems": SUBS.length,
     "itemListElement": SUBS.map((s, i) => ({
       "@type": "ListItem",
       "position": i + 1,
-      "url": `https://aiteampremiumbd.com${s.link}`,
+      "url": `https://aiteampremium.com${s.link}`,
       "name": `${s.name} Bangladesh`,
     })),
   };
@@ -75,7 +75,7 @@ export default function AISubscriptions() {
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
             <p style={{ color: BRAND.navy, fontSize: "1rem", lineHeight: 1.7, fontWeight: 500 }}>
-              <strong>AI Team Premium BD</strong> sells a wide range of premium AI subscriptions in Bangladesh — <strong>ChatGPT Plus from ৳399/mo</strong>, Claude Pro (৳599), Google AI Pro (৳449), SuperGrok (৳499), Runway ML (৳899), Kling AI (৳599), Leonardo AI (৳349), Midjourney (৳1,200), Grammarly, Canva Pro, ElevenLabs, Notion AI, GitHub Copilot, and the AI Tools Vault bundle — payable in BDT via <strong>bKash, Nagad or Bank Transfer</strong>, with 5–15 minute delivery and a 30-day replacement warranty.
+              <strong>AI Team Premium</strong> sells a wide range of premium AI subscriptions in Bangladesh — <strong>ChatGPT Plus from ৳399/mo</strong>, Claude Pro (৳599), Google AI Pro (৳449), SuperGrok (৳499), Runway ML (৳899), Kling AI (৳599), Leonardo AI (৳349), Midjourney (৳1,200), Grammarly, Canva Pro, ElevenLabs, Notion AI, GitHub Copilot, and the AI Tools Vault bundle — payable in BDT via <strong>bKash, Nagad or Bank Transfer</strong>, with 5–15 minute delivery and a 30-day replacement warranty.
             </p>
           </div>
         </div>

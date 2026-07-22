@@ -6,8 +6,8 @@ import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 export default function PrivacyPolicy() {
   usePageMeta({
-    title: "Privacy Policy — AI Team Premium BD",
-    description: "How AI Team Premium BD collects, uses, and protects customer data in Bangladesh. Covers WhatsApp orders, bKash/Nagad payment information, and account credentials handling.",
+    title: "Privacy Policy — AI Team Premium",
+    description: "How AI Team Premium collects, uses, and protects customer data in Bangladesh. Covers WhatsApp orders, bKash/Nagad payment information, and account credentials handling.",
     path: "/privacy-policy",
   });
   return (
@@ -16,7 +16,7 @@ export default function PrivacyPolicy() {
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
           <h1 style={{ color: BRAND.navy, fontSize: "clamp(1.6rem, 4vw, 2.2rem)", fontWeight: 700 }}>Privacy Policy</h1>
-          <p className="mt-3" style={{ color: BRAND.navy, opacity: 0.45, fontSize: "0.85rem" }}>Effective date: May 2026 · AI Team Premium BD · aiteampremiumbd.com</p>
+          <p className="mt-3" style={{ color: BRAND.navy, opacity: 0.45, fontSize: "0.85rem" }}>Effective date: May 2026 · AI Team Premium · aiteampremium.com</p>
         </div>
       </section>
 
@@ -25,7 +25,7 @@ export default function PrivacyPolicy() {
 
           <div>
             <h2 className="mb-3" style={{ fontSize: "1.15rem", fontWeight: 700 }}>1. Introduction</h2>
-            <p style={{ opacity: 0.65 }}>AI Team Premium BD ("we", "us", or "our") is committed to protecting your personal data. This Privacy Policy explains what data we collect, how we use it, and your rights. We operate from Dhaka, Bangladesh and serve customers across the country.</p>
+            <p style={{ opacity: 0.65 }}>AI Team Premium ("we", "us", or "our") is committed to protecting your personal data. This Privacy Policy explains what data we collect, how we use it, and your rights. We operate from Dhaka, Bangladesh and serve customers across the country.</p>
           </div>
 
           <div>

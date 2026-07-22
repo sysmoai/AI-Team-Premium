@@ -1,4 +1,4 @@
-# EMON CORTEX OS — AI Team Premium BD
+# EMON CORTEX OS — AI Team Premium
 # Full-stack Express + React container for Cloud Run
 # Target: GCP Cloud Run, port 8080
 #

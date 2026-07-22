@@ -74,24 +74,24 @@ npm run start
 
 ```bash
 # Build and push container
-gcloud builds submit --tag us-central1-docker.pkg.dev/sysmoai-hq-prod/cortex/ai-team-premium-bd:latest .
+gcloud builds submit --tag us-central1-docker.pkg.dev/sysmoai-hq-prod/cortex/ai-team-premium:latest .
 
 # Deploy service
 gcloud run services replace cloud-run-service.yaml --region=us-central1
 ```
 
-**Live URL:** https://ai-team-premium-bd-1005103726650.us-central1.run.app
+**Live URL:** https://ai-team-premium-1005103726650.us-central1.run.app
 
 ### Database
 
 - **Provider:** Supabase
-- **Project:** ai-team-premium-bd
+- **Project:** ai-team-premium
 - **Migration:** `npm run db:push` or use `/api/admin/migrate` endpoint
 
 ## Health Check
 
 ```bash
-curl https://ai-team-premium-bd-1005103726650.us-central1.run.app/api/health
+curl https://ai-team-premium-1005103726650.us-central1.run.app/api/health
 ```
 
 ## License

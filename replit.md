@@ -1,7 +1,7 @@
-# AITPBD — AI Team Premium BD Website
+# AITP — AI Team Premium Website
 
 ## Overview
-A comprehensive website for AI Team Premium BD (AITPBD), Bangladesh's premium AI subscription provider. Sells ChatGPT Plus/Pro/Business, Claude, Gemini, Grammarly, Canva, Midjourney and more — payable via bKash/Nagad. Also offers premium human AI support (Google Meet sessions). Revenue target: $15,000/month.
+A comprehensive website for AI Team Premium (AITP), Bangladesh's premium AI subscription provider. Sells ChatGPT Plus/Pro/Business, Claude, Gemini, Grammarly, Canva, Midjourney and more — payable via bKash/Nagad. Also offers premium human AI support (Google Meet sessions). Revenue target: $15,000/month.
 
 ## Architecture
 - **Frontend**: React + Vite + TypeScript + Tailwind CSS + shadcn/ui
@@ -39,7 +39,7 @@ A comprehensive website for AI Team Premium BD (AITPBD), Bangladesh's premium AI
 | `/services` | Support/Services Hub (alias) | `client/src/pages/Services.tsx` |
 | `/ai-subscriptions` | All AI Tools catalog | `client/src/pages/AISubscriptions.tsx` |
 | `/pricing` | Pricing overview | `client/src/pages/Pricing.tsx` |
-| `/about` | About AITPBD | `client/src/pages/About.tsx` |
+| `/about` | About AITP | `client/src/pages/About.tsx` |
 | `/start-a-project` | Contact form | `client/src/pages/Contact.tsx` |
 | `/refund-policy` | Refund Policy | `client/src/pages/legal/RefundPolicy.tsx` |
 | `/privacy-policy` | Privacy Policy | `client/src/pages/legal/PrivacyPolicy.tsx` |
@@ -146,7 +146,7 @@ A comprehensive website for AI Team Premium BD (AITPBD), Bangladesh's premium AI
 ## SEO & Meta (index.html)
 - Full Open Graph tags (og:title, og:description, og:image, og:url, og:type)
 - Twitter Card (summary_large_image)
-- Canonical URL: https://aiteampremiumbd.com
+- Canonical URL: https://aiteampremium.com
 - theme-color: #0F172A
 - apple-touch-icon
 - Preconnect to Google Fonts (Inter + Hind Siliguri)

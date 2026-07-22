@@ -1,4 +1,4 @@
-# Analytics Setup Guide — AI Team Premium BD
+# Analytics Setup Guide — AI Team Premium
 
 > **Owner configuration task.** Missing analytics IDs do NOT break the site. All tracking fails silently when IDs are absent.
 

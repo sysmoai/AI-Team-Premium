@@ -1,7 +1,7 @@
 
-  # AI Team Premium BD Brand Design System
+  # AI Team Premium Brand Design System
 
-  This is a code bundle for AI Team Premium BD Brand Design System. The original project is available at https://www.figma.com/design/rpQdQKEMNL7NjupfTHuNjz/AI-Team-Premium-BD-Brand-Design-System.
+  This is a code bundle for AI Team Premium Brand Design System. The original project is available at https://www.figma.com/design/rpQdQKEMNL7NjupfTHuNjz/AI-Team-Premium-Brand-Design-System.
 
   ## Running the code
 

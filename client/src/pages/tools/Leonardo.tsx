@@ -225,7 +225,7 @@ export default function LeonardoPage() {
         { feature: "Background Removal", thisProduct: "✅ Built-in", chatgpt: "Limited", claude: "❌ No", gemini: "❌ No" },
         { feature: "Team Workspace / Brand Kit", thisProduct: "✅ Shared assets & kits", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
         { feature: "Best For", thisProduct: "Visual creatives, game dev", chatgpt: "General AI chat", claude: "Writing & code", gemini: "Google ecosystem" },
-        { feature: "AITPBD Shared Price", thisProduct: "৳349/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
+        { feature: "AITP Shared Price", thisProduct: "৳349/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
       ]}
       extendedFaqs={[
         { q: "How many images can I generate with Leonardo AI Artisan per month?", a: "The Artisan Shared plan includes 8,500 tokens per month. Each image generation costs 7–15 tokens depending on resolution and model. This means approximately 570–1,200 images per month — enough for heavy professional use. The Personal plan (৳1,299/mo) includes 25,000 tokens for approximately 1,700–3,500 images per month." },
@@ -238,7 +238,7 @@ export default function LeonardoPage() {
         { q: "Can Bangladeshi freelancers use Leonardo AI commercially for client work?", a: "Yes. The paid Artisan plan includes commercial usage rights. You can deliver AI-generated images to clients, use them in advertisements, print them, and monetise them. Many Bangladeshi designers on Fiverr and Upwork use Leonardo to deliver high-volume design work (social media packages, product images, concept art) at a fraction of the manual design time." },
         { q: "What is Leonardo Universal Upscaler?", a: "The Universal Upscaler takes any image (generated in Leonardo or uploaded) and enhances it to up to 4K resolution — adding detail, sharpness, and texture. For e-commerce sellers needing large print-ready images, and for game developers needing high-resolution textures, this eliminates the need for separate upscaling software like Topaz Gigapixel." },
         { q: "Is the Leonardo AI Shared plan enough for daily professional use?", a: "The Artisan Shared plan (৳349/mo) with 8,500 tokens per month generates approximately 570–850 images per month. A Bangladeshi freelancer doing 20 client projects per month, generating 20–30 images per project, would use about 400–600 tokens total — well within the limit. The Personal plan (৳1,299/mo, 25,000 tokens) is for agencies or professionals generating hundreds of images per day." },
-        { q: "How do I get started with Leonardo AI from AITPBD?", a: "Message AI Team Premium BD on WhatsApp (+880 1533-262758). We deliver the Artisan Shared plan credentials within 5–15 minutes of payment. Log in at leonardo.ai, and all 20+ models, the Canvas editor, ControlNet, and other Artisan features are immediately available. No additional setup needed." },
+        { q: "How do I get started with Leonardo AI from AITP?", a: "Message AI Team Premium on WhatsApp (+880 1533-262758). We deliver the Artisan Shared plan credentials within 5–15 minutes of payment. Log in at leonardo.ai, and all 20+ models, the Canvas editor, ControlNet, and other Artisan features are immediately available. No additional setup needed." },
       ]}
     />
   );

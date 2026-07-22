@@ -73,7 +73,7 @@ const PERPLEXITY_COMPETITOR_ROWS = [
   { feature: "Bangla Language Quality", thisProduct: "⭐⭐⭐⭐", chatgpt: "⭐⭐⭐⭐", claude: "⭐⭐⭐⭐", gemini: "⭐⭐⭐⭐⭐" },
   { feature: "Image Understanding", thisProduct: "✅ Yes", chatgpt: "✅ Yes", claude: "✅ Yes", gemini: "✅ Yes" },
   { feature: "API Access", thisProduct: "✅ Sonar API", chatgpt: "✅ OpenAI API", claude: "✅ Anthropic API", gemini: "✅ Google AI" },
-  { feature: "AITPBD Shared Price", thisProduct: "৳499/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
+  { feature: "AITP Shared Price", thisProduct: "৳499/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
 ];
 
 const PERPLEXITY_FAQS = [

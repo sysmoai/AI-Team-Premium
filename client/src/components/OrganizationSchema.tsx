@@ -1,14 +1,14 @@
 import { config } from "@/lib/config";
 
-const SITE_URL = "https://aiteampremiumbd.com";
+const SITE_URL = "https://aiteampremium.com";
 
 export function OrganizationSchema() {
   const graph = [
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      "name": "AI Team Premium BD",
-      "alternateName": ["AITPBD", "AI Team Premium Bangladesh"],
+      "name": "AI Team Premium",
+      "alternateName": ["AITP", "AI Team Premium Bangladesh"],
       "url": SITE_URL,
       "logo": {
         "@type": "ImageObject",
@@ -17,7 +17,7 @@ export function OrganizationSchema() {
         "height": 512,
       },
       "description":
-        "AI Team Premium BD (AITPBD) is Bangladesh's premium provider of AI subscriptions — ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via bKash and Nagad with 5-15 minute delivery and a 30-day replacement warranty.",
+        "AI Team Premium (AITP) is Bangladesh's premium provider of AI subscriptions — ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via bKash and Nagad with 5-15 minute delivery and a 30-day replacement warranty.",
       "foundingDate": "2024",
       "areaServed": {
         "@type": "Country",
@@ -63,7 +63,7 @@ export function OrganizationSchema() {
     {
       "@type": "LocalBusiness",
       "@id": `${SITE_URL}/#localbusiness`,
-      "name": "AI Team Premium BD",
+      "name": "AI Team Premium",
       "image": `${SITE_URL}/favicon.png`,
       "url": SITE_URL,
       "telephone": config.phone,
@@ -88,7 +88,7 @@ export function OrganizationSchema() {
       "@type": "WebSite",
       "@id": `${SITE_URL}/#website`,
       "url": SITE_URL,
-      "name": "AI Team Premium BD",
+      "name": "AI Team Premium",
       "publisher": { "@id": `${SITE_URL}/#organization` },
       "inLanguage": ["en", "bn"],
     },

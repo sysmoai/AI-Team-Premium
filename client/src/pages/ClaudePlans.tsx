@@ -30,7 +30,7 @@ const data: ToolPageData = {
     },
     {
       name: "Claude Pro — Personal Seat",
-      price: "৳2,500/month",
+      price: "৳2,990/month",
       delivery: "2–4 hours",
       seats: "1 seat (your own account)",
       tag: "For Coders & Privacy",

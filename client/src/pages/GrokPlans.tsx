@@ -12,7 +12,7 @@ const data: ToolPageData = {
   plans: [
     {
       name: "Grok — Shared Access",
-      price: "৳499/month",
+      price: "৳699/month",
       delivery: "2–4 hours",
       seats: "Shared access",
       tag: "Real-time AI",
@@ -30,7 +30,7 @@ const data: ToolPageData = {
     },
     {
       name: "Grok — Personal Seat",
-      price: "৳3,990/month",
+      price: "৳4,990/month",
       delivery: "2–4 hours",
       seats: "1 seat (your own X/xAI account)",
       tag: "Private & Dedicated",

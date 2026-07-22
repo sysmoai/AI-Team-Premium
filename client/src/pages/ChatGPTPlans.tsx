@@ -115,7 +115,7 @@ export default function ChatGPTPlans() {
       <FAQSchema items={faqs} />
       <ProductSchema
         name="ChatGPT Plus Bangladesh"
-        description="Genuine ChatGPT Plus subscription in Bangladesh from ৳399/month. Pay via bKash, Nagad, Rocket or Bank Transfer. 5-15 min delivery, 30-day warranty. AI Team Premium BD."
+        description="Genuine ChatGPT Plus subscription in Bangladesh from ৳399/month. Pay via bKash, Nagad, Rocket or Bank Transfer. 5-15 min delivery, 30-day warranty. AI Team Premium."
         path="/chatgpt-plans"
         priceBDT={399}
         category="AI Subscription"

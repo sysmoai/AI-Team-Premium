@@ -1,4 +1,4 @@
-You are updating the AI Team Premium BD website. Read every instruction carefully and execute all tasks. DO NOT break anything that is already working. DO NOT remove existing pages. DO NOT touch homepage hero, existing reviews, or FAQ section.
+You are updating the AI Team Premium website. Read every instruction carefully and execute all tasks. DO NOT break anything that is already working. DO NOT remove existing pages. DO NOT touch homepage hero, existing reviews, or FAQ section.
 
 ==================================================
 TASK 1: UPDATE NAVIGATION BAR
@@ -316,9 +316,9 @@ DESIGN RULES (DO NOT VIOLATE)
 BRAND INFO (use in all pages)
 ==================================================
 
-Brand: AI Team Premium BD (AITPBD)
+Brand: AI Team Premium (AITP)
 WhatsApp: +880 1533-262758
-Facebook: facebook.com/AITPBD
+Facebook: facebook.com/AITP
 Instagram: instagram.com/ai_team_premium_bd
 Positioning: "Affordable premium AI subscriptions + dedicated Bangla support for Bangladesh users — no extra VAT, fast delivery, trusted access."
 Payment: bKash, Nagad, Bank Transfer

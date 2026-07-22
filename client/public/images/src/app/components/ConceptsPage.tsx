@@ -42,7 +42,7 @@ export function ConceptsPage() {
             lineHeight: 1.7,
           }}
         >
-          The official brand mark for AI Team Premium BD — a team united around
+          The official brand mark for AI Team Premium — a team united around
           AI, connected through a shared network, reaching the world.
         </p>
       </div>

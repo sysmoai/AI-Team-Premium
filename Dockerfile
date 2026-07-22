@@ -3,9 +3,9 @@
 # Target: GCP Cloud Run, port 8080
 #
 # Build:
-#   docker build -t ai-team-premium-bd:latest .
+#   docker build -t ai-team-premium:latest .
 # Run locally:
-#   docker run -p 8080:8080 -e DATABASE_URL=postgresql://... ai-team-premium-bd:latest
+#   docker run -p 8080:8080 -e DATABASE_URL=postgresql://... ai-team-premium:latest
 
 # ---------- Stage 1: Builder ----------
 FROM node:20-slim AS builder

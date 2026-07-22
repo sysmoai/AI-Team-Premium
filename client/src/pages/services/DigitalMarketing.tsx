@@ -58,8 +58,8 @@ const FAQS = [
 
 export default function DigitalMarketing() {
   usePageMeta({
-    title: "Digital Marketing Bangladesh — Facebook & Google Ads from ৳9,999/mo | AI Team Premium BD",
-    description: "Professional digital marketing in Bangladesh from ৳9,999/month. Facebook Ads, Google Ads, SEO, social media management. Pay via bKash/Nagad. AI Team Premium BD.",
+    title: "Digital Marketing Bangladesh — Facebook & Google Ads from ৳9,999/mo | AI Team Premium",
+    description: "Professional digital marketing in Bangladesh from ৳9,999/month. Facebook Ads, Google Ads, SEO, social media management. Pay via bKash/Nagad. AI Team Premium.",
     path: "/services/digital-marketing",
   });
 
@@ -73,7 +73,7 @@ export default function DigitalMarketing() {
       <FAQSchema items={FAQS} />
       <ProductSchema
         name="Digital Marketing Services Bangladesh"
-        description="Professional Facebook Ads, Google Ads, SEO, and social media management from ৳9,999/month. Pay via bKash/Nagad. AI Team Premium BD."
+        description="Professional Facebook Ads, Google Ads, SEO, and social media management from ৳9,999/month. Pay via bKash/Nagad. AI Team Premium."
         path="/services/digital-marketing"
         priceBDT={9999}
         category="Digital Marketing Service"
@@ -92,7 +92,7 @@ export default function DigitalMarketing() {
             Facebook Ads, Google Ads, SEO, এবং Social Media Management — আপনার business online-এ grow করুন।
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Digital+Marketing+services+from+AITPBD" target="_blank" rel="noopener noreferrer" data-testid="button-hero-marketing" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#25D366" }}>
+            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Digital+Marketing+services+from+AITP" target="_blank" rel="noopener noreferrer" data-testid="button-hero-marketing" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#25D366" }}>
               <WhatsAppIcon size={18} color="#fff" /> WhatsApp
             </a>
             <a href={config.messenger} target="_blank" rel="noopener noreferrer" data-testid="button-hero-marketing-messenger" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#0084FF" }}>
@@ -199,7 +199,7 @@ export default function DigitalMarketing() {
           <p className="text-white/50 mb-2">সকাল ৯টা – রাত ১১টা · সপ্তাহের ৭ দিন</p>
           <p className="text-white/50 mb-8">WhatsApp বা Messenger-এ message করুন।</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Digital+Marketing+services+from+AITPBD" target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-marketing" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#25D366" }}>
+            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Digital+Marketing+services+from+AITP" target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-marketing" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#25D366" }}>
               <WhatsAppIcon size={20} color="#fff" /> WhatsApp
             </a>
             <a href={config.messenger} target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-marketing-messenger" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#0084FF" }}>

@@ -22,7 +22,7 @@ export const config = {
   officialPricingUrl: "https://chatgpt.com/pricing/",
 
   whatsappPlanTemplates: {
-    "plus-shared":            "Hi! I want to order 'ChatGPT Plus Shared (৳399/mo)' from AI Team Premium. Please share payment details (bKash/Nagad).",
+    "plus-shared":            "Hi! I want to order 'ChatGPT Plus Shared (৳499/mo)' from AI Team Premium. Please share payment details (bKash/Nagad).",
     "plus-premium-shared":    "Hi! I want to order 'ChatGPT Plus Premium Shared (৳999/mo)'. How do I pay and get access?",
     "plus-personal-seat":     "Hi! I want my own ChatGPT Plus account — 'Plus Personal Seat (৳2,990/mo)'. Is it available?",
     "business-shared":        "Hi! I want the 'ChatGPT Team Shared (৳1,799/mo)' plan. Please guide me.",

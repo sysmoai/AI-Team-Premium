@@ -71,7 +71,7 @@ gcloud run deploy ai-team-premium \
 ### GitHub Actions (configured but not active)
 
 `.github/workflows/deploy.yml` exists but requires:
-1. Push access to `sysmoai/AITeamPremiumBD` repo
+1. Push access to `sysmoai/AI-Team-Premium` repo
 2. `GCP_SA_KEY` secret configured in GitHub
 
 ## Infrastructure

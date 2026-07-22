@@ -117,10 +117,10 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
   const cheapestPlan = plans.find((p) => parseInt(p.price.replace(/[^0-9]/g, ""), 10) === minPrice) || plans[0];
 
   const autoFaqs = [
-    { q: `How much does ${name} cost in Bangladesh?`, a: `${name} starts at ${cheapestPlan?.price || "৳399"}${cheapestPlan?.period || "/mo"} from AI Team Premium BD, payable in BDT via bKash or Nagad. No international card needed.` },
-    { q: `How do I buy ${name} with bKash or Nagad?`, a: `Message AI Team Premium BD on WhatsApp (+880 1533-262758) with the plan you want. We confirm price, share the bKash/Nagad number privately, and deliver login or invite details within ${cheapestPlan?.delivery || "5–15 minutes"}.` },
-    { q: `Is ${name} from AI Team Premium BD genuine?`, a: `Yes. AI Team Premium BD provides genuine ${name} subscriptions sourced through legitimate channels. No cracked or fake access — fully working features and a 30-day replacement warranty.` },
-    { q: `Can I use ${name} in Bangla?`, a: "Yes. Most premium AI tools sold by AI Team Premium BD — including ChatGPT, Claude, and Gemini — generate high-quality Bangla responses. Our support team also assists in Bangla and English." },
+    { q: `How much does ${name} cost in Bangladesh?`, a: `${name} starts at ${cheapestPlan?.price || "৳399"}${cheapestPlan?.period || "/mo"} from AI Team Premium, payable in BDT via bKash or Nagad. No international card needed.` },
+    { q: `How do I buy ${name} with bKash or Nagad?`, a: `Message AI Team Premium on WhatsApp (+880 1533-262758) with the plan you want. We confirm price, share the bKash/Nagad number privately, and deliver login or invite details within ${cheapestPlan?.delivery || "5–15 minutes"}.` },
+    { q: `Is ${name} from AI Team Premium genuine?`, a: `Yes. AI Team Premium provides genuine ${name} subscriptions sourced through legitimate channels. No cracked or fake access — fully working features and a 30-day replacement warranty.` },
+    { q: `Can I use ${name} in Bangla?`, a: "Yes. Most premium AI tools sold by AI Team Premium — including ChatGPT, Claude, and Gemini — generate high-quality Bangla responses. Our support team also assists in Bangla and English." },
   ];
   const toolFaqs = extendedFaqs ? [...autoFaqs, ...extendedFaqs] : autoFaqs;
 
@@ -163,7 +163,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
           </div>
           <div className="mt-8 mx-auto max-w-2xl rounded-2xl p-5 text-left" style={{ background: "rgba(255,255,255,0.06)", border: `1px solid ${accentColor}28` }}>
             <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "0.93rem", lineHeight: 1.72 }}>
-              <strong style={{ color: BRAND.white }}>{name}</strong> is available in Bangladesh from AI Team Premium BD starting at{" "}
+              <strong style={{ color: BRAND.white }}>{name}</strong> is available in Bangladesh from AI Team Premium starting at{" "}
               <strong style={{ color: accentColor }}>{cheapestPlan?.price}{cheapestPlan?.period}</strong>, payable via{" "}
               <strong style={{ color: BRAND.white }}>bKash, Nagad or Bank Transfer</strong> — no international card required. Delivery in{" "}
               <strong style={{ color: BRAND.white }}>{cheapestPlan?.delivery}</strong> with a 30-day replacement warranty and Bangla + English WhatsApp support.

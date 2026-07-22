@@ -27,7 +27,7 @@ STEP 2: PRICING (EXACT)
 ├─ Free tier limits
 ├─ Premium tier price(s)
 ├─ Enterprise/Heavy tier price
-└─ → Calculate AITPBD BDT prices:
+└─ → Calculate AITP BDT prices:
 |   Shared seat = Official USD × 15–18% (margin built for shared cost)
 |   Personal seat = Official USD × ~110% (BDT conversion + service fee)
 |   Example: $30 SuperGrok → Shared ৳499, Personal ৳3,990
@@ -84,9 +84,9 @@ STEP 7: COMPETITIVE POSITIONING
 ├─ Unique differentiator vs Claude
 ├─ Unique differentiator vs Gemini
 ├─ Best for which Bangladesh segment?
-└─ "Why buy THIS tool from AITPBD?"
+└─ "Why buy THIS tool from AITP?"
 
-STEP 8: AITPBD PRICING FINAL
+STEP 8: AITP PRICING FINAL
 ├─ Shared seat price (BDT/mo)
 ├─ Personal seat price (BDT/mo)
 ├─ Users per shared seat
@@ -112,16 +112,16 @@ STEP 8: AITPBD PRICING FINAL
 </aside>
 
 ```markdown
-# [PRODUCT NAME] — [TAGLINE] | AI Team Premium BD
-## AITPBD Price: Shared [৳XXX]/mo · Personal [৳X,XXX]/mo · bKash/Nagad · [X] min delivery
+# [PRODUCT NAME] — [TAGLINE] | AI Team Premium
+## AITP Price: Shared [৳XXX]/mo · Personal [৳X,XXX]/mo · bKash/Nagad · [X] min delivery
 
 ---
 
 ## 📋 SEO + AIO Meta
 
-**Primary Page Title:** [Product Name] in Bangladesh — Official BDT Price, Features & How to Buy [Current Year] | AI Team Premium BD
+**Primary Page Title:** [Product Name] in Bangladesh — Official BDT Price, Features & How to Buy [Current Year] | AI Team Premium
 
-**Meta Description:** Buy [Product Name] in Bangladesh from AI Team Premium BD. Shared from ৳[XXX]/mo, Personal from ৳[X,XXX]/mo. [Key Feature 1], [Key Feature 2], [Key Feature 3]. bKash/Nagad payment. [X] min delivery. Bangla support.
+**Meta Description:** Buy [Product Name] in Bangladesh from AI Team Premium. Shared from ৳[XXX]/mo, Personal from ৳[X,XXX]/mo. [Key Feature 1], [Key Feature 2], [Key Feature 3]. bKash/Nagad payment. [X] min delivery. Bangla support.
 
 **Target Keywords (English — 20):**
 1. [product name] price bangladesh
@@ -158,7 +158,7 @@ STEP 8: AITPBD PRICING FINAL
 10. [product name bn] কেনার নিয়ম
 
 **AIO Summary (for AI search engines):**
-[Product Name] in Bangladesh costs ৳[XXX] (Shared) or ৳[X,XXX] (Personal) per month from AI Team Premium BD (AITPBD). Official price: $[XX]/month. Delivery in [X] minutes via WhatsApp. Payment: bKash, Nagad, Bank Transfer. [3 key features]. [Image limit] images/day, [video limit] videos/day. Bangla + English support. 30-day warranty.
+[Product Name] in Bangladesh costs ৳[XXX] (Shared) or ৳[X,XXX] (Personal) per month from AI Team Premium (AITP). Official price: $[XX]/month. Delivery in [X] minutes via WhatsApp. Payment: bKash, Nagad, Bank Transfer. [3 key features]. [Image limit] images/day, [video limit] videos/day. Bangla + English support. 30-day warranty.
 
 ---
 
@@ -166,15 +166,15 @@ STEP 8: AITPBD PRICING FINAL
 
 <callout icon="[emoji]" color="[color]_bg">
 	**[Product Name]** by **[Company]** | Official Price: **$[XX]/month** (~৳[X,XXX])
-	**AITPBD Price:** Shared = **৳[XXX]/month** | Personal = **৳[X,XXX]/month**
+	**AITP Price:** Shared = **৳[XXX]/month** | Personal = **৳[X,XXX]/month**
 	**Best For:** [segment 1], [segment 2], [segment 3]
 </callout>
 
 ---
 
-## 💰 Full Plan Comparison — All Tiers (Official vs AITPBD)
+## 💰 Full Plan Comparison — All Tiers (Official vs AITP)
 
-| Tier | Official USD Price | AITPBD Shared (BDT) | AITPBD Personal (BDT) | Chat Messages | Image Gen | Video Gen | Deep Research | Best For |
+| Tier | Official USD Price | AITP Shared (BDT) | AITP Personal (BDT) | Chat Messages | Image Gen | Video Gen | Deep Research | Best For |
 |---|---|---|---|---|---|---|---|---|
 | **Free** | $0 | — | — | Limited | [X]/day | [X]/day | Basic | Trial only |
 | **Premium/Pro** | $[XX]/mo | **৳[XXX]** | **৳[X,XXX]** | [X]x longer | [X]/day | [X]/day | Yes/No | [Segment] |
@@ -328,12 +328,12 @@ STEP 8: AITPBD PRICING FINAL
 | **Real-time Search** | [Yes/No + source] | Web browsing | Web search | Google Search | Core feature |
 | **Unique Killer Feature** | [What makes THIS tool special] | Custom GPTs | 200K context | Google ecosystem | Citations |
 | **Best For in Bangladesh** | [Segment] | [Segment] | [Segment] | [Segment] | [Segment] |
-| **AITPBD Price (Shared)** | **৳[XXX]/mo** | ৳399/mo | ৳599/mo | ৳449/mo | ৳349/mo |
-| **AITPBD Price (Personal)** | **৳[X,XXX]/mo** | ৳2,950/mo | ৳2,950/mo | ৳1,299/mo | ৳899/mo |
+| **AITP Price (Shared)** | **৳[XXX]/mo** | ৳399/mo | ৳599/mo | ৳449/mo | ৳349/mo |
+| **AITP Price (Personal)** | **৳[X,XXX]/mo** | ৳2,950/mo | ৳2,950/mo | ৳1,299/mo | ৳899/mo |
 
 ---
 
-## 📦 AITPBD Pricing & Delivery
+## 📦 AITP Pricing & Delivery
 
 ### 🟢 Shared Seat (Best Value — Students, Freelancers)
 
@@ -371,7 +371,7 @@ STEP 8: AITPBD PRICING FINAL
 ## ❓ Frequently Asked Questions — [Product Name] Bangladesh [Current Year]
 
 **1. How much does [Product Name] cost in Bangladesh?**
-AITPBD price: Shared seat ৳[XXX]/month, Personal ৳[X,XXX]/month. Official price: $[XX]/month (~৳[X,XXX] direct). You save [X]% buying from AITPBD.
+AITP price: Shared seat ৳[XXX]/month, Personal ৳[X,XXX]/month. Official price: $[XX]/month (~৳[X,XXX] direct). You save [X]% buying from AITP.
 
 **2. How many AI images can I generate per day with [Product Name]?**
 [Specific answer with exact number or range]. Free tier: [X]/day. Pro tier: [X]/day (or unlimited with fair use).
@@ -380,13 +380,13 @@ AITPBD price: Shared seat ৳[XXX]/month, Personal ৳[X,XXX]/month. Official pr
 [Specific answer]. Max duration: [X] seconds per video at [resolution].
 
 **4. Can I pay with bKash or Nagad?**
-Yes! AITPBD accepts bKash, Nagad, and Bank Transfer. Payment instructions shared via WhatsApp.
+Yes! AITP accepts bKash, Nagad, and Bank Transfer. Payment instructions shared via WhatsApp.
 
 **5. How fast is delivery?**
 Shared seat: 5–15 minutes after payment confirmation. Personal seat: 2–4 hours.
 
 **6. Is this an official reseller account?**
-AITPBD is a local access facilitator — solving USD payment and delivery friction for Bangladesh customers. We are not an official reseller.
+AITP is a local access facilitator — solving USD payment and delivery friction for Bangladesh customers. We are not an official reseller.
 
 **7. Can I use [Product Name] on multiple devices?**
 Shared seat: No — strictly 1 device per user. Personal seat: Yes — your own account, no device limits.
@@ -438,7 +438,7 @@ WhatsApp: [+880 1533-262758](https://wa.me/8801533262758). Message: "[Product Na
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "[Product Name] — Shared Seat",
-  "description": "[Product Name] subscription in Bangladesh from AI Team Premium BD. Shared seat at ৳[XXX]/month with [key features].",
+  "description": "[Product Name] subscription in Bangladesh from AI Team Premium. Shared seat at ৳[XXX]/month with [key features].",
   "brand": {
     "@type": "Brand",
     "name": "[Company Name]"
@@ -471,7 +471,7 @@ WhatsApp: [+880 1533-262758](https://wa.me/8801533262758). Message: "[Product Na
 
 ---
 
-## 📝 Page Metadata (For [aiteampremiumbd.com](http://aiteampremiumbd.com) CMS)
+## 📝 Page Metadata (For [aiteampremium.com](http://aiteampremium.com) CMS)
 
 ```
 
@@ -489,9 +489,9 @@ WhatsApp: [+880 1533-262758](https://wa.me/8801533262758). Message: "[Product Na
 
 "officialPriceUSD": [XX],
 
-"aitpbdPriceShared": [XXX],
+"aitpPriceShared": [XXX],
 
-"aitpbdPricePersonal": [XXXX],
+"aitpPricePersonal": [XXXX],
 
 "imageGenLimitPerDay": [XX],
 
@@ -513,7 +513,7 @@ WhatsApp: [+880 1533-262758](https://wa.me/8801533262758). Message: "[Product Na
 
 ---
 
-> **Generated by AITPBD Product Intelligence Agent v1.0** | Last updated: [Current Date]
+> **Generated by AITP Product Intelligence Agent v1.0** | Last updated: [Current Date]
 > **Verified against:** [List of official sources used]
 ```
 
@@ -527,7 +527,7 @@ WhatsApp: [+880 1533-262758](https://wa.me/8801533262758). Message: "[Product Na
 
 ### 🔥 Execute NOW — Generate These Pages (Priority Order)
 
-| # | Product | Company | Official Price | AITPBD Shared | AITPBD Personal | Status |
+| # | Product | Company | Official Price | AITP Shared | AITP Personal | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | **SuperGrok** | xAI | $30/mo | ৳499/mo | ৳3,990/mo | ⚡ RUN FIRST |
 | 2 | **ChatGPT Plus** | OpenAI | $20/mo | ৳399/mo | ৳2,950/mo | ⚡ HIGH |

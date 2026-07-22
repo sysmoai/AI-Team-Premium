@@ -9,7 +9,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
 NC='\033[0m'
 
-SERVICE_URL=${1:-$(gcloud run services describe ai-team-premium-bd --region=us-central1 --format='value(status.url)' 2>/dev/null)}
+SERVICE_URL=${1:-$(gcloud run services describe ai-team-premium --region=us-central1 --format='value(status.url)' 2>/dev/null)}
 
 if [ -z "$SERVICE_URL" ]; then
   echo -e "${RED}❌ Cloud Run service URL not found${NC}"

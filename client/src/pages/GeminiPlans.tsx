@@ -1,7 +1,7 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Google Gemini Advanced Bangladesh — ৳499/mo | AI Team Premium BD",
+  seoTitle: "Google Gemini Advanced Bangladesh — ৳499/mo | AI Team Premium",
   seoDescription: "Buy Google Gemini Advanced (Gemini 2.5 Pro) in Bangladesh via bKash/Nagad. Shared and personal seats from ৳499/month. 1M token context, Deep Research, Google One 2TB storage.",
   path: "/gemini-plans",
   toolName: "Google Gemini Advanced",
@@ -64,7 +64,7 @@ const data: ToolPageData = {
     { q: "Refund policy কী?", a: "Subscription fee refundable নয়, কিন্তু access দিতে ব্যর্থ হলে 24 ঘণ্টার মধ্যে replace করা হবে।" },
     { q: "NotebookLM কী এবং Gemini-তে কীভাবে পাওয়া যায়?", a: "NotebookLM হলো Google-এর document Q&A tool। Gemini Advanced-এ আপনি multiple documents upload করে Gemini-কে দিয়ে analyze এবং Q&A করাতে পারবেন।" },
     { q: "Gemini কি Bangla support করে?", a: "হ্যাঁ, Gemini 2.5 Pro বাংলায় ভালো response দেয়। Academic এবং professional Bangla writing-এও helpful।" },
-    { q: "AI Team Premium BD থেকে কেন Gemini কিনব?", a: "কারণ আমরা বাংলাদেশ থেকে bKash/Nagad-এ payment গ্রহণ করি — international card লাগে না। 30 দিনের warranty এবং WhatsApp-এ বাংলায় support পাবেন।" },
+    { q: "AI Team Premium থেকে কেন Gemini কিনব?", a: "কারণ আমরা বাংলাদেশ থেকে bKash/Nagad-এ payment গ্রহণ করি — international card লাগে না। 30 দিনের warranty এবং WhatsApp-এ বাংলায় support পাবেন।" },
   ],
 };
 

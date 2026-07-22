@@ -1,4 +1,4 @@
-# AI Team Premium BD
+# AI Team Premium
 
 Bangladesh's trusted AI subscription provider. Buy ChatGPT Plus, Claude Pro, Gemini Advanced, Canva Pro, Grammarly Premium, and more — payable via bKash, Nagad, and Bank Transfer.
 

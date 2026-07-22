@@ -68,7 +68,6 @@ function WordmarkInner({
       <span style={{ fontWeight: 700, color: accentColor }}>AI</span>
       <span style={{ fontWeight: 300 }}>Team</span>
       <span style={{ fontWeight: 600 }}>Premium</span>
-      <span style={{ fontWeight: 300 }}>BD</span>
     </span>
   );
 }

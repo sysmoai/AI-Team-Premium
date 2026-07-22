@@ -1,4 +1,4 @@
-# AI Team Premium BD — Deployment Guide
+# AI Team Premium — Deployment Guide
 
 ## Live Deployment
 

@@ -1,4 +1,4 @@
-# AI Team Premium BD — Blockers & External Dependencies
+# AI Team Premium — Blockers & External Dependencies
 
 ## Resolved
 - ✅ Cloud Run deployment — service is live (revision 00008-xwl)

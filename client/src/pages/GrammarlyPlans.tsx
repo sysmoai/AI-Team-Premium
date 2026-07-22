@@ -1,7 +1,7 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Grammarly Premium Bangladesh — ৳499/mo | AI Team Premium BD",
+  seoTitle: "Grammarly Premium Bangladesh — ৳499/mo | AI Team Premium",
   seoDescription: "Buy Grammarly Premium in Bangladesh via bKash/Nagad. Monthly and annual plans from ৳499/month. AI writing assistant with plagiarism check and Grammarly AI generative prompts.",
   path: "/grammarly-plans",
   toolName: "Grammarly Premium",
@@ -66,7 +66,7 @@ const data: ToolPageData = {
     { q: "Generative prompts কী?", a: "Generative prompts হলো Grammarly AI-কে দিয়ে নতুন content তৈরি করার সুযোগ। Monthly plan-এ 500 prompts, Annual plan-এ 1,000 prompts পাওয়া যায়।" },
     { q: "আমার account কি অন্যদের সাথে share হবে?", a: "না। Grammarly-র প্রতিটি plan individual account। আপনার writing history, preferences, এবং data সম্পূর্ণ private।" },
     { q: "Tone detector কী?", a: "Tone detector আপনার লেখার স্বর বিশ্লেষণ করে — confident, formal, friendly, assertive ইত্যাদি। Professional email বা cover letter লেখার সময় সঠিক tone নিশ্চিত করতে সাহায্য করে।" },
-    { q: "AI Team Premium BD থেকে কেন কিনব?", a: "কারণ আমরা বাংলাদেশ থেকে bKash/Nagad-এ payment গ্রহণ করি — international card লাগে না। 2–4 ঘণ্টায় delivery, 30 দিনের warranty, এবং WhatsApp-এ বাংলায় support পাবেন।" },
+    { q: "AI Team Premium থেকে কেন কিনব?", a: "কারণ আমরা বাংলাদেশ থেকে bKash/Nagad-এ payment গ্রহণ করি — international card লাগে না। 2–4 ঘণ্টায় delivery, 30 দিনের warranty, এবং WhatsApp-এ বাংলায় support পাবেন।" },
     { q: "Grammarly কি AI-generated content detect করতে পারে?", a: "Grammarly Premium-এ AI content detector feature আছে যা ChatGPT বা অন্য AI দিয়ে লেখা text identify করতে সাহায্য করে।" },
   ],
 };

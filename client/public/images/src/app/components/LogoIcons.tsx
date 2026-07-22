@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────
-// AI Team Premium BD — Brand Mark System
+// AI Team Premium — Brand Mark System
 // Orbit Connection · Neural Nexus
 // ─────────────────────────────────────────────
 

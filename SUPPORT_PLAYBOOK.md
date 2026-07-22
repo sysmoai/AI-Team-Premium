@@ -157,7 +157,7 @@ Our policy:
 - If you haven't received anything yet → refund possible
 - Once access is delivered and working → subscription fees are non-refundable
 
-Full details: https://ai-team-premium-bd-1005103726650.us-central1.run.app/refund-policy
+Full details: https://ai-team-premium-1005103726650.us-central1.run.app/refund-policy
 ```
 
 ---

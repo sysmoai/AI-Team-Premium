@@ -6,8 +6,8 @@ import { ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   usePageMeta({
-    title: "Page Not Found — AI Team Premium BD",
-    description: "The page you are looking for does not exist. Browse AI subscriptions, tools, and services at AI Team Premium BD.",
+    title: "Page Not Found — AI Team Premium",
+    description: "The page you are looking for does not exist. Browse AI subscriptions, tools, and services at AI Team Premium.",
     path: "/404",
   });
 

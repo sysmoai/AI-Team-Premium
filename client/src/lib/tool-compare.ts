@@ -220,7 +220,7 @@ export function recommend(a: CompareTool, b: CompareTool): Recommendation {
   if (a.category !== b.category) {
     return {
       kind: "depends",
-      reason: `${a.name} and ${b.name} solve different problems — ${a.name} is built for ${a.category}, while ${b.name} is built for ${b.category}. There's no single winner here: pick ${a.name} if you need ${a.bestFor[0].toLowerCase()}, and pick ${b.name} if you need ${b.bestFor[0].toLowerCase()}. Many AITPBD customers buy both.`,
+      reason: `${a.name} and ${b.name} solve different problems — ${a.name} is built for ${a.category}, while ${b.name} is built for ${b.category}. There's no single winner here: pick ${a.name} if you need ${a.bestFor[0].toLowerCase()}, and pick ${b.name} if you need ${b.bestFor[0].toLowerCase()}. Many AITP customers buy both.`,
     };
   }
   const aScore = (a.specs.accuracy.match(/⭐/g)?.length ?? 0) - (a.priceFromBdt / 1000);

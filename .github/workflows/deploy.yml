@@ -9,9 +9,9 @@ on:
 env:
   PROJECT_ID: sysmoai-hq-prod
   REGION: us-central1
-  SERVICE: ai-team-premium-bd
+  SERVICE: ai-team-premium
   REPO: cortex
-  IMAGE: ai-team-premium-bd
+  IMAGE: ai-team-premium
 
 jobs:
   build-and-test:

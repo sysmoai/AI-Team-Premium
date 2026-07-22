@@ -1,4 +1,4 @@
-# EMON CORTEX OS — AI Team Premium BD Cloud Run Service
+# EMON CORTEX OS — AI Team Premium Cloud Run Service
 # Deploy: gcloud run services replace cloud-run-service.yaml --region=us-central1
 # Prerequisites: Artifact Registry repo created, image pushed
 

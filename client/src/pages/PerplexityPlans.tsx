@@ -1,7 +1,7 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Perplexity Pro Bangladesh — ৳499/mo | AI Team Premium BD",
+  seoTitle: "Perplexity Pro Bangladesh — ৳499/mo | AI Team Premium",
   seoDescription: "Buy Perplexity Pro in Bangladesh via bKash/Nagad. AI-powered search with unlimited deep research from ৳499/month. Access o3-mini, GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro.",
   path: "/perplexity-plans",
   toolName: "Perplexity Pro",
@@ -48,7 +48,7 @@ const data: ToolPageData = {
     { q: "Perplexity কি Bangla-তে কাজ করে?", a: "হ্যাঁ, Perplexity বাংলায় query করা যায় এবং বাংলায় উত্তর দিতে পারে। তবে English query দিলে আরও comprehensive result পাওয়া যায়।" },
     { q: "Refund policy কী?", a: "Subscription fee refundable নয়, কিন্তু access না পেলে 24 ঘণ্টায় replace করা হবে।" },
     { q: "Visualisation feature কী?", a: "Perplexity Pro research answers-এ chart, diagram, এবং timeline automatically generate করতে পারে। Data-heavy research-এ এটি অত্যন্ত সহায়ক।" },
-    { q: "AI Team Premium BD থেকে কেন কিনব?", a: "কারণ আমরা বাংলাদেশ থেকে bKash/Nagad-এ payment গ্রহণ করি। International card ছাড়া Perplexity Pro পাওয়ার সবচেয়ে সহজ উপায়।" },
+    { q: "AI Team Premium থেকে কেন কিনব?", a: "কারণ আমরা বাংলাদেশ থেকে bKash/Nagad-এ payment গ্রহণ করি। International card ছাড়া Perplexity Pro পাওয়ার সবচেয়ে সহজ উপায়।" },
   ],
 };
 

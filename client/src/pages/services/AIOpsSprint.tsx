@@ -25,7 +25,7 @@ const FAQS = [
 
 export default function AIOpsSprint() {
   usePageMeta({
-    title: "AI Ops Sprint Bangladesh — 1:1 AI Implementation ৳9,900 | AI Team Premium BD",
+    title: "AI Ops Sprint Bangladesh — 1:1 AI Implementation ৳9,900 | AI Team Premium",
     description: "One-time 1:1 AI implementation sprint for freelancers and business owners in Bangladesh. 3 expert sessions via Zoom, workflow audit, custom AI toolstack recommendation, prompt templates, 30-day follow-up support. ৳9,900, pay via bKash/Nagad.",
     path: "/services/ai-ops-sprint",
   });
@@ -50,7 +50,7 @@ export default function AIOpsSprint() {
         <div className="mx-auto max-w-5xl px-6">
           <div className="rounded-2xl p-5 md:p-6" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
             <p style={{ color: BRAND.navy, fontSize: "0.95rem", lineHeight: 1.7 }}>
-              <strong>AI Ops Sprint</strong> is a one-time <strong>1:1 AI implementation service</strong> from AI Team Premium BD in Bangladesh, priced at <strong>৳9,900</strong>, payable via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. It includes 3 expert sessions (60–90 min each) via Zoom or WhatsApp video, a business workflow audit, a custom AI toolstack recommendation, 3 ready-to-use prompt templates, and 30 days of follow-up WhatsApp support. Full refund if cancelled before the first session.
+              <strong>AI Ops Sprint</strong> is a one-time <strong>1:1 AI implementation service</strong> from AI Team Premium in Bangladesh, priced at <strong>৳9,900</strong>, payable via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. It includes 3 expert sessions (60–90 min each) via Zoom or WhatsApp video, a business workflow audit, a custom AI toolstack recommendation, 3 ready-to-use prompt templates, and 30 days of follow-up WhatsApp support. Full refund if cancelled before the first session.
             </p>
           </div>
         </div>

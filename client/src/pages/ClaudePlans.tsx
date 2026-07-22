@@ -1,7 +1,7 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Claude Plans Bangladesh — ৳599/mo | AI Team Premium BD",
+  seoTitle: "Claude Plans Bangladesh — ৳599/mo | AI Team Premium",
   seoDescription: "Buy Anthropic Claude Pro (Claude Sonnet 3.5) in Bangladesh via bKash/Nagad. Shared and personal seats from ৳599/month. Extended Thinking, 200K context. No international card needed.",
   path: "/claude-plans",
   toolName: "Claude Pro",
@@ -64,7 +64,7 @@ const data: ToolPageData = {
     { q: "200K context window মানে কী?", a: "200K token মানে আপনি প্রায় ১৫০,০০০ শব্দের document (একটি পুরো বই) একসাথে Claude-কে দিয়ে analyze করাতে পারবেন। Legal documents, research papers, codebase analysis-এর জন্য আদর্শ।" },
     { q: "Projects feature কী?", a: "Projects-এ আপনি related conversations এবং documents একসাথে organize করতে পারেন। একটি project-এ Claude আপনার previous context মনে রাখে।" },
     { q: "Claude কি বাংলায় ভালো?", a: "হ্যাঁ, Claude বাংলায় ভালো response দেয়। Academic ও professional Bangla writing-এ Claude অত্যন্ত helpful।" },
-    { q: "AI Team Premium BD থেকে কেন Claude কিনব?", a: "কারণ আমরা বাংলাদেশ থেকে bKash/Nagad-এ payment গ্রহণ করি — international card লাগে না। 30 দিনের warranty এবং WhatsApp-এ বাংলায় support পাবেন।" },
+    { q: "AI Team Premium থেকে কেন Claude কিনব?", a: "কারণ আমরা বাংলাদেশ থেকে bKash/Nagad-এ payment গ্রহণ করি — international card লাগে না। 30 দিনের warranty এবং WhatsApp-এ বাংলায় support পাবেন।" },
   ],
 };
 

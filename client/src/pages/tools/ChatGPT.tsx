@@ -14,7 +14,7 @@ export const TOOL_META = {
   "slug": "chatgpt",
   "category": "chat",
   "priceBdt": 399,
-  "priceLabel": "৳399/mo",
+  "priceLabel": "৳499/mo",
   "model": "GPT-4.5 + o3-mini reasoning",
   "contextWindow": "128K tokens",
   "multimodal": "Text, image, voice, files",
@@ -44,7 +44,7 @@ export const TOOL_META = {
 export default function ChatGPT() {
   usePageMeta({
     title: "ChatGPT Plus & Business Subscriptions",
-    description: "Genuine ChatGPT Plus, Team and Pro subscriptions in Bangladesh. ৳399 to ৳4,500/mo. bKash & Nagad accepted. Fast delivery."
+    description: "Genuine ChatGPT Plus, Team and Pro subscriptions in Bangladesh. ৳499 to ৳4,500/mo. bKash & Nagad accepted. Fast delivery."
   });
 
   return (

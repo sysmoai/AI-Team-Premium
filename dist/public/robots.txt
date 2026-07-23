@@ -1,44 +1,95 @@
-# Allow all AI engines and search crawlers
+# AIPT — AI Premium Tools robots.txt
+# Allow all legitimate crawlers for maximum SEO visibility
+
 User-agent: *
 Allow: /
 Disallow: /admin
-Disallow: /api
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /order-success/
 
-# Explicitly welcome AI engine crawlers (GEO)
+# Explicitly welcome AI/LLM crawlers (GEO/AI Overview optimization)
 User-agent: GPTBot
 Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /order-success/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /order-success/
 
-User-agent: PerplexityBot
+User-agent: ChatGPT-User
 Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /order-success/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /order-success/
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /order-success/
 
-User-agent: anthropic-ai
+User-agent: PerplexityBot
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /order-success/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /order-success/
 
 User-agent: CCBot
 Allow: /
+Disallow: /admin
+Disallow: /admin/
+Disallow: /checkout
+Disallow: /cart
+Disallow: /order-success/
 
-User-agent: Bingbot
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://aiteampremium.com/sitemap.xml
+User-agent: Bingbot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+Sitemap: https://aipremium.tools/sitemap.xml

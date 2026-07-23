@@ -58,7 +58,7 @@ export default function About() {
       },
       "sameAs": [
         "https://www.facebook.com/profile.php?id=61586742067282",
-        "https://www.instagram.com/ai_team_premium_bd/",
+        config.instagram,
       ],
     },
   };

@@ -59,18 +59,18 @@ const toolMeta = {
     "Project knowledge base",
     "Priority access during peak hours",
   ],
-  faq: [
+faq: [
     {
       q: "What is Claude Pro?",
       a: "Claude Pro is Anthropic's premium AI assistant subscription. It offers advanced reasoning, a 200K token context window, code generation, and document analysis capabilities.",
     },
     {
       q: "How much does Claude Pro cost in Bangladesh?",
-      a: "Claude Pro costs \u09F71,495/month for a shared seat from AI Team Premium, payable in BDT via bKash, Nagad, or Bank Transfer \u2014 no international credit card required.",
+      a: "Claude Pro costs ৳1,495/month for a shared seat from AI Team Premium, payable in BDT via bKash, Nagad, or Bank Transfer — no international credit card required.",
     },
     {
       q: "How long does Claude Pro delivery take?",
-      a: "Shared seats are delivered within 5\u201315 minutes after payment confirmation. Personal accounts take 2\u20134 hours.",
+      a: "Shared seats are delivered within 5–15 minutes after payment confirmation. Personal accounts take 2–4 hours.",
     },
     {
       q: "Is there a warranty?",
@@ -78,6 +78,38 @@ const toolMeta = {
     },
   ],
 };
+
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "claude",
+  "category": "chat",
+  "priceBdt": 1495,
+  "priceLabel": "৳1,495/mo",
+  "model": "Opus 4.6, Sonnet 4.6, Haiku 4.5, Fable 5",
+  "contextWindow": "200K tokens",
+  "multimodal": "Text, image, code, files",
+  "banglaQuality": "⭐⭐⭐⭐ (very good)",
+  "speed": "Fast (sub-second first token)",
+  "accuracy": "⭐⭐⭐⭐⭐",
+  "pricingTier": "Premium",
+  "brand": "Anthropic",
+  "tagline": "The AI assistant for professionals",
+  "toolPath": "/tools/claude",
+  "iconName": "Brain",
+  "accent": "#D97706",
+  "bestUseCase": "Advanced reasoning, coding, research, document analysis",
+  "bestFor": [
+    "Code generation & debugging",
+    "Document analysis (PDF, images)",
+    "200K token context window",
+    "Project knowledge base",
+    "Priority access during peak hours"
+  ],
+  "weaknesses": [
+    "No image generation",
+    "Stricter content filters than Grok"
+  ]
+} as const;
 
 export default function ClaudePage() {
   usePageMeta({

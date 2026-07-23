@@ -1,7 +1,4 @@
-import { Helmet } from "react-helmet";
-import { BRAND } from "../../lib/brand";
 import { usePageMeta } from "../../hooks/use-page-meta";
-import { useTranslation } from "react-i18next";
 import { trackWhatsAppClick } from "../../lib/analytics";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
@@ -9,18 +6,47 @@ import { Badge } from "../../components/ui/badge";
 import { Check, Shield, Clock, Users, HeadphonesIcon, RefreshCw, Zap, ArrowRight, Star, ChevronRight, Layers, MessageCircle, Bot, Sparkles, MessageSquare } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { plans } from "../../lib/plans";
-import { features } from "process";
+
+export const TOOL_META = {
+  "slug": "claude",
+  "category": "chat",
+  "priceBdt": 1495,
+  "priceLabel": "\u09F71,495/mo",
+  "model": "Claude 4 Sonnet + Opus",
+  "contextWindow": "200K tokens",
+  "multimodal": "Text, image, document analysis",
+  "banglaQuality": "\u2B50\u2B50\u2B50\u2B50\u2B50 (excellent)",
+  "speed": "Fast",
+  "accuracy": "\u2B50\u2B50\u2B50\u2B50\u2B50",
+  "pricingTier": "Premium",
+  "brand": "Anthropic",
+  "tagline": "The professional-grade AI assistant",
+  "toolPath": "/tools/claude",
+  "iconName": "Bot",
+  "accent": "#D97706",
+  "bestUseCase": "Professional research, coding, and document analysis",
+  "bestFor": [
+    "Advanced reasoning & analysis",
+    "200K token context window",
+    "Code generation & debugging",
+    "Document analysis (PDF, images)",
+    "Project knowledge base"
+  ],
+  "weaknesses": [
+    "No image generation",
+    "Limited availability during peak hours for shared plans"
+  ]
+} as const;
 
 const toolMeta = {
   brand: "Anthropic",
   slug: "claude",
   name: "Claude Pro",
   tagline: "Claude Pro — AI Assistant for Professionals",
-  description: "Buy Claude Pro in Bangladesh from AI Team Premium. ৳1,495/month, 5–15 min delivery via bKash/Nagad. 30-day replacement warranty.",
-  "priceLabel": "৳1,495/mo",
+  description: "Buy Claude Pro in Bangladesh from AI Team Premium. \u09F71,495/month, 5\u201315 min delivery via bKash/Nagad. 30-day replacement warranty.",
+  "priceLabel": "\u09F71,495/mo",
   category: "ai-assistant",
-  icon: "🧠",
+  icon: "\uD83E\uDDD9",
   color: "#D97706",
   gradient: "from-amber-500 to-orange-600",
   bgLight: "bg-amber-50",
@@ -40,11 +66,11 @@ const toolMeta = {
     },
     {
       q: "How much does Claude Pro cost in Bangladesh?",
-      a: "Claude Pro costs ৳1,495/month for a shared seat from AI Team Premium, payable in BDT via bKash, Nagad, or Bank Transfer — no international credit card required.",
+      a: "Claude Pro costs \u09F71,495/month for a shared seat from AI Team Premium, payable in BDT via bKash, Nagad, or Bank Transfer \u2014 no international credit card required.",
     },
     {
       q: "How long does Claude Pro delivery take?",
-      a: "Shared seats are delivered within 5–15 minutes after payment confirmation. Personal accounts take 2–4 hours.",
+      a: "Shared seats are delivered within 5\u201315 minutes after payment confirmation. Personal accounts take 2\u20134 hours.",
     },
     {
       q: "Is there a warranty?",
@@ -54,29 +80,13 @@ const toolMeta = {
 };
 
 export default function ClaudePage() {
-  const { t } = useTranslation();
   usePageMeta({
-    title: "Claude Pro in Bangladesh — ৳1,495/mo | AI Team Premium",
-    description: "Buy Claude Pro subscription in Bangladesh. ৳1,495/month, 5–15 min delivery via bKash/Nagad. 30-day replacement warranty. WhatsApp support in Bangla & English.",
+    title: "Claude Pro in Bangladesh \u2014 \u09F71,495/mo | AI Team Premium",
+    description: "Buy Claude Pro subscription in Bangladesh. \u09F71,495/month, 5\u201315 min delivery via bKash/Nagad. 30-day replacement warranty. WhatsApp support in Bangla & English.",
   });
 
   return (
     <div className="min-h-screen bg-white">
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Product",
-          name: "Claude Pro — Bangladesh",
-          description: "Claude Pro premium AI subscription in Bangladesh",
-          offers: {
-            "@type": "Offer",
-            price: "1495",
-            priceCurrency: "BDT",
-            availability: "https://schema.org/InStock",
-          },
-        })}</script>
-      </Helmet>
-
       {/* Hero Section */}
       <section className={`relative bg-gradient-to-br ${toolMeta.gradient} text-white overflow-hidden`}>
         <div className="absolute inset-0 bg-black/20" />
@@ -93,7 +103,7 @@ export default function ClaudePage() {
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
                   <Clock className="w-4 h-4" />
-                  <span className="text-sm">5–15 min delivery</span>
+                  <span className="text-sm">5\u201315 min delivery</span>
                 </div>
                 <div className="flex items-center gap-2 bg-white/10 rounded-full px-4 py-2">
                   <Shield className="w-4 h-4" />
@@ -158,7 +168,7 @@ export default function ClaudePage() {
                 <Card className="h-full border-0 shadow-sm hover:shadow-md transition-shadow">
                   <CardContent className="p-6">
                     <div className={`w-12 h-12 rounded-lg ${toolMeta.bgLight} flex items-center justify-center mb-4`}>
-                      <Sparkles className={`w-6 h-6 text-${toolMeta.color.replace('#', '')}`} />
+                      <Sparkles className="w-6 h-6" style={{color: toolMeta.color}} />
                     </div>
                     <h3 className="font-semibold mb-2">{feature}</h3>
                   </CardContent>
@@ -174,7 +184,7 @@ export default function ClaudePage() {
         <div className="max-w-4xl mx-auto px-4 text-center sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Claude Pro?</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Start at {toolMeta.priceLabel} — delivery in 5–15 minutes
+            Start at {toolMeta.priceLabel} — delivery in 5\u201315 minutes
           </p>
           <Button
             size="lg"

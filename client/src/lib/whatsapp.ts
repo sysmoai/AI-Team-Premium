@@ -26,7 +26,7 @@ const PAGE_MESSAGES: Record<string, string> = {
   "/ai-tools-vault":    "Hi! I'm interested in the AI Tools Vault bundle from AI Team Premium. What's included and how do I pay? (৳1,990/mo)",
 
   // ── AI tool detail pages ───────────────────────────────────────────────────
-  "/tools/chatgpt":      "Hi! I want ChatGPT Plus/Pro from AI Team Premium. Which plan fits my needs? (Starts at ৳399/mo)",
+  "/tools/chatgpt":      "Hi! I want ChatGPT Plus/Pro from AI Team Premium. Which plan fits my needs? (Starts at ৳499/mo)",
   "/tools/claude":       "Hi! I want Claude Pro from AI Team Premium. Please guide me on how to subscribe. (Starts at ৳599/mo)",
   "/tools/gemini":       "Hi! I want Gemini Advanced from AI Team Premium. How do I get access? (Starts at ৳499/mo)",
   "/tools/supergrok":    "Hi! I want SuperGrok (xAI) from AI Team Premium. Is it available? How do I order? (Starts at ৳499/mo)",

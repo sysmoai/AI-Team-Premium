@@ -99,7 +99,7 @@ const COPILOT_EXTENDED_FAQS = [
 export const TOOL_META = {
   "slug": "copilot",
   "category": "code",
-"priceBdt": 999,
+  "priceBdt": 999,
   "priceLabel": "৳999/mo",
   "model": "GPT-4.5 + Claude Sonnet 3.5 + Gemini 2.5 Pro",
   "contextWindow": "Full-file + workspace context",

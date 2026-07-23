@@ -70,7 +70,7 @@ export default function RefundPolicy() {
                   <h2 className="text-2xl font-bold" style={{ color: BRAND.navy }}>2. Personal Seat Subscriptions</h2>
                 </div>
                 <div className="space-y-3 text-muted-foreground leading-relaxed text-sm">
-                  <p>Personal seat subscriptions (e.g., ChatGPT Plus Personal ৳2,950/mo, Claude Personal ৳2,500/mo, Gemini Personal ৳1,800/mo) provide <strong>dedicated account access</strong>. Fees are non-refundable once the seat has been provisioned.</p>
+                  <p>Personal seat subscriptions (e.g., ChatGPT Plus Personal ৳2,990/mo, Claude Personal ৳2,500/mo, Gemini Personal ৳1,800/mo) provide <strong>dedicated account access</strong>. Fees are non-refundable once the seat has been provisioned.</p>
                   <p><strong>30-Day Warranty applies equally</strong> — if the personal seat stops working due to our fault, we will provide a replacement account or restore access within 24 hours.</p>
                   <p>For personal seats, users may change their own password after provisioning. However, <strong>changing the primary email</strong> associated with the account may void the warranty if it prevents us from managing the account during a replacement event.</p>
                 </div>

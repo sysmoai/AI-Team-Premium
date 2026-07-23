@@ -19,22 +19,22 @@ const AI_SUB_FAQS = [
 const SUBS = [
   { name: "ChatGPT Plus", type: "Shared", price: "৳499", period: "/mo", delivery: "5-15 min", link: "/tools/chatgpt", category: "AI Chat" },
   { name: "Claude Pro", type: "Shared", price: "৳1,495", period: "/mo", delivery: "5-15 min", link: "/tools/claude", category: "AI Chat" },
-  { name: "Gemini Advanced", type: "Shared", price: "৳499", period: "/mo", delivery: "5-15 min", link: "/tools/gemini", category: "AI Chat" },
+  { name: "Gemini Advanced", type: "Shared", price: "৳899", period: "/mo", delivery: "5-15 min", link: "/tools/gemini", category: "AI Chat" },
   { name: "Google AI Pro", type: "Shared", price: "৳449", period: "/mo", delivery: "5-15 min", link: "/tools/google-ai-pro", category: "AI Chat" },
   { name: "SuperGrok (xAI)", type: "Shared", price: "৳499", period: "/mo", delivery: "5-15 min", link: "/tools/supergrok", category: "AI Chat" },
-  { name: "Perplexity Pro", type: "Shared", price: "৳499", period: "/mo", delivery: "2-4 hr", link: "/tools/perplexity", category: "AI Chat" },
+  { name: "Perplexity Pro", type: "Shared", price: "৳799", period: "/mo", delivery: "2-4 hr", link: "/tools/perplexity", category: "AI Chat" },
   { name: "Midjourney", type: "Shared", price: "৳1,299", period: "/mo", delivery: "5-15 min", link: "/tools/midjourney", category: "AI Image" },
   { name: "Leonardo AI", type: "Shared", price: "৳349", period: "/mo", delivery: "5-15 min", link: "/tools/leonardo", category: "AI Image" },
   { name: "Runway ML", type: "Shared", price: "৳899", period: "/mo", delivery: "5-15 min", link: "/tools/runway", category: "AI Video" },
-  { name: "Kling AI", type: "Shared", price: "৳1,495", period: "/mo", delivery: "5-15 min", link: "/tools/kling", category: "AI Video" },
-  { name: "Canva Pro", type: "Private", price: "৳1,495", period: "/mo", delivery: "2-4 hr", link: "/tools/canva", category: "Creative" },
+  { name: "Kling AI", type: "Shared", price: "৳599", period: "/mo", delivery: "5-15 min", link: "/tools/kling", category: "AI Video" },
+  { name: "Canva Pro", type: "Private", price: "৳599", period: "/mo", delivery: "2-4 hr", link: "/tools/canva", category: "Creative" },
   { name: "Grammarly Premium", type: "Private", price: "৳499", period: "/mo", delivery: "2-4 hr", link: "/tools/grammarly", category: "Writing" },
   { name: "ElevenLabs Voice AI", type: "Shared", price: "৳699", period: "/mo", delivery: "5-15 min", link: "/tools/elevenlabs", category: "Voice AI" },
   { name: "Notion AI", type: "Team", price: "৳450", period: "/mo", delivery: "5-15 min", link: "/tools/notion", category: "Productivity" },
-  { name: "GitHub Copilot", type: "Private", price: "৳1,299", period: "/mo", delivery: "2-4 hr", link: "/tools/copilot", category: "Coding" },
+  { name: "GitHub Copilot", type: "Private", price: "৳999", period: "/mo", delivery: "2-4 hr", link: "/tools/copilot", category: "Coding" },
   { name: "Microsoft 365 Copilot", type: "Shared", price: "৳899", period: "/mo", delivery: "2-4 hr", link: "/tools/microsoft365", category: "Productivity" },
   { name: "LinkedIn Premium Career", type: "Private", price: "৳999", period: "/mo", delivery: "2-4 hr", link: "/tools/linkedin", category: "Career" },
-  { name: "Grok", type: "Shared", price: "৳499", period: "/mo", delivery: "2-4 hr", link: "/tools/grok", category: "AI Chat" },
+  { name: "Grok", type: "Shared", price: "৳699", period: "/mo", delivery: "2-4 hr", link: "/tools/grok", category: "AI Chat" },
   { name: "AI Tools Vault", type: "Bundle", price: "৳1,990", period: "/mo", delivery: "6 hr", link: "/tools/vault", category: "Bundle" },
 ];
 
@@ -284,4 +284,5 @@ export default function AISubscriptions() {
       </section>
     </Layout>
   );
+}
 }

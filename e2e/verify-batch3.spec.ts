@@ -8,6 +8,8 @@ const TOOLS = [
   {
     slug: "ideogram",
     name: "Ideogram AI",
+    pricingName: "Ideogram AI",
+    compareName: "Ideogram AI",
     expectedTitle: /Ideogram/,
     expectedFeatures: [
       "text rendering",
@@ -21,6 +23,8 @@ const TOOLS = [
   {
     slug: "freepik",
     name: "Freepik",
+    pricingName: "Freepik",
+    compareName: "Freepik", // displays as "Freepik (Magnific)" in NAMES
     expectedTitle: /Freepik|Magnific/,
     expectedFeatures: [
       "200M",
@@ -34,6 +38,8 @@ const TOOLS = [
   {
     slug: "adobe-cc",
     name: "Adobe Creative Cloud",
+    pricingName: "Adobe CC",
+    compareName: "Adobe Creative Cloud",
     expectedTitle: /Adobe Creative Cloud|Photoshop/,
     expectedFeatures: [
       "Photoshop",
@@ -47,6 +53,8 @@ const TOOLS = [
   {
     slug: "leonardo",
     name: "Leonardo AI",
+    pricingName: "Leonardo AI",
+    compareName: "Leonardo AI",
     expectedTitle: /Leonardo/,
     expectedFeatures: [
       "AI image",
@@ -59,6 +67,8 @@ const TOOLS = [
   {
     slug: "canva",
     name: "Canva Pro",
+    pricingName: "Canva Pro",
+    compareName: "Canva Pro",
     expectedTitle: /Canva/,
     expectedFeatures: [
       "Canva",
@@ -97,7 +107,7 @@ test.describe("Batch 3 — Compare & Pricing pages", () => {
     await page.waitForLoadState("networkidle");
 
     for (const tool of TOOLS) {
-      await expect(page.locator("body")).toContainText(tool.name, { ignoreCase: true });
+      await expect(page.locator("body")).toContainText(tool.pricingName, { ignoreCase: true });
     }
   });
 
@@ -105,8 +115,9 @@ test.describe("Batch 3 — Compare & Pricing pages", () => {
     await page.goto(`${BASE}/compare`);
     await page.waitForLoadState("networkidle");
 
+    // Compare page lists tools as slugs in the "Available tools" section
     for (const tool of TOOLS) {
-      await expect(page.locator("body")).toContainText(tool.name, { ignoreCase: true });
+      await expect(page.locator("body")).toContainText(tool.slug, { ignoreCase: true });
     }
   });
 });

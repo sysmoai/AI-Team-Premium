@@ -225,7 +225,7 @@ export default function RunwayPage() {
         { feature: "Hollywood Use", thisProduct: "✅ Used in major films", chatgpt: "Limited Sora", claude: "❌ No", gemini: "Growing adoption" },
         { feature: "Lip Sync", thisProduct: "✅ Yes, built-in", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
         { feature: "Credits System", thisProduct: "625/mo Standard | 2,250/mo Pro", chatgpt: "Sora: separate pricing", claude: "N/A", gemini: "Veo 2: ~5/day" },
-        { feature: "AITP Shared Price", thisProduct: "৳999/mo", chatgpt: "৳399/mo (text AI)", claude: "৳599/mo (text AI)", gemini: "৳449/mo (Google AI)" },
+        { feature: "AITP Shared Price", thisProduct: "৳999/mo", chatgpt: "৳499/mo (text AI)", claude: "৳1,495/mo (text AI)", gemini: "৳899/mo (Google AI)" },
       ]}
       extendedFaqs={[
         { q: "How many videos can I generate per month with Runway Standard (৳999)?", a: "Runway Standard gives 625 credits per month. Each 5-second video clip at 720p uses about 10 credits. This means approximately 60 five-second clips per month. For 10-second clips, it's about 30 per month. The Pro plan (৳2,999/mo, 2,250 credits) generates ~225 five-second clips per month." },

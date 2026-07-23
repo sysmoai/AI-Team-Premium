@@ -62,7 +62,7 @@ const VAULT_USE_CASES = [
 
 const VAULT_COMPETITOR_ROWS = [
   { feature: "ChatGPT Plus", thisProduct: "✅ Included", chatgpt: "✅ Yes (separate ৳499/mo)", claude: "❌ No", gemini: "❌ No" },
-  { feature: "Claude Pro", thisProduct: "✅ Included", chatgpt: "❌ No", claude: "✅ Yes (separate ৳599/mo)", gemini: "❌ No" },
+  { feature: "Claude Pro", thisProduct: "✅ Included", chatgpt: "❌ No", claude: "✅ Yes (separate ৳1,495/mo)", gemini: "❌ No" },
   { feature: "Gemini Advanced", thisProduct: "✅ Included", chatgpt: "❌ No", claude: "❌ No", gemini: "✅ Yes (separate ৳449/mo)" },
   { feature: "Combined Value", thisProduct: "৳1,447/mo if separate", chatgpt: "GPT-4o only", claude: "Claude only", gemini: "Gemini only" },
   { feature: "Bundle Savings", thisProduct: "Save ৳800–1,500/mo", chatgpt: "No bundle", claude: "No bundle", gemini: "No bundle" },
@@ -73,12 +73,12 @@ const VAULT_COMPETITOR_ROWS = [
   { feature: "Context Windows", thisProduct: "128K + 200K + 1M tokens", chatgpt: "128K only", claude: "200K only", gemini: "1M only" },
   { feature: "Voice Modes", thisProduct: "ChatGPT AVM + Gemini Live", chatgpt: "Advanced Voice only", claude: "❌ No voice", gemini: "Gemini Live only" },
   { feature: "Delivery Time", thisProduct: "All 3 within 6 hours", chatgpt: "5–15 min", claude: "5–15 min", gemini: "5–15 min" },
-  { feature: "AITP Bundle Price", thisProduct: "৳1,990/mo", chatgpt: "৳399/mo only", claude: "৳599/mo only", gemini: "৳449/mo only" },
+  { feature: "AITP Bundle Price", thisProduct: "৳1,990/mo", chatgpt: "৳499/mo only", claude: "৳1,495/mo only", gemini: "৳899/mo only" },
 ];
 
 const VAULT_FAQS = [
   { q: "What exactly is included in the AI Tools Vault bundle?", a: "The Vault bundle includes: (1) ChatGPT Plus — GPT-4o, Advanced Voice Mode, image generation, Canvas, Deep Research, 5-hour video analysis; (2) Claude Pro — Claude Sonnet 3.5, Extended Thinking, 200K context, document analysis; (3) Gemini Advanced — Gemini 2.5 Pro, 1M context, Deep Research, Gemini Live voice, Imagen 4 image generation. All three in a single WhatsApp order." },
-  { q: "How much do I save with the Vault bundle vs buying separately?", a: "Separately: ChatGPT Plus (৳499) + Claude Pro (৳599) + Gemini Advanced (৳449) = ৳1,447/month. The Vault bundle is ৳1,990/month. You pay ৳543 more, but get dedicated consolidated support, priority delivery for all three, and a single WhatsApp channel for all issues. For professionals who need all three tools daily, the convenience alone justifies the difference." },
+  { q: "How much do I save with the Vault bundle vs buying separately?", a: "Separately: ChatGPT Plus (৳499) + Claude Pro (৳1,495) + Gemini Advanced (৳899) = ৳2,893/month. The Vault bundle is ৳1,990/month. You save ৳903/month and get dedicated consolidated support, priority delivery for all three, and a single WhatsApp channel for all issues. For professionals who need all three tools daily, the convenience alone justifies the difference." },
   { q: "Why would I need all three AI tools — aren't they all similar?", a: "Each model has different strengths. ChatGPT: best ecosystem, custom GPTs, plugins, and code interpreter. Claude: best long-form writing quality and 200K context for documents. Gemini: real-time Google data, Workspace integration, and Imagen 4 image generation. Power users often use all three — ChatGPT for coding, Claude for writing, Gemini for research. The Vault lets you use the best model for each task." },
   { q: "How are the three tools delivered after payment?", a: "After payment confirmation on WhatsApp, we deliver all three tools within a maximum of 6 hours total. Typically ChatGPT and Gemini shared seats are delivered within 5–15 minutes, and Claude within 30 minutes. We deliver each tool's credentials separately via WhatsApp as they're confirmed. The entire process usually completes in 1–2 hours." },
   { q: "Can I use all three AI tools on the same device?", a: "Yes. ChatGPT, Claude, and Gemini all run in the browser (chat.openai.com, claude.ai, gemini.google.com) and have mobile apps. You can have all three open in different browser tabs or switch between apps freely. Some users open all three simultaneously to compare answers to the same question." },
@@ -182,9 +182,9 @@ export default function Vault() {
           tier3Label: "Personal Bundle (৳3,999/mo)",
           rows: [
             { label: "ChatGPT Plus (separate)", free: "৳499/mo", pro: "✅ Included (shared)", premium: "✅ Included (personal)" },
-            { label: "Claude Pro (separate)", free: "৳599/mo", pro: "✅ Included (shared)", premium: "✅ Included (personal)" },
+            { label: "Claude Pro (separate)", free: "৳1,495/mo", pro: "✅ Included (shared)", premium: "✅ Included (personal)" },
             { label: "Gemini Advanced (separate)", free: "৳449/mo", pro: "✅ Included (shared)", premium: "✅ Included (personal)" },
-            { label: "Total if Separate", free: "৳1,447/mo (shared)", pro: "✅ All for ৳1,990", premium: "✅ All for ৳3,999 (personal)" },
+            { label: "Total if Separate", free: "৳2,893/mo (shared)", pro: "✅ All for ৳1,990", premium: "✅ All for ৳3,999 (personal)" },
             { label: "Support Channels", free: "3 separate tickets", pro: "1 unified WhatsApp", premium: "1 unified WhatsApp (priority)" },
             { label: "Delivery Speed", free: "3 separate orders", pro: "One order, max 6 hrs", premium: "One order, max 2 hrs" },
             { label: "Warranty", free: "Per tool", pro: "30-day per tool", premium: "30-day per tool" },

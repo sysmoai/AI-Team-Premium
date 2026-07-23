@@ -73,7 +73,7 @@ const GRAMMARLY_COMPETITOR_ROWS = [
   { feature: "Writing Goals Setting", thisProduct: "✅ Audience, intent, style", chatgpt: "❌ No goal system", claude: "❌ No goal system", gemini: "❌ No goal system" },
   { feature: "Vocabulary Enhancement", thisProduct: "✅ Word-level suggestions", chatgpt: "On request", claude: "On request", gemini: "On request" },
   { feature: "Bangla Writing Help", thisProduct: "❌ English only", chatgpt: "✅ Excellent Bangla", claude: "✅ Excellent Bangla", gemini: "✅ Excellent Bangla" },
-  { feature: "AITP Price", thisProduct: "৳499/mo (private)", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
+  { feature: "AITP Price", thisProduct: "৳499/mo (private)", chatgpt: "৳499/mo", claude: "৳1,495/mo", gemini: "৳899/mo" },
 ];
 
 const GRAMMARLY_BASE_FAQS = [

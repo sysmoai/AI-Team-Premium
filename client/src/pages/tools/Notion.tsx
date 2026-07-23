@@ -73,7 +73,7 @@ const NOTION_COMPETITOR_ROWS = [
   { feature: "Bangla Language AI", thisProduct: "✅ AI writes in Bangla in workspace", chatgpt: "✅ Excellent", claude: "✅ Excellent", gemini: "✅ Excellent" },
   { feature: "Calendar Integration", thisProduct: "✅ Native calendar view", chatgpt: "❌ No", claude: "❌ No", gemini: "✅ Google Calendar" },
   { feature: "AI Translate (in-doc)", thisProduct: "✅ Translate any page", chatgpt: "✅ Paste-and-translate", claude: "✅ Paste-and-translate", gemini: "✅ In Google Docs" },
-  { feature: "AITP Shared Price", thisProduct: "৳450/mo (Team Seat)", chatgpt: "৳399/mo (AI only)", claude: "৳599/mo (AI only)", gemini: "৳449/mo (AI only)" },
+  { feature: "AITP Shared Price", thisProduct: "৳450/mo (Team Seat)", chatgpt: "৳499/mo (AI only)", claude: "৳1,495/mo (AI only)", gemini: "৳899/mo (AI only)" },
 ];
 
 const NOTION_FAQS = [
@@ -174,7 +174,7 @@ export default function NotionPage() {
         {
           title: "Notion AI Features",
           emoji: "🤖",
-          tier2Label: "Shared (৳399/mo)",
+          tier2Label: "Shared (৳499/mo)",
           tier3Label: "Personal (৳999/mo)",
           rows: [
             { label: "AI Writing Assistant", free: "No (free plan)", pro: "Yes, unlimited", premium: "Yes, unlimited (dedicated)" },
@@ -190,7 +190,7 @@ export default function NotionPage() {
         {
           title: "Workspace & Collaboration",
           emoji: "🏢",
-          tier2Label: "Shared (৳399/mo)",
+          tier2Label: "Shared (৳499/mo)",
           tier3Label: "Personal (৳999/mo)",
           rows: [
             { label: "Total Blocks", free: "1,000 (then locked)", pro: "Unlimited", premium: "Unlimited (own workspace)" },

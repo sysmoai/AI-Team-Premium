@@ -73,7 +73,7 @@ const CANVA_COMPETITOR_ROWS = [
   { feature: "Team Collaboration", thisProduct: "✅ Real-time co-editing", chatgpt: "❌ None", claude: "❌ None", gemini: "Google Slides only" },
   { feature: "Magic Write (AI Copy)", thisProduct: "✅ Built-in AI copywriting", chatgpt: "✅ Excellent", claude: "✅ Excellent", gemini: "✅ Good" },
   { feature: "Presentation Mode", thisProduct: "✅ Built-in presenter view", chatgpt: "❌ None", claude: "❌ None", gemini: "Google Slides" },
-  { feature: "AITP Shared Price", thisProduct: "৳599/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
+  { feature: "AITP Shared Price", thisProduct: "৳599/mo", chatgpt: "৳499/mo", claude: "৳1,495/mo", gemini: "৳899/mo" },
 ];
 
 const CANVA_FAQS = [

@@ -225,7 +225,7 @@ export default function KlingPage() {
         { feature: "Frame Rate", thisProduct: "30fps smooth motion", chatgpt: "24fps (Sora)", claude: "❌ N/A", gemini: "24fps (Veo 2)" },
         { feature: "API Access", thisProduct: "✅ Yes (Pro plan)", chatgpt: "✅ Via OpenAI API", claude: "❌ No video API", gemini: "✅ Via Google API" },
         { feature: "Best Use Case", thisProduct: "Social video, ads, long clips", chatgpt: "General AI + video", claude: "Writing & code", gemini: "Google ecosystem" },
-        { feature: "AITP Shared Price", thisProduct: "৳599/mo", chatgpt: "৳399/mo (text AI)", claude: "৳599/mo (text AI)", gemini: "৳449/mo (Google AI)" },
+        { feature: "AITP Shared Price", thisProduct: "৳599/mo", chatgpt: "৳499/mo (text AI)", claude: "৳1,495/mo (text AI)", gemini: "৳899/mo (Google AI)" },
       ]}
       extendedFaqs={[
         { q: "How many videos can I generate per month with Kling Standard (৳599)?", a: "Kling Standard includes 660 credits per month. Each 5-second HD video uses about 10 credits, so you can generate approximately 60 five-second clips per month. Longer clips use proportionally more credits — a 30-second video uses ~60 credits. The Pro plan (৳1,799/mo, 3,000 credits) generates ~300 five-second clips per month." },

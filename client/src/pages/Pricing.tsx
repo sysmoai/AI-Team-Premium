@@ -23,17 +23,17 @@ const SECTIONS = [
     subtitle: "Genuine access · bKash/Nagad · 5–15 min delivery",
     items: [
       { name: "ChatGPT Plus — Shared", price: "৳499/mo", delivery: "5–15 min", href: "/chatgpt/plus-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Shared ৳499/mo") },
-      { name: "ChatGPT Plus — Premium Shared", price: "৳999/mo", delivery: "5–15 min", href: "/chatgpt/plus-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Premium Shared ৳950/mo") },
-      { name: "ChatGPT Plus — Personal Seat", price: "৳2,990/mo", delivery: "2–4 hr", href: "/chatgpt/plus-personal-seat", wa: waBase + enc("Hi, I want ChatGPT Plus Personal Seat ৳2,950/mo") },
+      { name: "ChatGPT Plus — Premium Shared", price: "৳950/mo", delivery: "5–15 min", href: "/chatgpt/plus-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Premium Shared ৳950/mo") },
+      { name: "ChatGPT Plus — Personal Seat", price: "৳2,990/mo", delivery: "2–4 hr", href: "/chatgpt/plus-personal-seat", wa: waBase + enc("Hi, I want ChatGPT Plus Personal Seat ৳2,990/mo") },
       { name: "ChatGPT Team — Shared", price: "৳1,799/mo", delivery: "5–15 min", href: "/chatgpt/business-shared", wa: waBase + enc("Hi, I want ChatGPT Team Shared ৳699/mo") },
       { name: "ChatGPT Team — Premium Shared", price: "৳2,299/mo", delivery: "5–15 min", href: "/chatgpt/business-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Team Premium Shared ৳1,299/mo") },
       { name: "ChatGPT Team — Personal-like", price: "৳3,990/mo", delivery: "2–4 hr", href: "/chatgpt/business-personal-like", wa: waBase + enc("Hi, I want ChatGPT Team Personal-like ৳3,899/mo") },
-      { name: "ChatGPT Pro — Premium Shared", price: "৳4,990/mo", delivery: "5–15 min", href: "/chatgpt/pro-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Pro Premium Shared ৳4,500/mo") },
-      { name: "Claude Pro — Shared", price: "৳599/mo", delivery: "5–15 min", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Shared ৳599/mo") },
+      { name: "ChatGPT Pro — Premium Shared", price: "৳4,500/mo", delivery: "5–15 min", href: "/chatgpt/pro-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Pro Premium Shared ৳4,500/mo") },
+      { name: "Claude Pro — Premium Shared", price: "৳1,495/mo", delivery: "5–15 min", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Premium Shared ৳1,495/mo") },
       { name: "Claude Pro — Personal", price: "৳2,990/mo", delivery: "2–4 hr", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Personal ৳2,500/mo") },
-      { name: "Gemini Advanced — Shared", price: "৳599/mo", delivery: "5–15 min", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Shared ৳499/mo") },
+      { name: "Gemini Advanced — Shared", price: "৳899/mo", delivery: "5–15 min", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Shared ৳899/mo") },
       { name: "Gemini Advanced — Personal", price: "৳2,990/mo", delivery: "2–4 hr", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Personal ৳1,800/mo") },
-      { name: "Perplexity Pro — Shared", price: "৳599/mo", delivery: "5–15 min", href: "/perplexity-plans", wa: waBase + enc("Hi, I want Perplexity Pro Shared ৳499/mo") },
+      { name: "Perplexity Pro — Shared", price: "৳799/mo", delivery: "5–15 min", href: "/perplexity-plans", wa: waBase + enc("Hi, I want Perplexity Pro Shared ৳799/mo") },
       { name: "SuperGrok — Shared (Unlimited Aurora images)", price: "৳699/mo", delivery: "5–15 min", href: "/tools/supergrok", wa: waBase + enc("Hi, I want SuperGrok Shared ৳499/mo") },
       { name: "SuperGrok — Personal Seat", price: "৳4,990/mo", delivery: "2–4 hr", href: "/tools/supergrok", wa: waBase + enc("Hi, I want SuperGrok Personal ৳3,990/mo") },
       { name: "Google AI Pro — Shared (Gemini 2.5 + NotebookLM)", price: "৳599/mo", delivery: "5–15 min", href: "/tools/google-ai-pro", wa: waBase + enc("Hi, I want Google AI Pro Shared ৳449/mo") },
@@ -44,7 +44,7 @@ const SECTIONS = [
     title: "🖼️ AI Image Generation",
     subtitle: "Create stunning visuals with AI — bKash/Nagad accepted",
     items: [
-      { name: "Midjourney — Shared", price: "৳1,199/mo", delivery: "5–15 min", href: "/tools/midjourney", wa: waBase + enc("Hi, I want Midjourney Shared ৳1,200/mo") },
+      { name: "Midjourney — Shared", price: "৳1,299/mo", delivery: "5–15 min", href: "/tools/midjourney", wa: waBase + enc("Hi, I want Midjourney Shared ৳1,299/mo") },
       { name: "Leonardo AI — Shared (8,500 tokens)", price: "৳499/mo", delivery: "5–15 min", href: "/tools/leonardo", wa: waBase + enc("Hi, I want Leonardo AI Shared ৳349/mo") },
       { name: "Leonardo AI — Personal (25,000 tokens)", price: "৳1,990/mo", delivery: "2–4 hr", href: "/tools/leonardo", wa: waBase + enc("Hi, I want Leonardo AI Personal ৳1,299/mo") },
     ],
@@ -67,7 +67,7 @@ const SECTIONS = [
       { name: "Canva Pro — Monthly", price: "৳599/mo", delivery: "2–4 hr", href: "/canva-plans", wa: waBase + enc("Hi, I want Canva Pro ৳599/mo") },
       { name: "ElevenLabs Voice AI", price: "৳699/mo", delivery: "5–15 min", href: "/tools/elevenlabs", wa: waBase + enc("Hi, I want ElevenLabs Voice AI ৳699/mo") },
       { name: "Notion AI — Team Seat", price: "৳450/mo", delivery: "5–15 min", href: "/tools/notion", wa: waBase + enc("Hi, I want Notion AI ৳450/mo") },
-      { name: "GitHub Copilot — Private", price: "৳1,200/mo", delivery: "2–4 hr", href: "/tools/copilot", wa: waBase + enc("Hi, I want GitHub Copilot ৳1,200/mo") },
+      { name: "GitHub Copilot — Private", price: "৳999/mo", delivery: "2–4 hr", href: "/tools/copilot", wa: waBase + enc("Hi, I want GitHub Copilot ৳999/mo") },
       { name: "Microsoft 365 + Copilot — Shared", price: "৳899/mo", delivery: "2–4 hr", href: "/tools/microsoft365", wa: waBase + enc("Hi, I want Microsoft 365 Copilot Shared ৳899/mo") },
       { name: "LinkedIn Premium Career", price: "৳999/mo", delivery: "2–4 hr", href: "/tools/linkedin", wa: waBase + enc("Hi, I want LinkedIn Premium Career ৳999/mo") },
       { name: "LinkedIn Premium Business", price: "৳1,800/mo", delivery: "2–4 hr", href: "/tools/linkedin", wa: waBase + enc("Hi, I want LinkedIn Premium Business ৳1,800/mo") },
@@ -111,9 +111,8 @@ export default function Pricing() {
         name="AI Tools Pricing Bangladesh — All Plans from ৳499/mo"
         description="Complete BDT pricing for AI subscriptions and services from AI Team Premium. ChatGPT Plus ৳499/mo, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, AI Ops Sprint. Pay via bKash/Nagad."
         path="/pricing"
-        priceBDT={399}
+        priceBDT={499}
         category="AI Subscription"
-
       />
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
@@ -199,26 +198,14 @@ export default function Pricing() {
                         <WhatsAppIcon size={12} color="#fff" /> Order on WhatsApp
                       </a>
                       <a
-                        href={config.messenger}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => trackMessengerClick(item.name, "pricing-card")}
-                        data-testid={`button-msg-${item.name.toLowerCase().replace(/\s+/g, '-').slice(0, 30)}`}
-                        className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 font-semibold text-white text-xs"
-                        style={{ background: "#0084FF" }}
+                        href={item.href}
+                        data-testid={`button-details-${item.name.toLowerCase().replace(/\s+/g, '-').slice(0, 30)}`}
+                        className="inline-flex items-center justify-center gap-1 rounded-full px-3 py-2.5 text-xs font-semibold border transition-all"
+                        style={{ borderColor: "rgba(37,99,235,0.15)", color: BRAND.blue }}
                       >
-                        <MessageCircle size={12} color="#fff" /> Messenger
+                        Details <ArrowUpRight size={11} />
                       </a>
                     </div>
-                    {item.href && (
-                      <Link
-                        href={item.href}
-                        className="inline-flex items-center justify-center gap-1 rounded-full py-2 font-medium text-xs"
-                        style={{ color: BRAND.blue, border: `1px solid rgba(37,99,235,0.2)` }}
-                      >
-                        Details <ArrowUpRight size={12} />
-                      </Link>
-                    )}
                   </div>
                 </div>
               ))}
@@ -227,32 +214,36 @@ export default function Pricing() {
         </section>
       ))}
 
-      <section className="py-20" style={{ background: BRAND.navy }}>
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-3xl font-extrabold text-white mb-4">কোন product নিবেন বুঝতে পারছেন না?</h2>
-          <p className="text-white/50 mb-8">WhatsApp বা Messenger-এ জিজ্ঞেস করুন — আমরা সঠিক plan বেছে দেব।</p>
+      <section className="py-24" style={{ background: BRAND.sky }}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
+          <h2 style={{ color: BRAND.navy, fontSize: "1.6rem", fontWeight: 700, lineHeight: 1.2 }} className="mb-2">
+            কোন product নিবেন বুঝতে পারছেন না?
+          </h2>
+          <p className="mb-8" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.95rem" }}>
+            WhatsApp বা Messenger-এ জিজ্ঞেস করুন — আমরা সঠিক plan বেছে দেব।
+          </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
               href={config.whatsappGeneral}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "pricing-bottom-cta")}
-              data-testid="button-pricing-cta"
-              className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "pricing-cta")}
+              data-testid="button-pricing-cta-whatsapp"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white text-sm"
               style={{ background: "#25D366" }}
             >
-              <WhatsAppIcon size={20} color="#fff" /> Chat on WhatsApp
+              <WhatsAppIcon size={16} color="#fff" /> Chat on WhatsApp
             </a>
             <a
               href={config.messenger}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackMessengerClick(undefined, "pricing-bottom-cta")}
+              onClick={() => trackMessengerClick(undefined, "pricing-cta")}
               data-testid="button-pricing-cta-messenger"
-              className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-semibold text-white text-sm"
               style={{ background: "#0084FF" }}
             >
-              <MessageCircle size={20} color="#fff" /> Messenger
+              <MessageCircle size={16} color="#fff" /> Messenger
             </a>
           </div>
         </div>

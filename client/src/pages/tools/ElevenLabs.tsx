@@ -73,7 +73,7 @@ const ELEVENLABS_COMPETITOR_ROWS = [
   { feature: "Audio Download Format", thisProduct: "MP3, WAV, PCM", chatgpt: "N/A", claude: "N/A", gemini: "Limited" },
   { feature: "Real-time Streaming TTS", thisProduct: "✅ Yes, low latency", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
   { feature: "Voice Design (custom)", thisProduct: "✅ Design new voice from text", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
-  { feature: "AITP Shared Price", thisProduct: "৳699/mo (100K chars)", chatgpt: "৳399/mo (text AI only)", claude: "৳599/mo (text AI only)", gemini: "৳449/mo (text AI + basic TTS)" },
+  { feature: "AITP Shared Price", thisProduct: "৳699/mo (100K chars)", chatgpt: "৳499/mo (text AI only)", claude: "৳1,495/mo (text AI only)", gemini: "৳899/mo (text AI + basic TTS)" },
 ];
 
 const ELEVENLABS_FAQS = [

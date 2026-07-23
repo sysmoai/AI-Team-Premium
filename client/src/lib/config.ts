@@ -23,12 +23,12 @@ export const config = {
 
   whatsappPlanTemplates: {
     "plus-shared":            "Hi! I want to order 'ChatGPT Plus Shared (৳499/mo)' from AI Team Premium. Please share payment details (bKash/Nagad).",
-    "plus-premium-shared":    "Hi! I want to order 'ChatGPT Plus Premium Shared (৳999/mo)'. How do I pay and get access?",
+    "plus-premium-shared":    "Hi! I want to order 'ChatGPT Plus Premium Shared (৳950/mo)'. How do I pay and get access?",
     "plus-personal-seat":     "Hi! I want my own ChatGPT Plus account — 'Plus Personal Seat (৳2,990/mo)'. Is it available?",
     "business-shared":        "Hi! I want the 'ChatGPT Team Shared (৳1,799/mo)' plan. Please guide me.",
     "business-premium-shared":"Hi! I want 'ChatGPT Team Premium Shared (৳2,299/mo)'. What are the next steps?",
     "business-personal-like": "Hi! I want 'ChatGPT Team Personal-like (৳3,990/mo)'. How do I get started?",
-    "pro-premium-shared":     "Hi! I want the most powerful plan — 'ChatGPT Pro Premium Shared (৳4,990/mo)'. Is it ready?"
+    "pro-premium-shared":     "Hi! I want the most powerful plan — 'ChatGPT Pro Premium Shared (৳4,500/mo)'. Is it ready?"
   },
 
   whatsappSupportTemplates: {

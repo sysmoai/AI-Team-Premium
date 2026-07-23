@@ -16,7 +16,7 @@ const INCLUDED = [
 ];
 
 const COMPARISON = [
-  { tool: "ChatGPT Plus", individual: "৳2,950", type: "Personal Seat" },
+  { tool: "ChatGPT Plus", individual: "৳2,990", type: "Personal Seat" },
   { tool: "Claude Pro", individual: "৳2,500", type: "Personal Seat" },
   { tool: "Gemini Advanced", individual: "৳1,800", type: "Personal Seat" },
 ];
@@ -24,10 +24,10 @@ const COMPARISON = [
 const VAULT_FAQS = [
   { q: "What is the AI Tools Vault bundle from AI Team Premium?", a: "The AI Tools Vault is a bundle that gives you shared-seat access to three top AI tools — ChatGPT Plus, Claude Pro, and Gemini Advanced — together for ৳1,990/month, paid in BDT via bKash or Nagad. It includes bundled onboarding, a single WhatsApp support channel, and setup guides for all three tools." },
   { q: "How much does the AI Tools Vault cost in Bangladesh?", a: "The AI Tools Vault costs ৳1,990/month from AI Team Premium. You can pay in BDT using bKash, Nagad, Rocket or Bank Transfer — no international credit card required." },
-  { q: "How is the AI Tools Vault value calculated?", a: "If you were to buy a Personal Seat for each tool separately — ChatGPT Plus (৳2,950), Claude Pro (৳2,500), and Gemini Advanced (৳1,800) — you'd pay ৳7,250/month. The Vault gives you shared access to all three for ৳1,990/month, with a single payment and single support channel." },
+  { q: "How is the AI Tools Vault value calculated?", a: "If you were to buy a Personal Seat for each tool separately — ChatGPT Plus (৳2,990), Claude Pro (৳2,500), and Gemini Advanced (৳1,800) — you'd pay ৳7,250/month. The Vault gives you shared access to all three for ৳1,990/month, with a single payment and single support channel." },
   { q: "How long does delivery take for the AI Tools Vault?", a: "Vault bundle access is set up within 6 hours after payment confirmation. AI Team Premium confirms via WhatsApp at +880 1533-262758." },
   { q: "Is there a warranty on the AI Tools Vault?", a: "Yes. All three tools carry a 30-day replacement warranty. If any access stops working due to our fault, we replace it within 24 hours at no extra charge." },
-  { q: "Can I buy just one tool instead of the full Vault?", a: "Yes. ChatGPT Plus starts at ৳499/mo (shared), Claude Pro at ৳599/mo (shared), and Gemini Advanced at ৳499/mo (shared) individually. The Vault is ideal if you regularly need all three tools and want single-channel support and onboarding." },
+  { q: "Can I buy just one tool instead of the full Vault?", a: "Yes. ChatGPT Plus starts at ৳499/mo (shared), Claude Pro at ৳1,495/mo (shared), and Gemini Advanced at ৳899/mo (shared) individually. The Vault is ideal if you regularly need all three tools and want single-channel support and onboarding." },
   { q: "What is the difference between Vault shared access and personal seats?", a: "The Vault provides shared-seat access — you share the account with a small number of other users, but your conversations remain private. Personal seats give you your own dedicated account. If you want full private ownership, buy each tool's Personal Seat separately." },
   { q: "What onboarding do I get with the Vault?", a: "You get a bundled onboarding guide covering the best use cases for all three tools, tips on when to use each AI (ChatGPT for creative/coding, Claude for long documents/analysis, Gemini for Google Workspace tasks), and a prompt starter pack." },
 ];

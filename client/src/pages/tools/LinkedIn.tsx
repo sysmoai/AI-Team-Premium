@@ -73,7 +73,7 @@ const LINKEDIN_COMPETITOR_ROWS = [
   { feature: "Open Profile (be findable)", thisProduct: "✅ Anyone can InMail you", chatgpt: "❌ None", claude: "❌ None", gemini: "❌ None" },
   { feature: "Certificate of Completion", thisProduct: "✅ LinkedIn-verified badges", chatgpt: "❌ No certificates", claude: "❌ No certificates", gemini: "❌ No certificates" },
   { feature: "Networking Intelligence", thisProduct: "✅ Mutual connections, paths", chatgpt: "❌ None", claude: "❌ None", gemini: "❌ None" },
-  { feature: "AITP Price (Career)", thisProduct: "৳999/mo", chatgpt: "৳399/mo (different tool)", claude: "৳599/mo (different tool)", gemini: "৳449/mo (different tool)" },
+  { feature: "AITP Price (Career)", thisProduct: "৳999/mo", chatgpt: "৳499/mo (different tool)", claude: "৳1,495/mo (different tool)", gemini: "৳899/mo (different tool)" },
 ];
 
 const LINKEDIN_FAQS = [

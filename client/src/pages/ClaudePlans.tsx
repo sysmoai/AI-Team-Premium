@@ -1,8 +1,8 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Claude Plans Bangladesh — ৳599/mo | AI Team Premium",
-  seoDescription: "Buy Anthropic Claude Pro (Claude Sonnet 3.5) in Bangladesh via bKash/Nagad. Shared and personal seats from ৳599/month. Extended Thinking, 200K context. No international card needed.",
+  seoTitle: "Claude Plans Bangladesh — ৳1,495/mo | AI Team Premium",
+  seoDescription: "Buy Anthropic Claude Pro (Claude Sonnet 3.5) in Bangladesh via bKash/Nagad. Shared and personal seats from ৳1,495/month. Extended Thinking, 200K context. No international card needed.",
   path: "/claude-plans",
   toolName: "Claude Pro",
   toolEmoji: "🧠",
@@ -12,7 +12,7 @@ const data: ToolPageData = {
   plans: [
     {
       name: "Claude Pro — Shared Seat",
-      price: "৳599/month",
+      price: "৳1,495/month",
       delivery: "5–15 minutes",
       seats: "2–3 seats shared",
       tag: "Popular for Researchers",
@@ -54,7 +54,7 @@ const data: ToolPageData = {
     { q: "Claude Sonnet 3.5 কি নতুন model?", a: "হ্যাঁ, Claude Sonnet 3.5 হলো Anthropic-এর সর্বশেষ model। এটি Extended Thinking, coding benchmark-এ উল্লেখযোগ্য improvement এবং better instruction following সহ আসে।" },
     { q: "Extended Thinking কী?", a: "Extended Thinking mode-এ Claude complex problems solve করার আগে step-by-step চিন্তা করে। Math, coding, research — যেকোনো জটিল বিষয়ে আরও accurate এবং nuanced answer দেয়।" },
     { q: "Shared seat মানে কী?", a: "Shared seat মানে একটি Claude Pro account আমরা ২-৩ জনের মধ্যে নিরাপদভাবে share করি। প্রতিটি user আলাদা conversation করতে পারেন। আপনি password পাবেন না — আমরা secure login setup করে দিই।" },
-    { q: "Shared এবং Personal Seat-এর মধ্যে কোনটি নেব?", a: "যদি privacy এবং নিজের projects/history চান, তাহলে Personal Seat (৳2,500/mo)। কম বাজেটে শুধু Claude ব্যবহার করতে চাইলে Shared (৳599/mo) যথেষ্ট।" },
+    { q: "Shared এবং Personal Seat-এর মধ্যে কোনটি নেব?", a: "যদি privacy এবং নিজের projects/history চান, তাহলে Personal Seat (৳2,500/mo)। কম বাজেটে শুধু Claude ব্যবহার করতে চাইলে Shared (৳1,495/mo) যথেষ্ট।" },
     { q: "Delivery কতক্ষণ লাগে?", a: "Shared Seat সাধারণত 5–15 মিনিটে, Personal Seat ২-৪ ঘণ্টার মধ্যে access দেওয়া হয়।" },
     { q: "বাংলাদেশ থেকে কীভাবে pay করব?", a: "bKash, Nagad বা Bank Transfer-এ pay করা যায়। Payment details WhatsApp-এ শেয়ার করা হয়।" },
     { q: "Account ban হলে কী হবে?", a: "30 দিনের warranty আছে। যদি আমাদের দোষে account কাজ না করে, আমরা বিনামূল্যে replace করব।" },

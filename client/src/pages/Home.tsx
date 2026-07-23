@@ -34,7 +34,7 @@ const IMG_HERO = "/hero-bg.jpg";
 
 const OFFERS = [
   { badge: "Solo", color: "#22C55E", tier: "Student / Freelancer", price: "৳499", period: "/mo", tool: "ChatGPT Plus Shared", delivery: "5-15 min", whatsapp: "https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+ChatGPT+Plus+Shared+(Solo)" },
-  { badge: "Pro", color: "#2563EB", tier: "Coder / Designer / Researcher", price: "৳999", period: "/mo", tool: "ChatGPT Premium Shared", delivery: "5-15 min", whatsapp: "https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+ChatGPT+Premium+Shared+(Pro)" },
+  { badge: "Pro", color: "#2563EB", tier: "Coder / Designer / Researcher", price: "৳950", period: "/mo", tool: "ChatGPT Plus Premium Shared", delivery: "5-15 min", whatsapp: "https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+ChatGPT+Plus+Premium+Shared+(Pro)" },
   { badge: "Team", color: "#0F172A", tier: "Agency / Startup", price: "৳1,799", period: "/seat/mo", tool: "ChatGPT Team Shared", delivery: "5-15 min", whatsapp: "https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+ChatGPT+Team+Shared" },
   { badge: "AI Tools Vault", color: "#F59E0B", tier: "All-in-One Bundle", price: "৳1,990", period: "/mo", tool: "ChatGPT Plus + Claude Pro + Gemini Advanced", delivery: "6 hr", whatsapp: "https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault" },
 ];

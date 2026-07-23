@@ -12,7 +12,7 @@ const data: ToolPageData = {
   plans: [
     {
       name: "Gemini Advanced — Shared Seat",
-      price: "৳599/month",
+      price: "৳899/month",
       delivery: "5–15 minutes",
       seats: "Shared access",
       tag: "Best for Google Users",

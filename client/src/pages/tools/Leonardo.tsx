@@ -225,7 +225,7 @@ export default function LeonardoPage() {
         { feature: "Background Removal", thisProduct: "✅ Built-in", chatgpt: "Limited", claude: "❌ No", gemini: "❌ No" },
         { feature: "Team Workspace / Brand Kit", thisProduct: "✅ Shared assets & kits", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
         { feature: "Best For", thisProduct: "Visual creatives, game dev", chatgpt: "General AI chat", claude: "Writing & code", gemini: "Google ecosystem" },
-        { feature: "AITP Shared Price", thisProduct: "৳349/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
+        { feature: "AITP Shared Price", thisProduct: "৳349/mo", chatgpt: "৳499/mo", claude: "৳1,495/mo", gemini: "৳899/mo" },
       ]}
       extendedFaqs={[
         { q: "How many images can I generate with Leonardo AI Artisan per month?", a: "The Artisan Shared plan includes 8,500 tokens per month. Each image generation costs 7–15 tokens depending on resolution and model. This means approximately 570–1,200 images per month — enough for heavy professional use. The Personal plan (৳1,299/mo) includes 25,000 tokens for approximately 1,700–3,500 images per month." },

@@ -12,7 +12,7 @@ const data: ToolPageData = {
   plans: [
     {
       name: "Grammarly Premium — Monthly",
-      price: "৳399/month",
+      price: "৳499/month",
       delivery: "2–4 hours",
       seats: "1 individual account",
       tag: "Best for Students",

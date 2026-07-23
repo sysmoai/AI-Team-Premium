@@ -73,7 +73,7 @@ const M365_COMPETITOR_ROWS = [
   { feature: "Bangla Language Support", thisProduct: "✅ Word spell check in Bangla", chatgpt: "⭐⭐⭐⭐", claude: "⭐⭐⭐⭐", gemini: "⭐⭐⭐⭐⭐" },
   { feature: "Microsoft OneNote", thisProduct: "✅ Full access", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
   { feature: "Microsoft Access (database)", thisProduct: "✅ Included (PC)", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
-  { feature: "AITP Shared Price", thisProduct: "৳899/mo", chatgpt: "৳399/mo (text AI only)", claude: "৳599/mo (text AI only)", gemini: "৳449/mo (Google suite)" },
+  { feature: "AITP Shared Price", thisProduct: "৳899/mo", chatgpt: "৳499/mo (text AI only)", claude: "৳1,495/mo (text AI only)", gemini: "৳899/mo (Google suite)" },
 ];
 
 const M365_FAQS = [

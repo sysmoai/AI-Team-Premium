@@ -12,7 +12,7 @@ const data: ToolPageData = {
   plans: [
     {
       name: "Canva Pro — Monthly",
-      price: "৳399/month",
+      price: "৳599/month",
       delivery: "2–4 hours",
       seats: "1 individual account",
       tag: "Best for Designers",

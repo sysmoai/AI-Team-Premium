@@ -1,4 +1,5 @@
 // server/seo.ts — Per-route SEO meta injection + 404 handler
+// DEPLOY-TRIGGER: 1784770828
 // Generated from sitemap. Route map covers all 66 URLs.
 import { type Request, type Response } from "express";
 import fs from "fs";

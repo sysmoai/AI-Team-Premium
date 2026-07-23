@@ -6,8 +6,8 @@ import { Palette } from "lucide-react";
 export const TOOL_META = {
   "slug": "leonardo",
   "category": "image",
-  "priceBdt": 699,
-  "priceLabel": "৳699/mo",
+  "priceBdt": 499,
+  "priceLabel": "৳499/mo",
   "model": "Flux + Phoenix + custom models",
   "contextWindow": "N/A (image gen)",
   "multimodal": "Text-to-image, image-to-image, canvas",

@@ -95,7 +95,7 @@ const GROK_FAQS = [
 export const TOOL_META = {
   "slug": "grok",
   "category": "chat",
-  "priceBdt": 999,
+  "priceBdt": 699,
   "priceLabel": "৳699/mo",
   "model": "Grok 4 + Grok 4 Heavy",
   "contextWindow": "256K tokens",

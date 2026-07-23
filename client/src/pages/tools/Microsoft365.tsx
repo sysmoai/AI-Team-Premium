@@ -95,8 +95,8 @@ const M365_FAQS = [
 export const TOOL_META = {
   "slug": "microsoft365",
   "category": "writing",
-  "priceBdt": 1499,
-  "priceLabel": "৳1,499/mo",
+  "priceBdt": 899,
+  "priceLabel": "৳899/mo",
   "model": "GPT-4.5 + Microsoft Graph",
   "contextWindow": "Your M365 workspace",
   "multimodal": "Text, spreadsheets, slides, email",

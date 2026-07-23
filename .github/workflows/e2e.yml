@@ -1,4 +1,4 @@
-name: E2E — Batch 3 Playwright Tests
+name: E2E — Full 25-Tool Test Suite
 
 on:
   push:
@@ -86,7 +86,7 @@ jobs:
           exit 1
 
       - name: Run Playwright tests
-        run: npx playwright test e2e/verify-batch3.spec.ts --reporter=list
+        run: npx playwright test e2e/verify-all.spec.ts --reporter=list
 
       - name: Upload test results (on failure)
         if: failure()

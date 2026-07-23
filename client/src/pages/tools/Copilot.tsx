@@ -73,7 +73,7 @@ const COPILOT_COMPETITOR_ROWS = [
   { feature: "Bangla Comment → Code", thisProduct: "✅ Understands Bangla comments", chatgpt: "✅ Excellent", claude: "✅ Excellent", gemini: "✅ Good" },
   { feature: "Works On Private Repos", thisProduct: "✅ Yes, stays in your IDE", chatgpt: "Upload to chatgpt.com", claude: "Upload to claude.ai", gemini: "Google servers" },
   { feature: "Mobile / Web Coding", thisProduct: "✅ GitHub.com Copilot", chatgpt: "✅ ChatGPT web", claude: "✅ Claude.ai web", gemini: "✅ Gemini web" },
-  { feature: "AITP Price", thisProduct: "৳1,200/mo (Private)", chatgpt: "৳399/mo (text AI)", claude: "৳599/mo (text AI)", gemini: "৳449/mo (text AI)" },
+  { feature: "AITP Price", thisProduct: "৳999/mo (Private)", chatgpt: "৳399/mo (text AI)", claude: "৳599/mo (text AI)", gemini: "৳449/mo (text AI)" },
 ];
 
 const COPILOT_BASE_FAQS = [
@@ -150,7 +150,7 @@ export default function Copilot() {
       plans={[
         {
           label: "GitHub Copilot — Private",
-          price: "৳1,200",
+          price: "৳999",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Private",
@@ -165,8 +165,8 @@ export default function Copilot() {
         {
           title: "Code Completion & Chat",
           emoji: "💻",
-          tier2Label: "Shared (৳649/mo)",
-          tier3Label: "Personal (৳1,499/mo)",
+          tier2Label: "Shared (৳499/mo)",
+          tier3Label: "Personal (৳999/mo)",
           rows: [
             { label: "AI Models Available", free: "GPT-3.5 only (old free)", pro: "GPT-4.1, Claude Sonnet, Gemini", premium: "GPT-4.1, Claude Sonnet, Gemini" },
             { label: "Inline Code Completion", free: "Basic (300/mo free tier)", pro: "Unlimited", premium: "Unlimited (dedicated)" },
@@ -181,8 +181,8 @@ export default function Copilot() {
         {
           title: "IDE Support & Advanced Features",
           emoji: "🔧",
-          tier2Label: "Shared (৳649/mo)",
-          tier3Label: "Personal (৳1,499/mo)",
+          tier2Label: "Shared (৳499/mo)",
+          tier3Label: "Personal (৳999/mo)",
           rows: [
             { label: "VS Code", free: "Yes (basic)", pro: "Full, all features", premium: "Full, all features" },
             { label: "JetBrains IDEs", free: "No", pro: "Full (IntelliJ, PyCharm, etc.)", premium: "Full (IntelliJ, PyCharm, etc.)" },

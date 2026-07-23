@@ -37,6 +37,9 @@ import GoogleAIPro from "./pages/tools/GoogleAIPro";
 import LeonardoPage from "./pages/tools/Leonardo";
 import RunwayPage from "./pages/tools/Runway";
 import KlingPage from "./pages/tools/Kling";
+import ManusPage from "./pages/tools/Manus";
+import PoePage from "./pages/tools/Poe";
+import FireflyPage from "./pages/tools/Firefly";
 import AuditDashboard from "./pages/admin/AuditDashboard";
 import ComparePage from "./pages/Compare";
 import PlusShared from "./pages/chatgpt/PlusShared";
@@ -121,6 +124,9 @@ function Router() {
         <Route path="/tools/leonardo" component={LeonardoPage} />
         <Route path="/tools/runway" component={RunwayPage} />
         <Route path="/tools/kling" component={KlingPage} />
+        <Route path="/tools/manus" component={ManusPage} />
+        <Route path="/tools/poe" component={PoePage} />
+        <Route path="/tools/firefly" component={FireflyPage} />
         <Route path="/admin/audit" component={AuditDashboard} />
         <Route path="/compare" component={ComparePage} />
         <Route path="/compare/:slug" component={ComparePage} />

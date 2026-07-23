@@ -29,6 +29,9 @@ import { TOOL_META as MS365_META } from "@/pages/tools/Microsoft365";
 import { TOOL_META as LINKEDIN_META } from "@/pages/tools/LinkedIn";
 import { TOOL_META as ELEVENLABS_META } from "@/pages/tools/ElevenLabs";
 import { TOOL_META as VAULT_META } from "@/pages/tools/Vault";
+import { TOOL_META as MANUS_META } from "@/pages/tools/Manus";
+import { TOOL_META as POE_META } from "@/pages/tools/Poe";
+import { TOOL_META as FIREFLY_META } from "@/pages/tools/Firefly";
 
 const ICONS: Record<string, LucideIcon> = {
   Brain, Sparkles, Star, Image: ImageIcon, Video, Search, Code2, FileText, Edit3,
@@ -96,6 +99,9 @@ const NAMES: Record<string, string> = {
   linkedin: "LinkedIn Premium",
   elevenlabs: "ElevenLabs",
   vault: "AI Tools Vault",
+  manus: "Manus AI",
+  poe: "Poe AI",
+  firefly: "Adobe Firefly",
 };
 
 function deriveCompareTool(meta: ToolMeta): CompareTool {
@@ -122,7 +128,7 @@ const ALL_METAS: ToolMeta[] = [
   CHATGPT_META, CLAUDE_META, GEMINI_META, PERPLEXITY_META, GROK_META,
   MIDJOURNEY_META, LEONARDO_META, RUNWAY_META, KLING_META, COPILOT_META,
   GRAMMARLY_META, NOTION_META, CANVA_META, MS365_META, LINKEDIN_META,
-  ELEVENLABS_META, VAULT_META,
+  ELEVENLABS_META, VAULT_META, MANUS_META, POE_META, FIREFLY_META,
 ];
 
 export const COMPARE_TOOLS: Record<string, CompareTool> = Object.fromEntries(

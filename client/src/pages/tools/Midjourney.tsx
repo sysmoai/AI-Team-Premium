@@ -73,7 +73,7 @@ const MIDJOURNEY_COMPETITOR_ROWS = [
   { feature: "Monthly Image Volume", thisProduct: "~200 fast images (Shared)", chatgpt: "~50 images/day", claude: "0", gemini: "~50 images/day" },
   { feature: "Image Resolution", thisProduct: "Up to 4K via upscale", chatgpt: "Up to 4K", claude: "❌ N/A", gemini: "Up to 4K" },
   { feature: "Best Use Case", thisProduct: "Art, fashion, high-quality visuals", chatgpt: "General AI + images", claude: "Writing & code", gemini: "Google ecosystem" },
-  { feature: "AITP Shared Price", thisProduct: "৳1,200/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
+  { feature: "AITP Shared Price", thisProduct: "৳1,299/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
 ];
 
 const MIDJOURNEY_BASE_FAQS = [

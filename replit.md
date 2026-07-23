@@ -1,4 +1,4 @@
-# AITP — AI Team Premium Website
+# AIPT — AI Premium Tools Website
 
 ## Overview
 A comprehensive website for AI Team Premium (AITP), Bangladesh's premium AI subscription provider. Sells ChatGPT Plus/Pro/Business, Claude, Gemini, Grammarly, Canva, Midjourney and more — payable via bKash/Nagad. Also offers premium human AI support (Google Meet sessions). Revenue target: $15,000/month.

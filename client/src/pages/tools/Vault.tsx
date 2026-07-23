@@ -61,7 +61,7 @@ const VAULT_USE_CASES = [
 ];
 
 const VAULT_COMPETITOR_ROWS = [
-  { feature: "ChatGPT Plus", thisProduct: "✅ Included", chatgpt: "✅ Yes (separate ৳399/mo)", claude: "❌ No", gemini: "❌ No" },
+  { feature: "ChatGPT Plus", thisProduct: "✅ Included", chatgpt: "✅ Yes (separate ৳499/mo)", claude: "❌ No", gemini: "❌ No" },
   { feature: "Claude Pro", thisProduct: "✅ Included", chatgpt: "❌ No", claude: "✅ Yes (separate ৳599/mo)", gemini: "❌ No" },
   { feature: "Gemini Advanced", thisProduct: "✅ Included", chatgpt: "❌ No", claude: "❌ No", gemini: "✅ Yes (separate ৳449/mo)" },
   { feature: "Combined Value", thisProduct: "৳1,447/mo if separate", chatgpt: "GPT-4o only", claude: "Claude only", gemini: "Gemini only" },
@@ -181,7 +181,7 @@ export default function Vault() {
           tier2Label: "Vault Bundle (৳1,990/mo)",
           tier3Label: "Personal Bundle (৳3,999/mo)",
           rows: [
-            { label: "ChatGPT Plus (separate)", free: "৳399/mo", pro: "✅ Included (shared)", premium: "✅ Included (personal)" },
+            { label: "ChatGPT Plus (separate)", free: "৳499/mo", pro: "✅ Included (shared)", premium: "✅ Included (personal)" },
             { label: "Claude Pro (separate)", free: "৳599/mo", pro: "✅ Included (shared)", premium: "✅ Included (personal)" },
             { label: "Gemini Advanced (separate)", free: "৳449/mo", pro: "✅ Included (shared)", premium: "✅ Included (personal)" },
             { label: "Total if Separate", free: "৳1,447/mo (shared)", pro: "✅ All for ৳1,990", premium: "✅ All for ৳3,999 (personal)" },

@@ -89,7 +89,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
         </div>
       </nav>
 
-      <div className="bg-[#F8FAFC] py-12 lg:py-20">
+      <div className="bg-muted/50 py-12 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-10 items-start">
             

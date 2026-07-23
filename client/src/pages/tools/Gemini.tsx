@@ -95,8 +95,8 @@ const GEMINI_FAQS = [
 export const TOOL_META = {
   "slug": "gemini",
   "category": "chat",
-  "priceBdt": 449,
-  "priceLabel": "৳449/mo",
+  "priceBdt": 899,
+  "priceLabel": "৳899/mo",
   "model": "Gemini 2.5 Pro",
   "contextWindow": "1,000,000 tokens",
   "multimodal": "Text, image, video, voice, code",

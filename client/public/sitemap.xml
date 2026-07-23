@@ -4,7 +4,7 @@
   <!-- ── HOME ── -->
   <url>
     <loc>https://aiteampremium.com/</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -12,7 +12,7 @@
   <!-- ── CHATGPT PLANS HUB ── -->
   <url>
     <loc>https://aiteampremium.com/chatgpt-plans</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
@@ -20,43 +20,43 @@
   <!-- ── CHATGPT INDIVIDUAL PLAN PAGES ── -->
   <url>
     <loc>https://aiteampremium.com/chatgpt/plus-shared</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/chatgpt/plus-premium-shared</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/chatgpt/plus-personal-seat</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/chatgpt/business-shared</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/chatgpt/business-premium-shared</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/chatgpt/business-personal-like</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/chatgpt/pro-premium-shared</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -64,37 +64,37 @@
   <!-- ── OTHER AI PLAN HUB PAGES ── -->
   <url>
     <loc>https://aiteampremium.com/claude-plans</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/gemini-plans</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/grammarly-plans</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/canva-plans</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/perplexity-plans</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/grok-plans</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
@@ -102,7 +102,7 @@
   <!-- ── BUNDLE ── -->
   <url>
     <loc>https://aiteampremium.com/ai-tools-vault</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -110,115 +110,115 @@
   <!-- ── AI TOOL DETAIL PAGES ── -->
   <url>
     <loc>https://aiteampremium.com/tools/chatgpt</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/claude</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/gemini</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/supergrok</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/google-ai-pro</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/midjourney</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/leonardo</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/runway</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/kling</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/grammarly</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/canva</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/perplexity</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/grok</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/copilot</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/vault</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/elevenlabs</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/notion</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/microsoft365</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/tools/linkedin</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -226,13 +226,13 @@
   <!-- ── CATALOG & DISCOVERY ── -->
   <url>
     <loc>https://aiteampremium.com/ai-subscriptions</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/pricing</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -240,43 +240,43 @@
   <!-- ── SUPPORT & SERVICES ── -->
   <url>
     <loc>https://aiteampremium.com/support</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/services</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/services/ai-ops-sprint</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/services/brand-design</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/services/web-development</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/services/digital-marketing</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/services/app-development</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
@@ -284,13 +284,13 @@
   <!-- ── COMPANY ── -->
   <url>
     <loc>https://aiteampremium.com/about</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/start-a-project</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
   </url>
@@ -298,19 +298,19 @@
   <!-- ── LEGAL ── -->
   <url>
     <loc>https://aiteampremium.com/refund-policy</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.45</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/privacy-policy</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
   <url>
     <loc>https://aiteampremium.com/terms</loc>
-    <lastmod>2026-05-25</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>

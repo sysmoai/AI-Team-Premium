@@ -63,8 +63,8 @@ const SECTIONS = [
     title: "✍️ Writing, Productivity & Office AI",
     subtitle: "Boost your work with AI writing and productivity tools",
     items: [
-      { name: "Grammarly Premium — Monthly", price: "৳399/mo", delivery: "2–4 hr", href: "/grammarly-plans", wa: waBase + enc("Hi, I want Grammarly Premium ৳399/mo") },
-      { name: "Canva Pro — Monthly", price: "৳399/mo", delivery: "2–4 hr", href: "/canva-plans", wa: waBase + enc("Hi, I want Canva Pro ৳399/mo") },
+      { name: "Grammarly Premium — Monthly", price: "৳499/mo", delivery: "2–4 hr", href: "/grammarly-plans", wa: waBase + enc("Hi, I want Grammarly Premium ৳499/mo") },
+      { name: "Canva Pro — Monthly", price: "৳599/mo", delivery: "2–4 hr", href: "/canva-plans", wa: waBase + enc("Hi, I want Canva Pro ৳599/mo") },
       { name: "ElevenLabs Voice AI", price: "৳699/mo", delivery: "5–15 min", href: "/tools/elevenlabs", wa: waBase + enc("Hi, I want ElevenLabs Voice AI ৳699/mo") },
       { name: "Notion AI — Team Seat", price: "৳450/mo", delivery: "5–15 min", href: "/tools/notion", wa: waBase + enc("Hi, I want Notion AI ৳450/mo") },
       { name: "GitHub Copilot — Private", price: "৳1,200/mo", delivery: "2–4 hr", href: "/tools/copilot", wa: waBase + enc("Hi, I want GitHub Copilot ৳1,200/mo") },

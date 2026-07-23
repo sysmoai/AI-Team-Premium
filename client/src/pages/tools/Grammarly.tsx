@@ -100,8 +100,8 @@ const GRAMMARLY_EXTENDED_FAQS = [
 export const TOOL_META = {
   "slug": "grammarly",
   "category": "writing",
-  "priceBdt": 449,
-  "priceLabel": "৳449/mo",
+  "priceBdt": 499,
+  "priceLabel": "৳499/mo",
   "model": "Grammarly AI + GPT integrations",
   "contextWindow": "N/A (assistive)",
   "multimodal": "Text only",

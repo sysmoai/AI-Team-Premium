@@ -96,7 +96,7 @@ export const TOOL_META = {
   "slug": "perplexity",
   "category": "search",
   "priceBdt": 549,
-  "priceLabel": "৳549/mo",
+  "priceLabel": "৳799/mo",
   "model": "GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro (you pick)",
   "contextWindow": "Varies by chosen model",
   "multimodal": "Text, image upload, file upload",

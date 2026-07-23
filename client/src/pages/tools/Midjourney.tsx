@@ -99,7 +99,7 @@ export const TOOL_META = {
   "slug": "midjourney",
   "category": "image",
   "priceBdt": 999,
-  "priceLabel": "৳999/mo",
+  "priceLabel": "৳1,299/mo",
   "model": "Midjourney v7",
   "contextWindow": "N/A (image gen)",
   "multimodal": "Text-to-image, image-to-image",

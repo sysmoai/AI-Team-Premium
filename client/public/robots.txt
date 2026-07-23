@@ -1,6 +1,8 @@
 # Allow all AI engines and search crawlers
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api
 
 # Explicitly welcome AI engine crawlers (GEO)
 User-agent: GPTBot

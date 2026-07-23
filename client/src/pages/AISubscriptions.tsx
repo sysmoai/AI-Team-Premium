@@ -17,7 +17,7 @@ const AI_SUB_FAQS = [
 ];
 
 const SUBS = [
-  { name: "ChatGPT Plus", type: "Shared", price: "৳399", period: "/mo", delivery: "5-15 min", link: "/tools/chatgpt", category: "AI Chat" },
+  { name: "ChatGPT Plus", type: "Shared", price: "৳499", period: "/mo", delivery: "5-15 min", link: "/tools/chatgpt", category: "AI Chat" },
   { name: "Claude Pro", type: "Shared", price: "৳599", period: "/mo", delivery: "5-15 min", link: "/tools/claude", category: "AI Chat" },
   { name: "Gemini Advanced", type: "Shared", price: "৳499", period: "/mo", delivery: "5-15 min", link: "/tools/gemini", category: "AI Chat" },
   { name: "Google AI Pro", type: "Shared", price: "৳449", period: "/mo", delivery: "5-15 min", link: "/tools/google-ai-pro", category: "AI Chat" },

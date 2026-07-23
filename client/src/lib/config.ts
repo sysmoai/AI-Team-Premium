@@ -15,7 +15,7 @@ export const config = {
   messenger: "https://www.facebook.com/messages/t/61586742067282/",
   fbPage: "https://www.facebook.com/profile.php?id=61586742067282",
   fbGroup: "https://www.facebook.com/groups/333019393218410",
-  instagram: "https://www.instagram.com/ai_team_premium_bd/",
+  instagram: "https://www.instagram.com/ai_team_premium/",
 
   supportFormUrl: "/start-a-project",
   lastVerified: "2026-05-25",

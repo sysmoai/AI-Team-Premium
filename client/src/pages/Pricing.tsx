@@ -48,6 +48,9 @@ const SECTIONS = [
     subtitle: "Create stunning visuals with AI — bKash/Nagad accepted",
     items: [
       { name: "Midjourney — Shared", price: "৳1,299/mo", delivery: "5–15 min", href: "/tools/midjourney", wa: waBase + enc("Hi, I want Midjourney Shared ৳1,299/mo") },
+      { name: "Ideogram AI — Shared (best text rendering)", price: "৳599/mo", delivery: "5–15 min", href: "/tools/ideogram", wa: waBase + enc("Hi, I want Ideogram AI Shared ৳599/mo") },
+      { name: "Freepik Premium — Shared (AI + 200M stock)", price: "৳499/mo", delivery: "5–15 min", href: "/tools/freepik", wa: waBase + enc("Hi, I want Freepik Premium Shared ৳499/mo") },
+      { name: "Adobe CC Photography — Shared", price: "৳499/mo", delivery: "2–4 hr", href: "/tools/adobe-cc", wa: waBase + enc("Hi, I want Adobe CC Photography Shared ৳499/mo") },
       { name: "Leonardo AI — Shared (8,500 tokens)", price: "৳499/mo", delivery: "5–15 min", href: "/tools/leonardo", wa: waBase + enc("Hi, I want Leonardo AI Shared ৳499/mo") },
       { name: "Leonardo AI — Personal (25,000 tokens)", price: "৳1,990/mo", delivery: "2–4 hr", href: "/tools/leonardo", wa: waBase + enc("Hi, I want Leonardo AI Personal ৳1,990/mo") },
     ],

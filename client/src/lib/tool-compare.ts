@@ -32,6 +32,9 @@ import { TOOL_META as VAULT_META } from "@/pages/tools/Vault";
 import { TOOL_META as MANUS_META } from "@/pages/tools/Manus";
 import { TOOL_META as POE_META } from "@/pages/tools/Poe";
 import { TOOL_META as FIREFLY_META } from "@/pages/tools/Firefly";
+import { TOOL_META as IDEOGRAM_META } from "@/pages/tools/Ideogram";
+import { TOOL_META as FREEPIK_META } from "@/pages/tools/Freepik";
+import { TOOL_META as ADOBE_CC_META } from "@/pages/tools/AdobeCC";
 
 const ICONS: Record<string, LucideIcon> = {
   Brain, Sparkles, Star, Image: ImageIcon, Video, Search, Code2, FileText, Edit3,
@@ -102,6 +105,9 @@ const NAMES: Record<string, string> = {
   manus: "Manus AI",
   poe: "Poe AI",
   firefly: "Adobe Firefly",
+  ideogram: "Ideogram AI",
+  freepik: "Freepik (Magnific)",
+  "adobe-cc": "Adobe Creative Cloud",
 };
 
 function deriveCompareTool(meta: ToolMeta): CompareTool {
@@ -128,7 +134,7 @@ const ALL_METAS: ToolMeta[] = [
   CHATGPT_META, CLAUDE_META, GEMINI_META, PERPLEXITY_META, GROK_META,
   MIDJOURNEY_META, LEONARDO_META, RUNWAY_META, KLING_META, COPILOT_META,
   GRAMMARLY_META, NOTION_META, CANVA_META, MS365_META, LINKEDIN_META,
-  ELEVENLABS_META, VAULT_META, MANUS_META, POE_META, FIREFLY_META,
+  ELEVENLABS_META, VAULT_META, MANUS_META, POE_META, FIREFLY_META, IDEOGRAM_META, FREEPIK_META, ADOBE_CC_META,
 ];
 
 export const COMPARE_TOOLS: Record<string, CompareTool> = Object.fromEntries(

@@ -40,6 +40,9 @@ import KlingPage from "./pages/tools/Kling";
 import ManusPage from "./pages/tools/Manus";
 import PoePage from "./pages/tools/Poe";
 import FireflyPage from "./pages/tools/Firefly";
+import IdeogramPage from "./pages/tools/Ideogram";
+import FreepikPage from "./pages/tools/Freepik";
+import AdobeCCPage from "./pages/tools/AdobeCC";
 import AuditDashboard from "./pages/admin/AuditDashboard";
 import ComparePage from "./pages/Compare";
 import PlusShared from "./pages/chatgpt/PlusShared";
@@ -127,6 +130,9 @@ function Router() {
         <Route path="/tools/manus" component={ManusPage} />
         <Route path="/tools/poe" component={PoePage} />
         <Route path="/tools/firefly" component={FireflyPage} />
+        <Route path="/tools/ideogram" component={IdeogramPage} />
+        <Route path="/tools/freepik" component={FreepikPage} />
+        <Route path="/tools/adobe-cc" component={AdobeCCPage} />
         <Route path="/admin/audit" component={AuditDashboard} />
         <Route path="/compare" component={ComparePage} />
         <Route path="/compare/:slug" component={ComparePage} />

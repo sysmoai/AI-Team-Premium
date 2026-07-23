@@ -117,7 +117,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
   const cheapestPlan = plans.find((p) => parseInt(p.price.replace(/[^0-9]/g, ""), 10) === minPrice) || plans[0];
 
   const autoFaqs = [
-    { q: `How much does ${name} cost in Bangladesh?`, a: `${name} starts at ${cheapestPlan?.price || "৳399"}${cheapestPlan?.period || "/mo"} from AI Team Premium, payable in BDT via bKash or Nagad. No international card needed.` },
+    { q: `How much does ${name} cost in Bangladesh?`, a: `${name} starts at ${cheapestPlan?.price || "৳499"}${cheapestPlan?.period || "/mo"} from AI Team Premium, payable in BDT via bKash or Nagad. No international card needed.` },
     { q: `How do I buy ${name} with bKash or Nagad?`, a: `Message AI Team Premium on WhatsApp (+880 1533-262758) with the plan you want. We confirm price, share the bKash/Nagad number privately, and deliver login or invite details within ${cheapestPlan?.delivery || "5–15 minutes"}.` },
     { q: `Is ${name} from AI Team Premium genuine?`, a: `Yes. AI Team Premium provides genuine ${name} subscriptions sourced through legitimate channels. No cracked or fake access — fully working features and a 30-day replacement warranty.` },
     { q: `Can I use ${name} in Bangla?`, a: "Yes. Most premium AI tools sold by AI Team Premium — including ChatGPT, Claude, and Gemini — generate high-quality Bangla responses. Our support team also assists in Bangla and English." },
@@ -137,7 +137,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
         name={`${name} Bangladesh`}
         description={description}
         path={path}
-        priceBDT={minPrice || 399}
+        priceBDT={minPrice || 499}
         category="AI Subscription"
 
       />

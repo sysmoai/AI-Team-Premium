@@ -79,38 +79,6 @@ faq: [
   ],
 };
 
-// TOOL_META — structured snapshot consumed by /compare/:slug
-export const TOOL_META = {
-  "slug": "claude",
-  "category": "chat",
-  "priceBdt": 1495,
-  "priceLabel": "৳1,495/mo",
-  "model": "Opus 4.6, Sonnet 4.6, Haiku 4.5, Fable 5",
-  "contextWindow": "200K tokens",
-  "multimodal": "Text, image, code, files",
-  "banglaQuality": "⭐⭐⭐⭐ (very good)",
-  "speed": "Fast (sub-second first token)",
-  "accuracy": "⭐⭐⭐⭐⭐",
-  "pricingTier": "Premium",
-  "brand": "Anthropic",
-  "tagline": "The AI assistant for professionals",
-  "toolPath": "/tools/claude",
-  "iconName": "Brain",
-  "accent": "#D97706",
-  "bestUseCase": "Advanced reasoning, coding, research, document analysis",
-  "bestFor": [
-    "Code generation & debugging",
-    "Document analysis (PDF, images)",
-    "200K token context window",
-    "Project knowledge base",
-    "Priority access during peak hours"
-  ],
-  "weaknesses": [
-    "No image generation",
-    "Stricter content filters than Grok"
-  ]
-} as const;
-
 export default function ClaudePage() {
   usePageMeta({
     title: "Claude Pro in Bangladesh \u2014 \u09F71,495/mo | AI Team Premium",

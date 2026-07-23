@@ -1,0 +1,74 @@
+PROMPT — AITP (AI Team Premium) — CONTACT PAGE (FIGMA)
+
+ROLE
+You are a UI designer in Figma.
+
+GOAL
+Design a clean, mobile-first “Contact / Connect with us” section for the brand **AI Team Premium (AITP)**. It must look trustworthy, simple, and easy to act on.
+
+BRAND
+- Name: AI Team Premium (AITP)
+- Primary action: WhatsApp chat
+- Tone: clear, professional, Bangladesh-first
+
+CONTACT LINKS (SOURCE OF TRUTH)
+- WhatsApp (chat): http://wa.me/8801533262758
+- Phone: +880 1533-262758
+- Messenger: https://www.facebook.com/messages/t/61586742067282/
+- Facebook Profile/Page: https://www.facebook.com/profile.php?id=61586742067282
+- Facebook Group: https://www.facebook.com/groups/333019393218410
+- Instagram: https://www.instagram.com/ai_team_premium_bd/
+
+CONTENT TO INCLUDE (IN THIS ORDER)
+1) Header
+   - Title: “Connect with AI Team Premium”
+   - Subtitle: “Fastest response: WhatsApp”
+2) Quick contact (primary block)
+   - WhatsApp button (primary CTA)
+   - Phone (secondary)
+   - Messenger (secondary)
+3) Social links (secondary block)
+   - Facebook Profile/Page
+   - Facebook Group
+   - Instagram
+4) “What to send” (two collapsible / accordion blocks)
+   A) New customer message template:
+      “Hi! I want help from AI Team Premium.
+       1) My name:
+       2) Business / page link (if any):
+       3) What I need (Brand / Website / Marketing / App):
+       4) Deadline:
+       5) Budget range (optional):”
+   B) Existing customer support template:
+      “Hi! I already worked with AI Team Premium.
+       1) My name:
+       2) Project / service name:
+       3) What is the issue / request:
+       4) Urgency (Today / This week / Not urgent):”
+5) Trust note (small footer/callout)
+   - “Brand firewall: AITP-only. This is the single source of truth for contact links.”
+
+DESIGN REQUIREMENTS
+- Mobile-first layout first, then a desktop version.
+- Use card sections with clear hierarchy.
+- Primary CTA must be WhatsApp (distinct color, large button).
+- Include small icons next to each channel (WhatsApp, phone, Messenger, Facebook, Instagram).
+- Spacing and typography should be readable on small screens.
+- Make link text copyable (show full link or handle where appropriate).
+- Keep it minimal. No extra sections.
+
+FRAMES TO CREATE
+1) Frame: “AITP / Contact / Mobile” — 390×844
+2) Frame: “AITP / Contact / Desktop” — 1440×900
+
+COMPONENTS TO CREATE (AS REUSABLE)
+- Button/Primary (WhatsApp CTA)
+- Button/Secondary (Messenger / Call)
+- Card/Section (for Quick contact and Social)
+- Accordion/Item (for the message templates)
+- Link/Row (icon + label + URL)
+
+OUTPUT
+- Build the two frames and all components.
+- Use Auto Layout properly.
+- Stop after creating the frames + components and wait for confirmation.

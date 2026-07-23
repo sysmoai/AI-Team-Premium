@@ -106,7 +106,7 @@ export default function About() {
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 not-prose">
                 {[
                   { n: "18+", l: "AI tools available" },
-                  { n: "৳399", l: "Starting price/mo" },
+                  { n: "৳499", l: "Starting price/mo" },
                   { n: "5–15 min", l: "Median delivery" },
                   { n: "24 h", l: "Replacement SLA" },
                 ].map((s) => (

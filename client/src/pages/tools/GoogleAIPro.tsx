@@ -1,12 +1,43 @@
 import { ToolDetail } from "@/components/ToolDetail";
 import { Sparkles } from "lucide-react";
 
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "google-ai-pro",
+  "category": "chat",
+  "priceBdt": 599,
+  "priceLabel": "৳599/mo",
+  "model": "Gemini 2.5 Pro Ultra",
+  "contextWindow": "1M tokens",
+  "multimodal": "Text, image, video, voice",
+  "banglaQuality": "⭐⭐⭐⭐",
+  "speed": "Fast",
+  "accuracy": "⭐⭐⭐⭐",
+  "pricingTier": "Premium",
+  "brand": "Google",
+  "tagline": "Gemini + NotebookLM + 2TB Drive",
+  "toolPath": "/tools/google-ai-pro",
+  "iconName": "Sparkles",
+  "accent": "#4285F4",
+  "bestUseCase": "Students and professionals needing Google ecosystem AI",
+  "bestFor": [
+    "Deep research with NotebookLM (PDFs, books, podcasts)",
+    "Google Drive storage + Gemini across all Google apps",
+    "Imagen 4 image generation with accurate text rendering",
+    "Veo 2 video generation from text/image"
+  ],
+  "weaknesses": [
+    "Personal seat requires your own Google account (2-4 hr setup)",
+    "Fewer artistic styles than Midjourney for images"
+  ]
+} as const;
+
 export default function GoogleAIPro() {
   return (
     <ToolDetail
       name="Google AI Pro"
       tagline="in Bangladesh"
-      description="Google's most complete AI bundle — Google AI Pro (formerly Google One AI Premium) includes Gemini 2.5 Pro Ultra, NotebookLM Plus, Imagen 4 image generation, Veo 2 video generation, 2TB Google Drive storage, and Google Workspace AI. All from ৳449/month via bKash/Nagad."
+      description="Google's most complete AI bundle — Google AI Pro (formerly Google One AI Premium) includes Gemini 2.5 Pro Ultra, NotebookLM Plus, Imagen 4 image generation, Veo 2 video generation, 2TB Google Drive storage, and Google Workspace AI. All from ৳599/month via bKash/Nagad."
       accentColor="#4285F4"
       icon={Sparkles}
       features={[
@@ -24,7 +55,7 @@ export default function GoogleAIPro() {
       plans={[
         {
           label: "Google AI Pro — Shared Seat",
-          price: "৳449",
+          price: "৳599",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",
@@ -36,7 +67,7 @@ export default function GoogleAIPro() {
         },
         {
           label: "Google AI Pro — Personal Seat",
-          price: "৳1,299",
+          price: "৳2,990",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Personal",
@@ -52,8 +83,8 @@ export default function GoogleAIPro() {
         {
           title: "AI Chat & Research",
           emoji: "🤖",
-          tier2Label: "Shared (৳649/mo)",
-          tier3Label: "Personal (৳1,799/mo)",
+          tier2Label: "Shared (৳599/mo)",
+          tier3Label: "Personal (৳2,990/mo)",
           rows: [
             { label: "AI Model", free: "Gemini 2.0 Flash", pro: "Gemini 2.5 Pro Ultra", premium: "Gemini 2.5 Pro Ultra (dedicated)" },
             { label: "Context Window", free: "32K tokens", pro: "1,000,000 tokens", premium: "1,000,000 tokens" },
@@ -68,8 +99,8 @@ export default function GoogleAIPro() {
         {
           title: "Imagen 4 — Image Generation",
           emoji: "🖼️",
-          tier2Label: "Shared (৳649/mo)",
-          tier3Label: "Personal (৳1,799/mo)",
+          tier2Label: "Shared (৳599/mo)",
+          tier3Label: "Personal (৳2,990/mo)",
           rows: [
             { label: "Image Engine", free: "Imagen 3 (limited)", pro: "Imagen 4 (best quality)", premium: "Imagen 4 (best quality)" },
             { label: "Images Per Day", free: "1–2/day", pro: "~50/day (shared)", premium: "~50/day (dedicated)" },
@@ -84,8 +115,8 @@ export default function GoogleAIPro() {
         {
           title: "Veo 2 — Video Generation",
           emoji: "🎬",
-          tier2Label: "Shared (৳649/mo)",
-          tier3Label: "Personal (৳1,799/mo)",
+          tier2Label: "Shared (৳599/mo)",
+          tier3Label: "Personal (৳2,990/mo)",
           rows: [
             { label: "Video Engine", free: "No", pro: "Veo 2 (Google DeepMind)", premium: "Veo 2 (Google DeepMind)" },
             { label: "Videos Per Day", free: "None", pro: "~5 videos/day (shared)", premium: "~5 videos/day (dedicated)" },
@@ -99,8 +130,8 @@ export default function GoogleAIPro() {
         {
           title: "NotebookLM Plus Features",
           emoji: "📚",
-          tier2Label: "Shared (৳649/mo)",
-          tier3Label: "Personal (৳1,799/mo)",
+          tier2Label: "Shared (৳599/mo)",
+          tier3Label: "Personal (৳2,990/mo)",
           rows: [
             { label: "Sources per notebook", free: "50", pro: "500", premium: "500 (own account)" },
             { label: "Notebooks", free: "100", pro: "Unlimited", premium: "Unlimited" },
@@ -193,9 +224,9 @@ export default function GoogleAIPro() {
         { q: "Is Google AI Pro better than ChatGPT for Bangla language?", a: "Google AI Pro (Gemini 2.5 Pro) and ChatGPT are both excellent at Bangla. However, Gemini has a slight edge for Bangla due to Google's extensive multilingual training data. For document reading and research with NotebookLM, Google AI Pro is clearly better. For coding and custom assistants, ChatGPT has more ecosystem maturity." },
         { q: "What is the 2TB Google Drive storage useful for in Bangladesh?", a: "With 2TB Google Drive storage (included in the Personal Seat plan), Bangladeshi professionals can backup all business documents, photos, videos, and project files — eliminating the risk of local hard drive failure. 2TB can store approximately 500,000 photos, 100+ hours of 1080p video, or hundreds of thousands of documents. It also integrates with Google Photos, giving you unlimited photo backup." },
         { q: "How does Imagen 4 compare to Midjourney for Bangladeshi users?", a: "Imagen 4 is Google's best text-to-image model — particularly strong at accurate text rendering within images (a weakness for most competitors), photorealistic product photography, and following precise prompts. Midjourney v7 generally produces more artistic, diverse, and visually stunning outputs for creative work. For e-commerce product images with accurate Bangla text overlays, Imagen 4 wins. For artistic and creative imagery, Midjourney wins." },
-        { q: "What is the difference between Google AI Pro Shared and Personal plans?", a: "The Shared Seat (৳899/mo) gives you full Gemini 2.5 Pro features, Imagen 4, Veo 2, NotebookLM Plus, and 2TB Drive — through a shared infrastructure. The Personal Seat (৳1,299/mo) upgrades your own Google account, giving you Gemini integration in your personal Gmail, Docs, Sheets, and Slides — plus all the AI features on your private Google account." },
+        { q: "What is the difference between Google AI Pro Shared and Personal plans?", a: "The Shared Seat (৳599/mo) gives you full Gemini 2.5 Pro features, Imagen 4, Veo 2, NotebookLM Plus, and 2TB Drive — through a shared infrastructure. The Personal Seat (৳2,990/mo) upgrades your own Google account, giving you Gemini integration in your personal Gmail, Docs, Sheets, and Slides — plus all the AI features on your private Google account." },
         { q: "Can I use Google AI Pro to build a research podcast for my class?", a: "Yes. NotebookLM Plus's Audio Overview feature generates a realistic podcast-style conversation where two AI hosts discuss and summarise your uploaded research materials. You upload your lecture notes or research papers, and NotebookLM creates an audio podcast you can listen to while commuting or studying. Bangladeshi students and educators find this excellent for creating supplementary study audio." },
-        { q: "How is Google AI Pro delivered by AITP?", a: "Shared Seat (৳899/mo): we deliver login credentials within 5–15 minutes of payment on WhatsApp. Personal Seat (৳1,299/mo): we need your Google account email and process the Google One AI Premium upgrade within 2–4 hours. You'll receive a Google confirmation email and your account immediately shows Gemini Advanced enabled with 2TB storage." },
+        { q: "How is Google AI Pro delivered by AITP?", a: "Shared Seat (৳599/mo): we deliver login credentials within 5–15 minutes of payment on WhatsApp. Personal Seat (৳2,990/mo): we need your Google account email and process the Google One AI Premium upgrade within 2–4 hours. You'll receive a Google confirmation email and your account immediately shows Gemini Advanced enabled with 2TB storage." },
       ]}
     />
   );

@@ -1,12 +1,43 @@
 import { ToolDetail } from "@/components/ToolDetail";
 import { Cpu } from "lucide-react";
 
+// TOOL_META — structured snapshot consumed by /compare/:slug
+export const TOOL_META = {
+  "slug": "supergrok",
+  "category": "chat",
+  "priceBdt": 699,
+  "priceLabel": "৳699/mo",
+  "model": "Grok 3 + Big Brain mode",
+  "contextWindow": "1M tokens",
+  "multimodal": "Text, image, voice, video",
+  "banglaQuality": "⭐⭐⭐",
+  "speed": "Fast",
+  "accuracy": "⭐⭐⭐⭐",
+  "pricingTier": "Premium",
+  "brand": "xAI",
+  "tagline": "Grok 3 — unlimited Aurora + X data",
+  "toolPath": "/tools/supergrok",
+  "iconName": "Cpu",
+  "accent": "#7C3AED",
+  "bestUseCase": "Power users wanting unlimited image gen + real-time X data",
+  "bestFor": [
+    "Unlimited Aurora photorealistic AI images",
+    "Real-time X/Twitter intelligence with DeepSearch",
+    "Big Brain extended reasoning for complex tasks",
+    "Video generation from text prompts"
+  ],
+  "weaknesses": [
+    "Personal seat requires your own X account (2-4 hr setup)",
+    "Smaller ecosystem of apps & plugins vs ChatGPT"
+  ]
+} as const;
+
 export default function SuperGrok() {
   return (
     <ToolDetail
       name="SuperGrok"
       tagline="by xAI — in Bangladesh"
-      description="xAI's most powerful AI tier — SuperGrok brings Grok 3 with Big Brain mode, unlimited Aurora image generation, video generation, real-time X + web data, and 1M-token context. The only AI with live X/Twitter intelligence. Pay with bKash/Nagad from ৳499/month."
+      description="xAI's most powerful AI tier — SuperGrok brings Grok 3 with Big Brain mode, unlimited Aurora image generation, video generation, real-time X + web data, and 1M-token context. The only AI with live X/Twitter intelligence. Pay with bKash/Nagad from ৳699/month."
       accentColor="#7C3AED"
       icon={Cpu}
       features={[
@@ -24,7 +55,7 @@ export default function SuperGrok() {
       plans={[
         {
           label: "SuperGrok — Shared Seat",
-          price: "৳499",
+          price: "৳699",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",
@@ -36,7 +67,7 @@ export default function SuperGrok() {
         },
         {
           label: "SuperGrok — Personal Seat",
-          price: "৳3,990",
+          price: "৳4,990",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Personal",
@@ -52,8 +83,8 @@ export default function SuperGrok() {
         {
           title: "AI Chat & Reasoning",
           emoji: "🤖",
-          tier2Label: "Shared (৳499/mo)",
-          tier3Label: "Personal (৳1,499/mo)",
+          tier2Label: "Shared (৳699/mo)",
+          tier3Label: "Personal (৳4,990/mo)",
           rows: [
             { label: "AI Model", free: "Grok 3 Mini", pro: "Grok 3 (full)", premium: "Grok 3 (dedicated account)" },
             { label: "Context Window", free: "Limited", pro: "1,000,000 tokens", premium: "1,000,000 tokens" },
@@ -68,8 +99,8 @@ export default function SuperGrok() {
         {
           title: "Aurora Image Generation",
           emoji: "🖼️",
-          tier2Label: "Shared (৳499/mo)",
-          tier3Label: "Personal (৳1,499/mo)",
+          tier2Label: "Shared (৳699/mo)",
+          tier3Label: "Personal (৳4,990/mo)",
           rows: [
             { label: "Image Engine", free: "Basic", pro: "Aurora (xAI)", premium: "Aurora (xAI, dedicated)" },
             { label: "Images Per Month", free: "10/month", pro: "Unlimited", premium: "Unlimited (private)" },
@@ -84,8 +115,8 @@ export default function SuperGrok() {
         {
           title: "Video Generation",
           emoji: "🎬",
-          tier2Label: "Shared (৳499/mo)",
-          tier3Label: "Personal (৳1,499/mo)",
+          tier2Label: "Shared (৳699/mo)",
+          tier3Label: "Personal (৳4,990/mo)",
           rows: [
             { label: "Video Engine", free: "None", pro: "Grok Video (xAI)", premium: "Grok Video (xAI)" },
             { label: "Videos Per Month", free: "None", pro: "Limited (beta)", premium: "Limited (beta)" },
@@ -98,8 +129,8 @@ export default function SuperGrok() {
         {
           title: "Coding & Other Features",
           emoji: "💻",
-          tier2Label: "Shared (৳499/mo)",
-          tier3Label: "Personal (৳1,499/mo)",
+          tier2Label: "Shared (৳699/mo)",
+          tier3Label: "Personal (৳4,990/mo)",
           rows: [
             { label: "Code Generation", free: "Basic", pro: "Full project scaffold", premium: "Full project scaffold" },
             { label: "Code Debugging", free: "Limited", pro: "Deep analysis", premium: "Deep analysis" },
@@ -164,7 +195,7 @@ export default function SuperGrok() {
           title: "Real-Time X/Twitter Monitoring",
           who: "Brand managers, journalists, crisis communication teams",
           makes: "Live X/Twitter sentiment analysis, trending topics, and brand mention summaries",
-          timeSaved: "Social media monitoring ৳10,000/mo → ৳499/mo SuperGrok",
+          timeSaved: "Social media monitoring ৳10,000/mo → ৳699/mo SuperGrok",
           prompt: "DeepSearch: বাংলাদেশে আজকের viral X posts কোনগুলো? কোন brands trending? কোন topics-এ negative sentiment আছে? real-time analysis দাও",
         },
       ]}
@@ -181,7 +212,7 @@ export default function SuperGrok() {
         { feature: "Code Generation", thisProduct: "⭐⭐⭐⭐⭐", chatgpt: "⭐⭐⭐⭐⭐", claude: "⭐⭐⭐⭐⭐", gemini: "⭐⭐⭐⭐" },
         { feature: "Bangla Language Quality", thisProduct: "⭐⭐⭐⭐", chatgpt: "⭐⭐⭐⭐", claude: "⭐⭐⭐⭐", gemini: "⭐⭐⭐⭐⭐" },
         { feature: "X/Twitter Account Upgrade", thisProduct: "✅ Yes (Personal plan)", chatgpt: "❌ No", claude: "❌ No", gemini: "❌ No" },
-        { feature: "AITP Shared Price", thisProduct: "৳499/mo", chatgpt: "৳499/mo", claude: "৳1,495/mo", gemini: "৳899/mo" },
+        { feature: "AITP Shared Price", thisProduct: "৳699/mo", chatgpt: "৳499/mo", claude: "৳1,495/mo", gemini: "৳899/mo" },
       ]}
       extendedFaqs={[
         { q: "What is the difference between SuperGrok and regular Grok?", a: "SuperGrok is xAI's premium tier at $30/month (vs free Grok). It unlocks unlimited Aurora image generation, video generation, Big Brain deep reasoning mode, higher message limits, and priority access. Regular Grok has very limited image generation and no video." },
@@ -194,7 +225,7 @@ export default function SuperGrok() {
         { q: "How does Aurora compare to Midjourney for image quality?", a: "Aurora produces photorealistic images competitive with Midjourney v6 in quality. The main differences: Aurora is included unlimited with SuperGrok (no separate credit system), while Midjourney requires a separate ৳1,299/mo plan and uses a credit/GPU minute system. Midjourney v7 still leads on artistic quality and creative diversity, but Aurora is excellent for photorealistic and social content. For high-volume image creation, Aurora's unlimited nature is a major advantage." },
         { q: "What happens to my X/Twitter account if I choose the Personal Seat?", a: "The Personal Seat upgrades your own X (Twitter) account to X Premium — you get the gold/blue verification badge, longer post character limits, post monetisation eligibility, and analytics. SuperGrok AI features are then activated on that account. If you already have X Premium, we apply the SuperGrok AI tier upgrade. Contact us on WhatsApp to discuss your specific X account situation." },
         { q: "Can SuperGrok handle Bangla language tasks?", a: "Yes. Grok 3 produces good Bangla text — adequate for content creation, business communication, and research. You can write prompts in Bangla and receive Bangla responses. Grok's Bangla quality is comparable to ChatGPT Plus. For the highest Bangla writing quality, Claude and Gemini have a slight edge. Grok's unique value for Bangladeshi users is its real-time X data and unlimited image generation, not Bangla language leadership." },
-        { q: "How is SuperGrok delivered after payment to AITP?", a: "Shared Seat (৳499/mo): we deliver login credentials within 5–15 minutes of payment confirmation on WhatsApp. Personal Seat (৳3,990/mo): we need your X/Twitter account email and process the upgrade within 2–4 hours. Both plans come with a 30-day replacement warranty and 24/7 WhatsApp support in Bangla and English." },
+        { q: "How is SuperGrok delivered after payment to AITP?", a: "Shared Seat (৳699/mo): we deliver login credentials within 5–15 minutes of payment confirmation on WhatsApp. Personal Seat (৳4,990/mo): we need your X/Twitter account email and process the upgrade within 2–4 hours. Both plans come with a 30-day replacement warranty and 24/7 WhatsApp support in Bangla and English." },
       ]}
     />
   );

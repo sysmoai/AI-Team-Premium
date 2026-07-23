@@ -35,6 +35,8 @@ import { TOOL_META as FIREFLY_META } from "@/pages/tools/Firefly";
 import { TOOL_META as IDEOGRAM_META } from "@/pages/tools/Ideogram";
 import { TOOL_META as FREEPIK_META } from "@/pages/tools/Freepik";
 import { TOOL_META as ADOBE_CC_META } from "@/pages/tools/AdobeCC";
+import { TOOL_META as SUPERGROK_META } from "@/pages/tools/SuperGrok";
+import { TOOL_META as GOOGLE_AI_PRO_META } from "@/pages/tools/GoogleAIPro";
 
 const ICONS: Record<string, LucideIcon> = {
   Brain, Sparkles, Star, Image: ImageIcon, Video, Search, Code2, FileText, Edit3,
@@ -135,6 +137,7 @@ const ALL_METAS: ToolMeta[] = [
   MIDJOURNEY_META, LEONARDO_META, RUNWAY_META, KLING_META, COPILOT_META,
   GRAMMARLY_META, NOTION_META, CANVA_META, MS365_META, LINKEDIN_META,
   ELEVENLABS_META, VAULT_META, MANUS_META, POE_META, FIREFLY_META, IDEOGRAM_META, FREEPIK_META, ADOBE_CC_META,
+  SUPERGROK_META, GOOGLE_AI_PRO_META,
 ];
 
 export const COMPARE_TOOLS: Record<string, CompareTool> = Object.fromEntries(

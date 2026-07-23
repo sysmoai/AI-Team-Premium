@@ -25,7 +25,7 @@ const FAQS = [
 
 export default function AIOpsSprint() {
   usePageMeta({
-    title: "AI Ops Sprint Bangladesh — 1:1 AI Implementation ৳9,900 | AI Team Premium",
+    title: "AI Ops Sprint Bangladesh — 1:1 AI Implementation ৳9,900",
     description: "One-time 1:1 AI implementation sprint for freelancers and business owners in Bangladesh. 3 expert sessions via Zoom, workflow audit, custom AI toolstack recommendation, prompt templates, 30-day follow-up support. ৳9,900, pay via bKash/Nagad.",
     path: "/services/ai-ops-sprint",
   });

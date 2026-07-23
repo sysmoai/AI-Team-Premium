@@ -1,7 +1,7 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Perplexity Pro Bangladesh — ৳499/mo | AI Team Premium",
+  seoTitle: "Perplexity Pro Bangladesh — ৳499/mo",
   seoDescription: "Buy Perplexity Pro in Bangladesh via bKash/Nagad. AI-powered search with unlimited deep research from ৳499/month. Access o3-mini, GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro.",
   path: "/perplexity-plans",
   toolName: "Perplexity Pro",

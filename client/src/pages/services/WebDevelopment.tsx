@@ -37,7 +37,7 @@ const FAQS = [
 
 export default function WebDevelopment() {
   usePageMeta({
-    title: "Web Development Bangladesh — Landing Page from ৳7,999 | AI Team Premium",
+    title: "Web Development Bangladesh — Landing Page from ৳7,999",
     description: "Professional web development in Bangladesh from ৳7,999. Landing pages, e-commerce, portfolio sites, custom web apps. React, Next.js, WordPress. Pay via bKash/Nagad.",
     path: "/services/web-development",
   });

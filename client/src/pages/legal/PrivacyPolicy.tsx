@@ -6,7 +6,7 @@ import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 export default function PrivacyPolicy() {
   usePageMeta({
-    title: "Privacy Policy — AI Team Premium",
+    title: "Privacy Policy",
     description: "How AI Team Premium collects, uses, and protects customer data in Bangladesh. Covers WhatsApp orders, bKash/Nagad payment information, and account credentials handling.",
     path: "/privacy-policy",
   });

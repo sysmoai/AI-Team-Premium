@@ -1,7 +1,7 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Grok Bangladesh — ৳499/mo | AI Team Premium",
+  seoTitle: "Grok Bangladesh — ৳499/mo",
   seoDescription: "Buy Grok (xAI) in Bangladesh via bKash/Nagad. Shared access from ৳499/month, Personal Seat from ৳3,990/month. Real-time data, DeepSearch, Aurora image generation.",
   path: "/grok-plans",
   toolName: "Grok",

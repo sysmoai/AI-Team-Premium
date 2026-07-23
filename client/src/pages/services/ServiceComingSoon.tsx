@@ -18,7 +18,7 @@ interface Props {
 
 export default function ServiceComingSoon({ title, banglaTitle, description, emoji, whatsappText, path }: Props) {
   usePageMeta({
-    title: `${title} in Bangladesh — AI Team Premium`,
+    title: `${title} in Bangladesh`,
     description,
     path,
   });

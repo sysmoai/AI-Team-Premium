@@ -62,7 +62,7 @@ const FAQS = [
 
 export default function BrandDesign() {
   usePageMeta({
-    title: "Brand Design Services Bangladesh — Logo & Identity from ৳4,999 | AI Team Premium",
+    title: "Brand Design Services Bangladesh — Logo & Identity from ৳4,999",
     description: "Professional brand design in Bangladesh from ৳4,999. Logo design, brand identity, social media kit, business card. 5-day turnaround. Pay via bKash/Nagad. AI Team Premium.",
     path: "/services/brand-design",
   });

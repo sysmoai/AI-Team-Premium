@@ -10,8 +10,17 @@ const BASE = "AI Team Premium";
 const SITE_URL = "https://aiteampremium.com";
 
 function setMeta(selector: string, value: string) {
-  const el = document.querySelector<HTMLMetaElement>(selector);
-  if (el) el.content = value;
+  let el = document.querySelector<HTMLMetaElement>(selector);
+  if (!el) {
+    el = document.createElement("meta");
+    // Parse the selector to get the attribute name and value
+    const match = selector.match(/\[(\w+)=["']([^"']+)["']\]/);
+    if (match) {
+      el.setAttribute(match[1], match[2]);
+    }
+    document.head.appendChild(el);
+  }
+  el.content = value;
 }
 
 function setCanonical(href: string) {

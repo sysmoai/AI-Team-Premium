@@ -6,7 +6,7 @@ import { config } from "@/lib/config";
 
 export default function TermsOfService() {
   usePageMeta({
-    title: "Terms of Service — AI Team Premium",
+    title: "Terms of Service",
     description: "Terms governing the purchase and use of AI subscriptions and support services from AI Team Premium in Bangladesh. Includes usage rules for shared plans, warranty conditions, and dispute resolution.",
     path: "/terms",
   });

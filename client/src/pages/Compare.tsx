@@ -44,7 +44,7 @@ function ComparisonNotFound({ slug }: { slug: string }) {
 
 function ComparisonHub({ onPick }: { onPick: (slug: string) => void }) {
   usePageMeta({
-    title: "Compare AI Tools — ChatGPT vs Claude vs Gemini in Bangladesh | AITP",
+    title: "Compare AI Tools — ChatGPT vs Claude vs Gemini in Bangladesh",
     description: "Side-by-side AI tool comparisons. ChatGPT vs Claude, Midjourney vs Leonardo, Runway vs Kling and more — pick the right premium AI for your Bangladesh workflow.",
     path: "/compare",
   });
@@ -150,7 +150,7 @@ function specRows(a: CompareTool, b: CompareTool) {
 function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug: string }) {
   const rec = recommend(a, b);
   const winner: CompareTool | null = rec.kind === "winner" ? (rec.winnerSlug === a.slug ? a : b) : null;
-  const title = `${a.name} vs ${b.name} in Bangladesh — Price, Features, Verdict | AITP`;
+  const title = `${a.name} vs ${b.name} in Bangladesh — Price, Features, Verdict`;
   const description = `Side-by-side comparison of ${a.name} (${a.priceFromLabel}) and ${b.name} (${b.priceFromLabel}). Specs, Bangla quality, best use cases and which to buy from AI Team Premium.`;
   usePageMeta({ title, description, path: `/compare/${slug}` });
 

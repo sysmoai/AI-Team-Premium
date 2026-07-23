@@ -65,7 +65,7 @@ const FAQS = [
 
 export default function Home() {
   usePageMeta({
-    title: "AI Team Premium — ChatGPT, Claude & AI Tools in Bangladesh",
+    title: "ChatGPT, Claude & AI Tools in Bangladesh",
     description: "Buy ChatGPT Plus from ৳499/mo. Claude Pro, Gemini Advanced & more. Pay via bKash/Nagad. 5-15 min delivery. Bangladesh's trusted AI subscription provider.",
     path: "/",
   });

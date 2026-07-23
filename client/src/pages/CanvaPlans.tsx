@@ -1,7 +1,7 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Canva Pro Bangladesh — ৳599/mo | AI Team Premium",
+  seoTitle: "Canva Pro Bangladesh — ৳599/mo",
   seoDescription: "Buy Canva Pro in Bangladesh via bKash/Nagad. Monthly and annual plans from ৳599/month. Magic Studio AI suite including Magic Switch, Magic Write, Magic Edit, and more.",
   path: "/canva-plans",
   toolName: "Canva Pro",

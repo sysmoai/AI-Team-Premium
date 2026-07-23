@@ -1,7 +1,7 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Claude Plans Bangladesh — ৳1,495/mo | AI Team Premium",
+  seoTitle: "Claude Plans Bangladesh — ৳1,495/mo",
   seoDescription: "Buy Anthropic Claude Pro (Claude Sonnet 3.5) in Bangladesh via bKash/Nagad. Shared and personal seats from ৳1,495/month. Extended Thinking, 200K context. No international card needed.",
   path: "/claude-plans",
   toolName: "Claude Pro",

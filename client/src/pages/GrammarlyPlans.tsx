@@ -1,7 +1,7 @@
 import ToolPlansPage, { ToolPageData } from "@/components/ToolPlansPage";
 
 const data: ToolPageData = {
-  seoTitle: "Grammarly Premium Bangladesh — ৳499/mo | AI Team Premium",
+  seoTitle: "Grammarly Premium Bangladesh — ৳499/mo",
   seoDescription: "Buy Grammarly Premium in Bangladesh via bKash/Nagad. Monthly and annual plans from ৳499/month. AI writing assistant with plagiarism check and Grammarly AI generative prompts.",
   path: "/grammarly-plans",
   toolName: "Grammarly Premium",

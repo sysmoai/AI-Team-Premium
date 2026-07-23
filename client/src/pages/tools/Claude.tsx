@@ -81,7 +81,7 @@ faq: [
 
 export default function ClaudePage() {
   usePageMeta({
-    title: "Claude Pro in Bangladesh \u2014 \u09F71,495/mo | AI Team Premium",
+title: "Claude Pro in Bangladesh — ৳1,495/mo",
     description: "Buy Claude Pro subscription in Bangladesh. \u09F71,495/month, 5\u201315 min delivery via bKash/Nagad. 30-day replacement warranty. WhatsApp support in Bangla & English.",
   });
 

@@ -40,7 +40,7 @@ const SUBS = [
 
 export default function AISubscriptions() {
   usePageMeta({
-    title: "All AI Subscriptions in Bangladesh — ChatGPT, Claude & 18+ AI Tools | AITP",
+    title: "All AI Subscriptions in Bangladesh — ChatGPT, Claude & 18+ AI Tools",
     description: "Browse 18+ premium AI subscriptions in Bangladesh — ChatGPT Plus (৳499/mo), Claude Pro, Google AI Pro, SuperGrok, Runway ML, Kling AI, Leonardo AI, Grammarly, Canva & more. Pay via bKash/Nagad. 5–15 min delivery.",
     path: "/ai-subscriptions",
   });

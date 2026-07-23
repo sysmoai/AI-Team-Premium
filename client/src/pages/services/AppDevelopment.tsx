@@ -37,7 +37,7 @@ const FAQS = [
 
 export default function AppDevelopment() {
   usePageMeta({
-    title: "App Development Bangladesh — Mobile App from ৳29,999 | AI Team Premium",
+    title: "App Development Bangladesh — Mobile App from ৳29,999",
     description: "Professional iOS & Android app development in Bangladesh from ৳29,999. React Native, e-commerce apps, booking apps, MVP builds. Pay via bKash/Nagad. AI Team Premium.",
     path: "/services/app-development",
   });

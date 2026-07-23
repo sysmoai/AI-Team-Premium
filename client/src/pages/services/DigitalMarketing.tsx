@@ -58,7 +58,7 @@ const FAQS = [
 
 export default function DigitalMarketing() {
   usePageMeta({
-    title: "Digital Marketing Bangladesh — Facebook & Google Ads from ৳9,999/mo | AI Team Premium",
+    title: "Digital Marketing Bangladesh — Facebook & Google Ads from ৳9,999/mo",
     description: "Professional digital marketing in Bangladesh from ৳9,999/month. Facebook Ads, Google Ads, SEO, social media management. Pay via bKash/Nagad. AI Team Premium.",
     path: "/services/digital-marketing",
   });

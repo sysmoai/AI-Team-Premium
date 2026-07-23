@@ -110,6 +110,8 @@ const NAMES: Record<string, string> = {
   ideogram: "Ideogram AI",
   freepik: "Freepik (Magnific)",
   "adobe-cc": "Adobe Creative Cloud",
+  supergrok: "SuperGrok",
+  "google-ai-pro": "Google AI Pro",
 };
 
 function deriveCompareTool(meta: ToolMeta): CompareTool {
@@ -163,6 +165,8 @@ export const POPULAR_PAIRS: [ToolSlug, ToolSlug][] = [
   ["elevenlabs", "runway"],
   ["microsoft365", "notion"],
   ["vault", "chatgpt"],
+  ["google-ai-pro", "chatgpt"],
+  ["supergrok", "chatgpt"],
 ];
 
 // ────────────────────────────────────────────────────────────────────

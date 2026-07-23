@@ -25,6 +25,18 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://aiteampremium.com/chatgpt/go-shared</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://aiteampremium.com/chatgpt/go-personal</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://aiteampremium.com/chatgpt/plus-premium-shared</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
@@ -318,27 +330,37 @@
   <!-- ── TOOL COMPARISON HUB ── -->
   <url>
     <loc>https://aiteampremium.com/compare</loc>
-    <lastmod>2026-05-26</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.75</priority>
   </url>
 
+  <!-- ── START A PROJECT ── -->
+  <url>
+    <loc>https://aiteampremium.com/start-a-project</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
   <!-- ── POPULAR TOOL COMPARISONS ── -->
-  <url><loc>https://aiteampremium.com/compare/claude-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://aiteampremium.com/compare/gemini-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://aiteampremium.com/compare/claude-vs-gemini</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://aiteampremium.com/compare/chatgpt-vs-perplexity</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://aiteampremium.com/compare/grok-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://aiteampremium.com/compare/midjourney-vs-leonardo</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://aiteampremium.com/compare/runway-vs-kling</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://aiteampremium.com/compare/copilot-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://aiteampremium.com/compare/notion-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-  <url><loc>https://aiteampremium.com/compare/grammarly-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-  <url><loc>https://aiteampremium.com/compare/claude-vs-perplexity</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-  <url><loc>https://aiteampremium.com/compare/midjourney-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-  <url><loc>https://aiteampremium.com/compare/canva-vs-midjourney</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-  <url><loc>https://aiteampremium.com/compare/elevenlabs-vs-runway</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
-  <url><loc>https://aiteampremium.com/compare/microsoft365-vs-notion</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
-  <url><loc>https://aiteampremium.com/compare/vault-vs-chatgpt</loc><lastmod>2026-05-26</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://aiteampremium.com/compare/claude-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://aiteampremium.com/compare/gemini-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://aiteampremium.com/compare/claude-vs-gemini</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://aiteampremium.com/compare/chatgpt-vs-perplexity</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://aiteampremium.com/compare/grok-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://aiteampremium.com/compare/midjourney-vs-leonardo</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://aiteampremium.com/compare/runway-vs-kling</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://aiteampremium.com/compare/copilot-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
+  <url><loc>https://aiteampremium.com/compare/notion-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
+  <url><loc>https://aiteampremium.com/compare/grammarly-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
+  <url><loc>https://aiteampremium.com/compare/claude-vs-perplexity</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
+  <url><loc>https://aiteampremium.com/compare/midjourney-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
+  <url><loc>https://aiteampremium.com/compare/canva-vs-midjourney</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
+  <url><loc>https://aiteampremium.com/compare/elevenlabs-vs-runway</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://aiteampremium.com/compare/microsoft365-vs-notion</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://aiteampremium.com/compare/vault-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
+  <url><loc>https://aiteampremium.com/compare/google-ai-pro-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
+  <url><loc>https://aiteampremium.com/compare/supergrok-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
 
 </urlset>

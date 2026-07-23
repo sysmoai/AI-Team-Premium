@@ -46,6 +46,8 @@ import AdobeCCPage from "./pages/tools/AdobeCC";
 import AuditDashboard from "./pages/admin/AuditDashboard";
 import ComparePage from "./pages/Compare";
 import PlusShared from "./pages/chatgpt/PlusShared";
+import GoShared from "./pages/chatgpt/GoShared";
+import GoPersonal from "./pages/chatgpt/GoPersonal";
 import PlusPremiumShared from "./pages/chatgpt/PlusPremiumShared";
 import PlusPersonalSeat from "./pages/chatgpt/PlusPersonalSeat";
 import BusinessShared from "./pages/chatgpt/BusinessShared";
@@ -81,6 +83,8 @@ function Router() {
         <Route path="/" component={Home} />
         <Route path="/chatgpt-plans" component={ChatGPTPlans} />
         <Route path="/chatgpt/plus-shared" component={PlusShared} />
+        <Route path="/chatgpt/go-shared" component={GoShared} />
+        <Route path="/chatgpt/go-personal" component={GoPersonal} />
         <Route path="/chatgpt/plus-premium-shared" component={PlusPremiumShared} />
         <Route path="/chatgpt/plus-personal-seat" component={PlusPersonalSeat} />
         <Route path="/chatgpt/business-shared" component={BusinessShared} />

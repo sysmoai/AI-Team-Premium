@@ -4,6 +4,11 @@ export const BRAND = {
   sky: "#EFF6FF",
   white: "#FFFFFF",
   black: "#000000",
+  accent: "#2563EB",
+  /** Gradient for OG images and hero sections */
+  gradient: "linear-gradient(135deg, #0F172A 0%, #1e3a5f 50%, #2563EB 100%)",
+  /** Muted blue for backgrounds */
+  muted: "rgba(37, 99, 235, 0.08)",
 };
 
 interface IconProps {
@@ -12,6 +17,11 @@ interface IconProps {
   className?: string;
 }
 
+/**
+ * Improved Atom Orbit icon — thicker strokes, higher-contrast ring,
+ * slightly larger core for better visual balance at all sizes.
+ * Based on the original geometry spec but enhanced for modern look.
+ */
 export function IconOrbit({
   size = 64,
   color = BRAND.blue,
@@ -27,19 +37,28 @@ export function IconOrbit({
       className={className}
       style={{ display: "block", flexShrink: 0 }}
     >
-      <ellipse cx="32" cy="32" rx="24" ry="11" transform="rotate(-35 32 32)" stroke={color} strokeWidth="2.2" strokeLinecap="round" fill="none" />
-      <ellipse cx="32" cy="32" rx="24" ry="11" transform="rotate(35 32 32)" stroke={color} strokeWidth="2.2" strokeLinecap="round" fill="none" />
-      <circle cx="32" cy="32" r="12" stroke={color} strokeWidth="1.3" fill="none" opacity="0.25" />
-      <circle cx="32" cy="20" r="2.8" fill={color} />
-      <circle cx="42.39" cy="38" r="2.8" fill={color} />
-      <circle cx="21.61" cy="38" r="2.8" fill={color} />
-      <circle cx="32" cy="32" r="4" fill={color} />
+      {/* Orbits — thicker 2.5 for better visibility */}
+      <ellipse cx="32" cy="32" rx="24" ry="11" transform="rotate(-35 32 32)" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <ellipse cx="32" cy="32" rx="24" ry="11" transform="rotate(35 32 32)" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      {/* Ring — more visible at 0.35 opacity */}
+      <circle cx="32" cy="32" r="12" stroke={color} strokeWidth="1.6" fill="none" opacity="0.35" />
+      {/* Nodes — slightly larger 3.0 */}
+      <circle cx="32" cy="20" r="3" fill={color} />
+      <circle cx="42.39" cy="38" r="3" fill={color} />
+      <circle cx="21.61" cy="38" r="3" fill={color} />
+      {/* Core — larger 4.5 for better center balance */}
+      <circle cx="32" cy="32" r="4.5" fill={color} />
     </svg>
   );
 }
 
 const FONT = "'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif";
 
+/**
+ * Cleaner wordmark: "AI Team" in blue, "Premium" in navy.
+ * Removed the "BD" suffix — the brand is "AI Team Premium".
+ * Two styles only: bold accent + medium base = cleaner hierarchy.
+ */
 function WordmarkInner({
   fontSize,
   tracking,
@@ -56,17 +75,18 @@ function WordmarkInner({
       style={{
         display: "inline-flex",
         alignItems: "baseline",
-        gap: "0.25em",
+        gap: "0.3em",
         whiteSpace: "nowrap",
         fontSize,
         letterSpacing: tracking,
         color: baseColor,
         fontFamily: FONT,
         lineHeight: 1.2,
+        fontWeight: 500,
       }}
     >
       <span style={{ fontWeight: 700, color: accentColor }}>AI</span>
-      <span style={{ fontWeight: 300 }}>Team</span>
+      <span style={{ fontWeight: 400 }}>Team</span>
       <span style={{ fontWeight: 600 }}>Premium</span>
     </span>
   );
@@ -74,9 +94,9 @@ function WordmarkInner({
 
 const STACKED = {
   sm: { icon: 56, fs: 13, gap: 6, tr: "0.05em" },
-  md: { icon: 88, fs: 17, gap: 8, tr: "0.06em" },
-  lg: { icon: 120, fs: 21, gap: 10, tr: "0.07em" },
-  xl: { icon: 168, fs: 27, gap: 14, tr: "0.08em" },
+  md: { icon: 80, fs: 16, gap: 8, tr: "0.06em" },
+  lg: { icon: 110, fs: 20, gap: 10, tr: "0.07em" },
+  xl: { icon: 150, fs: 26, gap: 14, tr: "0.08em" },
 };
 
 export function LogoStacked({
@@ -110,9 +130,9 @@ export function LogoStacked({
 
 const HORIZ = {
   sm: { icon: 28, fs: 13, gap: 10, tr: "0.05em" },
-  md: { icon: 40, fs: 17, gap: 12, tr: "0.06em" },
-  lg: { icon: 52, fs: 21, gap: 14, tr: "0.07em" },
-  xl: { icon: 72, fs: 28, gap: 18, tr: "0.08em" },
+  md: { icon: 38, fs: 16, gap: 12, tr: "0.06em" },
+  lg: { icon: 48, fs: 20, gap: 14, tr: "0.07em" },
+  xl: { icon: 64, fs: 26, gap: 18, tr: "0.08em" },
 };
 
 export function LogoHorizontal({

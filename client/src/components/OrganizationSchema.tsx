@@ -67,7 +67,7 @@ export function OrganizationSchema() {
       "image": `${SITE_URL}/favicon.png`,
       "url": SITE_URL,
       "telephone": config.phone,
-      "priceRange": "৳399–৳24,999",
+      "priceRange": "৳499–৳24,999",
       "currenciesAccepted": "BDT",
       "paymentAccepted": "bKash, Nagad, Rocket, Bank Transfer",
       "areaServed": { "@type": "Country", "name": "Bangladesh" },

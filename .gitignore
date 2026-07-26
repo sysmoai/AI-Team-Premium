@@ -8,3 +8,4 @@ test-results/
 local-libs/
 *.tar.gz
 *.tar.xz
+.vercel

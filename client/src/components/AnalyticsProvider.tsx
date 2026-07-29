@@ -16,7 +16,7 @@ export default function AnalyticsProvider() {
         const script = document.createElement("script");
         script.async = true;
         script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsConfig.gaId}`;
-        script.onerror = () => console.error("Failed to load Google Analytics");
+        script.onerror = () => { /* Analytics load failed, but app continues */ };
         document.head.appendChild(script);
 
         const inline = document.createElement("script");
@@ -86,7 +86,7 @@ export default function AnalyticsProvider() {
         document.head.appendChild(script);
       }
     } catch (err) {
-      console.error("Analytics initialization error:", err);
+      // Analytics initialization failed, app continues normally
     }
   }, []);
 

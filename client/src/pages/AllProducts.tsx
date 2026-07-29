@@ -1,10 +1,10 @@
 import { useState, useMemo } from "react";
 import { Link } from "wouter";
-import productsData from "../data/products-complete.json";
+import allProducts from "../data/products-all.json";
 import { config } from "../lib/config";
 
-// Extract all products from the complete database
-const products = productsData.products || [];
+// Use all products directly (flat array)
+const products = Array.isArray(allProducts) ? allProducts : (allProducts as any).products || [];
 
 export default function AllProducts() {
   const [searchTerm, setSearchTerm] = useState("");

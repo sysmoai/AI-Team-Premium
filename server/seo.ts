@@ -6,7 +6,7 @@ import fs from "fs";
 import path from "path";
 
 const SITE_URL = "https://www.aiteampremium.com";
-const DIST_PATH = path.resolve(import.meta.dirname, "public");
+const DIST_PATH = path.resolve(process.cwd(), "dist", "public");
 
 interface RouteMeta {
   title: string;

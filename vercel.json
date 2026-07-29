@@ -1,17 +1,6 @@
 {
   "version": 2,
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "functions": {
-    "dist/index.cjs": {
-      "runtime": "nodejs24.x"
-    }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/dist/index.cjs"
-    }
-  ]
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "devCommand": "npm run dev"
 }

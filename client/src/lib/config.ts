@@ -37,5 +37,31 @@ export const config = {
     "freelancer": "Hi! I'm a freelancer and I want the 'Freelancer Fast Delivery Pack' (৳4,999). Please guide me.",
     "business":   "Hi! I want 'Business AI Setup' (৳12,999) for my team. When can we schedule a Google Meet?",
     "hourly":     "Hi! I want to book a 1-hour live AI support session (৳799). Are you available?"
+  },
+
+  whatsappToolTemplates: {
+    "claude-shared": "Hi! I want to order Claude Pro Shared (৳1,495/mo) from AI Team Premium. Please share payment details.",
+    "claude-personal": "Hi! I want my own Claude Pro Personal account (৳2,990/mo). Is it available?",
+    "gemini": "Hi! I want Gemini Advanced (৳499/mo) from AI Team Premium. How do I order?",
+    "google-ai-pro": "Hi! I want Google AI Pro (৳449/mo). Please guide me through the process.",
+    "supergrok": "Hi! I want SuperGrok (৳499/mo). What's the next step?",
+    "perplexity": "Hi! I want Perplexity Pro (৳599/mo). Please share payment details.",
+    "midjourney": "Hi! I want Midjourney (৳1,299/mo). How do I get started?",
+    "leonardo": "Hi! I want Leonardo AI (৳349/mo). Please provide payment options.",
+    "runway": "Hi! I want Runway ML (৳899/mo). Is it available now?",
+    "kling": "Hi! I want Kling AI (৳599/mo). Please share details.",
+    "canva": "Hi! I want Canva Pro (৳350/mo). How do I order?",
+    "grammarly": "Hi! I want Grammarly Premium (৳800/mo). Please guide me.",
+    "notion": "Hi! I want Notion AI (৳199/mo). Is it available?",
+    "copilot": "Hi! I want GitHub Copilot (৳1,200/mo). Please share details.",
+    "microsoft365": "Hi! I want Microsoft 365 Copilot. What are the options?",
+    "linkedin": "Hi! I want LinkedIn Premium. Please share pricing for Bangladesh.",
+    "elevenlabs": "Hi! I want ElevenLabs (৳699/mo). How do I get started?",
+    "poe": "Hi! I want Poe AI subscription. Please guide me.",
+    "firefly": "Hi! I want Adobe Firefly Pro. What's the pricing?",
+    "ideogram": "Hi! I want Ideogram AI (৳350/mo). Please share details.",
+    "freepik": "Hi! I want Freepik (৳300/mo). Is it available?",
+    "adobe-cc": "Hi! I want Adobe Creative Cloud. What's the pricing in Bangladesh?",
+    "vault": "Hi! I want the AI Tools Vault Bundle (৳1,990/mo) — ChatGPT + Claude + Gemini. Please guide me."
   }
 };

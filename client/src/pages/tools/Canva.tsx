@@ -1,5 +1,5 @@
 import { ToolDetail } from "@/components/ToolDetail";
-import { SiCanva } from "react-icons/si";
+import { Palette } from "lucide-react";
 
 const CANVA_USE_CASES = [
   {
@@ -130,7 +130,7 @@ export default function Canva() {
       tagline="Team Access in BD"
       description="Design anything like a pro. Magic Studio AI image generation, Dream Lab text-to-image, background remover, 100M+ premium assets and 610K+ templates — added to your Canva team via legitimate invitation, no credit card needed."
       accentColor="#00C4CC"
-      icon={SiCanva as any}
+      icon={Palette}
       features={[
         "Magic Studio — AI image generation inside Canva",
         "Dream Lab — advanced text-to-image with style control",

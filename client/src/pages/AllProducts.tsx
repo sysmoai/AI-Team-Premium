@@ -3,8 +3,23 @@ import { Link } from "wouter";
 import allProducts from "../data/products-all.json";
 import { config } from "../lib/config";
 
+interface Product {
+  id: string;
+  name: string;
+  brand: string;
+  category: string;
+  price: number;
+  description: string;
+  tier?: string;
+  badge?: string;
+  capabilities?: string[];
+  deliverySLA?: string;
+  whatsappMsg?: string;
+  brandColor?: string;
+}
+
 // Use all products directly (flat array)
-const products = Array.isArray(allProducts) ? allProducts : (allProducts as any).products || [];
+const products: Product[] = Array.isArray(allProducts) ? allProducts : (allProducts as any).products || [];
 
 export default function AllProducts() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,11 +27,11 @@ export default function AllProducts() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<"all" | "summary">("all");
 
-  const brands = useMemo(() => [...new Set(products.map((p: any) => p.brand))].sort(), []);
-  const categories = useMemo(() => [...new Set(products.map((p: any) => p.category))].sort(), []);
+  const brands = useMemo(() => Array.from(new Set(products.map((p) => p.brand))).sort(), []);
+  const categories = useMemo(() => Array.from(new Set(products.map((p) => p.category))).sort(), []);
 
   const filteredProducts = useMemo(() => {
-    return products.filter((p: any) => {
+    return products.filter((p) => {
       const matchesSearch = p.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         p.description.toLowerCase().includes(searchTerm.toLowerCase());
       const matchesBrand = !selectedBrand || p.brand === selectedBrand;
@@ -143,7 +158,7 @@ export default function AllProducts() {
         {/* Product Grid */}
         {filteredProducts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProducts.map((product: any) => (
+            {filteredProducts.map((product) => (
               <div
                 key={product.id}
                 className="bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg transition border border-gray-200 dark:border-slate-700 overflow-hidden group"

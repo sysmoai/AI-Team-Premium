@@ -1,15 +1,19 @@
 import { useState, useMemo } from "react";
 import { Link } from "wouter";
-import products from "../data/products.json";
+import productsData from "../data/products-complete.json";
 import { config } from "../lib/config";
+
+// Extract all products from the complete database
+const products = productsData.products || [];
 
 export default function AllProducts() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<"all" | "summary">("all");
 
-  const brands = useMemo(() => [...new Set(products.map((p: any) => p.brand))], []);
-  const categories = useMemo(() => [...new Set(products.map((p: any) => p.category))], []);
+  const brands = useMemo(() => [...new Set(products.map((p: any) => p.brand))].sort(), []);
+  const categories = useMemo(() => [...new Set(products.map((p: any) => p.category))].sort(), []);
 
   const filteredProducts = useMemo(() => {
     return products.filter((p: any) => {
@@ -33,8 +37,8 @@ export default function AllProducts() {
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-900 dark:to-blue-950 text-white py-12 px-6">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold mb-3">🛒 All Premium AI Tools</h1>
-          <p className="text-blue-100 text-lg">Browse our complete catalog of {products.length} AI subscription plans</p>
+          <h1 className="text-4xl font-bold mb-3">🛒 Complete AI Catalog — 107 Premium Tools</h1>
+          <p className="text-blue-100 text-lg">Browse {products.length} premium AI subscription plans • {brands.length} brands • {categories.length} categories</p>
         </div>
       </div>
 
@@ -115,9 +119,25 @@ export default function AllProducts() {
 
         {/* Results Count */}
         <div className="mb-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border-l-4 border-blue-600">
-          <p className="text-gray-800 dark:text-gray-200">
-            Showing <strong>{filteredProducts.length}</strong> of <strong>{products.length}</strong> products
-          </p>
+          <div className="flex justify-between items-center">
+            <p className="text-gray-800 dark:text-gray-200">
+              Showing <strong>{filteredProducts.length}</strong> of <strong>{products.length}</strong> premium AI products
+            </p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setViewMode("all")}
+                className={`px-3 py-1 text-sm rounded ${viewMode === "all" ? "bg-blue-600 text-white" : "bg-gray-200 dark:bg-slate-700"}`}
+              >
+                All ({products.length})
+              </button>
+              <button
+                onClick={() => setViewMode("summary")}
+                className={`px-3 py-1 text-sm rounded ${viewMode === "summary" ? "bg-blue-600 text-white" : "bg-gray-200 dark:bg-slate-700"}`}
+              >
+                By Brand ({brands.length})
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Product Grid */}
@@ -208,18 +228,22 @@ export default function AllProducts() {
         )}
 
         {/* Stats Footer */}
-        <div className="mt-12 pt-8 border-t border-gray-300 dark:border-slate-700 grid grid-cols-3 gap-4 text-center">
-          <div className="p-6 bg-white dark:bg-slate-800 rounded-lg">
-            <p className="text-3xl font-bold text-blue-600 dark:text-blue-400">{products.length}</p>
-            <p className="text-gray-600 dark:text-gray-400">Total Products</p>
+        <div className="mt-12 pt-8 border-t border-gray-300 dark:border-slate-700 grid grid-cols-4 gap-4 text-center">
+          <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-lg border-2 border-blue-300 dark:border-blue-700">
+            <p className="text-4xl font-bold text-blue-600 dark:text-blue-400">🎯 107</p>
+            <p className="text-gray-700 dark:text-gray-300 font-semibold">Total Products</p>
           </div>
-          <div className="p-6 bg-white dark:bg-slate-800 rounded-lg">
-            <p className="text-3xl font-bold text-green-600 dark:text-green-400">{brands.length}</p>
-            <p className="text-gray-600 dark:text-gray-400">Premium Brands</p>
+          <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-lg border-2 border-green-300 dark:border-green-700">
+            <p className="text-4xl font-bold text-green-600 dark:text-green-400">{brands.length}</p>
+            <p className="text-gray-700 dark:text-gray-300 font-semibold">Premium Brands</p>
           </div>
-          <div className="p-6 bg-white dark:bg-slate-800 rounded-lg">
-            <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">{categories.length}</p>
-            <p className="text-gray-600 dark:text-gray-400">Categories</p>
+          <div className="p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-lg border-2 border-purple-300 dark:border-purple-700">
+            <p className="text-4xl font-bold text-purple-600 dark:text-purple-400">{categories.length}</p>
+            <p className="text-gray-700 dark:text-gray-300 font-semibold">Categories</p>
+          </div>
+          <div className="p-6 bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/30 dark:to-orange-800/30 rounded-lg border-2 border-orange-300 dark:border-orange-700">
+            <p className="text-4xl font-bold text-orange-600 dark:text-orange-400">✅</p>
+            <p className="text-gray-700 dark:text-gray-300 font-semibold">All Live</p>
           </div>
         </div>
       </div>

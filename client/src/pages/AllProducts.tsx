@@ -205,7 +205,7 @@ export default function AllProducts() {
                   {/* Capabilities */}
                   <div className="text-xs text-gray-600 dark:text-gray-400">
                     <p className="font-semibold mb-1">Features:</p>
-                    <p>{product.capabilities.join(", ")}</p>
+                    <p>{product.capabilities?.join(", ") || "Premium features included"}</p>
                   </div>
 
                   {/* Delivery SLA */}

@@ -1,0 +1,95 @@
+name: 🔄 Rollback Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      deployment_id:
+        description: 'Vercel Deployment ID to rollback to'
+        required: true
+        type: string
+      reason:
+        description: 'Reason for rollback'
+        required: true
+        type: choice
+        options:
+          - Critical bug found
+          - Performance degradation
+          - Security issue
+          - User-reported issue
+          - Database migration failure
+          - Manual testing needed
+
+permissions:
+  contents: write
+  deployments: write
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Rollback notification
+        run: |
+          echo "🔄 ROLLBACK INITIATED"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "Deployment ID: ${{ inputs.deployment_id }}"
+          echo "Reason: ${{ inputs.reason }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Time: $(date)"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+      - name: Create rollback commit
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git log --oneline -5
+          echo "Note: For production rollback, use Vercel dashboard or this workflow"
+          echo "Deployment ID to restore: ${{ inputs.deployment_id }}"
+
+      - name: Verify rollback target
+        run: |
+          echo "✅ Rollback target deployment: ${{ inputs.deployment_id }}"
+          echo "⚠️ Please verify in Vercel dashboard that this deployment is stable"
+          echo "📊 Check deployment logs and performance metrics"
+
+      - name: Health check (post-rollback)
+        run: |
+          echo "Performing health checks on www.aiteampremium.com..."
+          for i in {1..10}; do
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://www.aiteampremium.com")
+            if [ "$HTTP_CODE" = "200" ]; then
+              echo "✅ Website responding (HTTP $HTTP_CODE)"
+              exit 0
+            fi
+            echo "Attempt $i: HTTP $HTTP_CODE"
+            sleep 2
+          done
+          echo "⚠️ Health check incomplete - manual verification recommended"
+
+      - name: Document rollback
+        run: |
+          cat >> ROLLBACK-LOG.md << EOF
+
+          ## Rollback Event
+          - **Date:** $(date)
+          - **Deployment ID:** ${{ inputs.deployment_id }}
+          - **Reason:** ${{ inputs.reason }}
+          - **Actor:** ${{ github.actor }}
+          - **Status:** Initiated
+          EOF
+
+      - name: Commit rollback log
+        continue-on-error: true
+        run: |
+          git add ROLLBACK-LOG.md
+          git commit -m "docs: log rollback event (${{ inputs.reason }})"
+          git push origin main

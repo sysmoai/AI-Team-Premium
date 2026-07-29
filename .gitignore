@@ -8,3 +8,29 @@ test-results/
 local-libs/
 *.tar.gz
 *.tar.xz
+
+# Environment variables - NEVER commit secrets!
+.env
+.env.local
+.env.*.local
+.env.production
+
+# IDE & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+build/
+coverage/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.vercel

@@ -114,8 +114,21 @@ export async function registerRoutes(
     }
   });
 
+  // Admin authentication middleware
+  const requireAdminAuth = (req: any, res: any, next: any) => {
+    const adminSecret = process.env.ADMIN_SECRET || "admin-secret-key";
+    const authHeader = req.headers.authorization || "";
+    const token = authHeader.replace("Bearer ", "");
+
+    if (token !== adminSecret && token !== process.env.ADMIN_SECRET) {
+      return res.status(401).json({ message: "Unauthorized: Admin access required" });
+    }
+
+    next();
+  };
+
   // ===== AUDIT DASHBOARD API =====
-  app.get("/api/admin/audit/dashboard", async (_req, res) => {
+  app.get("/api/admin/audit/dashboard", requireAdminAuth, async (_req, res) => {
     try {
       const summary = await storage.getAuditDashboardSummary();
       res.json(summary);
@@ -125,7 +138,7 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/admin/audit/products", async (_req, res) => {
+  app.get("/api/admin/audit/products", requireAdminAuth, async (_req, res) => {
     try {
       const [products, counts] = await Promise.all([
         storage.getProductRegistry(),
@@ -143,7 +156,7 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/admin/audit/log", async (req, res) => {
+  app.get("/api/admin/audit/log", requireAdminAuth, async (req, res) => {
     try {
       const limit = Math.min(parseInt(String(req.query.limit || "100"), 10) || 100, 500);
       const offset = parseInt(String(req.query.offset || "0"), 10) || 0;
@@ -158,7 +171,7 @@ export async function registerRoutes(
     }
   });
 
-  app.get("/api/admin/audit/issues", async (req, res) => {
+  app.get("/api/admin/audit/issues", requireAdminAuth, async (req, res) => {
     try {
       const severity = req.query.severity ? String(req.query.severity) : undefined;
       const status = req.query.status ? String(req.query.status) : "open";
@@ -170,7 +183,7 @@ export async function registerRoutes(
     }
   });
 
-  app.post("/api/admin/audit/run/:productId", async (req, res) => {
+  app.post("/api/admin/audit/run/:productId", requireAdminAuth, async (req, res) => {
     try {
       const id = parseInt(req.params.productId, 10);
       if (!Number.isFinite(id)) return res.status(400).json({ message: "Invalid productId" });
@@ -183,7 +196,7 @@ export async function registerRoutes(
     }
   });
 
-  app.post("/api/admin/audit/run-all", async (_req, res) => {
+  app.post("/api/admin/audit/run-all", requireAdminAuth, async (_req, res) => {
     try {
       const result = await runAuditAll();
       res.json(result);
@@ -193,19 +206,33 @@ export async function registerRoutes(
     }
   });
 
-  app.post("/api/admin/migrate", async (_req, res) => {
+  // DEPRECATED: Migrations should run during deployment, not via API
+  // This endpoint is kept for backward compatibility but should be removed in production
+  app.post("/api/admin/migrate", requireAdminAuth, async (_req, res) => {
     try {
+      // Only allowed in development
+      if (process.env.NODE_ENV === "production") {
+        return res.status(403).json({ message: "Migrations not allowed in production. Use deployment tools instead." });
+      }
+
       const migrationPath = join(process.cwd(), "migrations", "0001_init.sql");
       const sqlContent = readFileSync(migrationPath, "utf-8");
+
+      // Validate SQL content doesn't contain dangerous patterns
+      const dangerousPatterns = /DROP\s+DATABASE|DROP\s+TABLE|TRUNCATE/i;
+      if (dangerousPatterns.test(sqlContent)) {
+        return res.status(400).json({ message: "Migration contains dangerous SQL operations" });
+      }
+
       await db.execute(sql.raw(sqlContent));
-      res.json({ message: "Migration completed successfully" });
+      res.json({ message: "Migration completed successfully (development only)" });
     } catch (err: any) {
       console.error("[migrate] failed:", err);
       res.status(500).json({ message: "Migration failed", error: err.message });
     }
   });
 
-  app.patch("/api/admin/audit/issues/:id/resolve", async (req, res) => {
+  app.patch("/api/admin/audit/issues/:id/resolve", requireAdminAuth, async (req, res) => {
     try {
       const id = parseInt(req.params.id, 10);
       if (!Number.isFinite(id)) return res.status(400).json({ message: "Invalid id" });

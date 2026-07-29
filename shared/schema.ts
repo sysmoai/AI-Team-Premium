@@ -1,4 +1,4 @@
-import { pgTable, text, serial, timestamp, integer, jsonb } from "drizzle-orm/pg-core";
+import { pgTable, text, serial, timestamp, integer, jsonb, index } from "drizzle-orm/pg-core";
 import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
@@ -42,31 +42,45 @@ export const productRegistry = pgTable("product_registry", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-export const auditLog = pgTable("audit_log", {
-  id: serial("id").primaryKey(),
-  productId: integer("product_id").notNull(),
-  phase: integer("phase").notNull(),
-  field: text("field").notNull(),
-  oldValue: text("old_value"),
-  newValue: text("new_value"),
-  sourceUrl: text("source_url"),
-  severity: text("severity").notNull(),
-  status: text("status").notNull().default("flagged"),
-  notes: text("notes"),
-  createdAt: timestamp("created_at").defaultNow(),
-});
+export const auditLog = pgTable(
+  "audit_log",
+  {
+    id: serial("id").primaryKey(),
+    productId: integer("product_id").notNull(),
+    phase: integer("phase").notNull(),
+    field: text("field").notNull(),
+    oldValue: text("old_value"),
+    newValue: text("new_value"),
+    sourceUrl: text("source_url"),
+    severity: text("severity").notNull(),
+    status: text("status").notNull().default("flagged"),
+    notes: text("notes"),
+    createdAt: timestamp("created_at").defaultNow(),
+  },
+  (table) => ({
+    productIdIdx: index("audit_log_product_id_idx").on(table.productId),
+    createdAtIdx: index("audit_log_created_at_idx").on(table.createdAt),
+  }),
+);
 
-export const auditIssues = pgTable("audit_issues", {
-  id: serial("id").primaryKey(),
-  productId: integer("product_id").notNull(),
-  phase: integer("phase").notNull(),
-  issueType: text("issue_type").notNull(),
-  description: text("description").notNull(),
-  severity: text("severity").notNull(),
-  status: text("status").notNull().default("open"),
-  detectedAt: timestamp("detected_at").defaultNow(),
-  resolvedAt: timestamp("resolved_at"),
-});
+export const auditIssues = pgTable(
+  "audit_issues",
+  {
+    id: serial("id").primaryKey(),
+    productId: integer("product_id").notNull(),
+    phase: integer("phase").notNull(),
+    issueType: text("issue_type").notNull(),
+    description: text("description").notNull(),
+    severity: text("severity").notNull(),
+    status: text("status").notNull().default("open"),
+    detectedAt: timestamp("detected_at").defaultNow(),
+    resolvedAt: timestamp("resolved_at"),
+  },
+  (table) => ({
+    productIdIdx: index("audit_issues_product_id_idx").on(table.productId),
+    statusIdx: index("audit_issues_status_idx").on(table.status),
+  }),
+);
 
 export const insertProductRegistrySchema = createInsertSchema(productRegistry).omit({
   id: true,

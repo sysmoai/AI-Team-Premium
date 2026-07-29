@@ -1,0 +1,107 @@
+================================================================================
+PHASE 6 DATABASE SETUP — CONFIGURATION REFERENCE
+================================================================================
+
+Generated: Mon Jul 27 12:56:02 BST 2026
+Supabase Project: ptiheausshfuancyjntd
+Vercel Project: ai-team-premium
+
+================================================================================
+CREDENTIALS NEEDED (From Supabase)
+================================================================================
+
+1. Service Role Key
+   Location: Settings → API → Service Role Key
+   Format: eyJ... (starts with eyJ)
+   Usage: Not directly used, but confirms access
+
+2. Database Password
+   Location: Settings → Database → Password
+   Format: [random string]
+   Usage: In DATABASE_URL connection string
+
+3. Construct DATABASE_URL
+   Format: postgresql://postgres:[PASSWORD]@ptiheausshfuancyjntd.supabase.co:5432/postgres?sslmode=require
+   Example: postgresql://postgres:abc123def456@ptiheausshfuancyjntd.supabase.co:5432/postgres?sslmode=require
+
+================================================================================
+VERCEL ENVIRONMENT VARIABLES TO CONFIGURE
+================================================================================
+
+1. DATABASE_URL
+   Scope: Production
+   Value: [From above]
+
+2. ADMIN_SECRET
+   Scope: Production
+   Value: VNnQXH1T9g2Su1emRxd3vO1of7Oau+7+
+   Save this value!
+
+3. CORS_ORIGINS
+   Scope: Production
+   Value: https://ai-team-premium.vercel.app,https://aiteampremium.com
+
+4. NODE_ENV
+   Scope: Production
+   Value: production
+
+================================================================================
+EXECUTION STEPS
+================================================================================
+
+1. Supabase SQL Execution
+   ☐ Open SQL Editor: https://app.supabase.io/project/ptiheausshfuancyjntd/sql/new
+   ☐ Copy PHASE6-DATABASE-SETUP-SQL.sql contents
+   ☐ Paste into editor
+   ☐ Click Run
+   ☐ Verify tables created
+
+2. Vercel Configuration
+   ☐ Open: https://vercel.com/sysmoaigits-projects/ai-team-premium/settings/environment-variables
+   ☐ Add 4 environment variables (see above)
+   ☐ Save each one
+
+3. Vercel Redeployment
+   ☐ Go to Deployments: https://vercel.com/sysmoaigits-projects/ai-team-premium/deployments
+   ☐ Click latest deployment
+   ☐ Click Redeploy
+   ☐ Wait ~20 seconds for build to complete
+
+4. Verification
+   ☐ Test health endpoint (HTTP 200 expected)
+   ☐ Test admin endpoints (with ADMIN_SECRET header)
+   ☐ Test database inserts
+   ☐ Check Vercel logs for any errors
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Health Check Returns 404:
+→ Database not configured. Check environment variables in Vercel.
+→ Verify DATABASE_URL is correct (copy/paste from Supabase).
+
+Admin Endpoints Return 401:
+→ ADMIN_SECRET not configured or wrong value.
+→ Check Vercel dashboard environment variables.
+
+Database Connection Error:
+→ DATABASE_URL connection string incorrect.
+→ Verify: postgresql://postgres:[PASSWORD]@...
+→ Check Supabase project password hasn't changed.
+
+Tables Not Found:
+→ SQL script not executed in Supabase.
+→ Verify execution completed without errors in SQL editor.
+
+================================================================================
+TIMELINE
+================================================================================
+
+1. Supabase Setup: 1-2 minutes
+2. Vercel Configuration: 2-3 minutes
+3. Redeployment: 15-20 seconds
+4. Verification: 2-3 minutes
+Total: ~10-15 minutes
+
+================================================================================

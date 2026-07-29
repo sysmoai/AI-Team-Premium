@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import AnalyticsProvider from "@/components/AnalyticsProvider";
+import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 import Home from "./pages/Home";
 import ChatGPTPlans from "./pages/ChatGPTPlans";
@@ -45,6 +46,7 @@ import FreepikPage from "./pages/tools/Freepik";
 import AdobeCCPage from "./pages/tools/AdobeCC";
 import AuditDashboard from "./pages/admin/AuditDashboard";
 import ComparePage from "./pages/Compare";
+import AllProducts from "./pages/AllProducts";
 import PlusShared from "./pages/chatgpt/PlusShared";
 import GoShared from "./pages/chatgpt/GoShared";
 import GoPersonal from "./pages/chatgpt/GoPersonal";
@@ -106,6 +108,8 @@ function Router() {
         <Route path="/support" component={Services} />
         <Route path="/services" component={Services} />
         <Route path="/ai-subscriptions" component={AISubscriptions} />
+        <Route path="/all-products" component={AllProducts} />
+        <Route path="/products" component={AllProducts} />
         <Route path="/pricing" component={Pricing} />
         <Route path="/about" component={About} />
         <Route path="/start-a-project" component={Contact} />
@@ -148,15 +152,17 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <AnalyticsProvider />
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </QueryClientProvider>
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <AnalyticsProvider />
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </QueryClientProvider>
+      </ThemeProvider>
+    </ErrorBoundary>
   );
 }
 

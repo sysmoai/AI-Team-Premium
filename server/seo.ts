@@ -10,7 +10,10 @@ import { lookupMeta, SITE_URL } from "../lib/route-meta.js";
 const DIST_PATH = path.resolve(process.cwd(), "dist", "public");
 
 export function handleSeoRequest(req: Request, res: Response): void {
-  const requestPath = req.path;
+  // originalUrl, not req.path: this runs behind app.use("/{*path}", ...), and
+  // app.use strips the mount path, which would leave req.path as "/" for every
+  // request — serving homepage metadata everywhere and never returning a 404.
+  const requestPath = (req.originalUrl || req.url || "/").split("?")[0];
   const indexPath = path.resolve(DIST_PATH, "index.html");
 
   if (!fs.existsSync(indexPath)) {

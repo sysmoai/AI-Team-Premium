@@ -5,11 +5,17 @@ Live: **https://www.aiteampremium.com** (canonical). `aiteampremium.com` 308-red
 ## The loop
 
 ```bash
-npm run dev          # local dev server
+npm run dev          # fast local dev (Vite HMR)
+npm run preview      # serve the production build locally — real SEO + real 404s
 npm run ship         # typecheck + build + verify — run before every push
 git add -A && git commit -m "..." && git push
 npm run verify:live  # ~1 min after the push, confirm production
 ```
+
+`npm run dev` uses Vite middleware, which serves the raw template for every
+path — so per-route metadata and 404s are **invisible** there. After touching
+routes or metadata, check `npm run preview` instead: it runs the real production
+path, so `/nope-xyz` returns a genuine 404 and each page shows its own title.
 
 `npm run ship` is the gate. It exits non-zero if anything is wrong, and it catches
 the specific failures that have broken this site before. **GitHub Actions cannot
@@ -27,7 +33,8 @@ Three files, in this order:
 2. `client/src/App.tsx` — `<Route path="/your-page" component={YourPage} />`
 3. `lib/route-meta.js` — a `ROUTE_META` entry with `title`, `description`, `canonical`
 
-Then add the URL to `client/public/sitemap.xml`.
+Then add the URL to `client/public/sitemap.xml`, and check it with
+`npm run preview`.
 
 `npm run verify` fails if you add a route in step 2 and forget step 3, which
 would otherwise ship a page that returns HTTP 404 to Google while still rendering

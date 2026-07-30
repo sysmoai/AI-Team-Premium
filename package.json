@@ -12,7 +12,8 @@
     "audit": "node scripts/audit-routes.cjs",
     "verify": "node scripts/verify.mjs",
     "verify:live": "node scripts/verify-live.mjs",
-    "ship": "npm run check && npm run build && npm run verify"
+    "ship": "npm run check && npm run build && npm run verify",
+    "preview": "node scripts/preview.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

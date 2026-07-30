@@ -18,6 +18,7 @@
     "build:catalog": "node scripts/build-catalog.mjs",
     "gen:routes": "node scripts/gen-product-routes.mjs",
     "gen:compare": "node scripts/gen-compare-routes.mjs",
+    "gen:blog": "node scripts/gen-blog-routes.mjs",
     "gen:sitemap": "node scripts/gen-sitemap.mjs",
     "audit:prices": "node scripts/audit-prices.mjs",
     "validate:catalog": "node scripts/validate-catalog.mjs",

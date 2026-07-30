@@ -761,6 +761,205 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "ai-freelancer-career-roadmap-which-tools-first-bangladesh",
+    title: "AI Freelancer Career Roadmap: Which Tools to Learn First in Bangladesh",
+    excerpt: "Buying every AI subscription at once wastes money and teaches you nothing well. Here's the order that actually works — what to learn in month 1, what to add once it's paying for itself, and what to skip until you have a reason to need it.",
+    category: "For Freelancers",
+    publishedDate: "2026-07-31",
+    readMinutes: 8,
+    heroEmoji: "🗺️",
+    faqs: [
+      { q: "Do I need to learn all of these tools before I start freelancing?", a: "No — start with one tool that matches the work you're already doing, get fast at it, then add the next one only once the first is actually part of your workflow. Buying five subscriptions in week one and using none of them well is the most common mistake." },
+      { q: "How long until an AI tool actually pays for itself?", a: "It depends entirely on how much you use it, so there's no fixed number — but as a rule of thumb, if a ৳499/month tool saves you even one hour on a project you'd have priced at ৳1,000+, it's already worth it. Track your own before/after time on two or three real tasks instead of guessing." },
+      { q: "Should I mention I use AI tools to clients?", a: "Most clients judge outcomes, turnaround time and communication — not the tools behind them. What matters is that the final work is reviewed and correct, not that it started as an AI draft." },
+    ],
+    sections: [
+      {
+        heading: "Month 1: one tool, matched to the work you already do",
+        body: [
+          "Skip the temptation to buy a full stack immediately. Pick the single tool that maps to what you're already delivering, and get genuinely fast at it before adding anything else.",
+          "Writing, translation, proposals, research: ChatGPT Plus. This is the highest-leverage single subscription for almost any freelance category — it touches proposal drafts, client emails, quick research and first-pass content regardless of your niche.",
+          "Design and social content: Canva Pro. Templates plus AI image generation cut mockup and revision time dramatically, and clients rarely need anything more polished for social or small business work.",
+          "Code: GitHub Copilot. Inline suggestions inside the editor you already use — no workflow change required to start benefiting.",
+          "Spend the whole first month using just that one tool on real paid work, not practice projects. You learn the prompting habits that actually matter by using it under real deadline pressure.",
+        ],
+      },
+      {
+        heading: "Month 2–3: add the tool that removes your specific bottleneck",
+        body: [
+          "By now you know exactly where your delivery slows down — that's what you add next, not what's trending.",
+          "If client English is the bottleneck: Grammarly Premium, run over every message and deliverable before sending.",
+          "If proposal volume is the bottleneck: Claude Pro alongside ChatGPT — having a second model to cross-check a proposal or catch something the first one missed measurably improves win-rate on higher-value bids.",
+          "If turnaround speed on code is the bottleneck: Cursor, once Copilot's inline suggestions start feeling limiting for larger refactors.",
+          "If visual quality is the bottleneck on design work: Midjourney or Recraft for custom illustration and brand assets Canva's templates can't produce.",
+        ],
+      },
+      {
+        heading: "Month 4+: only once the toolkit is already earning back its cost",
+        body: [
+          "This is where it's worth expanding into adjacent income streams the earlier tools unlock — not before.",
+          "Video and voice work: CapCut Pro (৳399/mo) for editing plus ElevenLabs (from ৳748/mo) for voiceover — together these let a writer-freelancer take on short-form video gigs without hiring anyone.",
+          "Presentation and pitch-deck work: Figma (from ৳2,064/mo) or Gamma, if client work is starting to include investor decks or product presentations.",
+          "Workspace and delivery organisation: Notion Business (from ৳800/mo), once you're running multiple concurrent clients and a spreadsheet stops being enough.",
+        ],
+      },
+      {
+        heading: "A realistic budget by stage",
+        body: [
+          "Starting out: ChatGPT Plus Shared (৳350/mo). One tool, used properly, beats five tools used badly.",
+          "Established, 3+ regular clients: ChatGPT Plus Shared + Grammarly Premium Shared (৳470) + Canva Pro Shared (৳510) ≈ ৳1,330/month.",
+          "Full-time, diversifying income streams: add CapCut Pro (৳399) and either Claude Pro or GitHub Copilot depending on your niche ≈ ৳2,200–3,200/month — still less than most freelancers lose to a single missed deadline caused by working without these tools.",
+          "There's no guaranteed income figure any tool combination produces — how much you earn depends on your skill, your niche and how consistently you work. What these tools reliably do is remove hours of manual effort per project, which is time you can spend on more billable work or a better pitch.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "video-editor-ai-roadmap-capcut-runway-elevenlabs-bangladesh",
+    title: "Video Editor's AI Roadmap: CapCut, Runway and ElevenLabs for Bangladeshi Creators",
+    excerpt: "Three tools cover almost every short-form and client video workflow — but they solve different problems and cost very different amounts. Here's what to learn first and when the upgrade to the next tool actually pays for itself.",
+    category: "For Freelancers",
+    publishedDate: "2026-07-31",
+    readMinutes: 7,
+    heroEmoji: "🎬",
+    faqs: [
+      { q: "Do I need Runway if I already have CapCut Pro?", a: "Not immediately. CapCut handles cutting, captions, transitions and effects — the bulk of short-form editing. Runway is for generating or transforming footage that doesn't exist yet (AI video, style transfer), which most creators only need once they're taking on more ambitious client briefs." },
+      { q: "Can I do voiceover without hiring a voice actor?", a: "Yes — ElevenLabs generates natural-sounding narration in multiple languages and accents from typed text, which is genuinely usable for tutorials, ads and explainer videos. For a brand's flagship content, many creators still mix in a real voice for the final polish, but for volume content it removes the biggest bottleneck." },
+      { q: "What's the realistic monthly cost to start?", a: "CapCut Pro alone is ৳399/month and covers most short-form editing work end to end. Add ElevenLabs (from ৳748/month) once voiceover work becomes a regular part of your deliverables — there's no need to pay for both from day one." },
+    ],
+    sections: [
+      {
+        heading: "Start with CapCut Pro — it covers most of the actual editing",
+        body: [
+          "CapCut Pro (৳399/mo) removes the watermark, unlocks the full AI effects library and gives cloud storage for projects in progress. For short-form content — Reels, Shorts, TikTok-style edits — this alone covers cutting, transitions, auto-captions and most of what a client actually asks for.",
+          "Learn its auto-caption and auto-reframe tools first. Captions dramatically increase watch time on social platforms where most people watch on mute, and reframing lets you deliver one edit in multiple aspect ratios without re-cutting by hand.",
+        ],
+      },
+      {
+        heading: "Add ElevenLabs once voiceover becomes a bottleneck",
+        body: [
+          "The moment a client asks for narration, tutorial voiceover, or an explainer video and you don't have a voice talent on hand, ElevenLabs (from ৳748/mo) removes that bottleneck entirely — type the script, get natural speech back in minutes.",
+          "This is also where a video editor can genuinely expand into new income: offering narrated explainer videos or product demo voiceovers as a distinct service, priced separately from the editing work.",
+        ],
+      },
+      {
+        heading: "Add Runway when the brief needs footage that doesn't exist",
+        body: [
+          "Runway (from ৳1,794/mo) is for generating video from a text prompt or transforming existing footage — useful when a client wants a concept shot, an abstract background, or a style you can't film practically on a Bangladesh budget.",
+          "This is the highest-cost tool in the stack and the one to add last — most client briefs don't need generated video, and CapCut plus good stock footage covers the rest. Add it once you have a specific brief that actually calls for it, not speculatively.",
+        ],
+      },
+      {
+        heading: "A realistic progression",
+        body: [
+          "Just starting: CapCut Pro only (৳399/mo) — get genuinely fast at editing and captioning before adding anything else.",
+          "Taking narration/explainer briefs: CapCut Pro + ElevenLabs Starter (৳748/mo) ≈ ৳1,150/month.",
+          "Full-service creator or small agency: CapCut Pro + ElevenLabs Creator (৳3,289/mo) + Runway Standard (৳1,794/mo) ≈ ৳5,480/month — appropriate once video work is a primary income stream, not a starting point.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "developer-ai-roadmap-github-copilot-vs-cursor-bangladesh",
+    title: "Developer's AI Roadmap: GitHub Copilot vs Cursor — Which to Learn First",
+    excerpt: "Both are AI coding assistants, both cost roughly the same at entry, and they solve different problems. Here's how to decide which one to start with, and when — if ever — it's worth running both.",
+    category: "For Developers",
+    publishedDate: "2026-07-31",
+    readMinutes: 7,
+    heroEmoji: "💻",
+    faqs: [
+      { q: "Is Cursor just a better version of Copilot?", a: "Not exactly — they overlap but aren't interchangeable. Copilot is an extension inside the editor you already use (VS Code, JetBrains); Cursor is a full editor fork built around AI-assisted editing, with a more powerful chat and multi-file agent workflow. Cursor is more capable for large refactors; Copilot has zero switching cost if you're already happy with your current editor." },
+      { q: "Can I learn both at once?", a: "You can, but it's not the efficient path early on. Get fluent in one first — the prompting habits and code-review discipline transfer between them — then evaluate whether the second tool solves a problem the first genuinely doesn't." },
+      { q: "Free GitHub Student Pack — is Copilot really free for students?", a: "Yes, GitHub's Student Developer Pack includes Copilot at no cost once your student status is verified through GitHub Education. If you're a student, verify eligibility before paying for either tool." },
+    ],
+    sections: [
+      {
+        heading: "Start with GitHub Copilot if you want zero switching cost",
+        body: [
+          "GitHub Copilot Pro (৳1,495/mo) installs as an extension in the editor you already use — VS Code, JetBrains, Neovim. There's no new editor to learn, no project re-setup, no changed keybindings. You get inline completions and chat immediately.",
+          "This is the right starting point if your priority is speed of adoption: you'll be productively using it within the hour, and the habit of reading and verifying every suggestion before accepting it — the single most important Copilot skill — is one you build the same way regardless of which tool you pick.",
+        ],
+      },
+      {
+        heading: "Start with Cursor if your work is large refactors or new projects",
+        body: [
+          "Cursor Pro (৳2,990/mo) is a full editor built around AI from the ground up — multi-file editing, a codebase-aware chat, and an agent mode that can plan and execute a multi-step change across several files at once.",
+          "The switching cost is real: it's a different editor, and muscle memory takes a week or two to rebuild. That cost is worth paying if your work regularly involves large refactors, unfamiliar codebases, or building new projects from scratch — situations where Cursor's wider context and multi-file agent genuinely save more time than Copilot's inline-only model.",
+        ],
+      },
+      {
+        heading: "The habit that matters more than which tool you pick",
+        body: [
+          "Neither tool replaces reviewing the code it writes. The developers who get real productivity gains treat every AI suggestion as a first draft from a fast but occasionally wrong junior collaborator — read it, understand it, then accept or fix it.",
+          "The developers who get burned are the ones who accept multi-file agent changes without reading the diff. That failure mode gets more expensive with Cursor's agent mode than with Copilot's inline suggestions, precisely because it can change more at once — so if you start with Cursor, review its agent output especially carefully until you've built trust in specific, narrow use cases.",
+        ],
+      },
+      {
+        heading: "When it's worth running both",
+        body: [
+          "Once you're earning meaningfully from freelance or contract development work, running Copilot in your day-to-day editor (৳1,495/mo) and reaching for Cursor (৳2,990/mo) specifically for large refactors or greenfield projects is a reasonable combined cost — about ৳4,485/month — for a developer billing client hours where either tool measurably cuts delivery time.",
+          "For a student or someone just starting out, that combined cost rarely makes sense yet. Pick one, get fast at it, and add the second only when you can point to a specific type of task the first one struggles with.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ai-skills-for-job-seekers-bangladesh-30-day-roadmap",
+    title: "AI Skills for Job Seekers in Bangladesh: A 30-Day Roadmap",
+    excerpt: "A CV rewrite alone doesn't get you hired. Here's a 30-day plan that uses AI for the CV, the applications, the interview prep and the follow-up — the full cycle, not just the document.",
+    category: "For Students",
+    publishedDate: "2026-07-31",
+    readMinutes: 8,
+    heroEmoji: "🎯",
+    faqs: [
+      { q: "Will an AI-written CV actually get past ATS systems?", a: "AI helps you structure a CV with the keywords and formatting ATS systems parse correctly, which meaningfully improves your odds versus a poorly formatted CV — but it doesn't guarantee an interview. The content still has to accurately represent your real experience; an ATS-optimised CV describing skills you don't have gets caught in the interview, not before it." },
+      { q: "Is LinkedIn Premium worth it for a job seeker, or just ChatGPT?", a: "ChatGPT is the higher-leverage starting tool — it's cheaper and touches every stage of the process. LinkedIn Premium (৳999/mo) adds InMail credits, applicant insights and who's-viewed-you data, which is genuinely useful once you're actively applying and want visibility into how your profile performs, but it's a month-2 addition, not a starting point." },
+      { q: "How many hours a day does this roadmap take?", a: "Roughly 45–60 minutes on weekdays if you're following it step by step — most of the actual work is applying and practising, with AI cutting the drafting and prep time down rather than adding a new task on top of the job search." },
+    ],
+    sections: [
+      {
+        heading: "Week 1: the documents",
+        body: [
+          "Days 1–2: Rewrite your CV with ChatGPT Plus. Give it your raw work history and ask it to restructure for ATS readability with a clean, keyword-appropriate format — but review every line yourself, since it can only work with what you tell it, and an inaccurate CV fails at the interview stage regardless of formatting.",
+          "Days 3–4: Draft a cover letter template you can genuinely customise per application in under 10 minutes, not a generic one you copy-paste. Ask AI to help you identify what's specific about each job posting worth referencing.",
+          "Days 5–7: Set up your LinkedIn profile headline and summary with AI-drafted copy, then have a friend or mentor review it — a second human opinion catches tone issues AI can miss.",
+        ],
+      },
+      {
+        heading: "Week 2: start applying, with a repeatable process",
+        body: [
+          "For every job posting: paste the description into ChatGPT alongside your CV, ask what specifically to emphasise for this role, and customise your cover letter in minutes instead of starting from scratch each time.",
+          "Track applications in a simple spreadsheet or Notion — company, role, date applied, status. This matters more than any AI tool: most job seekers lose track of where they've applied and follow up inconsistently, which costs more interviews than a weak CV does.",
+          "Target volume over this week: consistency compounds, and a steady daily habit of a few well-customised applications outperforms an inconsistent burst.",
+        ],
+      },
+      {
+        heading: "Week 3: interview preparation",
+        body: [
+          "Use ChatGPT for mock interviews: paste the job description and ask it to interview you with realistic questions for that specific role, then ask for honest feedback on your answers — not generic encouragement.",
+          "Practise explaining your past projects and decisions out loud, not just in writing. Reading a good answer and being able to say it under pressure are different skills, and only practice closes that gap.",
+          "If English communication is a weak point, spend 15–20 minutes daily on spoken practice using ChatGPT's voice mode — explaining your own work out loud is more useful interview prep than generic conversation practice.",
+        ],
+      },
+      {
+        heading: "Week 4: follow-up and iteration",
+        body: [
+          "Draft polite follow-up messages for applications past their stated response window — AI makes this fast enough that you'll actually send them instead of letting the awkwardness stop you.",
+          "Review what's working: which CV version and cover letter angle are getting responses? Iterate on the templates that perform, not the ones you like best.",
+          "If nothing is converting to interviews after consistent effort, that's a signal to get a second opinion — a mentor or a paid session reviewing your actual materials — rather than continuing to iterate on the CV alone.",
+        ],
+      },
+      {
+        heading: "What this costs",
+        body: [
+          "Minimum: ChatGPT Plus Shared (৳350/mo) — covers the CV, cover letters, interview prep and follow-up messages for the full 30 days and beyond.",
+          "With LinkedIn visibility tools once you're actively applying: add LinkedIn Premium (৳999/mo) ≈ ৳1,350/month total.",
+          "No tool guarantees a job offer — hiring depends on your actual skills, the market, and fit for the specific role. What this roadmap does is remove the friction that causes good candidates to apply less, prepare less, and follow up less than they should.",
+        ],
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

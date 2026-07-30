@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- GENERATED FILE — do not edit by hand. Run: npm run gen:sitemap -->
-<!-- Source: lib/route-meta.js (160 indexable routes) -->
+<!-- Source: lib/route-meta.js (164 indexable routes) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.aiteampremium.com/</loc>
@@ -825,6 +825,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/ai-freelancer-career-roadmap-which-tools-first-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/ai-skills-for-job-seekers-bangladesh-30-day-roadmap</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/ai-tools-fiverr-upwork-freelancers-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -867,6 +879,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/developer-ai-roadmap-github-copilot-vs-cursor-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/live-ai-training-bangladesh-what-you-get</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
@@ -880,6 +898,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/blog/shared-vs-personal-ai-subscription-which-to-buy</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/video-editor-ai-roadmap-capcut-runway-elevenlabs-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

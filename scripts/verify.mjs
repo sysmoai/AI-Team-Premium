@@ -240,6 +240,21 @@ try {
   fail("compare-routes.js does not match its sources", detail);
 }
 
+// Blog metadata is generated from blog-posts.ts. A new post added without
+// regenerating would ship with the generic "/blog/" prefix title instead of
+// its own — the same bug already fixed once for products and comparisons.
+try {
+  const { execFileSync } = await import("node:child_process");
+  execFileSync(process.execPath, [resolve(ROOT, "scripts/gen-blog-routes.mjs"), "--check"], {
+    encoding: "utf-8",
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  ok("blog-routes.js is in sync with its source");
+} catch (e) {
+  const detail = (e.stderr || e.message || "").toString().trim();
+  fail("blog-routes.js does not match its source", detail);
+}
+
 // Prefilled WhatsApp/Messenger templates used to hardcode a price. Because they
 // live outside the catalog, nothing kept them in sync — Google AI Pro was
 // repriced to ৳3,390 while its template still quoted ৳449, so every customer

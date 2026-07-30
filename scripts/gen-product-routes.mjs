@@ -115,6 +115,13 @@ ${body}
 };
 
 export const PRODUCT_PATHS = Object.keys(PRODUCT_ROUTE_META);
+
+// Counts used in site copy. Generated so a growing catalog can never leave a
+// stale "80 tools" claim behind in a title or meta description.
+//   TOOL_COUNT    distinct products (one per page) — what a visitor calls a tool
+//   PRODUCT_COUNT purchasable tiers across those products — what /all-products lists
+export const TOOL_COUNT = ${records.length};
+export const PRODUCT_COUNT = ${catalog.length};
 `;
 
 writeFileSync(resolve(ROOT, "lib/product-routes.js"), out, "utf-8");

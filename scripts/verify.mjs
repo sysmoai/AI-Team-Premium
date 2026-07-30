@@ -184,6 +184,32 @@ if (products) {
     );
 }
 
+// client/index.html is static, so a catalog-size claim baked into its meta tags
+// cannot interpolate the real number the way route-meta.js does. It sat at "80
+// premium AI subscriptions" while the catalog held 102 — a claim the site could
+// not stand behind. This fails the build rather than letting it rot again.
+section("Catalog count claims");
+
+const indexHtml = readFileSync(resolve(ROOT, "client/index.html"), "utf-8");
+const { TOOL_COUNT } = await import(
+  pathToFileURL(resolve(ROOT, "lib/product-routes.js")).href
+);
+const claimed = [...indexHtml.matchAll(/and (\d+) premium AI tools/g)].map((m) => Number(m[1]));
+
+if (claimed.length === 0) {
+  fail(
+    "client/index.html has no recognisable catalog-count claim",
+    'expected copy matching "and <N> premium AI tools" — update this check if the wording changed'
+  );
+} else if (claimed.every((n) => n === TOOL_COUNT)) {
+  ok(`client/index.html claims ${TOOL_COUNT} tools in ${claimed.length} tag(s), matching the catalog`);
+} else {
+  fail(
+    `client/index.html claims ${[...new Set(claimed)].join("/")} tools but the catalog has ${TOOL_COUNT}`,
+    "-> update the meta description/og/twitter copy in client/index.html"
+  );
+}
+
 // The catalog is generated. If the source changed and nobody regenerated, the
 // site would quietly ship stale products.
 section("Catalog freshness");

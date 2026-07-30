@@ -1,0 +1,71 @@
+import { VercelRequest, VercelResponse } from '@vercel/node';
+import fs from 'fs';
+import path from 'path';
+
+// This is a catch-all API route that serves our full-stack Express app
+// Vercel will use this to properly execute our Node.js server
+
+const DIST_PATH = path.resolve(process.cwd(), 'dist', 'public');
+
+const SITE_URL = "https://www.aiteampremium.com";
+
+interface RouteMeta {
+  title: string;
+  description: string;
+  canonical: string;
+}
+
+// All route metadata
+const ROUTE_META: Record<string, RouteMeta> = {
+  "/": { title: "AI Team Premium — ChatGPT, Claude & AI Tools in Bangladesh | ৳349+/mo", description: "Bangladesh's #1 AI subscription platform. ChatGPT Plus, Claude Pro, Gemini, Midjourney, Canva & 56+ premium AI tools. Pay via bKash/Nagad. 5-30 min delivery. 30-day warranty.", canonical: "https://www.aiteampremium.com/" },
+  "/all-products": { title: "All Premium AI Products — Complete Catalog (56 Tools) | AI Team Premium", description: "Complete catalog of 56 premium AI subscriptions. ChatGPT, Claude, Google AI, Grok, Perplexity, Midjourney, Ideogram, Runway & more. Search, filter by brand/category. One-click WhatsApp ordering.", canonical: "https://www.aiteampremium.com/all-products" },
+  "/products": { title: "All Premium AI Products — Complete Catalog (56 Tools) | AI Team Premium", description: "Complete catalog of 56 premium AI subscriptions. ChatGPT, Claude, Google AI, Grok, Perplexity, Midjourney, Ideogram, Runway & more. Search, filter by brand/category. One-click WhatsApp ordering.", canonical: "https://www.aiteampremium.com/products" },
+  "/chatgpt-plans": { title: "ChatGPT Plans & Pricing in Bangladesh — ৳499/mo | AIPT — AI Premium Tools", description: "Compare all ChatGPT plans: Plus Shared (৳499/mo), Premium Shared (৳999/mo), Personal (৳2,990/mo), Business, and Pro. Pay via bKash/Nagad. 5-15 min delivery.", canonical: "https://www.aiteampremium.com/chatgpt-plans" },
+  "/pricing": { title: "Pricing — AI Subscriptions in Bangladesh | AIPT — AI Premium Tools", description: "Full pricing for all AI subscriptions in Bangladesh. ChatGPT from ৳499/mo. Pay via bKash/Nagad. No extra VAT.", canonical: "https://www.aiteampremium.com/pricing" },
+  "/about": { title: "About AIPT — AI Premium Tools — Bangladesh's Trusted AI Partner", description: "Learn about AIPT — AI Premium Tools, Bangladesh's premier provider of AI subscriptions, supporting 3,000+ customers.", canonical: "https://www.aiteampremium.com/about" },
+  "/contact": { title: "Contact AIPT — AI Premium Tools — WhatsApp, Messenger, Email", description: "Contact AIPT — AI Premium Tools. Reach us via WhatsApp, Facebook Messenger, or email. Available 7 days a week.", canonical: "https://www.aiteampremium.com/contact" },
+  "/privacy-policy": { title: "Privacy Policy — AIPT — AI Premium Tools", description: "AIPT — AI Premium Tools privacy policy. How we collect, use, and protect your personal information.", canonical: "https://www.aiteampremium.com/privacy-policy" },
+  "/terms": { title: "Terms of Service — AIPT — AI Premium Tools", description: "AIPT — AI Premium Tools terms of service. Please read these terms carefully before using our services.", canonical: "https://www.aiteampremium.com/terms" },
+};
+
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  // Get the request path
+  const requestPath = req.url?.split('?')[0] || '/';
+
+  // Try to read index.html
+  const indexPath = path.resolve(DIST_PATH, 'index.html');
+
+  if (!fs.existsSync(indexPath)) {
+    return res.status(500).send("Server error: index.html not found");
+  }
+
+  let template: string;
+  try {
+    template = fs.readFileSync(indexPath, 'utf-8');
+  } catch {
+    return res.status(500).send("Server error: could not read index.html");
+  }
+
+  // Look up route meta
+  const meta = ROUTE_META[requestPath];
+
+  if (!meta) {
+    // Unknown path -> return 404 with proper meta
+    let result = template
+      .replace(/<title>.*?<\/title>/, "<title>404 - Page Not Found | AIPT — AI Premium Tools</title>")
+      .replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/>/, '<meta name="description" content="The page you requested was not found. Browse our AI subscriptions or return home." />')
+      .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/>/, `<link rel="canonical" href="${SITE_URL}${requestPath}" />`);
+
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    return res.status(404).send(result);
+  }
+
+  // Inject per-route meta tags
+  let result = template
+    .replace(/<title>.*?<\/title>/, `<title>${meta.title}</title>`)
+    .replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/>/, `<meta name="description" content="${meta.description}" />`)
+    .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/>/, `<link rel="canonical" href="${meta.canonical}" />`);
+
+  res.setHeader('Content-Type', 'text/html; charset=utf-8');
+  return res.status(200).send(result);
+}

@@ -2,5 +2,9 @@
   "version": 2,
   "buildCommand": "npm run build",
   "installCommand": "npm install --include=dev",
-  "devCommand": "npm run dev"
+  "devCommand": "npm run dev",
+  "public": "dist/public",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/[...route]" }
+  ]
 }

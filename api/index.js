@@ -145,6 +145,14 @@ function injectJsonLd(html, path, meta) {
   }
   const safe = payload.replace(/<\//g, "<\\/");
   const tag = `<script type="application/ld+json">${safe}</script>`;
+
+  // The template is dist/public/index.html, which already carries the homepage
+  // graph baked in for "/" (that route is served straight off the CDN and never
+  // reaches this function). Appending here would leave every other route
+  // shipping two graphs — the homepage's and its own. Replace the marked block
+  // instead, so each route ends up with exactly one.
+  const marked = /<!-- ld\+json:home:start -->[\s\S]*?<!-- ld\+json:home:end -->/;
+  if (marked.test(html)) return html.replace(marked, tag);
   return html.replace(/<\/head>/i, `    ${tag}\n  </head>`);
 }
 

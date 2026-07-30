@@ -594,6 +594,34 @@ section("Structured data");
     );
 }
 
+// Checking the source file above is not enough, and shipping proved it: the
+// handler injects into the built template, which already carries the homepage
+// graph, so every non-homepage route went out with two. Assert on what the
+// handler actually returns, which is what a crawler receives.
+{
+  const { default: handler } = await import(
+    pathToFileURL(resolve(ROOT, "api/index.js")).href
+  );
+  const bad = [];
+  for (const p of ["/pricing", "/all-products", "/tools/canva-pro-bangladesh", "/blog"]) {
+    let body = "";
+    const res = { setHeader() {}, status() { return this; }, send(b) { body = b; } };
+    handler({ url: p, headers: { host: "www.aiteampremium.com" } }, res);
+    const blocks = body.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g) || [];
+    if (blocks.length !== 1) { bad.push(`${p}: ${blocks.length} graph(s), expected 1`); continue; }
+    const json = blocks[0].replace(/^<script[^>]*>/, "").replace(/<\/script>$/, "");
+    try {
+      const g = JSON.parse(json);
+      if (!(g["@graph"] || []).length) bad.push(`${p}: empty @graph`);
+    } catch (e) {
+      bad.push(`${p}: served JSON-LD does not parse — ${e.message}`);
+    }
+    if (/ld\+json:home:start/.test(body)) bad.push(`${p}: homepage marker left in served HTML`);
+  }
+  if (bad.length === 0) ok("served HTML carries exactly one valid JSON-LD graph per route");
+  else fail("served JSON-LD is wrong — this is what crawlers actually get", bad.join("\n"));
+}
+
 // No rating may ship anywhere. The catalog build strips fabricated review counts
 // (1,842-3,421 reviews at 4.8-4.9 stars) that no review system produced; the
 // ProductSchema component still accepts a `rating` prop, so re-introducing them

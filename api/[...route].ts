@@ -1,11 +1,10 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
-import fs from 'fs';
-import path from 'path';
+import { readFileSync, existsSync } from 'fs';
+import { resolve } from 'path';
 
 // This is a catch-all API route that serves our full-stack Express app
 // Vercel will use this to properly execute our Node.js server
 
-const DIST_PATH = path.resolve(process.cwd(), 'dist', 'public');
+const DIST_PATH = resolve(process.cwd(), 'dist', 'public');
 
 const SITE_URL = "https://www.aiteampremium.com";
 
@@ -28,22 +27,24 @@ const ROUTE_META: Record<string, RouteMeta> = {
   "/terms": { title: "Terms of Service — AIPT — AI Premium Tools", description: "AIPT — AI Premium Tools terms of service. Please read these terms carefully before using our services.", canonical: "https://www.aiteampremium.com/terms" },
 };
 
-export default async function handler(req: VercelRequest, res: VercelResponse) {
+export default function handler(req: any, res: any) {
   // Get the request path
   const requestPath = req.url?.split('?')[0] || '/';
 
   // Try to read index.html
-  const indexPath = path.resolve(DIST_PATH, 'index.html');
+  const indexPath = resolve(DIST_PATH, 'index.html');
 
-  if (!fs.existsSync(indexPath)) {
-    return res.status(500).send("Server error: index.html not found");
+  if (!existsSync(indexPath)) {
+    res.status(500).send("Server error: index.html not found");
+    return;
   }
 
   let template: string;
   try {
-    template = fs.readFileSync(indexPath, 'utf-8');
+    template = readFileSync(indexPath, 'utf-8');
   } catch {
-    return res.status(500).send("Server error: could not read index.html");
+    res.status(500).send("Server error: could not read index.html");
+    return;
   }
 
   // Look up route meta
@@ -57,7 +58,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/>/, `<link rel="canonical" href="${SITE_URL}${requestPath}" />`);
 
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    return res.status(404).send(result);
+    res.status(404).send(result);
+    return;
   }
 
   // Inject per-route meta tags
@@ -67,5 +69,5 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/>/, `<link rel="canonical" href="${meta.canonical}" />`);
 
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  return res.status(200).send(result);
+  res.status(200).send(result);
 }

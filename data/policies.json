@@ -1,0 +1,241 @@
+{
+  "version": "1.0",
+  "policies": {
+    "privacy": {
+      "title": "Privacy Policy",
+      "lastUpdated": "2026-07-31",
+      "content": {
+        "intro": "আমরা আপনার ব্যক্তিগত তথ্য সুরক্ষিত রাখতে প্রতিশ্রুতিবদ্ধ। এই নীতি ব্যাখ্যা করে কিভাবে আমরা তথ্য সংগ্রহ, ব্যবহার এবং সুরক্ষা করি।",
+        "sections": [
+          {
+            "heading": "Information We Collect",
+            "items": [
+              "Contact information (name, phone, email) through WhatsApp and contact forms",
+              "Payment details (bKash, Nagad, Bank Transfer reference) — processed securely",
+              "Usage data for analytics (anonymized, no tracking cookies)",
+              "Device information for security purposes"
+            ]
+          },
+          {
+            "heading": "How We Use Information",
+            "items": [
+              "Deliver AI tool subscriptions and support services",
+              "Process payments and refunds",
+              "Send order confirmations and service updates via WhatsApp",
+              "Improve our services through anonymized analytics"
+            ]
+          },
+          {
+            "heading": "Data Security",
+            "items": [
+              "We use HTTPS encryption for all data transmission",
+              "Payment data is NOT stored on our servers — processed via secure payment gateways",
+              "We do NOT use cookies for tracking or advertising",
+              "Access to user data is restricted to authorized staff only"
+            ]
+          },
+          {
+            "heading": "Third-Party Services",
+            "items": [
+              "We are not affiliated with OpenAI, Anthropic, Google, Canva, or other tool providers",
+              "Subscriptions are managed independently — we do not sell data to third parties",
+              "WhatsApp and Messenger are used for communication only"
+            ]
+          },
+          {
+            "heading": "Your Rights",
+            "items": [
+              "Request access to your data",
+              "Request correction or deletion of your information",
+              "Opt-out of non-essential communications",
+              "Contact: support@aiteampremium.com or WhatsApp +880-1533-262758"
+            ]
+          }
+        ]
+      }
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "lastUpdated": "2026-07-31",
+      "content": {
+        "intro": "এই শর্তাবলী আমাদের সেবা ব্যবহারের নিয়ম নির্ধারণ করে। সেবা ব্যবহার করে আপনি এই শর্তাবলী মেনে চলতে সম্মত হচ্ছেন।",
+        "sections": [
+          {
+            "heading": "Subscription Terms",
+            "items": [
+              "Subscriptions renew automatically unless cancelled",
+              "Refunds are available within 30 days of purchase",
+              "Cancellation via WhatsApp: +880-1533-262758",
+              "Shared accounts may have device or usage restrictions"
+            ]
+          },
+          {
+            "heading": "User Responsibilities",
+            "items": [
+              "You agree not to share credentials with unauthorized users",
+              "Violating provider terms (OpenAI, Anthropic, etc.) may result in account ban",
+              "Multi-device login on shared accounts may trigger security locks",
+              "You assume risk for misuse or unauthorized access"
+            ]
+          },
+          {
+            "heading": "Service Warranty",
+            "items": [
+              "Shared subscriptions: 30-day full warranty if unused or within terms",
+              "Personal accounts: Tied to your own account management",
+              "Warranty void if: account is banned, shared beyond terms, or credentials are changed",
+              "No guarantee of uptime or service continuity"
+            ]
+          },
+          {
+            "heading": "Limitation of Liability",
+            "items": [
+              "AI Team Premium is not liable for loss of data or unauthorized access",
+              "We are not affiliated with or responsible for tool provider policies",
+              "Use subscriptions at your own risk",
+              "Maximum refund is the amount paid"
+            ]
+          },
+          {
+            "heading": "Prohibited Activities",
+            "items": [
+              "Reselling subscriptions without permission",
+              "Using tools for illegal or harmful purposes",
+              "Reverse-engineering or unauthorized access",
+              "Circumventing regional restrictions"
+            ]
+          }
+        ]
+      }
+    },
+    "refund": {
+      "title": "Refund Policy",
+      "lastUpdated": "2026-07-31",
+      "content": {
+        "intro": "আমরা ৩০ দিনের মধ্যে অব্যবহৃত সাবস্ক্রিপশনের জন্য রিফান্ড প্রদান করি। নিচে বিস্তারিত নীতি পড়ুন।",
+        "sections": [
+          {
+            "heading": "30-Day Refund Policy",
+            "items": [
+              "Full refund within 30 days of purchase if unused",
+              "Shared account: Refund if subscription has not been accessed",
+              "Personal account: Refund if account is still in your control",
+              "Refunds processed to original payment method"
+            ]
+          },
+          {
+            "heading": "Refund Ineligible Cases",
+            "items": [
+              "Account banned by tool provider due to policy violation",
+              "Login attempted on unauthorized devices (shared accounts)",
+              "Account credentials changed or transferred",
+              "Refund request after 30-day window",
+              "Service used extensively (beyond trial period)"
+            ]
+          },
+          {
+            "heading": "How to Request a Refund",
+            "items": [
+              "WhatsApp: +880-1533-262758 with order details",
+              "Email: support@aiteampremium.com",
+              "Phone: +880-1533-262758",
+              "Include: Order date, payment method, reason for refund"
+            ]
+          },
+          {
+            "heading": "Refund Processing Time",
+            "items": [
+              "bKash/Nagad: 2-4 hours",
+              "Bank Transfer: 3-5 business days",
+              "Refund confirmation sent via WhatsApp"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "trust-signals": {
+    "title": "Why Trust AI Team Premium?",
+    "signals": [
+      {
+        "icon": "shield",
+        "title": "Secure Payment",
+        "description": "Local payment methods (bKash, Nagad) — no international card fees"
+      },
+      {
+        "icon": "clock",
+        "title": "Fast Delivery",
+        "description": "Most subscriptions delivered within 5–15 minutes"
+      },
+      {
+        "icon": "headphones",
+        "title": "Bangla Support",
+        "description": "Native Bangla speaker support via WhatsApp and Messenger"
+      },
+      {
+        "icon": "shield-check",
+        "title": "Honest Pricing",
+        "description": "No hidden fees. Prices shown include all costs."
+      },
+      {
+        "icon": "undo",
+        "title": "30-Day Guarantee",
+        "description": "Full refund if you're not satisfied"
+      },
+      {
+        "icon": "lock",
+        "title": "Privacy First",
+        "description": "No tracking cookies. HTTPS encryption on all data."
+      }
+    ]
+  },
+  "pricing-explainer": {
+    "title": "How Our Pricing Works",
+    "sections": [
+      {
+        "heading": "Shared vs. Personal Accounts",
+        "content": "Shared accounts cost less কারণ আপনি একটি সাবস্ক্রিপশন অন্যদের সাথে শেয়ার করছেন। Personal accounts বেশি কিন্তু সম্পূর্ণ নিয়ন্ত্রণ দেয়।"
+      },
+      {
+        "heading": "What's Included",
+        "items": [
+          "✓ Full access to tool features",
+          "✓ 30-day warranty (if unused/within terms)",
+          "✓ Bangla support via WhatsApp",
+          "✓ One-time delivery setup fee included"
+        ]
+      },
+      {
+        "heading": "What's NOT Included",
+        "items": [
+          "✗ Tool provider support (contact them directly)",
+          "✗ Account recovery if compromised",
+          "✗ Guaranteed uptime",
+          "✗ Resale rights"
+        ]
+      },
+      {
+        "heading": "When Prices Change",
+        "content": "আমরা প্রতি মাসের শেষে pricing review করি। Tool providers তাদের USD মূল্য পরিবর্তন করলে আমাদের BDT মূল্যও পরিবর্তন হতে পারে। আপনার নবায়নের আগে নতুন মূল্য নিশ্চিত করা হবে।"
+      }
+    ]
+  },
+  "grep-gates": {
+    "comment": "These strings are checked via grep before deploy to prevent banned claims",
+    "banned-phrases": [
+      "guaranteed or rebuilt",
+      "money-back guarantee",
+      "100% refund",
+      "promised",
+      "assured",
+      "Private Limited",
+      "500+ projects",
+      "Top 5%",
+      "premier",
+      "leading",
+      "Stripe",
+      "credit card"
+    ],
+    "note": "Run: npm run validate:policies to check for violations"
+  }
+}

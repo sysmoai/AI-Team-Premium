@@ -225,6 +225,21 @@ try {
   fail("products-catalog.json does not match its source", detail);
 }
 
+// Comparison metadata is generated from POPULAR_PAIRS and each tool's
+// TOOL_META. Editing either without regenerating would ship titles describing
+// pairs or prices that no longer exist.
+try {
+  const { execFileSync } = await import("node:child_process");
+  execFileSync(process.execPath, [resolve(ROOT, "scripts/gen-compare-routes.mjs"), "--check"], {
+    encoding: "utf-8",
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  ok("compare-routes.js is in sync with its sources");
+} catch (e) {
+  const detail = (e.stderr || e.message || "").toString().trim();
+  fail("compare-routes.js does not match its sources", detail);
+}
+
 // Prefilled WhatsApp/Messenger templates used to hardcode a price. Because they
 // live outside the catalog, nothing kept them in sync — Google AI Pro was
 // repriced to ৳3,390 while its template still quoted ৳449, so every customer

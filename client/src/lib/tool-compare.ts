@@ -86,12 +86,20 @@ export interface CompareTool extends ToolMeta {
 // Tool-page name mapping (taken from the `name=` prop each page passes
 // to <ToolDetail>). Centralised here because the page passes `name`
 // inline to the component rather than via TOOL_META.
+//
+// These names have to be distinct. `gemini` and `google-ai-pro` were both
+// "Google AI Pro", and `grok` and `supergrok` were both "SuperGrok" — which
+// produced two comparison pages with byte-identical titles competing for the
+// same query. The names below follow each page's own tagline: /tools/gemini
+// sells the Gemini app tier and /tools/google-ai-pro the bundle with
+// NotebookLM and Drive; /tools/grok and /tools/supergrok sell different Grok
+// generations.
 const NAMES: Record<string, string> = {
   chatgpt: "ChatGPT Plus",
   claude: "Claude Pro",
-  gemini: "Google AI Pro",
+  gemini: "Gemini Advanced",
   perplexity: "Perplexity Pro",
-  grok: "SuperGrok",
+  grok: "Grok",
   midjourney: "Midjourney",
   leonardo: "Leonardo AI",
   runway: "Runway ML",
@@ -222,6 +230,24 @@ export function rowWinner(label: string, a: string, b: string): "a" | "b" | null
 // ────────────────────────────────────────────────────────────────────
 // Slug parsing + recommendation
 // ────────────────────────────────────────────────────────────────────
+/**
+ * The URL a comparison should canonicalise to.
+ *
+ * parseComparePair accepts either order, so "chatgpt-vs-claude" and
+ * "claude-vs-chatgpt" render the same page at two URLs. Without a shared
+ * canonical those two compete with each other for the same query. The order
+ * declared in POPULAR_PAIRS wins; anything else falls back to alphabetical so
+ * the choice is at least stable.
+ */
+export function canonicalPairSlug(aSlug: string, bSlug: string): string {
+  const declared = POPULAR_PAIRS.find(
+    ([x, y]) => (x === aSlug && y === bSlug) || (x === bSlug && y === aSlug)
+  );
+  if (declared) return `${declared[0]}-vs-${declared[1]}`;
+  const [first, second] = [aSlug, bSlug].sort();
+  return `${first}-vs-${second}`;
+}
+
 export function parseComparePair(slug: string): { a: CompareTool; b: CompareTool } | null {
   const m = slug.match(/^([a-z0-9-]+)-vs-([a-z0-9-]+)$/i);
   if (!m) return null;

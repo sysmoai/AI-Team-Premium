@@ -18,9 +18,20 @@ const SITE = "https://www.aiteampremium.com";
 const { ROUTE_META } = await import(
   pathToFileURL(resolve(ROOT, "lib/route-meta.js")).href
 );
+const { CANONICAL_COMPARE_PATHS } = await import(
+  pathToFileURL(resolve(ROOT, "lib/compare-routes.js")).href
+);
+
+// Both orders of a comparison slug resolve to the same page, so metadata
+// exists for both — but only the canonical direction may be advertised.
+// Listing both would ask crawlers to index one page twice.
+const canonicalCompare = new Set(CANONICAL_COMPARE_PATHS);
 
 // Pages that exist but should not be advertised to crawlers.
-const EXCLUDE = [/^\/admin\//];
+const EXCLUDE = [
+  /^\/admin\//,
+  (p) => p.startsWith("/compare/") && !canonicalCompare.has(p),
+];
 
 // Higher priority for the pages that carry commercial intent; lower for legal
 // boilerplate that never needs to rank.
@@ -31,6 +42,10 @@ function priorityFor(path) {
   if (path === "/blog") return "0.8";
   if (path.startsWith("/services")) return "0.7";
   if (path.startsWith("/tools/")) return "0.9";
+  // Comparison pages catch high-intent "x vs y" searches — someone comparing
+  // two tools is closer to buying than someone reading a guide.
+  if (path.startsWith("/compare/")) return "0.85";
+  if (path === "/compare") return "0.9";
   if (/^\/(all-products|products|pricing|ai-subscriptions|ai-tools-vault)$/.test(path)) return "0.9";
   if (path.endsWith("-plans")) return "0.95";
   if (path.startsWith("/chatgpt/")) return "0.85";
@@ -46,7 +61,7 @@ function changefreqFor(path) {
 const today = new Date().toISOString().slice(0, 10);
 
 const paths = Object.keys(ROUTE_META)
-  .filter((p) => !EXCLUDE.some((re) => re.test(p)))
+  .filter((p) => !EXCLUDE.some((rule) => (typeof rule === "function" ? rule(p) : rule.test(p))))
   .sort((a, b) => {
     // Highest-priority pages first so the file reads top-down by importance.
     const d = Number(priorityFor(b)) - Number(priorityFor(a));

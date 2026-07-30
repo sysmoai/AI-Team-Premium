@@ -11,7 +11,7 @@ export const TOOL_META = {
   "slug": "claude",
   "category": "chat",
   "priceBdt": 1495,
-  "priceLabel": "\u09F71,495/mo",
+  "priceLabel": "\u09F31,495/mo",
   "model": "Claude 4 Sonnet + Opus",
   "contextWindow": "200K tokens",
   "multimodal": "Text, image, document analysis",
@@ -43,8 +43,8 @@ const toolMeta = {
   slug: "claude",
   name: "Claude Pro",
   tagline: "Claude Pro — AI Assistant for Professionals",
-  description: "Buy Claude Pro in Bangladesh from AI Team Premium. \u09F71,495/month, 5\u201315 min delivery via bKash/Nagad. 30-day replacement warranty.",
-  "priceLabel": "\u09F71,495/mo",
+  description: "Buy Claude Pro in Bangladesh from AI Team Premium. \u09F31,495/month, 5\u201315 min delivery via bKash/Nagad. 30-day replacement warranty.",
+  "priceLabel": "\u09F31,495/mo",
   category: "ai-assistant",
   icon: "\uD83E\uDDD9",
   color: "#D97706",
@@ -82,7 +82,7 @@ faq: [
 export default function ClaudePage() {
   usePageMeta({
 title: "Claude Pro in Bangladesh — ৳1,495/mo",
-    description: "Buy Claude Pro subscription in Bangladesh. \u09F71,495/month, 5\u201315 min delivery via bKash/Nagad. 30-day replacement warranty. WhatsApp support in Bangla & English.",
+    description: "Buy Claude Pro subscription in Bangladesh. \u09F31,495/month, 5\u201315 min delivery via bKash/Nagad. 30-day replacement warranty. WhatsApp support in Bangla & English.",
   });
 
   return (

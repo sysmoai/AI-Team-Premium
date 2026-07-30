@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- GENERATED FILE — do not edit by hand. Run: npm run gen:sitemap -->
-<!-- Source: lib/route-meta.js (142 indexable routes) -->
+<!-- Source: lib/route-meta.js (160 indexable routes) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.aiteampremium.com/</loc>
@@ -64,6 +64,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/all-products</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -681,6 +687,114 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/compare/canva-vs-midjourney</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/chatgpt-vs-perplexity</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/claude-vs-chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/claude-vs-gemini</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/claude-vs-perplexity</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/copilot-vs-chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/elevenlabs-vs-runway</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/gemini-vs-chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/google-ai-pro-vs-chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/grammarly-vs-chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/grok-vs-chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/microsoft365-vs-notion</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/midjourney-vs-chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/midjourney-vs-leonardo</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/notion-vs-chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/runway-vs-kling</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/supergrok-vs-chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare/vault-vs-chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -810,12 +924,6 @@
     <loc>https://www.aiteampremium.com/about</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/compare</loc>
-    <lastmod>2026-07-30</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>

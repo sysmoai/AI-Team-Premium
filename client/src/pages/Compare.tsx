@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { BreadcrumbSchema, FAQSchema, JsonLd } from "@/components/seo/JsonLd";
-import { COMPARE_TOOLS, POPULAR_PAIRS, parseComparePair, recommend, rowWinner, type CompareTool } from "@/lib/tool-compare";
+import { COMPARE_TOOLS, POPULAR_PAIRS, parseComparePair, canonicalPairSlug, recommend, rowWinner, type CompareTool } from "@/lib/tool-compare";
 import { config } from "@/lib/config";
 import { Check, ArrowRight, Trophy, Sparkles, Scale } from "lucide-react";
 import { trackWhatsAppClick } from "@/lib/analytics";
@@ -16,7 +16,7 @@ export default function ComparePage() {
   if (!slug) return <ComparisonHub onPick={(s) => setLocation(`/compare/${s}`)} />;
   const pair = parseComparePair(slug);
   if (!pair) return <ComparisonNotFound slug={slug} />;
-  return <ComparisonDetail a={pair.a} b={pair.b} slug={slug} />;
+  return <ComparisonDetail a={pair.a} b={pair.b} />;
 }
 
 function ComparisonNotFound({ slug }: { slug: string }) {
@@ -148,12 +148,18 @@ function specRows(a: CompareTool, b: CompareTool) {
   ];
 }
 
-function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug: string }) {
+// The requested slug is deliberately not a prop: the page always identifies
+// itself by the canonical pair order, whichever direction was requested.
+function ComparisonDetail({ a, b }: { a: CompareTool; b: CompareTool }) {
   const rec = recommend(a, b);
   const winner: CompareTool | null = rec.kind === "winner" ? (rec.winnerSlug === a.slug ? a : b) : null;
   const title = `${a.name} vs ${b.name} in Bangladesh — Price, Features, Verdict`;
   const description = `Side-by-side comparison of ${a.name} (${a.priceFromLabel}) and ${b.name} (${b.priceFromLabel}). Specs, Bangla quality, best use cases and which to buy from AI Team Premium.`;
-  usePageMeta({ title, description, path: `/compare/${slug}` });
+  // Canonical, not the requested slug: the reverse order renders this same
+  // comparison, and self-canonicalising both would put the two URLs in
+  // competition for one query.
+  const canonicalSlug = canonicalPairSlug(a.slug, b.slug);
+  usePageMeta({ title, description, path: `/compare/${canonicalSlug}` });
 
   const faqs = [
     { q: `Which is better: ${a.name} or ${b.name}?`, a: rec.reason },
@@ -170,19 +176,42 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
         items={[
           { name: "Home", path: "/" },
           { name: "Compare AI Tools", path: "/compare" },
-          { name: `${a.name} vs ${b.name}`, path: `/compare/${slug}` },
+          { name: `${a.name} vs ${b.name}`, path: `/compare/${canonicalSlug}` },
         ]}
       />
       <FAQSchema items={faqs} />
+      {/* WebPage + ItemList, not the "ComparisonPage" this used to emit —
+          that is not a schema.org type, so the whole block was discarded.
+          Carrying both products with their BDT offers gives search engines
+          something they can actually read off a comparison page. */}
       <JsonLd
         data={{
           "@context": "https://schema.org",
-          "@type": "ComparisonPage",
-          "name": `${a.name} vs ${b.name}`,
-          "about": [
-            { "@type": "Product", "name": a.name, "brand": a.brand },
-            { "@type": "Product", "name": b.name, "brand": b.brand },
-          ],
+          "@type": "WebPage",
+          "name": `${a.name} vs ${b.name} in Bangladesh`,
+          "url": `https://www.aiteampremium.com/compare/${canonicalSlug}`,
+          "inLanguage": "en-BD",
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [a, b].map((t, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "item": {
+                "@type": "Product",
+                "name": t.name,
+                "brand": { "@type": "Brand", "name": t.brand },
+                "url": `https://www.aiteampremium.com${t.toolPath}`,
+                "offers": {
+                  "@type": "Offer",
+                  "priceCurrency": "BDT",
+                  "price": String(t.priceFromBdt),
+                  "availability": "https://schema.org/InStock",
+                  "areaServed": "BD",
+                  "seller": { "@type": "Organization", "name": "AI Team Premium" },
+                },
+              },
+            })),
+          },
         }}
       />
 
@@ -330,7 +359,7 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <h2 className="mb-5" style={{ color: BRAND.navy, fontSize: "1.05rem", fontWeight: 700 }}>Compare with other tools</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2">
-            {POPULAR_PAIRS.filter(([x, y]) => `${x}-vs-${y}` !== slug).slice(0, 8).map(([x, y]) => {
+            {POPULAR_PAIRS.filter(([x, y]) => `${x}-vs-${y}` !== canonicalSlug).slice(0, 8).map(([x, y]) => {
               const tx = COMPARE_TOOLS[x]; const ty = COMPARE_TOOLS[y];
               if (!tx || !ty) return null;
               return (

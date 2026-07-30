@@ -84,12 +84,20 @@ for (const path of paths) {
 }
 
 // The bare domain must reach the canonical host over HTTPS.
+//
+// A network-level failure here is usually NOT a fault: some networks (including
+// the ISP this was built on) cannot open a TCP connection to Vercel's apex IP
+// from Node or curl, while browsers on the same machine load it fine. Only a
+// wrong landing URL is a real failure.
 let apex = "unknown";
+let apexInconclusive = false;
 try {
   const r = await fetch("https://aiteampremium.com/", { redirect: "follow" });
-  apex = r.url.startsWith(BASE) ? "ok" : `lands on ${r.url}`;
-} catch (e) {
-  apex = `unreachable (${e.message})`;
+  apex = r.url.startsWith(BASE) ? "ok" : `WRONG — lands on ${r.url}`;
+  if (!r.url.startsWith(BASE)) failed.push(`apex does not redirect to ${BASE}`);
+} catch {
+  apexInconclusive = true;
+  apex = "not checkable from this network — open https://aiteampremium.com in a browser";
 }
 
 // The live bundle should match what the last local build produced.
@@ -125,6 +133,6 @@ if (failed.length) {
   process.exit(1);
 }
 
-const clean = challenged.length === 0 && apex === "ok" && bundleState.startsWith("in sync");
+const clean = challenged.length === 0 && !apexInconclusive && bundleState.startsWith("in sync");
 console.log(clean ? "\n  Live site verified.\n" : "\n  No failures, but some checks were inconclusive (see above).\n");
 process.exit(0);

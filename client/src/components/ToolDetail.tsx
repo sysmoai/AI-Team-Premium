@@ -7,6 +7,7 @@ import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
 import { PriceCompare } from "@/components/PriceCompare";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
+import { readableOn, bestTextOn } from "@/lib/contrast";
 import { LastVerifiedStamp } from "@/components/LastVerifiedStamp";
 import { useState } from "react";
 
@@ -107,6 +108,13 @@ const TRUST_ITEMS = [
 ];
 
 export function ToolDetail({ name, tagline, description, accentColor, icon: Icon, features, plans, path: pathProp, specTables, useCases, competitorRows, extendedFaqs, deepDive }: ToolDetailProps) {
+  // Brand colours are decorative; used raw as text they vanish on one surface or
+  // the other (GitHub/Notion on the dark hero, Canva/amber on white). These keep
+  // the hue and shift only lightness until the text is actually legible.
+  const accentOnDark = readableOn(accentColor, "#1a2d5a", 4.5);
+  const accentOnLight = readableOn(accentColor, "#ffffff", 4.5);
+  const textOnAccent = bestTextOn(accentColor);
+
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const path = pathProp || TOOL_PATH_BY_NAME[name] || `/tools/${name.toLowerCase().replace(/\s+/g, "-").replace(/[^a-z0-9-]/g, "")}`;
   usePageMeta({ title: `${name} Bangladesh — bKash/Nagad`, description, path });
@@ -149,11 +157,11 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
         <div style={{ position: "absolute", bottom: -100, left: -60, width: 320, height: 320, background: BRAND.blue, opacity: 0.05, borderRadius: "50%", filter: "blur(70px)", pointerEvents: "none" }} />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-20 pb-24 text-center">
           <div className="inline-flex items-center justify-center rounded-3xl mb-7" style={{ width: 88, height: 88, background: `${accentColor}1A`, border: `1.5px solid ${accentColor}38` }}>
-            <Icon size={44} color={accentColor} strokeWidth={1.4} />
+            <Icon size={44} color={accentOnDark} strokeWidth={1.4} />
           </div>
           <h1 style={{ color: BRAND.white, fontSize: "clamp(1.9rem, 4.5vw, 3.1rem)", fontWeight: 800, lineHeight: 1.08, letterSpacing: "-0.022em" }}>
             {name}{" "}
-            <span style={{ color: accentColor }}>{tagline}</span>
+            <span style={{ color: accentOnDark }}>{tagline}</span>
           </h1>
           <p className="mt-5 mx-auto max-w-lg" style={{ color: "rgba(255,255,255,0.52)", fontSize: "1.02rem", lineHeight: 1.75 }}>
             {description}
@@ -164,7 +172,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
           <div className="mt-8 mx-auto max-w-2xl rounded-2xl p-5 text-left" style={{ background: "rgba(255,255,255,0.06)", border: `1px solid ${accentColor}28` }}>
             <p style={{ color: "rgba(255,255,255,0.72)", fontSize: "0.93rem", lineHeight: 1.72 }}>
               <strong style={{ color: BRAND.white }}>{name}</strong> is available in Bangladesh from AI Team Premium starting at{" "}
-              <strong style={{ color: accentColor }}>{cheapestPlan?.price}{cheapestPlan?.period}</strong>, payable via{" "}
+              <strong style={{ color: accentOnDark }}>{cheapestPlan?.price}{cheapestPlan?.period}</strong>, payable via{" "}
               <strong style={{ color: BRAND.white }}>bKash, Nagad or Bank Transfer</strong> — no international card required. Delivery in{" "}
               <strong style={{ color: BRAND.white }}>{cheapestPlan?.delivery}</strong> with a 30-day replacement warranty and Bangla + English WhatsApp support.
             </p>
@@ -226,7 +234,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                 {features.map((f) => (
                   <div key={f} className="flex items-start gap-3 rounded-xl p-4 transition-all" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.06)" }}>
                     <div className="flex-shrink-0 flex items-center justify-center rounded-full mt-0.5" style={{ width: 24, height: 24, background: `${accentColor}18` }}>
-                      <Check size={13} color={accentColor} strokeWidth={3} />
+                      <Check size={13} color={accentOnLight} strokeWidth={3} />
                     </div>
                     <span style={{ color: BRAND.navy, fontSize: "0.9rem", fontWeight: 500, lineHeight: 1.45 }}>{f}</span>
                   </div>
@@ -253,7 +261,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                         <h3 style={{ color: BRAND.navy, fontSize: "1.02rem", fontWeight: 600 }}>{plan.label}</h3>
                         <span
                           className="rounded-full px-3 py-0.5"
-                          style={{ background: idx === 0 ? accentColor : "#64748b", color: "#fff", fontSize: "0.63rem", fontWeight: 700, letterSpacing: "0.05em" }}
+                          style={{ background: idx === 0 ? accentColor : "#64748b", color: idx === 0 ? textOnAccent : "#fff", fontSize: "0.63rem", fontWeight: 700, letterSpacing: "0.05em" }}
                         >
                           {plan.type}
                         </span>
@@ -262,7 +270,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                         {plan.price}
                         <span style={{ fontSize: "0.82rem", fontWeight: 400, opacity: 0.42 }}>{plan.period}</span>
                       </p>
-                      <p className="mt-2.5 flex items-center gap-1.5" style={{ color: accentColor, fontSize: "0.78rem", fontWeight: 600 }}>
+                      <p className="mt-2.5 flex items-center gap-1.5" style={{ color: accentOnLight, fontSize: "0.78rem", fontWeight: 600 }}>
                         <Clock size={13} /> {plan.delivery}
                       </p>
                       <div className="mt-4 pt-4 space-y-2" style={{ borderTop: "1px solid rgba(37,99,235,0.07)" }}>
@@ -338,7 +346,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                         <tr style={{ borderBottom: "1px solid rgba(37,99,235,0.06)" }}>
                           <th className="text-left px-5 py-2.5" style={{ color: BRAND.navy, opacity: 0.4, fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", width: hasThreeTiers ? "36%" : "42%" }}>Feature</th>
                           <th className="text-center px-2 py-2.5" style={{ color: BRAND.navy, opacity: 0.4, fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Free</th>
-                          <th className="text-center px-2 py-2.5" style={{ color: accentColor, fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>{tier2}</th>
+                          <th className="text-center px-2 py-2.5" style={{ color: accentOnLight, fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>{tier2}</th>
                           {hasThreeTiers && (
                             <th className="text-center px-2 py-2.5" style={{ color: "#7C3AED", fontSize: "0.68rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>{tier3}</th>
                           )}
@@ -349,7 +357,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                           <tr key={row.label} style={{ borderBottom: i < table.rows.length - 1 ? "1px solid rgba(37,99,235,0.05)" : "none" }}>
                             <td className="px-5 py-3" style={{ color: BRAND.navy, fontSize: "0.8rem", fontWeight: 500 }}>{row.label}</td>
                             <td className="px-2 py-3 text-center" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem" }}>{row.free}</td>
-                            <td className="px-2 py-3 text-center" style={{ color: accentColor, fontSize: "0.78rem", fontWeight: 600 }}>{row.pro}</td>
+                            <td className="px-2 py-3 text-center" style={{ color: accentOnLight, fontSize: "0.78rem", fontWeight: 600 }}>{row.pro}</td>
                             {hasThreeTiers && (
                               <td className="px-2 py-3 text-center" style={{ color: "#7C3AED", fontSize: "0.78rem", fontWeight: 600 }}>{row.premium ?? "—"}</td>
                             )}
@@ -371,7 +379,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
           <div className="mx-auto max-w-5xl px-6 lg:px-10">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="inline-flex items-center justify-center rounded-2xl" style={{ width: 44, height: 44, background: `${accentColor}15`, border: `1.5px solid ${accentColor}30` }}>
-                {deepDive.type === "image" ? <Image size={22} color={accentColor} strokeWidth={1.5} /> : <Video size={22} color={accentColor} strokeWidth={1.5} />}
+                {deepDive.type === "image" ? <Image size={22} color={accentOnLight} strokeWidth={1.5} /> : <Video size={22} color={accentOnLight} strokeWidth={1.5} />}
               </div>
               <h2 style={{ color: BRAND.navy, fontSize: "1.5rem", fontWeight: 700 }}>
                 {deepDive.type === "image" ? "Image Generation Deep Dive" : "Video Generation Deep Dive"}
@@ -399,7 +407,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                       </div>
                     </div>
                     <div>
-                      <p style={{ color: accentColor, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 8 }}>Result</p>
+                      <p style={{ color: accentOnLight, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: 8 }}>Result</p>
                       <div className="rounded-xl px-4 py-3" style={{ background: `${accentColor}07`, border: `1px solid ${accentColor}18` }}>
                         <p style={{ color: BRAND.navy, fontSize: "0.82rem", lineHeight: 1.65 }}>{wf.result}</p>
                       </div>
@@ -418,7 +426,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                 {deepDive.tips.map((tip, i) => (
                   <div key={i} className="flex items-start gap-3 rounded-xl px-4 py-3" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
                     <div className="flex-shrink-0 flex items-center justify-center rounded-full mt-0.5" style={{ width: 22, height: 22, background: `${accentColor}15` }}>
-                      <Check size={12} color={accentColor} strokeWidth={3} />
+                      <Check size={12} color={accentOnLight} strokeWidth={3} />
                     </div>
                     <span style={{ color: BRAND.navy, fontSize: "0.82rem", lineHeight: 1.55 }}>{tip}</span>
                   </div>
@@ -454,8 +462,8 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                       <span style={{ color: BRAND.navy, fontSize: "0.8rem", fontWeight: 500 }}>{uc.makes}</span>
                     </div>
                     <div className="flex items-start gap-2">
-                      <span style={{ color: accentColor, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.05em", flexShrink: 0, paddingTop: 2 }}>SAVES</span>
-                      <span style={{ color: accentColor, fontSize: "0.8rem", fontWeight: 600 }}>{uc.timeSaved}</span>
+                      <span style={{ color: accentOnLight, fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.05em", flexShrink: 0, paddingTop: 2 }}>SAVES</span>
+                      <span style={{ color: accentOnLight, fontSize: "0.8rem", fontWeight: 600 }}>{uc.timeSaved}</span>
                     </div>
                   </div>
                   <div className="mt-4 rounded-xl px-4 py-3" style={{ background: `${accentColor}0A`, border: `1px solid ${accentColor}18` }}>
@@ -481,7 +489,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                 <thead>
                   <tr style={{ background: `${accentColor}0D`, borderBottom: `1.5px solid ${accentColor}22` }}>
                     <th className="text-left px-6 py-4" style={{ color: BRAND.navy, fontSize: "0.78rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Feature</th>
-                    <th className="px-4 py-4 text-center" style={{ color: accentColor, fontSize: "0.78rem", fontWeight: 700 }}>{name}</th>
+                    <th className="px-4 py-4 text-center" style={{ color: accentOnLight, fontSize: "0.78rem", fontWeight: 700 }}>{name}</th>
                     <th className="px-4 py-4 text-center" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem", fontWeight: 700 }}>ChatGPT</th>
                     <th className="px-4 py-4 text-center" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem", fontWeight: 700 }}>Claude</th>
                     <th className="px-4 py-4 text-center" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem", fontWeight: 700 }}>Gemini</th>
@@ -491,7 +499,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
                   {competitorRows.map((row, i) => (
                     <tr key={row.feature} style={{ borderBottom: i < competitorRows.length - 1 ? "1px solid rgba(37,99,235,0.05)" : "none" }}>
                       <td className="px-6 py-3.5" style={{ color: BRAND.navy, fontSize: "0.85rem", fontWeight: 600 }}>{row.feature}</td>
-                      <td className="px-4 py-3.5 text-center" style={{ color: accentColor, fontSize: "0.82rem", fontWeight: 600 }}>{row.thisProduct}</td>
+                      <td className="px-4 py-3.5 text-center" style={{ color: accentOnLight, fontSize: "0.82rem", fontWeight: 600 }}>{row.thisProduct}</td>
                       <td className="px-4 py-3.5 text-center" style={{ color: BRAND.navy, opacity: 0.55, fontSize: "0.82rem" }}>{row.chatgpt}</td>
                       <td className="px-4 py-3.5 text-center" style={{ color: BRAND.navy, opacity: 0.55, fontSize: "0.82rem" }}>{row.claude}</td>
                       <td className="px-4 py-3.5 text-center" style={{ color: BRAND.navy, opacity: 0.55, fontSize: "0.82rem" }}>{row.gemini}</td>

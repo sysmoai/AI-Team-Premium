@@ -1,4 +1,5 @@
 import { Link, useParams, useLocation } from "wouter";
+import { readableOn, bestTextOn } from "@/lib/contrast";
 import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
@@ -108,18 +109,18 @@ function ToolHead({ tool, isWinner }: { tool: CompareTool; isWinner: boolean }) 
   return (
     <div className="rounded-2xl p-6 text-center relative" style={{ background: "#fff", border: `2px solid ${isWinner ? tool.accent : "rgba(37,99,235,0.08)"}` }}>
       {isWinner && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full px-3 py-1" style={{ background: tool.accent, color: "#fff", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.05em" }}>
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 inline-flex items-center gap-1 rounded-full px-3 py-1" style={{ background: tool.accent, color: bestTextOn(tool.accent), fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.05em" }}>
           <Trophy size={11} /> RECOMMENDED
         </div>
       )}
       <div className="inline-flex items-center justify-center rounded-2xl mb-3" style={{ width: 56, height: 56, background: `${tool.accent}15`, border: `1.5px solid ${tool.accent}38` }}>
-        <Icon size={28} color={tool.accent} strokeWidth={1.6} />
+        <Icon size={28} color={readableOn(tool.accent, "#ffffff", 4.5)} strokeWidth={1.6} />
       </div>
       <h3 style={{ color: BRAND.navy, fontSize: "1.15rem", fontWeight: 700 }}>{tool.name}</h3>
       <p style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem", marginTop: 2 }}>by {tool.brand}</p>
       <p className="mt-2" style={{ color: BRAND.navy, opacity: 0.7, fontSize: "0.82rem", lineHeight: 1.5 }}>{tool.tagline}</p>
       <div className="mt-4 rounded-lg py-2" style={{ background: `${tool.accent}10` }}>
-        <span style={{ color: tool.accent, fontSize: "1.4rem", fontWeight: 800 }}>{tool.priceFromLabel}</span>
+        <span style={{ color: readableOn(tool.accent, "#ffffff", 4.5), fontSize: "1.4rem", fontWeight: 800 }}>{tool.priceFromLabel}</span>
       </div>
       <Link
         href={tool.toolPath}
@@ -192,9 +193,9 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
             ← All comparisons
           </Link>
           <h1 className="mt-3" style={{ color: "#fff", fontSize: "clamp(1.9rem, 4.5vw, 2.8rem)", fontWeight: 800, lineHeight: 1.1 }}>
-            <span style={{ color: a.accent }}>{a.name}</span>{" "}
+            <span style={{ color: readableOn(a.accent, "#0F172A", 4.5) }}>{a.name}</span>{" "}
             <span style={{ color: "rgba(255,255,255,0.4)" }}>vs</span>{" "}
-            <span style={{ color: b.accent }}>{b.name}</span>
+            <span style={{ color: readableOn(b.accent, "#0F172A", 4.5) }}>{b.name}</span>
           </h1>
           <p className="mt-4 mx-auto max-w-2xl" style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.98rem", lineHeight: 1.65 }}>
             Side-by-side comparison from AI Team Premium — specs, prices in BDT, Bangla support and a recommended pick for Bangladeshi users.
@@ -216,7 +217,7 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
           {winner ? (
             <div className="rounded-2xl p-6" style={{ background: `${winner.accent}08`, border: `1.5px solid ${winner.accent}30` }}>
               <div className="flex items-center gap-2 mb-3">
-                <Sparkles size={18} color={winner.accent} />
+                <Sparkles size={18} color={readableOn(winner.accent, "#ffffff", 4.5)} />
                 <h2 style={{ color: BRAND.navy, fontSize: "1.2rem", fontWeight: 700 }}>Our pick: {winner.name}</h2>
               </div>
               <p style={{ color: BRAND.navy, opacity: 0.78, fontSize: "0.95rem", lineHeight: 1.65 }}>{rec.reason}</p>
@@ -265,8 +266,8 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
                 <thead>
                   <tr style={{ background: BRAND.navy }}>
                     <th className="text-left px-4 py-3" style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.05em" }}>Feature</th>
-                    <th className="text-left px-4 py-3" style={{ color: a.accent, fontSize: "0.85rem", fontWeight: 700 }}>{a.name}</th>
-                    <th className="text-left px-4 py-3" style={{ color: b.accent, fontSize: "0.85rem", fontWeight: 700 }}>{b.name}</th>
+                    <th className="text-left px-4 py-3" style={{ color: readableOn(a.accent, BRAND.navy, 4.5), fontSize: "0.85rem", fontWeight: 700 }}>{a.name}</th>
+                    <th className="text-left px-4 py-3" style={{ color: readableOn(b.accent, BRAND.navy, 4.5), fontSize: "0.85rem", fontWeight: 700 }}>{b.name}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -275,7 +276,7 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
                     const aWin = winSide === "a";
                     const bWin = winSide === "b";
                     const cellStyle = (win: boolean, accent: string) => ({
-                      color: win ? accent : BRAND.navy,
+                      color: win ? readableOn(accent, "#ffffff", 4.5) : BRAND.navy,
                       opacity: win ? 1 : 0.8,
                       fontSize: "0.85rem",
                       fontWeight: win ? 700 : 400,
@@ -305,11 +306,11 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
         <div className="mx-auto max-w-5xl px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 gap-6">
           {[a, b].map((t) => (
             <div key={t.slug} className="rounded-2xl p-6" style={{ background: "#fff", border: "1px solid rgba(37,99,235,0.08)" }}>
-              <h3 style={{ color: t.accent, fontSize: "1rem", fontWeight: 700 }}>{t.name} — best for</h3>
+              <h3 style={{ color: readableOn(t.accent, "#ffffff", 4.5), fontSize: "1rem", fontWeight: 700 }}>{t.name} — best for</h3>
               <ul className="mt-3 space-y-2">
                 {t.bestFor.map((b1) => (
                   <li key={b1} className="flex items-start gap-2" style={{ color: BRAND.navy, opacity: 0.78, fontSize: "0.86rem", lineHeight: 1.55 }}>
-                    <Check size={14} color={t.accent} className="mt-1 flex-shrink-0" /> <span>{b1}</span>
+                    <Check size={14} color={readableOn(t.accent, "#ffffff", 4.5)} className="mt-1 flex-shrink-0" /> <span>{b1}</span>
                   </li>
                 ))}
               </ul>

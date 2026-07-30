@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { readableOn } from "@/lib/contrast";
 import { ChevronDown, Globe2, Sparkles } from "lucide-react";
 import { BRAND } from "@/components/brand/LogoIcons";
 import { useUsdToBdt } from "@/lib/use-exchange-rate";
@@ -20,6 +21,9 @@ function formatBDT(n: number): string {
 }
 
 export function PriceCompare({ toolName, planLabel, planPriceBDT, accentColor }: PriceCompareProps) {
+  // This card renders on white, so a pale brand colour (Canva's cyan, amber)
+  // is unreadable used raw as text.
+  const accentOnLight = readableOn(accentColor, "#ffffff", 4.5);
   const [open, setOpen] = useState(false);
   const usd = getUsdRetail(toolName, planLabel);
   const { rate, isFallback, isLoading } = useUsdToBdt();
@@ -47,12 +51,12 @@ export function PriceCompare({ toolName, planLabel, planPriceBDT, accentColor }:
         style={{ background: "transparent", border: "none", cursor: "pointer" }}
       >
         <span className="flex items-center gap-2" style={{ color: BRAND.navy, fontSize: "0.78rem", fontWeight: 600 }}>
-          <Globe2 size={13} color={accentColor} strokeWidth={2.2} />
+          <Globe2 size={13} color={accentOnLight} strokeWidth={2.2} />
           Compare to international price
           {savings > 0 && (
             <span
               className="rounded-full px-2 py-0.5"
-              style={{ background: `${accentColor}1A`, color: accentColor, fontSize: "0.66rem", fontWeight: 700, letterSpacing: "0.02em" }}
+              style={{ background: `${accentColor}1A`, color: accentOnLight, fontSize: "0.66rem", fontWeight: 700, letterSpacing: "0.02em" }}
               data-testid={`badge-savings-${safeLabel}`}
             >
               Save {savingsPct}%
@@ -81,14 +85,14 @@ export function PriceCompare({ toolName, planLabel, planPriceBDT, accentColor }:
               </p>
             </div>
             <div className="rounded-lg px-3 py-2.5" style={{ background: `${accentColor}12` }}>
-              <p style={{ color: accentColor, opacity: 0.85, fontSize: "0.66rem", fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase" }}>
+              <p style={{ color: accentOnLight, opacity: 0.85, fontSize: "0.66rem", fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase" }}>
                 AITP price
               </p>
               <p className="mt-1" style={{ color: BRAND.navy, fontSize: "0.95rem", fontWeight: 700, lineHeight: 1.1 }}>
                 {formatBDT(ourBDT)}
                 <span style={{ fontSize: "0.66rem", fontWeight: 500, opacity: 0.5 }}>/mo</span>
               </p>
-              <p style={{ color: accentColor, fontSize: "0.7rem", fontWeight: 600 }}>
+              <p style={{ color: accentOnLight, fontSize: "0.7rem", fontWeight: 600 }}>
                 Pay in BDT · bKash / Nagad
               </p>
             </div>
@@ -99,9 +103,9 @@ export function PriceCompare({ toolName, planLabel, planPriceBDT, accentColor }:
               style={{ background: `${accentColor}10`, border: `1px solid ${accentColor}22` }}
               data-testid={`text-savings-${safeLabel}`}
             >
-              <Sparkles size={13} color={accentColor} strokeWidth={2.2} />
+              <Sparkles size={13} color={accentOnLight} strokeWidth={2.2} />
               <span style={{ color: BRAND.navy, fontSize: "0.76rem", fontWeight: 600 }}>
-                You save <strong style={{ color: accentColor }}>{formatBDT(savings)}/mo</strong> — about {savingsPct}% off the international price
+                You save <strong style={{ color: accentOnLight }}>{formatBDT(savings)}/mo</strong> — about {savingsPct}% off the international price
               </span>
             </div>
           )}

@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { readableOn, bestTextOn } from "@/lib/contrast";
 import { Layout } from "@/components/layout/Layout";
 import { BRAND, LogoStacked, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
@@ -200,10 +201,10 @@ export default function Home() {
                   <div className="inline-flex items-center justify-center rounded-xl mb-5" style={{ width: 52, height: 52, background: `${p.color}18` }}>
                     <p.icon size={24} color={p.color} strokeWidth={1.8} />
                   </div>
-                  <p style={{ color: p.color, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>{p.tagline}</p>
+                  <p style={{ color: readableOn(p.color, "#ffffff", 4.5), fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase" }}>{p.tagline}</p>
                   <h3 className="mt-1 mb-3" style={{ color: BRAND.navy, fontSize: "1.1rem", fontWeight: 700 }}>{p.title}</h3>
                   <p className="mb-4 flex-1" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.82rem", lineHeight: 1.65 }}>{p.desc}</p>
-                  <p style={{ color: p.color, fontSize: "0.72rem", fontWeight: 600 }}>{p.tools}</p>
+                  <p style={{ color: readableOn(p.color, "#ffffff", 4.5), fontSize: "0.72rem", fontWeight: 600 }}>{p.tools}</p>
                 </div>
               </Link>
             ))}
@@ -288,7 +289,7 @@ export default function Home() {
                   <s.icon size={32} color={s.color} strokeWidth={1.8} />
                 </div>
                 <div className="inline-flex items-center justify-center w-7 h-7 rounded-full mb-4" style={{ background: s.color }}>
-                  <span style={{ color: "#fff", fontSize: "0.65rem", fontWeight: 800 }}>{s.step}</span>
+                  <span style={{ color: bestTextOn(s.color), fontSize: "0.65rem", fontWeight: 800 }}>{s.step}</span>
                 </div>
                 <h3 className="text-lg font-bold mb-3" style={{ color: BRAND.navy }}>{s.title}</h3>
                 <p style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.85rem", lineHeight: 1.7 }}>{s.desc}</p>

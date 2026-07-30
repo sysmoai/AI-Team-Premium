@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
 import catalog from "../data/products-catalog.json";
 import { config } from "../lib/config";
+import { bestTextOn } from "@/lib/contrast";
 
 interface Product {
   id: string;
@@ -210,8 +211,13 @@ export default function AllProducts() {
                   className="bg-white dark:bg-slate-800 rounded-xl shadow-md hover:shadow-lg transition border border-gray-200 dark:border-slate-700 overflow-hidden flex flex-col"
                 >
                   <div
-                    className="h-24 px-4 text-white flex items-center justify-center font-bold text-xl text-center"
-                    style={{ backgroundColor: product.brandColor || "#3b82f6" }}
+                    className="h-24 px-4 flex items-center justify-center font-bold text-xl text-center"
+                    style={{
+                      backgroundColor: product.brandColor || "#3b82f6",
+                      // Brand colours range from near-black to pale amber; white
+                      // is unreadable on the light end.
+                      color: bestTextOn(product.brandColor || "#3b82f6"),
+                    }}
                   >
                     {product.brand}
                   </div>

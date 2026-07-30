@@ -1,0 +1,81 @@
+{
+  "version": "1.0",
+  "currency": "BDT",
+  "floorPrice": 29900,
+  "products": [
+    {
+      "id": "chatgpt-pro-premium-shared",
+      "name": "ChatGPT Pro Premium Shared",
+      "category": "ai-tools",
+      "status": "pending-pricing",
+      "description": "Shared access to ChatGPT Pro account with premium features",
+      "pricing": {
+        "status": "hold",
+        "note": "Awaiting CEO approval. Request price on WhatsApp. Must exceed ৳29,900 floor.",
+        "minFloor": 29900,
+        "currency": "BDT"
+      },
+      "contact": "whatsapp"
+    },
+    {
+      "id": "capcut-p18",
+      "name": "CapCut Premium P18 Plan",
+      "category": "video-editing",
+      "status": "active",
+      "description": "CapCut premium subscription - annual and monthly options",
+      "pricing": {
+        "annual": {
+          "amount": 2510,
+          "currency": "BDT",
+          "period": "year",
+          "verified": "pending"
+        },
+        "monthly": {
+          "amount": 3350,
+          "currency": "BDT",
+          "period": "month",
+          "verified": "pending"
+        },
+        "legacy": {
+          "amount": 1299,
+          "currency": "BDT",
+          "status": "deprecated",
+          "note": "Old pricing - verify live in-app BD rate before final deploy"
+        }
+      },
+      "contact": "payment"
+    }
+  ],
+  "bundles": [
+    {
+      "id": "bundle-a",
+      "name": "Bundle A - Standard",
+      "status": "draft",
+      "products": ["capcut-p18"],
+      "pricing": {
+        "status": "pending-approval"
+      },
+      "note": "Awaiting CEO bundle options A/B approval"
+    },
+    {
+      "id": "bundle-b",
+      "name": "Bundle B - Premium",
+      "status": "draft",
+      "products": ["capcut-p18"],
+      "pricing": {
+        "status": "pending-approval"
+      },
+      "note": "Awaiting CEO bundle options A/B approval"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-07-31",
+    "nextVerification": "2026-10-26",
+    "blockedPricing": [
+      "chatgpt-pro-premium-shared"
+    ],
+    "requiresLiveVerification": [
+      "capcut-p18"
+    ]
+  }
+}

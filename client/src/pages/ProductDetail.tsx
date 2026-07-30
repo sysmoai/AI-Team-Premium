@@ -332,13 +332,21 @@ export default function ProductDetail() {
   const startPrice = family.filter((p) => !p.priceOnRequest);
 
   usePageMeta({
+    // Must produce the same string as buildMeta() in scripts/gen-product-routes.mjs.
+    // The server ships that title in the HTML and this hook overwrites it on
+    // mount; if the two disagree, a crawler can record a different title than
+    // the one the page settles on.
     title: anchor
-      ? `${familyName} Price in Bangladesh${startPrice.length ? ` — from ${formatBDT(Math.min(...startPrice.map((p) => p.price)))}/mo` : ""}`
+      ? startPrice.length
+        ? `${familyName} Price in Bangladesh — from ${formatBDT(Math.min(...startPrice.map((p) => p.price)))}/mo`
+        : `${familyName} in Bangladesh — Pricing & Plans`
       : "AI Tools in Bangladesh",
     description: anchor
-      ? `Buy ${familyName} in Bangladesh. ${
-          startPrice.length ? `Plans from ${formatBDT(Math.min(...startPrice.map((p) => p.price)))}/month. ` : ""
-        }Pay with bKash or Nagad — no international card needed. ${anchor.deliverySLA || "Fast"} delivery, 30-day replacement guarantee, Bangla WhatsApp support.`
+      ? `Buy ${familyName} in Bangladesh. ` +
+        (startPrice.length ? `From ${formatBDT(Math.min(...startPrice.map((p) => p.price)))}/month. ` : "") +
+        (family.length > 1 ? `${family.length} plans. ` : "") +
+        `Pay with bKash or Nagad — no international card needed. ` +
+        `${anchor.deliverySLA || "5–30 min"} delivery, 30-day replacement guarantee, Bangla WhatsApp support.`
       : undefined,
     path: `/tools/${slug}`,
   });

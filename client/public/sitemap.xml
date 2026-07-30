@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- GENERATED FILE — do not edit by hand. Run: npm run gen:sitemap -->
-<!-- Source: lib/route-meta.js (120 indexable routes) -->
+<!-- Source: lib/route-meta.js (142 indexable routes) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.aiteampremium.com/</loc>
@@ -87,6 +87,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/adobe-creative-cloud-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/adobe-firefly-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -94,6 +100,18 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/b2b-implementation-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/beautiful-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/bolt-new-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -118,6 +136,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/capcut-pro-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/captions-app-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -195,6 +219,30 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/fathom-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/figma-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/filmora-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/fireflies-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/firefly</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -249,6 +297,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/google-workspace-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/grammarly</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -262,6 +316,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/grok</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/hailuo-ai-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -303,6 +363,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/krea-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/krisp-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/leonardo</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -321,6 +393,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/lovable-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/luma-dream-machine-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/manus</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -328,6 +412,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/manus-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/microsoft-365-copilot-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -399,7 +489,25 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/photoroom-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/pika-labs-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/playht-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/plus-ai-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -411,7 +519,19 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/poe-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/quillbot-premium-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/recraft-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -430,6 +550,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/runway-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/speechify-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -478,6 +604,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/vault</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/veed-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

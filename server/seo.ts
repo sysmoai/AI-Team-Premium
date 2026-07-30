@@ -111,7 +111,7 @@ export function handleSeoRequest(req: Request, res: Response): void {
     const hreflang = `    <link rel="alternate" hreflang="en" href="${SITE_URL}${requestPath}" />\n    <link rel="alternate" hreflang="x-default" href="${SITE_URL}${requestPath}" />\n  `;
     result = result.replace("</head>", hreflang + "\n</head>");
 
-    res.status(404).send(result);
+    res.type('text/html').status(404).send(result);
     return;
   }
 
@@ -136,5 +136,5 @@ export function handleSeoRequest(req: Request, res: Response): void {
   const hreflangTags = `    <link rel="alternate" hreflang="en" href="${meta.canonical}" />\n    <link rel="alternate" hreflang="bn" href="${meta.canonical}?lang=bn" />\n    <link rel="alternate" hreflang="x-default" href="${meta.canonical}" />\n  `;
   result = result.replace("</head>", hreflangTags + "\n</head>");
 
-  res.status(200).send(result);
+  res.type('text/html').status(200).send(result);
 }

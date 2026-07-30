@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { CANONICAL_MAP } from "@shared/canonical-map.js";
 
 interface PageMeta {
   title: string;
@@ -33,12 +34,25 @@ function setCanonical(href: string) {
   link.href = href;
 }
 
+// Resolve a path through CANONICAL_MAP. Unmapped paths are their own canonical,
+// so this is a no-op for every page that is not a known duplicate.
+function canonicalUrlFor(pathname: string, fallback: string) {
+  const map = CANONICAL_MAP as Record<string, string | undefined>;
+  const target = map[pathname] ?? map[pathname.replace(/\/$/, "")];
+  return target ? `${SITE_URL}${target}` : fallback;
+}
+
 export function usePageMeta({ title, description, path }: PageMeta) {
   useEffect(() => {
     const fullTitle = title === BASE ? BASE : `${title} | ${BASE}`;
-    const url = path
-      ? `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`
-      : `${SITE_URL}${typeof window !== "undefined" ? window.location.pathname : ""}`;
+    const pathname = path
+      ? path.startsWith("/")
+        ? path
+        : `/${path}`
+      : typeof window !== "undefined"
+        ? window.location.pathname
+        : "";
+    const url = `${SITE_URL}${pathname}`;
 
     const prevTitle = document.title;
     const prevDesc = document.querySelector<HTMLMetaElement>('meta[name="description"]')?.content ?? "";
@@ -53,7 +67,12 @@ export function usePageMeta({ title, description, path }: PageMeta) {
     setMeta('meta[property="og:title"]', fullTitle);
     setMeta('meta[name="twitter:title"]', fullTitle);
     setMeta('meta[property="og:url"]', url);
-    setCanonical(url);
+    // og:url is this page's own URL; the canonical may point elsewhere. Several
+    // products have both a hand-written page and a generated catalog page, and
+    // both were being submitted in sitemap.xml — so they competed for the same
+    // query. The server sends the consolidated canonical; without this the hook
+    // would overwrite it with the page's own path on hydration.
+    setCanonical(canonicalUrlFor(pathname, url));
 
     if (description) {
       setMeta('meta[name="description"]', description);

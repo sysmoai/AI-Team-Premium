@@ -364,6 +364,32 @@ else
     rmLiterals.join("\n")
   );
 
+// 98 product URLs were being submitted for ~66 products, so for 21 products two
+// or three of our own pages competed for the same query. They are consolidated
+// by rel=canonical rather than redirects, which means the canonical the server
+// sends and the one the client sets on hydration must be identical — if they
+// disagree, the page tells a crawler two different things.
+{
+  const { CANONICAL_MAP } = await import(
+    pathToFileURL(resolve(ROOT, "shared/canonical-map.js")).href
+  );
+  const sitemap = readFileSync(resolve(ROOT, "client/public/sitemap.xml"), "utf-8");
+  const bad = [];
+  for (const [from, to] of Object.entries(CANONICAL_MAP)) {
+    const meta = lookupMeta(from);
+    if (!meta) { bad.push(`${from}: no route metadata`); continue; }
+    const want = `https://www.aiteampremium.com${to}`;
+    if (meta.canonical !== want) bad.push(`${from}\n    server: ${meta.canonical}\n    want:   ${want}`);
+    // The canonical target must itself be a real, indexable URL.
+    if (!sitemap.includes(`<loc>${want}`)) bad.push(`${from} -> ${to} is not in sitemap.xml`);
+    // A canonical must not point at a page that itself points elsewhere.
+    if (CANONICAL_MAP[to]) bad.push(`${from} -> ${to}, which is itself canonicalised (chain)`);
+  }
+  if (bad.length === 0)
+    ok(`${Object.keys(CANONICAL_MAP).length} duplicate URLs canonicalised to an indexable target`);
+  else fail("canonical map is inconsistent", bad.join("\n"));
+}
+
 // The homepage does NOT go through api/index.js: vercel.json rewrites /(.*) to
 // /api, but Vercel serves a matching static file first, and dist/public/index.html
 // matches "/". So index.html's baked-in tags *are* the homepage's metadata, and

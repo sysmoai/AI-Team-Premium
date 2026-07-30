@@ -186,7 +186,7 @@ export default function AuditDashboard() {
 
       <section className="py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <h2 style={{ color: BRAND.navy, fontSize: "1.1rem", fontWeight: 700, marginBottom: 16 }}>Products</h2>
+          <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "1.1rem", fontWeight: 700, marginBottom: 16 }}>Products</h2>
           <div className="rounded-xl overflow-hidden" style={{ border: "1px solid rgba(37,99,235,0.08)", background: "#fff" }}>
             <div className="overflow-x-auto">
               <table className="w-full" style={{ borderCollapse: "collapse" }}>

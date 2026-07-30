@@ -5,8 +5,8 @@ import { MessageCircle } from "lucide-react";
 export const TOOL_META = {
   "slug": "poe",
   "category": "chat",
-  "priceBdt": 799,
-  "priceLabel": "৳799/mo",
+  "priceBdt": 3440,
+  "priceLabel": "from ৳3,440/mo",
   "model": "GPT-5.x, Claude-Opus, Gemini, 100+ models",
   "contextWindow": "Varies by model (up to 200K)",
   "multimodal": "Text, images, files, code",

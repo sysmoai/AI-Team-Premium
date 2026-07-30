@@ -5,8 +5,8 @@ import { Sparkles } from "lucide-react";
 export const TOOL_META = {
   "slug": "google-ai-pro",
   "category": "chat",
-  "priceBdt": 599,
-  "priceLabel": "৳599/mo",
+  "priceBdt": 3390,
+  "priceLabel": "from ৳3,390/mo",
   "model": "Gemini 2.5 Pro Ultra",
   "contextWindow": "1M tokens",
   "multimodal": "Text, image, video, voice",

@@ -4,8 +4,8 @@ import { Image as ImageIcon } from "lucide-react";
 export const TOOL_META = {
   "slug": "ideogram",
   "category": "image",
-  "priceBdt": 599,
-  "priceLabel": "৳599/mo",
+  "priceBdt": 2990,
+  "priceLabel": "from ৳2,990/mo",
   "model": "Ideogram 3.0 (multi-model)",
   "contextWindow": "N/A (image gen)",
   "multimodal": "Text-to-image, image editing, text rendering",

@@ -4,8 +4,8 @@ import { Layers } from "lucide-react";
 export const TOOL_META = {
   "slug": "adobe-cc",
   "category": "image",
-  "priceBdt": 499,
-  "priceLabel": "৳499/mo",
+  "priceBdt": 0,
+  "priceLabel": "Price on request",
   "model": "Photoshop, Lightroom, Express, Firefly",
   "contextWindow": "N/A (creative suite)",
   "multimodal": "Photo editing, design, AI, cloud storage",

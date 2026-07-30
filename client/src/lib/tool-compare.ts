@@ -268,6 +268,18 @@ export function recommend(a: CompareTool, b: CompareTool): Recommendation {
       reason: `${a.name} and ${b.name} solve different problems — ${a.name} is built for ${a.category}, while ${b.name} is built for ${b.category}. There's no single winner here: pick ${a.name} if you need ${a.bestFor[0].toLowerCase()}, and pick ${b.name} if you need ${b.bestFor[0].toLowerCase()}. Many AI Team Premium customers buy both.`,
     };
   }
+  // priceFromBdt is 0 for a tool quoted per enquiry. Scoring that as a price
+  // would read it as free and hand it the win on cost — the opposite of true,
+  // since those are the tools whose floor is too high to publish. With no
+  // comparable price there is no price-based verdict to give.
+  if (a.priceFromBdt <= 0 || b.priceFromBdt <= 0) {
+    const quoted = a.priceFromBdt <= 0 ? a : b;
+    const priced = quoted.slug === a.slug ? b : a;
+    return {
+      kind: "depends",
+      reason: `${quoted.name} is quoted per enquiry rather than at a list price, so the two cannot be compared on cost here. On capability, pick ${quoted.name} if you need ${quoted.bestFor[0].toLowerCase()}, and ${priced.name} (${priced.priceFromLabel}) if you need ${priced.bestFor[0].toLowerCase()}. Message AI Team Premium for a ${quoted.name} quote.`,
+    };
+  }
   const aScore = (a.specs.accuracy.match(/⭐/g)?.length ?? 0) - (a.priceFromBdt / 1000);
   const bScore = (b.specs.accuracy.match(/⭐/g)?.length ?? 0) - (b.priceFromBdt / 1000);
   const winner = aScore >= bScore ? a : b;

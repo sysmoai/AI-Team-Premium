@@ -4,8 +4,8 @@ import { Image as ImageIcon } from "lucide-react";
 export const TOOL_META = {
   "slug": "freepik",
   "category": "image",
-  "priceBdt": 499,
-  "priceLabel": "৳499/mo",
+  "priceBdt": 450,
+  "priceLabel": "from ৳450/mo",
   "model": "Magnific (multi-model: Flux, SD, Sora, Pika, Suno)",
   "contextWindow": "N/A (image gen + stock)",
   "multimodal": "Text-to-image, AI video, AI audio, stock assets",

@@ -95,8 +95,8 @@ const ELEVENLABS_FAQS = [
 export const TOOL_META = {
   "slug": "elevenlabs",
   "category": "video",
-  "priceBdt": 699,
-  "priceLabel": "৳699/mo",
+  "priceBdt": 748,
+  "priceLabel": "from ৳748/mo",
   "model": "Eleven Multilingual v2 + Turbo",
   "contextWindow": "N/A (audio gen)",
   "multimodal": "Text-to-speech, voice clone, dubbing",

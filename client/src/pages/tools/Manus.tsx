@@ -5,8 +5,8 @@ import { Bot } from "lucide-react";
 export const TOOL_META = {
   "slug": "manus",
   "category": "code",
-  "priceBdt": 1499,
-  "priceLabel": "৳1,499/mo",
+  "priceBdt": 2500,
+  "priceLabel": "from ৳2,500/mo",
   "model": "Claude + GPT-4 + Gemini (multi-agent)",
   "contextWindow": "N/A (agent orchestration)",
   "multimodal": "Text, files, code, browser",

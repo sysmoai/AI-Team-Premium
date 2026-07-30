@@ -11,7 +11,7 @@ export const TOOL_META = {
   "slug": "claude",
   "category": "chat",
   "priceBdt": 1495,
-  "priceLabel": "\u09F31,495/mo",
+  "priceLabel": "from ৳1,495/mo",
   "model": "Claude 4 Sonnet + Opus",
   "contextWindow": "200K tokens",
   "multimodal": "Text, image, document analysis",

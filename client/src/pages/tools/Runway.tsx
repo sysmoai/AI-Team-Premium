@@ -6,8 +6,8 @@ import { Film } from "lucide-react";
 export const TOOL_META = {
   "slug": "runway",
   "category": "video",
-  "priceBdt": 899,
-  "priceLabel": "৳899/mo",
+  "priceBdt": 1794,
+  "priceLabel": "from ৳1,794/mo",
   "model": "Gen-4 + Gen-4 Turbo",
   "contextWindow": "N/A (video gen)",
   "multimodal": "Text-to-video, image-to-video, video-to-video",

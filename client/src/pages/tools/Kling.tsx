@@ -6,8 +6,8 @@ import { Video } from "lucide-react";
 export const TOOL_META = {
   "slug": "kling",
   "category": "video",
-  "priceBdt": 599,
-  "priceLabel": "৳599/mo",
+  "priceBdt": 270,
+  "priceLabel": "from ৳270/mo",
   "model": "Kling 2.5",
   "contextWindow": "N/A (video gen)",
   "multimodal": "Text-to-video, image-to-video, lip-sync",

@@ -364,6 +364,41 @@ else
     rmLiterals.join("\n")
   );
 
+// TOOL_META on the editorial tool pages is read by /compare/:slug, so a wrong
+// number there is quoted on the comparison pages too. 20 of 25 disagreed with
+// the catalog — Adobe CC advertised ৳499 against a ৳10,464 floor, Microsoft 365
+// Copilot ৳899 against ৳7,776. Every page LOW undercharges each order taken from
+// it; every page HIGH makes the same product look dearer on one of our own URLs.
+{
+  const { CANONICAL_MAP } = await import(
+    pathToFileURL(resolve(ROOT, "shared/canonical-map.js")).href
+  );
+  const bySlug = new Map();
+  for (const p of products) {
+    if (!bySlug.has(p.slug)) bySlug.set(p.slug, []);
+    bySlug.get(p.slug).push(p);
+  }
+  const toolsDir = resolve(ROOT, "client/src/pages/tools");
+  const drift = [];
+  for (const f of readdirSync(toolsDir).filter((x) => x.endsWith(".tsx"))) {
+    const src = readFileSync(resolve(toolsDir, f), "utf-8");
+    const slug = src.match(/"slug":\s*"([^"]+)"/)?.[1];
+    if (!slug) continue;
+    const target = CANONICAL_MAP[`/tools/${slug}`];
+    if (!target) continue;                       // no catalog counterpart
+    const family = bySlug.get(target.replace("/tools/", "")) ?? [];
+    // priceOnRequest tiers carry an internal reference price that must not ship.
+    const pub = family.filter((p) => p.price > 0 && !p.priceOnRequest).map((p) => p.price);
+    const want = pub.length ? Math.min(...pub) : 0;
+    const got = Number(src.match(/"priceBdt":\s*(\d+)/)?.[1] ?? -1);
+    if (got !== want) drift.push(`${f}: TOOL_META ${got} vs catalog ${want || "on request"}`);
+  }
+  if (drift.length === 0)
+    ok("tool page TOOL_META prices match the catalog");
+  else
+    fail("tool page price drifted from the catalog — run npm run gen:tool-prices", drift.join("\n"));
+}
+
 // 98 product URLs were being submitted for ~66 products, so for 21 products two
 // or three of our own pages competed for the same query. They are consolidated
 // by rel=canonical rather than redirects, which means the canonical the server

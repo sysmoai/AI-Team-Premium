@@ -9,9 +9,23 @@
 //
 // Usage: npm run verify
 
-import { readFileSync, existsSync } from "node:fs";
-import { resolve, dirname } from "node:path";
+import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
+import { resolve, dirname, relative } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
+
+// Recursive file list for the whole-tree checks below. Skips node_modules and
+// dotfiles; a path that is itself a file yields just that file, so a check can
+// pass either a directory or a single path.
+function walkFiles(p, ext, out = []) {
+  if (!existsSync(p)) return out;
+  if (statSync(p).isDirectory()) {
+    for (const f of readdirSync(p)) {
+      if (f === "node_modules" || f.startsWith(".")) continue;
+      walkFiles(resolve(p, f), ext, out);
+    }
+  } else if (ext.test(p)) out.push(p);
+  return out;
+}
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const CANONICAL_HOST = "https://www.aiteampremium.com";
@@ -307,6 +321,96 @@ else
     "bare-apex URLs found (React will overwrite the server canonical with these)",
     apexLeaks.join("\n")
   );
+
+// ---------------------------------------------------------------- brand hygiene
+section("Brand and claims");
+
+// Two different wrong acronyms shipped live in <title> and <meta description>:
+// "AIPT — AI Premium Tools" across 68 route entries and a bare "AITP" in page
+// copy. The rule is "AI Team Premium" in anything a visitor reads; AITP stays
+// internal, which is why audit-engine.ts is exempt rather than renamed.
+const brandPublic = [
+  "client/src", "lib", "data", "api", "server/seo.ts", "client/index.html",
+];
+const brandExempt = new Set(["server/audit-engine.ts"]);
+const acronymHits = [];
+for (const rel of brandPublic) {
+  const p = resolve(ROOT, rel);
+  if (!existsSync(p)) continue;
+  for (const f of walkFiles(p, /\.(ts|tsx|js|jsx|mjs|json|html)$/)) {
+    const r = relative(ROOT, f).replace(/\\/g, "/");
+    if (brandExempt.has(r)) continue;
+    const body = readFileSync(f, "utf-8");
+    const n = (body.match(/\b(AIPT|AITP)\b/g) || []).length;
+    if (n) acronymHits.push(`${r} (${n})`);
+  }
+}
+if (acronymHits.length === 0) ok("no public brand acronym in visitor-facing text");
+else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.join("\n"));
+
+// Hand-written metadata must quote prices through PRICE_ANCHORS, never as a
+// literal. Every literal that was in this file had drifted from the catalog.
+const rmBody = readFileSync(resolve(ROOT, "lib/route-meta.js"), "utf-8");
+const rmLiterals = [];
+rmBody.split(/\r?\n/).forEach((line, i) => {
+  if (!/^\s*"\//.test(line)) return;            // route entries only
+  const m = line.match(/৳[0-9][0-9,]*/g);
+  if (m) rmLiterals.push(`line ${i + 1}: ${[...new Set(m)].join(", ")}`);
+});
+if (rmLiterals.length === 0) ok("route metadata quotes no hardcoded price");
+else
+  fail(
+    "hardcoded price in route-meta.js — use PRICE_ANCHORS so it tracks the catalog",
+    rmLiterals.join("\n")
+  );
+
+// The Vault is not a catalog entry, so its price lives in lib/bundle-prices.js.
+// Its page must agree with that file or the metadata and the page contradict.
+{
+  const { BUNDLE_PRICES } = await import(
+    pathToFileURL(resolve(ROOT, "lib/bundle-prices.js")).href
+  );
+  const vaultPage = resolve(ROOT, "client/src/pages/AIToolsVault.tsx");
+  if (!existsSync(vaultPage)) ok("no Vault page to cross-check");
+  else {
+    // Comments are stripped first: a comment recording what a price used to be
+    // is worth keeping, and scanning it would flag the very number it explains.
+    const body = readFileSync(vaultPage, "utf-8")
+      .replace(/\/\*[\s\S]*?\*\//g, "")
+      .replace(/^\s*\/\/.*$/gm, "");
+    // Every price the page quotes must be one we can point at: the bundle's own
+    // price, a real catalog price, or a total this file declares as derived from
+    // catalog prices. Anything else is a number someone typed and nothing checks.
+    const allowed = new Set([
+      BUNDLE_PRICES.vault,
+      ...BUNDLE_PRICES.vaultDerivedTotals,
+      ...products.filter((p) => p.price > 0).map((p) => p.price),
+    ]);
+    const wrong = [...new Set((body.match(/৳([0-9][0-9,]*)/g) || []))]
+      .map((s) => Number(s.replace(/[৳,]/g, "")))
+      .filter((n) => !allowed.has(n));
+    if (wrong.length === 0) ok(`Vault page prices all trace to the catalog or bundle-prices`);
+    else
+      fail(
+        "Vault page quotes a price that matches no catalog entry",
+        wrong.map((n) => `৳${n.toLocaleString("en-US")}`).join(", ")
+      );
+  }
+}
+
+// A tax representation is a claim we would have to defend; it shipped for months
+// as "No extra VAT" with nothing recording who verified it.
+const vatHits = [];
+for (const rel of ["lib", "client/src", "data"]) {
+  const p = resolve(ROOT, rel);
+  if (!existsSync(p)) continue;
+  for (const f of walkFiles(p, /\.(ts|tsx|js|mjs|json)$/)) {
+    if (/no extra vat|vat[- ]free|no vat/i.test(readFileSync(f, "utf-8")))
+      vatHits.push(relative(ROOT, f).replace(/\\/g, "/"));
+  }
+}
+if (vatHits.length === 0) ok("no unevidenced VAT claim in shipped copy");
+else fail("VAT claim found — needs an evidence record before it can ship", vatHits.join("\n"));
 
 // ---------------------------------------------------------------- build output
 section("Build output");

@@ -71,7 +71,7 @@ export default function WebDevelopment() {
             Fast, SEO-optimized, mobile-first websites — landing page থেকে full e-commerce store পর্যন্ত।
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Web+Development+services+from+AITP" target="_blank" rel="noopener noreferrer" data-testid="button-hero-web" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#25D366" }}>
+            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Web+Development+services+from+AI Team Premium" target="_blank" rel="noopener noreferrer" data-testid="button-hero-web" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#25D366" }}>
               <WhatsAppIcon size={18} color="#fff" /> WhatsApp
             </a>
             <a href={config.messenger} target="_blank" rel="noopener noreferrer" data-testid="button-hero-web-messenger" className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base" style={{ background: "#0084FF" }}>
@@ -166,7 +166,7 @@ export default function WebDevelopment() {
           <p className="text-white/50 mb-2">সকাল ৯টা – রাত ১১টা · সপ্তাহের ৭ দিন</p>
           <p className="text-white/50 mb-8">WhatsApp বা Messenger-এ message করুন।</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Web+Development+services+from+AITP" target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-web" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#25D366" }}>
+            <a href="https://wa.me/8801533262758?text=Hi%2C+I%27m+interested+in+Web+Development+services+from+AI Team Premium" target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-web" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#25D366" }}>
               <WhatsAppIcon size={20} color="#fff" /> WhatsApp
             </a>
             <a href={config.messenger} target="_blank" rel="noopener noreferrer" data-testid="button-final-cta-web-messenger" className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg" style={{ background: "#0084FF" }}>

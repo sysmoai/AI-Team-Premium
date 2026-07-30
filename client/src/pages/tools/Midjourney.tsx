@@ -73,7 +73,7 @@ const MIDJOURNEY_COMPETITOR_ROWS = [
   { feature: "Monthly Image Volume", thisProduct: "~200 fast images (Shared)", chatgpt: "~50 images/day", claude: "0", gemini: "~50 images/day" },
   { feature: "Image Resolution", thisProduct: "Up to 4K via upscale", chatgpt: "Up to 4K", claude: "❌ N/A", gemini: "Up to 4K" },
   { feature: "Best Use Case", thisProduct: "Art, fashion, high-quality visuals", chatgpt: "General AI + images", claude: "Writing & code", gemini: "Google ecosystem" },
-  { feature: "AITP Shared Price", thisProduct: "৳1,299/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
+  { feature: "AI Team Premium (Shared)", thisProduct: "৳1,299/mo", chatgpt: "৳399/mo", claude: "৳599/mo", gemini: "৳449/mo" },
 ];
 
 const MIDJOURNEY_BASE_FAQS = [
@@ -85,7 +85,7 @@ const MIDJOURNEY_BASE_FAQS = [
 ];
 
 const MIDJOURNEY_EXTENDED_FAQS = [
-  { q: "How many images can I generate per month with the Midjourney Shared plan?", a: "The Midjourney Shared plan from AITP gives you approximately 200 fast-generation images per month (based on Standard tier allocation). With Turbo Mode enabled, generations are faster but consume more GPU minutes. Relax mode (slower, queued) gives unlimited additional images. For most professional use cases including freelance design work and social media content, 200+ fast images per month is more than sufficient." },
+  { q: "How many images can I generate per month with the Midjourney Shared plan?", a: "The Midjourney Shared plan from AI Team Premium gives you approximately 200 fast-generation images per month (based on Standard tier allocation). With Turbo Mode enabled, generations are faster but consume more GPU minutes. Relax mode (slower, queued) gives unlimited additional images. For most professional use cases including freelance design work and social media content, 200+ fast images per month is more than sufficient." },
   { q: "What is the Style Reference (--sref) parameter in Midjourney?", a: "--sref lets you provide a reference image to define the visual style for your generation. For example: upload a specific painting style → all new generations will adopt that colour palette, brushwork, and aesthetic. This is essential for brand consistency — generate unlimited images that all match the same visual identity. Combined with --cref (character reference), you can create entire consistent visual universes." },
   { q: "Can Midjourney generate text inside images accurately?", a: "Midjourney v7 has significantly improved text rendering in images compared to earlier versions, but it's still not as reliable as Imagen 4 (Google) for accurate text. For images where text must be exact (logos with specific words, signs, etc.), generate the image in Midjourney first, then add text overlays in Canva or Photoshop. For stylistic or slightly imperfect text (street signs, book spines), Midjourney v7 handles it well." },
   { q: "What is the Vary (Region) feature in Midjourney?", a: "Vary (Region) is Midjourney's inpainting tool — you select a specific area of a generated image and describe what you want to change, without affecting the rest. For example: generate a portrait, then use Vary (Region) to change just the background, or swap the shirt colour, or modify a facial expression. This gives precise control over specific elements without regenerating the entire image." },

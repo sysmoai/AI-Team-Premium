@@ -3,6 +3,7 @@ import { Layout } from "@/components/layout/Layout";
 import catalog from "../data/products-catalog.json";
 import { config } from "../lib/config";
 import { bestTextOn } from "@/lib/contrast";
+import { CATEGORY_LABELS, categoryLabel } from "@/lib/categories";
 
 interface Product {
   id: string;
@@ -27,29 +28,11 @@ interface Product {
 
 const products: Product[] = catalog as Product[];
 
-// The source data stores categories as slugs. Spelling them out here keeps
-// "ai-assistant" from rendering as "Ai Assistant" in the filter bar.
-const CATEGORY_LABELS: Record<string, string> = {
-  "ai-assistant": "AI Assistants",
-  "ai-image": "Image Generation",
-  "ai-video": "Video Generation",
-  "ai-voice-music": "Voice & Music",
-  "ai-code": "Coding",
-  "ai-writing": "Writing",
-  "ai-workspace": "Workspace",
-  "ai-design": "Design",
-  bundles: "Bundles",
-};
-
 const ACCESS_LABELS: Record<string, string> = {
   shared: "Shared",
   personal: "Personal",
   bundle: "Bundle",
 };
-
-function categoryLabel(c: string) {
-  return CATEGORY_LABELS[c] || c.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-}
 
 function whatsappHref(product: Product) {
   const message =

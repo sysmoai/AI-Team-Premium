@@ -73,7 +73,7 @@ const NOTION_COMPETITOR_ROWS = [
   { feature: "Bangla Language AI", thisProduct: "✅ AI writes in Bangla in workspace", chatgpt: "✅ Excellent", claude: "✅ Excellent", gemini: "✅ Excellent" },
   { feature: "Calendar Integration", thisProduct: "✅ Native calendar view", chatgpt: "❌ No", claude: "❌ No", gemini: "✅ Google Calendar" },
   { feature: "AI Translate (in-doc)", thisProduct: "✅ Translate any page", chatgpt: "✅ Paste-and-translate", claude: "✅ Paste-and-translate", gemini: "✅ In Google Docs" },
-  { feature: "AITP Shared Price", thisProduct: "৳450/mo (Team Seat)", chatgpt: "৳499/mo (AI only)", claude: "৳1,495/mo (AI only)", gemini: "৳899/mo (AI only)" },
+  { feature: "AI Team Premium (Shared)", thisProduct: "৳450/mo (Team Seat)", chatgpt: "৳499/mo (AI only)", claude: "৳1,495/mo (AI only)", gemini: "৳899/mo (AI only)" },
 ];
 
 const NOTION_FAQS = [

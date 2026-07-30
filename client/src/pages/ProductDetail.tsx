@@ -12,6 +12,7 @@ import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { config } from "@/lib/config";
 import { bestTextOn } from "@/lib/contrast";
+import { categoryLabel } from "@/lib/categories";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { SearchableFAQ, UseCaseCards, TrustAndBuySection } from "@/components/product";
 import type { UseCase } from "@/components/product";
@@ -74,18 +75,6 @@ interface CatalogProduct {
 const products = catalog as unknown as CatalogProduct[];
 
 /* -------------------------------------------------------------- constants */
-const CATEGORY_LABELS: Record<string, string> = {
-  "ai-assistant": "AI Assistants",
-  "ai-image": "Image Generation",
-  "ai-video": "Video Generation",
-  "ai-voice-music": "Voice & Music",
-  "ai-code": "Coding",
-  "ai-writing": "Writing",
-  "ai-workspace": "Workspace",
-  "ai-design": "Design",
-  bundles: "Bundles",
-};
-
 // Capability slugs in the catalog are terse ("image-gen"). These give each one a
 // human label plus an icon so the feature grid reads as prose, not as data.
 //
@@ -193,10 +182,6 @@ function capabilityLabel(slug: string) {
           : w.charAt(0).toUpperCase() + w.slice(1)
     )
     .join(" ");
-}
-
-function categoryLabel(c: string) {
-  return CATEGORY_LABELS[c] || c.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 }
 
 function formatBDT(n: number) {

@@ -86,7 +86,7 @@ export function PriceCompare({ toolName, planLabel, planPriceBDT, accentColor }:
             </div>
             <div className="rounded-lg px-3 py-2.5" style={{ background: `${accentColor}12` }}>
               <p style={{ color: accentOnLight, opacity: 0.85, fontSize: "0.66rem", fontWeight: 700, letterSpacing: "0.05em", textTransform: "uppercase" }}>
-                AITP price
+                AI Team Premium price
               </p>
               <p className="mt-1" style={{ color: BRAND.navy, fontSize: "0.95rem", fontWeight: 700, lineHeight: 1.1 }}>
                 {formatBDT(ourBDT)}

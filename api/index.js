@@ -150,7 +150,7 @@ export default function handler(req, res) {
 
   if (!meta) {
     const body = inject(template, {
-      title: "404 — Page Not Found | AIPT — AI Premium Tools",
+      title: "404 — Page Not Found | AI Team Premium",
       description:
         "The page you requested was not found. Browse our AI subscriptions or return home.",
       canonical: SITE_URL + path,

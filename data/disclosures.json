@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "disclosures": [
+    {
+      "productId": "chatgpt-pro-premium-shared",
+      "type": "shared-account",
+      "title": "ChatGPT Pro Premium — Shared Account Disclaimer",
+      "sections": [
+        {
+          "heading": "Account Ownership",
+          "content": "This is a SHARED account managed by AI Team Premium. You do not own the account. Access may be revoked at any time."
+        },
+        {
+          "heading": "Device Restrictions",
+          "content": "Shared accounts typically restrict usage to 1-2 devices. Logging in on additional devices may trigger account locks or bans."
+        },
+        {
+          "heading": "Content Guidelines",
+          "content": "OpenAI's content policy applies. Violation may result in account ban, affecting all users on the shared seat."
+        },
+        {
+          "heading": "Warranty & Refunds",
+          "content": "Full refund within 30 days if unused or misused. After 30 days, service continues as-is. No refunds after initial commitment."
+        },
+        {
+          "heading": "Service Level Agreement",
+          "content": "Best-effort delivery within 5-15 minutes. No guaranteed uptime for shared accounts."
+        }
+      ]
+    },
+    {
+      "productId": "capcut-p18",
+      "type": "subscription",
+      "title": "CapCut Premium Subscription Disclaimer",
+      "sections": [
+        {
+          "heading": "Automatic Renewal",
+          "content": "Your subscription will automatically renew at the end of each billing period. You can cancel anytime from your CapCut account settings."
+        },
+        {
+          "heading": "Pricing Verification",
+          "content": "Prices shown are estimates. Actual in-app pricing may vary by region and promotion. Verify current prices before purchase."
+        },
+        {
+          "heading": "Local Payment Methods",
+          "content": "We accept bKash, Nagad, and Bank Transfer in Bangladesh. Payment details are confirmed at proposal stage."
+        },
+        {
+          "heading": "Terms of Use",
+          "content": "CapCut's user agreement applies. We are not affiliated with ByteDance or CapCut."
+        }
+      ]
+    }
+  ],
+  "shared-account-disclosure": {
+    "title": "Important: Shared Account Terms",
+    "text": "Shared accounts are managed by AI Team Premium and may have usage restrictions. Single-device login is required. Account access may be revoked without notice if terms are violated.",
+    "accepted": false
+  },
+  "do-not-sell": [
+    {
+      "productId": "placeholder-future-product",
+      "reason": "Product not yet ready",
+      "redirectUrl": "/start-a-project"
+    }
+  ],
+  "metadata": {
+    "lastUpdated": "2026-07-31",
+    "version": "1.0"
+  }
+}

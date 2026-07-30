@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- GENERATED FILE — do not edit by hand. Run: npm run gen:sitemap -->
-<!-- Source: lib/route-meta.js (171 indexable routes) -->
+<!-- Source: lib/route-meta.js (176 indexable routes) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.aiteampremium.com/</loc>
@@ -111,6 +111,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/airtable-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/b2b-implementation-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -201,6 +207,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/clickup-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/copilot</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -262,6 +274,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/firefly</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/framer-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -411,6 +429,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/loom-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/lovable-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -466,6 +490,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/midjourney-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/miro-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

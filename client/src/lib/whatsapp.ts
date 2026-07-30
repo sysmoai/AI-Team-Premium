@@ -14,7 +14,7 @@ const PAGE_MESSAGES: Record<string, string> = {
   "/chatgpt/pro-premium-shared":     config.whatsappPlanTemplates["pro-premium-shared"],
 
   // ── ChatGPT plans hub ──────────────────────────────────────────────────────
-  "/chatgpt-plans": "Hi! I'm looking at ChatGPT plans from AI Team Premium. Which plan do you recommend for me? (Budget: ৳499–৳4,500/mo)",
+  "/chatgpt-plans": "Hi! I'm looking at ChatGPT plans from AI Team Premium. Which plan do you recommend for me? (Budget: from ৳499/mo)",
 
   // ── Other plan hub pages ───────────────────────────────────────────────────
   "/claude-plans":      "Hi! I want Claude Pro from AI Team Premium. What plans are available? (Premium Shared ৳1,495/mo · Personal ৳2,990/mo)",

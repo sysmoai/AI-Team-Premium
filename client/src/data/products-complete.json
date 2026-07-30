@@ -1031,7 +1031,7 @@
       ],
       "deliverySLA": "2-12 hours",
       "featured": true,
-      "whatsappMsg": "Hi, I want ChatGPT Pro Premium Shared (৳4,500/mo)",
+      "whatsappMsg": "Hi, I want a price for ChatGPT Pro — Premium Shared",
       "status": "Active",
       "descriptionBN": "ChatGPT Pro — সর্বোাধিক GPT-5.4 Pro, Sora video generation, Codex autonomous coding এবং unlimited deep research সহ পান। গবেষণা এবং এগেন্সিনসির জন্য সর্বোতম। bKash দিয়ে পে করুন।",
       "useCases": [
@@ -1042,7 +1042,9 @@
         "এন্টারপ্রাইজ ডিঞারেডার ডিভেলপমেন্ট"
       ],
       "whyBuyFromAIPS": "International card ছাড়াই bKash/Nagad-এ পেমেন্ট। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-      "sourceUrl": "https://openai.com/chatgpt/pricing/"
+      "sourceUrl": "https://openai.com/chatgpt/pricing/",
+      "priceOnRequest": true,
+      "priceOnRequestReason": "Capped at 2-3 seats but needs 7+ to clear the cost floor; quoted per enquiry only."
     },
     {
       "id": "chatgpt-pro-personal",

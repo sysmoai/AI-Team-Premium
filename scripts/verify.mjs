@@ -86,9 +86,9 @@ let products = null;
 try {
   products = JSON.parse(readFileSync(productsPath, "utf-8"));
   if (!Array.isArray(products)) throw new Error("top level is not an array");
-  ok(`products-all.json parses (${products.length} products)`);
+  ok(`products-catalog.json parses (${products.length} products)`);
 } catch (e) {
-  fail("products-all.json is not valid", e.message);
+  fail("products-catalog.json is not valid", e.message);
 }
 
 if (products) {
@@ -147,6 +147,15 @@ if (products) {
   const leaks = forbidden
     .map(([re, what]) => { re.lastIndex = 0; return [what, (serialized.match(re) || []).length]; })
     .filter(([, n]) => n > 0);
+
+  // A tier flagged priceOnRequest must never render a published number. These
+  // exist because the plan cannot clear its cost floor at its seat cap, so any
+  // published price commits to a guaranteed loss on every sale.
+  const onRequest = products.filter((p) => p.priceOnRequest);
+  if (onRequest.length) {
+    const named = onRequest.map((p) => `${p.name} (internal ref ${p.price})`).join(", ");
+    ok(`${onRequest.length} tier(s) marked price-on-request: ${named}`);
+  }
 
   if (leaks.length === 0) ok("shipped catalog carries no foreign brand, customer count or review score");
   else

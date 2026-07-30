@@ -20,6 +20,9 @@ interface Product {
   whatsappMsg?: string;
   brandColor?: string;
   featured?: boolean;
+  // Some tiers must not carry a published price — e.g. a seat-capped plan whose
+  // cost floor cannot be cleared at that cap. Those are quoted per enquiry.
+  priceOnRequest?: boolean;
 }
 
 const products: Product[] = catalog as Product[];
@@ -234,12 +237,25 @@ export default function AllProducts() {
                     </div>
 
                     <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-3 rounded-lg">
-                      <p className="text-2xl font-bold text-green-700 dark:text-green-400">
-                        ৳{product.price.toLocaleString()}
-                      </p>
-                      <p className="text-xs text-gray-600 dark:text-gray-400">
-                        {product.category === "bundles" ? "one-time" : "per month"}
-                      </p>
+                      {product.priceOnRequest ? (
+                        <>
+                          <p className="text-lg font-bold text-green-700 dark:text-green-400">
+                            Request price on WhatsApp
+                          </p>
+                          <p className="text-xs text-gray-600 dark:text-gray-400">
+                            হোয়াটসঅ্যাপে দাম জেনে নিন
+                          </p>
+                        </>
+                      ) : (
+                        <>
+                          <p className="text-2xl font-bold text-green-700 dark:text-green-400">
+                            ৳{product.price.toLocaleString()}
+                          </p>
+                          <p className="text-xs text-gray-600 dark:text-gray-400">
+                            {product.category === "bundles" ? "one-time" : "per month"}
+                          </p>
+                        </>
+                      )}
                     </div>
 
                     <div className="flex gap-2 flex-wrap">

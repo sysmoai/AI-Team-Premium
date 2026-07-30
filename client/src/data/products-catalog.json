@@ -2549,7 +2549,7 @@
     "tier": "Personal",
     "accessType": "personal",
     "badge": "83% Off",
-    "description": "SPECIAL — ৳500 only (official ৳2,990). Full Google AI Pro on YOUR Gmail. Gemini 3.1 Pro, Deep Research, image gen, video gen, AI agents, 2TB storage.",
+    "description": "Full Google AI Pro on YOUR Gmail — Gemini 3.1 Pro, Deep Research, image gen, video gen, AI agents, 2TB storage.",
     "capabilities": [
       "text",
       "code",
@@ -3663,7 +3663,7 @@
     "tier": "Core",
     "accessType": "personal",
     "badge": "Special Deal",
-    "description": "SPECIAL — Replit Core at ৳500. Cloud IDE with AI Agent, deploy and host apps. Build anything with AI.",
+    "description": "Replit Core — Cloud IDE with AI Agent, deploy and host apps. Build anything with AI.",
     "capabilities": [
       "code",
       "agents"

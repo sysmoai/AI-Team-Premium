@@ -163,6 +163,25 @@ if (products) {
       "the shipped catalog contains content that must not be published",
       leaks.map(([what, n]) => `${n} x ${what}`).join("\n") + "\n-> re-run: npm run build:catalog"
     );
+
+  // A description that states its own price goes stale the moment the price
+  // changes without the copy being touched — found live on Google AI Pro and
+  // Replit Core, both still advertising "SPECIAL — ৳500" after being repriced
+  // to ৳3,390. Scoped to an explicit price statement ("SPECIAL — ৳X", "at
+  // ৳X", "only ৳X"), not any ৳ figure in the copy — bundle descriptions
+  // legitimately quote unrelated amounts ("Save ৳650", "৳800/mo equivalent").
+  const PRICE_STATEMENT = /\b(?:special|only|at|just)\s*[—-]?\s*৳\s*([\d,]+)/gi;
+  const staleQuote = products.filter((p) => {
+    if (typeof p.description !== "string") return false;
+    const stated = [...p.description.matchAll(PRICE_STATEMENT)].map((m) => Number(m[1].replace(/,/g, "")));
+    return stated.some((q) => q !== p.price);
+  });
+  if (staleQuote.length === 0) ok("no product description states a price other than its own");
+  else
+    fail(
+      `${staleQuote.length} description(s) state a price that doesn't match the product's price`,
+      staleQuote.map((p) => `${p.name}: sells at ${p.price}, description says otherwise — "${p.description.slice(0, 70)}"`).join("\n")
+    );
 }
 
 // The catalog is generated. If the source changed and nobody regenerated, the

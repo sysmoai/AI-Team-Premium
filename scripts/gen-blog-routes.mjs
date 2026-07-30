@@ -17,7 +17,11 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const SITE = "https://www.aiteampremium.com";
 const SRC = resolve(ROOT, "client/src/data/blog-posts.ts");
 
-const src = readFileSync(SRC, "utf-8");
+// Normalise CRLF before parsing. blog-posts.ts is source a human edits, so it
+// isn't pinned to LF the way the generated files are — a checkout on Windows
+// can hand it back with \r\n, which broke the block-splitting regex below
+// outright (0 posts parsed) rather than just failing a byte comparison.
+const src = readFileSync(SRC, "utf-8").replace(/\r\n/g, "\n");
 
 // blog-posts.ts is TypeScript with template-literal-free string fields, so a
 // targeted regex per post object is reliable here — same approach already

@@ -11,3 +11,4 @@ client/src/data/products-complete.json  text eol=lf
 client/public/sitemap.xml               text eol=lf
 lib/product-routes.js                   text eol=lf
 lib/compare-routes.js                   text eol=lf
+lib/blog-routes.js                      text eol=lf

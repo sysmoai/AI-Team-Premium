@@ -31,7 +31,33 @@ export default function handler(req: any, res: any) {
   // Get the request path
   const requestPath = req.url?.split('?')[0] || '/';
 
-  // Try to read index.html
+  // Handle static assets (CSS, JS, images, fonts, etc)
+  if (requestPath.startsWith('/assets/') || requestPath.startsWith('/images/') ||
+      requestPath === '/favicon.svg' || requestPath === '/favicon.png' ||
+      requestPath === '/apple-touch-icon.png' || requestPath === '/manifest.json' ||
+      requestPath === '/robots.txt' || requestPath === '/sitemap.xml') {
+    const filePath = resolve(DIST_PATH, requestPath);
+    if (existsSync(filePath)) {
+      const content = readFileSync(filePath);
+      // Set appropriate content types
+      const contentTypes: Record<string, string> = {
+        '.js': 'application/javascript',
+        '.css': 'text/css',
+        '.png': 'image/png',
+        '.jpg': 'image/jpeg',
+        '.svg': 'image/svg+xml',
+        '.json': 'application/json',
+        '.xml': 'application/xml'
+      };
+      const ext = requestPath.substring(requestPath.lastIndexOf('.'));
+      const contentType = contentTypes[ext] || 'application/octet-stream';
+      res.setHeader('Content-Type', contentType);
+      res.send(content);
+      return;
+    }
+  }
+
+  // For all other requests, serve index.html with SEO metadata injection
   const indexPath = resolve(DIST_PATH, 'index.html');
 
   if (!existsSync(indexPath)) {

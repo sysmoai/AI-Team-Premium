@@ -438,6 +438,32 @@ else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.
   else fail("blog quotes a product at a price the catalog does not have", drift.join("\n"));
 }
 
+// index.html is lang="en" and the catalog carries ~3,000 lines of Bangla that
+// render inside it. Text without a language of its own inherits the document's,
+// so a screen reader reads Bangla with English pronunciation — unintelligible,
+// on a site built around Bangla-first support. WCAG 2.2 AA, 3.1.2.
+//
+// Checked per file: anything rendering a Bangla-bearing catalog field must also
+// mark the language, either statically (lang="bn") or via langOf().
+{
+  const BN_FIELDS = /\b(descriptionBN|whyBuyBN|whyBN|bnBlurb)\b/;
+  const untagged = [];
+  for (const f of walkFiles(resolve(ROOT, "client/src"), /\.tsx$/)) {
+    const body = readFileSync(f, "utf-8");
+    // Renders it (inside JSX braces), rather than merely declaring the type.
+    if (!/\{[^}]*\b(descriptionBN|whyBuyBN|whyBN|bnBlurb)\b[^}]*\}/.test(body)) continue;
+    if (!BN_FIELDS.test(body)) continue;
+    if (/lang="bn"|langOf\(/.test(body)) continue;
+    untagged.push(relative(ROOT, f).replace(/\\/g, "/"));
+  }
+  if (untagged.length === 0) ok("Bangla catalog text is marked with its own language");
+  else
+    fail(
+      "Bangla rendered inside the lang=\"en\" document without a language mark",
+      untagged.join("\n")
+    );
+}
+
 // Every catalog category needs a label in client/src/lib/categories.ts.
 // categoryLabel() falls back to title-casing the slug, so a missing entry does
 // not crash — it quietly renders "Seo" instead of "SEO & Marketing", and only on

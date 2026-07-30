@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { langOf } from "@/lib/lang";
 
 export interface UseCase {
   emoji: string;
@@ -55,15 +56,15 @@ export function UseCaseCards({ useCases }: UseCaseCardsProps) {
               >
                 {uc.emoji}
               </div>
-              <h3 className="font-bold text-gray-900 dark:text-gray-100 text-sm leading-tight">{uc.title}</h3>
+              <h3 {...langOf(uc.title)} className="font-bold text-gray-900 dark:text-gray-100 text-sm leading-tight">{uc.title}</h3>
               <div className="space-y-2 text-xs text-gray-600 dark:text-gray-400">
                 <div>
                   <span className="font-semibold text-gray-400 dark:text-gray-500 uppercase text-[10px] tracking-wide">WHO</span>
-                  <p className="mt-0.5">{uc.who}</p>
+                  <p {...langOf(uc.who)} className="mt-0.5">{uc.who}</p>
                 </div>
                 <div>
                   <span className="font-semibold text-gray-400 dark:text-gray-500 uppercase text-[10px] tracking-wide">WHAT</span>
-                  <p className="mt-0.5">{uc.what}</p>
+                  <p {...langOf(uc.what)} className="mt-0.5">{uc.what}</p>
                 </div>
                 <div>
                   <span className="font-semibold text-gray-400 dark:text-gray-500 uppercase text-[10px] tracking-wide">TIME SAVED</span>
@@ -72,7 +73,7 @@ export function UseCaseCards({ useCases }: UseCaseCardsProps) {
               </div>
               <div className="mt-auto pt-2">
                 <span className="font-semibold text-gray-400 dark:text-gray-500 uppercase text-[10px] tracking-wide">EXAMPLE PROMPT</span>
-                <p className="mt-1 font-mono text-xs bg-gray-100 dark:bg-gray-800 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                <p {...langOf(uc.examplePrompt)} className="mt-1 font-mono text-xs bg-gray-100 dark:bg-gray-800 rounded-lg px-3 py-2 text-gray-700 dark:text-gray-300 leading-relaxed">
                   {uc.examplePrompt}
                 </p>
               </div>

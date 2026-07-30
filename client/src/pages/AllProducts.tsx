@@ -4,6 +4,7 @@ import catalog from "../data/products-catalog.json";
 import { config } from "../lib/config";
 import { bestTextOn } from "@/lib/contrast";
 import { CATEGORY_LABELS, categoryLabel } from "@/lib/categories";
+import { langOf } from "@/lib/lang";
 
 interface Product {
   id: string;
@@ -212,8 +213,11 @@ export default function AllProducts() {
                     <div>
                       <h2 className="font-bold text-lg text-gray-900 dark:text-white mb-1">{product.name}</h2>
                       <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-3">{product.description}</p>
+                      {/* Tagged as Bangla because the document is lang="en".
+                          Without it a screen reader applies English pronunciation
+                          and the text is unintelligible — WCAG 2.2 AA, 3.1.2. */}
                       {product.descriptionBN && (
-                        <p className="text-sm text-gray-500 dark:text-gray-500 mt-2 line-clamp-3">
+                        <p {...langOf(product.descriptionBN)} className="text-sm text-gray-500 dark:text-gray-500 mt-2 line-clamp-3">
                           {product.descriptionBN}
                         </p>
                       )}

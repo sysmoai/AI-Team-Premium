@@ -21,7 +21,7 @@ export default function ComparePage() {
 
 function ComparisonNotFound({ slug }: { slug: string }) {
   usePageMeta({
-    title: "Comparison not found | AITP",
+    title: "Comparison not found | AI Team Premium",
     description: "We don't have this AI tool comparison yet. Browse popular comparisons from AI Team Premium.",
     path: `/compare/${slug}`,
   });
@@ -251,7 +251,7 @@ function ComparisonDetail({ a, b }: { a: CompareTool; b: CompareTool }) {
               </div>
               <p className="text-slate-900/78 dark:text-slate-200" style={{ fontSize: "0.95rem", lineHeight: 1.65 }}>{rec.reason}</p>
               <a
-                href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AITP — I read your ${a.name} vs ${b.name} comparison. Please send pricing for ${winner.name}.`)}`}
+                href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AI Team Premium — I read your ${a.name} vs ${b.name} comparison. Please send pricing for ${winner.name}.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick(winner.name, undefined, undefined, "compare-winner")}
@@ -270,7 +270,7 @@ function ComparisonDetail({ a, b }: { a: CompareTool; b: CompareTool }) {
               </div>
               <p style={{ color: BRAND.navy, opacity: 0.78, fontSize: "0.95rem", lineHeight: 1.65 }}>{rec.reason}</p>
               <a
-                href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AITP — I read your ${a.name} vs ${b.name} comparison. Please help me pick the right one for my use case.`)}`}
+                href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AI Team Premium — I read your ${a.name} vs ${b.name} comparison. Please help me pick the right one for my use case.`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackWhatsAppClick(`${a.name} vs ${b.name}`, undefined, undefined, "compare-advice")}
@@ -278,7 +278,7 @@ function ComparisonDetail({ a, b }: { a: CompareTool; b: CompareTool }) {
                 className="mt-5 inline-flex items-center gap-2 rounded-xl px-5 py-2.5"
                 style={{ background: "#25D366", color: "#fff", fontWeight: 600, fontSize: "0.9rem" }}
               >
-                <WhatsAppIcon size={16} /> Ask AITP which is right for you
+                <WhatsAppIcon size={16} /> Ask AI Team Premium which is right for you
               </a>
             </div>
           )}

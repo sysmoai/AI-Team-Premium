@@ -93,6 +93,34 @@ const records = [...families.entries()]
 
 const esc = (s) => s.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
 
+// Price anchors for hand-written site copy.
+//
+// These used to be typed into lib/route-meta.js by hand, and every one of them
+// had drifted: the homepage advertised "from ৳349" against a ৳190 catalog floor,
+// /chatgpt-plans quoted ৳499/৳999 for tiers that sell at ৳350/৳950, and the Vault
+// carried a ৳1,990 that matched no product at all. A wrong price in a <title> is
+// the first thing a customer reads on the search result page, so it is derived
+// here rather than trusted to stay in sync.
+//
+// A missing id is a hard failure: emitting a stale number is exactly the bug
+// this exists to prevent, so generation stops instead of falling back.
+const priceOf = (id) => {
+  const p = catalog.find((x) => x.id === id);
+  if (!p) throw new Error(`price anchor: no product with id "${id}"`);
+  if (!(p.price > 0)) throw new Error(`price anchor: "${id}" has no published price`);
+  return p.price;
+};
+
+const published = catalog.filter((p) => p.price > 0);
+if (!published.length) throw new Error("price anchor: catalog has no published prices");
+
+const ANCHORS = {
+  catalogMin: Math.min(...published.map((p) => p.price)),
+  chatgptPlusShared: priceOf("chatgpt-plus-starter-shared"),
+  chatgptPlusPremiumShared: priceOf("chatgpt-plus-premium-shared"),
+  chatgptPlusPersonal: priceOf("chatgpt-plus-personal"),
+};
+
 const body = records
   .map(
     (r) =>
@@ -122,6 +150,10 @@ export const PRODUCT_PATHS = Object.keys(PRODUCT_ROUTE_META);
 //   PRODUCT_COUNT purchasable tiers across those products — what /all-products lists
 export const TOOL_COUNT = ${records.length};
 export const PRODUCT_COUNT = ${catalog.length};
+
+// Prices quoted in hand-written site copy, derived from the catalog so a repriced
+// tier cannot leave a stale number in a title or meta description.
+export const PRICE_ANCHORS = ${JSON.stringify(ANCHORS, null, 2)};
 `;
 
 writeFileSync(resolve(ROOT, "lib/product-routes.js"), out, "utf-8");

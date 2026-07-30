@@ -15,19 +15,26 @@ const INCLUDED = [
   "Setup guide and best-practices doc for each tool",
 ];
 
+// Personal-seat prices, taken from products-catalog.json. Claude Pro was listed
+// here at ৳2,500 and Gemini at ৳1,800 — neither matched the catalog, and the
+// ৳7,250 total below was the sum of those wrong figures, which understated the
+// comparison the whole section exists to make.
 const COMPARISON = [
-  { tool: "ChatGPT Plus", individual: "৳2,990", type: "Personal Seat" },
-  { tool: "Claude Pro", individual: "৳2,500", type: "Personal Seat" },
-  { tool: "Gemini Advanced", individual: "৳1,800", type: "Personal Seat" },
+  { tool: "ChatGPT Plus", individualBdt: 2990, type: "Personal Seat" },
+  { tool: "Claude Pro", individualBdt: 2990, type: "Personal Seat" },
+  { tool: "Google AI Pro (Gemini Advanced)", individualBdt: 3390, type: "Personal Seat" },
 ];
+
+const bdt = (n: number) => `৳${n.toLocaleString("en-US")}`;
+const COMPARISON_TOTAL = COMPARISON.reduce((s, r) => s + r.individualBdt, 0);
 
 const VAULT_FAQS = [
   { q: "What is the AI Tools Vault bundle from AI Team Premium?", a: "The AI Tools Vault is a bundle that gives you shared-seat access to three top AI tools — ChatGPT Plus, Claude Pro, and Gemini Advanced — together for ৳1,990/month, paid in BDT via bKash or Nagad. It includes bundled onboarding, a single WhatsApp support channel, and setup guides for all three tools." },
   { q: "How much does the AI Tools Vault cost in Bangladesh?", a: "The AI Tools Vault costs ৳1,990/month from AI Team Premium. You can pay in BDT using bKash, Nagad, Rocket or Bank Transfer — no international credit card required." },
-  { q: "How is the AI Tools Vault value calculated?", a: "If you were to buy a Personal Seat for each tool separately — ChatGPT Plus (৳2,990), Claude Pro (৳2,500), and Gemini Advanced (৳1,800) — you'd pay ৳7,250/month. The Vault gives you shared access to all three for ৳1,990/month, with a single payment and single support channel." },
+  { q: "How is the AI Tools Vault value calculated?", a: "If you were to buy a Personal Seat for each tool separately — ChatGPT Plus (৳2,990), Claude Pro (৳2,990), and Google AI Pro / Gemini Advanced (৳3,390) — you'd pay ৳9,370/month. The Vault gives you shared access to all three for ৳1,990/month, with a single payment and single support channel. Note that the Vault is shared access, not personal seats — see the comparison below." },
   { q: "How long does delivery take for the AI Tools Vault?", a: "Vault bundle access is set up within 6 hours after payment confirmation. AI Team Premium confirms via WhatsApp at +880 1533-262758." },
   { q: "Is there a warranty on the AI Tools Vault?", a: "Yes. All three tools carry a 30-day replacement warranty. If any access stops working due to our fault, we replace it within 24 hours at no extra charge." },
-  { q: "Can I buy just one tool instead of the full Vault?", a: "Yes. ChatGPT Plus starts at ৳499/mo (shared), Claude Pro at ৳1,495/mo (shared), and Gemini Advanced at ৳899/mo (shared) individually. The Vault is ideal if you regularly need all three tools and want single-channel support and onboarding." },
+  { q: "Can I buy just one tool instead of the full Vault?", a: "Yes. ChatGPT Plus starts at ৳350/mo (shared) and Claude Pro at ৳1,495/mo (shared). Google AI Pro (Gemini Advanced) is sold as a personal seat at ৳3,390/mo rather than a shared tier. The Vault is ideal if you regularly need all three tools and want single-channel support and onboarding." },
   { q: "What is the difference between Vault shared access and personal seats?", a: "The Vault provides shared-seat access — you share the account with a small number of other users, but your conversations remain private. Personal seats give you your own dedicated account. If you want full private ownership, buy each tool's Personal Seat separately." },
   { q: "What onboarding do I get with the Vault?", a: "You get a bundled onboarding guide covering the best use cases for all three tools, tips on when to use each AI (ChatGPT for creative/coding, Claude for long documents/analysis, Gemini for Google Workspace tasks), and a prompt starter pack." },
 ];
@@ -191,12 +198,12 @@ export default function AIToolsVault() {
                     {COMPARISON.map((row, i) => (
                       <tr key={row.tool} style={{ borderTop: "1px solid rgba(37,99,235,0.06)", background: i % 2 === 0 ? BRAND.white : "rgba(239,246,255,0.4)" }}>
                         <td className="px-5 py-3" style={{ color: BRAND.navy, opacity: 0.75 }}>{row.tool}</td>
-                        <td className="px-5 py-3 text-right font-medium" style={{ color: BRAND.navy }}>{row.individual}/mo</td>
+                        <td className="px-5 py-3 text-right font-medium" style={{ color: BRAND.navy }}>{bdt(row.individualBdt)}/mo</td>
                       </tr>
                     ))}
                     <tr style={{ borderTop: `2px solid rgba(37,99,235,0.15)`, background: BRAND.sky }}>
                       <td className="px-5 py-3 font-bold" style={{ color: BRAND.navy }}>Total (3 Personal Seats)</td>
-                      <td className="px-5 py-3 text-right font-bold" style={{ color: "#EF4444" }}>৳7,250/mo</td>
+                      <td className="px-5 py-3 text-right font-bold" style={{ color: "#EF4444" }}>{bdt(COMPARISON_TOTAL)}/mo</td>
                     </tr>
                     <tr style={{ background: BRAND.blue }}>
                       <td className="px-5 py-3 font-bold text-white">🎁 Vault Bundle (Shared)</td>

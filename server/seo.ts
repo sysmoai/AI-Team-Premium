@@ -35,7 +35,7 @@ export function handleSeoRequest(req: Request, res: Response): void {
   if (!meta) {
     // Unknown path -> return 404 with proper meta
     let result = template
-      .replace(/<title>.*?<\/title>/, "<title>404 - Page Not Found | AIPT — AI Premium Tools</title>")
+      .replace(/<title>.*?<\/title>/, "<title>404 - Page Not Found | AI Team Premium</title>")
       .replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/>/, '<meta name="description" content="The page you requested was not found. Browse our AI subscriptions or return home." />')
       .replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/>/, `<link rel="canonical" href="${SITE_URL}${requestPath}" />`);
 

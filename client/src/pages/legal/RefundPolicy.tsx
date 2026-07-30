@@ -153,7 +153,7 @@ export default function RefundPolicy() {
                   <ul className="list-disc pl-6 space-y-2">
                     <li><strong>Before campaign launch:</strong> Full refund of that month's retainer.</li>
                     <li><strong>After campaign launch:</strong> Non-refundable. Monthly engagements auto-renew unless cancelled 7 days before the next billing date.</li>
-                    <li><strong>Ad spend:</strong> Ad budgets paid directly to Facebook/Google are managed by the client's own account and are subject to those platforms' policies — not refundable through AITP.</li>
+                    <li><strong>Ad spend:</strong> Ad budgets paid directly to Facebook/Google are managed by the client's own account and are subject to those platforms' policies — not refundable through AI Team Premium.</li>
                   </ul>
                   <p>If we fail to deliver agreed-upon monthly deliverables (e.g., content calendar, campaign report), we will provide a credit or bonus month at our discretion.</p>
                 </div>

@@ -41,7 +41,7 @@ export const BLOG_POSTS: BlogPost[] = [
           "Premium Shared — ৳999/month. Same shared-seat model but with fewer users per account, so response speed and availability during peak hours (evening, exam season) stay noticeably better.",
           "Personal Seat — ৳2,990/month. Your own dedicated OpenAI account — you control the password, recovery email, and billing. No sharing, no device restriction.",
           "ChatGPT Pro (o3 / extended reasoning) — from ৳4,990/month for Premium Shared. This is OpenAI's top tier, aimed at power users who need extended context and priority server access.",
-          "Every tier above is inclusive — no extra VAT is added at checkout, unlike some resellers who quote a low headline price and add fees later.",
+          "Every tier above is the full price — nothing is added at checkout, so the figure you see is the figure you pay.",
         ],
       },
       {

@@ -8,7 +8,9 @@ export function OrganizationSchema() {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
       "name": "AI Team Premium",
-      "alternateName": ["AITP", "AI Team Premium Bangladesh"],
+      // The brand acronym is internal-only and must not be published here, and
+      // an alternateName repeating `name` verbatim tells a consumer nothing.
+      "alternateName": ["AI Team Premium Bangladesh"],
       "url": SITE_URL,
       "logo": {
         "@type": "ImageObject",
@@ -17,7 +19,7 @@ export function OrganizationSchema() {
         "height": 512,
       },
       "description":
-        "AI Team Premium (AITP) is Bangladesh's premium provider of AI subscriptions — ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via bKash and Nagad with 5-15 minute delivery and a 30-day replacement warranty.",
+        "AI Team Premium is Bangladesh's premium provider of AI subscriptions — ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via bKash and Nagad with 5-15 minute delivery and a 30-day replacement warranty.",
       "foundingDate": "2024",
       "areaServed": {
         "@type": "Country",

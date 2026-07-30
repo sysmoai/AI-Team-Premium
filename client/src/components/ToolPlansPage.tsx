@@ -29,7 +29,7 @@ export interface ToolPageData {
   whoIsItFor: string[];
   faqs: { q: string; a: string }[];
   toolEmoji?: string;
-  ratingCount?: string;
+
   path: string;
   toolName: string;
 }

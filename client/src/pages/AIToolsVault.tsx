@@ -53,7 +53,6 @@ export default function AIToolsVault() {
         path="/ai-tools-vault"
         priceBDT={1990}
         category="AI Subscription Bundle"
-        rating={{ value: "4.8", count: "12" }}
       />
       <section className="pb-8" style={{ backgroundColor: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6">

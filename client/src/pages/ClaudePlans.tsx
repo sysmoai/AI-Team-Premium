@@ -5,9 +5,7 @@ const data: ToolPageData = {
   seoDescription: "Buy Anthropic Claude Pro (Claude Sonnet 3.5) in Bangladesh via bKash/Nagad. Shared and personal seats from ৳1,495/month. Extended Thinking, 200K context. No international card needed.",
   path: "/claude-plans",
   toolName: "Claude Pro",
-  toolEmoji: "🧠",
-  ratingCount: "98",
-  heroBanglaTitle: "বাংলাদেশে Claude — ৳৫৯৯ থেকে শুরু",
+  toolEmoji: "🧠",  heroBanglaTitle: "বাংলাদেশে Claude — ৳৫৯৯ থেকে শুরু",
   subtitle: "Anthropic's Claude Sonnet 3.5 — Extended Thinking, 200K context window. Best for research, coding, long documents and academic writing. bKash/Nagad payment. Shared or Personal.",
   plans: [
     {

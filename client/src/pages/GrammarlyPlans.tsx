@@ -5,9 +5,7 @@ const data: ToolPageData = {
   seoDescription: "Buy Grammarly Premium in Bangladesh via bKash/Nagad. Monthly and annual plans from ৳499/month. AI writing assistant with plagiarism check and Grammarly AI generative prompts.",
   path: "/grammarly-plans",
   toolName: "Grammarly Premium",
-  toolEmoji: "✍️",
-  ratingCount: "91",
-  heroBanglaTitle: "বাংলাদেশে Grammarly Premium — ৳৪৯৯ থেকে শুরু",
+  toolEmoji: "✍️",  heroBanglaTitle: "বাংলাদেশে Grammarly Premium — ৳৪৯৯ থেকে শুরু",
   subtitle: "AI writing assistant — grammar, tone, clarity, plagiarism check, Rewrite feature, and 500–1,000 Grammarly AI generative prompts/month. bKash/Nagad accepted.",
   plans: [
     {

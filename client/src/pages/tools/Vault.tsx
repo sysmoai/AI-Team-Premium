@@ -97,7 +97,7 @@ export const TOOL_META = {
   "category": "chat",
   "priceBdt": 1990,
   "priceLabel": "৳1,990/mo",
-  "model": "10+ AI tools combined",
+  "model": "3 AI tools combined",
   "contextWindow": "Varies per tool",
   "multimodal": "Text, image, code, design",
   "banglaQuality": "⭐⭐⭐⭐⭐",
@@ -105,21 +105,21 @@ export const TOOL_META = {
   "accuracy": "⭐⭐⭐⭐⭐",
   "pricingTier": "Bundle (best value)",
   "brand": "AITP bundle",
-  "tagline": "10+ premium AI tools in one bundle",
+  "tagline": "3 premium AI tools in one bundle",
   "toolPath": "/tools/vault",
   "iconName": "Layers",
   "accent": "#2563EB",
   "bestUseCase": "Heavy AI users, freelancers, startups",
   "bestFor": [
-    "Access to ChatGPT Plus, Claude, Gemini, Perplexity together",
-    "Massive savings vs buying each separately",
-    "Includes Midjourney, Grammarly, Canva and more",
+    "ChatGPT Plus, Claude Pro and Gemini Advanced together",
+    "Saves ৳903/month vs buying all three separately",
+    "One payment and one WhatsApp support channel",
     "Single bKash/Nagad payment",
     "Best for power users + small agencies"
   ],
   "weaknesses": [
     "Shared seats only — not personal accounts",
-    "Some tools rotate based on demand"
+    "Covers these three tools only — other tools are sold separately"
   ]
 } as const;
 

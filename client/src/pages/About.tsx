@@ -105,7 +105,7 @@ export default function About() {
               <h2 className="mb-4 text-slate-900 dark:text-white" style={{ fontSize: "1.4rem", fontWeight: 700 }}>By the Numbers</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 not-prose">
                 {[
-                  { n: "18+", l: "AI tools available" },
+                  { n: "37", l: "AI tools available" },
                   { n: "৳499", l: "Starting price/mo" },
                   { n: "5–15 min", l: "Median delivery" },
                   { n: "24 h", l: "Replacement SLA" },

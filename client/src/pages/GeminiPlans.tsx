@@ -5,9 +5,7 @@ const data: ToolPageData = {
   seoDescription: "Buy Google Gemini Advanced (Gemini 2.5 Pro) in Bangladesh via bKash/Nagad. Shared and personal seats from ৳499/month. 1M token context, Deep Research, Google One 2TB storage.",
   path: "/gemini-plans",
   toolName: "Google Gemini Advanced",
-  toolEmoji: "✨",
-  ratingCount: "89",
-  heroBanglaTitle: "বাংলাদেশে Google Gemini Advanced — ৳৪৯৯ থেকে শুরু",
+  toolEmoji: "✨",  heroBanglaTitle: "বাংলাদেশে Google Gemini Advanced — ৳৪৯৯ থেকে শুরু",
   subtitle: "Gemini 2.5 Pro — Google's most powerful AI with 1M token context, Deep Research, Gemini Live voice mode, and Google One 2TB storage benefit. bKash/Nagad.",
   plans: [
     {

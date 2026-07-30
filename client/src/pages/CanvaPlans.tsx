@@ -5,9 +5,7 @@ const data: ToolPageData = {
   seoDescription: "Buy Canva Pro in Bangladesh via bKash/Nagad. Monthly and annual plans from ৳599/month. Magic Studio AI suite including Magic Switch, Magic Write, Magic Edit, and more.",
   path: "/canva-plans",
   toolName: "Canva Pro",
-  toolEmoji: "🎨",
-  ratingCount: "108",
-  heroBanglaTitle: "বাংলাদেশে Canva Pro — ৳৫৯৯ থেকে শুরু",
+  toolEmoji: "🎨",  heroBanglaTitle: "বাংলাদেশে Canva Pro — ৳৫৯৯ থেকে শুরু",
   subtitle: "Full Canva Pro with Magic Studio AI suite — Magic Switch (one-click resize & translate), Magic Write, Magic Edit, Background Remover, premium templates, and 1TB storage. bKash/Nagad.",
   plans: [
     {

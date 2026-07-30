@@ -568,7 +568,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { value: "18+", label: "Premium AI Tools" },
+              { value: "37", label: "Premium AI Tools" },
               { value: "৳499", label: "Starting Price / mo" },
               { value: "5–15 min", label: "Avg. Delivery Time" },
               { value: "30 days", label: "Replacement Warranty" },

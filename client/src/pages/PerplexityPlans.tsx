@@ -5,9 +5,7 @@ const data: ToolPageData = {
   seoDescription: "Buy Perplexity Pro in Bangladesh via bKash/Nagad. AI-powered search with unlimited deep research from ৳499/month. Access o3-mini, GPT-4.5, Claude Sonnet 3.5, Gemini 2.5 Pro.",
   path: "/perplexity-plans",
   toolName: "Perplexity Pro",
-  toolEmoji: "🔍",
-  ratingCount: "76",
-  heroBanglaTitle: "বাংলাদেশে Perplexity Pro — ৳৪৯৯ থেকে শুরু",
+  toolEmoji: "🔍",  heroBanglaTitle: "বাংলাদেশে Perplexity Pro — ৳৪৯৯ থেকে শুরু",
   subtitle: "AI-powered answer engine with Deep Research, real-time web citations, and access to o3-mini, GPT-4.5, Claude Sonnet 3.5, and Gemini 2.5 Pro — all in one search interface. bKash/Nagad.",
   plans: [
     {

@@ -5,9 +5,7 @@ const data: ToolPageData = {
   seoDescription: "Buy Grok (xAI) in Bangladesh via bKash/Nagad. Shared access from ৳499/month, Personal Seat from ৳3,990/month. Real-time data, DeepSearch, Aurora image generation.",
   path: "/grok-plans",
   toolName: "Grok",
-  toolEmoji: "⚡",
-  ratingCount: "72",
-  heroBanglaTitle: "বাংলাদেশে Grok — ৳৪৯৯ থেকে শুরু",
+  toolEmoji: "⚡",  heroBanglaTitle: "বাংলাদেশে Grok — ৳৪৯৯ থেকে শুরু",
   subtitle: "xAI's Grok-3 — real-time X/Twitter data, DeepSearch, Think mode reasoning, Aurora AI image generation, and unfiltered responses. Shared or Personal Seat. bKash/Nagad.",
   plans: [
     {

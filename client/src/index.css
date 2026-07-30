@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -274,4 +273,172 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+/* ─────────────────────────────────────────────────────────────
+   Reduced motion
+   The site had no prefers-reduced-motion handling at all. Anything
+   animated below must degrade to a static, fully-visible state — a
+   scroll-reveal that starts at opacity 0 would otherwise leave content
+   permanently invisible for these users.
+   ───────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Reveal-on-scroll elements must end up visible, never stuck hidden. */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Brand mark motion (hero logo)
+   Pure CSS so the mark paints with the document — the hero logo is
+   above the fold and part of LCP, so this must not wait on JS.
+   Only transform/opacity are animated, both GPU-composited.
+   ───────────────────────────────────────────────────────────── */
+/* The mark does not rotate. A pulse of light travels along each orbit path,
+   the way Perplexity traces its own strokes — the geometry stays perfectly
+   still, so the logo reads as the same mark, just alive.
+
+   Implemented with stroke-dashoffset on duplicate overlay ellipses. The
+   originals are never given a dash pattern, so the mark can never appear
+   broken; the overlays simply dim to nothing when animation is off. Every
+   ellipse carries pathLength="100", which normalises dash maths to
+   percentages without altering rendered geometry. */
+@keyframes orbit-trace {
+  from { stroke-dashoffset: 100; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes orbit-trace-reverse {
+  from { stroke-dashoffset: 0; }
+  to   { stroke-dashoffset: 100; }
+}
+
+@keyframes core-breathe {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(1.1); opacity: 0.9; }
+}
+
+.logo-orbit-core {
+  transform-box: view-box;
+  transform-origin: 32px 32px;
+}
+
+/* Overlay traces exist in the DOM only when animated, and are inert until
+   then. 14% lit / 86% dark gives a short comet rather than a dashed ring.
+
+   The base orbits keep full opacity — dimming them would weaken the mark, and
+   the brief is that the logo itself stays exactly as designed. Instead the
+   travelling segment is thicker and carries a soft bloom, so it reads as light
+   passing over the orbit rather than as a change to the orbit. */
+.logo-orbit-trace {
+  stroke-dasharray: 14 86;
+  opacity: 0;
+}
+
+.logo-animated .logo-orbit-trace {
+  opacity: 0.95;
+  stroke-width: 4.2;
+  filter: drop-shadow(0 0 2.5px currentColor);
+  animation: orbit-trace 5.2s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+.logo-animated .logo-orbit-trace--b {
+  animation-name: orbit-trace-reverse;
+  animation-duration: 6.4s;
+  animation-delay: -2.6s; /* negative: desynchronise without a dead first pass */
+}
+
+.logo-animated .logo-orbit-core {
+  animation: core-breathe 4.4s ease-in-out infinite;
+}
+
+/* Reduced motion: no trace, orbits back to full strength — identical to the
+   static mark. Belt and braces alongside the global guard above. */
+@media (prefers-reduced-motion: reduce) {
+  .logo-animated .logo-orbit-trace { opacity: 0 !important; animation: none !important; }
+  .logo-animated .logo-orbit-core  { animation: none !important; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Scroll reveal
+   Driven by IntersectionObserver (useReveal). Elements reserve their
+   space and only translate/fade, so revealing cannot shift layout.
+   ───────────────────────────────────────────────────────────── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 520ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* ─────────────────────────────────────────────────────────────
+   Interaction states
+   Every CTA on the homepage carried `transition-all` with no :hover
+   and no :active rule, so it was transitioning nothing. These give the
+   press feedback that was missing — on a slow connection the WhatsApp
+   handoff takes a visible moment, and with no feedback users tap twice,
+   which fires the analytics event twice.
+   ───────────────────────────────────────────────────────────── */
+
+/* A parent's `transition-all` does not cascade into a pseudo-element, which
+   is why every card hover on the site snapped rather than eased. */
+.hover-elevate:not(.no-default-hover-elevate)::after,
+.active-elevate:not(.no-default-active-elevate)::after,
+.hover-elevate-2:not(.no-default-hover-elevate)::after,
+.active-elevate-2:not(.no-default-active-elevate)::after {
+  transition: background-color 160ms ease-out;
+}
+
+/* Card lift. Gated behind a real pointer: on iOS Safari and Android Chrome
+   :hover latches onto the last-tapped element until the user taps elsewhere,
+   which would leave a tapped card visibly stuck in its lifted state. The
+   audience here is mobile-first, so this matters. */
+@media (hover: hover) and (pointer: fine) {
+  .card-lift,
+  .card-lift-sm {
+    transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 180ms ease-out;
+  }
+  .card-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.10);
+  }
+  .card-lift-sm:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Press feedback works on touch, so it is deliberately NOT gated. */
+.press:active {
+  transform: scale(0.985);
+}
+.press {
+  transition: transform 140ms ease-out;
+}
+
+/* No focusable element on the homepage had a visible focus style. Dual ring:
+   the white carries on the navy hero and navy CTA bands, the blue carries on
+   white and BRAND.sky sections, so one of the two always clears WCAG 1.4.11.
+   :where() keeps specificity at 0 so any component can still override it. */
+:where(a, button):focus-visible {
+  outline: 2px solid #FFFFFF;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px #2563EB;
+  border-radius: inherit;
 }

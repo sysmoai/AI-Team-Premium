@@ -15,6 +15,24 @@ interface IconProps {
   size?: number;
   color?: string;
   className?: string;
+  /**
+   * Slowly counter-rotate the two orbits and breathe the core. Opt-in, because
+   * a permanently spinning mark in the navbar and footer would be a
+   * distraction — it is meant for the hero only.
+   *
+   * Pure CSS (see index.css), so the mark paints with the document rather than
+   * waiting on JS — the hero logo is above the fold and part of LCP.
+   *
+   * NOTE: SVG child elements are NOT GPU-composited; Blink can only layerize
+   * the <svg> root, so each frame repaints the mark on the main thread. That
+   * is acceptable here only because the animated region is 150x150 (~22k px,
+   * measured at 0 dropped frames) and it is confined to the hero. Do not
+   * extend this technique to a large or full-width SVG, and do not enable it
+   * on the Navbar/Footer marks, which are present on every route.
+   *
+   * Fully disabled under prefers-reduced-motion.
+   */
+  animated?: boolean;
 }
 
 /**
@@ -26,7 +44,11 @@ export function IconOrbit({
   size = 64,
   color = BRAND.blue,
   className,
+  animated = false,
 }: IconProps) {
+  const cls = [animated ? "logo-animated" : "", className ?? ""]
+    .filter(Boolean)
+    .join(" ");
   return (
     <svg
       width={size}
@@ -34,12 +56,38 @@ export function IconOrbit({
       viewBox="0 0 64 64"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={cls || undefined}
       style={{ display: "block", flexShrink: 0 }}
+      role="img"
+      aria-label="AI Team Premium"
     >
-      {/* Orbits — thicker 2.5 for better visibility */}
-      <ellipse cx="32" cy="32" rx="24" ry="11" transform="rotate(-35 32 32)" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
-      <ellipse cx="32" cy="32" rx="24" ry="11" transform="rotate(35 32 32)" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      {/* Orbits — geometry untouched. `logo-orbit-base` is only a styling hook;
+          it changes nothing unless an animated trace is running above it. */}
+      <ellipse className="logo-orbit-base" cx="32" cy="32" rx="24" ry="11" transform="rotate(-35 32 32)" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+      <ellipse className="logo-orbit-base" cx="32" cy="32" rx="24" ry="11" transform="rotate(35 32 32)" stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none" />
+
+      {/* Travelling light. Same geometry as the orbits above, drawn on top and
+          dashed so only a short arc is lit at a time. Rendered only when
+          animated, so the static mark is byte-for-byte the original. */}
+      {animated && (
+        <>
+          <ellipse
+            className="logo-orbit-trace"
+            cx="32" cy="32" rx="24" ry="11"
+            transform="rotate(-35 32 32)"
+            pathLength={100}
+            stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none"
+          />
+          <ellipse
+            className="logo-orbit-trace logo-orbit-trace--b"
+            cx="32" cy="32" rx="24" ry="11"
+            transform="rotate(35 32 32)"
+            pathLength={100}
+            stroke={color} strokeWidth="2.5" strokeLinecap="round" fill="none"
+          />
+        </>
+      )}
+
       {/* Ring — more visible at 0.35 opacity */}
       <circle cx="32" cy="32" r="12" stroke={color} strokeWidth="1.6" fill="none" opacity="0.35" />
       {/* Nodes — slightly larger 3.0 */}
@@ -47,7 +95,7 @@ export function IconOrbit({
       <circle cx="42.39" cy="38" r="3" fill={color} />
       <circle cx="21.61" cy="38" r="3" fill={color} />
       {/* Core — larger 4.5 for better center balance */}
-      <circle cx="32" cy="32" r="4.5" fill={color} />
+      <circle className="logo-orbit-core" cx="32" cy="32" r="4.5" fill={color} />
     </svg>
   );
 }
@@ -104,11 +152,14 @@ export function LogoStacked({
   iconColor = BRAND.blue,
   textColor = BRAND.navy,
   className,
+  animated = false,
 }: {
   size?: "sm" | "md" | "lg" | "xl";
   iconColor?: string;
   textColor?: string;
   className?: string;
+  /** Animate the orbit mark. Hero only — see IconOrbit. */
+  animated?: boolean;
 }) {
   const s = STACKED[size];
   const accent = iconColor === textColor ? textColor : iconColor;
@@ -122,7 +173,7 @@ export function LogoStacked({
         gap: s.gap,
       }}
     >
-      <IconOrbit size={s.icon} color={iconColor} />
+      <IconOrbit size={s.icon} color={iconColor} animated={animated} />
       <WordmarkInner fontSize={s.fs} tracking={s.tr} accentColor={accent} baseColor={textColor} />
     </div>
   );

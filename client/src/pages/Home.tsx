@@ -8,6 +8,7 @@ import { SupportUpsell } from "@/components/SupportUpsell";
 import { config } from "@/lib/config";
 import { FAQSchema, JsonLd, BreadcrumbSchema } from "@/components/seo/JsonLd";
 import { BLOG_POSTS } from "@/data/blog-posts";
+import { useReveal } from "@/hooks/use-reveal";
 import { trackWhatsAppClick, trackMessengerClick, trackHeroClick } from "@/lib/analytics";
 import {
   Check,
@@ -115,6 +116,7 @@ export default function Home() {
     description: "Buy ChatGPT Plus from ৳499/mo. Claude Pro, Gemini Advanced & more. Pay via bKash/Nagad. 5-15 min delivery. Bangladesh's trusted AI subscription provider.",
     path: "/",
   });
+  useReveal();
   const homeFaqs = FAQS.map((f) => ({ q: f.q, a: f.a }));
   const collectionPageSchema = {
     "@context": "https://schema.org",
@@ -145,7 +147,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-24 pb-28 md:pt-32 md:pb-36">
           <div className="flex flex-col items-center text-center">
             <div className="mb-10">
-              <LogoStacked size="xl" iconColor={BRAND.white} textColor={BRAND.white} />
+              <LogoStacked size="xl" iconColor={BRAND.white} textColor={BRAND.white} animated />
             </div>
             <h1 style={{ color: BRAND.white, fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em" }}>
               বাংলাদেশে ChatGPT — ৳৪৯৯ থেকে শুরু
@@ -229,7 +231,7 @@ export default function Home() {
       {/* WHO IS THIS FOR — PERSONA SECTION */}
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-14" data-reveal>
             <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Designed For</p>
             <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>কাদের জন্য AITP?</h2>
             <p className="mt-4 max-w-lg mx-auto" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.9rem", lineHeight: 1.65 }}>Whether you're a student, freelancer, business, or creator — we have the right AI tool for you.</p>
@@ -240,9 +242,9 @@ export default function Home() {
               { icon: Briefcase, title: "Freelancers", tagline: "Fiverr & Upwork-এ এগিয়ে থাকুন", tools: "Claude Pro · Canva Pro · Midjourney", desc: "Faster proposals, better content, stunning visuals — outperform competitors on Fiverr and Upwork with AI-powered work.", color: BRAND.blue, link: "/ai-subscriptions" },
               { icon: Building2, title: "Businesses", tagline: "Team-wide AI দক্ষতা", tools: "ChatGPT Team · Copilot · Gemini", desc: "Equip your entire team with AI tools. Boost productivity, automate reports, and get live Bangla AI training for your staff.", color: "#7C3AED", link: "/chatgpt-plans" },
               { icon: Video, title: "Content Creators", tagline: "ভাইরাল কন্টেন্ট বানান", tools: "Midjourney · ElevenLabs · Canva", desc: "AI-generated images, voice-overs in Bangla, thumbnail design — create professional content without a studio or equipment.", color: "#F59E0B", link: "/tools/midjourney" },
-            ].map((p) => (
-              <Link key={p.title} href={p.link} style={{ textDecoration: "none" }} data-testid={`card-persona-${p.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                <div className="rounded-2xl p-7 h-full flex flex-col hover-elevate transition-all cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
+            ].map((p, i) => (
+              <Link data-reveal="item" data-reveal-delay={i * 80} key={p.title} href={p.link} style={{ textDecoration: "none" }} data-testid={`card-persona-${p.title.toLowerCase().replace(/\s+/g, '-')}`}>
+                <div className="rounded-2xl p-7 h-full flex flex-col hover-elevate card-lift cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
                   <div className="inline-flex items-center justify-center rounded-xl mb-5" style={{ width: 52, height: 52, background: `${p.color}18` }}>
                     <p.icon size={24} color={p.color} strokeWidth={1.8} />
                   </div>
@@ -259,15 +261,15 @@ export default function Home() {
 
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-reveal>
             <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Featured Offers</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>Start with the Right Plan</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {featuredPlans.map((o) => {
+            {featuredPlans.map((o, i) => {
               if (!o) return null;
               return (
-                <div key={o.slug} className="rounded-2xl p-6 flex flex-col hover-elevate transition-all" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
+                <div data-reveal="item" data-reveal-delay={i * 90} key={o.slug} className="rounded-2xl p-6 flex flex-col hover-elevate card-lift" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
                   <span className="inline-flex self-start items-center px-3 py-1 rounded-full text-white mb-4" style={{ background: o.color === 'blue' ? BRAND.blue : o.color === 'purple' ? '#9333ea' : BRAND.navy, fontSize: "0.7rem", fontWeight: 600 }}>{o.badge}</span>
                   <p style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem", fontWeight: 500 }}>{o.targetBuyer}</p>
                   <p className="mt-2" style={{ color: BRAND.navy, fontSize: "1.8rem", fontWeight: 700, lineHeight: 1 }}>
@@ -316,17 +318,17 @@ export default function Home() {
       {/* POPULAR AI TOOLS */}
       <section className="py-24" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-14" data-reveal>
             <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Browse by Tool</p>
             <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>জনপ্রিয় AI Tools</h2>
             <p className="mt-4 max-w-lg mx-auto" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.9rem", lineHeight: 1.65 }}>
-              ৮০+ premium AI subscription — সবই bKash / Nagad দিয়ে টাকায় পেমেন্ট করা যায়।
+              ৩৭টি premium AI tool · ৮০টি subscription plan — সবই bKash / Nagad দিয়ে টাকায়।
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {POPULAR_TOOLS.map((tool) => (
               <Link key={tool.href} href={tool.href} style={{ textDecoration: "none" }} data-testid={`card-tool-${tool.href.split("/").pop()}`}>
-                <div className="rounded-2xl p-5 h-full flex flex-col hover-elevate transition-all cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
+                <div className="rounded-2xl p-5 h-full flex flex-col hover-elevate card-lift cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
                   <div className="text-2xl mb-3">{tool.emoji}</div>
                   <h3 style={{ color: BRAND.navy, fontSize: "0.92rem", fontWeight: 700, lineHeight: 1.3 }}>{tool.name}</h3>
                   <p className="mt-1.5 flex-1" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.76rem", lineHeight: 1.5 }}>{tool.desc}</p>
@@ -341,7 +343,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
               style={{ background: BRAND.blue, color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
             >
-              সব ৮০+ টুল দেখুন <ChevronRight size={16} />
+              সব ৮০টি প্ল্যান দেখুন <ChevronRight size={16} />
             </Link>
             <Link
               href="/pricing"
@@ -358,7 +360,7 @@ export default function Home() {
       {/* LIVE AI TRAINING */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-14" data-reveal>
             <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Live AI Training</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>শুধু Subscription নয় — ব্যবহারটাও শিখুন</h2>
             <p className="mt-4 max-w-xl mx-auto text-slate-900/55 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.7 }}>
@@ -366,8 +368,8 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {TRAINING_TRACKS.map((track) => (
-              <div key={track.title} className="rounded-2xl p-7 flex flex-col" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+            {TRAINING_TRACKS.map((track, i) => (
+              <div data-reveal="item" data-reveal-delay={i * 90} key={track.title} className="rounded-2xl p-7 flex flex-col" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
                 <div className="inline-flex items-center justify-center rounded-xl mb-5" style={{ width: 48, height: 48, background: `${track.color}18` }}>
                   <track.icon size={22} color={track.color} strokeWidth={1.9} />
                 </div>
@@ -413,7 +415,7 @@ export default function Home() {
       {/* HOW TO ORDER — 3 STEPS */}
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-14" data-reveal>
             <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>How It Works</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>৩ ধাপে AI Subscription নিন</h2>
             <p className="mt-4 max-w-md mx-auto text-slate-900/50 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.65 }}>No credit card setup, no registration. Just WhatsApp → Pay → Get access.</p>
@@ -423,8 +425,8 @@ export default function Home() {
               { step: "01", icon: MessageCircle, color: "#25D366", title: "Message on WhatsApp", desc: "Tell us which AI tool you want. We confirm price and payment details within 5 minutes — in Bangla or English." },
               { step: "02", icon: CreditCard, color: BRAND.blue, title: "Pay via bKash or Nagad", desc: "We share the bKash/Nagad number privately. Pay in BDT. No international card, no hidden fees, no registration." },
               { step: "03", icon: Zap, color: "#F59E0B", title: "Get Access Instantly", desc: "Shared plans delivered in 5–15 minutes. Personal plans in 2–4 hours. Your AI tool is ready — we guide setup." },
-            ].map((s) => (
-              <div key={s.step} className="flex flex-col items-center text-center">
+            ].map((s, i) => (
+              <div data-reveal="item" data-reveal-delay={i * 140} key={s.step} className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 rounded-2xl mb-5 flex items-center justify-center" style={{ background: `${s.color}15`, border: `2px solid ${s.color}30` }}>
                   <s.icon size={32} color={s.color} strokeWidth={1.8} />
                 </div>
@@ -454,7 +456,7 @@ export default function Home() {
 
       <section style={{ background: BRAND.sky }} className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-reveal>
             <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>What We Do</p>
             <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>Complete Digital Services</h2>
           </div>
@@ -482,7 +484,7 @@ export default function Home() {
 
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16" data-reveal>
             <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Why AITP</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>Bangladesh's Trusted AI Team</h2>
           </div>
@@ -505,14 +507,14 @@ export default function Home() {
       {/* COMPARE TOOLS */}
       <section className="py-20">
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
-          <div className="text-center mb-10">
+          <div className="text-center mb-10" data-reveal>
             <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Still Deciding?</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2rem", fontWeight: 700, lineHeight: 1.15 }}>কোন AI টুল আপনার জন্য?</h2>
             <p className="mt-4 max-w-lg mx-auto text-slate-900/55 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.65 }}>
               পাশাপাশি তুলনা দেখে সিদ্ধান্ত নিন — ফিচার, দাম আর কোনটা কার জন্য ভালো।
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-3" data-reveal>
             {COMPARISONS.map((c) => (
               <Link
                 key={c.href}
@@ -536,15 +538,15 @@ export default function Home() {
       {/* FROM THE BLOG */}
       <section className="py-24" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-14" data-reveal>
             <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>AI Blog</p>
             <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>Guides for Bangladesh</h2>
             <p className="mt-4 max-w-lg mx-auto" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.9rem", lineHeight: 1.65 }}>Pricing, comparisons, and practical AI guides for students, freelancers and businesses.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {BLOG_POSTS.slice(0, 3).map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }} data-testid={`card-home-blog-${post.slug}`}>
-                <div className="rounded-2xl p-6 h-full flex flex-col hover-elevate transition-all cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
+            {BLOG_POSTS.slice(0, 3).map((post, i) => (
+              <Link data-reveal="item" data-reveal-delay={i * 90} key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }} data-testid={`card-home-blog-${post.slug}`}>
+                <div className="rounded-2xl p-6 h-full flex flex-col hover-elevate card-lift cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
                   <div className="text-2xl mb-3">{post.heroEmoji}</div>
                   <h3 className="mb-2" style={{ color: BRAND.navy, fontSize: "1rem", fontWeight: 700, lineHeight: 1.4 }}>{post.title}</h3>
                   <p className="mb-4 flex-1" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.82rem", lineHeight: 1.6 }}>{post.excerpt}</p>
@@ -584,7 +586,7 @@ export default function Home() {
 
       <section className="py-16 pb-24" style={{ background: BRAND.navy }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-14">
+          <div className="text-center mb-14" data-reveal>
             <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Customer Reviews</p>
             <h2 style={{ color: BRAND.white, fontSize: "2rem", fontWeight: 700, lineHeight: 1.15 }}>Trusted by BD Professionals</h2>
           </div>
@@ -627,7 +629,7 @@ export default function Home() {
 
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-reveal>
             <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>FAQ</p>
             <h2 style={{ color: BRAND.navy, fontSize: "1.8rem", fontWeight: 700 }}>সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
           </div>

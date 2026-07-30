@@ -4,6 +4,6 @@
   "installCommand": "npm install --include=dev",
   "devCommand": "npm run dev",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api/[...route]" }
+    { "source": "/(.*)", "destination": "/api" }
   ]
 }

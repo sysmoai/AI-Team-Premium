@@ -207,14 +207,23 @@ try {
 // customer clicked from already shows the current figure.
 section("Order templates");
 
-const configTs = readFileSync(resolve(ROOT, "client/src/lib/config.ts"), "utf-8");
-const pricedTemplates = [...configTs.matchAll(/"([a-z0-9-]+)":\s*"([^"]*৳[^"]*)"/g)];
+// Checks every file that holds prefilled order copy, not just config.ts —
+// whatsapp.ts carried the same stale ৳449 Google AI Pro quote and was missed
+// when only config.ts was checked.
+const TEMPLATE_SOURCES = ["client/src/lib/config.ts", "client/src/lib/whatsapp.ts"];
+const pricedTemplates = [];
+for (const rel of TEMPLATE_SOURCES) {
+  const src = readFileSync(resolve(ROOT, rel), "utf-8");
+  for (const m of src.matchAll(/"([^"\n]*৳[^"\n]*)"/g)) {
+    pricedTemplates.push(`${rel}: ${m[1]}`);
+  }
+}
 if (pricedTemplates.length === 0) {
-  ok("no order template hardcodes a price");
+  ok(`no order template hardcodes a price (${TEMPLATE_SOURCES.length} files checked)`);
 } else {
   fail(
     `${pricedTemplates.length} order template(s) hardcode a price and will drift from the catalog`,
-    pricedTemplates.map((m) => `${m[1]}: ${m[2]}`).join("\n") +
+    pricedTemplates.join("\n") +
       "\n-> name the plan/tier instead; the page already shows the live price"
   );
 }

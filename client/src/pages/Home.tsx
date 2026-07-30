@@ -7,6 +7,7 @@ import { chatgptPlans } from "@/lib/plans";
 import { SupportUpsell } from "@/components/SupportUpsell";
 import { config } from "@/lib/config";
 import { FAQSchema, JsonLd, BreadcrumbSchema } from "@/components/seo/JsonLd";
+import { BLOG_POSTS } from "@/data/blog-posts";
 import { trackWhatsAppClick, trackMessengerClick, trackHeroClick } from "@/lib/analytics";
 import {
   Check,
@@ -358,6 +359,36 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FROM THE BLOG */}
+      <section className="py-24" style={{ background: BRAND.sky }}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="text-center mb-14">
+            <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>AI Blog</p>
+            <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>Guides for Bangladesh</h2>
+            <p className="mt-4 max-w-lg mx-auto" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.9rem", lineHeight: 1.65 }}>Pricing, comparisons, and practical AI guides for students, freelancers and businesses.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {BLOG_POSTS.slice(0, 3).map((post) => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }} data-testid={`card-home-blog-${post.slug}`}>
+                <div className="rounded-2xl p-6 h-full flex flex-col hover-elevate transition-all cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
+                  <div className="text-2xl mb-3">{post.heroEmoji}</div>
+                  <h3 className="mb-2" style={{ color: BRAND.navy, fontSize: "1rem", fontWeight: 700, lineHeight: 1.4 }}>{post.title}</h3>
+                  <p className="mb-4 flex-1" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.82rem", lineHeight: 1.6 }}>{post.excerpt}</p>
+                  <span className="inline-flex items-center gap-1 mt-auto" style={{ color: BRAND.blue, fontSize: "0.78rem", fontWeight: 600 }}>
+                    Read <ChevronRight size={14} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link href="/blog" className="inline-flex items-center gap-1 font-semibold hover:underline" style={{ color: BRAND.blue }}>
+              View All Guides <ChevronRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

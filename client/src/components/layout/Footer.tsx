@@ -121,6 +121,7 @@ export function Footer() {
             <FooterLinks links={[
               { label: "Home", to: "/" },
               { label: "ChatGPT Plans", to: "/chatgpt-plans" },
+              { label: "Blog", to: "/blog" },
               { label: "Support", to: "/support" },
               { label: "Pricing", to: "/pricing" },
               { label: "About", to: "/about" },

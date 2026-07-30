@@ -56,6 +56,7 @@ const SERVICES_MENU = [
 ];
 
 const PLAIN_LINKS = [
+  { name: "Blog", href: "/blog" },
   { name: "Support", href: "/support" },
   { name: "About", href: "/about" },
 ];

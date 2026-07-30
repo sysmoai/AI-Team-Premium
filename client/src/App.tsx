@@ -68,6 +68,8 @@ import BrandDesign from "./pages/services/BrandDesign";
 import WebDevelopment from "./pages/services/WebDevelopment";
 import DigitalMarketing from "./pages/services/DigitalMarketing";
 import AppDevelopment from "./pages/services/AppDevelopment";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -144,6 +146,8 @@ function Router() {
         <Route path="/admin/audit" component={AuditDashboard} />
         <Route path="/compare" component={ComparePage} />
         <Route path="/compare/:slug" component={ComparePage} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
         <Route component={NotFound} />
       </Switch>
     </>

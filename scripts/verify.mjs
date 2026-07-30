@@ -348,6 +348,53 @@ for (const rel of brandPublic) {
 if (acronymHits.length === 0) ok("no public brand acronym in visitor-facing text");
 else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.join("\n"));
 
+// A route with metadata but no <Route> in App.tsx is a soft 404: the server
+// answers 200 with a real title and canonical, and the visitor gets NotFound.
+// /contact shipped that way and was in sitemap.xml, so we were submitting it to
+// Google as a real page.
+{
+  const app = readFileSync(resolve(ROOT, "client/src/App.tsx"), "utf-8");
+  const declared = [...app.matchAll(/path="([^"]+)"/g)].map((m) => m[1]);
+  const exact = new Set(declared);
+  const dynamic = declared.filter((p) => p.includes(":"));
+  const orphans = Object.keys(ROUTE_META).filter((p) => {
+    if (exact.has(p)) return false;
+    return !dynamic.some((d) =>
+      new RegExp("^" + d.replace(/:[^/]+/g, "[^/]+") + "$").test(p)
+    );
+  });
+  if (orphans.length === 0) ok("every route with metadata has a page to render");
+  else
+    fail(
+      "route metadata with no App.tsx route — served 200 but renders NotFound",
+      orphans.join("\n")
+    );
+}
+
+// Two indexable URLs must not share a title or description. Duplicates are fine
+// where one canonicalises to the other — that is the point of the canonical map
+// — so only self-canonical pages are compared.
+{
+  const { CANONICAL_MAP } = await import(
+    pathToFileURL(resolve(ROOT, "shared/canonical-map.js")).href
+  );
+  const seenT = new Map();
+  const seenD = new Map();
+  for (const [path, meta] of Object.entries(ROUTE_META)) {
+    if (CANONICAL_MAP[path]) continue; // consolidated elsewhere on purpose
+    if (!seenT.has(meta.title)) seenT.set(meta.title, []);
+    seenT.get(meta.title).push(path);
+    if (!seenD.has(meta.description)) seenD.set(meta.description, []);
+    seenD.get(meta.description).push(path);
+  }
+  const dupes = [
+    ...[...seenT].filter(([, p]) => p.length > 1).map(([t, p]) => `title  "${t.slice(0, 60)}" -> ${p.join(", ")}`),
+    ...[...seenD].filter(([, p]) => p.length > 1).map(([d, p]) => `desc   "${d.slice(0, 60)}" -> ${p.join(", ")}`),
+  ];
+  if (dupes.length === 0) ok("no two indexable routes share a title or description");
+  else fail("indexable routes compete with identical metadata", dupes.join("\n"));
+}
+
 // Every catalog category needs a label in client/src/lib/categories.ts.
 // categoryLabel() falls back to title-casing the slug, so a missing entry does
 // not crash — it quietly renders "Seo" instead of "SEO & Marketing", and only on

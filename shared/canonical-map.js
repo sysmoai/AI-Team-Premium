@@ -43,6 +43,13 @@ export const CANONICAL_MAP = {
   "/tools/poe": "/tools/poe-bangladesh",
   "/tools/runway": "/tools/runway-bangladesh",
 
+  // Same component on two paths. /products and /all-products render AllProducts
+  // and shipped byte-identical titles and descriptions, both self-canonical and
+  // both in sitemap.xml — the clearest duplicate on the site. /start-a-project
+  // and /contact are likewise one page; /contact is the canonical spelling.
+  "/products": "/all-products",
+  "/start-a-project": "/contact",
+
   // hand-written /<brand>-plans
   "/chatgpt-plans": "/tools/chatgpt-plus-bangladesh",
   "/claude-plans": "/tools/claude-pro-bangladesh",

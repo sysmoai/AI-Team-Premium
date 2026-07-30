@@ -126,6 +126,12 @@ function Router() {
         <Route path="/products" component={AllProducts} />
         <Route path="/pricing" component={Pricing} />
         <Route path="/about" component={About} />
+        {/* /contact had route metadata and a sitemap entry but no route, so it
+            fell through to NotFound: the server answered 200 with a real title
+            while the visitor saw "page not found". A soft 404 we were actively
+            submitting to Google. Both paths render the same page; /contact is
+            the canonical one. */}
+        <Route path="/contact" component={Contact} />
         <Route path="/start-a-project" component={Contact} />
         <Route path="/refund-policy" component={RefundPolicy} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />

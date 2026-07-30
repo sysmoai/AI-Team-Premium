@@ -1,10 +1,9 @@
 ﻿name: Deploy to Cloudflare Pages
 
+# DISABLED: this project deploys to Vercel, not Cloudflare Pages.
+# Left in place for reference; run manually only.
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:

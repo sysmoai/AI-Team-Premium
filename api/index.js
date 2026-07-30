@@ -17,7 +17,7 @@
 import { readFileSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { ROUTE_META, DYNAMIC_PREFIXES, SITE_URL } from "../lib/route-meta.js";
+import { lookupMeta, SITE_URL } from "../lib/route-meta.js";
 
 // Candidate locations for the built shell. process.cwd() is /var/task in the
 // lambda, but resolving relative to this module as well keeps the lookup
@@ -70,19 +70,6 @@ function resolveRequestPath(req) {
   if (pathname === "/api" || pathname === "/api/") return "/";
   if (pathname.startsWith("/api/")) pathname = pathname.slice(4);
   return pathname || "/";
-}
-
-function lookupMeta(path) {
-  if (ROUTE_META[path]) return ROUTE_META[path];
-  // Tolerate a trailing slash on any route except "/".
-  if (path.length > 1 && path.endsWith("/")) {
-    const trimmed = path.slice(0, -1);
-    if (ROUTE_META[trimmed]) return ROUTE_META[trimmed];
-  }
-  for (const { prefix, meta } of DYNAMIC_PREFIXES) {
-    if (path.startsWith(prefix) && path.length > prefix.length) return meta;
-  }
-  return null;
 }
 
 // Swap the first match for `replacement`, or insert it before </head> when the

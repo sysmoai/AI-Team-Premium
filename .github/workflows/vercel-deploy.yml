@@ -1,8 +1,9 @@
 name: Deploy to Vercel + Update Domain
 
+# DISABLED: Vercel's native Git integration already deploys every push to
+# main. Running this too would race a second deployment. Manual only.
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read

@@ -2,7 +2,7 @@ name: 📊 Monitor Production Health
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Every 5 minutes
+    - cron: '0 */6 * * *'  # Every 6 hours (was */5, which burned ~288 runs/day)
   workflow_dispatch:
 
 permissions:

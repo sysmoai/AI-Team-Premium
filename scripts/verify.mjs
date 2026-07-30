@@ -348,6 +348,28 @@ for (const rel of brandPublic) {
 if (acronymHits.length === 0) ok("no public brand acronym in visitor-facing text");
 else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.join("\n"));
 
+// Every catalog category needs a label in client/src/lib/categories.ts.
+// categoryLabel() falls back to title-casing the slug, so a missing entry does
+// not crash — it quietly renders "Seo" instead of "SEO & Marketing", and only on
+// whichever page you did not happen to look at. Adding a category is exactly
+// when this gets forgotten.
+{
+  const src = readFileSync(resolve(ROOT, "client/src/lib/categories.ts"), "utf-8");
+  const body = src.slice(src.indexOf("CATEGORY_LABELS"), src.indexOf("export function"));
+  // Keys are a mix of quoted ("ai-assistant") and bare (automation) — match both.
+  const labelled = new Set(
+    [...body.matchAll(/(?:^|\s)"?([a-z0-9-]+)"?\s*:/gm)].map((m) => m[1])
+  );
+  const missing = [...new Set(products.map((p) => p.category))].filter((c) => !labelled.has(c));
+  if (missing.length === 0)
+    ok(`all ${new Set(products.map((p) => p.category)).size} catalog categories have a label`);
+  else
+    fail(
+      "catalog category has no label — it will render as a title-cased slug",
+      missing.join(", ")
+    );
+}
+
 // Hand-written metadata must quote prices through PRICE_ANCHORS, never as a
 // literal. Every literal that was in this file had drifted from the catalog.
 const rmBody = readFileSync(resolve(ROOT, "lib/route-meta.js"), "utf-8");

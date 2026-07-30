@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- GENERATED FILE — do not edit by hand. Run: npm run gen:sitemap -->
-<!-- Source: lib/route-meta.js (164 indexable routes) -->
+<!-- Source: lib/route-meta.js (171 indexable routes) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.aiteampremium.com/</loc>
@@ -105,6 +105,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/ahrefs-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/b2b-implementation-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -196,6 +202,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/copilot</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/coursera-plus-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -411,6 +423,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/make-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/manus</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -448,6 +466,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/midjourney-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/mistral-le-chat-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -561,6 +585,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/tools/semrush-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/tools/speechify-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -586,6 +616,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/supergrok-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/surfer-seo-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -628,6 +664,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/tools/writesonic-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/zapier-bangladesh</loc>
     <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

@@ -78,6 +78,61 @@ else
     [...new Set(unservable)].slice(0, 10).join("\n")
   );
 
+// ---------------------------------------------------------------- content
+section("Product catalog");
+
+const productsPath = resolve(ROOT, "client/src/data/products-all.json");
+let products = null;
+try {
+  products = JSON.parse(readFileSync(productsPath, "utf-8"));
+  if (!Array.isArray(products)) throw new Error("top level is not an array");
+  ok(`products-all.json parses (${products.length} products)`);
+} catch (e) {
+  fail("products-all.json is not valid", e.message);
+}
+
+if (products) {
+  // Fields AllProducts.tsx reads. `badge` is genuinely optional.
+  const REQUIRED = [
+    "id", "name", "brand", "brandColor", "category", "price",
+    "tier", "description", "capabilities", "deliverySLA", "whatsappMsg",
+  ];
+
+  const problems = [];
+  const seenId = new Map();
+  // NOTE: `slug` is deliberately shared across tiers of the same brand — all five
+  // Claude products use "claude-pro-bangladesh" so they resolve to one landing
+  // page. Only `id` has to be unique; it is the React key and the real handle.
+
+  products.forEach((p, i) => {
+    const label = p && (p.name || p.id) ? `${p.name || p.id}` : `product #${i}`;
+    if (!p || typeof p !== "object") {
+      problems.push(`${label}: not an object`);
+      return;
+    }
+    for (const f of REQUIRED) {
+      const v = p[f];
+      if (v === undefined || v === null || v === "") problems.push(`${label}: missing "${f}"`);
+    }
+    if (p.capabilities !== undefined && !Array.isArray(p.capabilities))
+      problems.push(`${label}: "capabilities" must be an array`);
+    if (p.id !== undefined) {
+      if (seenId.has(p.id)) problems.push(`duplicate id "${p.id}" (also on ${seenId.get(p.id)})`);
+      else seenId.set(p.id, label);
+    }
+    // A WhatsApp message is how an order actually reaches you.
+    if (typeof p.whatsappMsg === "string" && p.whatsappMsg.trim().length < 5)
+      problems.push(`${label}: "whatsappMsg" looks empty — orders would arrive blank`);
+  });
+
+  if (problems.length === 0) ok(`all ${products.length} products have the fields the catalog renders`);
+  else
+    fail(
+      `${problems.length} product problem(s) — these render blank or crash the catalog`,
+      problems.slice(0, 12).join("\n") + (problems.length > 12 ? `\n... and ${problems.length - 12} more` : "")
+    );
+}
+
 // ---------------------------------------------------------------- host hygiene
 section("Canonical host");
 

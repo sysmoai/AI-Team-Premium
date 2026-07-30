@@ -1,0 +1,30 @@
+#!/bin/sh
+# Runs `npm run ship` (typecheck + build + verify) before any push.
+#
+# Pushing to main is what deploys this site, and GitHub Actions is billing-locked
+# so nothing checks the code after it leaves your machine. This is the last gate.
+#
+# To push anyway in an emergency:  git push --no-verify
+
+echo ""
+echo "  pre-push: running npm run ship ..."
+echo ""
+
+if npm run ship --silent; then
+  echo ""
+  echo "  pre-push: checks passed, pushing."
+  echo ""
+  exit 0
+fi
+
+echo ""
+echo "  ────────────────────────────────────────────────────────────"
+echo "  PUSH BLOCKED — the checks above failed."
+echo ""
+echo "  Pushing to main deploys straight to www.aiteampremium.com,"
+echo "  so this would have gone live. Fix the failures and try again."
+echo ""
+echo "  To override (only if you are certain):  git push --no-verify"
+echo "  ────────────────────────────────────────────────────────────"
+echo ""
+exit 1

@@ -1,5 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,66 +10,66 @@ import AnalyticsProvider from "@/components/AnalyticsProvider";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 
 import Home from "./pages/Home";
-import ChatGPTPlans from "./pages/ChatGPTPlans";
-import AISubscriptions from "./pages/AISubscriptions";
-import Services from "./pages/Services";
-import Pricing from "./pages/Pricing";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
-import TermsOfService from "./pages/legal/TermsOfService";
-import RefundPolicy from "./pages/legal/RefundPolicy";
-import ChatGPT from "./pages/tools/ChatGPT";
-import Claude from "./pages/tools/Claude";
-import Gemini from "./pages/tools/Gemini";
-import Grammarly from "./pages/tools/Grammarly";
-import Canva from "./pages/tools/Canva";
-import Midjourney from "./pages/tools/Midjourney";
-import Perplexity from "./pages/tools/Perplexity";
-import Grok from "./pages/tools/Grok";
-import Copilot from "./pages/tools/Copilot";
-import Vault from "./pages/tools/Vault";
-import NotionPage from "./pages/tools/Notion";
-import Microsoft365Page from "./pages/tools/Microsoft365";
-import LinkedInPage from "./pages/tools/LinkedIn";
-import ElevenLabsPage from "./pages/tools/ElevenLabs";
-import SuperGrok from "./pages/tools/SuperGrok";
-import GoogleAIPro from "./pages/tools/GoogleAIPro";
-import LeonardoPage from "./pages/tools/Leonardo";
-import RunwayPage from "./pages/tools/Runway";
-import KlingPage from "./pages/tools/Kling";
-import ManusPage from "./pages/tools/Manus";
-import PoePage from "./pages/tools/Poe";
-import FireflyPage from "./pages/tools/Firefly";
-import IdeogramPage from "./pages/tools/Ideogram";
-import FreepikPage from "./pages/tools/Freepik";
-import AdobeCCPage from "./pages/tools/AdobeCC";
-import AuditDashboard from "./pages/admin/AuditDashboard";
-import ComparePage from "./pages/Compare";
-import AllProducts from "./pages/AllProducts";
-import PlusShared from "./pages/chatgpt/PlusShared";
-import GoShared from "./pages/chatgpt/GoShared";
-import GoPersonal from "./pages/chatgpt/GoPersonal";
-import PlusPremiumShared from "./pages/chatgpt/PlusPremiumShared";
-import PlusPersonalSeat from "./pages/chatgpt/PlusPersonalSeat";
-import BusinessShared from "./pages/chatgpt/BusinessShared";
-import BusinessPremiumShared from "./pages/chatgpt/BusinessPremiumShared";
-import BusinessPersonalLike from "./pages/chatgpt/BusinessPersonalLike";
-import ProPremiumShared from "./pages/chatgpt/ProPremiumShared";
-import ClaudePlans from "./pages/ClaudePlans";
-import GeminiPlans from "./pages/GeminiPlans";
-import GrammarlyPlans from "./pages/GrammarlyPlans";
-import CanvaPlans from "./pages/CanvaPlans";
-import PerplexityPlans from "./pages/PerplexityPlans";
-import GrokPlans from "./pages/GrokPlans";
-import AIToolsVault from "./pages/AIToolsVault";
-import AIOpsSprint from "./pages/services/AIOpsSprint";
-import BrandDesign from "./pages/services/BrandDesign";
-import WebDevelopment from "./pages/services/WebDevelopment";
-import DigitalMarketing from "./pages/services/DigitalMarketing";
-import AppDevelopment from "./pages/services/AppDevelopment";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
+const ChatGPTPlans = lazy(() => import("./pages/ChatGPTPlans"));
+const AISubscriptions = lazy(() => import("./pages/AISubscriptions"));
+const Services = lazy(() => import("./pages/Services"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/legal/TermsOfService"));
+const RefundPolicy = lazy(() => import("./pages/legal/RefundPolicy"));
+const ChatGPT = lazy(() => import("./pages/tools/ChatGPT"));
+const Claude = lazy(() => import("./pages/tools/Claude"));
+const Gemini = lazy(() => import("./pages/tools/Gemini"));
+const Grammarly = lazy(() => import("./pages/tools/Grammarly"));
+const Canva = lazy(() => import("./pages/tools/Canva"));
+const Midjourney = lazy(() => import("./pages/tools/Midjourney"));
+const Perplexity = lazy(() => import("./pages/tools/Perplexity"));
+const Grok = lazy(() => import("./pages/tools/Grok"));
+const Copilot = lazy(() => import("./pages/tools/Copilot"));
+const Vault = lazy(() => import("./pages/tools/Vault"));
+const NotionPage = lazy(() => import("./pages/tools/Notion"));
+const Microsoft365Page = lazy(() => import("./pages/tools/Microsoft365"));
+const LinkedInPage = lazy(() => import("./pages/tools/LinkedIn"));
+const ElevenLabsPage = lazy(() => import("./pages/tools/ElevenLabs"));
+const SuperGrok = lazy(() => import("./pages/tools/SuperGrok"));
+const GoogleAIPro = lazy(() => import("./pages/tools/GoogleAIPro"));
+const LeonardoPage = lazy(() => import("./pages/tools/Leonardo"));
+const RunwayPage = lazy(() => import("./pages/tools/Runway"));
+const KlingPage = lazy(() => import("./pages/tools/Kling"));
+const ManusPage = lazy(() => import("./pages/tools/Manus"));
+const PoePage = lazy(() => import("./pages/tools/Poe"));
+const FireflyPage = lazy(() => import("./pages/tools/Firefly"));
+const IdeogramPage = lazy(() => import("./pages/tools/Ideogram"));
+const FreepikPage = lazy(() => import("./pages/tools/Freepik"));
+const AdobeCCPage = lazy(() => import("./pages/tools/AdobeCC"));
+const AuditDashboard = lazy(() => import("./pages/admin/AuditDashboard"));
+const ComparePage = lazy(() => import("./pages/Compare"));
+const AllProducts = lazy(() => import("./pages/AllProducts"));
+const PlusShared = lazy(() => import("./pages/chatgpt/PlusShared"));
+const GoShared = lazy(() => import("./pages/chatgpt/GoShared"));
+const GoPersonal = lazy(() => import("./pages/chatgpt/GoPersonal"));
+const PlusPremiumShared = lazy(() => import("./pages/chatgpt/PlusPremiumShared"));
+const PlusPersonalSeat = lazy(() => import("./pages/chatgpt/PlusPersonalSeat"));
+const BusinessShared = lazy(() => import("./pages/chatgpt/BusinessShared"));
+const BusinessPremiumShared = lazy(() => import("./pages/chatgpt/BusinessPremiumShared"));
+const BusinessPersonalLike = lazy(() => import("./pages/chatgpt/BusinessPersonalLike"));
+const ProPremiumShared = lazy(() => import("./pages/chatgpt/ProPremiumShared"));
+const ClaudePlans = lazy(() => import("./pages/ClaudePlans"));
+const GeminiPlans = lazy(() => import("./pages/GeminiPlans"));
+const GrammarlyPlans = lazy(() => import("./pages/GrammarlyPlans"));
+const CanvaPlans = lazy(() => import("./pages/CanvaPlans"));
+const PerplexityPlans = lazy(() => import("./pages/PerplexityPlans"));
+const GrokPlans = lazy(() => import("./pages/GrokPlans"));
+const AIToolsVault = lazy(() => import("./pages/AIToolsVault"));
+const AIOpsSprint = lazy(() => import("./pages/services/AIOpsSprint"));
+const BrandDesign = lazy(() => import("./pages/services/BrandDesign"));
+const WebDevelopment = lazy(() => import("./pages/services/WebDevelopment"));
+const DigitalMarketing = lazy(() => import("./pages/services/DigitalMarketing"));
+const AppDevelopment = lazy(() => import("./pages/services/AppDevelopment"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -79,10 +79,19 @@ function ScrollToTop() {
   return null;
 }
 
+function RouteFallback() {
+  return (
+    <div className="min-h-[60vh] flex items-center justify-center">
+      <div className="w-8 h-8 rounded-full border-2 border-blue-600 border-t-transparent animate-spin" />
+    </div>
+  );
+}
+
 function Router() {
   return (
     <>
       <ScrollToTop />
+      <Suspense fallback={<RouteFallback />}>
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/chatgpt-plans" component={ChatGPTPlans} />
@@ -150,6 +159,7 @@ function Router() {
         <Route path="/blog/:slug" component={BlogPost} />
         <Route component={NotFound} />
       </Switch>
+      </Suspense>
     </>
   );
 }

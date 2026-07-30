@@ -25,7 +25,8 @@
     "validate:policies": "node scripts/validate-policies.mjs",
     "validate": "npm run validate:catalog && npm run validate:policies",
     "gen:index-meta": "node scripts/sync-index-meta.mjs",
-    "gen:tool-prices": "node scripts/sync-tool-meta-prices.mjs"
+    "gen:tool-prices": "node scripts/sync-tool-meta-prices.mjs",
+    "gen:schema": "node scripts/gen-structured-data.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

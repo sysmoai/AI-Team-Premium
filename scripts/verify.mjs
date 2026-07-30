@@ -514,6 +514,104 @@ for (const rel of ["lib", "client/src", "data"]) {
 if (vatHits.length === 0) ok("no unevidenced VAT claim in shipped copy");
 else fail("VAT claim found — needs an evidence record before it can ship", vatHits.join("\n"));
 
+// ---------------------------------------------------------------- structured data
+section("Structured data");
+
+// Pages ship as an empty SPA shell, so anything React injects after hydration is
+// invisible to a crawler that does not run JavaScript — which is most of the AI
+// answer-engine bots robots.txt explicitly welcomes. The server has to emit the
+// graph itself.
+{
+  const { jsonLdFor } = await import(
+    pathToFileURL(resolve(ROOT, "lib/structured-data.js")).href
+  );
+  const samples = ["/", "/all-products", "/tools/canva-pro-bangladesh", "/pricing", "/blog"];
+  const bad = [];
+  for (const p of samples) {
+    const meta = lookupMeta(p);
+    if (!meta) { bad.push(`${p}: no route metadata`); continue; }
+    const g = jsonLdFor(p, meta)["@graph"] ?? [];
+    const types = g.map((n) => n["@type"]);
+    if (!types.includes("Organization")) bad.push(`${p}: no Organization`);
+    if (!types.includes("WebSite")) bad.push(`${p}: no WebSite`);
+    // Must be serialisable and must not be able to close the script tag early.
+    const s = JSON.stringify(g);
+    if (s.includes("</script")) bad.push(`${p}: payload can close its own <script>`);
+  }
+  // A product page must describe the product, or the markup says nothing useful.
+  const prodTypes = (jsonLdFor("/tools/canva-pro-bangladesh", lookupMeta("/tools/canva-pro-bangladesh"))["@graph"] ?? [])
+    .map((n) => n["@type"]);
+  if (!prodTypes.includes("Product")) bad.push("/tools/canva-pro-bangladesh: no Product node");
+  if (bad.length === 0) ok(`server emits JSON-LD for ${samples.length} representative routes`);
+  else fail("server JSON-LD is incomplete", bad.join("\n"));
+}
+
+// lib/structured-data.js is generated, so its offer prices can go stale against
+// the catalog exactly the way the route metadata did. A wrong price in schema is
+// worse than one in prose: it is what a rich result quotes.
+{
+  const { PRODUCT_SCHEMA } = await import(
+    pathToFileURL(resolve(ROOT, "lib/structured-data.js")).href
+  );
+  const byFamily = new Map();
+  for (const p of products) {
+    if (!byFamily.has(p.slug)) byFamily.set(p.slug, []);
+    byFamily.get(p.slug).push(p);
+  }
+  const stale = [];
+  for (const [path, node] of Object.entries(PRODUCT_SCHEMA)) {
+    const tiers = byFamily.get(path.replace("/tools/", "")) ?? [];
+    const sellable = tiers.filter((t) => t.price > 0 && !t.priceOnRequest).map((t) => t.price);
+    const o = node.offers;
+    if (!sellable.length) {
+      if (o) stale.push(`${path}: has offers but every tier is price-on-request`);
+      continue;
+    }
+    if (!o) { stale.push(`${path}: sellable tiers but no offers`); continue; }
+    const lo = String(Math.min(...sellable));
+    const hi = String(Math.max(...sellable));
+    if (o["@type"] === "AggregateOffer") {
+      if (o.lowPrice !== lo || o.highPrice !== hi)
+        stale.push(`${path}: offers ${o.lowPrice}-${o.highPrice}, catalog ${lo}-${hi}`);
+    } else if (o.price !== lo) {
+      stale.push(`${path}: offer ${o.price}, catalog ${lo}`);
+    }
+  }
+  if (stale.length === 0) ok(`${Object.keys(PRODUCT_SCHEMA).length} Product schemas match catalog pricing`);
+  else fail("structured data prices are stale — run npm run gen:schema", stale.join("\n"));
+}
+
+// The homepage never reaches api/index.js, so its graph is baked into
+// index.html instead — and exactly once, or the page ships two graphs.
+{
+  const idx = readFileSync(resolve(ROOT, "client/index.html"), "utf-8");
+  const n = (idx.match(/application\/ld\+json/g) || []).length;
+  if (n === 1) ok("client/index.html carries exactly one JSON-LD graph");
+  else
+    fail(
+      `client/index.html has ${n} JSON-LD block(s), expected 1 — run npm run gen:index-meta`,
+      n === 0 ? "homepage would ship no structured data" : "duplicate graphs describe the same page twice"
+    );
+}
+
+// No rating may ship anywhere. The catalog build strips fabricated review counts
+// (1,842-3,421 reviews at 4.8-4.9 stars) that no review system produced; the
+// ProductSchema component still accepts a `rating` prop, so re-introducing them
+// is one prop away.
+{
+  const hits = [];
+  for (const rel of ["client/src", "lib"]) {
+    for (const f of walkFiles(resolve(ROOT, rel), /\.(ts|tsx|js|mjs)$/)) {
+      const body = readFileSync(f, "utf-8").replace(/^\s*\/\/.*$/gm, "");
+      if (/aggregateRating\s*[:=]|"aggregateRating"\s*:/.test(body) && !/rating\?:|if \(rating\)/.test(body))
+        hits.push(relative(ROOT, f).replace(/\\/g, "/"));
+      if (/rating=\{/.test(body)) hits.push(`${relative(ROOT, f).replace(/\\/g, "/")} (passes a rating)`);
+    }
+  }
+  if (hits.length === 0) ok("no review rating is emitted in structured data");
+  else fail("a rating would ship in schema — no review system produced one", hits.join("\n"));
+}
+
 // ---------------------------------------------------------------- build output
 section("Build output");
 

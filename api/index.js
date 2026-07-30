@@ -18,6 +18,7 @@ import { readFileSync, existsSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { lookupMeta, SITE_URL } from "../lib/route-meta.js";
+import { jsonLdFor } from "../lib/structured-data.js";
 
 // Candidate locations for the built shell. process.cwd() is /var/task in the
 // lambda, but resolving relative to this module as well keeps the lookup
@@ -125,6 +126,28 @@ function inject(template, { title, description, canonical }) {
   return html;
 }
 
+// Emit the JSON-LD graph into the served HTML.
+//
+// The page body is an empty SPA mount point, so without this a crawler that
+// does not execute JavaScript receives no machine-readable description of the
+// page at all — which is every AI answer-engine bot robots.txt invites in.
+//
+// "</" inside a <script> block would close it early, so the only escaping that
+// matters here is breaking that sequence. The payload is generated from our own
+// catalog rather than from the request, but the requested path reaches the
+// breadcrumb on a 404, so this is not optional.
+function injectJsonLd(html, path, meta) {
+  let payload;
+  try {
+    payload = JSON.stringify(jsonLdFor(path, meta));
+  } catch {
+    return html; // never fail a page render over structured data
+  }
+  const safe = payload.replace(/<\//g, "<\\/");
+  const tag = `<script type="application/ld+json">${safe}</script>`;
+  return html.replace(/<\/head>/i, `    ${tag}\n  </head>`);
+}
+
 export default function handler(req, res) {
   const path = resolveRequestPath(req);
 
@@ -163,5 +186,5 @@ export default function handler(req, res) {
 
   res.setHeader("Content-Type", "text/html; charset=utf-8");
   res.setHeader("Cache-Control", "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400");
-  res.status(200).send(inject(template, meta));
+  res.status(200).send(injectJsonLd(inject(template, meta), path, meta));
 }

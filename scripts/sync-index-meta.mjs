@@ -66,7 +66,29 @@ const EDITS = [
   ],
 ];
 
+// The homepage is served straight off the CDN and never reaches api/index.js,
+// so the JSON-LD the handler injects for every other route has to be baked in
+// here instead. Wrapped in markers so re-running replaces it rather than
+// stacking a second graph on each run.
+const { jsonLdFor } = await import(
+  pathToFileURL(resolve(ROOT, "lib/structured-data.js")).href
+);
+const OPEN = "<!-- ld+json:home:start -->";
+const CLOSE = "<!-- ld+json:home:end -->";
+const graph = JSON.stringify(jsonLdFor("/", home)).replace(/<\//g, "<\\/");
+const ldBlock = `${OPEN}\n    <script type="application/ld+json">${graph}</script>\n    ${CLOSE}`;
+
 let html = readFileSync(INDEX, "utf-8");
+
+// The markers contain "+" (in "ld+json"), which is a regex quantifier — an
+// unescaped marker never matches, so each run appended another graph instead of
+// replacing the previous one.
+const rx = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const existing = new RegExp(`${rx(OPEN)}[\\s\\S]*?${rx(CLOSE)}`);
+html = existing.test(html)
+  ? html.replace(existing, ldBlock)
+  : html.replace(/<\/head>/i, `    ${ldBlock}\n  </head>`);
+
 const missing = [];
 for (const [re, to] of EDITS) {
   if (!re.test(html)) {

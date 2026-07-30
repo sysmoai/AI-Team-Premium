@@ -159,7 +159,7 @@ export default function Microsoft365Page() {
         },
         {
           label: "Microsoft 365 Copilot — Personal",
-          price: "৳3,500",
+          price: "৳2,990",
           period: "/mo",
           delivery: "4–6 hr delivery",
           type: "Personal",

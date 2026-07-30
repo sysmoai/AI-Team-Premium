@@ -67,7 +67,7 @@ export default function GoogleAIPro() {
         },
         {
           label: "Google AI Pro — Personal Seat",
-          price: "৳2,990",
+          price: "৳3,390",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Personal",

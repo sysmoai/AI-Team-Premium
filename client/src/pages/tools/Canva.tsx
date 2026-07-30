@@ -160,7 +160,7 @@ export default function Canva() {
         },
         {
           label: "Canva Pro — Personal Upgrade",
-          price: "৳1,200",
+          price: "৳2,190",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Personal",

@@ -157,7 +157,7 @@ export default function Perplexity() {
         },
         {
           label: "Perplexity Pro — Personal",
-          price: "৳2,200",
+          price: "৳2,990",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Personal",

@@ -395,6 +395,49 @@ else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.
   else fail("indexable routes compete with identical metadata", dupes.join("\n"));
 }
 
+// Blog posts quote prices as "Canva Pro (৳510)" or "ChatGPT Plus Shared: ৳350".
+// Those went stale at the last repricing and sat contradicting the product pages
+// — a reader comparing the two sees us disagree with ourselves about our own
+// price. Only the "name then price" shape is checked: totals like "≈ ৳2,970" are
+// arithmetic over several products and legitimately match no single tier.
+{
+  const cheapestByBrand = new Map();
+  for (const p of products) {
+    if (!(p.price > 0) || p.priceOnRequest) continue;
+    const k = p.brand.toLowerCase();
+    if (!cheapestByBrand.has(k) || cheapestByBrand.get(k) > p.price) cheapestByBrand.set(k, p.price);
+  }
+  const realPrices = new Set(products.filter((p) => p.price > 0).map((p) => p.price));
+  const blog = readFileSync(resolve(ROOT, "client/src/data/blog-posts.ts"), "utf-8");
+  const drift = [];
+  blog.split(/\r?\n/).forEach((line, i) => {
+    if (/^\s*\/\//.test(line)) return;
+    // "<Brand> ...<up to 30 chars>... (৳N)"  or  "<Brand>...: ৳N"
+    for (const m of line.matchAll(/([A-Z][A-Za-z0-9.\- ]{2,24}?)\s*(?:\(|:\s*)৳([0-9][0-9,]*)/g)) {
+      const n = Number(m[2].replace(/,/g, ""));
+      if (n < 100) continue;
+      const brand = [...cheapestByBrand.keys()].find((b) => m[1].toLowerCase().includes(b));
+      if (!brand) continue;
+      // Accept any real price for that brand's family, not just the cheapest —
+      // a post may legitimately quote a higher tier.
+      //
+      // Once the brand is identified the check is strict: "is ৳N a price
+      // somewhere in the catalog" is not good enough, because the stale figures
+      // were real prices belonging to other products. ৳499 is Udio's price and
+      // was also sitting next to ChatGPT Plus, so a catalog-wide membership test
+      // waved it straight through.
+      const family = products.filter((p) => p.brand.toLowerCase() === brand && p.price > 0);
+      if (family.some((p) => p.price === n)) continue;
+      drift.push(
+        `line ${i + 1}: "${m[1].trim()}" quoted at ৳${n} — ${brand} sells at ` +
+          family.map((p) => `৳${p.price}`).join(" / ")
+      );
+    }
+  });
+  if (drift.length === 0) ok("blog price claims match the catalog");
+  else fail("blog quotes a product at a price the catalog does not have", drift.join("\n"));
+}
+
 // Every catalog category needs a label in client/src/lib/categories.ts.
 // categoryLabel() falls back to title-casing the slug, so a missing entry does
 // not crash — it quietly renders "Seo" instead of "SEO & Marketing", and only on

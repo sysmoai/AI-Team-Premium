@@ -37,7 +37,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "What ChatGPT Plus actually costs in BDT right now",
         body: [
-          "Shared Seat — ৳499/month. You get a login on a genuine ChatGPT Plus account shared with a small number of other users, restricted to one device at a time. This is the cheapest way to get GPT-4.5-class access, image generation, and file uploads.",
+          "Shared Seat — ৳350/month. You get a login on a genuine ChatGPT Plus account shared with a small number of other users, restricted to one device at a time. This is the cheapest way to get GPT-4.5-class access, image generation, and file uploads.",
           "Premium Shared — ৳999/month. Same shared-seat model but with fewer users per account, so response speed and availability during peak hours (evening, exam season) stay noticeably better.",
           "Personal Seat — ৳2,990/month. Your own dedicated OpenAI account — you control the password, recovery email, and billing. No sharing, no device restriction.",
           "ChatGPT Pro (o3 / extended reasoning) — from ৳4,990/month for Premium Shared. This is OpenAI's top tier, aimed at power users who need extended context and priority server access.",
@@ -110,7 +110,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Suggested student starting stack",
         body: [
-          "Most students in Bangladesh get the best value starting with just ChatGPT Plus Shared (৳499/mo) and adding Grammarly Premium once they're doing serious English writing. For anyone in a bundle-friendly household or shared flat, the AI Tools Vault (ChatGPT + Claude + Gemini for ৳1,990/mo) usually works out cheaper than buying two tools separately.",
+          "Most students in Bangladesh get the best value starting with just ChatGPT Plus Shared (৳350/mo) and adding Grammarly Premium once they're doing serious English writing. For anyone in a bundle-friendly household or shared flat, the AI Tools Vault (ChatGPT + Claude + Gemini for ৳1,990/mo) usually works out cheaper than buying two tools separately.",
         ],
       },
     ],
@@ -156,7 +156,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Cost comparison for a Bangladeshi freelancer's budget",
         body: [
-          "ChatGPT Plus Shared: ৳499/month — the cheapest entry point with the broadest general use.",
+          "ChatGPT Plus Shared: ৳350/month — the cheapest entry point with the broadest general use.",
           "Claude Pro: ৳1,495/month — higher cost, but often earns itself back on a single well-written client proposal or long-document project.",
           "Gemini Advanced: ৳899/month — strongest when work already lives in Google Docs/Sheets/Workspace, since it integrates directly.",
           "AI Tools Vault (all three, shared): ৳1,990/month — cheaper than buying Claude and Gemini separately, and a practical way to keep all three available for whichever client project needs which tool.",
@@ -217,7 +217,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readMinutes: 7,
     heroEmoji: "💼",
     faqs: [
-      { q: "How much should a freelancer budget for AI tools monthly?", a: "A solid starting stack (ChatGPT Plus + Canva Pro) runs about ৳1,100–1,500/month — usually recovered from the time saved on a single project, let alone the extra gigs it enables you to take on." },
+      { q: "How much should a freelancer budget for AI tools monthly?", a: "A solid starting stack (ChatGPT Plus Shared ৳350 + Canva Pro ৳510) runs about ৳860/month — usually recovered from the time saved on a single project, let alone the extra gigs it enables you to take on." },
       { q: "Do clients mind if I use AI tools?", a: "Most clients care about outcomes, turnaround time, and quality — not the tools behind them. The exception is submitting obviously unedited AI output without review; always treat AI as a speed multiplier, not a replacement for your own judgment and final polish." },
       { q: "What's the single highest-ROI AI tool for a new freelancer?", a: "ChatGPT Plus, by a wide margin — it touches proposal writing, client communication drafts, quick research, and first-pass content or code across almost every freelance category." },
     ],
@@ -246,9 +246,9 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "A realistic monthly toolkit budget",
         body: [
-          "Starter: ChatGPT Plus Shared (৳499) + Grammarly Premium (৳499) ≈ ৳1,000/month.",
-          "Design-focused: add Canva Pro (৳599) for another ≈ ৳600/month.",
-          "Full stack for a serious full-time freelancer: AI Tools Vault (ChatGPT + Claude + Gemini, ৳1,990) + Canva Pro + Grammarly ≈ ৳3,100/month — usually less than the earnings from a single extra project the toolkit helps you land or deliver faster.",
+          "Starter: ChatGPT Plus Shared (৳350) + Grammarly Premium (৳470) ≈ ৳820/month.",
+          "Design-focused: add Canva Pro (৳510) for another ≈ ৳510/month.",
+          "Full stack for a serious full-time freelancer: AI Tools Vault (ChatGPT + Claude + Gemini, ৳1,990) + Canva Pro (৳510) + Grammarly (৳470) ≈ ৳2,970/month — usually less than the earnings from a single extra project the toolkit helps you land or deliver faster.",
         ],
       },
     ],

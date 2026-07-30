@@ -60,9 +60,53 @@ const DIFFERENTIATORS = [
 ];
 
 const FAQS = [
-  { q: "কতক্ষণে পাবো?", a: "Shared seat: 5-15 মিনিট। Personal seat: 2-4 ঘণ্টা।" },
-  { q: "কীভাবে পে করবো?", a: "bKash, Nagad, বা Bank Transfer। কোনো international card লাগবে না।" },
-  { q: "ব্যান হওয়ার ভয় নেই?", a: "আমাদের device rules মানলে কোনো সমস্যা নেই। Rules দেওয়া হয় delivery-তে।" },
+  { q: "কতক্ষণে access পাবো?", a: "Shared seat-এ payment confirm হওয়ার ৫–১৫ মিনিটের মধ্যে WhatsApp-এ login details পাঠানো হয়। Personal seat-এ ২–৪ ঘণ্টা, আর Business workspace plan-এ সর্বোচ্চ ১২ ঘণ্টা লাগতে পারে।" },
+  { q: "কীভাবে পেমেন্ট করবো?", a: "bKash, Nagad, Rocket বা Bank Transfer — সবই টাকায়। কোনো international credit card লাগবে না। অর্ডার confirm করার পর পেমেন্ট নম্বর ব্যক্তিগতভাবে WhatsApp-এ পাঠানো হয়, নিরাপত্তার জন্য কখনো publicly পোস্ট করা হয় না।" },
+  { q: "অ্যাকাউন্ট কি genuine, নাকি cracked?", a: "১০০% genuine। আমরা official subscription কিনে রাখি — কোনো cracked, mod বা fake access নয়। এজন্যই আমরা ৩০ দিনের replacement warranty দিতে পারি।" },
+  { q: "ব্যান হওয়ার ভয় আছে কি?", a: "নিয়ম মানলে নেই। Shared seat-এ তিনটি নিয়ম: একসাথে একটি device, password বা recovery email পরিবর্তন না করা, এবং platform-এর usage policy না ভাঙা। Delivery-র সময় নিয়মগুলো লিখিতভাবে দেওয়া হয়।" },
+  { q: "Shared আর Personal seat-এর পার্থক্য কী?", a: "Shared seat-এ অল্প কয়েকজন ব্যবহারকারী একটি subscription ভাগ করেন — দাম অনেক কম, তবে একসাথে একটি device-এ ব্যবহার করতে হয় এবং password পাবেন না। Personal seat-এ পুরো অ্যাকাউন্ট আপনার — password, device, সবকিছুতে স্বাধীনতা, দাম বেশি।" },
+  { q: "শেয়ার্ড অ্যাকাউন্টে আমার চ্যাট কি অন্যরা দেখবে?", a: "না। প্রতিটি ব্যবহারকারীর chat history তার নিজের সেশনের সাথে যুক্ত, অন্য কেউ দেখতে পায় না। শুধু subscription-টা শেয়ার হয়, আপনার কথোপকথন নয়।" },
+  { q: "কাজ না করলে টাকা ফেরত পাবো?", a: "Subscription fee non-refundable, তবে আমাদের দিক থেকে কোনো সমস্যা হলে ২৪ ঘণ্টার মধ্যে বিনামূল্যে replace করে দেওয়া হয় — ৩০ দিন পর্যন্ত এই warranty চলে। বিস্তারিত আমাদের Refund Policy পেজে আছে।" },
+  { q: "দাম কি প্রতি মাসে automatically কাটবে?", a: "না। প্রতিটি subscription নির্দিষ্ট মেয়াদের (সাধারণত ৩০ দিন) জন্য। মেয়াদ শেষে renew করতে চাইলে WhatsApp-এ জানালেই হবে — কোনো auto-debit নেই।" },
+  { q: "আমি কোন প্ল্যান নেবো বুঝতে পারছি না — সাহায্য পাবো?", a: "অবশ্যই। WhatsApp-এ আপনার কাজের ধরন বললে আমরা বিনামূল্যে পরামর্শ দিই কোন tool ও কোন tier আপনার জন্য সবচেয়ে উপযুক্ত। অপ্রয়োজনীয় বেশি দামি প্ল্যান আমরা suggest করি না।" },
+  { q: "AI ব্যবহার শিখতে চাই — কোনো training আছে?", a: "হ্যাঁ। লাইভ Google Meet-এ বাংলা ভাষায় AI coaching সেশন আছে, ৳৭৯৯/ঘণ্টা থেকে শুরু। প্রতিটি সেশনের পর আপনার কাজ অনুযায়ী custom prompt pack ও workflow ডকুমেন্ট দেওয়া হয়।" },
+];
+
+const POPULAR_TOOLS = [
+  { name: "ChatGPT", desc: "সবচেয়ে জনপ্রিয় AI চ্যাট", href: "/tools/chatgpt", emoji: "💬" },
+  { name: "Claude Pro", desc: "লম্বা ডকুমেন্ট ও কোডিং", href: "/tools/claude", emoji: "🧠" },
+  { name: "Gemini Advanced", desc: "Google Workspace-এর সাথে", href: "/tools/gemini", emoji: "✨" },
+  { name: "Google AI Pro", desc: "Gemini + NotebookLM + 2TB", href: "/tools/google-ai-pro", emoji: "🔷" },
+  { name: "SuperGrok", desc: "লাইভ X ডেটা + ছবি", href: "/tools/supergrok", emoji: "⚡" },
+  { name: "Perplexity Pro", desc: "সোর্সসহ AI সার্চ", href: "/tools/perplexity", emoji: "🔍" },
+  { name: "Midjourney", desc: "সেরা মানের AI ছবি", href: "/tools/midjourney", emoji: "🎨" },
+  { name: "Leonardo AI", desc: "২০+ মডেল, সাশ্রয়ী", href: "/tools/leonardo", emoji: "🖼️" },
+  { name: "Runway ML", desc: "প্রফেশনাল AI ভিডিও", href: "/tools/runway", emoji: "🎬" },
+  { name: "Kling AI", desc: "৫ মিনিটের ভিডিও", href: "/tools/kling", emoji: "📹" },
+  { name: "Canva Pro", desc: "ডিজাইন + Magic Studio", href: "/tools/canva", emoji: "🖌️" },
+  { name: "Grammarly", desc: "ইংরেজি লেখা নিখুঁত করুন", href: "/tools/grammarly", emoji: "✍️" },
+  { name: "ElevenLabs", desc: "বাংলা ভয়েস ও ডাবিং", href: "/tools/elevenlabs", emoji: "🎙️" },
+  { name: "GitHub Copilot", desc: "AI কোড অ্যাসিস্ট্যান্ট", href: "/tools/copilot", emoji: "👨‍💻" },
+  { name: "Notion AI", desc: "AI ওয়ার্কস্পেস ও নোট", href: "/tools/notion", emoji: "📝" },
+  { name: "AI Tools Vault", desc: "৩টি টুল এক বান্ডিলে", href: "/ai-tools-vault", emoji: "💎" },
+];
+
+const COMPARISONS = [
+  { label: "Claude vs ChatGPT", href: "/compare/claude-vs-chatgpt" },
+  { label: "Gemini vs ChatGPT", href: "/compare/gemini-vs-chatgpt" },
+  { label: "Claude vs Gemini", href: "/compare/claude-vs-gemini" },
+  { label: "Google AI Pro vs ChatGPT", href: "/compare/google-ai-pro-vs-chatgpt" },
+  { label: "SuperGrok vs ChatGPT", href: "/compare/supergrok-vs-chatgpt" },
+  { label: "ChatGPT vs Perplexity", href: "/compare/chatgpt-vs-perplexity" },
+  { label: "Midjourney vs Leonardo", href: "/compare/midjourney-vs-leonardo" },
+  { label: "Runway vs Kling", href: "/compare/runway-vs-kling" },
+  { label: "Copilot vs ChatGPT", href: "/compare/copilot-vs-chatgpt" },
+];
+
+const TRAINING_TRACKS = [
+  { icon: GraduationCap, title: "শিক্ষার্থীদের জন্য", price: "৳১,৯৯৯ থেকে", points: ["অ্যাসাইনমেন্ট ও রিসার্চে AI", "IELTS ও ইংরেজি লেখা", "থিসিস ও প্রেজেন্টেশন"], color: "#16A34A" },
+  { icon: Briefcase, title: "ফ্রিল্যান্সারদের জন্য", price: "৳৪,৯৯৯ থেকে", points: ["প্রপোজাল ও ক্লায়েন্ট কমিউনিকেশন", "দ্রুত ডেলিভারি ওয়ার্কফ্লো", "কাস্টম prompt pack"], color: "#2563EB" },
+  { icon: Building2, title: "ব্যবসার জন্য", price: "৳১২,৯৯৯ থেকে", points: ["পুরো টিমের AI ট্রেনিং", "কাস্টমার সাপোর্ট অটোমেশন", "রিপোর্ট ও কনটেন্ট সিস্টেম"], color: "#7C3AED" },
 ];
 
 export default function Home() {
@@ -216,7 +260,7 @@ export default function Home() {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-center mb-16">
-            <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Featured Offers</p>
+            <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Featured Offers</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>Start with the Right Plan</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
@@ -262,8 +306,103 @@ export default function Home() {
             })}
           </div>
           <div className="mt-12 text-center">
-            <Link href="/chatgpt-plans" className="inline-flex items-center gap-1 font-semibold hover:underline" style={{ color: BRAND.blue }}>
+            <Link href="/chatgpt-plans" className="inline-flex items-center gap-1 font-semibold hover:underline text-blue-600 dark:text-blue-400">
               View All ChatGPT Plans <ChevronRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* POPULAR AI TOOLS */}
+      <section className="py-24" style={{ background: BRAND.sky }}>
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="text-center mb-14">
+            <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Browse by Tool</p>
+            <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>জনপ্রিয় AI Tools</h2>
+            <p className="mt-4 max-w-lg mx-auto" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.9rem", lineHeight: 1.65 }}>
+              ৮০+ premium AI subscription — সবই bKash / Nagad দিয়ে টাকায় পেমেন্ট করা যায়।
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            {POPULAR_TOOLS.map((tool) => (
+              <Link key={tool.href} href={tool.href} style={{ textDecoration: "none" }} data-testid={`card-tool-${tool.href.split("/").pop()}`}>
+                <div className="rounded-2xl p-5 h-full flex flex-col hover-elevate transition-all cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
+                  <div className="text-2xl mb-3">{tool.emoji}</div>
+                  <h3 style={{ color: BRAND.navy, fontSize: "0.92rem", fontWeight: 700, lineHeight: 1.3 }}>{tool.name}</h3>
+                  <p className="mt-1.5 flex-1" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.76rem", lineHeight: 1.5 }}>{tool.desc}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <div className="mt-12 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/all-products"
+              data-testid="link-all-products"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
+              style={{ background: BRAND.blue, color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
+            >
+              সব ৮০+ টুল দেখুন <ChevronRight size={16} />
+            </Link>
+            <Link
+              href="/pricing"
+              data-testid="link-home-pricing"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
+              style={{ border: `1px solid ${BRAND.blue}`, color: BRAND.blue, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
+            >
+              সম্পূর্ণ প্রাইস লিস্ট
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* LIVE AI TRAINING */}
+      <section className="py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+          <div className="text-center mb-14">
+            <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Live AI Training</p>
+            <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>শুধু Subscription নয় — ব্যবহারটাও শিখুন</h2>
+            <p className="mt-4 max-w-xl mx-auto text-slate-900/55 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.7 }}>
+              লাইভ Google Meet সেশনে বাংলা ভাষায় হাতে-কলমে শেখানো হয়। প্রতিটি সেশনের পর আপনার কাজ অনুযায়ী custom prompt pack ও workflow ডকুমেন্ট পাবেন।
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            {TRAINING_TRACKS.map((track) => (
+              <div key={track.title} className="rounded-2xl p-7 flex flex-col" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
+                <div className="inline-flex items-center justify-center rounded-xl mb-5" style={{ width: 48, height: 48, background: `${track.color}18` }}>
+                  <track.icon size={22} color={track.color} strokeWidth={1.9} />
+                </div>
+                <h3 style={{ color: BRAND.navy, fontSize: "1.05rem", fontWeight: 700 }}>{track.title}</h3>
+                <p className="mt-1 mb-5" style={{ color: track.color, fontSize: "0.85rem", fontWeight: 700 }}>{track.price}</p>
+                <ul className="space-y-2.5 flex-1">
+                  {track.points.map((pt) => (
+                    <li key={pt} className="flex items-start gap-2" style={{ color: BRAND.navy, opacity: 0.6, fontSize: "0.82rem", lineHeight: 1.5 }}>
+                      <Check size={14} color={track.color} strokeWidth={3} className="mt-0.5 flex-shrink-0" />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 flex flex-wrap justify-center gap-3">
+            <a
+              href={config.whatsappGeneral}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(undefined, undefined, undefined, "home-training")}
+              data-testid="button-training-whatsapp"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white"
+              style={{ background: "#25D366", fontSize: "0.9rem" }}
+            >
+              <WhatsAppIcon size={17} color="#fff" /> সেশন বুক করুন
+            </a>
+            <Link
+              href="/support"
+              data-testid="link-home-training-details"
+              className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate border border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400"
+              style={{ fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
+            >
+              সব প্যাকেজ দেখুন <ChevronRight size={16} />
             </Link>
           </div>
         </div>
@@ -275,7 +414,7 @@ export default function Home() {
       <section className="py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-center mb-14">
-            <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>How It Works</p>
+            <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>How It Works</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>৩ ধাপে AI Subscription নিন</h2>
             <p className="mt-4 max-w-md mx-auto text-slate-900/50 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.65 }}>No credit card setup, no registration. Just WhatsApp → Pay → Get access.</p>
           </div>
@@ -344,7 +483,7 @@ export default function Home() {
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-center mb-16">
-            <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Why AITP</p>
+            <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Why AITP</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>Bangladesh's Trusted AI Team</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -359,6 +498,37 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COMPARE TOOLS */}
+      <section className="py-20">
+        <div className="mx-auto max-w-5xl px-6 lg:px-10">
+          <div className="text-center mb-10">
+            <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Still Deciding?</p>
+            <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2rem", fontWeight: 700, lineHeight: 1.15 }}>কোন AI টুল আপনার জন্য?</h2>
+            <p className="mt-4 max-w-lg mx-auto text-slate-900/55 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.65 }}>
+              পাশাপাশি তুলনা দেখে সিদ্ধান্ত নিন — ফিচার, দাম আর কোনটা কার জন্য ভালো।
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {COMPARISONS.map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                data-testid={`link-compare-${c.href.split("/").pop()}`}
+                className="inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 transition-all hover-elevate"
+                style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.12)", color: BRAND.navy, fontSize: "0.83rem", fontWeight: 600, textDecoration: "none" }}
+              >
+                {c.label} <ChevronRight size={13} color={BRAND.blue} />
+              </Link>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/compare" className="inline-flex items-center gap-1 font-semibold hover:underline text-blue-600 dark:text-blue-400">
+              সব তুলনা দেখুন <ChevronRight size={16} />
+            </Link>
           </div>
         </div>
       </section>

@@ -16,6 +16,8 @@
     "preview": "node scripts/preview.mjs",
     "prepare": "git config core.hooksPath .githooks || exit 0",
     "build:catalog": "node scripts/build-catalog.mjs",
+    "gen:routes": "node scripts/gen-product-routes.mjs",
+    "gen:sitemap": "node scripts/gen-sitemap.mjs",
     "audit:prices": "node scripts/audit-prices.mjs",
     "validate:catalog": "node scripts/validate-catalog.mjs",
     "validate:policies": "node scripts/validate-policies.mjs",

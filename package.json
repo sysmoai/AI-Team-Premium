@@ -15,7 +15,8 @@
     "ship": "npm run check && npm run build && npm run verify",
     "preview": "node scripts/preview.mjs",
     "prepare": "git config core.hooksPath .githooks || exit 0",
-    "build:catalog": "node scripts/build-catalog.mjs"
+    "build:catalog": "node scripts/build-catalog.mjs",
+    "audit:prices": "node scripts/audit-prices.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

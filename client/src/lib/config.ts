@@ -22,46 +22,46 @@ export const config = {
   officialPricingUrl: "https://chatgpt.com/pricing/",
 
   whatsappPlanTemplates: {
-    "plus-shared":            "Hi! I want to order 'ChatGPT Plus Shared (৳499/mo)' from AI Team Premium. Please share payment details (bKash/Nagad).",
-    "plus-premium-shared":    "Hi! I want to order 'ChatGPT Plus Premium Shared (৳999/mo)'. How do I pay and get access?",
-    "plus-personal-seat":     "Hi! I want my own ChatGPT Plus account — 'Plus Personal Seat (৳2,990/mo)'. Is it available?",
-    "business-shared":        "Hi! I want the 'ChatGPT Business Shared (৳699/mo)' plan. Please guide me.",
-    "business-premium-shared":"Hi! I want 'ChatGPT Business Premium Shared (৳1,299/mo)'. What are the next steps?",
-    "business-personal-like": "Hi! I want 'ChatGPT Business Personal (৳3,990/mo)'. How do I get started?",
-    "pro-premium-shared":     "Hi! I want the most powerful plan — 'ChatGPT Pro Premium Shared (৳4,990/mo)'. Is it ready?"
+    "plus-shared":            "Hi! I want to order 'ChatGPT Plus Shared' from AI Team Premium. Please share payment details (bKash/Nagad).",
+    "plus-premium-shared":    "Hi! I want to order 'ChatGPT Plus Premium Shared'. How do I pay and get access?",
+    "plus-personal-seat":     "Hi! I want my own ChatGPT Plus account — 'Plus Personal Seat'. Is it available?",
+    "business-shared":        "Hi! I want the 'ChatGPT Business Shared' plan. Please guide me.",
+    "business-premium-shared":"Hi! I want 'ChatGPT Business Premium Shared'. What are the next steps?",
+    "business-personal-like": "Hi! I want 'ChatGPT Business Personal'. How do I get started?",
+    "pro-premium-shared":     "Hi! I want the most powerful plan — 'ChatGPT Pro Premium Shared'. Is it ready?"
   },
 
   whatsappSupportTemplates: {
-    "entry":      "Hi! I need a 1-hour AI Support session (৳799) from AI Team Premium. When are you available?",
-    "student":    "Hi! I'm a student and I want the 'Student Smart Study Pack' (৳1,999). Please guide me.",
-    "freelancer": "Hi! I'm a freelancer and I want the 'Freelancer Fast Delivery Pack' (৳4,999). Please guide me.",
-    "business":   "Hi! I want 'Business AI Setup' (৳12,999) for my team. When can we schedule a Google Meet?",
-    "hourly":     "Hi! I want to book a 1-hour live AI support session (৳799). Are you available?"
+    "entry":      "Hi! I need a 1-hour AI Support session from AI Team Premium. When are you available?",
+    "student":    "Hi! I'm a student and I want the 'Student Smart Study Pack'. Please guide me.",
+    "freelancer": "Hi! I'm a freelancer and I want the 'Freelancer Fast Delivery Pack'. Please guide me.",
+    "business":   "Hi! I want 'Business AI Setup' for my team. When can we schedule a Google Meet?",
+    "hourly":     "Hi! I want to book a 1-hour live AI support session. Are you available?"
   },
 
   whatsappToolTemplates: {
-    "claude-shared": "Hi! I want to order Claude Pro Shared (৳1,495/mo) from AI Team Premium. Please share payment details.",
-    "claude-personal": "Hi! I want my own Claude Pro Personal account (৳2,990/mo). Is it available?",
-    "gemini": "Hi! I want Gemini Advanced (৳499/mo) from AI Team Premium. How do I order?",
-    "google-ai-pro": "Hi! I want Google AI Pro (৳449/mo). Please guide me through the process.",
-    "supergrok": "Hi! I want SuperGrok (৳499/mo). What's the next step?",
-    "perplexity": "Hi! I want Perplexity Pro (৳599/mo). Please share payment details.",
-    "midjourney": "Hi! I want Midjourney (৳1,299/mo). How do I get started?",
-    "leonardo": "Hi! I want Leonardo AI (৳349/mo). Please provide payment options.",
-    "runway": "Hi! I want Runway ML (৳899/mo). Is it available now?",
-    "kling": "Hi! I want Kling AI (৳599/mo). Please share details.",
-    "canva": "Hi! I want Canva Pro (৳350/mo). How do I order?",
-    "grammarly": "Hi! I want Grammarly Premium (৳800/mo). Please guide me.",
-    "notion": "Hi! I want Notion AI (৳199/mo). Is it available?",
-    "copilot": "Hi! I want GitHub Copilot (৳1,200/mo). Please share details.",
+    "claude-shared": "Hi! I want to order Claude Pro Shared from AI Team Premium. Please share payment details.",
+    "claude-personal": "Hi! I want my own Claude Pro Personal account. Is it available?",
+    "gemini": "Hi! I want Gemini Advanced from AI Team Premium. How do I order?",
+    "google-ai-pro": "Hi! I want Google AI Pro. Please guide me through the process.",
+    "supergrok": "Hi! I want SuperGrok. What's the next step?",
+    "perplexity": "Hi! I want Perplexity Pro. Please share payment details.",
+    "midjourney": "Hi! I want Midjourney. How do I get started?",
+    "leonardo": "Hi! I want Leonardo AI. Please provide payment options.",
+    "runway": "Hi! I want Runway ML. Is it available now?",
+    "kling": "Hi! I want Kling AI. Please share details.",
+    "canva": "Hi! I want Canva Pro. How do I order?",
+    "grammarly": "Hi! I want Grammarly Premium. Please guide me.",
+    "notion": "Hi! I want Notion AI. Is it available?",
+    "copilot": "Hi! I want GitHub Copilot. Please share details.",
     "microsoft365": "Hi! I want Microsoft 365 Copilot. What are the options?",
     "linkedin": "Hi! I want LinkedIn Premium. Please share pricing for Bangladesh.",
-    "elevenlabs": "Hi! I want ElevenLabs (৳699/mo). How do I get started?",
+    "elevenlabs": "Hi! I want ElevenLabs. How do I get started?",
     "poe": "Hi! I want Poe AI subscription. Please guide me.",
     "firefly": "Hi! I want Adobe Firefly Pro. What's the pricing?",
-    "ideogram": "Hi! I want Ideogram AI (৳350/mo). Please share details.",
-    "freepik": "Hi! I want Freepik (৳300/mo). Is it available?",
+    "ideogram": "Hi! I want Ideogram AI. Please share details.",
+    "freepik": "Hi! I want Freepik. Is it available?",
     "adobe-cc": "Hi! I want Adobe Creative Cloud. What's the pricing in Bangladesh?",
-    "vault": "Hi! I want the AI Tools Vault Bundle (৳1,990/mo) — ChatGPT + Claude + Gemini. Please guide me."
+    "vault": "Hi! I want the AI Tools Vault Bundle — ChatGPT + Claude + Gemini. Please guide me."
   }
 };

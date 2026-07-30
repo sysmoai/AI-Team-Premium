@@ -199,6 +199,26 @@ try {
   fail("products-catalog.json does not match its source", detail);
 }
 
+// Prefilled WhatsApp/Messenger templates used to hardcode a price. Because they
+// live outside the catalog, nothing kept them in sync — Google AI Pro was
+// repriced to ৳3,390 while its template still quoted ৳449, so every customer
+// who tapped "Order on WhatsApp" sent us a message quoting a price 7.6x below
+// the real one. Templates now name the tier and quote no price; the page the
+// customer clicked from already shows the current figure.
+section("Order templates");
+
+const configTs = readFileSync(resolve(ROOT, "client/src/lib/config.ts"), "utf-8");
+const pricedTemplates = [...configTs.matchAll(/"([a-z0-9-]+)":\s*"([^"]*৳[^"]*)"/g)];
+if (pricedTemplates.length === 0) {
+  ok("no order template hardcodes a price");
+} else {
+  fail(
+    `${pricedTemplates.length} order template(s) hardcode a price and will drift from the catalog`,
+    pricedTemplates.map((m) => `${m[1]}: ${m[2]}`).join("\n") +
+      "\n-> name the plan/tier instead; the page already shows the live price"
+  );
+}
+
 // ---------------------------------------------------------------- host hygiene
 section("Canonical host");
 

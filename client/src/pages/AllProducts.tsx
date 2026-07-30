@@ -44,10 +44,22 @@ function whatsappHref(product: Product) {
   return `${config.whatsappUrl}?text=${encodeURIComponent(message)}`;
 }
 
+// The header links into a category (/all-products?category=seo). Reading it here
+// is what makes those links land on a filtered list rather than on the full
+// catalog with the filter reset — without this the menu points 78 products at
+// one undifferentiated page.
+function categoryFromUrl(): string | null {
+  if (typeof window === "undefined") return null;
+  const c = new URLSearchParams(window.location.search).get("category");
+  // Only accept a category the catalog actually has, so a stale or hand-typed
+  // value falls back to "all" instead of rendering an empty list.
+  return c && products.some((p) => p.category === c) ? c : null;
+}
+
 export default function AllProducts() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(categoryFromUrl);
   const [selectedAccess, setSelectedAccess] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<"featured" | "price-asc" | "price-desc" | "name">("featured");
 

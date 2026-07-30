@@ -464,6 +464,56 @@ else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.
     );
 }
 
+// The header and footer render on every page, which made them the widest
+// wrong-price surface on the site: all 15 catalog-backed nav entries had drifted
+// (Claude ৳599 vs ৳1,495, Google AI Pro ৳449 vs ৳3,390, Kling ৳599 vs ৳270), and
+// the footer advertised "All 80 Plans" against a catalog of 129.
+{
+  const { NAV_CATEGORIES, CATALOG_TOTALS } = await import(
+    pathToFileURL(resolve(ROOT, "shared/nav-menu.js")).href
+  );
+  const bad = [];
+
+  // Generated menu must agree with the catalog it was generated from.
+  const sellable = products.filter((p) => p.price > 0 && !p.priceOnRequest);
+  if (CATALOG_TOTALS.tiers !== products.length)
+    bad.push(`nav tier count ${CATALOG_TOTALS.tiers} vs catalog ${products.length}`);
+  const floor = Math.min(...sellable.map((p) => p.price));
+  if (CATALOG_TOTALS.priceFrom !== floor)
+    bad.push(`nav price floor ৳${CATALOG_TOTALS.priceFrom} vs catalog ৳${floor}`);
+  for (const c of NAV_CATEGORIES) {
+    const inCat = sellable.filter((p) => p.category === c.slug).map((p) => p.price);
+    if (c.priceFrom !== null && inCat.length && c.priceFrom !== Math.min(...inCat))
+      bad.push(`${c.slug}: menu says from ৳${c.priceFrom}, catalog ৳${Math.min(...inCat)}`);
+    for (const t of c.top) {
+      if (t.priceFrom !== null && !sellable.some((p) => p.price === t.priceFrom))
+        bad.push(`${c.slug}/${t.name}: ৳${t.priceFrom} matches no catalog price`);
+    }
+  }
+
+  // Every category must be reachable from the nav, or its products have no route
+  // in other than search — which is how automation, SEO and learning shipped
+  // with no menu presence at all.
+  const navSlugs = new Set(NAV_CATEGORIES.map((c) => c.slug));
+  for (const cat of new Set(products.map((p) => p.category)))
+    if (!navSlugs.has(cat)) bad.push(`category "${cat}" is not reachable from the nav`);
+
+  // And nothing may be typed back in by hand. Service prices are not catalog
+  // products, so SERVICES_MENU is exempt.
+  for (const rel of ["client/src/components/layout/Navbar.tsx", "client/src/components/layout/Footer.tsx"]) {
+    let body = readFileSync(resolve(ROOT, rel), "utf-8")
+      .replace(/\/\*[\s\S]*?\*\//g, "")
+      .replace(/^\s*\/\/.*$/gm, "");
+    body = body.replace(/const SERVICES_MENU = \[[\s\S]*?\n\];/, "");
+    const lits = [...body.matchAll(/৳[০-৯0-9][০-৯0-9,]*/g)].map((m) => m[0]);
+    if (lits.length) bad.push(`${rel.split("/").pop()} hardcodes ${lits.join(", ")} — derive from the catalog`);
+  }
+
+  if (bad.length === 0)
+    ok(`nav covers all ${NAV_CATEGORIES.length} categories with catalog-derived prices`);
+  else fail("navigation disagrees with the catalog", bad.join("\n"));
+}
+
 // Every catalog category needs a label in client/src/lib/categories.ts.
 // categoryLabel() falls back to title-casing the slug, so a missing entry does
 // not crash — it quietly renders "Seo" instead of "SEO & Marketing", and only on

@@ -1,50 +1,26 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown, Layers, Briefcase, Sun, Moon } from "lucide-react";
 import { BRAND, LogoHorizontal, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { config } from "@/lib/config";
 import { trackWhatsAppClick } from "@/lib/analytics";
 import { useTheme } from "@/components/ThemeProvider";
+import { NAV_COLUMNS, NAV_CATEGORIES, CATALOG_TOTALS } from "@shared/nav-menu.js";
 
-const CATEGORIES_MENU = [
-  {
-    group: "🤖 AI Chat & Research",
-    items: [
-      { name: "ChatGPT Premium Subscriptions", href: "/chatgpt-plans", desc: "৳৩৯৯–৳৪,৫০০/mo · 7 plans" },
-      { name: "Claude Pro", href: "/claude-plans", desc: "৳৫৯৯/mo · Long docs & coding" },
-      { name: "Google AI Pro", href: "/tools/google-ai-pro", desc: "৳৪৪৯/mo · Gemini 2.5 + NotebookLM + 2TB" },
-      { name: "SuperGrok (xAI)", href: "/tools/supergrok", desc: "৳৪৯৯/mo · Unlimited images + live X data" },
-      { name: "Perplexity Pro", href: "/perplexity-plans", desc: "৳৫৯৯/mo · AI-powered search" },
-    ],
-  },
-  {
-    group: "🎨 Creative & AI Image / Video",
-    items: [
-      { name: "Midjourney", href: "/tools/midjourney", desc: "৳১,২০০/mo · AI image generation v7" },
-      { name: "Leonardo AI", href: "/tools/leonardo", desc: "৳৩৪৯/mo · 20+ models, unlimited creativity" },
-      { name: "Runway ML", href: "/tools/runway", desc: "৳৮৯৯/mo · Professional AI video studio" },
-      { name: "Kling AI", href: "/tools/kling", desc: "৳৫৯৯/mo · 5-min videos + lip sync" },
-      { name: "Canva Pro", href: "/canva-plans", desc: "৳৩৫০/mo · Magic Studio + Dream Lab" },
-    ],
-  },
-  {
-    group: "✍️ Writing & Productivity",
-    items: [
-      { name: "Grammarly Premium", href: "/grammarly-plans", desc: "৳৮০০/mo · AI writing assistant" },
-      { name: "ElevenLabs Voice AI", href: "/tools/elevenlabs", desc: "৳৬৯৯/mo · Bangla voice & dubbing" },
-      { name: "Notion AI", href: "/tools/notion", desc: "৳৪৫০/mo · AI workspace & notes" },
-      { name: "GitHub Copilot", href: "/tools/copilot", desc: "৳১,২০০/mo · AI code assistant" },
-      { name: "Microsoft 365 Copilot", href: "/tools/microsoft365", desc: "৳৮৯৯/mo · Word, Excel, Teams + AI" },
-    ],
-  },
-  {
-    group: "💎 Bundles & All Plans",
-    items: [
-      { name: "AI Tools Vault", href: "/ai-tools-vault", desc: "৳১,৯৯০/mo · ChatGPT + Claude + Gemini" },
-      { name: "All Plans & Pricing", href: "/pricing", desc: "Compare every product & service" },
-    ],
-  },
-];
+// Categories, counts and prices come from lib/nav-menu.js, generated from the
+// catalog by `npm run gen:nav`.
+//
+// This block used to be 17 hand-written products with hand-written prices in
+// Bengali numerals, and every one of them had gone stale — Claude listed at ৳599
+// against a ৳1,495 catalog price, Google AI Pro at ৳449 against ৳3,390, Kling at
+// ৳599 against ৳270. The header renders on every page, so it was the widest
+// wrong-price surface on the site.
+//
+// It could not grow either: products were listed individually, so automation,
+// SEO and learning had no route into the nav at all, and the flat list was
+// already too long to scan. Grouping by category fixes both — the menu now
+// describes 78 families in four scannable columns instead of naming 17.
+const bdt = (n: number) => `৳${n.toLocaleString("en-US")}`;
 
 const SERVICES_MENU = [
   { name: "🤝 AI Ops Sprint (1:1)", href: "/services/ai-ops-sprint", desc: "৳৯,৯০০ · 3-session implementation" },
@@ -112,17 +88,104 @@ export function Navbar() {
               testId="button-nav-categories"
               isDark={isDark}
             >
-              <div className="py-2" style={{ minWidth: 340 }}>
-                {CATEGORIES_MENU.map((section) => (
-                  <div key={section.group}>
-                    <div className="px-4 pt-3 pb-1" style={{ color: BRAND.blue, fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                      {section.group}
+              {/* Mega-menu: one column per group, each listing its categories
+                  with a live count and real price floor. Products sit under the
+                  category rather than replacing it, so the menu stays the same
+                  size as the catalog grows. */}
+              <div
+                className="grid gap-x-6 gap-y-5 p-5 grid-cols-2 lg:grid-cols-4"
+                style={{ width: "min(84vw, 900px)" }}
+                onMouseEnter={cat.onEnter}
+                onMouseLeave={cat.onLeave}
+              >
+                {NAV_COLUMNS.map((column) => (
+                  <div key={column.heading} className="min-w-0">
+                    <div
+                      className="px-1 pb-2 mb-2"
+                      style={{
+                        color: BRAND.blue,
+                        fontSize: "0.66rem",
+                        fontWeight: 800,
+                        letterSpacing: "0.09em",
+                        textTransform: "uppercase",
+                        borderBottom: isDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(37,99,235,0.10)",
+                      }}
+                    >
+                      {column.heading}
                     </div>
-                    {section.items.map((item) => (
-                      <DropdownItem key={item.name} href={item.href} name={item.name} desc={item.desc} onMouseEnter={cat.onEnter} onMouseLeave={cat.onLeave} isDark={isDark} />
+                    {column.categories.map((c) => (
+                      <div key={c.slug} className="mb-3">
+                        <Link
+                          href={c.href}
+                          data-testid={`link-nav-cat-${c.slug}`}
+                          className="block px-1 py-1 rounded-md transition-colors hover:opacity-80"
+                          style={{ textDecoration: "none" }}
+                        >
+                          <span
+                            style={{
+                              color: isDark ? "rgba(255,255,255,0.92)" : BRAND.navy,
+                              fontSize: "0.82rem",
+                              fontWeight: 650,
+                            }}
+                          >
+                            {c.label}
+                          </span>
+                          <span
+                            style={{
+                              color: isDark ? "rgba(255,255,255,0.45)" : "rgba(15,23,42,0.45)",
+                              fontSize: "0.7rem",
+                              marginLeft: 6,
+                            }}
+                          >
+                            {c.count}
+                            {c.priceFrom !== null && ` · from ${bdt(c.priceFrom)}`}
+                          </span>
+                        </Link>
+                        {c.top.map((p) => (
+                          <Link
+                            key={p.href}
+                            href={p.href}
+                            data-testid={`link-nav-tool-${p.href.split("/").pop()}`}
+                            className="block px-1 py-0.5 rounded transition-colors hover:opacity-75"
+                            style={{
+                              textDecoration: "none",
+                              color: isDark ? "rgba(255,255,255,0.58)" : "rgba(15,23,42,0.62)",
+                              fontSize: "0.74rem",
+                              whiteSpace: "nowrap",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                            }}
+                          >
+                            {p.name}
+                            {p.priceFrom !== null && (
+                              <span style={{ opacity: 0.6 }}> · {bdt(p.priceFrom)}</span>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
                     ))}
                   </div>
                 ))}
+                <div
+                  className="col-span-2 lg:col-span-4 pt-3 flex flex-wrap items-center gap-x-5 gap-y-2"
+                  style={{ borderTop: isDark ? "1px solid rgba(255,255,255,0.08)" : "1px solid rgba(37,99,235,0.10)" }}
+                >
+                  <Link href="/all-products" data-testid="link-nav-all-products" style={{ textDecoration: "none", color: BRAND.blue, fontSize: "0.8rem", fontWeight: 700 }}>
+                    All {CATALOG_TOTALS.families} tools →
+                  </Link>
+                  <Link href="/pricing" data-testid="link-nav-all-pricing" style={{ textDecoration: "none", color: isDark ? "rgba(255,255,255,0.7)" : BRAND.navy, fontSize: "0.78rem" }}>
+                    Pricing
+                  </Link>
+                  <Link href="/ai-tools-vault" data-testid="link-nav-vault" style={{ textDecoration: "none", color: isDark ? "rgba(255,255,255,0.7)" : BRAND.navy, fontSize: "0.78rem" }}>
+                    AI Tools Vault
+                  </Link>
+                  <Link href="/compare" data-testid="link-nav-compare" style={{ textDecoration: "none", color: isDark ? "rgba(255,255,255,0.7)" : BRAND.navy, fontSize: "0.78rem" }}>
+                    Compare tools
+                  </Link>
+                  <span style={{ color: isDark ? "rgba(255,255,255,0.4)" : "rgba(15,23,42,0.4)", fontSize: "0.74rem" }}>
+                    {CATALOG_TOTALS.tiers} plans from {bdt(CATALOG_TOTALS.priceFrom)}/mo
+                  </span>
+                </div>
               </div>
             </DesktopDropdown>
 
@@ -241,24 +304,34 @@ export function Navbar() {
               testId="button-mobile-categories"
               isDark={isDark}
             >
-              {CATEGORIES_MENU.map((section) => (
-                <div key={section.group}>
-                  <div className="px-4 pt-2 pb-1" style={{ color: BRAND.blue, fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                    {section.group}
-                  </div>
-                  {section.items.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      data-testid={`link-mobile-cat-${item.name.toLowerCase().replace(/\s+/g, '-').slice(0, 25)}`}
-                      className="flex items-start gap-2 px-4 py-2.5"
-                      style={{ textDecoration: "none" }}
-                    >
-                      <span style={{ color: isDark ? "rgba(255,255,255,0.85)" : BRAND.navy, fontSize: "0.88rem", fontWeight: 500 }}>{item.name}</span>
-                    </Link>
-                  ))}
-                </div>
+              {/* On mobile the categories are the menu — listing individual
+                  products here would be a 78-item scroll. Each row is a real
+                  tap target (44px) with its count and entry price. */}
+              {NAV_CATEGORIES.map((c) => (
+                <Link
+                  key={c.slug}
+                  href={c.href}
+                  data-testid={`link-mobile-cat-${c.slug}`}
+                  className="flex items-center justify-between px-4"
+                  style={{ textDecoration: "none", minHeight: 44 }}
+                >
+                  <span style={{ color: isDark ? "rgba(255,255,255,0.85)" : BRAND.navy, fontSize: "0.88rem", fontWeight: 500 }}>
+                    {c.label}
+                  </span>
+                  <span style={{ color: isDark ? "rgba(255,255,255,0.45)" : "rgba(15,23,42,0.45)", fontSize: "0.75rem" }}>
+                    {c.count}
+                    {c.priceFrom !== null && ` · from ${bdt(c.priceFrom)}`}
+                  </span>
+                </Link>
               ))}
+              <Link
+                href="/all-products"
+                data-testid="link-mobile-all-products"
+                className="flex items-center px-4"
+                style={{ textDecoration: "none", minHeight: 44, color: BRAND.blue, fontSize: "0.85rem", fontWeight: 700 }}
+              >
+                All {CATALOG_TOTALS.families} tools →
+              </Link>
             </MobileExpandable>
 
             <MobileExpandable

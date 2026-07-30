@@ -1,9 +1,16 @@
-import { Link } from "wouter";
+﻿import { Link } from "wouter";
+import { NAV_CATEGORIES, CATALOG_TOTALS } from "@shared/nav-menu.js";
 import { Phone, MapPin, Facebook, Instagram, Users, MessageCircle, ChevronUp, ArrowUpRight } from "lucide-react";
 import { BRAND, LogoHorizontal, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 import { config } from "@/lib/config";
+
+// The Bangla headline reads in Bengali numerals, so a derived price has to be
+// converted rather than dropped in as ASCII digits mid-sentence.
+const BN_DIGITS = "০১২৩৪৫৬৭৮৯";
+const toBengaliDigits = (n: number) =>
+  n.toLocaleString("en-US").replace(/\d/g, (d) => BN_DIGITS[Number(d)]);
 
 const SOCIAL_LINKS = [
   { label: "WhatsApp", url: config.whatsappUrl, icon: <WhatsAppIcon size={15} color="currentColor" /> },
@@ -32,7 +39,9 @@ export function Footer() {
                 lineHeight: 1.3,
               }}
             >
-              বাংলাদেশে AI Tools — ৳৩৪৯ থেকে শুরু
+              {/* Was a hardcoded ৳৩৪৯ in Bengali numerals against a ৳190 floor.
+                  Derived, and in Bengali numerals to match the sentence. */}
+              বাংলাদেশে AI Tools — ৳{toBengaliDigits(CATALOG_TOTALS.priceFrom)} থেকে শুরু
             </h3>
             <p className="mt-1.5" style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.85rem" }}>
               Get in touch — fastest response on WhatsApp.
@@ -64,7 +73,7 @@ export function Footer() {
               Messenger
             </a>
             <Link
-              href="/start-a-project"
+              href="/contact"
               data-testid="link-footer-contact"
               className="inline-flex items-center gap-2 rounded-full px-5 py-3 transition-all"
               style={{ background: "rgba(255,255,255,0.1)", color: BRAND.white, fontSize: "0.85rem", fontWeight: 600, textDecoration: "none", whiteSpace: "nowrap" as const, border: "1px solid rgba(255,255,255,0.1)" }}
@@ -120,8 +129,8 @@ export function Footer() {
             <FooterHeading>Company</FooterHeading>
             <FooterLinks links={[
               { label: "Home", to: "/" },
-              { label: "ChatGPT Plans", to: "/chatgpt-plans" },
               { label: "Blog", to: "/blog" },
+              { label: "Compare Tools", to: "/compare" },
               { label: "Support", to: "/support" },
               { label: "Pricing", to: "/pricing" },
               { label: "About", to: "/about" },
@@ -129,18 +138,14 @@ export function Footer() {
           </div>
 
           <div className="md:col-span-2 col-span-1">
+            {/* Categories, not a hand-picked product list. The previous version
+                named nine products and advertised "All 80 Plans" against a
+                catalog of 129 — and had no link to automation, SEO or learning
+                at all. Generated, so both problems stay fixed. */}
             <FooterHeading>AI Tools</FooterHeading>
             <FooterLinks links={[
-              { label: "ChatGPT Plans", to: "/chatgpt-plans" },
-              { label: "Claude Pro", to: "/claude-plans" },
-              { label: "Gemini Advanced", to: "/gemini-plans" },
-              { label: "SuperGrok (xAI)", to: "/tools/supergrok" },
-              { label: "Google AI Pro", to: "/tools/google-ai-pro" },
-              { label: "Midjourney", to: "/tools/midjourney" },
-              { label: "Leonardo AI", to: "/tools/leonardo" },
-              { label: "Runway ML", to: "/tools/runway" },
-              { label: "Kling AI", to: "/tools/kling" },
-              { label: "All 80 Plans →", to: "/all-products" },
+              ...NAV_CATEGORIES.map((c) => ({ label: c.label, to: c.href })),
+              { label: `All ${CATALOG_TOTALS.families} tools →`, to: "/all-products" },
             ]} />
           </div>
 
@@ -161,7 +166,7 @@ export function Footer() {
               { label: "Refund Policy", to: "/refund-policy" },
               { label: "Privacy Policy", to: "/privacy-policy" },
               { label: "Terms of Service", to: "/terms" },
-              { label: "Contact", to: "/start-a-project" },
+              { label: "Contact", to: "/contact" },
             ]} />
             <div className="mt-6">
               <FooterHeading>Quick Reach</FooterHeading>

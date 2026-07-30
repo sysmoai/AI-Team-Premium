@@ -1,0 +1,150 @@
+{
+  "version": "1.0",
+  "site": {
+    "name": "AI Team Premium",
+    "url": "https://aiteampremium.com",
+    "description": "Premium AI tools for Bangladesh — ChatGPT, Claude, Gemini & 20+ more with Bangla support",
+    "phone": "+880-1533-262758",
+    "email": "support@aiteampremium.com",
+    "address": "Dhaka, Bangladesh"
+  },
+  "structured-data": {
+    "organization": {
+      "type": "Organization",
+      "name": "AI Team Premium",
+      "url": "https://aiteampremium.com",
+      "logo": "https://aiteampremium.com/logo.png",
+      "description": "Affordable premium AI subscriptions in Bangladesh",
+      "sameAs": [
+        "https://facebook.com/ai-team-premium",
+        "https://instagram.com/ai_team_premium"
+      ]
+    },
+    "faq-schema": {
+      "type": "FAQPage",
+      "mainEntity": [
+        {
+          "type": "Question",
+          "name": "কত দ্রুত একাউন্ট পাব?",
+          "acceptedAnswer": {
+            "type": "Answer",
+            "text": "বেশিরভাগ অর্ডার ৫-১৫ মিনিটের মধ্যে ডেলিভার হয়।"
+          }
+        }
+      ]
+    },
+    "breadcrumb": {
+      "type": "BreadcrumbList",
+      "itemListElement": [
+        { "position": 1, "name": "Home", "item": "https://aiteampremium.com" },
+        { "position": 2, "name": "Tools", "item": "https://aiteampremium.com/tools" },
+        { "position": 3, "name": "Pricing", "item": "https://aiteampremium.com/pricing" }
+      ]
+    }
+  },
+  "performance": {
+    "lighthouse-targets": {
+      "performance": 90,
+      "accessibility": 95,
+      "best-practices": 95,
+      "seo": 100,
+      "pwa": 90
+    },
+    "web-vitals": {
+      "LCP": "2.5s",
+      "FID": "100ms",
+      "CLS": "0.1"
+    },
+    "optimizations": [
+      "Image lazy-loading with next/image",
+      "Dynamic imports for heavy components",
+      "CSS splitting per route",
+      "Minified JSON payloads",
+      "Gzip compression on all responses",
+      "HTTPS only"
+    ]
+  },
+  "sitemap": {
+    "priority_urls": [
+      "/",
+      "/tools",
+      "/pricing",
+      "/about",
+      "/blog"
+    ],
+    "tools": [
+      "chatgpt",
+      "claude",
+      "gemini",
+      "grammarly",
+      "canva",
+      "midjourney"
+    ],
+    "policies": [
+      "/privacy",
+      "/terms",
+      "/refund"
+    ],
+    "blog-posts": []
+  },
+  "og-tags": {
+    "default": {
+      "og:type": "website",
+      "og:site_name": "AI Team Premium",
+      "og:image": "https://aiteampremium.com/og-image.png",
+      "og:locale": "en_US",
+      "og:locale:alternate": "bn_BD"
+    },
+    "per-page": [
+      {
+        "path": "/",
+        "og:title": "AI Team Premium — ChatGPT, Claude & AI Tools in Bangladesh",
+        "og:description": "Affordable premium AI subscriptions. Bangla support, local payment, 30-day guarantee."
+      },
+      {
+        "path": "/pricing",
+        "og:title": "AI Tools Pricing — Bangladesh",
+        "og:description": "Compare ChatGPT, Claude, Gemini prices and features."
+      }
+    ]
+  },
+  "meta-tags": {
+    "charset": "UTF-8",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "referrer": "strict-origin-when-cross-origin",
+    "theme-color": "#0F4C75"
+  },
+  "security": {
+    "CSP": {
+      "comment": "Set via Cloudflare Headers",
+      "default-src": "'self'",
+      "script-src": "'self' 'unsafe-inline' cdn.jsdelivr.net",
+      "style-src": "'self' 'unsafe-inline'",
+      "img-src": "'self' data: https:",
+      "connect-src": "'self' api.aiteampremium.com"
+    },
+    "headers": [
+      "X-Content-Type-Options: nosniff",
+      "X-Frame-Options: DENY",
+      "X-XSS-Protection: 1; mode=block",
+      "Referrer-Policy: strict-origin-when-cross-origin",
+      "Permissions-Policy: accelerometer=(), camera=(), microphone=(), geolocation=()"
+    ]
+  },
+  "analytics": {
+    "comment": "Privacy-first analytics via server-side tracking",
+    "events": [
+      "wa-click",
+      "inquiry-submitted",
+      "price-viewed",
+      "tool-page-visited"
+    ],
+    "no-cookies": true,
+    "no-pixels": true,
+    "gdpr-compliant": true
+  },
+  "metadata": {
+    "lastUpdated": "2026-07-31",
+    "nextAudit": "2026-08-31"
+  }
+}

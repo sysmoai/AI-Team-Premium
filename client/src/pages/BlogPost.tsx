@@ -42,6 +42,7 @@ export default function BlogPost() {
     "url": `${SITE_URL}/blog/${post.slug}`,
     "datePublished": post.publishedDate,
     "dateModified": post.publishedDate,
+    "inLanguage": post.lang === "bn" ? "bn-BD" : "en",
     "author": { "@type": "Organization", "name": "AI Team Premium" },
     "publisher": {
       "@type": "Organization",
@@ -75,7 +76,7 @@ export default function BlogPost() {
       </section>
 
       <section className="py-14">
-        <div className="mx-auto max-w-3xl px-6 lg:px-10">
+        <div className="mx-auto max-w-3xl px-6 lg:px-10" lang={post.lang === "bn" ? "bn" : undefined}>
           <p className="text-slate-900/75 dark:text-slate-300" style={{ fontSize: "1.02rem", lineHeight: 1.8, fontWeight: 500 }}>
             {post.excerpt}
           </p>

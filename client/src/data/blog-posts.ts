@@ -6,6 +6,8 @@ export interface BlogPost {
   publishedDate: string;
   readMinutes: number;
   heroEmoji: string;
+  /** BCP-47 language of the post body. Defaults to "en" when omitted. */
+  lang?: "en" | "bn";
   faqs: { q: string; a: string }[];
   sections: { heading: string; body: string[] }[];
 }
@@ -290,6 +292,290 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "How to book",
         body: [
           "Message on WhatsApp (+880 1533-262758), pick an hourly session or a package, pay via bKash/Nagad, and get a session time confirmed — live, Bangla-language, 9 AM–11 PM BST, 7 days a week.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ai-diye-income-bangladesh-bangla-guide",
+    title: "AI দিয়ে ঘরে বসে ইনকাম: বাংলাদেশে বাস্তব ৭টি উপায় (২০২৬)",
+    excerpt: "AI দিয়ে টাকা আয় করার নামে অনেক ভুয়া প্রতিশ্রুতি ঘুরছে। এখানে শুধু বাস্তব উপায়গুলো — যেগুলোতে বাংলাদেশ থেকে সত্যিই আয় করা সম্ভব, কত সময় লাগে, আর কোন AI tool লাগবে।",
+    category: "Bangla Guides",
+    publishedDate: "2026-07-14",
+    readMinutes: 9,
+    heroEmoji: "💰",
+    lang: "bn",
+    faqs: [
+      { q: "AI দিয়ে কি সত্যিই ঘরে বসে ইনকাম করা যায়?", a: "হ্যাঁ, তবে AI নিজে টাকা দেয় না — AI আপনার কাজের গতি বাড়ায়। যারা আগে থেকেই কোনো একটা স্কিল (লেখালেখি, ডিজাইন, ভিডিও এডিটিং, কোডিং) জানেন, তাদের আয় AI ব্যবহারে ২–৩ গুণ বাড়তে পারে। কোনো স্কিল ছাড়া শুধু AI দিয়ে আয় — এটা বাস্তব নয়।" },
+      { q: "শুরু করতে কত টাকা লাগবে?", a: "সর্বনিম্ন ৳৪৯৯/মাসে ChatGPT Plus Shared দিয়েই শুরু করা যায়। ডিজাইন কাজের জন্য Canva Pro যোগ করলে খরচ ১,১০০ টাকার মতো দাঁড়ায়। প্রথম মাসেই একটা কাজ পেলেই এই খরচ উঠে আসে।" },
+      { q: "কত দিনে প্রথম আয় আসতে পারে?", a: "বাস্তব হিসাব: Fiverr/Upwork-এ প্রোফাইল তৈরি করে নিয়মিত bid করলে সাধারণত ৩–৮ সপ্তাহে প্রথম অর্ডার আসে। যারা বলে '৭ দিনে ইনকাম' — সেটা বিশ্বাসযোগ্য নয়।" },
+    ],
+    sections: [
+      {
+        heading: "প্রথমে সত্যি কথাটা বলি",
+        body: [
+          "ইউটিউব আর ফেসবুকে 'AI দিয়ে দিনে ৫০০০ টাকা' জাতীয় অনেক ভিডিও আছে। বেশিরভাগই বাস্তব নয়। AI কোনো টাকা ছাপানোর মেশিন না — এটা একটা টুল, যেটা আপনার কাজের গতি বাড়ায়।",
+          "যেটা বাস্তব: আপনি যদি ইতিমধ্যে কোনো একটা কাজ পারেন — লেখালেখি, ডিজাইন, ভিডিও এডিটিং, ওয়েব ডেভেলপমেন্ট, ট্রান্সলেশন — তাহলে AI দিয়ে সেই একই সময়ে ২–৩ গুণ বেশি কাজ ডেলিভার করতে পারবেন। বেশি কাজ = বেশি আয়। এটাই আসল হিসাব।",
+        ],
+      },
+      {
+        heading: "১. কনটেন্ট রাইটিং ও ব্লগ আর্টিকেল",
+        body: [
+          "কী লাগবে: ChatGPT Plus (৳৪৯৯/মাস) + Grammarly Premium।",
+          "কীভাবে: ক্লায়েন্টের টপিক নিয়ে ChatGPT দিয়ে আউটলাইন ও ড্রাফট বানান, তারপর নিজে এডিট করে মানুষের মতো করে লিখুন, শেষে Grammarly দিয়ে পলিশ করুন। আগে যেখানে একটা ২০০০ শব্দের আর্টিকেলে ৫–৬ ঘণ্টা লাগত, এখন ১.৫–২ ঘণ্টায় হয়ে যায়।",
+          "সতর্কতা: হুবহু AI আউটপুট জমা দেবেন না। ক্লায়েন্ট AI ডিটেক্টর ব্যবহার করে, আর ধরা পড়লে রিভিউ নষ্ট হয়। AI দিয়ে ড্রাফট, নিজে দিয়ে ফাইনাল — এই নিয়মটা মানুন।",
+        ],
+      },
+      {
+        heading: "২. সোশ্যাল মিডিয়া কনটেন্ট ও ডিজাইন",
+        body: [
+          "কী লাগবে: Canva Pro + ChatGPT।",
+          "কীভাবে: লোকাল ব্যবসা (রেস্টুরেন্ট, পার্লার, কোচিং সেন্টার, অনলাইন শপ) মাসিক ভিত্তিতে সোশ্যাল মিডিয়া পোস্ট বানানোর লোক খোঁজে। ChatGPT দিয়ে ক্যাপশন ও কনটেন্ট ক্যালেন্ডার বানান, Canva Pro দিয়ে ডিজাইন। একটা ক্লায়েন্টের মাসিক ১৫–২০টা পোস্ট বানাতে সপ্তাহে ৪–৫ ঘণ্টার বেশি লাগে না।",
+          "বাংলাদেশে রেট: ছোট লোকাল ক্লায়েন্টে মাসে ৩,০০০–৮,০০০ টাকা সাধারণ। ৩–৪টা ক্লায়েন্ট হলেই ভালো একটা সাইড ইনকাম দাঁড়িয়ে যায়।",
+        ],
+      },
+      {
+        heading: "৩. Fiverr ও Upwork-এ ফ্রিল্যান্সিং",
+        body: [
+          "বাংলাদেশ বিশ্বের অন্যতম বড় ফ্রিল্যান্সার মার্কেট। কিন্তু কম্পিটিশনও প্রচুর — আর এখানেই AI আপনাকে এগিয়ে দিতে পারে।",
+          "সবচেয়ে বড় সুবিধা প্রপোজাল লেখায়। বেশিরভাগ ফ্রিল্যান্সার একই টেমপ্লেট কপি-পেস্ট করে। ChatGPT বা Claude দিয়ে প্রতিটা জব পোস্ট পড়ে সেটার জন্য আলাদা করে প্রপোজাল লিখলে রেসপন্স রেট স্পষ্টভাবে বাড়ে।",
+          "ইংরেজি নিয়ে দুশ্চিন্তা থাকলে: ক্লায়েন্টকে মেসেজ পাঠানোর আগে ChatGPT দিয়ে ঠিক করে নিন। অনেক দক্ষ বাংলাদেশি ফ্রিল্যান্সার শুধু ইংরেজি জড়তার কারণে কাজ হারান — এই সমস্যাটা এখন পুরোপুরি সমাধানযোগ্য।",
+        ],
+      },
+      {
+        heading: "৪. ভিডিও কনটেন্ট ও ভয়েসওভার",
+        body: [
+          "কী লাগবে: ElevenLabs (বাংলা ভয়েস সাপোর্ট করে) + ChatGPT স্ক্রিপ্টের জন্য।",
+          "ইউটিউব ফ্যাক্ট ভিডিও, ব্যাখ্যামূলক ভিডিও, বিজ্ঞাপনের ভয়েসওভার — আগে স্টুডিও বা ভয়েস আর্টিস্ট লাগত, এখন ঘরে বসেই সম্ভব। বাংলা ভয়েস কোয়ালিটি গত এক বছরে অনেক ভালো হয়েছে।",
+        ],
+      },
+      {
+        heading: "৫. AI দিয়ে ওয়েব ডেভেলপমেন্ট",
+        body: [
+          "কী লাগবে: GitHub Copilot বা ChatGPT Plus।",
+          "যারা মোটামুটি কোডিং জানেন, তাদের ডেলিভারি স্পিড AI দিয়ে সবচেয়ে বেশি বাড়ে। ছোট বিজনেস ওয়েবসাইট, ল্যান্ডিং পেজ, WordPress কাস্টমাইজেশন — যেসব কাজে আগে এক সপ্তাহ লাগত, এখন ২–৩ দিনে হয়।",
+        ],
+      },
+      {
+        heading: "৬. ট্রান্সলেশন ও লোকালাইজেশন",
+        body: [
+          "বাংলা↔ইংরেজি ট্রান্সলেশনের চাহিদা স্থিরভাবে আছে — বিশেষ করে অ্যাপ লোকালাইজেশন, সাবটাইটেল, ডকুমেন্ট ট্রান্সলেশনে।",
+          "AI প্রথম ড্রাফট দিতে পারে, কিন্তু বাংলা ভাষার সূক্ষ্মতা ও কালচারাল কনটেক্সট ঠিক করার জন্য নেটিভ স্পিকার লাগবেই — সেই জায়গাটাই আপনার মূল্য। AI আপনাকে রিপ্লেস করছে না, বরং ৩ গুণ দ্রুত কাজ করতে দিচ্ছে।",
+        ],
+      },
+      {
+        heading: "৭. লোকাল ব্যবসাকে AI সেটআপ করে দেওয়া",
+        body: [
+          "এটা সবচেয়ে কম প্রতিযোগিতাপূর্ণ ও সবচেয়ে বেশি লাভজনক অপশন — কিন্তু সবচেয়ে কম মানুষ করে।",
+          "বাংলাদেশে হাজার হাজার ছোট ব্যবসা আছে যারা AI-এর নাম শুনেছে কিন্তু ব্যবহার করতে জানে না। আপনি তাদের কাস্টমার সাপোর্ট রেসপন্স, প্রোডাক্ট ডেসক্রিপশন, বিজ্ঞাপনের কপি — এসবের জন্য AI ওয়ার্কফ্লো সেটআপ করে দিতে পারেন এবং একবারে ভালো ফি নিতে পারেন।",
+          "এখানে টেকনিক্যাল দক্ষতার চেয়ে বেশি দরকার ব্যবসাটা বোঝা এবং সহজ বাংলায় বুঝিয়ে বলতে পারা।",
+        ],
+      },
+      {
+        heading: "বাস্তবসম্মত শুরু করার পরিকল্পনা",
+        body: [
+          "প্রথম মাস: ৳৪৯৯-এ ChatGPT Plus নিন। প্রতিদিন ১ ঘণ্টা করে prompt লেখা প্র্যাকটিস করুন নিজের স্কিলের সাথে মিলিয়ে। কোনো আয়ের আশা করবেন না — এটা শেখার মাস।",
+          "দ্বিতীয় মাস: Fiverr/Upwork প্রোফাইল বানান, অথবা লোকাল ২–৩টা ব্যবসার সাথে যোগাযোগ করুন। প্রথম কাজটা কম রেটেও নিন — রিভিউ দরকার।",
+          "তৃতীয় মাস থেকে: রিভিউ থাকলে রেট বাড়ান। এই সময় থেকেই আয় স্থিতিশীল হতে শুরু করে।",
+          "যদি একা শিখতে সমস্যা হয়, আমাদের লাইভ বাংলা AI কোচিং সেশন আছে (৳৭৯৯/ঘণ্টা থেকে) — যেখানে আপনার নির্দিষ্ট কাজের জন্য কাস্টম prompt pack ও ওয়ার্কফ্লো তৈরি করে দেওয়া হয়।",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "chatgpt-kivabe-babohar-korben-bangla",
+    title: "ChatGPT কিভাবে ব্যবহার করবেন: শুরু থেকে শেষ পর্যন্ত বাংলা গাইড",
+    excerpt: "ChatGPT অ্যাকাউন্ট খোলা থেকে ভালো prompt লেখা পর্যন্ত — বাংলাদেশি ব্যবহারকারীদের জন্য সম্পূর্ণ বাংলা গাইড। কোন ভুলগুলো নতুনরা করে আর কীভাবে এড়াবেন।",
+    category: "Bangla Guides",
+    publishedDate: "2026-07-18",
+    readMinutes: 8,
+    heroEmoji: "📘",
+    lang: "bn",
+    faqs: [
+      { q: "ChatGPT কি বাংলা বোঝে?", a: "হ্যাঁ, ChatGPT বাংলায় প্রশ্ন বুঝতে ও বাংলায় উত্তর দিতে পারে। তবে জটিল বা টেকনিক্যাল বিষয়ে ইংরেজিতে প্রশ্ন করলে উত্তরের মান সাধারণত ভালো হয় — তারপর 'এটা বাংলায় অনুবাদ করো' বললেই হয়।" },
+      { q: "ফ্রি ভার্সন আর Plus-এর মধ্যে পার্থক্য কী?", a: "ফ্রি ভার্সনে পুরোনো ও সীমিত মডেল পাবেন, ব্যস্ত সময়ে ধীর হয়ে যায়, আর ছবি জেনারেশন/ফাইল আপলোড/ওয়েব ব্রাউজিং-এর মতো ফিচার সীমিত। Plus-এ সর্বশেষ মডেল, দ্রুত রেসপন্স এবং সব ফিচার পাবেন।" },
+      { q: "প্রম্পট (prompt) মানে কী?", a: "Prompt মানে আপনি ChatGPT-কে যে নির্দেশনা বা প্রশ্নটা লিখছেন সেটাই। ভালো prompt লিখতে পারলে উত্তরের মান নাটকীয়ভাবে ভালো হয় — এটাই ChatGPT ব্যবহারের সবচেয়ে গুরুত্বপূর্ণ দক্ষতা।" },
+    ],
+    sections: [
+      {
+        heading: "ChatGPT আসলে কী",
+        body: [
+          "ChatGPT হলো OpenAI-এর তৈরি একটি AI চ্যাটবট। আপনি সাধারণ ভাষায় প্রশ্ন করলে এটি উত্তর দেয়, লেখা লিখে দেয়, কোড লিখে দেয়, ছবি বানায়, ডকুমেন্ট পড়ে সারসংক্ষেপ করে।",
+          "গুরুত্বপূর্ণ কথা: ChatGPT সবসময় সঠিক তথ্য দেয় না। এটা মাঝে মাঝে আত্মবিশ্বাসের সাথে ভুল তথ্যও দেয় (একে বলা হয় hallucination)। তাই গুরুত্বপূর্ণ তথ্য — বিশেষ করে সংখ্যা, তারিখ, আইনি বা চিকিৎসা সংক্রান্ত বিষয় — সবসময় যাচাই করে নিন।",
+        ],
+      },
+      {
+        heading: "ভালো prompt লেখার ৪টি নিয়ম",
+        body: [
+          "১. ভূমিকা দিন। শুধু 'একটা ইমেইল লিখো' না বলে বলুন 'তুমি একজন অভিজ্ঞ কাস্টমার সাপোর্ট ম্যানেজার। একজন অসন্তুষ্ট গ্রাহককে ক্ষমা চেয়ে ইমেইল লেখো।' — ভূমিকা দিলে উত্তরের মান স্পষ্ট ভালো হয়।",
+          "২. প্রেক্ষাপট দিন। কার জন্য, কী উদ্দেশ্যে, কত বড় — এগুলো বলে দিন। AI আপনার মাথার ভেতর দেখতে পায় না।",
+          "৩. ফরম্যাট বলে দিন। 'বুলেট পয়েন্টে দাও', '৩০০ শব্দের মধ্যে', 'টেবিল আকারে' — নির্দিষ্ট করে বললে ঠিক সেভাবেই পাবেন।",
+          "৪. উদাহরণ দিন। আপনার পছন্দের স্টাইলের একটা নমুনা দিলে AI সেটা অনুসরণ করে। এটা সবচেয়ে শক্তিশালী কৌশল, অথচ সবচেয়ে কম ব্যবহৃত।",
+        ],
+      },
+      {
+        heading: "নতুনরা যে ৫টি ভুল করে",
+        body: [
+          "খুব ছোট prompt লেখা — 'আমাকে একটা সিভি লিখে দাও' লিখলে সাধারণ মানের আউটপুট পাবেন। আপনার অভিজ্ঞতা, টার্গেট চাকরি, দক্ষতা — সব লিখে দিন।",
+          "একবারেই পারফেক্ট আশা করা — ChatGPT-র সাথে কথোপকথন চালিয়ে যান। 'এই অংশটা আরও সংক্ষিপ্ত করো', 'আরেকটু ফরমাল করো' — এভাবে ঠিক করে নিন।",
+          "হুবহু কপি-পেস্ট করা — অ্যাসাইনমেন্টে বা ক্লায়েন্টের কাজে সরাসরি AI আউটপুট জমা দেওয়া ঝুঁকিপূর্ণ। নিজের ভাষায় লিখে নিন।",
+          "তথ্য যাচাই না করা — বিশেষ করে সাল, পরিসংখ্যান বা রেফারেন্স ChatGPT ভুল দিতে পারে।",
+          "গোপন তথ্য দেওয়া — পাসওয়ার্ড, NID নম্বর, ব্যাংক তথ্য বা ক্লায়েন্টের গোপনীয় ডেটা কখনো AI চ্যাটে লিখবেন না।",
+        ],
+      },
+      {
+        heading: "বাংলাদেশে ChatGPT Plus কিভাবে নেবেন",
+        body: [
+          "সমস্যা হলো OpenAI-এর সরাসরি পেমেন্টে ইন্টারন্যাশনাল কার্ড লাগে, যা বেশিরভাগ বাংলাদেশির নেই।",
+          "সমাধান: লোকাল প্রোভাইডারের মাধ্যমে bKash/Nagad দিয়ে পেমেন্ট করে অ্যাক্সেস নেওয়া। AI Team Premium-এ ChatGPT Plus Shared ৳৪৯৯/মাস থেকে শুরু, ডেলিভারি ৫–১৫ মিনিটে, সাথে ৩০ দিনের রিপ্লেসমেন্ট ওয়ারেন্টি।",
+          "শেয়ার্ড সিটের নিয়ম: একসাথে একটা ডিভাইসে ব্যবহার করতে হবে, পাসওয়ার্ড পরিবর্তন করা যাবে না। এই নিয়মগুলো মানলে কোনো সমস্যা হয় না।",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "canva-pro-price-bangladesh-worth-it",
+    title: "Canva Pro Price in Bangladesh (2026): Is It Worth Paying For?",
+    excerpt: "Canva's free tier is genuinely good — so when does Pro actually pay for itself? An honest breakdown for Bangladeshi students, freelancers and small business owners.",
+    category: "Buying Guides",
+    publishedDate: "2026-07-22",
+    readMinutes: 6,
+    heroEmoji: "🎨",
+    faqs: [
+      { q: "Is Canva free version enough for most people?", a: "For occasional personal use — a CV, a birthday card, a few social posts — yes, the free tier is genuinely capable. Pro becomes worth it when design is part of how you earn, or when you're producing content weekly rather than occasionally." },
+      { q: "What's the single biggest Pro feature?", a: "For most users it's Brand Kit plus one-click background removal. Brand Kit keeps every design consistent with saved fonts/colors, and background removal alone replaces a task that used to require Photoshop skills." },
+      { q: "Can I use Canva Pro designs commercially?", a: "Yes — Pro includes a commercial license for its stock content, which matters if you're delivering designs to paying clients. This is a genuine legal difference from the free tier, not just a convenience feature." },
+    ],
+    sections: [
+      {
+        heading: "The honest answer first",
+        body: [
+          "Canva's free tier is genuinely good — better than most paid tools were five years ago. If you make a design once a month, stay on free. This guide is for people deciding whether Pro earns its cost, and the honest answer depends entirely on how often you design and whether you get paid for it.",
+        ],
+      },
+      {
+        heading: "What Pro actually adds that matters",
+        body: [
+          "Background remover — one click, no Photoshop. For anyone doing product photos for an online shop or F-commerce page, this alone justifies the subscription.",
+          "Brand Kit — save your fonts, colors and logo once, apply everywhere. If you handle multiple clients, this saves real hours per month and keeps output consistent.",
+          "Magic Studio (AI tools) — AI image generation, Magic Write, Magic Resize. Magic Resize is the underrated one: design once, instantly resize for Facebook, Instagram, YouTube thumbnail, and print.",
+          "Full stock library — the free tier's watermark-free selection is limited. Pro removes that constraint plus adds the commercial license.",
+        ],
+      },
+      {
+        heading: "Who it's genuinely worth it for",
+        body: [
+          "Freelance designers — obviously yes. It pays for itself on a single client order.",
+          "F-commerce / online shop owners — yes. Product images, offer posts, and story graphics are constant work, and background removal plus Magic Resize cut that time down dramatically.",
+          "Students — usually no, unless you're running a club page or doing design work on the side. Free tier handles presentations and assignments fine.",
+          "Small business owners — yes if you post weekly, no if you post occasionally. The break-even is roughly the point where you'd otherwise pay someone to make the graphics.",
+        ],
+      },
+      {
+        heading: "Paying for it from Bangladesh",
+        body: [
+          "Canva bills in USD and requires an international card — the same barrier that blocks most Bangladeshi users from paying AI subscriptions directly.",
+          "AI Team Premium provides Canva Pro access payable in BDT via bKash or Nagad. Check the current price on our pricing page, since tier pricing changes periodically. Delivery is typically same-day, with a 30-day replacement warranty.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ai-detector-plagiarism-assignment-bangladesh",
+    title: "AI Detectors and University Assignments in Bangladesh: What Actually Gets You Caught",
+    excerpt: "Universities in Bangladesh are increasingly running AI detection on submissions. Here's how these tools actually work, why they produce false positives, and how to use AI as a study aid without risking your grade.",
+    category: "For Students",
+    publishedDate: "2026-07-26",
+    readMinutes: 7,
+    heroEmoji: "🔍",
+    faqs: [
+      { q: "Can AI detectors reliably detect ChatGPT text?", a: "Not reliably. Independent testing consistently shows meaningful false-positive rates — genuine human writing flagged as AI — particularly for non-native English writers whose sentence patterns are more formulaic. They are a signal, not proof, and increasingly universities treat them that way." },
+      { q: "Is using ChatGPT for assignments cheating?", a: "It depends entirely on your institution's policy, which you should read directly rather than assume. Broadly: using AI to understand concepts, outline structure, or check your own writing is normally acceptable. Submitting AI-generated text as your own work is normally not." },
+      { q: "How do I protect myself from a false accusation?", a: "Keep your drafts. Version history in Google Docs or Word, dated notes, and outline files are the strongest evidence that the work developed over time and is genuinely yours." },
+    ],
+    sections: [
+      {
+        heading: "How AI detectors actually work",
+        body: [
+          "AI detectors do not 'know' whether text came from ChatGPT. They measure statistical patterns — mainly perplexity (how predictable each word is) and burstiness (how much sentence length and complexity varies).",
+          "AI-generated text tends to be smooth and evenly predictable. Human writing tends to be lumpier — a long complex sentence, then a short one. Detectors flag text that looks too statistically smooth.",
+          "This is why they misfire on non-native English writers. If you learned English formally and write in careful, consistent, textbook-correct sentences, your genuine writing can look statistically similar to AI output. This is a real and documented problem for students across South Asia, not a hypothetical one.",
+        ],
+      },
+      {
+        heading: "What actually raises suspicion (beyond detectors)",
+        body: [
+          "A sudden jump in writing quality from your previous submissions — teachers notice this far more reliably than any software.",
+          "Confidently stated facts, citations or statistics that turn out not to exist. AI invents plausible-sounding references, and a teacher checking one fabricated citation is the fastest way to a serious academic integrity problem.",
+          "Generic content that doesn't reference your specific course material, lectures, or local context.",
+          "Being unable to explain your own submission when asked. This is the ultimate test, and no tool protects you from it.",
+        ],
+      },
+      {
+        heading: "How to use AI without risking your grade",
+        body: [
+          "Use it to understand, not to produce. 'Explain this concept in simple Bangla' is a genuinely excellent use. 'Write my assignment' is not.",
+          "Use it to critique your own work — paste your draft and ask what's weak, what's unclear, what argument is missing. This improves both the submission and your actual skills.",
+          "Use it for structure. Ask for an outline, then write every paragraph yourself.",
+          "Always verify any fact, statistic or citation independently before it goes in your submission.",
+          "Keep your drafts and version history. This is your protection if a detector produces a false positive on genuinely original work.",
+        ],
+      },
+      {
+        heading: "The longer-term point",
+        body: [
+          "Students who use AI to skip the thinking end up unable to do the work when it matters — in a viva, an interview, or on the job. Students who use it as a tutor that's available at 2 AM tend to learn faster than they would alone.",
+          "The tool is the same. The outcome depends entirely on which one you're doing.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "shared-vs-personal-ai-subscription-which-to-buy",
+    title: "Shared vs Personal AI Subscriptions: Which Should You Actually Buy?",
+    excerpt: "Shared seats cost a fraction of personal accounts — but they come with real rules and real tradeoffs. A straight comparison so you buy the right one the first time.",
+    category: "Buying Guides",
+    publishedDate: "2026-07-29",
+    readMinutes: 6,
+    heroEmoji: "🔑",
+    faqs: [
+      { q: "Can other users see my conversations on a shared seat?", a: "No. Each user's chat history is tied to their own session and is not visible to other users on the account. What is shared is the subscription itself and its usage limits, not your conversation content." },
+      { q: "What actually voids a shared seat warranty?", a: "Changing the account password or recovery email, using multiple devices at the same time, and any usage that violates the AI platform's own terms of service. Follow those three rules and shared seats are stable." },
+      { q: "Can I upgrade from shared to personal later?", a: "Yes. Message on WhatsApp and the price difference is calculated for the remaining period — you don't have to wait for your current cycle to end." },
+    ],
+    sections: [
+      {
+        heading: "The actual difference",
+        body: [
+          "A shared seat means you get a login to a genuine subscription that a small number of users share, under managed rules. It costs a fraction of the personal price.",
+          "A personal seat means the account is yours — your password, your recovery email, your device freedom, no sharing. It costs substantially more.",
+          "Both are genuine subscriptions with full feature access. The difference is ownership and freedom, not capability.",
+        ],
+      },
+      {
+        heading: "Choose shared if...",
+        body: [
+          "You're a student or just starting out and price is the deciding factor.",
+          "You use the tool on one device — typically your laptop or phone, not both simultaneously.",
+          "You're testing whether a tool actually fits your workflow before committing to a higher price.",
+          "You want several tools at once. Three shared seats often cost less than one personal seat, which is exactly why bundles like the AI Tools Vault exist.",
+        ],
+      },
+      {
+        heading: "Choose personal if...",
+        body: [
+          "You work across multiple devices during the same session and can't work around a one-device rule.",
+          "You're using it for client or business work where any interruption is unacceptable.",
+          "You need to control the account's password and recovery email — for example, if it's tied to business processes.",
+          "You want to install integrations or connect the account to other services, which shared accounts generally can't support.",
+        ],
+      },
+      {
+        heading: "The honest recommendation",
+        body: [
+          "Most individual users in Bangladesh should start shared. It's the lowest-risk way to find out whether a tool genuinely earns a place in your workflow, and the majority never need to upgrade.",
+          "Upgrade to personal when a specific limitation actually blocks your work — not preemptively. If you're doing paid client work where downtime costs you money, that's the clear signal to move up.",
+          "You can always compare current pricing for both tiers on our pricing page, or message on WhatsApp for a recommendation based on your specific use case — that consultation is free.",
         ],
       },
     ],

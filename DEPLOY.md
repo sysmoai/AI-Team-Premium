@@ -17,10 +17,13 @@ path — so per-route metadata and 404s are **invisible** there. After touching
 routes or metadata, check `npm run preview` instead: it runs the real production
 path, so `/nope-xyz` returns a genuine 404 and each page shows its own title.
 
-`npm run ship` is the gate. It exits non-zero if anything is wrong, and it catches
-the specific failures that have broken this site before. **GitHub Actions cannot
-gate for you right now** — the account is billing-locked, so every workflow fails
-before it starts. `npm run ship` is the real safety net until that's resolved.
+`npm run ship` is the gate, and **it runs automatically on every push** via
+`.githooks/pre-push` — a failing check blocks the push before it can deploy.
+Override only if you are certain: `git push --no-verify`.
+
+**GitHub Actions cannot gate for you right now** — the account is billing-locked,
+so every workflow fails before it starts. This hook is the only safety net until
+that is resolved, and there is no CI email if something slips through.
 
 Pushing to `main` is what deploys. Vercel's Git integration builds from GitHub
 directly; it does not use GitHub Actions. A deploy takes roughly 30-60 seconds.
@@ -43,6 +46,23 @@ fine in a browser — the kind of bug nobody notices for months.
 `lib/route-meta.js` is the single source of truth. Both the production handler
 (`api/index.js`) and the local dev server (`server/seo.ts`) import it, so they
 cannot disagree about what a page's metadata is.
+
+## Editing products
+
+The catalog lives in `client/src/data/products-all.json` (56 entries). `npm run
+verify` checks every product has the eleven fields the catalog renders, that
+`capabilities` is an array, and that `id` is unique — a product missing `price`
+still builds and renders as a blank cell, and an empty `whatsappMsg` ships an
+order button that sends you nothing.
+
+`slug` is intentionally shared across tiers of a brand (all five Claude products
+use `claude-pro-bangladesh`) and is deliberately not checked for uniqueness.
+
+## What the gate does NOT check
+
+It verifies structure, not judgement. It will not catch a wrong price, bad copy,
+a broken layout, a wrong WhatsApp number, or a React component that throws at
+runtime. Look at the page in `npm run preview` before you push.
 
 ## Always use www
 

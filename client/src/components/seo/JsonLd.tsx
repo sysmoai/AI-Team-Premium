@@ -1,4 +1,4 @@
-const SITE_URL = "https://aiteampremium.com";
+const SITE_URL = "https://www.aiteampremium.com";
 
 interface JsonLdProps {
   data: object;

@@ -1,6 +1,6 @@
 import { config } from "@/lib/config";
 
-const SITE_URL = "https://aiteampremium.com";
+const SITE_URL = "https://www.aiteampremium.com";
 
 export function OrganizationSchema() {
   const graph = [

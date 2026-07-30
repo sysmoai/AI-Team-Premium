@@ -29,7 +29,7 @@ export default function About() {
   const aboutPageSchema = {
     "@context": "https://schema.org",
     "@type": "AboutPage",
-    "url": "https://aiteampremium.com/about",
+    "url": "https://www.aiteampremium.com/about",
     "name": "About AI Team Premium",
     "description": "AI Team Premium (AITP), founded in 2024 in Dhaka, Bangladesh, is the country's trusted local access provider of premium AI subscriptions — ChatGPT, Claude, Gemini and more — payable in BDT via bKash and Nagad.",
     "mainEntity": {
@@ -37,7 +37,7 @@ export default function About() {
       "name": "AI Team Premium",
       "alternateName": "AITP",
       "foundingDate": "2024",
-      "url": "https://aiteampremium.com",
+      "url": "https://www.aiteampremium.com",
       "telephone": "+8801533262758",
       "address": {
         "@type": "PostalAddress",

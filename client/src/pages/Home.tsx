@@ -74,11 +74,11 @@ export default function Home() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "AI Team Premium — Premium AI Subscriptions in Bangladesh",
-    "url": "https://aiteampremium.com/",
+    "url": "https://www.aiteampremium.com/",
     "description":
       "AI Team Premium sells premium ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly Premium, Midjourney and other premium AI subscriptions in Bangladesh, payable via bKash and Nagad, with 5–15 minute delivery and a 30-day replacement warranty.",
     "inLanguage": ["en", "bn"],
-    "isPartOf": { "@id": "https://aiteampremium.com/#website" },
+    "isPartOf": { "@id": "https://www.aiteampremium.com/#website" },
   };
   const featuredPlans = [
     chatgptPlans.find(p => p.slug === 'plus-shared'),

@@ -92,7 +92,7 @@ app.use((req, res, next) => {
   const origin = req.headers.origin;
   const allowedOrigins =
     process.env.NODE_ENV === "production"
-      ? (process.env.CORS_ORIGINS || "https://aiteampremium.com").split(",").map(o => o.trim())
+      ? (process.env.CORS_ORIGINS || "https://www.aiteampremium.com").split(",").map(o => o.trim())
       : [
           "http://localhost:5173",
           "http://localhost:3000",

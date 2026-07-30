@@ -53,7 +53,7 @@ export default function AISubscriptions() {
     "itemListElement": SUBS.map((s, i) => ({
       "@type": "ListItem",
       "position": i + 1,
-      "url": `https://aiteampremium.com${s.link}`,
+      "url": `https://www.aiteampremium.com${s.link}`,
       "name": `${s.name} Bangladesh`,
     })),
   };

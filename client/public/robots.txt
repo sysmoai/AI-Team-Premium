@@ -41,4 +41,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://aiteampremium.com/sitemap.xml
+Sitemap: https://www.aiteampremium.com/sitemap.xml

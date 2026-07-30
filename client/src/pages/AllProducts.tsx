@@ -52,7 +52,7 @@ export default function AllProducts() {
       {/* Header */}
       <div className="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-900 dark:to-blue-950 text-white py-12 px-6">
         <div className="max-w-7xl mx-auto">
-          <h1 className="text-4xl font-bold mb-3">🛒 Complete AI Catalog — 107 Premium Tools</h1>
+          <h1 className="text-4xl font-bold mb-3">🛒 Complete AI Catalog — {products.length} Premium Tools</h1>
           <p className="text-blue-100 text-lg">Browse {products.length} premium AI subscription plans • {brands.length} brands • {categories.length} categories</p>
         </div>
       </div>
@@ -245,7 +245,7 @@ export default function AllProducts() {
         {/* Stats Footer */}
         <div className="mt-12 pt-8 border-t border-gray-300 dark:border-slate-700 grid grid-cols-4 gap-4 text-center">
           <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-lg border-2 border-blue-300 dark:border-blue-700">
-            <p className="text-4xl font-bold text-blue-600 dark:text-blue-400">🎯 107</p>
+            <p className="text-4xl font-bold text-blue-600 dark:text-blue-400">🎯 {products.length}</p>
             <p className="text-gray-700 dark:text-gray-300 font-semibold">Total Products</p>
           </div>
           <div className="p-6 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/30 dark:to-green-800/30 rounded-lg border-2 border-green-300 dark:border-green-700">

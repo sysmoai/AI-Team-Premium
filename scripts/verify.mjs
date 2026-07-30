@@ -364,6 +364,47 @@ else
     rmLiterals.join("\n")
   );
 
+// The homepage does NOT go through api/index.js: vercel.json rewrites /(.*) to
+// /api, but Vercel serves a matching static file first, and dist/public/index.html
+// matches "/". So index.html's baked-in tags *are* the homepage's metadata, and
+// they sat at "৳349+/mo" while ROUTE_META["/"] said ৳190 — nothing compared them.
+{
+  const idx = readFileSync(resolve(ROOT, "client/index.html"), "utf-8");
+  const home = ROUTE_META["/"];
+  const unesc = (s) =>
+    s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+  const grab = (re) => {
+    const m = idx.match(re);
+    return m ? unesc(m[1]) : null;
+  };
+  const actual = {
+    title: grab(/<title>([\s\S]*?)<\/title>/),
+    description: grab(/<meta name="description" content="([^"]*)"/),
+    "og:title": grab(/<meta property="og:title" content="([^"]*)"/),
+    "og:description": grab(/<meta property="og:description" content="([^"]*)"/),
+    "twitter:title": grab(/<meta name="twitter:title" content="([^"]*)"/),
+    "twitter:description": grab(/<meta name="twitter:description" content="([^"]*)"/),
+  };
+  const want = {
+    title: home.title,
+    description: home.description,
+    "og:title": home.title,
+    "og:description": home.description,
+    "twitter:title": home.title,
+    "twitter:description": home.description,
+  };
+  const drift = Object.entries(want)
+    .filter(([k, v]) => actual[k] !== v)
+    .map(([k, v]) => `${k}\n    index.html: ${actual[k]}\n    ROUTE_META:  ${v}`);
+  if (drift.length === 0)
+    ok('client/index.html matches ROUTE_META["/"] (homepage bypasses the injector)');
+  else
+    fail(
+      'client/index.html has drifted from ROUTE_META["/"] — run npm run gen:index-meta',
+      drift.join("\n")
+    );
+}
+
 // The Vault is not a catalog entry, so its price lives in lib/bundle-prices.js.
 // Its page must agree with that file or the metadata and the page contradict.
 {

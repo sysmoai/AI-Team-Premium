@@ -12,3 +12,6 @@ client/public/sitemap.xml               text eol=lf
 lib/product-routes.js                   text eol=lf
 lib/compare-routes.js                   text eol=lf
 lib/blog-routes.js                      text eol=lf
+lib/structured-data.js                  text eol=lf
+shared/nav-menu.js                      text eol=lf
+client/index.html                       text eol=lf

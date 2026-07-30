@@ -296,7 +296,7 @@ export const NAV_COLUMNS = [
           {
             "name": "Semrush",
             "href": "/tools/semrush-bangladesh",
-            "priceFrom": 23904
+            "priceFrom": 20176
           }
         ]
       },

@@ -1,4 +1,9 @@
-// api/[...path].js — Vercel catch-all serverless handler for the SPA.
+// api/index.js — Vercel serverless handler for the SPA.
+//
+// Every filesystem miss is rewritten here by vercel.json. A bracketed catch-all
+// filename does not register as one under the plain api/ convention — only the
+// bare /api route resolved — so the rewrite targets /api and the original path
+// is read off the incoming request instead.
 //
 // Must be ESM: package.json declares "type": "module", so a CommonJS
 // (require/module.exports) file here fails to load and every request returns
@@ -51,8 +56,9 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-// The rewrite sends /all-products here as /api/all-products. Strip the prefix
-// so lookups use the visitor-facing path. Direct hits are handled unchanged.
+// Rewritten requests arrive with the visitor-facing path still on req.url, but
+// a direct /api/... hit is also tolerated: strip that prefix so both forms
+// resolve to the same route key.
 function resolveRequestPath(req) {
   const raw = req.url || "/";
   let pathname;

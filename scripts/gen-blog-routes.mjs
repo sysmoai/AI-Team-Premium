@@ -37,7 +37,10 @@ for (const block of postBlocks) {
   const title = block.match(/title:\s*"((?:[^"\\]|\\.)*)"/)?.[1];
   const excerpt = block.match(/excerpt:\s*"((?:[^"\\]|\\.)*)"/)?.[1];
   const lang = block.match(/lang:\s*"(en|bn)"/)?.[1] ?? "en";
-  if (slug && title && excerpt) posts.push({ slug, title, excerpt, lang });
+  // Needed for BlogPosting.datePublished. Only a real date ships — a post
+  // without one gets no date rather than today's, which would be a claim.
+  const publishedDate = block.match(/publishedDate:\s*"(\d{4}-\d{2}-\d{2})"/)?.[1] ?? null;
+  if (slug && title && excerpt) posts.push({ slug, title, excerpt, lang, publishedDate });
 }
 
 if (posts.length === 0) {
@@ -64,6 +67,8 @@ const records = posts
       description,
       canonical: `${SITE}${path}`,
       lang: p.lang,
+      headline: title,
+      publishedDate: p.publishedDate,
     };
   })
   .sort((a, b) => a.path.localeCompare(b.path));
@@ -84,6 +89,21 @@ ${records
 };
 
 export const BLOG_PATHS = Object.keys(BLOG_ROUTE_META);
+
+// Article fields for BlogPosting schema. Separate from BLOG_ROUTE_META because
+// that is <head> metadata; this is what the post *is*. publishedDate is null
+// where the post does not state one — an absent date is emitted as no date
+// rather than as today's, which would be a claim we cannot support.
+export const BLOG_ARTICLES = {
+${records
+  .map(
+    (r) =>
+      `  "${r.path}": { headline: "${esc(r.headline)}", description: "${esc(
+        r.description
+      )}", datePublished: ${r.publishedDate ? `"${r.publishedDate}"` : "null"}, lang: "${r.lang}" },`
+  )
+  .join("\n")}
+};
 `;
 
 const OUT = resolve(ROOT, "lib/blog-routes.js");

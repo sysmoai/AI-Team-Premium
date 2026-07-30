@@ -684,6 +684,31 @@ section("Structured data");
   else fail("server JSON-LD is incomplete", bad.join("\n"));
 }
 
+// Every blog post must carry a BlogPosting. Without one a crawler sees a page
+// with a title and no signal that it is an article, who published it, or when.
+{
+  const { jsonLdFor } = await import(
+    pathToFileURL(resolve(ROOT, "lib/structured-data.js")).href
+  );
+  const { BLOG_PATHS } = await import(
+    pathToFileURL(resolve(ROOT, "lib/blog-routes.js")).href
+  );
+  const bad = [];
+  for (const p of BLOG_PATHS) {
+    const meta = lookupMeta(p);
+    if (!meta) { bad.push(`${p}: no route metadata`); continue; }
+    const node = (jsonLdFor(p, meta)["@graph"] ?? []).find((n) => n["@type"] === "BlogPosting");
+    if (!node) { bad.push(`${p}: no BlogPosting node`); continue; }
+    if (!node.headline) bad.push(`${p}: BlogPosting has no headline`);
+    // A date must be real or absent. Emitting a placeholder would assert
+    // something about when the post was written that we cannot support.
+    if ("datePublished" in node && !/^\d{4}-\d{2}-\d{2}$/.test(node.datePublished))
+      bad.push(`${p}: datePublished "${node.datePublished}" is not a date`);
+  }
+  if (bad.length === 0) ok(`all ${BLOG_PATHS.length} blog posts carry BlogPosting schema`);
+  else fail("blog structured data is incomplete", bad.join("\n"));
+}
+
 // lib/structured-data.js is generated, so its offer prices can go stale against
 // the catalog exactly the way the route metadata did. A wrong price in schema is
 // worse than one in prose: it is what a rich result quotes.

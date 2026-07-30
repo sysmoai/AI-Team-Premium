@@ -131,6 +131,34 @@ for (const [slug, tiers] of families) {
   PRODUCT_SCHEMA[path] = product;
 }
 
+// ---------------------------------------------------------------- articles
+// The 18 blog posts had no schema at all — a crawler saw a page with a title and
+// no signal that it was an article, who published it, or when. BlogPosting is on
+// the approved list; Article fields come from blog-posts.ts via gen:blog.
+//
+// dateModified is NOT emitted: the posts record only a published date, and
+// repeating it as a modified date would assert the post has never been revised.
+const { BLOG_ARTICLES } = await import(
+  pathToFileURL(resolve(ROOT, "lib/blog-routes.js")).href
+);
+
+const ARTICLE_SCHEMA = {};
+for (const [path, a] of Object.entries(BLOG_ARTICLES)) {
+  const node = {
+    "@type": "BlogPosting",
+    "@id": `${SITE}${path}#article`,
+    headline: a.headline,
+    description: a.description,
+    url: `${SITE}${path}`,
+    inLanguage: a.lang === "bn" ? "bn-BD" : "en-BD",
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE}${path}` },
+    author: { "@id": `${SITE}/#organization` },
+    publisher: { "@id": `${SITE}/#organization` },
+  };
+  if (a.datePublished) node.datePublished = a.datePublished;
+  ARTICLE_SCHEMA[path] = node;
+}
+
 const out = `// GENERATED FILE — do not edit by hand.
 // Source: client/src/data/products-catalog.json + lib/route-meta.js
 // Regenerate: npm run gen:schema
@@ -146,6 +174,8 @@ export const ORGANIZATION = ${JSON.stringify(ORGANIZATION, null, 2)};
 export const WEBSITE = ${JSON.stringify(WEBSITE, null, 2)};
 
 export const PRODUCT_SCHEMA = ${JSON.stringify(PRODUCT_SCHEMA, null, 2)};
+
+export const ARTICLE_SCHEMA = ${JSON.stringify(ARTICLE_SCHEMA, null, 2)};
 
 // Breadcrumbs from the path itself. "/tools/canva-pro-bangladesh" becomes
 // Home > Tools > <page title>, which is what the page's own trail shows.
@@ -179,6 +209,8 @@ export function jsonLdFor(path, meta) {
   if (crumb) graph.push(crumb);
   const product = PRODUCT_SCHEMA[path];
   if (product) graph.push(product);
+  const article = ARTICLE_SCHEMA[path];
+  if (article) graph.push(article);
   return { "@context": "https://schema.org", "@graph": graph };
 }
 `;

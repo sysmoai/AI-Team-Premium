@@ -1,25 +1,26 @@
-# AI Team Premium — Blockers & External Dependencies
+# AI Team Premium — Blockers
+
+## Active (2026-07-30)
+
+### P0: Price Drift — 19 product pages showing wrong prices
+- **Impact:** Direct financial loss on every sale from undercharging pages
+- **Worst cases:** Google AI Pro (৳599 vs catalog ৳3,390), Ideogram (৳599 vs catalog ৳2,990)
+- **Fix:** Align tool page prices to products-catalog.json, run `npm run audit:prices` to verify
+- **Status:** NOT STARTED
+
+### P1: AllProducts.tsx missing SEO metadata
+- **Impact:** No meta title/description on the full catalog page (57/58 audit pass)
+- **Fix:** Add usePageMeta hook to AllProducts.tsx
 
 ## Resolved
-- ✅ Cloud Run deployment — service is live (revision 00008-xwl)
-- ✅ Database migration — all tables created
-- ✅ TypeScript errors — all fixed (npm run check passes)
-- ✅ Build passes — verified (npm run build passes)
-- ✅ All 50 routes return HTTP 200
-- ✅ All static assets serve correctly
-- ✅ Health endpoint responding
-- ✅ "Official" language removed from product pages
-- ✅ Pricing inconsistencies fixed
-- ✅ WhatsApp CTAs use prefilled messages (48/48)
-- ✅ Audit script passes 55/55
-- ✅ SEO assets created (apple-touch-icon.png, manifest.json)
-- ✅ External image dependency removed (hero-bg.jpg local)
-- ✅ Code pushed to fork: https://github.com/sysmoaigit/AI-Team-Premium
+- ✅ Vercel deploy limit — reset after 24h (CLI deploy working again)
+- ✅ useReveal threshold bug — fixed (0 → 0.12, tall elements stuck invisible)
+- ✅ Duplicate font @import — removed from index.css
+- ✅ "80+ tools" contradiction — resolved to "37 tools / 80 plans"
+- ✅ Will-change on reveal elements — removed
+- ✅ Missing focus-visible ring — added
+- ✅ CTA hover/active states — added and gated for touch
 
-## Active Blocker — Category B: Missing Deployment Credential (Resolved ✅)
-- **Resolution:** Push to `sysmoai/AI-Team-Premium` succeeded. All 16 commits from 2026-05-26 are now live on origin/main.
-
-## Non-Blockers (Observations)
-- Mobile breakpoint verification requires browser/Playwright (external tool limitation)
-- Lighthouse performance audit requires browser (external tool limitation)
-- Bundle chunk size warning from Vite (~918KB / 242KB gzipped) — non-blocking
+## Non-Blockers
+- Vercel free tier deploy limit: 100/day — plan around it or use git push auto-deploy
+- All older "blocked" entries from previous reports are resolved

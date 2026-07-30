@@ -49,14 +49,30 @@ cannot disagree about what a page's metadata is.
 
 ## Editing products
 
-The catalog lives in `client/src/data/products-all.json` (56 entries). `npm run
-verify` checks every product has the eleven fields the catalog renders, that
-`capabilities` is an array, and that `id` is unique — a product missing `price`
-still builds and renders as a blank cell, and an empty `whatsappMsg` ships an
-order button that sends you nothing.
+The site ships `client/src/data/products-catalog.json` (80 products). **Do not
+edit it by hand** — it is generated. Edit `products-complete.json`, then:
 
-`slug` is intentionally shared across tiers of a brand (all five Claude products
-use `claude-pro-bangladesh`) and is deliberately not checked for uniqueness.
+```bash
+npm run build:catalog
+```
+
+`products-complete.json` is an internal export and is **not safe to publish as
+is**. It carries a different storefront's name (181 "AIPS" and 56 "AI Premium
+Shop" references), "3,000+ trusted customers" claims, and a `trust` block with
+review counts of 1,842-3,421 at 4.8-4.9 stars that no review system on this site
+produced. `scripts/build-catalog.mjs` strips all of that, drops
+`competitorCompare` (which names rival sellers) and `seo` (titles ending in the
+other brand), and renames `whyBuyFromAIPS` to `whyBuyBN`.
+
+`npm run verify` fails if any of it reaches the shipped catalog, and fails again
+if the catalog is out of sync with its source. Publishing invented review scores
+as real customer feedback is not something you can quietly walk back, so both
+checks are hard failures.
+
+It also checks every product has the eleven fields the page renders, that
+`capabilities` is an array, and that `id` is unique. `slug` is intentionally
+shared across tiers of a brand (all five Claude products use
+`claude-pro-bangladesh`) and is deliberately not checked.
 
 ## What the gate does NOT check
 

@@ -81,7 +81,7 @@ else
 // ---------------------------------------------------------------- content
 section("Product catalog");
 
-const productsPath = resolve(ROOT, "client/src/data/products-all.json");
+const productsPath = resolve(ROOT, "client/src/data/products-catalog.json");
 let products = null;
 try {
   products = JSON.parse(readFileSync(productsPath, "utf-8"));
@@ -131,6 +131,44 @@ if (products) {
       `${problems.length} product problem(s) — these render blank or crash the catalog`,
       problems.slice(0, 12).join("\n") + (problems.length > 12 ? `\n... and ${problems.length - 12} more` : "")
     );
+
+  // The shipped catalog is generated from an internal export that contains a
+  // different storefront's name, invented customer counts and invented review
+  // scores. Nothing may leak through, whatever the generator did.
+  const serialized = JSON.stringify(products);
+  const forbidden = [
+    [/AI\s*Premium\s*Shop/gi, "another storefront's name"],
+    [/\bAIPS\b/gi, "another storefront's abbreviation"],
+    [/aipremiumshop/gi, "another storefront's domain"],
+    [/\b\d[\d,]*\+?\s*(trusted\s+)?customers?\b/gi, "an unverified customer count"],
+    [/"reviewCount"/gi, "an invented review count"],
+    [/"rating"\s*:/gi, "an invented star rating"],
+  ];
+  const leaks = forbidden
+    .map(([re, what]) => { re.lastIndex = 0; return [what, (serialized.match(re) || []).length]; })
+    .filter(([, n]) => n > 0);
+
+  if (leaks.length === 0) ok("shipped catalog carries no foreign brand, customer count or review score");
+  else
+    fail(
+      "the shipped catalog contains content that must not be published",
+      leaks.map(([what, n]) => `${n} x ${what}`).join("\n") + "\n-> re-run: npm run build:catalog"
+    );
+}
+
+// The catalog is generated. If the source changed and nobody regenerated, the
+// site would quietly ship stale products.
+section("Catalog freshness");
+try {
+  const { execFileSync } = await import("node:child_process");
+  execFileSync(process.execPath, [resolve(ROOT, "scripts/build-catalog.mjs"), "--check"], {
+    encoding: "utf-8",
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  ok("products-catalog.json is in sync with its source");
+} catch (e) {
+  const detail = (e.stderr || e.message || "").toString().trim();
+  fail("products-catalog.json does not match its source", detail);
 }
 
 // ---------------------------------------------------------------- host hygiene

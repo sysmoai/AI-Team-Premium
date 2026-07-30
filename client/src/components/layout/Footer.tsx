@@ -139,7 +139,7 @@ export function Footer() {
               { label: "Leonardo AI", to: "/tools/leonardo" },
               { label: "Runway ML", to: "/tools/runway" },
               { label: "Kling AI", to: "/tools/kling" },
-              { label: "All 18+ AI Tools →", to: "/ai-subscriptions" },
+              { label: "All 80+ AI Tools →", to: "/all-products" },
             ]} />
           </div>
 

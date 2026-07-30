@@ -40,7 +40,7 @@ const SUBS = [
 
 export default function AISubscriptions() {
   usePageMeta({
-    title: "All AI Subscriptions in Bangladesh — ChatGPT, Claude & 18+ AI Tools",
+    title: "All AI Subscriptions in Bangladesh — ChatGPT, Claude & 80+ AI Tools",
     description: "Browse 18+ premium AI subscriptions in Bangladesh — ChatGPT Plus (৳499/mo), Claude Pro, Google AI Pro, SuperGrok, Runway ML, Kling AI, Leonardo AI, Grammarly, Canva & more. Pay via bKash/Nagad. 5–15 min delivery.",
     path: "/ai-subscriptions",
   });
@@ -82,7 +82,7 @@ export default function AISubscriptions() {
       </section>
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
-          <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>18+ AI Tools</p>
+          <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>80+ AI Tools</p>
           <h1 style={{ color: BRAND.navy, fontSize: "clamp(1.6rem, 4vw, 2.5rem)", fontWeight: 700, lineHeight: 1.15 }}>
             বাংলাদেশে Premium AI — ৳৩৪৯ থেকে শুরু
           </h1>

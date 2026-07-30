@@ -14,7 +14,8 @@
     "verify:live": "node scripts/verify-live.mjs",
     "ship": "npm run check && npm run build && npm run verify",
     "preview": "node scripts/preview.mjs",
-    "prepare": "git config core.hooksPath .githooks || exit 0"
+    "prepare": "git config core.hooksPath .githooks || exit 0",
+    "build:catalog": "node scripts/build-catalog.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

@@ -16,7 +16,10 @@
     "preview": "node scripts/preview.mjs",
     "prepare": "git config core.hooksPath .githooks || exit 0",
     "build:catalog": "node scripts/build-catalog.mjs",
-    "audit:prices": "node scripts/audit-prices.mjs"
+    "audit:prices": "node scripts/audit-prices.mjs",
+    "validate:catalog": "node scripts/validate-catalog.mjs",
+    "validate:policies": "node scripts/validate-policies.mjs",
+    "validate": "npm run validate:catalog && npm run validate:policies"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

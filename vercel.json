@@ -4,15 +4,8 @@
   "installCommand": "npm install --include=dev",
   "devCommand": "npm run dev",
   "public": "dist/public",
-  "functions": {
-    "api/index.js": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  },
   "rewrites": [
-    { "source": "/assets/(.*)", "destination": "/assets/$1" },
-    { "source": "/images/(.*)", "destination": "/images/$1" },
-    { "source": "/(.*)", "destination": "/api" }
+    { "source": "/api/:path*", "destination": "/api" },
+    { "source": "/(?!assets|images|favicon|apple-touch|manifest|robots|sitemap)(.*)", "destination": "/api" }
   ]
 }

@@ -36,13 +36,20 @@ const DROP_FIELDS = new Set([
 const RENAME = { whyBuyFromAIPS: "whyBuyBN" };
 
 // Any string matching these is scrubbed; any array entry matching is dropped.
+//
+// "premier" is scoped to the marketing phrase, not the bare word: several
+// products (e.g. Suno's own "Premier" tier) legitimately carry it in their
+// tier name and id. An earlier version matched \bpremier\b unscoped, which
+// silently mangled "suno-premier-personal" into "suno--personal" and dropped
+// the product from the shipped catalog — same failure class as the
+// "AI Premium Shop" leak this file exists to prevent, just self-inflicted.
 const BANNED = [
   /AI\s*Premium\s*Shop/gi,
   /\bAIPS\b/gi,
   /aipremiumshop[^\s"']*/gi,
   /\b\d[\d,]*\+?\s*(trusted\s+)?customers?\b/gi,
   /\b#1\b/gi,
-  /\bpremier\b/gi,
+  /\bpremier\s+(provider|distributor|reseller)\b/gi,
 ];
 
 const hits = new Map();

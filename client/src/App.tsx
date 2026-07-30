@@ -44,6 +44,9 @@ const FireflyPage = lazy(() => import("./pages/tools/Firefly"));
 const IdeogramPage = lazy(() => import("./pages/tools/Ideogram"));
 const FreepikPage = lazy(() => import("./pages/tools/Freepik"));
 const AdobeCCPage = lazy(() => import("./pages/tools/AdobeCC"));
+// Catalog-driven detail page. Declared last among /tools/* routes so the
+// hand-built pages above keep serving their own slugs.
+const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const AuditDashboard = lazy(() => import("./pages/admin/AuditDashboard"));
 const ComparePage = lazy(() => import("./pages/Compare"));
 const AllProducts = lazy(() => import("./pages/AllProducts"));
@@ -152,6 +155,9 @@ function Router() {
         <Route path="/tools/ideogram" component={IdeogramPage} />
         <Route path="/tools/freepik" component={FreepikPage} />
         <Route path="/tools/adobe-cc" component={AdobeCCPage} />
+        {/* Catalog fallback: serves every product family that has no bespoke
+            page above. wouter matches in order, so this never shadows them. */}
+        <Route path="/tools/:slug" component={ProductDetail} />
         <Route path="/admin/audit" component={AuditDashboard} />
         <Route path="/compare" component={ComparePage} />
         <Route path="/compare/:slug" component={ComparePage} />

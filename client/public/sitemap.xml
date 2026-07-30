@@ -1,383 +1,725 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- GENERATED FILE — do not edit by hand. Run: npm run gen:sitemap -->
+<!-- Source: lib/route-meta.js (120 indexable routes) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- ── HOME ── -->
   <url>
     <loc>https://www.aiteampremium.com/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- ── CHATGPT PLANS HUB ── -->
   <url>
-    <loc>https://www.aiteampremium.com/chatgpt-plans</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/canva-plans</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
-
-  <!-- ── CHATGPT INDIVIDUAL PLAN PAGES ── -->
   <url>
-    <loc>https://www.aiteampremium.com/chatgpt/plus-shared</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.aiteampremium.com/chatgpt-plans</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/claude-plans</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/gemini-plans</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/grammarly-plans</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/grok-plans</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/perplexity-plans</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/ai-subscriptions</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/ai-tools-vault</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/all-products</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/pricing</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/products</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/adobe-cc</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/adobe-firefly-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/b2b-implementation-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/business-package-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/canva</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/canva-pro-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/capcut-pro-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/chatgpt</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/chatgpt-business-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/chatgpt-go-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/chatgpt-plus-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/chatgpt-pro-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/claude</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/claude-pro-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/copilot</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/cursor-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/descript-pro-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/elevenlabs</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/elevenlabs-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/firefly</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/freelancer-bundle-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/freepik</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/freepik-premium-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/gamma-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/gemini</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/gemini-advanced-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/github-copilot-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/google-ai-pro</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/grammarly</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/grammarly-premium-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/grok</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/heygen-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/ideogram</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/ideogram-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/jasper-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/kling</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/kling-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/leonardo</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/leonardo-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/linkedin</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/manus</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/manus-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/microsoft-copilot-pro-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/microsoft365</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/midjourney</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/midjourney-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/murf-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/notion</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/notion-business-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/opus-clip-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/otter-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/perplexity</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/perplexity-pro-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/pika-labs-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/poe</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/quillbot-premium-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/replit-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/runway</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/runway-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/student-package-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/suno-ai-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/supergrok</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/supergrok-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/synthesia-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/udio-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/v0-dev-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/vault</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/windsurf-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/tools/writesonic-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/chatgpt/business-personal-like</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/chatgpt/go-shared</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/chatgpt/go-personal</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/chatgpt/plus-premium-shared</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/chatgpt/plus-personal-seat</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.aiteampremium.com/chatgpt/business-premium-shared</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.aiteampremium.com/chatgpt/business-shared</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/chatgpt/business-premium-shared</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://www.aiteampremium.com/chatgpt/go-personal</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/chatgpt/business-personal-like</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <loc>https://www.aiteampremium.com/chatgpt/go-shared</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/chatgpt/plus-personal-seat</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/chatgpt/plus-premium-shared</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/chatgpt/plus-shared</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://www.aiteampremium.com/chatgpt/pro-premium-shared</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- ── OTHER AI PLAN HUB PAGES ── -->
-  <url>
-    <loc>https://www.aiteampremium.com/claude-plans</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/gemini-plans</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/grammarly-plans</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/canva-plans</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/perplexity-plans</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/grok-plans</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- ── BUNDLE ── -->
-  <url>
-    <loc>https://www.aiteampremium.com/ai-tools-vault</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- ── AI TOOL DETAIL PAGES ── -->
-  <url>
-    <loc>https://www.aiteampremium.com/tools/chatgpt</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/ai-detector-plagiarism-assignment-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/claude</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/ai-diye-cv-cover-letter-chakri-bangla</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/gemini</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/ai-diye-english-shekha-bangla-guide</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/supergrok</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/ai-diye-income-bangladesh-bangla-guide</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/google-ai-pro</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/ai-tools-fiverr-upwork-freelancers-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/midjourney</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/best-ai-tools-bangladeshi-university-students</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/leonardo</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/bkash-diye-chatgpt-kena-bangla-guide</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/runway</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/canva-pro-price-bangladesh-worth-it</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/kling</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/chatgpt-kivabe-babohar-korben-bangla</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/grammarly</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/chatgpt-plus-price-bangladesh-bkash-guide</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/canva</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/chatgpt-vs-claude-vs-gemini-bangladesh-freelancers</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/perplexity</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/live-ai-training-bangladesh-what-you-get</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/grok</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/pay-chatgpt-without-international-credit-card-bangladesh</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.aiteampremium.com/tools/copilot</loc>
-    <lastmod>2026-07-23</lastmod>
+    <loc>https://www.aiteampremium.com/blog/shared-vs-personal-ai-subscription-which-to-buy</loc>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/tools/vault</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/tools/elevenlabs</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/tools/notion</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/tools/microsoft365</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/tools/linkedin</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- ── CATALOG & DISCOVERY ── -->
-  <url>
-    <loc>https://www.aiteampremium.com/ai-subscriptions</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/pricing</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- ── SUPPORT & SERVICES ── -->
-  <url>
-    <loc>https://www.aiteampremium.com/support</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.aiteampremium.com/services</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.aiteampremium.com/services/ai-ops-sprint</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/services/brand-design</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/services/web-development</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
-    <loc>https://www.aiteampremium.com/services/digital-marketing</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.aiteampremium.com/services/app-development</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
-
-  <!-- ── COMPANY ── -->
+  <url>
+    <loc>https://www.aiteampremium.com/services/brand-design</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/services/digital-marketing</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/services/web-development</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://www.aiteampremium.com/about</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/compare</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/contact</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.aiteampremium.com/start-a-project</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
-
-  <!-- ── LEGAL ── -->
   <url>
-    <loc>https://www.aiteampremium.com/refund-policy</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.45</priority>
+    <loc>https://www.aiteampremium.com/support</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.aiteampremium.com/privacy-policy</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.40</priority>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/refund-policy</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.aiteampremium.com/terms</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.40</priority>
+    <priority>0.3</priority>
   </url>
-
-  <!-- ── TOOL COMPARISON HUB ── -->
-  <url>
-    <loc>https://www.aiteampremium.com/compare</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- ── START A PROJECT ── -->
-  <url>
-    <loc>https://www.aiteampremium.com/start-a-project</loc>
-    <lastmod>2026-07-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
-  <!-- ── POPULAR TOOL COMPARISONS ── -->
-  <url><loc>https://www.aiteampremium.com/compare/claude-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/gemini-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/claude-vs-gemini</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/chatgpt-vs-perplexity</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/grok-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/midjourney-vs-leonardo</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/runway-vs-kling</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/copilot-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.65</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/notion-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/grammarly-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/claude-vs-perplexity</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/midjourney-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/canva-vs-midjourney</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.60</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/elevenlabs-vs-runway</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/microsoft365-vs-notion</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/vault-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.55</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/google-ai-pro-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.aiteampremium.com/compare/supergrok-vs-chatgpt</loc><lastmod>2026-07-23</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-
-  <!-- ── BLOG ── -->
-  <url><loc>https://www.aiteampremium.com/blog</loc><lastmod>2026-07-30</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/chatgpt-plus-price-bangladesh-bkash-guide</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/best-ai-tools-bangladeshi-university-students</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/chatgpt-vs-claude-vs-gemini-bangladesh-freelancers</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/pay-chatgpt-without-international-credit-card-bangladesh</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/ai-tools-fiverr-upwork-freelancers-bangladesh</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/live-ai-training-bangladesh-what-you-get</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/ai-diye-income-bangladesh-bangla-guide</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/chatgpt-kivabe-babohar-korben-bangla</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/canva-pro-price-bangladesh-worth-it</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/ai-detector-plagiarism-assignment-bangladesh</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/shared-vs-personal-ai-subscription-which-to-buy</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/bkash-diye-chatgpt-kena-bangla-guide</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/ai-diye-cv-cover-letter-chakri-bangla</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-  <url><loc>https://www.aiteampremium.com/blog/ai-diye-english-shekha-bangla-guide</loc><lastmod>2026-07-30</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>
-
 </urlset>

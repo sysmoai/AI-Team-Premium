@@ -1,0 +1,12 @@
+# Generated files are compared byte-for-byte against what their generator
+# produces (see `npm run verify` -> "Catalog freshness"). The generators write
+# LF, so if git hands the working copy back with CRLF on checkout the check
+# fails even though nothing actually changed — which is exactly what happened
+# on a Windows clone: `npm run ship` passed, then the identical run inside the
+# pre-push hook reported the catalog as stale.
+#
+# Pinning these to LF keeps the file on disk identical to the generator output.
+client/src/data/products-catalog.json   text eol=lf
+client/src/data/products-complete.json  text eol=lf
+client/public/sitemap.xml               text eol=lf
+lib/product-routes.js                   text eol=lf

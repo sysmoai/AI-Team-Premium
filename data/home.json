@@ -1,0 +1,154 @@
+{
+  "version": "1.0",
+  "sections": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "title": "Premium AI Tools for Bangladesh",
+      "subtitle": "Affordable access to ChatGPT, Claude, Gemini + 20+ more. Bangla support, local payment.",
+      "cta": {
+        "text": "Get Started on WhatsApp",
+        "href": "https://wa.me/8801533262758?text=Hi!%20I%20want%20help%20from%20AI%20Team%20Premium.",
+        "icon": "whatsapp"
+      },
+      "secondary_cta": {
+        "text": "Explore All Tools",
+        "href": "/tools"
+      },
+      "pricing_teaser": "Starting from ৳349/month",
+      "trust_badges": ["30-day refund", "Bangla support", "Fast delivery"]
+    },
+    {
+      "id": "features",
+      "type": "features",
+      "title": "Why Choose AI Team Premium?",
+      "features": [
+        {
+          "icon": "shield",
+          "title": "Secure & Fast",
+          "description": "Instant delivery via WhatsApp. Encrypted payments."
+        },
+        {
+          "icon": "globe",
+          "title": "Bangla Support",
+          "description": "Native Bangla speakers available 24/7"
+        },
+        {
+          "icon": "wallet",
+          "title": "Local Payment",
+          "description": "bKash, Nagad, Bank Transfer — no credit card needed"
+        },
+        {
+          "icon": "users",
+          "title": "Shared & Personal",
+          "description": "Affordable shared accounts or full personal control"
+        }
+      ]
+    },
+    {
+      "id": "popular-tools",
+      "type": "tool-cards",
+      "title": "Most Popular Tools",
+      "subtitle": "Start with the tools your peers use",
+      "tools": [
+        {
+          "slug": "chatgpt",
+          "name": "ChatGPT Plus",
+          "price": "৳499/mo",
+          "features": ["GPT-4.5 + o3-mini", "DALL-E 3", "Voice mode"]
+        },
+        {
+          "slug": "claude",
+          "name": "Claude Pro",
+          "price": "৳799/mo",
+          "features": ["200K context", "Advanced analysis", "Project support"]
+        },
+        {
+          "slug": "gemini",
+          "name": "Gemini Advanced",
+          "price": "৳699/mo",
+          "features": ["Gemini 2.0", "Image understanding", "Real-time data"]
+        }
+      ]
+    },
+    {
+      "id": "pricing",
+      "type": "pricing",
+      "title": "Simple, Transparent Pricing",
+      "subtitle": "No hidden fees. Same price for everyone.",
+      "comparison_link": "/pricing"
+    },
+    {
+      "id": "testimonials",
+      "type": "testimonials",
+      "title": "Trusted by Bangladesh Creators & Professionals",
+      "testimonials": [
+        {
+          "quote": "দারুণ সার্ভিস! ৫ মিনিটেই ChatGPT একাউন্ট পেয়ে গেছি।",
+          "author": "রহিম, ঢাকা",
+          "role": "Freelancer"
+        },
+        {
+          "quote": "Bangla support এর জন্যই এদের ব্যবহার করি। সব কিছু বোঝা যায়।",
+          "author": "ফাতিমা, চট্টগ্রাম",
+          "role": "Student"
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "faqs": [
+        {
+          "question": "কত দ্রুত একাউন্ট পাব?",
+          "answer": "বেশিরভাগ অর্ডার ৫-১৫ মিনিটের মধ্যে ডেলিভার হয়। বিকেল ৪টার পর অর্ডার পরের দিন সকালে ডেলিভার হতে পারে।"
+        },
+        {
+          "question": "শেয়ার্ড একাউন্ট মানে কী?",
+          "answer": "শেয়ার্ড একাউন্ট হলো একটি প্রিমিয়াম সাবস্ক্রিপশন যা ৮-১০ জন ব্যবহার করতে পারে। এটি ব্যক্তিগত একাউন্টের চেয়ে সস্তা।"
+        },
+        {
+          "question": "রিফান্ড পলিসি কী?",
+          "answer": "৩০ দিনের মধ্যে অব্যবহৃত সাবস্ক্রিপশন সম্পূর্ণ রিফান্ড দেওয়া হয়। কন্ডিশন দেখুন /refund পেজে।"
+        },
+        {
+          "question": "পেমেন্ট মেথড কী কী আছে?",
+          "answer": "bKash, Nagad, এবং Bank Transfer গ্রহণ করি। ক্রেডিট কার্ড লাগবে না।"
+        }
+      ]
+    },
+    {
+      "id": "cta-footer",
+      "type": "cta",
+      "title": "Ready to Get Started?",
+      "subtitle": "Join 1000+ Bangladeshi users already using AI tools",
+      "primary_cta": {
+        "text": "Chat on WhatsApp",
+        "href": "https://wa.me/8801533262758",
+        "icon": "whatsapp"
+      },
+      "secondary_cta": {
+        "text": "Learn More",
+        "href": "/about"
+      }
+    }
+  ],
+  "seo": {
+    "title": "AI Team Premium — ChatGPT, Claude & AI Tools in Bangladesh | ৳349+/mo",
+    "description": "Affordable ChatGPT Plus, Claude Pro, Gemini & 20+ AI tools in Bangladesh. Bangla support, local payment (bKash/Nagad), 30-day guarantee.",
+    "keywords": [
+      "ChatGPT Bangladesh",
+      "Claude Pro Bangladesh",
+      "Gemini Bangladesh",
+      "AI tools Bangladesh",
+      "premium subscriptions Bangladesh"
+    ],
+    "schema_type": "Organization",
+    "faq_schema": true
+  },
+  "metadata": {
+    "lastUpdated": "2026-07-31",
+    "version": "1.0"
+  }
+}

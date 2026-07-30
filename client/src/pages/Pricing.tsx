@@ -174,8 +174,8 @@ export default function Pricing() {
         <section key={section.title} className="py-16 border-b" style={{ borderColor: "rgba(37,99,235,0.06)" }}>
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <div className="mb-10">
-              <h2 style={{ color: BRAND.navy, fontSize: "1.4rem", fontWeight: 700 }}>{section.title}</h2>
-              <p className="mt-1" style={{ color: BRAND.navy, opacity: 0.45, fontSize: "0.85rem" }}>{section.subtitle}</p>
+              <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "1.4rem", fontWeight: 700 }}>{section.title}</h2>
+              <p className="mt-1 text-slate-900/45 dark:text-slate-300" style={{ fontSize: "0.85rem" }}>{section.subtitle}</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
               {section.items.map((item) => (

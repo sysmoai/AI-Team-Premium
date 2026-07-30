@@ -176,7 +176,7 @@ export default function Services() {
       {/* How it Works */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <h2 className="text-3xl font-bold mb-16 text-center" style={{ color: BRAND.navy }}>কিভাবে কাজ করে?</h2>
+          <h2 className="text-3xl font-bold mb-16 text-center text-slate-900 dark:text-white">কিভাবে কাজ করে?</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
             {[
               { step: "০১", title: "প্যাক নির্বাচন করুন", desc: "আপনার প্রয়োজন অনুযায়ী প্যাক সিলেক্ট করে হোয়াটসঅ্যাপে জানান।" },
@@ -188,8 +188,8 @@ export default function Services() {
                 <div className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center text-2xl font-bold transition-transform group-hover:scale-110" style={{ background: BRAND.sky, color: BRAND.blue }}>
                   {item.step}
                 </div>
-                <h3 className="text-xl font-bold mb-3" style={{ color: BRAND.navy }}>{item.title}</h3>
-                <p className="text-sm opacity-70" style={{ color: BRAND.navy }}>{item.desc}</p>
+                <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{item.title}</h3>
+                <p className="text-sm text-slate-900/70 dark:text-slate-300">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -199,7 +199,7 @@ export default function Services() {
       {/* Packages Grid */}
       <section className="py-24" style={{ background: "rgba(15, 23, 42, 0.02)" }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <h2 className="text-3xl font-bold mb-16 text-center" style={{ color: BRAND.navy }}>সাপোর্ট প্যাকেজসমূহ</h2>
+          <h2 className="text-3xl font-bold mb-16 text-center text-slate-900 dark:text-white">সাপোর্ট প্যাকেজসমূহ</h2>
           
           <div className="space-y-20">
             {categories.map((cat) => (
@@ -334,7 +334,7 @@ export default function Services() {
       {/* Who is this for */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <h2 className="text-3xl font-bold mb-16 text-center" style={{ color: BRAND.navy }}>কাদের জন্য এই সাপোর্ট?</h2>
+          <h2 className="text-3xl font-bold mb-16 text-center text-slate-900 dark:text-white">কাদের জন্য এই সাপোর্ট?</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: GraduationCap, title: "ছাত্রছাত্রী", desc: "এসাইনমেন্ট, রিসার্চ এবং ক্লিয়ার কনসেপ্টের জন্য AI ব্যবহার শিখুন।" },
@@ -344,8 +344,8 @@ export default function Services() {
             ].map((item, idx) => (
               <Card key={idx} className="p-6 border-2 rounded-2xl transition-all hover:border-blue-200">
                 <item.icon size={32} className="mb-4" style={{ color: BRAND.blue }} />
-                <h3 className="text-lg font-bold mb-2" style={{ color: BRAND.navy }}>{item.title}</h3>
-                <p className="text-sm opacity-70" style={{ color: BRAND.navy }}>{item.desc}</p>
+                <h3 className="text-lg font-bold mb-2 text-slate-900 dark:text-white">{item.title}</h3>
+                <p className="text-sm text-slate-900/70 dark:text-slate-300">{item.desc}</p>
               </Card>
             ))}
           </div>
@@ -355,14 +355,14 @@ export default function Services() {
       {/* FAQ Section */}
       <section className="py-24" style={{ background: "rgba(15, 23, 42, 0.02)" }}>
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
-          <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: BRAND.navy }}>প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center text-slate-900 dark:text-white">প্রায়শই জিজ্ঞাসিত প্রশ্নাবলী</h2>
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, idx) => (
               <AccordionItem key={idx} value={`faq-${idx}`} className="border-b-2 border-slate-200">
-                <AccordionTrigger className="text-left py-6 text-lg font-bold hover:no-underline" style={{ color: BRAND.navy }}>
+                <AccordionTrigger className="text-left py-6 text-lg font-bold hover:no-underline text-slate-900 dark:text-white">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-base pb-6 opacity-80" style={{ color: BRAND.navy }}>
+                <AccordionContent className="text-base pb-6 text-slate-900/80 dark:text-slate-300">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
@@ -375,7 +375,7 @@ export default function Services() {
       {/* Final CTA */}
       <section className="py-24 text-center">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <h2 className="text-4xl font-bold mb-8" style={{ color: BRAND.navy }}>আজকেই শুরু করুন</h2>
+          <h2 className="text-4xl font-bold mb-8 text-slate-900 dark:text-white">আজকেই শুরু করুন</h2>
           <div className="flex flex-wrap gap-3 justify-center">
             <a
               href={config.whatsappGeneral}

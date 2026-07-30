@@ -126,7 +126,7 @@ export default function BrandDesign() {
 
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-bold mb-10 text-center" style={{ color: BRAND.navy }}>What We Deliver</h2>
+          <h2 className="text-2xl font-bold mb-10 text-center text-slate-900 dark:text-white">What We Deliver</h2>
           <div className="grid md:grid-cols-2 gap-5">
             {DELIVERABLES.map((d) => (
               <div key={d.title} className="rounded-2xl p-6 flex gap-4" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.07)" }}>
@@ -158,7 +158,7 @@ export default function BrandDesign() {
 
       <section className="py-16" id="plans">
         <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-bold mb-10 text-center" style={{ color: BRAND.navy }}>Pricing Tiers</h2>
+          <h2 className="text-2xl font-bold mb-10 text-center text-slate-900 dark:text-white">Pricing Tiers</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {TIERS.map((tier) => (
               <div key={tier.name} className="rounded-2xl p-7 flex flex-col relative" style={{ background: BRAND.white, border: tier.popular ? `2px solid ${BRAND.blue}` : "1px solid rgba(37,99,235,0.10)", boxShadow: tier.popular ? "0 8px 32px rgba(37,99,235,0.12)" : undefined }}>

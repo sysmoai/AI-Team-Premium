@@ -80,12 +80,12 @@ export function PlanDetail({ slug }: PlanDetailProps) {
 
       {/* 1. BREADCRUMB */}
       <nav className="bg-white border-b py-3">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center gap-2 text-sm text-muted-foreground">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center gap-2 text-sm text-slate-500">
           <Link href="/" className="hover:text-primary transition-colors">Home</Link>
           <ChevronRight size={14} />
           <Link href="/chatgpt-plans" className="hover:text-primary transition-colors">ChatGPT Plans</Link>
           <ChevronRight size={14} />
-          <span className="text-foreground font-medium">{plan.title}</span>
+          <span className="text-slate-900 font-medium">{plan.title}</span>
         </div>
       </nav>
 
@@ -99,7 +99,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                 <h1 className="text-3xl lg:text-4xl font-bold tracking-tight" style={{ color: BRAND.navy }}>
                   {plan.title}
                 </h1>
-                <p className="mt-4 text-lg text-muted-foreground">
+                <p className="mt-4 text-lg text-slate-500">
                   Genuine {plan.plan} features tailored for Bangladesh users with local payment support.
                 </p>
                 {/* DIRECT ANSWER BLOCK (GEO) */}
@@ -185,7 +185,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
               {/* 7. MINI-FAQ */}
               <div className="space-y-4">
                 <h2 className="text-xl font-bold" style={{ color: BRAND.navy }}>Frequently Asked Questions</h2>
-                <Accordion type="single" collapsible className="w-full bg-white rounded-2xl border px-6">
+                <Accordion type="single" collapsible className="w-full bg-white rounded-2xl border px-6 text-slate-900">
                   <AccordionItem value="item-1">
                     <AccordionTrigger>How long does delivery take?</AccordionTrigger>
                     <AccordionContent>
@@ -218,7 +218,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
             {/* Right Column: Fact Box & CTA */}
             <div className="lg:col-span-5 lg:sticky lg:top-8">
               {/* 2. OFFER FACT BOX */}
-              <div className="bg-white rounded-2xl border shadow-sm overflow-hidden">
+              <div className="bg-white rounded-2xl border shadow-sm overflow-hidden text-slate-900">
                 <div className="bg-blue-600 p-6 text-white">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-blue-100 text-sm font-medium uppercase tracking-wider">{plan.plan} Plan</span>
@@ -231,25 +231,25 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                 <div className="p-6 space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-1">
-                      <div className="text-xs text-muted-foreground uppercase flex items-center gap-1">
+                      <div className="text-xs text-slate-500 uppercase flex items-center gap-1">
                         <Users size={12} /> Seat Type
                       </div>
                       <div className="text-sm font-bold capitalize">{plan.tier}</div>
                     </div>
                     <div className="space-y-1">
-                      <div className="text-xs text-muted-foreground uppercase flex items-center gap-1">
+                      <div className="text-xs text-slate-500 uppercase flex items-center gap-1">
                         <User size={12} /> Seats
                       </div>
                       <div className="text-sm font-bold">{plan.seats}</div>
                     </div>
                     <div className="space-y-1">
-                      <div className="text-xs text-muted-foreground uppercase flex items-center gap-1">
+                      <div className="text-xs text-slate-500 uppercase flex items-center gap-1">
                         <Clock size={12} /> Delivery
                       </div>
                       <div className="text-sm font-bold">{plan.deliverySLA}</div>
                     </div>
                     <div className="space-y-1">
-                      <div className="text-xs text-muted-foreground uppercase flex items-center gap-1">
+                      <div className="text-xs text-slate-500 uppercase flex items-center gap-1">
                         <MessageSquare size={12} /> Support
                       </div>
                       <div className="text-sm font-bold text-green-600">WhatsApp</div>
@@ -258,8 +258,8 @@ export function PlanDetail({ slug }: PlanDetailProps) {
 
                   <div className="pt-4 border-t">
                     <div className="flex items-center justify-between text-xs mb-4">
-                      <span className="text-muted-foreground">Status: <span className="text-green-600 font-bold">Active</span></span>
-                      <span className="text-muted-foreground italic">Verified: {config.lastVerified}</span>
+                      <span className="text-slate-500">Status: <span className="text-green-600 font-bold">Active</span></span>
+                      <span className="text-slate-500 italic">Verified: {config.lastVerified}</span>
                     </div>
 
                     <a
@@ -285,7 +285,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                       Or Order on Messenger
                     </a>
                     
-                    <p className="mt-4 text-[10px] text-center text-muted-foreground leading-tight">
+                    <p className="mt-4 text-[10px] text-center text-slate-500 leading-tight">
                       By ordering, you agree to our Terms of Service and Refund Policy.
                     </p>
                   </div>
@@ -296,11 +296,11 @@ export function PlanDetail({ slug }: PlanDetailProps) {
               <div className="mt-6 grid grid-cols-2 gap-3">
                 <div className="bg-white p-3 rounded-xl border flex items-center gap-3">
                   <Shield size={20} className="text-blue-600" />
-                  <span className="text-xs font-bold leading-tight">30-Day Warranty</span>
+                  <span className="text-xs font-bold leading-tight text-slate-900">30-Day Warranty</span>
                 </div>
                 <div className="bg-white p-3 rounded-xl border flex items-center gap-3">
                   <Zap size={20} className="text-orange-500" />
-                  <span className="text-xs font-bold leading-tight">Instant Activation</span>
+                  <span className="text-xs font-bold leading-tight text-slate-900">Instant Activation</span>
                 </div>
               </div>
             </div>

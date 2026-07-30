@@ -65,7 +65,7 @@ function ComparisonHub({ onPick }: { onPick: (slug: string) => void }) {
       </section>
       <section className="py-12">
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
-          <h2 className="mb-6" style={{ color: BRAND.navy, fontSize: "1.2rem", fontWeight: 700 }}>Popular comparisons</h2>
+          <h2 className="mb-6 text-slate-900 dark:text-white" style={{ fontSize: "1.2rem", fontWeight: 700 }}>Popular comparisons</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {POPULAR_PAIRS.map(([a, b]) => {
               const ta = COMPARE_TOOLS[a];
@@ -93,9 +93,9 @@ function ComparisonHub({ onPick }: { onPick: (slug: string) => void }) {
               );
             })}
           </div>
-          <h2 className="mt-12 mb-4" style={{ color: BRAND.navy, fontSize: "1.05rem", fontWeight: 700 }}>Build your own comparison</h2>
-          <p style={{ color: BRAND.navy, opacity: 0.65, fontSize: "0.9rem" }}>
-            Any URL like <code style={{ background: BRAND.sky, padding: "2px 6px", borderRadius: 4 }}>/compare/<i>tool-a</i>-vs-<i>tool-b</i></code> works.
+          <h2 className="mt-12 mb-4 text-slate-900 dark:text-white" style={{ fontSize: "1.05rem", fontWeight: 700 }}>Build your own comparison</h2>
+          <p className="text-slate-900/65 dark:text-slate-300" style={{ fontSize: "0.9rem" }}>
+            Any URL like <code style={{ background: BRAND.sky, padding: "2px 6px", borderRadius: 4, color: BRAND.navy }}>/compare/<i>tool-a</i>-vs-<i>tool-b</i></code> works.
             Available tools: {Object.values(COMPARE_TOOLS).map((t) => t.slug).join(", ")}.
           </p>
         </div>
@@ -218,9 +218,9 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
             <div className="rounded-2xl p-6" style={{ background: `${winner.accent}08`, border: `1.5px solid ${winner.accent}30` }}>
               <div className="flex items-center gap-2 mb-3">
                 <Sparkles size={18} color={readableOn(winner.accent, "#ffffff", 4.5)} />
-                <h2 style={{ color: BRAND.navy, fontSize: "1.2rem", fontWeight: 700 }}>Our pick: {winner.name}</h2>
+                <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "1.2rem", fontWeight: 700 }}>Our pick: {winner.name}</h2>
               </div>
-              <p style={{ color: BRAND.navy, opacity: 0.78, fontSize: "0.95rem", lineHeight: 1.65 }}>{rec.reason}</p>
+              <p className="text-slate-900/78 dark:text-slate-200" style={{ fontSize: "0.95rem", lineHeight: 1.65 }}>{rec.reason}</p>
               <a
                 href={`${config.whatsappUrl}?text=${encodeURIComponent(`Hi AITP — I read your ${a.name} vs ${b.name} comparison. Please send pricing for ${winner.name}.`)}`}
                 target="_blank"
@@ -348,7 +348,7 @@ function ComparisonDetail({ a, b, slug }: { a: CompareTool; b: CompareTool; slug
       {/* FAQ */}
       <section className="py-12">
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
-          <h2 className="mb-5" style={{ color: BRAND.navy, fontSize: "1.2rem", fontWeight: 700 }}>FAQ</h2>
+          <h2 className="mb-5 text-slate-900 dark:text-white" style={{ fontSize: "1.2rem", fontWeight: 700 }}>FAQ</h2>
           <div className="space-y-3">
             {faqs.map((f) => (
               <div key={f.q} className="rounded-xl p-4" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.08)" }} data-testid={`faq-${f.q.toLowerCase().replace(/[^a-z0-9]+/g, "-").slice(0, 40)}`}>

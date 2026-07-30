@@ -176,8 +176,8 @@ export default function AIToolsVault() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-2" style={{ color: BRAND.navy }}>কেন Vault নেবেন?</h3>
-              <p className="mb-4 text-sm" style={{ color: BRAND.navy, opacity: 0.65, lineHeight: 1.7 }}>
+              <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">কেন Vault নেবেন?</h3>
+              <p className="mb-4 text-sm text-slate-900/65 dark:text-slate-300" style={{ lineHeight: 1.7 }}>
                 তিনটি AI tool আলাদাভাবে Personal Seat হিসেবে কিনলে মাসে ৳৭,২৫০ খরচ হয়। Vault-এ Shared access পাবেন মাত্র <strong>৳১,৯৯০-এ</strong> — একটি payment, একটি WhatsApp support channel, এবং bundled onboarding।
               </p>
               <div className="rounded-2xl overflow-hidden border" style={{ borderColor: "rgba(37,99,235,0.10)" }}>
@@ -210,10 +210,10 @@ export default function AIToolsVault() {
                 className="mt-5 rounded-xl p-4"
                 style={{ background: "rgba(37,99,235,0.06)", border: `1px solid rgba(37,99,235,0.15)` }}
               >
-                <p className="text-sm font-semibold" style={{ color: BRAND.navy }}>⚡ Vault-এর সুবিধা</p>
+                <p className="text-sm font-semibold text-slate-900 dark:text-white">⚡ Vault-এর সুবিধা</p>
                 <ul className="mt-2 space-y-1.5">
                   {["একটি payment — ৩টি tool সক্রিয়", "একটি WhatsApp channel — সব support", "Bundled onboarding — সব tool একসাথে শিখুন", "Shared access — affordable entry point"].map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-sm" style={{ color: BRAND.navy, opacity: 0.7 }}>
+                    <li key={point} className="flex items-start gap-2 text-sm text-slate-900/70 dark:text-slate-300">
                       <Check size={13} color={BRAND.blue} className="mt-0.5 flex-shrink-0" strokeWidth={2.5} />
                       {point}
                     </li>

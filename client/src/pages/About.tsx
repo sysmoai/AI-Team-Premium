@@ -83,7 +83,7 @@ export default function About() {
             <LogoStacked size="lg" iconColor={BRAND.blue} textColor={BRAND.navy} />
           </div>
 
-          <div className="space-y-8" style={{ color: BRAND.navy, opacity: 0.65, fontSize: "0.95rem", lineHeight: 1.8 }}>
+          <div className="space-y-8 text-slate-900/65 dark:text-slate-300" style={{ fontSize: "0.95rem", lineHeight: 1.8 }}>
             {/* DIRECT ANSWER BLOCK (GEO) */}
             <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.sky, opacity: 1 }}>
               <p style={{ color: BRAND.navy, opacity: 1, fontSize: "1rem", lineHeight: 1.7, fontWeight: 500 }}>
@@ -92,7 +92,7 @@ export default function About() {
             </div>
 
             <div>
-              <h2 className="mb-4" style={{ color: BRAND.navy, opacity: 1, fontSize: "1.4rem", fontWeight: 700 }}>Who We Are</h2>
+              <h2 className="mb-4 text-slate-900 dark:text-white" style={{ fontSize: "1.4rem", fontWeight: 700 }}>Who We Are</h2>
               <p>
                 AI Team Premium (AITP) started in 2024 with a simple mission: to bridge the gap between global AI technology and the Bangladeshi market. We noticed that many talented professionals, students, and businesses in Bangladesh were struggling to access premium global AI tools due to international payment restrictions — over 95% of Bangladeshi users do not hold an international credit card capable of recurring USD billing.
               </p>
@@ -102,7 +102,7 @@ export default function About() {
             </div>
 
             <div>
-              <h2 className="mb-4" style={{ color: BRAND.navy, opacity: 1, fontSize: "1.4rem", fontWeight: 700 }}>By the Numbers</h2>
+              <h2 className="mb-4 text-slate-900 dark:text-white" style={{ fontSize: "1.4rem", fontWeight: 700 }}>By the Numbers</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 not-prose">
                 {[
                   { n: "18+", l: "AI tools available" },
@@ -119,7 +119,7 @@ export default function About() {
             </div>
 
             <div>
-              <h2 className="mb-4" style={{ color: BRAND.navy, opacity: 1, fontSize: "1.4rem", fontWeight: 700 }}>More Than Just Tools</h2>
+              <h2 className="mb-4 text-slate-900 dark:text-white" style={{ fontSize: "1.4rem", fontWeight: 700 }}>More Than Just Tools</h2>
               <p>
                 As our client base grew, so did their needs. Today, AITP is a full-fledged digital agency. Our team of expert designers, developers, and marketers help brands build their digital identity from the ground up. Whether you need a stunning new logo, a high-performance web application, or an AI-driven marketing campaign, we have the expertise to deliver.
               </p>

@@ -129,7 +129,7 @@ export default function ChatGPTPlans() {
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6" style={{ color: BRAND.navy }}>
             বাংলাদেশে ChatGPT — <span style={{ color: BRAND.blue }}>৳৩৯৯</span> থেকে শুরু
           </h1>
-          <p className="text-xl md:text-2xl mb-10 text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-10 text-slate-600 max-w-3xl mx-auto">
             Get genuine ChatGPT Plus, Team, and Pro subscriptions with local bKash/Nagad payment and fast delivery.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
@@ -155,7 +155,7 @@ export default function ChatGPTPlans() {
             >
               <MessageCircle className="w-5 h-5" /> Messenger
             </a>
-            <Button size="lg" variant="outline" className="h-12 px-7 text-base font-bold gap-2" onClick={() => planRefs.current["plus-shared"]?.scrollIntoView({ behavior: 'smooth' })} data-testid="button-hero-plans">
+            <Button size="lg" variant="outline" className="h-12 px-7 text-base font-bold gap-2 text-slate-900" onClick={() => planRefs.current["plus-shared"]?.scrollIntoView({ behavior: 'smooth' })} data-testid="button-hero-plans">
               প্যাকগুলো দেখুন
               <ChevronDown className="w-5 h-5" />
             </Button>
@@ -168,7 +168,7 @@ export default function ChatGPTPlans() {
         <div className="container px-4 py-6 mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {trustItems.map((item, idx) => (
-              <div key={idx} className="flex items-center justify-center gap-2 text-sm md:text-base font-semibold text-navy">
+              <div key={idx} className="flex items-center justify-center gap-2 text-sm md:text-base font-semibold text-slate-900">
                 <span style={{ color: BRAND.blue }}>{item.icon}</span>
                 <span>{item.text}</span>
               </div>
@@ -180,7 +180,7 @@ export default function ChatGPTPlans() {
       {/* 3. QUICK PLAN SELECTOR */}
       <section className="py-12 bg-white">
         <div className="container px-4 mx-auto">
-          <h2 className="text-2xl font-bold mb-6 text-center">আপনার কোনটি প্রয়োজন?</h2>
+          <h2 className="text-2xl font-bold mb-6 text-center text-slate-900">আপনার কোনটি প্রয়োজন?</h2>
           <div className="flex flex-wrap justify-center gap-3">
             {quickSelectors.map((item) => (
               <Button 
@@ -285,8 +285,8 @@ export default function ChatGPTPlans() {
       {/* 5. OFFICIAL vs LOCAL PRICING */}
       <section className="py-20 bg-white">
         <div className="container px-4 mx-auto">
-          <div className="max-w-4xl mx-auto bg-blue-50 rounded-2xl p-8 md:p-12 border border-blue-100">
-            <h2 className="text-3xl font-bold mb-6 text-navy">কেন আমাদের সার্ভিস প্রয়োজন?</h2>
+          <div className="max-w-4xl mx-auto bg-blue-50 rounded-2xl p-8 md:p-12 border border-blue-100 text-slate-900">
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">কেন আমাদের সার্ভিস প্রয়োজন?</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <p className="text-lg">OpenAI থেকে সরাসরি কিনতে গেলে অধিকাংশ বাংলাদেশি ইউজার ৩টি সমস্যার সম্মুখীন হন:</p>
@@ -329,7 +329,7 @@ export default function ChatGPTPlans() {
 
       {/* 6. HOW TO BUY */}
       <section className="py-20 bg-gray-50">
-        <div className="container px-4 mx-auto text-center">
+        <div className="container px-4 mx-auto text-center text-slate-900">
           <h2 className="text-3xl font-bold mb-12">কিভাবে কিনবেন? (How to Buy)</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -343,7 +343,7 @@ export default function ChatGPTPlans() {
                   {item.step}
                 </div>
                 <h3 className="text-xl font-bold">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
+                <p className="text-slate-500">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -351,7 +351,7 @@ export default function ChatGPTPlans() {
       </section>
 
       {/* 7. COMPARISON TABLE */}
-      <section className="py-20 bg-white overflow-hidden">
+      <section className="py-20 bg-white overflow-hidden text-slate-900">
         <div className="container px-4 mx-auto">
           <h2 className="text-3xl font-bold mb-12 text-center">Feature Comparison Table</h2>
           <div className="overflow-x-auto rounded-xl border border-border shadow-sm">
@@ -389,7 +389,7 @@ export default function ChatGPTPlans() {
       </section>
 
       {/* 9. FAQ SECTION */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white text-slate-900">
         <div className="container px-4 mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-12 text-center">সচরাচর জিজ্ঞাসিত প্রশ্নাবলী (FAQ)</h2>
           <Accordion type="single" collapsible className="w-full">
@@ -398,7 +398,7 @@ export default function ChatGPTPlans() {
                 <AccordionTrigger className="text-left font-semibold py-4">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-4">
+                <AccordionContent className="text-slate-500 pb-4">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
@@ -408,7 +408,7 @@ export default function ChatGPTPlans() {
       </section>
 
       {/* 10. FOOTER CTA */}
-      <section className="py-20 border-t bg-gray-50">
+      <section className="py-20 border-t bg-gray-50 text-slate-900">
         <div className="container px-4 mx-auto text-center">
           <h2 className="text-3xl font-bold mb-10">আজই আপনার ChatGPT প্যাকটি বুঝে নিন</h2>
           <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
@@ -440,7 +440,7 @@ export default function ChatGPTPlans() {
               </a>
             </Button>
           </div>
-          <div className="text-sm text-muted-foreground">
+          <div className="text-sm text-slate-500">
             By ordering, you agree to our <Link href="/refund-policy" className="text-blue-600 hover:underline">Refund & Replacement Policy</Link>.
           </div>
         </div>

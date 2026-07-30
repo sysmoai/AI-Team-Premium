@@ -122,7 +122,7 @@ export default function DigitalMarketing() {
 
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-bold mb-10 text-center" style={{ color: BRAND.navy }}>Services We Offer</h2>
+          <h2 className="text-2xl font-bold mb-10 text-center text-slate-900 dark:text-white">Services We Offer</h2>
           <div className="grid md:grid-cols-2 gap-5">
             {SERVICES_LIST.map((s) => (
               <div key={s.title} className="rounded-2xl p-6 flex gap-4" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.07)" }}>
@@ -155,7 +155,7 @@ export default function DigitalMarketing() {
 
       <section className="py-16" id="plans">
         <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-bold mb-10 text-center" style={{ color: BRAND.navy }}>Monthly Retainer Plans</h2>
+          <h2 className="text-2xl font-bold mb-10 text-center text-slate-900 dark:text-white">Monthly Retainer Plans</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {TIERS.map((tier) => (
               <div key={tier.name} className="rounded-2xl p-7 flex flex-col relative" style={{ background: BRAND.white, border: tier.popular ? `2px solid ${BRAND.blue}` : "1px solid rgba(37,99,235,0.10)", boxShadow: tier.popular ? "0 8px 32px rgba(37,99,235,0.12)" : undefined }}>
@@ -175,7 +175,7 @@ export default function DigitalMarketing() {
               </div>
             ))}
           </div>
-          <p className="text-center mt-6 text-sm" style={{ color: BRAND.navy, opacity: 0.5 }}>* Management fee only. Ad spend billed separately directly to Facebook/Google.</p>
+          <p className="text-center mt-6 text-sm text-slate-900/50 dark:text-slate-400">* Management fee only. Ad spend billed separately directly to Facebook/Google.</p>
         </div>
       </section>
 

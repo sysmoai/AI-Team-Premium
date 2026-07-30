@@ -159,7 +159,7 @@ export default function AIOpsSprint() {
             </div>
 
             <div>
-              <h3 className="text-xl font-bold mb-6" style={{ color: BRAND.navy }}>Best for</h3>
+              <h3 className="text-xl font-bold mb-6 text-slate-900 dark:text-white">Best for</h3>
               <div className="space-y-3">
                 {[
                   { emoji: "🧑‍💻", title: "Freelancers", desc: "যারা AI দিয়ে কাজ দ্রুত করতে চান এবং clients-দের কাছে AI-powered service দিতে চান।" },
@@ -179,14 +179,14 @@ export default function AIOpsSprint() {
 
       <section className="py-16">
         <div className="mx-auto max-w-3xl px-6">
-          <h2 className="text-2xl font-bold text-center mb-10" style={{ color: BRAND.navy }}>সাধারণ প্রশ্ন (FAQ)</h2>
+          <h2 className="text-2xl font-bold text-center mb-10 text-slate-900 dark:text-white">সাধারণ প্রশ্ন (FAQ)</h2>
           <Accordion type="single" collapsible className="space-y-3">
             {FAQS.map((faq, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="rounded-xl border px-5" style={{ borderColor: "rgba(37,99,235,0.10)" }}>
-                <AccordionTrigger className="text-left font-semibold py-4" style={{ color: BRAND.navy, fontSize: "0.95rem" }}>
+                <AccordionTrigger className="text-left font-semibold py-4 text-slate-900 dark:text-white" style={{ fontSize: "0.95rem" }}>
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="pb-4" style={{ color: BRAND.navy, opacity: 0.65, fontSize: "0.88rem", lineHeight: 1.7 }}>
+                <AccordionContent className="pb-4 text-slate-900/65 dark:text-slate-300" style={{ fontSize: "0.88rem", lineHeight: 1.7 }}>
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

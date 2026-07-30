@@ -229,7 +229,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
           <div className="grid lg:grid-cols-2 gap-14 items-start">
             {/* Features */}
             <div>
-              <h2 className="mb-7" style={{ color: BRAND.navy, fontSize: "1.45rem", fontWeight: 700 }}>What's Included</h2>
+              <h2 className="mb-7 text-slate-900 dark:text-white" style={{ fontSize: "1.45rem", fontWeight: 700 }}>What's Included</h2>
               <div className="grid gap-3">
                 {features.map((f) => (
                   <div key={f} className="flex items-start gap-3 rounded-xl p-4 transition-all" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.06)" }}>
@@ -244,7 +244,7 @@ export function ToolDetail({ name, tagline, description, accentColor, icon: Icon
 
             {/* Plans */}
             <div>
-              <h2 className="mb-7" style={{ color: BRAND.navy, fontSize: "1.45rem", fontWeight: 700 }}>Choose a Plan</h2>
+              <h2 className="mb-7 text-slate-900 dark:text-white" style={{ fontSize: "1.45rem", fontWeight: 700 }}>Choose a Plan</h2>
               <div className="space-y-5">
                 {plans.map((plan, idx) => (
                   <div

@@ -21,7 +21,7 @@ export default function PrivacyPolicy() {
       </section>
 
       <section className="py-16">
-        <div className="mx-auto max-w-3xl px-6 lg:px-10 space-y-10" style={{ color: BRAND.navy, fontSize: "0.92rem", lineHeight: 1.8 }}>
+        <div className="mx-auto max-w-3xl px-6 lg:px-10 space-y-10 text-slate-900 dark:text-white" style={{ fontSize: "0.92rem", lineHeight: 1.8 }}>
 
           <div>
             <h2 className="mb-3" style={{ fontSize: "1.15rem", fontWeight: 700 }}>1. Introduction</h2>

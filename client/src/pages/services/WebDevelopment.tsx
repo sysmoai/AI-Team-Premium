@@ -101,7 +101,7 @@ export default function WebDevelopment() {
 
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-bold mb-10 text-center" style={{ color: BRAND.navy }}>Project Types & Pricing</h2>
+          <h2 className="text-2xl font-bold mb-10 text-center text-slate-900 dark:text-white">Project Types & Pricing</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {PROJECT_TYPES.map((pt) => (
               <div key={pt.title} className="rounded-2xl p-6" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.07)" }}>
@@ -133,13 +133,13 @@ export default function WebDevelopment() {
 
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-2xl font-bold mb-10 text-center" style={{ color: BRAND.navy }}>Our Process</h2>
+          <h2 className="text-2xl font-bold mb-10 text-center text-slate-900 dark:text-white">Our Process</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {PROCESS.map((p) => (
               <div key={p.step} className="text-center">
                 <div className="w-12 h-12 rounded-2xl mx-auto mb-4 flex items-center justify-center font-bold text-lg" style={{ background: BRAND.blue, color: "#fff" }}>{p.step}</div>
-                <h3 className="font-bold mb-1" style={{ color: BRAND.navy }}>{p.title}</h3>
-                <p className="text-xs" style={{ color: BRAND.navy, opacity: 0.55 }}>{p.desc}</p>
+                <h3 className="font-bold mb-1 text-slate-900 dark:text-white">{p.title}</h3>
+                <p className="text-xs text-slate-900/55 dark:text-slate-400">{p.desc}</p>
               </div>
             ))}
           </div>

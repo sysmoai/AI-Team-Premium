@@ -147,19 +147,19 @@ export default function Contact() {
                     <ch.icon size={18} color={BRAND.blue} strokeWidth={2} />
                   </span>
                   <div>
-                    <p style={{ color: BRAND.navy, fontSize: "0.88rem", fontWeight: 600 }}>{ch.label}</p>
+                    <p className="text-slate-900 dark:text-white" style={{ fontSize: "0.88rem", fontWeight: 600 }}>{ch.label}</p>
                     {ch.url ? (
-                      <a href={ch.url} data-testid={`link-contact-${ch.label.toLowerCase().replace(/[\s/]+/g, '-')}`} style={{ color: BRAND.navy, opacity: 0.6, fontSize: "0.85rem", textDecoration: "none" }}>{ch.value}</a>
+                      <a href={ch.url} data-testid={`link-contact-${ch.label.toLowerCase().replace(/[\s/]+/g, '-')}`} className="text-slate-900/60 dark:text-slate-300" style={{ fontSize: "0.85rem", textDecoration: "none" }}>{ch.value}</a>
                     ) : (
-                      <p style={{ color: BRAND.navy, opacity: 0.6, fontSize: "0.85rem" }}>{ch.value}</p>
+                      <p className="text-slate-900/60 dark:text-slate-300" style={{ fontSize: "0.85rem" }}>{ch.value}</p>
                     )}
-                    {ch.sub && <p style={{ color: BRAND.navy, opacity: 0.4, fontSize: "0.75rem", marginTop: 2 }}>{ch.sub}</p>}
+                    {ch.sub && <p className="text-slate-900/40 dark:text-slate-400" style={{ fontSize: "0.75rem", marginTop: 2 }}>{ch.sub}</p>}
                   </div>
                 </div>
               ))}
 
               <div>
-                <p className="mb-3" style={{ color: BRAND.navy, fontSize: "0.78rem", fontWeight: 600, opacity: 0.5 }}>Follow Us</p>
+                <p className="mb-3 text-slate-900/50 dark:text-slate-300" style={{ fontSize: "0.78rem", fontWeight: 600 }}>Follow Us</p>
                 <div className="flex items-center gap-2">
                   {SOCIAL.map((s) => (
                     <a

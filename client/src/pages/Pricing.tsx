@@ -1,4 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
+import { PRICING_SECTIONS, PRICING_SUMMARY } from "@shared/pricing-table.js";
+import { BUNDLE_PRICES } from "@shared/bundle-prices.js";
+import catalogForPricing from "../data/products-catalog.json";
+
+// ChatGPT is named directly in the copy below, so its entry price is read from
+// the catalog rather than typed. It was ৳499 in four places against ৳350.
+const CHATGPT_FROM = Math.min(
+  ...(catalogForPricing as { brand: string; price: number; priceOnRequest?: boolean }[])
+    .filter((p) => p.brand === "ChatGPT" && p.price > 0 && !p.priceOnRequest)
+    .map((p) => p.price)
+);
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { Link } from "wouter";
@@ -11,104 +22,29 @@ const waBase = "https://wa.me/8801533262758?text=";
 const enc = encodeURIComponent;
 
 const PRICING_FAQS = [
-  { q: "What is the cheapest AI subscription price in Bangladesh from AI Team Premium?", a: "ChatGPT Plus Shared costs ৳499/month — the cheapest plan available. Pay in BDT via bKash, Nagad, Rocket or Bank Transfer, and get access within 5–15 minutes." },
+  // Was "ChatGPT Plus Shared costs ৳499/month — the cheapest plan available":
+  // wrong price, and wrong claim. ৳350 is ChatGPT's entry tier, not the catalog
+  // floor, which is ৳190. Both figures are derived now.
+  { q: "What is the cheapest AI subscription price in Bangladesh from AI Team Premium?", a: `Plans start at ৳${PRICING_SUMMARY.priceFrom.toLocaleString("en-US")}/month, and ChatGPT Plus Shared is ৳${CHATGPT_FROM.toLocaleString("en-US")}/month. Pay in BDT via bKash, Nagad, Rocket or Bank Transfer, and get access within 5–15 minutes.`},
   { q: "How do I order and what payment methods are accepted?", a: "Message on WhatsApp (+880 1533-262758), pick a plan from the pricing list, pay via bKash, Nagad, Rocket or Bank Transfer, and receive access within 5–15 minutes (shared plans) or up to 6 hours (bundles)." },
-  { q: "Does AI Team Premium accept bKash and Nagad for all plans?", a: "Yes. Every AI subscription and service from AI Team Premium — from ChatGPT Plus at ৳499/mo to AI Ops Sprint at ৳9,900 — is payable in BDT via bKash, Nagad, Rocket or Bank Transfer. No international credit card required." },
-  { q: "What is included in the AI Tools Vault bundle?", a: "The AI Tools Vault (৳1,990/month) includes shared access to ChatGPT Plus, Claude Pro, and Gemini Advanced — three top AI tools in one plan, with priority setup and a single WhatsApp support channel." },
+  { q: "Does AI Team Premium accept bKash and Nagad for all plans?", a: `Yes. Every AI subscription and service from AI Team Premium — from ৳${PRICING_SUMMARY.priceFrom.toLocaleString("en-US")}/mo up to AI Ops Sprint at ৳9,900 — is payable in BDT via bKash, Nagad, Rocket or Bank Transfer. No international credit card required.` },
+  { q: "What is included in the AI Tools Vault bundle?", a: `The AI Tools Vault (৳${BUNDLE_PRICES.vault.toLocaleString("en-US")}/month) includes shared access to ChatGPT Plus, Claude Pro, and Gemini Advanced — three top AI tools in one plan, with priority setup and a single WhatsApp support channel.` },
 ];
 
-const SECTIONS = [
-  {
-    title: "🤖 AI Chat & Research Tools",
-    subtitle: "Genuine access · bKash/Nagad · 5–15 min delivery",
-    items: [
-      { name: "ChatGPT Go — Shared", price: "৳399/mo", delivery: "5–15 min", href: "/chatgpt/go-shared", wa: waBase + enc("Hi, I want ChatGPT Go Shared ৳399/mo") },
-      { name: "ChatGPT Go — Personal Account", price: "৳1,299/mo", delivery: "2–4 hr", href: "/chatgpt/go-personal", wa: waBase + enc("Hi, I want ChatGPT Go Personal ৳1,299/mo") },
-      { name: "ChatGPT Plus — Shared", price: "৳499/mo", delivery: "5–15 min", href: "/chatgpt/plus-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Shared ৳499/mo") },
-      { name: "ChatGPT Plus — Premium Shared", price: "৳999/mo", delivery: "5–15 min", href: "/chatgpt/plus-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Plus Premium Shared ৳999/mo") },
-      { name: "ChatGPT Plus — Personal Seat", price: "৳2,990/mo", delivery: "2–4 hr", href: "/chatgpt/plus-personal-seat", wa: waBase + enc("Hi, I want ChatGPT Plus Personal Seat ৳2,990/mo") },
-      { name: "ChatGPT Business — Shared", price: "৳699/mo", delivery: "5–15 min", href: "/chatgpt/business-shared", wa: waBase + enc("Hi, I want ChatGPT Business Shared ৳699/mo") },
-      { name: "ChatGPT Business — Premium Shared", price: "৳1,299/mo", delivery: "5–15 min", href: "/chatgpt/business-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Business Premium Shared ৳1,299/mo") },
-      { name: "ChatGPT Business — Personal Account", price: "৳3,990/mo", delivery: "2–4 hr", href: "/chatgpt/business-personal-like", wa: waBase + enc("Hi, I want ChatGPT Business Personal ৳3,990/mo") },
-      { name: "ChatGPT Pro — Premium Shared", price: "৳4,990/mo", delivery: "5–15 min", href: "/chatgpt/pro-premium-shared", wa: waBase + enc("Hi, I want ChatGPT Pro Premium Shared ৳4,990/mo") },
-      { name: "ChatGPT Pro — Personal Account", price: "৳34,900/mo", delivery: "2–4 hr", href: "/chatgpt/pro-personal", wa: waBase + enc("Hi, I want ChatGPT Pro Personal ৳34,900/mo") },
-      { name: "Claude Pro — Premium Shared", price: "৳1,495/mo", delivery: "5–15 min", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Premium Shared ৳1,495/mo") },
-      { name: "Claude Pro — Personal", price: "৳2,990/mo", delivery: "2–4 hr", href: "/claude-plans", wa: waBase + enc("Hi, I want Claude Pro Personal ৳2,990/mo") },
-      { name: "Gemini Advanced — Shared", price: "৳899/mo", delivery: "5–15 min", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Shared ৳899/mo") },
-      { name: "Gemini Advanced — Personal", price: "৳2,990/mo", delivery: "2–4 hr", href: "/gemini-plans", wa: waBase + enc("Hi, I want Gemini Advanced Personal ৳2,990/mo") },
-      { name: "Perplexity Pro — Shared", price: "৳799/mo", delivery: "5–15 min", href: "/perplexity-plans", wa: waBase + enc("Hi, I want Perplexity Pro Shared ৳799/mo") },
-      { name: "SuperGrok — Shared (Unlimited Aurora images)", price: "৳699/mo", delivery: "5–15 min", href: "/tools/supergrok", wa: waBase + enc("Hi, I want SuperGrok Shared ৳699/mo") },
-      { name: "SuperGrok — Personal Seat", price: "৳4,990/mo", delivery: "2–4 hr", href: "/tools/supergrok", wa: waBase + enc("Hi, I want SuperGrok Personal ৳4,990/mo") },
-      { name: "Google AI Pro — Shared (Gemini 2.5 + NotebookLM)", price: "৳599/mo", delivery: "5–15 min", href: "/tools/google-ai-pro", wa: waBase + enc("Hi, I want Google AI Pro Shared ৳599/mo") },
-      { name: "Google AI Pro — Personal (2TB Drive)", price: "৳2,990/mo", delivery: "2–4 hr", href: "/tools/google-ai-pro", wa: waBase + enc("Hi, I want Google AI Pro Personal ৳2,990/mo") },
-    ],
-  },
-  {
-    title: "🖼️ AI Image Generation",
-    subtitle: "Create stunning visuals with AI — bKash/Nagad accepted",
-    items: [
-      { name: "Midjourney — Shared", price: "৳1,299/mo", delivery: "5–15 min", href: "/tools/midjourney", wa: waBase + enc("Hi, I want Midjourney Shared ৳1,299/mo") },
-      { name: "Ideogram AI — Shared (best text rendering)", price: "৳599/mo", delivery: "5–15 min", href: "/tools/ideogram", wa: waBase + enc("Hi, I want Ideogram AI Shared ৳599/mo") },
-      { name: "Freepik Premium — Shared (AI + 200M stock)", price: "৳499/mo", delivery: "5–15 min", href: "/tools/freepik", wa: waBase + enc("Hi, I want Freepik Premium Shared ৳499/mo") },
-      { name: "Adobe CC Photography — Shared", price: "৳499/mo", delivery: "2–4 hr", href: "/tools/adobe-cc", wa: waBase + enc("Hi, I want Adobe CC Photography Shared ৳499/mo") },
-      { name: "Leonardo AI — Shared (8,500 tokens)", price: "৳499/mo", delivery: "5–15 min", href: "/tools/leonardo", wa: waBase + enc("Hi, I want Leonardo AI Shared ৳499/mo") },
-      { name: "Leonardo AI — Personal (25,000 tokens)", price: "৳1,990/mo", delivery: "2–4 hr", href: "/tools/leonardo", wa: waBase + enc("Hi, I want Leonardo AI Personal ৳1,990/mo") },
-    ],
-  },
-  {
-    title: "🎬 AI Video Generation",
-    subtitle: "Professional AI video tools — bKash/Nagad accepted",
-    items: [
-      { name: "Runway ML Standard — Shared (625 credits)", price: "৳899/mo", delivery: "5–15 min", href: "/tools/runway", wa: waBase + enc("Hi, I want Runway ML Standard Shared ৳899/mo") },
-      { name: "Runway ML Pro — Shared (2,250 credits)", price: "৳1,799/mo", delivery: "5–15 min", href: "/tools/runway", wa: waBase + enc("Hi, I want Runway ML Pro Shared ৳1,799/mo") },
-      { name: "Kling AI Pro — Shared (660 credits)", price: "৳599/mo", delivery: "5–15 min", href: "/tools/kling", wa: waBase + enc("Hi, I want Kling AI Pro Shared ৳599/mo") },
-      { name: "Kling AI Premier — Shared (3,000 credits)", price: "৳1,499/mo", delivery: "5–15 min", href: "/tools/kling", wa: waBase + enc("Hi, I want Kling AI Premier Shared ৳1,499/mo") },
-    ],
-  },
-  {
-    title: "✍️ Writing, Productivity & Office AI",
-    subtitle: "Boost your work with AI writing and productivity tools",
-    items: [
-      { name: "Grammarly Premium — Monthly", price: "৳499/mo", delivery: "2–4 hr", href: "/grammarly-plans", wa: waBase + enc("Hi, I want Grammarly Premium ৳499/mo") },
-      { name: "Canva Pro — Monthly", price: "৳599/mo", delivery: "2–4 hr", href: "/canva-plans", wa: waBase + enc("Hi, I want Canva Pro ৳599/mo") },
-      { name: "ElevenLabs Voice AI", price: "৳699/mo", delivery: "5–15 min", href: "/tools/elevenlabs", wa: waBase + enc("Hi, I want ElevenLabs Voice AI ৳699/mo") },
-      { name: "Notion AI — Team Seat", price: "৳450/mo", delivery: "5–15 min", href: "/tools/notion", wa: waBase + enc("Hi, I want Notion AI ৳450/mo") },
-      { name: "GitHub Copilot — Private", price: "৳999/mo", delivery: "2–4 hr", href: "/tools/copilot", wa: waBase + enc("Hi, I want GitHub Copilot ৳999/mo") },
-      { name: "Manus AI — Shared", price: "৳1,499/mo", delivery: "2–4 hr", href: "/tools/manus", wa: waBase + enc("Hi, I want Manus AI Shared ৳1,499/mo") },
-      { name: "Poe AI — Shared (100+ models)", price: "৳799/mo", delivery: "5–15 min", href: "/tools/poe", wa: waBase + enc("Hi, I want Poe AI Shared ৳799/mo") },
-      { name: "Adobe Firefly — Shared", price: "৳599/mo", delivery: "5–15 min", href: "/tools/firefly", wa: waBase + enc("Hi, I want Adobe Firefly Shared ৳599/mo") },
-      { name: "Microsoft 365 + Copilot — Shared", price: "৳899/mo", delivery: "2–4 hr", href: "/tools/microsoft365", wa: waBase + enc("Hi, I want Microsoft 365 Copilot Shared ৳899/mo") },
-      { name: "LinkedIn Premium Career", price: "৳999/mo", delivery: "2–4 hr", href: "/tools/linkedin", wa: waBase + enc("Hi, I want LinkedIn Premium Career ৳999/mo") },
-      { name: "LinkedIn Premium Business", price: "৳1,800/mo", delivery: "2–4 hr", href: "/tools/linkedin", wa: waBase + enc("Hi, I want LinkedIn Premium Business ৳1,800/mo") },
-    ],
-  },
-  {
-    title: "💎 Bundles",
-    subtitle: "Best value — multiple tools, one payment",
-    items: [
-      { name: "AI Tools Vault (ChatGPT + Claude + Gemini)", price: "৳1,990/mo", delivery: "6 hr", href: "/ai-tools-vault", wa: waBase + enc("Hi, I want AI Tools Vault ৳1,990/mo") },
-    ],
-  },
-  {
-    title: "🤝 AI Training & Services",
-    subtitle: "Expert 1:1 AI coaching and implementation",
-    items: [
-      { name: "AI Coaching Session", price: "৳799/hour", delivery: "5–15 min", href: "/support", wa: waBase + enc("Hi, I want to book an AI Coaching Session ৳799/hr") },
-      { name: "Student Smart Study Pack", price: "৳1,999 one-time", delivery: "5–15 min", href: "/support", wa: waBase + enc("Hi, I want the Student Smart Study Pack ৳1,999") },
-      { name: "Student Pro Pack", price: "৳3,999 one-time", delivery: "5–15 min", href: "/support", wa: waBase + enc("Hi, I want the Student Pro Pack ৳3,999") },
-      { name: "Freelancer Fast Pack", price: "৳4,999 one-time", delivery: "5–15 min", href: "/support", wa: waBase + enc("Hi, I want the Freelancer Fast Pack ৳4,999") },
-      { name: "Freelancer Agency Pack", price: "৳9,999 one-time", delivery: "5–15 min", href: "/support", wa: waBase + enc("Hi, I want the Freelancer Agency Pack ৳9,999") },
-      { name: "Business AI Setup Pack", price: "৳12,999 one-time", delivery: "2–4 hr", href: "/support", wa: waBase + enc("Hi, I want the Business AI Setup Pack ৳12,999") },
-      { name: "360 AI Solution", price: "৳24,999+", delivery: "2–4 hr", href: "/support", wa: waBase + enc("Hi, I want the 360 AI Solution ৳24,999+") },
-      { name: "AI Ops Sprint — 1:1 Implementation (3 sessions)", price: "৳9,900 one-time", delivery: "2–4 hr", href: "/services/ai-ops-sprint", wa: waBase + enc("Hi, I want AI Ops Sprint 1:1 Implementation ৳9,900") },
-    ],
-  },
-];
+// The pricing table is generated from the catalog by `npm run gen:pricing`.
+//
+// It used to be 49 hand-written rows and every price had drifted — and each row
+// carried the price twice, once in the table and once inside the prefilled
+// WhatsApp message, so a customer messaged us quoting a figure we do not charge.
+// Adobe CC read ৳499 against ৳190, Poe ৳799 against ৳3,440, Kling ৳599 against
+// ৳270. It also listed a "ChatGPT Go — Shared" that has no catalog product at
+// all, and omitted 80 products that do.
+const SECTIONS = PRICING_SECTIONS;
 
 export default function Pricing() {
   usePageMeta({
-    title: "AI Tools Pricing in Bangladesh — All Plans from ৳499/mo",
-    description: "Complete BDT pricing for all AI tools and services from AI Team Premium. ChatGPT Plus ৳499/mo, Claude, Gemini, Canva, Grammarly, AI Ops Sprint. Pay via bKash/Nagad.",
+    title: `AI Tools Pricing in Bangladesh — All Plans from ৳${PRICING_SUMMARY.priceFrom.toLocaleString("en-US")}/mo`,
+    description: `Complete BDT pricing for all AI tools and services from AI Team Premium. ${PRICING_SUMMARY.rows} plans from ৳${PRICING_SUMMARY.priceFrom.toLocaleString("en-US")}/mo — ChatGPT Plus, Claude, Gemini, Canva, Grammarly, AI Ops Sprint. Pay via bKash/Nagad.`,
     path: "/pricing",
   });
 
@@ -117,10 +53,10 @@ export default function Pricing() {
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Pricing", path: "/pricing" }]} />
       <FAQSchema items={PRICING_FAQS} />
       <ProductSchema
-        name="AI Tools Pricing Bangladesh — All Plans from ৳499/mo"
-        description="Complete BDT pricing for AI subscriptions and services from AI Team Premium. ChatGPT Plus ৳499/mo, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, AI Ops Sprint. Pay via bKash/Nagad."
+        name={`AI Tools Pricing Bangladesh — All Plans from ৳${PRICING_SUMMARY.priceFrom.toLocaleString("en-US")}/mo`}
+        description={`Complete BDT pricing for AI subscriptions and services from AI Team Premium. ${PRICING_SUMMARY.rows} plans from ৳${PRICING_SUMMARY.priceFrom.toLocaleString("en-US")}/mo — ChatGPT Plus, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, AI Ops Sprint. Pay via bKash/Nagad.`}
         path="/pricing"
-        priceBDT={499}
+        priceBDT={PRICING_SUMMARY.priceFrom}
         category="AI Subscription"
       />
       <section className="py-20" style={{ background: BRAND.sky }}>
@@ -164,7 +100,8 @@ export default function Pricing() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="rounded-2xl p-5 md:p-6" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
             <p style={{ color: BRAND.navy, fontSize: "0.95rem", lineHeight: 1.7 }}>
-              <strong>AI Team Premium</strong> offers AI subscriptions in Bangladesh starting at <strong>৳499/month</strong> (ChatGPT Plus Shared) up to <strong>৳9,900</strong> (AI Ops Sprint 1:1 implementation). All prices are in BDT, payable via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. Shared plans deliver in 5–15 minutes. No international credit card required.
+              <strong>AI Team Premium</strong> offers {PRICING_SUMMARY.rows} AI subscription plans in Bangladesh starting at{" "}
+              <strong>৳{PRICING_SUMMARY.priceFrom.toLocaleString("en-US")}/month</strong>, with AI Ops Sprint 1:1 implementation at <strong>৳9,900</strong>. All prices are in BDT, payable via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. Shared plans deliver in 5–15 minutes. No international credit card required.
             </p>
           </div>
         </div>
@@ -196,7 +133,7 @@ export default function Pricing() {
                   <div className="mt-4 flex flex-col gap-2">
                     <div className="flex gap-2">
                       <a
-                        href={item.wa}
+                        href={item.waText}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => trackWhatsAppClick(item.name, undefined, item.price, "pricing-card")}

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+﻿#!/usr/bin/env node
 // Pre-push gate. Runs entirely offline and catches the classes of bug that have
 // actually broken this site before:
 //   - a page added to App.tsx with no SEO metadata (ships an accidental 404)
@@ -450,8 +450,13 @@ else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.
   const untagged = [];
   for (const f of walkFiles(resolve(ROOT, "client/src"), /\.tsx$/)) {
     const body = readFileSync(f, "utf-8");
-    // Renders it (inside JSX braces), rather than merely declaring the type.
-    if (!/\{[^}]*\b(descriptionBN|whyBuyBN|whyBN|bnBlurb)\b[^}]*\}/.test(body)) continue;
+    // Must be a *render* — `{product.descriptionBN}` on its own — not merely a
+    // mention. AllProducts reads descriptionBN inside a search filter
+    // (`(p.descriptionBN || "").includes(q)`), which an "anything in braces"
+    // match flagged even though the card that renders it tags the language
+    // correctly. A false positive here trains people to ignore the gate.
+    const RENDERS = /\{\s*(?:[A-Za-z_$][\w$]*\.)?(descriptionBN|whyBuyBN|whyBN|bnBlurb)\s*\}/;
+    if (!RENDERS.test(body)) continue;
     if (!BN_FIELDS.test(body)) continue;
     if (/lang="bn"|langOf\(/.test(body)) continue;
     untagged.push(relative(ROOT, f).replace(/\\/g, "/"));
@@ -512,6 +517,49 @@ else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.
   if (bad.length === 0)
     ok(`nav covers all ${NAV_CATEGORIES.length} categories with catalog-derived prices`);
   else fail("navigation disagrees with the catalog", bad.join("\n"));
+}
+
+// /pricing is the last page a customer reads before ordering, and each row
+// carried its price twice — in the table and inside the prefilled WhatsApp
+// message. All 49 hand-written rows had drifted, so a customer messaged us
+// quoting a figure we do not charge.
+{
+  const { PRICING_SECTIONS, PRICING_SUMMARY } = await import(
+    pathToFileURL(resolve(ROOT, "shared/pricing-table.js")).href
+  );
+  const bad = [];
+  const byId = new Map(products.map((p) => [p.name, p]));
+  let rows = 0;
+  for (const s of PRICING_SECTIONS) {
+    for (const r of s.items) {
+      rows++;
+      const p = byId.get(r.name);
+      if (!p) { bad.push(`${r.name}: listed on /pricing but not in the catalog`); continue; }
+      const quoted = p.priceOnRequest || !(p.price > 0) ? null : p.price;
+      if (r.priceBdt !== quoted)
+        bad.push(`${r.name}: table ${r.priceBdt ?? "on request"} vs catalog ${quoted ?? "on request"}`);
+      // The order message must quote the same figure as the row, or the
+      // customer arrives in WhatsApp with a different number than they clicked.
+      if (quoted !== null && !r.waText.includes(quoted.toLocaleString("en-US")))
+        bad.push(`${r.name}: WhatsApp message does not quote ৳${quoted}`);
+      if (quoted === null && /৳[0-9]/.test(r.waText))
+        bad.push(`${r.name}: quoted on request but the order message names a price`);
+    }
+  }
+  // Every sellable product must appear, or /pricing silently hides stock.
+  if (rows !== products.length) bad.push(`/pricing lists ${rows} rows for ${products.length} catalog tiers`);
+  if (PRICING_SUMMARY.rows !== rows) bad.push(`summary says ${PRICING_SUMMARY.rows} rows, table has ${rows}`);
+
+  // And nothing typed back in by hand.
+  const page = readFileSync(resolve(ROOT, "client/src/pages/Pricing.tsx"), "utf-8")
+    .replace(/\/\*[\s\S]*?\*\//g, "")
+    .replace(/^\s*\/\/.*$/gm, "");
+  // ৳9,900 is the AI Ops Sprint service, not a catalog product.
+  const lits = [...page.matchAll(/৳[0-9][0-9,]*/g)].map((m) => m[0]).filter((v) => v !== "৳9,900");
+  if (lits.length) bad.push(`Pricing.tsx hardcodes ${[...new Set(lits)].join(", ")} — derive it`);
+
+  if (bad.length === 0) ok(`/pricing lists all ${rows} tiers with catalog prices in table and order message`);
+  else fail("/pricing disagrees with the catalog", bad.slice(0, 12).join("\n"));
 }
 
 // Every catalog category needs a label in client/src/lib/categories.ts.
@@ -658,7 +706,7 @@ else
 // Its page must agree with that file or the metadata and the page contradict.
 {
   const { BUNDLE_PRICES } = await import(
-    pathToFileURL(resolve(ROOT, "lib/bundle-prices.js")).href
+    pathToFileURL(resolve(ROOT, "shared/bundle-prices.js")).href
   );
   const vaultPage = resolve(ROOT, "client/src/pages/AIToolsVault.tsx");
   if (!existsSync(vaultPage)) ok("no Vault page to cross-check");

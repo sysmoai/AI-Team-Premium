@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Evaluate AI Outputs: A Quality Checklist | AI Team Premium</title>
+<meta name="description" content="How to judge whether AI output is actually good â€” accuracy, hallucination checks, bias, tone and a practical review checklist.">
+<meta name="keywords" content="evaluate ai output, ai quality check, ai accuracy, verify ai">
+<meta name="author" content="AI Team Premium">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.aiteampremium.com/blog/prompts/evaluate-ai-outputs/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Team Premium">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="bn_BD">
+<meta property="og:title" content="How to Evaluate AI Outputs: A Quality Checklist">
+<meta property="og:description" content="How to judge whether AI output is actually good â€” accuracy, hallucination checks, bias, tone and a practical review checklist.">
+<meta property="og:url" content="https://www.aiteampremium.com/blog/prompts/evaluate-ai-outputs/">
+<meta property="article:published_time" content="2026-07-30">
+<meta property="article:section" content="Prompt Engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Evaluate AI Outputs: A Quality Checklist">
+<meta name="twitter:description" content="How to judge whether AI output is actually good â€” accuracy, hallucination checks, bias, tone and a practical review checklist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/post.css">
+<style>:root{--accent:#7c3aed;--tint:#f5f3ff}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "How to Evaluate AI Outputs: A Quality Checklist", "description": "How to judge whether AI output is actually good â€” accuracy, hallucination checks, bias, tone and a practical review checklist.", "inLanguage": ["en", "bn"], "keywords": "evaluate ai output, ai quality check, ai accuracy, verify ai", "author": {"@type": "Organization", "name": "AI Team Premium", "url": "https://www.aiteampremium.com"}, "publisher": {"@type": "Organization", "name": "AI Team Premium", "url": "https://www.aiteampremium.com"}, "datePublished": "2026-07-30", "dateModified": "2026-07-30", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.aiteampremium.com/blog/prompts/evaluate-ai-outputs/"}, "articleSection": "Prompt Engineering"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aiteampremium.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.aiteampremium.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Prompt Engineering", "item": "https://www.aiteampremium.com/blog/prompts/"}, {"@type": "ListItem", "position": 4, "name": "How to Evaluate AI Outputs: A Quality Checklist", "item": "https://www.aiteampremium.com/blog/prompts/evaluate-ai-outputs/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How often is AI wrong?", "acceptedAnswer": {"@type": "Answer", "text": "On general knowledge, rarely. On specific facts, citations, recent events and local Bangladeshi detail, often enough that you must verify."}}, {"@type": "Question", "name": "Can AI detect its own errors?", "acceptedAnswer": {"@type": "Answer", "text": "Partially. Asking it to critique its own output catches a meaningful share of mistakes â€” but not all."}}, {"@type": "Question", "name": "What should I never trust without verification?", "acceptedAnswer": {"@type": "Answer", "text": "Citations, statistics, quotes, legal advice, medical advice and anything time-sensitive."}}, {"@type": "Question", "name": "Which model hallucinates least?", "acceptedAnswer": {"@type": "Answer", "text": "Claude tends to admit uncertainty more readily. Perplexity grounds answers in retrieved sources, which helps considerably."}}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="https://www.aiteampremium.com/" class="logo">AI Team Premium</a>
+    <div class="nav-links">
+      <a href="https://www.aiteampremium.com/">Home</a>
+      <a href="https://www.aiteampremium.com/blog/" class="active">Blog</a>
+      <a href="https://www.aiteampremium.com/pricing/">Pricing</a>
+      <a href="https://www.aiteampremium.com/tools/">AI Tools</a>
+      <a href="https://wa.me/+8801533262758" class="btn-whatsapp">Order on WhatsApp</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <article class="post">
+    <div class="container">
+
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="https://www.aiteampremium.com/">Home</a> <span>/</span>
+        <a href="https://www.aiteampremium.com/blog/">Blog</a> <span>/</span>
+        <a href="https://www.aiteampremium.com/blog/prompts/">Prompt Engineering</a>
+      </nav>
+
+      <header class="post-head">
+        <div class="tags"><span class="cat">ðŸŽ¯ Prompt Engineering</span></div>
+        <h1>How to Evaluate AI Outputs: A Quality Checklist<span class="bn">AI à¦†à¦‰à¦Ÿà¦ªà§à¦Ÿ à¦¯à¦¾à¦šà¦¾à¦‡ à¦•à¦°à¦¾à¦° à¦šà§‡à¦•à¦²à¦¿à¦¸à§à¦Ÿ</span></h1>
+        <div class="meta">
+          <span>ðŸ“… Updated 2026-07-30</span>
+          <span>ðŸ“– 11 min read</span>
+          <span>âœï¸ AI Team Premium</span>
+        </div>
+      </header>
+
+      <p>AI is confidently wrong more often than most users realise. It never sounds uncertain, even when it is guessing.</p>
+      <p>This checklist is how you catch it before it costs you.</p>
+
+      <div class="cta-inline">
+        <p><strong>ChatGPT Plus â€” à§³499/month.</strong> ChatGPT Plus at Bangladesh's best price. 5-minute delivery, bKash/Nagad accepted.</p>
+        <a href="https://wa.me/+8801533262758" class="btn-cta-inline">Get ChatGPT Plus â†’</a>
+      </div>
+
+      <nav class="toc" aria-label="Table of contents">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#s1">The five-point check</a></li>
+          <li><a href="#s2">Catching hallucinations</a></li>
+          <li><a href="#s3">Making AI check itself</a></li>
+          <li><a href="#s4">Bias and blind spots</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="s1">The five-point check</h2>
+      <ol>
+        <li><strong>Factual accuracy</strong> â€” is every specific claim verifiable? Names, numbers, dates and citations especially.</li>
+        <li><strong>Logical consistency</strong> â€” does the argument hold together, or does it contradict itself?</li>
+        <li><strong>Completeness</strong> â€” did it answer the actual question, or a nearby easier one?</li>
+        <li><strong>Appropriateness</strong> â€” right tone, right register, right audience?</li>
+        <li><strong>Originality</strong> â€” does it add anything, or restate the obvious?</li>
+      </ol>
+      <h2 id="s2">Catching hallucinations</h2>
+      <p>Hallucination means fabricating information that sounds correct. The highest-risk categories:</p>
+      <div class="table-wrap"><table><thead><tr><th>Risk area</th><th>Why</th><th>What to do</th></tr></thead><tbody><tr><td>Citations</td><td>Perfectly formatted fakes</td><td>Open every reference yourself</td></tr><tr><td>Statistics</td><td>Plausible invented numbers</td><td>Trace to an original source</td></tr><tr><td>Quotes</td><td>Misattributed or invented</td><td>Verify the exact wording</td></tr><tr><td>Legal/medical claims</td><td>Confidently wrong</td><td>Consult a professional</td></tr><tr><td>Recent events</td><td>Training cut-off</td><td>Use a browsing-enabled model</td></tr><tr><td>Local Bangladesh detail</td><td>Thin training data</td><td>Verify against local sources</td></tr></tbody></table></div>
+      <div class="callout warn"><strong>âš ï¸ The highest-risk output of all.</strong> <strong>Citations.</strong> Language models produce references that look real and do not exist. This has ended academic careers. Never cite what you have not opened.</div>
+      <div class="cta-inline">
+        <p><strong>Perplexity Pro â€” à§³499/month.</strong> AI research with real citations. Perfect for students and analysts.</p>
+        <a href="https://wa.me/+8801533262758" class="btn-cta-inline">Get Perplexity Pro â†’</a>
+      </div>
+      <h2 id="s3">Making AI check itself</h2>
+      <ul>
+        <li>"Rate your confidence in each claim from 1â€“10 and flag anything below 8."</li>
+        <li>"Which parts of this answer are you least certain about?"</li>
+        <li>"What information would you need to be more accurate here?"</li>
+        <li>"Argue against your own answer."</li>
+        <li>"Is there a mainstream view that contradicts this?"</li>
+      </ul>
+      <h2 id="s4">Bias and blind spots</h2>
+      <ul>
+        <li><strong>Western default</strong> â€” advice may assume US/EU context; ask explicitly for the Bangladeshi context</li>
+        <li><strong>English-centric</strong> â€” Bengali and local nuance are under-represented</li>
+        <li><strong>Agreeableness</strong> â€” models tend to agree with your framing; ask for the counter-argument</li>
+        <li><strong>Recency gaps</strong> â€” anything after the training cut-off needs browsing or your own knowledge</li>
+      </ul>
+
+      <h2 id="faq">Frequently Asked Questions <span class="bn">à¦¸à¦šà¦°à¦¾à¦šà¦° à¦œà¦¿à¦œà§à¦žà¦¾à¦¸à¦¿à¦¤ à¦ªà§à¦°à¦¶à§à¦¨</span></h2>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span>How often is AI wrong?</span><i>+</i></button>
+          <div class="faq-a"><p>On general knowledge, rarely. On specific facts, citations, recent events and local Bangladeshi detail, often enough that you must verify.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span>Can AI detect its own errors?</span><i>+</i></button>
+          <div class="faq-a"><p>Partially. Asking it to critique its own output catches a meaningful share of mistakes â€” but not all.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span>What should I never trust without verification?</span><i>+</i></button>
+          <div class="faq-a"><p>Citations, statistics, quotes, legal advice, medical advice and anything time-sensitive.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span>Which model hallucinates least?</span><i>+</i></button>
+          <div class="faq-a"><p>Claude tends to admit uncertainty more readily. Perplexity grounds answers in retrieved sources, which helps considerably.</p></div>
+        </div>
+      </div>
+
+      <div class="cta-bottom">
+        <h3>Ready to get started?</h3>
+        <p class="offer-line"><strong>ChatGPT Plus</strong> â€” <span class="price">à§³499/month</span></p>
+        <p>ChatGPT Plus at Bangladesh's best price. 5-minute delivery, bKash/Nagad accepted.</p>
+        <div class="cta-options">
+          <a href="https://wa.me/+8801533262758" class="btn-primary">Order on WhatsApp â†’</a>
+          <a href="https://www.aiteampremium.com/pricing/" class="btn-secondary">View All Plans</a>
+        </div>
+        <div class="trust-badges"><span>âœ… 5â€“15 min delivery</span><span>âœ… bKash / Nagad accepted</span><span>âœ… 30-day replacement guarantee</span><span>âœ… Bangla + English support</span></div>
+      </div>
+
+      <section class="related">
+        <h3>Continue reading</h3>
+        <div class="rel-grid">
+          <a class="rel-card" href="https://www.aiteampremium.com/blog/beginner/ai-ethics-bangladesh/"><h4>AI Ethics in Bangladesh</h4><span>Read guide â†’</span></a>
+          <a class="rel-card" href="https://www.aiteampremium.com/blog/prompts/advanced-prompt-techniques/"><h4>Advanced Prompt Techniques</h4><span>Read guide â†’</span></a>
+          <a class="rel-card" href="https://www.aiteampremium.com/blog/comparisons/perplexity-vs-chatgpt/"><h4>Perplexity vs ChatGPT</h4><span>Read guide â†’</span></a>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <h3>Get free AI resources every week</h3>
+        <p>Join thousands of Bangladeshis getting prompt packs, tool reviews and exclusive offers.</p>
+        <form class="nl-form" action="#" method="post">
+          <input type="email" name="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe Free â†’</button>
+        </form>
+        <p class="small">Free 500-prompt pack on signup. No spam â€” unsubscribe anytime.</p>
+      </section>
+
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div><h4>AI Team Premium</h4><p>Bangladesh's trusted AI subscription provider since 2024. Premium AI tools, local payment, real support.</p></div>
+      <div><h4>Explore</h4><a href="https://www.aiteampremium.com/">Home</a><a href="https://www.aiteampremium.com/blog/">Blog</a><a href="https://www.aiteampremium.com/pricing/">Pricing</a><a href="https://www.aiteampremium.com/tools/">AI Tools</a></div>
+      <div><h4>Popular Plans</h4><a href="https://www.aiteampremium.com/tools/chatgpt/">ChatGPT Plus â€” à§³499</a><a href="https://www.aiteampremium.com/tools/claude/">Claude Pro â€” à§³1,200</a><a href="https://www.aiteampremium.com/tools/midjourney/">Midjourney â€” à§³1,500</a><a href="https://www.aiteampremium.com/pricing/">AI Bundle â€” à§³1,499</a></div>
+      <div><h4>Contact</h4><a href="https://wa.me/+8801533262758">WhatsApp Support</a><a href="mailto:support@aiteampremium.com">Email Us</a><a href="https://www.aiteampremium.com/faq/">FAQ</a></div>
+    </div>
+    <div class="foot-bottom">
+      <p>Â© 2026 AI Team Premium. All rights reserved.</p>
+      <p>Pay with bKash Â· Nagad Â· Bank Transfer</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(b){
+  b.addEventListener('click',function(){
+    var it=b.parentElement; it.classList.toggle('open');
+    b.querySelector('i').textContent=it.classList.contains('open')?'âˆ’':'+';
+  });
+});
+</script>
+</body>
+</html>
+

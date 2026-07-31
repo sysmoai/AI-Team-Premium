@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Prompt Techniques: Tree of Thought, Self-Consistency &amp; More | AI Team Premium</title>
+<meta name="description" content="Advanced prompt engineering techniques â€” tree of thought, self-consistency, reflection, decomposition and meta-prompting explained with examples.">
+<meta name="keywords" content="advanced prompting, tree of thought, self consistency, prompt techniques">
+<meta name="author" content="AI Team Premium">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.aiteampremium.com/blog/prompts/advanced-prompt-techniques/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="AI Team Premium">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="bn_BD">
+<meta property="og:title" content="Advanced Prompt Techniques: Tree of Thought, Self-Consistency &amp; More">
+<meta property="og:description" content="Advanced prompt engineering techniques â€” tree of thought, self-consistency, reflection, decomposition and meta-prompting explained with examples.">
+<meta property="og:url" content="https://www.aiteampremium.com/blog/prompts/advanced-prompt-techniques/">
+<meta property="article:published_time" content="2026-07-30">
+<meta property="article:section" content="Prompt Engineering">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Advanced Prompt Techniques: Tree of Thought, Self-Consistency &amp; More">
+<meta name="twitter:description" content="Advanced prompt engineering techniques â€” tree of thought, self-consistency, reflection, decomposition and meta-prompting explained with examples.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/post.css">
+<style>:root{--accent:#7c3aed;--tint:#f5f3ff}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Advanced Prompt Techniques: Tree of Thought, Self-Consistency & More", "description": "Advanced prompt engineering techniques â€” tree of thought, self-consistency, reflection, decomposition and meta-prompting explained with examples.", "inLanguage": ["en", "bn"], "keywords": "advanced prompting, tree of thought, self consistency, prompt techniques", "author": {"@type": "Organization", "name": "AI Team Premium", "url": "https://www.aiteampremium.com"}, "publisher": {"@type": "Organization", "name": "AI Team Premium", "url": "https://www.aiteampremium.com"}, "datePublished": "2026-07-30", "dateModified": "2026-07-30", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.aiteampremium.com/blog/prompts/advanced-prompt-techniques/"}, "articleSection": "Prompt Engineering"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aiteampremium.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.aiteampremium.com/blog/"}, {"@type": "ListItem", "position": 3, "name": "Prompt Engineering", "item": "https://www.aiteampremium.com/blog/prompts/"}, {"@type": "ListItem", "position": 4, "name": "Advanced Prompt Techniques: Tree of Thought, Self-Consistency & More", "item": "https://www.aiteampremium.com/blog/prompts/advanced-prompt-techniques/"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Which technique gives the biggest gain?", "acceptedAnswer": {"@type": "Answer", "text": "Reflection â€” generate, critique, regenerate. It is one extra message for a large quality jump."}}, {"@type": "Question", "name": "Are these worth it for simple tasks?", "acceptedAnswer": {"@type": "Answer", "text": "No. Use them when the problem is genuinely hard or the cost of being wrong is high."}}, {"@type": "Question", "name": "Do they work on all models?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, with the largest gains on stronger models like GPT-5 and Claude Opus."}}, {"@type": "Question", "name": "Can I combine techniques?", "acceptedAnswer": {"@type": "Answer", "text": "Yes â€” role + decomposition + reflection together is a very strong combination for complex work."}}]}</script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a href="https://www.aiteampremium.com/" class="logo">AI Team Premium</a>
+    <div class="nav-links">
+      <a href="https://www.aiteampremium.com/">Home</a>
+      <a href="https://www.aiteampremium.com/blog/" class="active">Blog</a>
+      <a href="https://www.aiteampremium.com/pricing/">Pricing</a>
+      <a href="https://www.aiteampremium.com/tools/">AI Tools</a>
+      <a href="https://wa.me/+8801533262758" class="btn-whatsapp">Order on WhatsApp</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <article class="post">
+    <div class="container">
+
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="https://www.aiteampremium.com/">Home</a> <span>/</span>
+        <a href="https://www.aiteampremium.com/blog/">Blog</a> <span>/</span>
+        <a href="https://www.aiteampremium.com/blog/prompts/">Prompt Engineering</a>
+      </nav>
+
+      <header class="post-head">
+        <div class="tags"><span class="cat">ðŸŽ¯ Prompt Engineering</span></div>
+        <h1>Advanced Prompt Techniques: Tree of Thought, Self-Consistency &amp; More<span class="bn">à¦…à§à¦¯à¦¾à¦¡à¦­à¦¾à¦¨à§à¦¸à¦¡ à¦ªà§à¦°à¦®à§à¦ªà¦Ÿ à¦Ÿà§‡à¦•à¦¨à¦¿à¦•</span></h1>
+        <div class="meta">
+          <span>ðŸ“… Updated 2026-07-30</span>
+          <span>ðŸ“– 13 min read</span>
+          <span>âœï¸ AI Team Premium</span>
+        </div>
+      </header>
+
+      <p>Once you have mastered role, format and context, these techniques squeeze substantially more capability out of the same model.</p>
+      <p>Each one addresses a specific failure mode.</p>
+
+      <div class="cta-inline">
+        <p><strong>ChatGPT Plus â€” à§³499/month.</strong> ChatGPT Plus at Bangladesh's best price. 5-minute delivery, bKash/Nagad accepted.</p>
+        <a href="https://wa.me/+8801533262758" class="btn-cta-inline">Get ChatGPT Plus â†’</a>
+      </div>
+
+      <nav class="toc" aria-label="Table of contents">
+        <h2>On this page</h2>
+        <ol>
+          <li><a href="#s1">Tree of thought</a></li>
+          <li><a href="#s2">Self-consistency</a></li>
+          <li><a href="#s3">Reflection and self-critique</a></li>
+          <li><a href="#s4">Decomposition</a></li>
+          <li><a href="#s5">Meta-prompting</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="s1">Tree of thought</h2>
+      <p>Instead of one line of reasoning, force the model to explore several and compare them.</p>
+      <ul>
+        <li>"Give me three fundamentally different approaches to [problem]. For each: how it works, main risk, and cost. Then recommend one and justify it."</li>
+        <li>Best for strategy, architecture and business decisions where the obvious answer may not be best.</li>
+      </ul>
+      <h2 id="s2">Self-consistency</h2>
+      <p>Solve the same problem multiple times independently and check whether the answers agree.</p>
+      <ul>
+        <li>"Solve this three separate ways. If the answers differ, identify where the reasoning diverged."</li>
+        <li>Best for maths, financial calculations and logic where a silent error is costly.</li>
+      </ul>
+      <div class="cta-inline">
+        <p><strong>ChatGPT Pro â€” à§³4,500/month.</strong> Unlimited GPT-5 access for heavy power users. Priority speed, no caps.</p>
+        <a href="https://wa.me/+8801533262758" class="btn-cta-inline">Get ChatGPT Pro â†’</a>
+      </div>
+      <h2 id="s3">Reflection and self-critique</h2>
+      <p>Make the model grade its own work before you do.</p>
+      <ul>
+        <li>"Now critique this answer. What are its three weakest points?"</li>
+        <li>"Rewrite it fixing those weaknesses."</li>
+        <li>"What would an expert say is missing here?"</li>
+        <li>"Rate your own confidence in each claim and flag anything uncertain."</li>
+      </ul>
+      <div class="callout ok"><strong>âœ… The two-step upgrade.</strong> Generate â†’ critique â†’ regenerate. This single loop lifts output quality more than almost any other technique, and costs one extra message.</div>
+      <h2 id="s4">Decomposition</h2>
+      <p>Complex tasks fail because you asked for everything at once. Split them.</p>
+      <div class="table-wrap"><table><thead><tr><th>Instead of</th><th>Do this</th></tr></thead><tbody><tr><td>"Write my business plan"</td><td>1) Market analysis â†’ 2) Cost structure â†’ 3) Pricing â†’ 4) 90-day plan â†’ 5) Assemble</td></tr><tr><td>"Build my website"</td><td>1) Sitemap â†’ 2) Page copy â†’ 3) HTML â†’ 4) Styling â†’ 5) Review</td></tr><tr><td>"Write my thesis chapter"</td><td>1) Outline â†’ 2) Argument per section â†’ 3) Draft each â†’ 4) Transitions</td></tr></tbody></table></div>
+      <h2 id="s5">Meta-prompting</h2>
+      <p>Ask the model to write the prompt for you.</p>
+      <ul>
+        <li>"I want to achieve [goal]. Write the ideal prompt I should give you, then wait for me to approve it."</li>
+        <li>"Improve this prompt so it produces better results: [prompt]"</li>
+        <li>"What information do you need from me to do this really well?"</li>
+      </ul>
+
+      <h2 id="faq">Frequently Asked Questions <span class="bn">à¦¸à¦šà¦°à¦¾à¦šà¦° à¦œà¦¿à¦œà§à¦žà¦¾à¦¸à¦¿à¦¤ à¦ªà§à¦°à¦¶à§à¦¨</span></h2>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span>Which technique gives the biggest gain?</span><i>+</i></button>
+          <div class="faq-a"><p>Reflection â€” generate, critique, regenerate. It is one extra message for a large quality jump.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span>Are these worth it for simple tasks?</span><i>+</i></button>
+          <div class="faq-a"><p>No. Use them when the problem is genuinely hard or the cost of being wrong is high.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span>Do they work on all models?</span><i>+</i></button>
+          <div class="faq-a"><p>Yes, with the largest gains on stronger models like GPT-5 and Claude Opus.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button"><span>Can I combine techniques?</span><i>+</i></button>
+          <div class="faq-a"><p>Yes â€” role + decomposition + reflection together is a very strong combination for complex work.</p></div>
+        </div>
+      </div>
+
+      <div class="cta-bottom">
+        <h3>Ready to get started?</h3>
+        <p class="offer-line"><strong>ChatGPT Plus</strong> â€” <span class="price">à§³499/month</span></p>
+        <p>ChatGPT Plus at Bangladesh's best price. 5-minute delivery, bKash/Nagad accepted.</p>
+        <div class="cta-options">
+          <a href="https://wa.me/+8801533262758" class="btn-primary">Order on WhatsApp â†’</a>
+          <a href="https://www.aiteampremium.com/pricing/" class="btn-secondary">View All Plans</a>
+        </div>
+        <div class="trust-badges"><span>âœ… 5â€“15 min delivery</span><span>âœ… bKash / Nagad accepted</span><span>âœ… 30-day replacement guarantee</span><span>âœ… Bangla + English support</span></div>
+      </div>
+
+      <section class="related">
+        <h3>Continue reading</h3>
+        <div class="rel-grid">
+          <a class="rel-card" href="https://www.aiteampremium.com/blog/prompts/chain-of-thought-prompting/"><h4>Chain-of-Thought Prompting</h4><span>Read guide â†’</span></a>
+          <a class="rel-card" href="https://www.aiteampremium.com/blog/prompts/prompt-chaining-workflows/"><h4>Prompt Chaining Workflows</h4><span>Read guide â†’</span></a>
+          <a class="rel-card" href="https://www.aiteampremium.com/blog/prompts/evaluate-ai-outputs/"><h4>How to Evaluate AI Outputs</h4><span>Read guide â†’</span></a>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <h3>Get free AI resources every week</h3>
+        <p>Join thousands of Bangladeshis getting prompt packs, tool reviews and exclusive offers.</p>
+        <form class="nl-form" action="#" method="post">
+          <input type="email" name="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe Free â†’</button>
+        </form>
+        <p class="small">Free 500-prompt pack on signup. No spam â€” unsubscribe anytime.</p>
+      </section>
+
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div><h4>AI Team Premium</h4><p>Bangladesh's trusted AI subscription provider since 2024. Premium AI tools, local payment, real support.</p></div>
+      <div><h4>Explore</h4><a href="https://www.aiteampremium.com/">Home</a><a href="https://www.aiteampremium.com/blog/">Blog</a><a href="https://www.aiteampremium.com/pricing/">Pricing</a><a href="https://www.aiteampremium.com/tools/">AI Tools</a></div>
+      <div><h4>Popular Plans</h4><a href="https://www.aiteampremium.com/tools/chatgpt/">ChatGPT Plus â€” à§³499</a><a href="https://www.aiteampremium.com/tools/claude/">Claude Pro â€” à§³1,200</a><a href="https://www.aiteampremium.com/tools/midjourney/">Midjourney â€” à§³1,500</a><a href="https://www.aiteampremium.com/pricing/">AI Bundle â€” à§³1,499</a></div>
+      <div><h4>Contact</h4><a href="https://wa.me/+8801533262758">WhatsApp Support</a><a href="mailto:support@aiteampremium.com">Email Us</a><a href="https://www.aiteampremium.com/faq/">FAQ</a></div>
+    </div>
+    <div class="foot-bottom">
+      <p>Â© 2026 AI Team Premium. All rights reserved.</p>
+      <p>Pay with bKash Â· Nagad Â· Bank Transfer</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(function(b){
+  b.addEventListener('click',function(){
+    var it=b.parentElement; it.classList.toggle('open');
+    b.querySelector('i').textContent=it.classList.contains('open')?'âˆ’':'+';
+  });
+});
+</script>
+</body>
+</html>
+

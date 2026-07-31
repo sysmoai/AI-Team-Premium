@@ -269,6 +269,21 @@ try {
   fail("blog-routes.js does not match its source", detail);
 }
 
+// Category metadata carries per-category counts and price floors, so it goes
+// stale the moment a product is added or repriced — the same way the route
+// metadata did before it was generated.
+try {
+  const { execFileSync } = await import("node:child_process");
+  execFileSync(process.execPath, [resolve(ROOT, "scripts/gen-category-routes.mjs"), "--check"], {
+    encoding: "utf-8",
+    stdio: ["ignore", "pipe", "pipe"],
+  });
+  ok("category-routes.js is in sync with its sources");
+} catch (e) {
+  const detail = (e.stderr || e.message || "").toString().trim();
+  fail("category-routes.js does not match its sources", detail);
+}
+
 // Prefilled WhatsApp/Messenger templates used to hardcode a price. Because they
 // live outside the catalog, nothing kept them in sync — Google AI Pro was
 // repriced to ৳3,390 while its template still quoted ৳449, so every customer

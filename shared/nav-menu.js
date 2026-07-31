@@ -13,7 +13,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "ai-assistant",
         "label": "AI Assistants",
-        "href": "/all-products?category=ai-assistant",
+        "href": "/category/ai-assistant",
         "count": 11,
         "priceFrom": 350,
         "top": [
@@ -47,7 +47,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "ai-image",
         "label": "Image Generation",
-        "href": "/all-products?category=ai-image",
+        "href": "/category/ai-image",
         "count": 8,
         "priceFrom": 190,
         "top": [
@@ -76,7 +76,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "ai-video",
         "label": "Video Generation",
-        "href": "/all-products?category=ai-video",
+        "href": "/category/ai-video",
         "count": 13,
         "priceFrom": 270,
         "top": [
@@ -105,7 +105,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "ai-voice-music",
         "label": "Voice & Music",
-        "href": "/all-products?category=ai-voice-music",
+        "href": "/category/ai-voice-music",
         "count": 7,
         "priceFrom": 499,
         "top": [
@@ -134,7 +134,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "ai-design",
         "label": "Design",
-        "href": "/all-products?category=ai-design",
+        "href": "/category/ai-design",
         "count": 4,
         "priceFrom": 510,
         "top": [
@@ -168,7 +168,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "ai-workspace",
         "label": "Workspace",
-        "href": "/all-products?category=ai-workspace",
+        "href": "/category/ai-workspace",
         "count": 14,
         "priceFrom": 399,
         "top": [
@@ -197,7 +197,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "ai-code",
         "label": "Coding",
-        "href": "/all-products?category=ai-code",
+        "href": "/category/ai-code",
         "count": 7,
         "priceFrom": 590,
         "top": [
@@ -226,7 +226,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "ai-writing",
         "label": "Writing",
-        "href": "/all-products?category=ai-writing",
+        "href": "/category/ai-writing",
         "count": 4,
         "priceFrom": 390,
         "top": [
@@ -260,7 +260,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "automation",
         "label": "Automation",
-        "href": "/all-products?category=automation",
+        "href": "/category/automation",
         "count": 2,
         "priceFrom": 1552,
         "top": [
@@ -279,7 +279,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "seo",
         "label": "SEO & Marketing",
-        "href": "/all-products?category=seo",
+        "href": "/category/seo",
         "count": 3,
         "priceFrom": 4992,
         "top": [
@@ -303,7 +303,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "ai-learning",
         "label": "Learning",
-        "href": "/all-products?category=ai-learning",
+        "href": "/category/ai-learning",
         "count": 1,
         "priceFrom": 2304,
         "top": [
@@ -317,7 +317,7 @@ export const NAV_COLUMNS = [
       {
         "slug": "bundles",
         "label": "Bundles",
-        "href": "/all-products?category=bundles",
+        "href": "/category/bundles",
         "count": 4,
         "priceFrom": 449,
         "top": [

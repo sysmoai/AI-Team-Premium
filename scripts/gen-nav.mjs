@@ -103,7 +103,10 @@ function buildCategory(cat) {
   return {
     slug: cat,
     label: LABELS[cat] ?? cat,
-    href: `/all-products?category=${cat}`,
+    // The category's own page, not /all-products?category=<slug>. The query
+    // string filtered the list correctly for a person, but a crawler saw one
+    // URL for all twelve categories, so none could rank for its own demand.
+    href: `/category/${cat}`,
     count: list.length,
     priceFrom: prices.length ? Math.min(...prices) : null,
     // Four is what fits a menu column without turning it into a directory.

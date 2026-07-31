@@ -50,6 +50,7 @@ const ProductDetail = lazy(() => import("./pages/ProductDetail"));
 const AuditDashboard = lazy(() => import("./pages/admin/AuditDashboard"));
 const ComparePage = lazy(() => import("./pages/Compare"));
 const AllProducts = lazy(() => import("./pages/AllProducts"));
+const CategoryPage = lazy(() => import("./pages/CategoryPage"));
 const PlusShared = lazy(() => import("./pages/chatgpt/PlusShared"));
 const GoShared = lazy(() => import("./pages/chatgpt/GoShared"));
 const GoPersonal = lazy(() => import("./pages/chatgpt/GoPersonal"));
@@ -124,6 +125,7 @@ function Router() {
         <Route path="/ai-subscriptions" component={AISubscriptions} />
         <Route path="/all-products" component={AllProducts} />
         <Route path="/products" component={AllProducts} />
+        <Route path="/category/:slug" component={CategoryPage} />
         <Route path="/pricing" component={Pricing} />
         <Route path="/about" component={About} />
         {/* /contact had route metadata and a sitemap entry but no route, so it

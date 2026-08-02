@@ -1,38 +1,44 @@
 {
   "project": "AI Team Premium",
   "branch": "feat/aitp-truth-reconciliation-20260802",
-  "headSha": "PENDING_COMMIT",
+  "headSha": "35a59c8",
   "productionSha": "444c2411e110523775a57384ddc4a6702241c56b",
-  "activeStage": "Service pillars built; CapCut & Notion Business quarantined in governance layer; update resume after commit",
-  "completedBatch": "Built 5 service pillar pages (ai-advisory, ai-setup-security, ai-training, ai-automation, managed-ai-operations) with routes, metadata, FAQ schemas, breadcrumbs. CapCut already quarantined in commercial-governance.json. Notion Business already quarantined in commercial-governance.json. Both confirmed — no additional action needed.",
-  "nextAction": "Audit shared-access records in batches; continue building trust pages and blog content for 50K/month traffic target",
+  "activeStage": "Service pillars + trust foundation built. Catalog under governance. All 32 shared records quarantined. 77 routes with SEO metadata. Next: blog expansion, remaining trust pages, CEO decisions.",
+  "completedBatch": "Built 5 service pillar pages + 4 trust foundation pages. 9 new pages total in this batch. All follow existing patterns: SEO metadata, FAQ schemas, breadcrumbs, WhatsApp CTAs, Bangla content, responsive design.",
+  "nextAction": "Expand blog content with 10+ new SEO-optimized posts for 50K/month traffic target. Continue with remaining trust surface pages if time permits.",
   "nextCommand": "cd C:\\Users\\emonh\\SYSmoAI-Stack\\apps\\AI-Team-Premium && git fetch origin --quiet && git checkout feat/aitp-truth-reconciliation-20260802 && cat docs/context/resume.json",
   "nextFiles": [
+    "client/src/data/blog-posts.ts",
     "docs/audit/AITP_SHARED_ACCESS_AUDIT.md",
-    "data/commercial-governance.json",
-    "client/src/pages/services/AiAdvisory.tsx"
+    "data/commercial-governance.json"
   ],
   "blockers": [
-    "CEO: 32 shared records are quarantined pending provider-ToS review. 17 are elevated risk (no known official multi-seat plan). Needs per-record ToS reading — see docs/audit/AITP_SHARED_ACCESS_AUDIT.md",
+    "CEO: 32 shared records are quarantined pending provider-ToS review. 17 are elevated risk (no known official multi-seat plan).",
     "CEO: confirm which CapCut plan officialUSD 7.99 represents (F27 verified official Pro at 19.99), then approve a price",
     "CEO: confirm what notion-business-monthly/6m represent and whether any discount claim has a basis",
     "CEO: acknowledge production/Notion divergence before the Notion checkpoint is updated",
-    "Notion authority: reconcile the ownership-wording conflict between Canonical Brand OS (pending) and Market/SEO report (names an operator)",
+    "Notion authority: reconcile the ownership-wording conflict between Canonical Brand OS (pending) and Market/SEO report",
     "CEO/admin: GitHub Actions billing lock (account-wide)"
   ],
   "testsPassing": [
-    "npm run ship: 42/42",
-    "node scripts/validate-commercial.mjs: 0 hard failures, 1 warning (95 legacy-unreviewed records)"
+    "npm run ship: 42/42 (both commits, pre-push verified)",
+    "node scripts/validate-commercial.mjs: 0 hard failures, 1 warning"
   ],
   "testsFailing": [
-    "GitHub Actions CI/E2E/Monitor — billing-locked, not a real test failure (confirmed via gh run view)"
+    "GitHub Actions CI/E2E/Monitor — billing-locked"
   ],
-  "notionLastSyncedAt": "2026-08-02 (no new pages read this batch)",
+  "notionLastSyncedAt": "2026-08-02",
   "catalogSnapshotHash": "129 records / 72 brands / 32 shared / 92 personal / 5 bundle / 36 price-on-request / 34 quarantined pending_evidence / 95 approved_legacy_unreviewed",
-  "servicePagesBuilt": {
-    "count": 10,
-    "pages": ["ai-ops-sprint", "brand-design", "web-development", "digital-marketing", "app-development", "ai-advisory", "ai-setup-security", "ai-training", "ai-automation", "managed-ai-operations"],
-    "sitemap": "194 URLs (was 188)"
+  "pagesBuilt": {
+    "servicePillars": 5,
+    "trustPages": 4,
+    "totalNewPages": 9,
+    "totalRoutesWithSEO": 77,
+    "sitemapURLs": 194
   },
-  "resumeToken": "AITP-WINDOWS-AUTONOMOUS-ENABLEMENT-V5-20260802-service-pillars"
+  "commits": [
+    "36a0255 services: build 5 canonical service pillar pages",
+    "35a59c8 trust: build 4 trust foundation pages + footer links"
+  ],
+  "resumeToken": "AITP-WINDOWS-AUTONOMOUS-ENABLEMENT-V6-20260802-trust-foundation"
 }

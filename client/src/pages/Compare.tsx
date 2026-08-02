@@ -21,7 +21,7 @@ export default function ComparePage() {
 
 function ComparisonNotFound({ slug }: { slug: string }) {
   usePageMeta({
-    title: "Comparison not found | AI Team Premium",
+    title: "Comparison not found",
     description: "We don't have this AI tool comparison yet. Browse popular comparisons from AI Team Premium.",
     path: `/compare/${slug}`,
   });

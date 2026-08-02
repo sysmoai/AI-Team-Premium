@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 export default function IncidentEscalation() {
   usePageMeta({
-    title: "Incident & Escalation Process | AI Team Premium",
+    title: "Incident & Escalation Process",
     description: "What to do if you experience an access issue, account problem, or security concern with your AI subscription. Step-by-step escalation process with response times.",
     path: "/incident-escalation",
   });

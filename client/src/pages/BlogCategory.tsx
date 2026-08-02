@@ -34,8 +34,14 @@ export default function BlogCategory({ slug }: BlogCategoryProps) {
   const posts = BLOG_POSTS.filter((p) => categorySlug(p.category) === slug);
   const name = posts[0]?.category ?? slug.replace(/-/g, " ");
 
+  // No "| AI Team Premium" suffix here — usePageMeta appends it (see
+  // use-page-meta.ts: `${title} | ${BASE}`). Including it produced
+  // "… | AI Team Premium | AI Team Premium" in the real browser tab, which the
+  // build could not catch because the generated route-meta entry (which does
+  // carry the suffix, correctly, since it is injected server-side without
+  // usePageMeta) looked right on its own.
   usePageMeta({
-    title: `${name} — AI Guides for Bangladesh | AI Team Premium`,
+    title: `${name} — AI Guides for Bangladesh`,
     description: `${posts.length} ${posts.length === 1 ? "guide" : "guides"} on ${name.toLowerCase()} for Bangladesh — practical, locally relevant, written for bKash/Nagad users. Read free, no signup.`,
     path: `/blog/category/${slug}`,
   });

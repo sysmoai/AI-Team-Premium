@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 export default function NonAffiliation() {
   usePageMeta({
-    title: "Third-Party Trademark & Non-Affiliation Disclosure | AI Team Premium",
+    title: "Third-Party Trademark & Non-Affiliation Disclosure",
     description: "AI Team Premium is an independent subscription facilitator. We are not officially affiliated with, endorsed by, or authorised resellers of any AI provider whose subscriptions we help you access.",
     path: "/non-affiliation",
   });

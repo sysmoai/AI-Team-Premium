@@ -27,7 +27,7 @@ const FAQS = [
 
 export default function AiTraining() {
   usePageMeta({
-    title: "AI Training & Workshops — Team Enablement in Bangladesh | AI Team Premium",
+    title: "AI Training & Workshops — Team Enablement in Bangladesh",
     description: "Custom AI training for teams in Bangladesh. Hands-on workshops on ChatGPT, Claude, Gemini, Midjourney, and more. Live sessions, practical exercises, 30-day support. From ৳15,000.",
     path: "/services/ai-training",
   });

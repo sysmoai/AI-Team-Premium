@@ -28,7 +28,7 @@ const FAQS = [
 
 export default function AiAutomation() {
   usePageMeta({
-    title: "AI Automation — Workflow Integration for Bangladesh | AI Team Premium",
+    title: "AI Automation — Workflow Integration for Bangladesh",
     description: "End-to-end AI workflow automation for Bangladeshi businesses. Process mapping, tool setup (Zapier, Make, n8n), deployment, and 30-day support. From ৳5,000.",
     path: "/services/ai-automation",
   });

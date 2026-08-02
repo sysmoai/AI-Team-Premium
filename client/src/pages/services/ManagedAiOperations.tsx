@@ -28,7 +28,7 @@ const FAQS = [
 
 export default function ManagedAiOperations() {
   usePageMeta({
-    title: "Managed AI Operations — Ongoing AI Management Bangladesh | AI Team Premium",
+    title: "Managed AI Operations — Ongoing AI Management Bangladesh",
     description: "Ongoing management of your AI subscriptions. Renewal tracking, security audits, quarterly optimization, priority WhatsApp support, and monthly reports. From ৳3,500/month.",
     path: "/services/managed-ai-operations",
   });

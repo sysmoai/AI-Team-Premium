@@ -361,7 +361,38 @@ for (const rel of brandPublic) {
   }
 }
 if (acronymHits.length === 0) ok("no public brand acronym in visitor-facing text");
+
 else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.join("\n"));
+
+// usePageMeta composes the tab title as `${title} | AI Team Premium` (see
+// client/src/hooks/use-page-meta.ts). A page that ALSO puts the suffix in its
+// own title argument ships "… | AI Team Premium | AI Team Premium" in the real
+// browser tab and in og:title/twitter:title.
+//
+// This shipped on 12 pages — every service pillar, four trust pages, the
+// readiness assessment — and no existing check caught it, because the
+// server-injected route-meta entry carries the suffix correctly (it does not go
+// through usePageMeta) so the generated files looked right in isolation. It was
+// only visible by opening a page and reading the tab.
+{
+  const dupTitleHits = [];
+  for (const f of walkFiles(resolve(ROOT, "client/src/pages"), /\.tsx$/)) {
+    const rel = relative(ROOT, f).replace(/\\/g, "/");
+    const body = readFileSync(f, "utf-8");
+    // Match a usePageMeta title argument that already ends with the brand.
+    for (const m of body.matchAll(/title:\s*[`"']([^`"']*)\|\s*AI Team Premium\s*[`"']/g)) {
+      dupTitleHits.push(`${rel}: "${m[1].trim()} | AI Team Premium"`);
+    }
+  }
+  if (dupTitleHits.length === 0) {
+    ok("no page double-appends the brand suffix to its own title");
+  } else {
+    fail(
+      "page title double-appends the brand — usePageMeta already adds \" | AI Team Premium\"",
+      dupTitleHits.join("\n          ")
+    );
+  }
+}
 
 // A route with metadata but no <Route> in App.tsx is a soft 404: the server
 // answers 200 with a real title and canonical, and the visitor gets NotFound.

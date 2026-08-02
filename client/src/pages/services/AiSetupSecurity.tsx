@@ -28,7 +28,7 @@ const FAQS = [
 
 export default function AiSetupSecurity() {
   usePageMeta({
-    title: "AI Setup & Security — Hardening for Bangladesh Teams | AI Team Premium",
+    title: "AI Setup & Security — Hardening for Bangladesh Teams",
     description: "Account security audit, 2FA setup, recovery configuration, password hygiene, API key rotation, and data privacy for AI tools. Guide-based setup — we never ask for your password. From ৳3,999.",
     path: "/services/ai-setup-security",
   });

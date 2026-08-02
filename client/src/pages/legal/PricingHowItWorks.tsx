@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 export default function PricingHowItWorks() {
   usePageMeta({
-    title: "Pricing — How It Works | AI Team Premium",
+    title: "Pricing — How It Works",
     description: "How AI Team Premium sets prices: official USD cost, Bangladesh exchange rate, service margin, and what 'Request Price' means. Transparent, no hidden fees.",
     path: "/pricing-how-it-works",
   });

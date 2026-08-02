@@ -27,7 +27,7 @@ const FAQS = [
 
 export default function AiAdvisory() {
   usePageMeta({
-    title: "AI Advisory — Strategy & Consulting for Bangladesh Businesses | AI Team Premium",
+    title: "AI Advisory — Strategy & Consulting for Bangladesh Businesses",
     description: "AI readiness assessment, opportunity mapping, vendor selection strategy, and 3-6 month AI adoption roadmap for Bangladeshi businesses. Free consultation. Pay via bKash/Nagad.",
     path: "/services/ai-advisory",
   });

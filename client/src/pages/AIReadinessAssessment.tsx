@@ -61,7 +61,7 @@ const CHECKPOINTS = [
 
 export default function AIReadinessAssessment() {
   usePageMeta({
-    title: "AI Readiness Assessment — Is Your Business Ready for AI? | AI Team Premium",
+    title: "AI Readiness Assessment — Is Your Business Ready for AI?",
     description: "5-minute self-assessment: Strategy, security, training, automation, and ongoing management. Discover where your business is strong and where AI services can help. Free, no commitment.",
     path: "/ai-readiness",
   });

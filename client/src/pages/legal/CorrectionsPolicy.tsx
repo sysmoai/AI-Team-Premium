@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 
 export default function CorrectionsPolicy() {
   usePageMeta({
-    title: "Corrections Policy | AI Team Premium",
+    title: "Corrections Policy",
     description: "How AI Team Premium handles corrections: we fix errors promptly, publish corrections publicly when warranted, and never silently edit substantive mistakes.",
     path: "/corrections",
   });

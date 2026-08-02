@@ -95,8 +95,8 @@ const NOTION_FAQS = [
 export const TOOL_META = {
   "slug": "notion",
   "category": "writing",
-  "priceBdt": 800,
-  "priceLabel": "from ৳800/mo",
+  "priceBdt": 0,
+  "priceLabel": "Price on request",
   "model": "GPT-4.5 + Claude Sonnet 3.5",
   "contextWindow": "Your entire workspace",
   "multimodal": "Text, file uploads",

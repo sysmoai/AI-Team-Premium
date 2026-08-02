@@ -1,0 +1,688 @@
+{
+  "_meta": {
+    "scope": "All accessType==\"shared\" records in the shipped catalog.",
+    "method": "Structural evidence from the repository only. No provider ToS was fetched in this pass, so no record is marked compliant or prohibited — doing either would be fabricating a provider finding.",
+    "generated_by": "inline node, committed as evidence"
+  },
+  "totals": {
+    "shared_records": 32,
+    "public_purchase_enabled": 0,
+    "quarantined": 32
+  },
+  "records": [
+    {
+      "id": "chatgpt-plus-starter-shared",
+      "provider": "OpenAI",
+      "product": "ChatGPT",
+      "plan": "Starter Shared",
+      "internal_price_ref": 350,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "chatgpt-plus-premium-shared",
+      "provider": "OpenAI",
+      "product": "ChatGPT",
+      "plan": "Premium Shared",
+      "internal_price_ref": 950,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "chatgpt-business-starter-shared",
+      "provider": "OpenAI",
+      "product": "ChatGPT",
+      "plan": "Starter Shared",
+      "internal_price_ref": 699,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "chatgpt-business-premium-shared",
+      "provider": "OpenAI",
+      "product": "ChatGPT",
+      "plan": "Premium Shared",
+      "internal_price_ref": 1299,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "chatgpt-pro-premium-shared",
+      "provider": "OpenAI",
+      "product": "ChatGPT",
+      "plan": "Premium Shared",
+      "internal_price_ref": 4500,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "claude-pro-premium-shared",
+      "provider": "Anthropic",
+      "product": "Claude",
+      "plan": "Premium Shared",
+      "internal_price_ref": 1495,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "perplexity-pro-shared",
+      "provider": "Perplexity",
+      "product": "Perplexity",
+      "plan": "Shared",
+      "internal_price_ref": 350,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "midjourney-std-shared",
+      "provider": "Midjourney",
+      "product": "Midjourney",
+      "plan": "Shared",
+      "internal_price_ref": 1199,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "midjourney-std-premium-shared",
+      "provider": "Midjourney",
+      "product": "Midjourney",
+      "plan": "Premium Shared",
+      "internal_price_ref": 2399,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "midjourney-pro-shared",
+      "provider": "Midjourney",
+      "product": "Midjourney",
+      "plan": "Pro Shared",
+      "internal_price_ref": 4788,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "leonardo-ai-shared",
+      "provider": "Leonardo AI",
+      "product": "Leonardo AI",
+      "plan": "Shared",
+      "internal_price_ref": 599,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "capcut-pro-starter-shared",
+      "provider": "ByteDance",
+      "product": "CapCut",
+      "plan": "Starter Shared",
+      "internal_price_ref": 399,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk",
+        "conflicts-with-recorded-ceo-decision",
+        "officialUSD-mismatch"
+      ]
+    },
+    {
+      "id": "heygen-creator-shared",
+      "provider": "HeyGen",
+      "product": "HeyGen",
+      "plan": "Shared",
+      "internal_price_ref": 1499,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "udio-pro-shared",
+      "provider": "Udio",
+      "product": "Udio",
+      "plan": "Shared",
+      "internal_price_ref": 499,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "v0-dev-shared",
+      "provider": "Vercel",
+      "product": "v0.dev",
+      "plan": "Shared",
+      "internal_price_ref": 999,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "otter-ai-shared",
+      "provider": "Otter.ai",
+      "product": "Otter.ai",
+      "plan": "Shared",
+      "internal_price_ref": 799,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "gamma-plus-shared",
+      "provider": "Gamma",
+      "product": "Gamma",
+      "plan": "Shared",
+      "internal_price_ref": 399,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "writesonic-shared",
+      "provider": "Writesonic",
+      "product": "Writesonic",
+      "plan": "Shared",
+      "internal_price_ref": 799,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "grammarly-premium-starter-shared",
+      "provider": "Grammarly",
+      "product": "Grammarly",
+      "plan": "Starter Shared",
+      "internal_price_ref": 470,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "quillbot-premium-starter-shared",
+      "provider": "QuillBot",
+      "product": "QuillBot",
+      "plan": "Starter Shared",
+      "internal_price_ref": 390,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "canva-pro-starter-shared",
+      "provider": "Canva",
+      "product": "Canva",
+      "plan": "Starter Shared",
+      "internal_price_ref": 510,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "microsoft-copilot-pro-starter-shared",
+      "provider": "Microsoft",
+      "product": "Microsoft",
+      "plan": "Starter Shared",
+      "internal_price_ref": 780,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "jasper-ai-starter-shared",
+      "provider": "Jasper",
+      "product": "Jasper",
+      "plan": "Starter Shared",
+      "internal_price_ref": 1520,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "adobe-firefly-starter-shared",
+      "provider": "Adobe",
+      "product": "Adobe",
+      "plan": "Starter Shared",
+      "internal_price_ref": 190,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "pika-labs-starter-shared",
+      "provider": "Pika",
+      "product": "Pika",
+      "plan": "Starter Shared",
+      "internal_price_ref": 310,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "opus-clip-starter-shared",
+      "provider": "Opus",
+      "product": "Opus",
+      "plan": "Starter Shared",
+      "internal_price_ref": 590,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "descript-pro-starter-shared",
+      "provider": "Descript",
+      "product": "Descript",
+      "plan": "Starter Shared",
+      "internal_price_ref": 470,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "murf-ai-starter-shared",
+      "provider": "Murf",
+      "product": "Murf",
+      "plan": "Starter Shared",
+      "internal_price_ref": 740,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "freepik-premium-shared",
+      "provider": "Freepik",
+      "product": "Freepik",
+      "plan": "Premium Shared",
+      "internal_price_ref": 450,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "kling-ai-starter-shared",
+      "provider": "Kling AI",
+      "product": "Kling AI",
+      "plan": "Starter Shared",
+      "internal_price_ref": 270,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    },
+    {
+      "id": "synthesia-starter-shared",
+      "provider": "Synthesia",
+      "product": "Synthesia",
+      "plan": "Starter Shared",
+      "internal_price_ref": 700,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "vendor-sells-official-seats-verify-workspace-model"
+      ]
+    },
+    {
+      "id": "windsurf-pro-shared",
+      "provider": "Codeium",
+      "product": "Windsurf",
+      "plan": "Pro Shared",
+      "internal_price_ref": 590,
+      "access_model": "UNVERIFIED_SHARED",
+      "commercial_status": "pending_evidence",
+      "public_purchase_enabled": false,
+      "credential_sharing_required": "UNKNOWN",
+      "account_owner": null,
+      "recovery_owner": null,
+      "official_terms_url": null,
+      "resale_or_seat_evidence": null,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "risk_flags": [
+        "shared-access-unevidenced",
+        "no-official-multiseat-plan-known-elevated-risk"
+      ]
+    }
+  ]
+}

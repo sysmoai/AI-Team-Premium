@@ -19,6 +19,11 @@ const Contact = lazy(() => import("./pages/Contact"));
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/legal/TermsOfService"));
 const RefundPolicy = lazy(() => import("./pages/legal/RefundPolicy"));
+const AccessTypes = lazy(() => import("./pages/legal/AccessTypes"));
+const PricingHowItWorks = lazy(() => import("./pages/legal/PricingHowItWorks"));
+const NonAffiliationPage = lazy(() => import("./pages/legal/NonAffiliation"));
+const CorrectionsPolicyPage = lazy(() => import("./pages/legal/CorrectionsPolicy"));
+const IncidentEscalationPage = lazy(() => import("./pages/legal/IncidentEscalation"));
 const ChatGPT = lazy(() => import("./pages/tools/ChatGPT"));
 const Claude = lazy(() => import("./pages/tools/Claude"));
 const Gemini = lazy(() => import("./pages/tools/Gemini"));
@@ -72,8 +77,14 @@ const BrandDesign = lazy(() => import("./pages/services/BrandDesign"));
 const WebDevelopment = lazy(() => import("./pages/services/WebDevelopment"));
 const DigitalMarketing = lazy(() => import("./pages/services/DigitalMarketing"));
 const AppDevelopment = lazy(() => import("./pages/services/AppDevelopment"));
+const AiAdvisory = lazy(() => import("./pages/services/AiAdvisory"));
+const AiSetupSecurity = lazy(() => import("./pages/services/AiSetupSecurity"));
+const AiTraining = lazy(() => import("./pages/services/AiTraining"));
+const AiAutomation = lazy(() => import("./pages/services/AiAutomation"));
+const ManagedAiOperations = lazy(() => import("./pages/services/ManagedAiOperations"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const AIReadinessAssessment = lazy(() => import("./pages/AIReadinessAssessment"));
 
 function ScrollToTop() {
   const [location] = useLocation();
@@ -120,6 +131,11 @@ function Router() {
         <Route path="/services/web-development" component={WebDevelopment} />
         <Route path="/services/digital-marketing" component={DigitalMarketing} />
         <Route path="/services/app-development" component={AppDevelopment} />
+        <Route path="/services/ai-advisory" component={AiAdvisory} />
+        <Route path="/services/ai-setup-security" component={AiSetupSecurity} />
+        <Route path="/services/ai-training" component={AiTraining} />
+        <Route path="/services/ai-automation" component={AiAutomation} />
+        <Route path="/services/managed-ai-operations" component={ManagedAiOperations} />
         <Route path="/support" component={Services} />
         <Route path="/services" component={Services} />
         <Route path="/ai-subscriptions" component={AISubscriptions} />
@@ -136,6 +152,11 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/start-a-project" component={Contact} />
         <Route path="/refund-policy" component={RefundPolicy} />
+        <Route path="/access-types" component={AccessTypes} />
+        <Route path="/pricing-how-it-works" component={PricingHowItWorks} />
+        <Route path="/non-affiliation" component={NonAffiliationPage} />
+        <Route path="/corrections" component={CorrectionsPolicyPage} />
+        <Route path="/incident-escalation" component={IncidentEscalationPage} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms" component={TermsOfService} />
         <Route path="/tools/chatgpt" component={ChatGPT} />
@@ -171,6 +192,7 @@ function Router() {
         <Route path="/compare/:slug" component={ComparePage} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/ai-readiness" component={AIReadinessAssessment} />
         <Route component={NotFound} />
       </Switch>
       </Suspense>

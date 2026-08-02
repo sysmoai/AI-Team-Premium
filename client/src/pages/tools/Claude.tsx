@@ -10,8 +10,8 @@ import { motion } from "framer-motion";
 export const TOOL_META = {
   "slug": "claude",
   "category": "chat",
-  "priceBdt": 1495,
-  "priceLabel": "from ৳1,495/mo",
+  "priceBdt": 2990,
+  "priceLabel": "from ৳2,990/mo",
   "model": "Claude 4 Sonnet + Opus",
   "contextWindow": "200K tokens",
   "multimodal": "Text, image, document analysis",

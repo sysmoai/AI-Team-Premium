@@ -87,14 +87,14 @@ export default function About() {
             {/* DIRECT ANSWER BLOCK (GEO) */}
             <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.sky, opacity: 1 }}>
               <p style={{ color: BRAND.navy, opacity: 1, fontSize: "1rem", lineHeight: 1.7, fontWeight: 500 }}>
-                <strong>AI Team Premium</strong>, founded in <strong>2024</strong> and based in <strong>Dhaka, Bangladesh</strong>, is the country's trusted local access provider of premium AI subscriptions. We sell <strong>a wide range of AI tools</strong> — ChatGPT, Claude, Gemini, Midjourney, SuperGrok, Google AI Pro, Leonardo, Runway, Kling and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer. We deliver in 5–15 minutes and guarantee replacement within 24 hours.
+                <strong>AI Team Premium</strong> is an independent Bangladesh-focused AI access and enablement platform providing tool guidance, setup support, training, workflow implementation, and managed assistance. We help customers access <strong>premium AI tools</strong> — ChatGPT, Claude, Gemini, Midjourney, SuperGrok, Google AI Pro, Leonardo, Runway, Kling and more — all payable in BDT via bKash, Nagad, Rocket or Bank Transfer.
               </p>
             </div>
 
             <div>
               <h2 className="mb-4 text-slate-900 dark:text-white" style={{ fontSize: "1.4rem", fontWeight: 700 }}>Who We Are</h2>
               <p>
-                AI Team Premium started in 2024 with a simple mission: to bridge the gap between global AI technology and the Bangladeshi market. We noticed that many talented professionals, students, and businesses in Bangladesh were struggling to access premium global AI tools due to international payment restrictions — over 95% of Bangladeshi users do not hold an international credit card capable of recurring USD billing.
+                AI Team Premium is an independent Bangladesh-focused AI access and enablement platform. We provide tool guidance, setup support, training, workflow implementation, and managed assistance — helping Bangladeshi professionals, students, and businesses access global AI tools that are otherwise difficult to pay for with local payment methods.
               </p>
               <p className="mt-4">
                 We solve this by acting as your trusted local partner. We provide genuine access to tools like <strong>ChatGPT Plus, ChatGPT Pro, ChatGPT Team, Claude Pro, Gemini Advanced, Google AI Pro, SuperGrok, Midjourney, Leonardo AI, Runway ML, Kling AI, Canva Pro, Grammarly Premium, Perplexity Pro, ElevenLabs and GitHub Copilot</strong> — allowing you to pay in BDT via accessible methods like bKash and Nagad.

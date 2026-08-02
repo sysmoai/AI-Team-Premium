@@ -120,9 +120,60 @@ function normalise(p) {
   return out;
 }
 
+// Commercial governance overlay (data/commercial-governance.json).
+//
+// The eligibility protocol requires an evidenced access model, ownership
+// disclosure and an approved price before a product may carry a public purchase
+// action. The source export carries none of that, so governance lives in its own
+// file and is applied here — meaning a quarantine cannot be lost by someone
+// re-running the catalog build.
+//
+// Quarantine works by setting priceOnRequest, which ProductDetail/ProductCard/
+// CategoryPage/Pricing already honour. Reusing the existing, already-tested
+// price-suppression path is deliberate: a second parallel mechanism would be one
+// more thing that can silently stop working.
+const GOVERNANCE = resolve(ROOT, "data/commercial-governance.json");
+let governance = {};
+try {
+  governance = JSON.parse(readFileSync(GOVERNANCE, "utf-8")).records || {};
+} catch {
+  console.error("data/commercial-governance.json missing or unreadable — run: node scripts/gen-governance.mjs");
+  process.exit(1);
+}
+
+// Statuses that must never carry a fixed public price or a direct buy action.
+const NO_PUBLIC_PURCHASE = new Set([
+  "pending_evidence",
+  "not_for_resale",
+  "prohibited",
+  "request_price_only",
+  "unavailable",
+  "retired",
+]);
+
+function applyGovernance(p) {
+  const g = governance[p.id];
+  if (!g) return p; // Unknown to governance: left as-is, and the validator fails on it.
+  const out = { ...p, commercialStatus: g.commercial_status, accessModel: g.access_model };
+  if (NO_PUBLIC_PURCHASE.has(g.commercial_status)) {
+    out.priceOnRequest = true;
+    out.priceOnRequestReason = "Availability and current price confirmed after plan verification.";
+    // Strip any BDT figure from the WhatsApp prefill so a quarantined price
+    // cannot leak through the one surface that bypasses the price components.
+    if (typeof out.whatsappMsg === "string") {
+      out.whatsappMsg = out.whatsappMsg.replace(/\s*\(৳[\d,]+(\/mo)?\)/g, "").replace(/\s+৳[\d,]+/g, "");
+    }
+    // Discount/scarcity badges are savings claims against a price we are no
+    // longer standing behind.
+    if (out.badge && /%\s*off|save|discount/i.test(out.badge)) delete out.badge;
+  }
+  return out;
+}
+
 const cleaned = products
   .map(clean)
   .map(normalise)
+  .map(applyGovernance)
   .filter((p) => (p.status || "Active").toLowerCase() !== "inactive");
 
 const rendered = JSON.stringify(cleaned, null, 2) + "\n";

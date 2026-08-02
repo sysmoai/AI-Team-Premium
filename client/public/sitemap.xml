@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- GENERATED FILE — do not edit by hand. Run: npm run gen:sitemap -->
-<!-- Source: lib/route-meta.js (251 indexable routes) -->
+<!-- Source: lib/route-meta.js (254 indexable routes) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.aiteampremium.com/</loc>
@@ -915,6 +915,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/ai-prompts-for-teachers-education-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/ai-replacing-jobs-bangladesh-truth</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -940,6 +946,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/blog/ai-tools-customer-support-examples-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/ai-tools-data-analysis-reports-bangladesh</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1054,6 +1066,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/blog/canva-pro-price-bangladesh-worth-it</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/canva-pro-tips-tricks-bangladesh-designers</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

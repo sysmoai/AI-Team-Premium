@@ -2283,6 +2283,96 @@ export const BLOG_POSTS: BlogPost[] = [
       ]},
     ],
   },
+  {
+    slug: "canva-pro-tips-tricks-bangladesh-designers",
+    title: "Canva Pro Tips & Tricks for Bangladeshi Designers (2026)",
+    excerpt: "You have Canva Pro — now use it like a professional. Hidden features, AI tricks, brand kit setups, and workflows that Bangladeshi social media managers and designers use daily.",
+    category: "How-To Guides",
+    publishedDate: "2026-08-02",
+    readMinutes: 5,
+    heroEmoji: "🎨",
+    faqs: [
+      { q: "What's the most underrated Canva Pro feature?", a: "Brand Kit. Upload your brand colors, fonts, and logos once — every design automatically uses them. For freelancers managing multiple client brands, create a Brand Kit per client. You'll stop manually checking hex codes and font sizes on every design." },
+      { q: "Can Canva AI really save me time?", a: "Magic Write drafts captions inside your designs — not switching apps. Background Remover turns any photo into a cutout in 2 seconds. Magic Resize adapts one design into multiple formats (Instagram post → Story → Facebook) in one click. These three features alone save 15-30 minutes per design." },
+    ],
+    sections: [
+      { heading: "Pro workflows that save hours weekly", body: [
+        "Batch content creation: set aside 2 hours on Sunday. Create all 7 days of social media posts in one session. Use Magic Resize to generate each post in multiple formats. You'll have 7 posts × 3 formats = 21 designs in the time it used to take for 3-4.",
+        "Client template system: create a template folder per client with their brand colors pre-set, common post formats (announcement, promotion, testimonial, educational), and approved fonts. When a client says 'can you post something about X?' — pick the template, change the text, done in 5 minutes.",
+        "AI image generation inside Canva: use Canva's built-in text-to-image for quick graphics when stock photos won't work. Quality is good enough for social media — not Midjourney level, but zero extra subscription cost.",
+      ]},
+      { heading: "Bangladesh-specific design tips", body: [
+        "Eid/seasonal templates: create template packs for Eid, Pohela Boishakh, Independence Day, and other recurring events. Update and reuse annually instead of starting from scratch each time.",
+        "bKash/Nagad payment graphics: template your payment confirmation designs once. When a customer pays, change the name and amount in 30 seconds.",
+        "Bangla typography: Canva supports Bangla fonts. Use 'Noto Sans Bengali' or 'Hind Siliguri' for clean, readable Bangla text. Avoid decorative Bangla fonts for body text — they're hard to read on mobile.",
+        "F-commerce product posts: the standard format for Facebook Shop posts is a square image with product name + price + bKash number. Template this once, use it for every product.",
+      ]},
+    ],
+  },
+  {
+    slug: "ai-tools-data-analysis-reports-bangladesh",
+    title: "Using AI for Data Analysis & Reports: A Guide for Bangladeshi Professionals",
+    excerpt: "How to use ChatGPT and Claude to analyze Excel data, generate charts, write reports, and create dashboards — even if you've never done data analysis before.",
+    category: "How-To Guides",
+    publishedDate: "2026-08-02",
+    readMinutes: 6,
+    heroEmoji: "📊",
+    faqs: [
+      { q: "Can ChatGPT really analyze my Excel files?", a: "Yes — upload your Excel or CSV file to ChatGPT Plus and ask it to summarize, find trends, compare columns, or create charts. It handles datasets up to several thousand rows. For large datasets, break them into chunks or use the data analysis feature with Python code generation." },
+      { q: "Is my data safe when uploading to AI?", a: "Assume it's not fully private. For sensitive business data, summarize or anonymize before uploading. For public or internal data, ChatGPT Plus's data controls (opt out of training) add protection. Never upload customer personal data, financial records with PII, or confidential business strategy documents." },
+    ],
+    sections: [
+      { heading: "What AI can do with your data", body: [
+        "Summarize: upload a sales report spreadsheet → AI summarizes total sales, top products, month-over-month changes.",
+        "Find patterns: upload customer data → AI identifies which customer segments buy most, seasonal patterns, and anomalies.",
+        "Create charts: describe what you want to see → AI generates Python code to create the chart. Copy-paste into your report. No Excel chart wrestling required.",
+        "Write the report: after analyzing data, AI writes a professional summary with findings, charts referenced, and recommendations.",
+        "For Bangladeshi professionals who do monthly reports (sales, inventory, attendance, finances) — this workflow cuts report creation time from 2-4 hours to 20-30 minutes, with better analysis quality because AI catches patterns humans miss in spreadsheet scanning.",
+      ]},
+      { heading: "Step-by-step workflow", body: [
+        "1. Prepare your data: clean basic issues (remove empty rows, standardize date formats). AI handles the rest.",
+        "2. Upload to ChatGPT Plus: drag your Excel/CSV file into the chat.",
+        "3. Start with a summary: 'Summarize this data — what are the key numbers and trends?' The AI overview tells you what to dig deeper into.",
+        "4. Ask specific questions: 'Which product had the best growth month-over-month?' 'Is there a seasonal pattern?' 'Compare Q1 and Q2 performance.'",
+        "5. Generate charts: 'Create a bar chart showing monthly sales' or 'Show a pie chart of revenue by category.' AI writes the Python code — you don't need to know Python.",
+        "6. Write the report: 'Based on this analysis, write a 2-page executive summary with key findings, charts referenced, and 3 recommendations.'",
+      ]},
+      { heading: "What AI data analysis can't do (yet)", body: [
+        "AI can't verify whether your data is accurate — if the source data is wrong, the analysis will be wrong.",
+        "AI can't make business decisions — it can tell you what the data shows, but you decide what to do about it.",
+        "AI may make calculation errors on very large or complex datasets. Always verify critical numbers manually.",
+        "AI doesn't understand your business context — it doesn't know that a sales drop in Ramadan is normal for your industry unless you tell it.",
+      ]},
+    ],
+  },
+  {
+    slug: "ai-prompts-for-teachers-education-bangladesh",
+    title: "AI Prompts for Teachers & Educators in Bangladesh: Save Hours Every Week",
+    excerpt: "Teachers spend 10-15 hours weekly on lesson planning, worksheet creation, and assessment writing. Here are ready-to-use AI prompts that handle all three — in English and Bangla.",
+    category: "Industry Guides",
+    publishedDate: "2026-08-02",
+    readMinutes: 6,
+    heroEmoji: "📖",
+    faqs: [
+      { q: "Can AI create Bangla educational materials?", a: "Yes — ChatGPT and Gemini both produce good-quality Bangla lesson plans, worksheets, and quiz questions. Always review AI-generated educational content for accuracy before using with students. AI is a drafting assistant, not a subject matter expert." },
+      { q: "Is it ethical for teachers to use AI?", a: "Yes, with transparency. Using AI to draft lesson plans and worksheets is like using a calculator for math — it handles the repetitive work, you apply professional judgment. Disclose AI use to your institution if required. The teacher's expertise is in customizing, verifying, and delivering the content — not in formatting worksheets." },
+    ],
+    sections: [
+      { heading: "Ready-to-copy prompts for teachers", body: [
+        "Lesson plan prompt: 'Create a 45-minute lesson plan for Class 8 Science, chapter: Photosynthesis. Include: learning objectives, key vocabulary in English and Bangla, 15-minute lecture with 3 discussion questions, 15-minute group activity, 10-minute assessment. Provide worksheets in Bangla.'",
+        "Worksheet prompt: 'Create a 10-question worksheet on linear equations for Class 9 Math (Bangladesh curriculum). Include: 5 basic problems, 3 word problems in Bangla about real-world situations (market, rickshaw fare, mobile recharge), and 2 challenge problems. Provide answer key separately.'",
+        "Quiz prompt: 'Create a 20-mark multiple-choice quiz on Bangladesh Studies, chapter: Language Movement 1952. 10 questions at 2 marks each. Include 4 options per question. Provide in both English and Bangla. Difficulty: appropriate for Class 7.'",
+        "Report card comment prompt: 'Write 5 different report card comments for a student who is performing well in English but needs improvement in Math participation. Make each comment unique, constructive, and encouraging. Include Bangla versions for parents who prefer Bangla.'",
+        "Parent communication prompt: 'Write a WhatsApp message template in Bangla for notifying parents about upcoming parent-teacher meetings. Include date/time options, what will be discussed, and a polite request to confirm attendance.'",
+      ]},
+      { heading: "Customize for Bangladesh curriculum", body: [
+        "For NCTB curriculum: mention the NCTB chapter and page reference in your prompt. AI will align content with those specific topics.",
+        "For English Version/Madrasah: specify 'English Version curriculum' or 'Madrasah curriculum' in your prompt. AI adapts content accordingly.",
+        "For Bangla medium: request content primarily in Bangla with key terms in English. This mirrors how Bangladeshi teachers actually teach — concepts in Bangla, terms in English.",
+        "For SSC/HSC prep: include the board exam year and subject code in your prompt. AI can generate questions that match the format and difficulty of past papers.",
+      ]},
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

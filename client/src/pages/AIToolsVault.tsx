@@ -133,8 +133,8 @@ export default function AIToolsVault() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
             {[
               { icon: <Package size={16} color={BRAND.blue} />, text: "3 Tools in 1" },
-              { icon: <Clock size={16} color={BRAND.blue} />, text: "6hr Delivery" },
-              { icon: <Shield size={16} color={BRAND.blue} />, text: "30-Day Warranty" },
+              { icon: <Clock size={16} color={BRAND.blue} />, text: "After Plan Verified" },
+              { icon: <Shield size={16} color={BRAND.blue} />, text: "Verification Pending" },
               { icon: <Zap size={16} color={BRAND.blue} />, text: "bKash / Nagad" },
             ].map((item) => (
               <div key={item.text} className="flex items-center justify-center gap-2 py-3">
@@ -165,8 +165,8 @@ export default function AIToolsVault() {
                 <span style={{ color: BRAND.navy, fontSize: "1.5rem", fontWeight: 700 }}>Request current price</span>
                 <span style={{ color: BRAND.navy, opacity: 0.4, fontSize: "0.9rem" }}>/month</span>
               </div>
-              <div className="flex items-center gap-1.5 mt-1 mb-6" style={{ color: BRAND.blue, fontSize: "0.78rem", fontWeight: 500 }}>
-                <Clock size={13} /> Delivery: 6 hours
+              <div className="flex items-center gap-1.5 mt-1 mb-6" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.78rem", fontWeight: 500 }}>
+                <Clock size={13} /> Delivery: confirmed after order
               </div>
               <ul className="space-y-3 mb-8">
                 {INCLUDED.map((item) => (
@@ -198,7 +198,7 @@ export default function AIToolsVault() {
               >
                 <MessageCircle size={14} color="#fff" /> Or message on Messenger
               </a>
-              <p className="mt-3 text-center text-xs" style={{ color: BRAND.navy, opacity: 0.4 }}>Free replacement or account credit within 24h if access is not delivered.</p>
+              <p className="mt-3 text-center text-xs" style={{ color: BRAND.navy, opacity: 0.4 }}>Availability and terms confirmed after plan verification.</p>
             </div>
 
             <div>

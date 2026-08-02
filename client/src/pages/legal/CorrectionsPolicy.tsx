@@ -67,7 +67,7 @@ export default function CorrectionsPolicy() {
               <div className="rounded-lg p-4" style={{ background: "rgba(37,99,235,0.05)", border: "1px solid rgba(37,99,235,0.10)" }}>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">2026-08-02</p>
                 <p className="text-slate-700 dark:text-slate-300 mt-1">
-                  <strong>CapCut Pro pricing:</strong> A previously published price of ৳399 was withdrawn after review identified a conflict with a recorded pricing decision. The product now shows "Request Price" while the correct basis is confirmed. No customer was charged the withdrawn price during the review period.
+                  <strong>CapCut Pro pricing:</strong> A previously published price of ৳399 was withdrawn after CEO review identified pricing and plan-type issues. Official CapCut price varies by region and platform — check the current CapCut checkout. Contact our team on WhatsApp for the currently available AI Team Premium offer price.
                 </p>
               </div>
               <div className="rounded-lg p-4" style={{ background: "rgba(37,99,235,0.05)", border: "1px solid rgba(37,99,235,0.10)" }}>

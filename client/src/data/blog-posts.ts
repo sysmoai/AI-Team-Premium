@@ -799,7 +799,7 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "Month 4+: only once the toolkit is already earning back its cost",
         body: [
           "This is where it's worth expanding into adjacent income streams the earlier tools unlock — not before.",
-          "Video and voice work: CapCut Pro (৳399/mo) for editing plus ElevenLabs (from ৳748/mo) for voiceover — together these let a writer-freelancer take on short-form video gigs without hiring anyone.",
+          "Video and voice work: CapCut Pro (request pricing on WhatsApp) for editing plus ElevenLabs (from ৳748/mo) for voiceover — together these let a writer-freelancer take on short-form video gigs without hiring anyone.",
           "Presentation and pitch-deck work: Figma (from ৳2,064/mo) or Gamma, if client work is starting to include investor decks or product presentations.",
           "Workspace and delivery organisation: Notion Business (from ৳800/mo), once you're running multiple concurrent clients and a spreadsheet stops being enough.",
         ],
@@ -809,7 +809,7 @@ export const BLOG_POSTS: BlogPost[] = [
         body: [
           "Starting out: ChatGPT Plus Shared (৳350/mo). One tool, used properly, beats five tools used badly.",
           "Established, 3+ regular clients: ChatGPT Plus Shared + Grammarly Premium Shared (৳470) + Canva Pro Shared (৳510) ≈ ৳1,330/month.",
-          "Full-time, diversifying income streams: add CapCut Pro (৳399) and either Claude Pro or GitHub Copilot depending on your niche ≈ ৳2,200–3,200/month — still less than most freelancers lose to a single missed deadline caused by working without these tools.",
+          "Full-time, diversifying income streams: add CapCut Pro (request pricing on WhatsApp) and either Claude Pro or GitHub Copilot depending on your niche ≈ ৳2,200–3,200/month — still less than most freelancers lose to a single missed deadline caused by working without these tools.",
           "There's no guaranteed income figure any tool combination produces — how much you earn depends on your skill, your niche and how consistently you work. What these tools reliably do is remove hours of manual effort per project, which is time you can spend on more billable work or a better pitch.",
         ],
       },
@@ -824,15 +824,15 @@ export const BLOG_POSTS: BlogPost[] = [
     readMinutes: 7,
     heroEmoji: "🎬",
     faqs: [
-      { q: "Do I need Runway if I already have CapCut Pro?", a: "Not immediately. CapCut handles cutting, captions, transitions and effects — the bulk of short-form editing. Runway is for generating or transforming footage that doesn't exist yet (AI video, style transfer), which most creators only need once they're taking on more ambitious client briefs." },
+      { q: "Do I need Runway if I already have CapCut Pro?", a: "Not immediately. CapCut handles cutting, captions, transitions and effects — the bulk of short-form editing. Runway is for generating or transforming footage that doesn't exist yet (AI video, style transfer), which most creators only need once they're taking on more ambitious client briefs. Official CapCut pricing varies by region and platform — check the current CapCut checkout or message us on WhatsApp for the AI Team Premium offer." },
       { q: "Can I do voiceover without hiring a voice actor?", a: "Yes — ElevenLabs generates natural-sounding narration in multiple languages and accents from typed text, which is genuinely usable for tutorials, ads and explainer videos. For a brand's flagship content, many creators still mix in a real voice for the final polish, but for volume content it removes the biggest bottleneck." },
-      { q: "What's the realistic monthly cost to start?", a: "CapCut Pro alone is ৳399/month and covers most short-form editing work end to end. Add ElevenLabs (from ৳748/month) once voiceover work becomes a regular part of your deliverables — there's no need to pay for both from day one." },
+      { q: "What's the realistic monthly cost to start?", a: "CapCut Pro pricing varies — check with our team on WhatsApp for the currently available option and offer price. Add ElevenLabs (from ৳748/month) once voiceover work becomes a regular part of your deliverables — there's no need to pay for both from day one." },
     ],
     sections: [
       {
         heading: "Start with CapCut Pro — it covers most of the actual editing",
         body: [
-          "CapCut Pro (৳399/mo) removes the watermark, unlocks the full AI effects library and gives cloud storage for projects in progress. For short-form content — Reels, Shorts, TikTok-style edits — this alone covers cutting, transitions, auto-captions and most of what a client actually asks for.",
+          "CapCut Pro removes the watermark, unlocks the full AI effects library and gives cloud storage for projects in progress. For short-form content — Reels, Shorts, TikTok-style edits — this alone covers cutting, transitions, auto-captions and most of what a client actually asks for. Pricing: contact our team on WhatsApp for the currently available option and offer price.",
           "Learn its auto-caption and auto-reframe tools first. Captions dramatically increase watch time on social platforms where most people watch on mute, and reframing lets you deliver one edit in multiple aspect ratios without re-cutting by hand.",
         ],
       },
@@ -853,9 +853,9 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "A realistic progression",
         body: [
-          "Just starting: CapCut Pro only (৳399/mo) — get genuinely fast at editing and captioning before adding anything else.",
-          "Taking narration/explainer briefs: CapCut Pro + ElevenLabs Starter (৳748/mo) ≈ ৳1,150/month.",
-          "Full-service creator or small agency: CapCut Pro + ElevenLabs Creator (৳3,289/mo) + Runway Standard (৳1,794/mo) ≈ ৳5,480/month — appropriate once video work is a primary income stream, not a starting point.",
+          "Just starting: CapCut Pro — get genuinely fast at editing and captioning before adding anything else. Contact WhatsApp for current pricing.",
+          "Taking narration/explainer briefs: CapCut Pro + ElevenLabs Starter (৳748/mo). Contact WhatsApp for CapCut pricing.",
+          "Full-service creator or small agency: CapCut Pro + ElevenLabs Creator (৳3,289/mo) + Runway Standard (৳1,794/mo) — appropriate once video work is a primary income stream, not a starting point. Contact WhatsApp for CapCut pricing.",
         ],
       },
     ],

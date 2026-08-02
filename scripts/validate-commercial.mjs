@@ -184,6 +184,52 @@ if (handler) {
   }
 }
 
+// ---------- 5c. quarantined NON-catalog pages ----------
+// Some offers are sold on their own hand-built page rather than as a catalog
+// entry, so data/commercial-governance.json does not reach them and check 5b
+// (which iterates catalog slugs) cannot see them. The AI Tools Vault is one:
+// it advertised a hardcoded ৳1,990 for shared access to three identity-bound
+// accounts and sat outside every guard built here.
+//
+// Quarantining the React component was NOT sufficient — the server-injected
+// route metadata is a separate surface, and the price plus both withdrawn claims
+// survived in the served <title> and meta description, which is exactly what a
+// crawler reads. So this asserts against rendered output too.
+if (handler) {
+  const { VAULT_QUARANTINE, BUNDLE_PRICES } = await import(
+    pathToFileURL(resolve(ROOT, "shared/bundle-prices.js")).href
+  );
+
+  if (VAULT_QUARANTINE?.quarantined) {
+    const res = {
+      statusCode: 200, headers: {}, body: "",
+      setHeader(k, v) { this.headers[k] = v; },
+      status(c) { this.statusCode = c; return this; },
+      send(b) { this.body = b; return this; },
+      end(b) { this.body = b || ""; return this; },
+    };
+    await handler({ url: "/ai-tools-vault", method: "GET", headers: {} }, res);
+    const body = res.body;
+
+    const price = BUNDLE_PRICES.vault;
+    const bnPrice = String(price).replace(/\d/g, (d) => "০১২৩৪৫৬৭৮৯"[Number(d)]);
+    if (new RegExp(`৳\\s?${price.toLocaleString("en-US")}|৳\\s?${price}\\b`).test(body) || body.includes(bnPrice)) {
+      failures.push(`/ai-tools-vault: quarantined but served HTML still quotes ৳${price}`);
+    }
+    // A Product/Offer node asserts "this is for sale at a price" to a crawler.
+    if (/"@type":\s*"Product"/.test(body)) {
+      failures.push(`/ai-tools-vault: quarantined but still emits Product structured data`);
+    }
+    for (const claim of VAULT_QUARANTINE.withdrawnClaims ?? []) {
+      // Match the claim loosely enough to catch rewordings of the same promise.
+      const pattern = claim.replace(/[-\s]+/g, "[-\\s]?").replace(/\d+/g, "\\d+");
+      if (new RegExp(pattern, "i").test(body)) {
+        failures.push(`/ai-tools-vault: withdrawn claim "${claim}" still appears in served HTML`);
+      }
+    }
+  }
+}
+
 // ---------- 6. brand firewall ----------
 // A deterministic check that the sibling storefront cannot reappear in shipped
 // data. build-catalog.mjs already scrubs the source; this proves the result.

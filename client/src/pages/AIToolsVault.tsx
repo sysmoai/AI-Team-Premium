@@ -3,7 +3,7 @@ import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { Check, Shield, Zap, Clock, Package, MessageCircle, Star } from "lucide-react";
 import { config } from "@/lib/config";
-import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/JsonLd";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 const INCLUDED = [
@@ -28,21 +28,39 @@ const COMPARISON = [
 const bdt = (n: number) => `৳${n.toLocaleString("en-US")}`;
 const COMPARISON_TOTAL = COMPARISON.reduce((s, r) => s + r.individualBdt, 0);
 
+// The Bangla section quotes the same comparison total in Bangla numerals. It had
+// been typed separately and was left at ৳৭,২৫০ when the English figure was
+// corrected to the real catalog sum — understating the comparison by ৳2,120 for
+// every Bangla-reading visitor. Deriving it from COMPARISON_TOTAL means the two
+// cannot disagree again.
+const BN_DIGITS = ["০", "১", "২", "৩", "৪", "৫", "৬", "৭", "৮", "৯"];
+const bnBdt = (n: number) =>
+  `৳${n.toLocaleString("en-US").replace(/\d/g, (d) => BN_DIGITS[Number(d)])}`;
+
+// FAQ answers rewritten 2026-08-02 alongside the Vault quarantine.
+//
+// Every price was removed, not replaced with a different number: the bundle has
+// no approved price while its access model is unevidenced, and an FAQ answer is
+// exactly the kind of place a stale figure survives a reprice. The delivery-time
+// and warranty answers are gone for the same reason the claims were withdrawn —
+// nothing on record establishes either.
+//
+// The "what is shared access" answer is kept and expanded, because a customer
+// evaluating this bundle needs that explanation more than ever now that we are
+// telling them we are still verifying it.
 const VAULT_FAQS = [
-  { q: "What is the AI Tools Vault bundle from AI Team Premium?", a: "The AI Tools Vault is a bundle that gives you shared-seat access to three top AI tools — ChatGPT Plus, Claude Pro, and Gemini Advanced — together for ৳1,990/month, paid in BDT via bKash or Nagad. It includes bundled onboarding, a single WhatsApp support channel, and setup guides for all three tools." },
-  { q: "How much does the AI Tools Vault cost in Bangladesh?", a: "The AI Tools Vault costs ৳1,990/month from AI Team Premium. You can pay in BDT using bKash, Nagad, Rocket or Bank Transfer — no international credit card required." },
-  { q: "How is the AI Tools Vault value calculated?", a: "If you were to buy a Personal Seat for each tool separately — ChatGPT Plus (৳2,990), Claude Pro (৳2,990), and Google AI Pro / Gemini Advanced (৳3,390) — you'd pay ৳9,370/month. The Vault gives you shared access to all three for ৳1,990/month, with a single payment and single support channel. Note that the Vault is shared access, not personal seats — see the comparison below." },
-  { q: "How long does delivery take for the AI Tools Vault?", a: "Vault bundle access is set up within 6 hours after payment confirmation. AI Team Premium confirms via WhatsApp at +880 1533-262758." },
-  { q: "Is there a warranty on the AI Tools Vault?", a: "Yes. All three tools carry a 30-day replacement warranty. If any access stops working due to our fault, we replace it within 24 hours at no extra charge." },
-  { q: "Can I buy just one tool instead of the full Vault?", a: "Yes. ChatGPT Plus starts at ৳350/mo (shared) and Claude Pro at ৳1,495/mo (shared). Google AI Pro (Gemini Advanced) is sold as a personal seat at ৳3,390/mo rather than a shared tier. The Vault is ideal if you regularly need all three tools and want single-channel support and onboarding." },
-  { q: "What is the difference between Vault shared access and personal seats?", a: "The Vault provides shared-seat access — you share the account with a small number of other users, but your conversations remain private. Personal seats give you your own dedicated account. If you want full private ownership, buy each tool's Personal Seat separately." },
-  { q: "What onboarding do I get with the Vault?", a: "You get a bundled onboarding guide covering the best use cases for all three tools, tips on when to use each AI (ChatGPT for creative/coding, Claude for long documents/analysis, Gemini for Google Workspace tasks), and a prompt starter pack." },
+  { q: "What is the AI Tools Vault bundle from AI Team Premium?", a: "The AI Tools Vault bundles access to three widely used AI tools — ChatGPT Plus, Claude Pro and Gemini Advanced — with bundled onboarding, a single WhatsApp support channel and setup guidance for all three." },
+  { q: "How much does the AI Tools Vault cost in Bangladesh?", a: "We are not publishing a price for the Vault at the moment. We are confirming exactly how access to each of the three tools is delivered and what the current provider terms allow, and we would rather answer that properly than publish a figure we are still checking. Ask us on WhatsApp and we will tell you where that review stands and what we can offer today." },
+  { q: "Why is there no price shown right now?", a: "The Vault provides shared access, and we are reviewing our shared-access products one by one against each provider's current terms. Until that review is finished for these three tools, we are not quoting a fixed bundle price. This is a deliberate pause, not a stock problem." },
+  { q: "What is the difference between shared access and a personal seat?", a: "A personal seat is an account of your own: you own it, you control the email and password recovery, and nobody else uses it. Shared access means an account is used by more than one person. That difference matters for privacy, for who can recover the account, and for what the provider's terms permit — which is precisely what we are currently verifying." },
+  { q: "Can I buy the tools individually instead?", a: "Yes, and for some people that is the better answer regardless of price — a personal seat you own outright behaves differently from shared access. Each tool has its own page with its current availability. Ask us if you would like help choosing between them." },
+  { q: "What onboarding is included?", a: "A bundled onboarding guide covering practical use cases for all three tools, guidance on which tool suits which kind of work (ChatGPT for creative and coding work, Claude for long documents and analysis, Gemini for Google Workspace tasks), and a prompt starter pack." },
 ];
 
 export default function AIToolsVault() {
   usePageMeta({
-    title: "AI Tools Vault Bangladesh — ChatGPT + Claude + Gemini Bundle ৳1,990/mo",
-    description: "Get shared access to ChatGPT Plus, Claude Pro and Gemini Advanced together for ৳1,990/month in Bangladesh. Pay via bKash/Nagad. 6-hour delivery, 30-day warranty. AI Team Premium.",
+    title: "AI Tools Vault Bangladesh — ChatGPT + Claude + Gemini Bundle",
+    description: "ChatGPT Plus, Claude Pro and Gemini Advanced in one bundle with shared onboarding and a single support channel. Pricing and availability confirmed after plan verification — ask on WhatsApp.",
     path: "/ai-tools-vault",
   });
 
@@ -54,18 +72,20 @@ export default function AIToolsVault() {
         { name: "AI Tools Vault", path: "/ai-tools-vault" },
       ]} />
       <FAQSchema items={VAULT_FAQS} />
-      <ProductSchema
-        name="AI Tools Vault Bangladesh — ChatGPT + Claude + Gemini Bundle"
-        description="Shared access to ChatGPT Plus, Claude Pro and Gemini Advanced in one bundle for ৳1,990/month. Pay in BDT via bKash or Nagad. 6-hour delivery, 30-day warranty."
-        path="/ai-tools-vault"
-        priceBDT={1990}
-        category="AI Subscription Bundle"
-      />
+      {/*
+        ProductSchema deliberately not emitted while the Vault is quarantined.
+        A Product/Offer node is a machine-readable statement that a thing is for
+        sale at a price. Emitting one for a bundle we are not currently selling
+        at a fixed price would be misleading structured data — and search engines
+        act on it, which is how a withdrawn price ends up in a result snippet
+        long after the page stops showing it.
+        Restore this together with VAULT_QUARANTINE.quarantined = false.
+      */}
       <section className="pb-8" style={{ backgroundColor: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6">
           <div className="rounded-2xl p-5 md:p-6" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
             <p style={{ color: BRAND.navy, fontSize: "0.95rem", lineHeight: 1.7 }}>
-              The <strong>AI Tools Vault</strong> from <strong>AI Team Premium</strong> bundles <strong>ChatGPT Plus + Claude Pro + Gemini Advanced</strong> into a single shared-access plan for <strong>৳1,990/month</strong> in Bangladesh, payable in BDT via <strong>bKash, Nagad, Rocket or Bank Transfer</strong>. Access is delivered within <strong>6 hours</strong>, with a 30-day replacement warranty and priority WhatsApp support — no international credit card required.
+              The <strong>AI Tools Vault</strong> from <strong>AI Team Premium</strong> bundles <strong>ChatGPT Plus + Claude Pro + Gemini Advanced</strong> into a single shared-access plan, payable in BDT via <strong>bKash, Nagad, Rocket or Bank Transfer</strong> — no international credit card required. We are currently confirming how access to each of the three tools is delivered and what the providers' present terms allow, so <strong>pricing and availability are confirmed after plan verification</strong>. Ask us on WhatsApp and we will tell you where that stands.
             </p>
           </div>
         </div>
@@ -76,17 +96,17 @@ export default function AIToolsVault() {
             <Package size={13} /> Bundle · 3 Premium AI Tools · 1 Payment
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold mb-5 leading-tight" style={{ color: BRAND.navy }}>
-            AI Tools Vault — <span style={{ color: BRAND.blue }}>৳১,৯৯০</span>/মাস
+            AI Tools Vault — <span style={{ color: BRAND.blue }}>দাম জানতে যোগাযোগ করুন</span>
           </h1>
           <p className="text-lg mb-10 max-w-3xl mx-auto" style={{ color: BRAND.navy, opacity: 0.6 }}>
             ChatGPT Plus + Claude Pro + Gemini Advanced — shared access, one payment, one WhatsApp support channel.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
-              href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
+              href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+ask+about+the+AI+Tools+Vault+bundle"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackWhatsAppClick("AI Tools Vault", undefined, "৳1,990/mo", "vault-hero")}
+              onClick={() => trackWhatsAppClick("AI Tools Vault", undefined, "price-on-request", "vault-hero")}
               data-testid="button-hero-vault"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-bold text-white text-base"
               style={{ background: "#25D366" }}
@@ -142,7 +162,7 @@ export default function AIToolsVault() {
               <h2 style={{ color: BRAND.navy, fontSize: "1.3rem", fontWeight: 700 }}>AI Tools Vault</h2>
               <p className="mt-1" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.8rem" }}>3 Premium AI Tools — Shared Access</p>
               <div className="mt-4 flex items-baseline gap-1">
-                <span style={{ color: BRAND.navy, fontSize: "2.8rem", fontWeight: 800 }}>৳1,990</span>
+                <span style={{ color: BRAND.navy, fontSize: "1.5rem", fontWeight: 700 }}>Request current price</span>
                 <span style={{ color: BRAND.navy, opacity: 0.4, fontSize: "0.9rem" }}>/month</span>
               </div>
               <div className="flex items-center gap-1.5 mt-1 mb-6" style={{ color: BRAND.blue, fontSize: "0.78rem", fontWeight: 500 }}>
@@ -157,10 +177,10 @@ export default function AIToolsVault() {
                 ))}
               </ul>
               <a
-                href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
+                href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+ask+about+the+AI+Tools+Vault+bundle"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackWhatsAppClick("AI Tools Vault", undefined, "৳1,990/mo", "vault-card")}
+                onClick={() => trackWhatsAppClick("AI Tools Vault", undefined, "price-on-request", "vault-card")}
                 data-testid="button-order-vault"
                 className="w-full inline-flex items-center justify-center gap-2 rounded-full py-3.5 font-bold text-white text-base"
                 style={{ background: "#25D366" }}
@@ -184,7 +204,7 @@ export default function AIToolsVault() {
             <div>
               <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">কেন Vault নেবেন?</h3>
               <p className="mb-4 text-sm text-slate-900/65 dark:text-slate-300" style={{ lineHeight: 1.7 }}>
-                তিনটি AI tool আলাদাভাবে Personal Seat হিসেবে কিনলে মাসে ৳৭,২৫০ খরচ হয়। Vault-এ Shared access পাবেন মাত্র <strong>৳১,৯৯০-এ</strong> — একটি payment, একটি WhatsApp support channel, এবং bundled onboarding।
+                তিনটি AI tool আলাদাভাবে Personal Seat হিসেবে কিনলে মাসে {bnBdt(COMPARISON_TOTAL)} খরচ হয়। Vault-এ Shared access-এর <strong>দাম যাচাইয়ের পর জানানো হবে</strong> — একটি payment, একটি WhatsApp support channel, এবং bundled onboarding।
               </p>
               <div className="rounded-2xl overflow-hidden border" style={{ borderColor: "rgba(37,99,235,0.10)" }}>
                 <table className="w-full text-sm">
@@ -207,7 +227,7 @@ export default function AIToolsVault() {
                     </tr>
                     <tr style={{ background: BRAND.blue }}>
                       <td className="px-5 py-3 font-bold text-white">🎁 Vault Bundle (Shared)</td>
-                      <td className="px-5 py-3 text-right font-bold text-white">৳1,990/mo</td>
+                      <td className="px-5 py-3 text-right font-bold text-white">Request price</td>
                     </tr>
                   </tbody>
                 </table>
@@ -237,10 +257,10 @@ export default function AIToolsVault() {
           <p className="text-white/50 mb-8">WhatsApp বা Messenger-এ মেসেজ করুন — ৫ মিনিটে সাড়া পাবেন।</p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
-              href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+AI+Tools+Vault+Premium+Access+%E2%98%851990%2Fmo"
+              href="https://wa.me/8801533262758?text=Hi%2C+I+want+to+ask+about+the+AI+Tools+Vault+bundle"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackWhatsAppClick("AI Tools Vault", undefined, "৳1,990/mo", "vault-bottom-cta")}
+              onClick={() => trackWhatsAppClick("AI Tools Vault", undefined, "price-on-request", "vault-bottom-cta")}
               data-testid="button-final-cta"
               className="inline-flex items-center gap-3 rounded-full px-8 py-4 font-bold text-white text-lg"
               style={{ background: "#25D366" }}

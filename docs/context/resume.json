@@ -1,7 +1,7 @@
 {
   "project": "AI Team Premium",
   "branch": "feat/aitp-truth-reconciliation-20260802",
-  "headSha": "PENDING",
+  "headSha": "2ac1e032935944d794820676257fc59532eccd15",
   "productionSha": "444c2411e110523775a57384ddc4a6702241c56b",
   "activeStage": "Compliance controls implemented and enforced; trust foundation started; service pillars not yet built",
   "completedBatch": "Built data/commercial-governance.json sidecar overlay + gen-governance.mjs; wired governance into build-catalog.mjs so quarantine survives catalog rebuild; quarantined 34 records (32 shared + 2 Notion Business) with price suppression, WhatsApp price stripping and promo-badge removal; built scripts/validate-commercial.mjs (access-model aware) and wired it into npm run ship; superseded the broken scripts/validate-catalog.mjs (kept as evidence); wrote AITP_SHARED_ACCESS_AUDIT.md + shared-access-results.json with 15/17 risk tiering; built and routed /access-types trust page. 42/42 ship checks passing.",

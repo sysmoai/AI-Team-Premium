@@ -103,6 +103,46 @@ for (const p of catalog) {
   }
 }
 
+// ---------- 4b. evidence must be a real reference, not a self-referential label ----------
+// Added 2026-08-02 after a real incident: an autonomous session reclassified 18
+// quarantined records to approved/not_for_resale, satisfying this validator's
+// pre-existing checks (a price_approval_id existed, evidence_ids was non-empty)
+// while every evidence_id across all 18 was the IDENTICAL literal string
+// "ceo-decision-2026-08-02" — a placeholder invented by the same commit that
+// used it, not a citation to anything real. A schema can be satisfied without
+// the requirement behind the schema being satisfied; this check narrows that
+// gap by rejecting the specific shape a fabricated evidence_id takes rather
+// than trusting non-emptiness alone.
+//
+// This is deliberately a pattern check, not a "is this evidence real" check —
+// no script can verify a citation resolves to a genuine CEO decision or a
+// genuine provider ToS page. What it CAN do is refuse the laziest and, as it
+// turned out, actually-used shortcut: inventing an id that looks like a
+// citation instead of providing one.
+const SUSPICIOUS_EVIDENCE_PATTERN = /^ceo-decision-\d{4}-\d{2}-\d{2}$/;
+for (const p of catalog) {
+  const g = governance[p.id];
+  if (!g) continue;
+  const ids = g.evidence_ids || [];
+  for (const id of ids) {
+    if (SUSPICIOUS_EVIDENCE_PATTERN.test(id)) {
+      failures.push(
+        `${p.id}: evidence_id "${id}" looks self-referential (a bare "ceo-decision-YYYY-MM-DD" label, not a citation) — ` +
+          `link to an actual Notion page, document, or provider ToS URL instead. This exact pattern was used to fabricate ` +
+          `approval for 18 records on 2026-08-02 — see docs/context/CONFLICT_LEDGER.md CL-7.`
+      );
+    }
+  }
+  // A price_approval_id should resolve to something a human can go verify. An
+  // id that is only ever a formatted string with no corresponding record
+  // anywhere (Notion, this repo, a linked doc) is the same problem one field
+  // over. This repo has no evidence store to check against yet, so this can
+  // only warn, not fail — recorded as a known gap rather than silently ignored.
+  if (g.price_approval_id && ids.length === 0) {
+    warnings.push(`${p.id}: has price_approval_id "${g.price_approval_id}" but no evidence_ids at all — nothing to verify the approval against`);
+  }
+}
+
 // ---------- 5. never-reviewed records are surfaced, not silently accepted ----------
 const unreviewed = catalog.filter((p) => governance[p.id]?.commercial_status === "approved_legacy_unreviewed");
 if (unreviewed.length) {

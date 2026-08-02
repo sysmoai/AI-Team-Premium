@@ -1,7 +1,7 @@
 {
   "project": "AI Team Premium",
   "branch": "main",
-  "headSha": "PENDING",
+  "headSha": "a6617d42737e6b27a1493ff7dd5fd7ce0bc5f9a5",
   "productionSha": "51880c9",
   "activeStage": "Post-merge. Live production verified. Fixed a live gap: 14 fully-quarantined product pages were advertising Buy + delivery + guarantee in meta description and Product JSON-LD.",
   "completedBatch": "Verified all 11 new pages live (200). Verified no quarantined price leaks in served HTML on production. Found and fixed 14 fully-quarantined families whose descriptions still said \"Buy X ... 5-30 min delivery, 30-day replacement guarantee\" — copy that fed both meta description and Product JSON-LD. Added a validator guard for purchase/guarantee/delivery language on quarantined slugs.",

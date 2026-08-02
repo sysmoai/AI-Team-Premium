@@ -129,6 +129,7 @@ export function Footer() {
             <FooterHeading>Company</FooterHeading>
             <FooterLinks links={[
               { label: "Home", to: "/" },
+              { label: "AI Readiness", to: "/ai-readiness" },
               { label: "Blog", to: "/blog" },
               { label: "Compare Tools", to: "/compare" },
               { label: "Support", to: "/support" },

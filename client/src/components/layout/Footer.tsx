@@ -152,6 +152,11 @@ export function Footer() {
           <div className="md:col-span-2 col-span-1">
             <FooterHeading>Services</FooterHeading>
             <FooterLinks links={[
+              { label: "AI Advisory", to: "/services/ai-advisory" },
+              { label: "Setup & Security", to: "/services/ai-setup-security" },
+              { label: "AI Training", to: "/services/ai-training" },
+              { label: "AI Automation", to: "/services/ai-automation" },
+              { label: "Managed AI Ops", to: "/services/managed-ai-operations" },
               { label: "AI Ops Sprint", to: "/services/ai-ops-sprint" },
               { label: "AI Coaching", to: "/support" },
               { label: "Brand Design", to: "/services/brand-design" },

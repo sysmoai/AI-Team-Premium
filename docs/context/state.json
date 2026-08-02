@@ -21,7 +21,7 @@
     "CapCut priced at 399, violates recorded CEO decision of 2510+/3350+ (CL-2)",
     "Notion Business tiers: unsupported 73% Off claim with no computation backing, plus large pricing gap (CL-2b, upgraded)",
     "Production/Notion divergence not yet acknowledged by CEO (CL-1)",
-    "Legal operator/ownership wording explicitly pending (CL-4)"
+    "Legal operator/ownership wording: two canonical Notion documents directly contradict each other (CL-4, upgraded) -- Canonical Brand OS says pending, Market/SEO report names a specific operator and forbids describing Emon as owner. Treated as undecided per authority order; no claim made anywhere."
   ],
   "openP1": [
     "No automated cost-floor enforcement on the live-serving catalog (CL-3) -- partially addressed: scripts/audit-floor.mjs built this session as a diagnostic (non-blocking) reference-check tool",
@@ -36,7 +36,9 @@
     "AITP Audit Checkpoint v3.2",
     "Canonical Brand & Business Operating System",
     "Product Intelligence & Offer Eligibility Protocol",
-    "Rebrand Migration & Eradication Ledger"
+    "Rebrand Migration & Eradication Ledger",
+    "Market, SEO, Competitor & Growth Intelligence Report"
   ],
-  "lastUpdated": "2026-08-02 (continuation)"
+  "discoveryPhaseStatus": "complete -- all originally-flagged Notion pages read; remaining work is CEO decisions, not open-ended investigation",
+  "lastUpdated": "2026-08-02 (second continuation)"
 }

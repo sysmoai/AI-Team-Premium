@@ -49,12 +49,22 @@ Authority order per the AITP Windows Execution OS v4.0 (Notion, 2026-08-02): (1)
 
 ---
 
-### CL-4 — Legal operator / ownership wording is explicitly undecided
-- **notionValue:** Canonical Brand & Business OS (2026-08-02): "Legal operator and ownership wording: Pending written management decision." Listed under "Decision gates requiring human authority."
-- **Separately observed (search snippet only, not fetched in full):** the Market/SEO/Competitor report's search highlight contained the phrase "AI Team Premium is an independent business operated by Refat" — **not verified by fetching the full page this session**, and directly in tension with the canonical doc's "pending" status.
-- **severity:** P0 for any public-facing claim — this session made **no** ownership/operator statement anywhere, and none should be made until this is resolved with a current written decision.
-- **recommendedAction:** Fetch the full Market/SEO report to see the exact context of the "operated by Refat" phrase before treating it as anything more than an unverified search snippet; do not repeat it as fact.
-- **requiresCEOApproval:** true (explicitly listed as a decision gate in the canonical doc itself).
+### CL-4 — Legal operator / ownership wording: two canonical-tier Notion documents directly contradict each other
+- **notionValue A (Canonical Brand & Business OS, touched 2026-08-02 — same day as this session, tier 3 in the authority order):** "Legal operator and ownership wording: Pending written management decision." Listed under "Decision gates requiring human authority."
+- **notionValue B (Market, SEO, Competitor & Growth Intelligence Report, dated 2026-07-30, tier 5 — fetched in full this session, not just a search snippet):** an explicit "Brand firewall" callout states: *"AI Team Premium is an independent business operated by Refat Ara Rumi. Emon Hossain may be described only as technical, SEO, design or infrastructure support when authorised. Do not claim that Emon owns AITP, earns its revenue or controls its operations."*
+- **authorityUsed:** Per the contract's own authority order, the Canonical Brand & Business OS (tier 3) outranks the Market/SEO report (tier 5) when they conflict, AND the Canonical OS is the more recently touched document. **Ruling applied this session: ownership remains treated as undecided/pending.** The Market report's specific naming is recorded here as a real, evidenced document conflict — not dismissed, not adopted as fact.
+- **Practical consequence for this session's own conduct:** no ownership/operator claim has been made anywhere in any file this session, and none should be made by any future session either, regardless of who is issuing instructions — the contract itself, this report, and the canonical OS all converge on treating this as a locked-down, non-inferrable fact pending written resolution.
+- **severity:** P0 — this is now a conflict *between two of AITP's own governance documents*, not just an unverified rumor. It should be surfaced to whoever has authority to reconcile Notion itself, separate from any website work.
+- **recommendedAction:** Do not act on either document's ownership framing until the CEO/owner personally reconciles which one is current. Do not repeat "Refat Ara Rumi" as fact in any public or internal artifact based on this session's findings alone.
+- **requiresCEOApproval:** true (explicitly listed as a decision gate in the canonical doc itself, and now doubly so given the direct document conflict).
+
+### CL-6b — Market report's own P0 (production unverified) is superseded by this session's direct measurement; a real strategic tension remains
+- **notionValue:** The Market/SEO report (2026-07-30) lists as P0: "Production domain, robots, sitemap and deployment evidence are not externally verified" and "Search index presence is not dependable."
+- **repositoryValue / liveValue:** This session directly verified (curl, DNS, `Last-Modified` timestamp matching) that production is live, current, and serving valid `robots.txt`/`sitemap.xml` as of 2026-08-02 — see `AITP_CURRENT_PRODUCTION_TRUTH.md`. This specific P0 appears resolved by the passage of time and later work, consistent with CL-1's broader finding that production has moved well past what any Notion document currently reflects.
+- **Separate, still-open tension (not resolved, worth flagging):** the same report states "Catalog volume risks diluting the enablement position" as a P1 — a direct warning against exactly the shape the live site has actually taken (129 catalog products, richly built, vs. the strategically-intended service-led positioning with only 6 non-matching service pages and none of the 5 required pillar pages built — see R6). The strategy and the execution have diverged in the direction the strategy explicitly warned against.
+- **severity:** Informational for the production-verified part (good news, already captured in CL-1); P1 for the strategic-drift observation, layered on top of the existing R6 finding.
+- **recommendedAction:** When the CEO/owner sequences future work (per NEXT_ACTIONS item 6), this specific tension — a catalog-heavy build vs. a service-led strategic mandate — should be part of that conversation explicitly, not just "should we build the 5 service pages."
+- **requiresCEOApproval:** true (strategic sequencing).
 
 ---
 

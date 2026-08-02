@@ -6,9 +6,12 @@
 3. ✅ Read "AI Team Premium — Rebrand Migration & Eradication Ledger" in full. Confirms the eligibility protocol was only ever applied to a handful of example pages (ChatGPT, Claude Pro) as of "Batch 3, started 2026-07-19" — never completed across the catalog. This is the root cause of R0: the live 129-product catalog was built later, via a different process, without this governance layer.
 4. ✅ Checked for unsupported "official partner"/"authorized reseller" claims on the site — none found, clean.
 
-## Unblocked — safe to start immediately (green lane)
-1. Fetch the full "AI Team Premium — Market, SEO, Competitor & Growth Intelligence Report" to resolve whether the "operated by Refat" snippet (from a search highlight only, never fetched in full) is real content or a stale/wrong fragment.
-2. Given R0's scale (127 of 129 products never eligibility-reviewed), consider whether a lightweight per-product triage pass (even just classifying each into "clearly fine" vs "needs review," without full protocol depth) is more tractable than waiting for a full CEO-sequenced review of all 129 records.
+## Done this session (second continuation)
+5. ✅ Fetched the full "Market, SEO, Competitor & Growth Intelligence Report." Confirmed the ownership question is a real conflict *between two of AITP's own canonical documents* (not a stale snippet) — see CONFLICT_LEDGER CL-4 (updated). Also found the report's own "production unverified" P0 is now resolved by this session's direct measurement (CL-6b), and surfaced a real strategic tension: the report explicitly warns "catalog volume risks diluting the enablement position," yet the live site is exactly catalog-heavy with no service-pillar pages built.
+6. This session's Notion-reading queue (the 4 pages flagged as unread in the original capability report) is now fully read. Remaining work is CEO decisions, or new engineering batches the CEO selects from NEXT_ACTIONS' blocked list — not further unprompted discovery.
+
+## Unblocked — safe to start immediately (green lane), lower priority than the CEO queue
+1. Given R0's scale (127 of 129 products never eligibility-reviewed), consider whether a lightweight per-product triage pass (even just classifying each into "clearly fine" vs "needs review," without full protocol depth) is more tractable than waiting for a full CEO-sequenced review of all 129 records. This itself is a scoping question worth raising with the CEO rather than starting unprompted, given its scale.
 
 ## Blocked — require CEO/owner decision (do not act without one)
 1. **Highest priority (new, R0):** the shared-access legitimacy question across 32 catalog records — this is a legal/ToS exposure question, not an engineering one, and is now the single largest known gap in this repo.

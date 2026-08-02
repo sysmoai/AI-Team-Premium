@@ -811,7 +811,7 @@ export const PRICING_SECTIONS = [
   {
     "title": "🗂️ Workspace & Productivity",
     "category": "ai-workspace",
-    "subtitle": "19 plans · from ৳1,216/mo · bKash/Nagad",
+    "subtitle": "19 plans · from ৳800/mo · bKash/Nagad",
     "items": [
       {
         "name": "Gamma Plus — Shared",
@@ -831,11 +831,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Notion Business — Monthly",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳800/mo",
+        "priceBdt": 800,
         "delivery": "2-4 hours",
         "href": "/tools/notion-business-bangladesh",
-        "waText": "Hi, I want Notion Business — Monthly — please quote a price."
+        "waText": "Hi, I want Notion Business — Monthly (৳800/mo) — please share payment details."
       },
       {
         "name": "ClickUp — Unlimited",
@@ -943,11 +943,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Notion Business — 6 Month Plan",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳4,800/mo",
+        "priceBdt": 4800,
         "delivery": "2-4 hours",
         "href": "/tools/notion-business-bangladesh",
-        "waText": "Hi, I want Notion Business — 6 Month Plan — please quote a price."
+        "waText": "Hi, I want Notion Business — 6 Month Plan (৳4,800/mo) — please share payment details."
       },
       {
         "name": "Airtable — Business",

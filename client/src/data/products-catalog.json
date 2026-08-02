@@ -3815,6 +3815,7 @@
     "officialUSD": 20,
     "tier": "Monthly",
     "accessType": "personal",
+    "badge": "Special Offer",
     "description": "Official Notion Business Plan. Notion AI included, teamspaces, SSO, 90-day history.",
     "capabilities": [
       "workspace",
@@ -3823,7 +3824,7 @@
     ],
     "deliverySLA": "2-4 hours",
     "featured": true,
-    "whatsappMsg": "Hi, I want Notion Business Monthly",
+    "whatsappMsg": "Hi, I want Notion Business Monthly (৳800/mo)",
     "status": "Active",
     "descriptionBN": "Notion AI — টীম ওয়ার্কস্পেস এবং AI কন্টেন্ট মেনেজমেন্ট নিলে কাজ করুন। লেখা লেখা, ডাকুমেন্ট লেখা, প্রোজেক্ট মেনেজ করা এবং AI সার্স খুড়ল সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3834,10 +3835,8 @@
       "ক্লাইন্ট কম্যুনিকেশন এবং ছুটি সার্ভিস"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "customer_owned_activation",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "managed_service"
   },
   {
     "id": "notion-business-6m",
@@ -3860,7 +3859,7 @@
     ],
     "deliverySLA": "2-4 hours",
     "featured": true,
-    "whatsappMsg": "Hi, I want Notion Business 6-Month",
+    "whatsappMsg": "Hi, I want Notion Business 6-Month (৳4,800)",
     "status": "Active",
     "descriptionBN": "Notion AI — টীম ওয়ার্কস্পেস এবং AI কন্টেন্ট মেনেজমেন্ট নিলে কাজ করুন। লেখা লেখা, ডাকুমেন্ট লেখা, প্রোজেক্ট মেনেজ করা এবং AI সার্স খুড়ল সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3871,10 +3870,8 @@
       "ক্লাইন্ট কম্যুনিকেশন এবং ছুটি সার্ভিস"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "customer_owned_activation",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "managed_service"
   },
   {
     "id": "manus-ai-personal",

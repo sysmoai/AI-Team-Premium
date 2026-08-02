@@ -170,12 +170,12 @@ export const NAV_COLUMNS = [
         "label": "Workspace",
         "href": "/category/ai-workspace",
         "count": 14,
-        "priceFrom": 1216,
+        "priceFrom": 800,
         "top": [
           {
             "name": "Notion",
             "href": "/tools/notion-business-bangladesh",
-            "priceFrom": null
+            "priceFrom": 800
           },
           {
             "name": "ClickUp",

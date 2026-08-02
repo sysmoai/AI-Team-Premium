@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- GENERATED FILE — do not edit by hand. Run: npm run gen:sitemap -->
-<!-- Source: lib/route-meta.js (241 indexable routes) -->
+<!-- Source: lib/route-meta.js (251 indexable routes) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.aiteampremium.com/</loc>
@@ -939,7 +939,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/ai-tools-customer-support-examples-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/ai-tools-fiverr-upwork-freelancers-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/ai-tools-for-ngo-social-work-bangladesh</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -957,6 +969,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/ai-video-generator-comparison-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/ai-voice-cloning-elevenlabs-guide-bangladesh</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -964,6 +982,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/blog/ai-vs-non-ai-freelancer-earnings-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/best-ai-chatbot-tools-business-bangladesh-comparison</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -981,6 +1005,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/best-ai-tools-small-business-owners-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/best-ai-video-editing-tools-bangladesh-freelancers</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -993,6 +1023,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/best-free-ai-tools-alternatives-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/best-project-management-ai-tools-teams-bangladesh</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -1000,6 +1036,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/blog/bkash-diye-chatgpt-kena-bangla-guide</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/buy-chatgpt-pro-bangladesh-bkash-guide</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1119,6 +1161,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/complete-guide-ai-subscriptions-bangladesh-pricing</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/developer-ai-roadmap-github-copilot-vs-cursor-bangladesh</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -1161,7 +1209,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/how-to-learn-ai-skills-fast-bangladesh-roadmap</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/how-to-start-ai-automation-agency-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/how-to-write-perfect-ai-prompt-bangladesh-tips</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

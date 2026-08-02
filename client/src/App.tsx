@@ -73,6 +73,11 @@ const BrandDesign = lazy(() => import("./pages/services/BrandDesign"));
 const WebDevelopment = lazy(() => import("./pages/services/WebDevelopment"));
 const DigitalMarketing = lazy(() => import("./pages/services/DigitalMarketing"));
 const AppDevelopment = lazy(() => import("./pages/services/AppDevelopment"));
+const AiAdvisory = lazy(() => import("./pages/services/AiAdvisory"));
+const AiSetupSecurity = lazy(() => import("./pages/services/AiSetupSecurity"));
+const AiTraining = lazy(() => import("./pages/services/AiTraining"));
+const AiAutomation = lazy(() => import("./pages/services/AiAutomation"));
+const ManagedAiOperations = lazy(() => import("./pages/services/ManagedAiOperations"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 
@@ -121,6 +126,11 @@ function Router() {
         <Route path="/services/web-development" component={WebDevelopment} />
         <Route path="/services/digital-marketing" component={DigitalMarketing} />
         <Route path="/services/app-development" component={AppDevelopment} />
+        <Route path="/services/ai-advisory" component={AiAdvisory} />
+        <Route path="/services/ai-setup-security" component={AiSetupSecurity} />
+        <Route path="/services/ai-training" component={AiTraining} />
+        <Route path="/services/ai-automation" component={AiAutomation} />
+        <Route path="/services/managed-ai-operations" component={ManagedAiOperations} />
         <Route path="/support" component={Services} />
         <Route path="/services" component={Services} />
         <Route path="/ai-subscriptions" component={AISubscriptions} />

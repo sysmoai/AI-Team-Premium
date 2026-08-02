@@ -1,16 +1,16 @@
 {
   "project": "AI Team Premium",
   "branch": "feat/aitp-truth-reconciliation-20260802",
-  "headSha": "141d49fceeb844b1b39b7fe9fdf2ed2690d5ed0d",
+  "headSha": "PENDING_COMMIT",
   "productionSha": "444c2411e110523775a57384ddc4a6702241c56b",
-  "activeStage": "Compliance controls implemented and enforced; trust foundation started; service pillars not yet built",
-  "completedBatch": "Quarantined the AI Tools Vault bundle (13 price sites, Product schema removed, 2 claims withdrawn, route metadata fixed); fixed a stale Bangla comparison figure; extended validate-commercial to cover non-catalog quarantined pages.",
-  "nextAction": "Build the five service-pillar pages (/services/ai-advisory, ai-setup-security, ai-training, ai-automation, managed-ai-operations) — the last major unbuilt item from the canonical brand OS. All known unevidenced offers are now quarantined.",
-  "nextCommand": "cd /c/Users/emonh/SYSmoAI-Stack/apps/AI-Team-Premium && git fetch origin --quiet && git checkout feat/aitp-truth-reconciliation-20260802 && cat docs/context/resume.json",
+  "activeStage": "Service pillars built; CapCut & Notion Business quarantined in governance layer; update resume after commit",
+  "completedBatch": "Built 5 service pillar pages (ai-advisory, ai-setup-security, ai-training, ai-automation, managed-ai-operations) with routes, metadata, FAQ schemas, breadcrumbs. CapCut already quarantined in commercial-governance.json. Notion Business already quarantined in commercial-governance.json. Both confirmed — no additional action needed.",
+  "nextAction": "Audit shared-access records in batches; continue building trust pages and blog content for 50K/month traffic target",
+  "nextCommand": "cd C:\\Users\\emonh\\SYSmoAI-Stack\\apps\\AI-Team-Premium && git fetch origin --quiet && git checkout feat/aitp-truth-reconciliation-20260802 && cat docs/context/resume.json",
   "nextFiles": [
-    "client/src/pages/AIToolsVault.tsx",
     "docs/audit/AITP_SHARED_ACCESS_AUDIT.md",
-    "data/commercial-governance.json"
+    "data/commercial-governance.json",
+    "client/src/pages/services/AiAdvisory.tsx"
   ],
   "blockers": [
     "CEO: 32 shared records are quarantined pending provider-ToS review. 17 are elevated risk (no known official multi-seat plan). Needs per-record ToS reading — see docs/audit/AITP_SHARED_ACCESS_AUDIT.md",
@@ -27,7 +27,12 @@
   "testsFailing": [
     "GitHub Actions CI/E2E/Monitor — billing-locked, not a real test failure (confirmed via gh run view)"
   ],
-  "notionLastSyncedAt": "2026-08-02 (no new pages read this batch; the 5 authority pages were read in prior batches)",
+  "notionLastSyncedAt": "2026-08-02 (no new pages read this batch)",
   "catalogSnapshotHash": "129 records / 72 brands / 32 shared / 92 personal / 5 bundle / 36 price-on-request / 34 quarantined pending_evidence / 95 approved_legacy_unreviewed",
-  "resumeToken": "AITP-WINDOWS-AUTONOMOUS-ENABLEMENT-V4-20260802-commercial-governance-018f474"
+  "servicePagesBuilt": {
+    "count": 10,
+    "pages": ["ai-ops-sprint", "brand-design", "web-development", "digital-marketing", "app-development", "ai-advisory", "ai-setup-security", "ai-training", "ai-automation", "managed-ai-operations"],
+    "sitemap": "194 URLs (was 188)"
+  },
+  "resumeToken": "AITP-WINDOWS-AUTONOMOUS-ENABLEMENT-V5-20260802-service-pillars"
 }

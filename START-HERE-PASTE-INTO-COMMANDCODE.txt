@@ -1,0 +1,50 @@
+# COMMAND CODE — EXECUTE NOW
+
+You are continuing autonomous development on AI Team Premium (aiteampremium.com), a React/Vite site selling premium AI subscriptions in Bangladesh. Claude was working on this in the SYSmoAI-Stack monorepo before hitting its session limit.
+
+## START EXACTLY HERE:
+```
+cd "C:\Users\emonh\SYSmoAI-Stack\apps\AI-Team-Premium"
+git fetch origin --quiet
+git checkout feat/aitp-truth-reconciliation-20260802
+```
+
+## THE FULL CONTEXT FILE is here:
+Read it now: `C:\Users\emonh\SYSmoAI-Stack\apps\AI-Team-Premium\COMMANDCODE-MASTER-PROMPT.md`
+Also read: `DEPLOY.md` and `docs/context/resume.json`
+
+## IMMEDIATE NEXT TASK (from resume.json):
+Build these 5 service-pillar pages — the last major unbuilt item from the canonical brand OS:
+- /services/ai-advisory
+- /services/ai-setup-security  
+- /services/ai-training
+- /services/ai-automation
+- /services/managed-ai-operations
+
+## HOW TO ADD EACH PAGE (exact steps):
+1. Create `client/src/pages/services/AiAdvisory.tsx` (copy existing service page as template — see `client/src/pages/services/AIOpsSprint.tsx`)
+2. Add lazy import in `client/src/App.tsx`: `const AiAdvisory = lazy(() => import("./pages/services/AiAdvisory"));`
+3. Add route: `<Route path="/services/ai-advisory" component={AiAdvisory} />`
+4. Add metadata in `lib/route-meta.js`: `"/services/ai-advisory": { title: "...", description: "...", canonical: "https://www.aiteampremium.com/services/ai-advisory" }`
+5. Generate sitemap: `npm run gen:sitemap`
+6. Verify: `npm run preview` then check the page
+7. Run `npm run ship` — this is THE GATE: tsc + build + validate + verify. MUST PASS.
+8. Commit and push
+
+## CRITICAL RULES:
+- ALWAYS use `https://www.aiteampremium.com` — never the bare apex
+- NEVER hand-edit `client/src/data/products-catalog.json` — it's generated
+- Run `npm run ship` before every commit
+- Keep `npm run preview` open to verify SEO metadata
+- Surface CEO blockers (pricing, quarantine decisions) — do NOT decide them yourself
+- Push to branch `feat/aitp-truth-reconciliation-20260802`
+- After finishing all 5 pages, continue to P1 tasks in the master prompt
+
+## CONTEXT SNAPSHOT:
+- 129 products, 72 brands, 188 indexable routes, 50+ blog posts
+- Live at www.aiteampremium.com (Vercel, auto-deploys on push)
+- Vite + React 18 + Express 5, ESM throughout
+- lib/route-meta.js is the single source of truth for all page metadata
+- GitHub Actions is billing-locked — pre-push hook is the only gate
+- DNS at Squarespace — Zoho email shares the zone, NEVER touch MX/TXT records
+- 34 products quarantined pending evidence in commercial-governance.json

@@ -1,0 +1,175 @@
+You are continuing autonomous work on AI Team Premium. Work continuously until
+told to stop. Do not ask "what should I do next?" — the queue is below. Take the
+top unblocked item and execute it.
+
+=====================================================================
+STEP 0 — VERIFY BEFORE TRUSTING ANYTHING IN THIS DOCUMENT
+=====================================================================
+Every number below was true at handoff and may have drifted. This project has
+repeatedly been bitten by stale state. Run this first and believe the output over
+this document:
+
+  cd "C:\Users\emonh\SYSmoAI-Stack\apps\AI-Team-Premium"
+  git fetch origin --prune
+  git checkout main
+  git pull origin main
+  git status --short
+  git log --oneline -5
+  curl -s -o NUL -w "live:%{http_code}\n" https://www.aiteampremium.com/
+  node -e "import('./lib/route-meta.js').then(m=>console.log('routes:',Object.keys(m.ROUTE_META).length))"
+
+KNOWN STALE FILE: docs/context/resume.json still says productionSha 444c241 and
+prState OPEN. Both are wrong — PR #3 merged 2026-08-02T05:17:16Z and production
+is 51880c9. Fix that file first so the next session is not misled.
+
+=====================================================================
+VERIFIED STATE AT HANDOFF (2026-08-02)
+=====================================================================
+Repo          sysmoai/AI-Team-Premium
+Path          C:\Users\emonh\SYSmoAI-Stack\apps\AI-Team-Premium
+Production    51880c9 on main — LIVE, HTTP 200
+PR #3         MERGED. Branch feat/aitp-truth-reconciliation-20260802 is fully
+              merged (0 commits ahead of main). Do NOT continue on it — branch
+              fresh from main.
+Tests         npm run ship = 42/42
+route-meta    250 entries
+Blog posts    50
+Sitemap URLs  231
+Catalog       129 records / 72 brands
+Quarantined   34 (32 shared + 2 Notion Business), plus the AI Tools Vault
+Unreviewed    95 personal records at commercial_status approved_legacy_unreviewed
+CI            GitHub Actions billing-locked account-wide. This is NOT a test
+              failure. Local `npm run ship` + the pre-push hook are the real gate.
+
+ROLLBACK TARGET IS 3d3f443 — NOT 444c241.
+444c241 predates this entire compliance branch. Rolling back there would
+un-quarantine 34 offers and republish the withdrawn "30-day warranty" and
+"6-hour delivery" claims. Never roll back past 51880c9 without saying so out loud.
+
+=====================================================================
+BRAND FIREWALL — NON-NEGOTIABLE
+=====================================================================
+Brand      AI Team Premium. Never the acronym "AITP" in visitor-facing text.
+Domain     https://www.aiteampremium.com — always www, never the bare apex.
+WhatsApp   +880 1533-262758
+NEVER import AI Premium Shop / AIPS identity, catalog, pricing, contacts or
+analytics. A separate business's repo sits on this same machine at
+apps\AI-Premium-Shop. Confirm `git remote -v` before editing anything.
+
+=====================================================================
+HARD STOPS — PREPARE FULLY, THEN ASK. DO NOT EXECUTE.
+=====================================================================
+- Publishing any fixed price for a quarantined product
+- Any new price, discount, warranty, delivery-time or SLA claim
+- Stating who owns or operates AI Team Premium (two canonical Notion documents
+  contradict each other; wording stays neutral until reconciled)
+- Claiming official partnership, authorisation or reseller status
+- DNS changes (Squarespace zone shared with Zoho email — breaking it breaks mail)
+- Rotating secrets, rewriting git history, force-push
+- Deleting repositories, databases or Notion pages
+- Spending paid credits, or any Replit AI Agent credits (hard rule: zero)
+
+Everything else is yours without asking: read/edit/create files, install
+dependencies, run builds and tests, create branches, commit, push, open and
+update draft PRs, research official provider documentation, inspect Vercel,
+write Notion checkpoints.
+
+=====================================================================
+FIVE LESSONS THAT COST REAL DEBUGGING — DO NOT RELEARN THEM
+=====================================================================
+1. A GREEN BUILD HIDES LIVE PRICE LEAKS. 42/42 passed while CapCut's JSON-LD
+   still read "From TK399/month". Verify by rendering the actual page:
+     node -e "import('./api/index.js').then(async m=>{const h=m.default||m.handler;const r={statusCode:200,headers:{},body:'',setHeader(){},status(c){this.statusCode=c;return this},send(b){this.body=b;return this},end(b){this.body=b||'';return this}};await h({url:'/YOUR/PATH',method:'GET',headers:{}},r);console.log(r.body.slice(0,1200))})"
+
+2. SERVER METADATA IS A SEPARATE SURFACE FROM THE REACT PAGE. Editing a .tsx does
+   NOT change the served <title>/description — those come from lib/route-meta.js.
+   The Vault's price survived a complete page rewrite this way.
+
+3. GENERATOR ORDER MATTERS: gen:routes BEFORE gen:schema. gen:schema embeds the
+   descriptions gen:routes produces; out of order leaves stale prices in JSON-LD.
+   After any catalog change, run in this order:
+     npm run build:catalog && npm run gen:routes && npm run gen:compare && npm run gen:category && npm run gen:schema && npm run gen:sitemap
+
+4. NEVER HAND-EDIT client/src/data/products-catalog.json. It is GENERATED from
+   products-complete.json by scripts/build-catalog.mjs, which strips foreign
+   brand names and fabricated review scores. Edit the source, then rebuild.
+
+5. DO NOT FABRICATE PROVIDER FINDINGS. No provider ToS has actually been read.
+   That is why 32 shared records sit at pending_evidence rather than "compliant"
+   or "prohibited" — unknown is the honest state. If you research a provider's
+   terms, cite the URL and the date in the evidence ledger. Never infer
+   permission from a product's existence or its price.
+
+=====================================================================
+WORK QUEUE — TOP UNBLOCKED ITEM FIRST
+=====================================================================
+1. Fix docs/context/resume.json (stale productionSha, prState, branch). Commit.
+   Small and immediate; prevents the next session inheriting bad state.
+
+2. Commit or delete the untracked handoff files in the repo root
+   (CLAUDE-CONTINUATION-PROMPT.md, PASTE-INTO-CLAUDE.txt). Do not leave the
+   working tree dirty.
+
+3. BLOG EXPANSION toward the organic-traffic goal (50 now, target 80+).
+   Highest-value unblocked work; needs no CEO input.
+   Rules: no price claims in post bodies (the validator enforces this), no
+   invented statistics, no guaranteed outcomes, cite sources with dates.
+   Process: add entry to client/src/data/blog-posts.ts, then
+     npm run gen:blog && npm run gen:schema && npm run gen:sitemap
+   Themes with real search intent and no current coverage:
+     - AI tools for specific Bangladeshi sectors (garments, freelancing,
+       e-commerce, education, agencies)
+     - shared vs personal vs team seat — what actually differs (pairs with the
+       /access-types page already built)
+     - paying for AI tools from Bangladesh without an international card
+     - role-based guides: founder, marketer, support agent, teacher, developer
+     - honest tool comparisons grounded in the real catalog
+
+4. INTERNAL LINKING pass: blog posts <-> product pages <-> service pillars.
+   Cheap, compounding SEO value, zero claim risk.
+
+5. Begin the 95-record triage in data/aitp-offer-evidence-ledger.json. Start with
+   the highest-traffic families (ChatGPT, Claude, Gemini, Midjourney). For each:
+   verify the official price against the vendor's own pricing page, record the
+   source URL and date, set verification_status / verified_at / evidence_ids.
+   RECORD EVIDENCE ONLY — do not change any price. Pricing is a CEO decision.
+
+6. Research provider ToS for the 17 Tier B shared records listed in
+   data/aitp-shared-access-enumeration.md. Document findings per record with
+   source URL and date. Do not change commercial_status without CEO sign-off —
+   surface the finding instead.
+
+BLOCKED ON CEO — do not attempt; just keep the list accurate:
+  95-record eligibility approval; 32 shared-record ToS decisions; CapCut approved
+  price; Notion Business classification; ownership wording reconciliation;
+  GitHub Actions billing.
+
+=====================================================================
+WORKFLOW
+=====================================================================
+Branch:  git checkout -b feat/<scope>-20260802   (from main; never reuse the
+         merged feat/aitp-truth-reconciliation branch)
+Gate:    npm run ship        # tsc + build + validate:commercial + verify (42)
+Commit:  descriptive body explaining WHY, not only what
+Push:    git push -u origin <branch>   # pre-push hook runs ship automatically
+PR:      gh pr create --draft          # never merge without explicit approval
+
+Adding a page: create the .tsx -> lazy import + Route in client/src/App.tsx ->
+entry in lib/route-meta.js -> npm run gen:sitemap -> npm run ship.
+Forgetting the route-meta entry makes verify FAIL. That is intentional.
+
+=====================================================================
+EVERY WORK BATCH ENDS WITH
+=====================================================================
+- npm run ship passing (state the exact result; never "should pass")
+- committed and pushed
+- docs/context/resume.json updated: headSha, activeStage, completedBatch,
+  nextAction, blockers, testsPassing
+- a short factual summary: what changed, what you verified and how, what is
+  still open, plus the exact next action and exact next command
+
+Report honestly. If something fails, say so and show the output. If you did not
+verify something, say you did not. Never claim "live", "fixed" or "deployed"
+without evidence — that discipline is the entire point of this project.
+
+RESUME TOKEN: AITP-WINDOWS-AUTONOMOUS-V10-20260802-POST-MERGE-51880c9

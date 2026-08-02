@@ -184,6 +184,40 @@ if (handler) {
   }
 }
 
+// ---------- 5bb. quarantined families must not advertise purchase or promises ----------
+// Suppressing the price is only half of it. A fully-quarantined family was still
+// described as "Buy X in Bangladesh ... 5-30 min delivery, 30-day replacement
+// guarantee" — an active purchase invitation with a delivery promise and a
+// guarantee, for something withdrawn from sale. That copy feeds both the meta
+// description and the Product JSON-LD, so it is the version crawlers index.
+// Fourteen live product pages carried it.
+{
+  const routeMetaText = (() => {
+    try { return readFileSync(resolve(ROOT, "lib/product-routes.js"), "utf-8"); } catch { return ""; }
+  })();
+
+  for (const [slug, variants] of bySlug) {
+    const allQuarantined = variants.every((v) => {
+      const g = governance[v.id];
+      return g && NO_PUBLIC_PURCHASE.has(g.commercial_status);
+    });
+    if (!allQuarantined) continue;
+
+    const line = routeMetaText.split("\n").find((l) => l.includes(`"/tools/${slug}"`));
+    if (!line) continue;
+
+    if (/\bBuy /.test(line)) {
+      failures.push(`/tools/${slug}: fully quarantined but its description still invites purchase ("Buy ...") — run npm run gen:routes && npm run gen:schema`);
+    }
+    if (/replacement guarantee|warranty/i.test(line)) {
+      failures.push(`/tools/${slug}: fully quarantined but its description still promises a guarantee/warranty`);
+    }
+    if (/\d+\s*(-|–|\s)\s*\d*\s*(min|hour|hr|day)s?\s+delivery/i.test(line)) {
+      failures.push(`/tools/${slug}: fully quarantined but its description still promises a delivery time`);
+    }
+  }
+}
+
 // ---------- 5c. quarantined NON-catalog pages ----------
 // Some offers are sold on their own hand-built page rather than as a catalog
 // entry, so data/commercial-governance.json does not reach them and check 5b

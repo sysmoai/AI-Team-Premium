@@ -2,7 +2,7 @@ import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { supportOffers, memberships } from "@/lib/support-offers";
-import { Check, Clock, Star, Users, Briefcase, GraduationCap, ShieldCheck, MessageCircle, Paintbrush, Code, TrendingUp, Smartphone } from "lucide-react";
+import { Check, Clock, Star, Users, Briefcase, GraduationCap, ShieldCheck, MessageCircle, Paintbrush, Code, TrendingUp, Smartphone, Lightbulb, Lock, Zap, Workflow, Headphones } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -88,6 +88,30 @@ export default function Services() {
       </section>
 
       <section className="py-16" style={{ background: BRAND.white }}>
+        <div className="mx-auto max-w-5xl px-6 lg:px-10">
+          <h2 className="text-2xl font-bold mb-3 text-center" style={{ color: BRAND.navy }}>AI Consulting & Services</h2>
+          <p className="text-center text-sm mb-10" style={{ color: BRAND.navy, opacity: 0.5 }}>Strategy, setup, training, automation, and ongoing management — your AI journey, end to end.</p>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+            {[
+              { icon: Lightbulb, label: "AI Advisory", sub: "Strategy First", href: "/services/ai-advisory", emoji: "💡" },
+              { icon: Lock, label: "Setup & Security", sub: "From ৳3,999", href: "/services/ai-setup-security", emoji: "🔐" },
+              { icon: GraduationCap, label: "AI Training", sub: "From ৳15,000", href: "/services/ai-training", emoji: "🎓" },
+              { icon: Workflow, label: "AI Automation", sub: "From ৳5,000", href: "/services/ai-automation", emoji: "⚡" },
+              { icon: Headphones, label: "Managed AI Ops", sub: "From ৳3,500/mo", href: "/services/managed-ai-operations", emoji: "🎧" },
+            ].map((svc) => (
+              <Link key={svc.href} href={svc.href} data-testid={`card-service-${svc.label.toLowerCase().replace(/[&\s]+/g, '-').replace(/[^\w-]/g, '')}`}>
+                <div className="rounded-2xl p-5 text-center cursor-pointer transition-all hover:shadow-md" style={{ background: "rgba(239,246,255,0.6)", border: "1px solid rgba(37,99,235,0.10)" }}>
+                  <div className="text-3xl mb-2">{svc.emoji}</div>
+                  <div className="font-bold text-sm mb-1" style={{ color: BRAND.navy }}>{svc.label}</div>
+                  <div className="text-xs" style={{ color: BRAND.blue, fontWeight: 600 }}>{svc.sub}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-16" style={{ background: BRAND.white }}>
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <h2 className="text-2xl font-bold mb-3 text-center" style={{ color: BRAND.navy }}>Digital Services</h2>
           <p className="text-center text-sm mb-10" style={{ color: BRAND.navy, opacity: 0.5 }}>Brand design, web development, digital marketing, and app development — all in one place.</p>

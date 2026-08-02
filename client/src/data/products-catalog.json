@@ -24,7 +24,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want ChatGPT Plus Starter Shared (৳350/mo)",
+    "whatsappMsg": "Hi, I want ChatGPT Plus Starter Shared",
     "status": "Active",
     "descriptionBN": "বাজেট-বান্ধব ChatGPT Plus — GPT-5 সিরিজ দিয়ে লেখা, কোডিং, ছবি তৈরি, রিসার্চ ও AI এজেন্ট। bKash/Nagad দিয়ে পেমেন্ট, ৫-১৫ মিনিটে ডেলিভারি।",
     "useCases": [
@@ -243,7 +243,11 @@
     },
     "badges": [
       "bestseller"
-    ]
+    ],
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "chatgpt-plus-premium-shared",
@@ -270,7 +274,7 @@
     ],
     "deliverySLA": "5-15 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want ChatGPT Plus Premium Shared (৳950/mo)",
+    "whatsappMsg": "Hi, I want ChatGPT Plus Premium Shared",
     "status": "Active",
     "descriptionBN": "বাজেট-বান্ধব ChatGPT Plus — GPT-5 সিরিজ দিয়ে লেখা, কোডিং, ছবি তৈরি, রিসার্চ ও AI এজেন্ট। bKash/Nagad দিয়ে পেমেন্ট, ৫-১৫ মিনিটে ডেলিভারি।",
     "useCases": [
@@ -489,7 +493,11 @@
     },
     "badges": [
       "bestseller"
-    ]
+    ],
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "chatgpt-plus-personal",
@@ -735,7 +743,9 @@
     },
     "badges": [
       "bestseller"
-    ]
+    ],
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "chatgpt-go-personal",
@@ -771,7 +781,9 @@
       "সোশ্যাল মিডিয়া কন্টেন্ট গতি",
       "লিঙ্গুয়েজ লরনিং"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad-এ পেমেন্ট করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট। বাংলাদেশের সবচেয়ে নির্ভর যঔগ্য সার্ভিস দেয়।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad-এ পেমেন্ট করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট। বাংলাদেশের সবচেয়ে নির্ভর যঔগ্য সার্ভিস দেয়।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "chatgpt-business-starter-shared",
@@ -799,7 +811,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want ChatGPT Business Starter Shared (৳699/mo)",
+    "whatsappMsg": "Hi, I want ChatGPT Business Starter Shared",
     "status": "Active",
     "descriptionBN": "ChatGPT Business — টীম এবং কম্পানির জন্য পারিবারিক-ভারত AI । Admin controls, Codex, unlimited GPT-5.3 এবং team workspace সহ পান। bKash দিয়ে পে করুন।",
     "useCases": [
@@ -809,7 +821,11 @@
       "কোড ডিলিভারি এবং টেস্টিং",
       "সাধারণনতা লাগ ঔর কন্ফারিদেনশিয়ালিটি"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "chatgpt-business-premium-shared",
@@ -836,7 +852,7 @@
     ],
     "deliverySLA": "5-15 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want ChatGPT Business Premium Shared (৳1,299/mo)",
+    "whatsappMsg": "Hi, I want ChatGPT Business Premium Shared",
     "status": "Active",
     "descriptionBN": "ChatGPT Business — টীম এবং কম্পানির জন্য পারিবারিক-ভারত AI । Admin controls, Codex, unlimited GPT-5.3 এবং team workspace সহ পান। bKash দিয়ে পে করুন।",
     "useCases": [
@@ -846,7 +862,11 @@
       "কোড ডিলিভারি এবং টেস্টিং",
       "সাধারণনতা লাগ ঔর কন্ফারিদেনশিয়ালিটি"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "chatgpt-business-personal",
@@ -883,7 +903,9 @@
       "কোড ডিলিভারি এবং টেস্টিং",
       "সাধারণনতা লাগ ঔর কন্ফারিদেনশিয়ালিটি"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "chatgpt-pro-premium-shared",
@@ -924,7 +946,9 @@
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad-এ পেমেন্ট। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
     "priceOnRequest": true,
-    "priceOnRequestReason": "Capped at 2-3 seats but needs 7+ to clear the cost floor; quoted per enquiry only."
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification.",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED"
   },
   {
     "id": "chatgpt-pro-personal",
@@ -962,7 +986,9 @@
       "সাম্প্রদায়িক ভিডিয়ো জেনারেশন",
       "এন্টারপ্রাইজ ডিঞারেডার ডিভেলপমেন্ট"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad-এ পেমেন্ট। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad-এ পেমেন্ট। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "claude-pro-premium-shared",
@@ -988,7 +1014,7 @@
     ],
     "deliverySLA": "5-15 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Claude Pro Premium Shared (৳1,495/mo)",
+    "whatsappMsg": "Hi, I want Claude Pro Premium Shared",
     "status": "Active",
     "descriptionBN": "Claude Pro — Opus 4.6 সহ সেরা রাইটিং ও কোডিং AI। Claude Code, ২০০K কনটেক্সট, MCP ইন্টিগ্রেশন।",
     "useCases": [
@@ -1277,7 +1303,11 @@
     },
     "badges": [
       "popular"
-    ]
+    ],
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "claude-pro-personal",
@@ -1591,7 +1621,9 @@
     },
     "badges": [
       "popular"
-    ]
+    ],
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "claude-max-5x",
@@ -1905,7 +1937,9 @@
     },
     "badges": [
       "popular"
-    ]
+    ],
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "claude-max-20x",
@@ -2219,7 +2253,9 @@
     },
     "badges": [
       "popular"
-    ]
+    ],
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "claude-team-personal",
@@ -2533,7 +2569,9 @@
     },
     "badges": [
       "popular"
-    ]
+    ],
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "google-ai-pro-personal",
@@ -2573,7 +2611,9 @@
       "Gmail/Docs/Sheets-এ বিল্ট-ইন AI",
       "2TB Google Drive স্টোরেজ"
     ],
-    "whyBuyBN": "অফিসিয়াল ৳2,990-এর জায়গায় মাত্র ৳500 — নিজের Gmail-এই অ্যাক্টিভেশন। bKash/Nagad পেমেন্ট, ৫-১৫ মিনিটে ডেলিভারি।"
+    "whyBuyBN": "অফিসিয়াল ৳2,990-এর জায়গায় মাত্র ৳500 — নিজের Gmail-এই অ্যাক্টিভেশন। bKash/Nagad পেমেন্ট, ৫-১৫ মিনিটে ডেলিভারি।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "supergrok-lite-personal",
@@ -2610,7 +2650,9 @@
       "সিভিলার নাকামুলার এবং পালিটিক্যাল এনালাসিস",
       "ভারত এবং বাংলাদেশ নিউস এবং সার্বে"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "supergrok-personal",
@@ -2647,7 +2689,9 @@
       "সিভিলার নাকামুলার এবং পালিটিক্যাল এনালাসিস",
       "ভারত এবং বাংলাদেশ নিউস এবং সার্বে"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "perplexity-pro-shared",
@@ -2670,7 +2714,7 @@
     ],
     "deliverySLA": "5-15 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Perplexity Pro Shared (৳350/mo)",
+    "whatsappMsg": "Hi, I want Perplexity Pro Shared",
     "status": "Active",
     "descriptionBN": "Perplexity Pro — AI-powered web research এবং সার্চ জিতে citations সহ পান। 300+ Pro searches/day, real-time information, এবং academic research ক্রাফ্ট সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -2680,7 +2724,11 @@
       "কাস্টমার সার্ট এবং তথ্য বিল্ড রিসার্চ",
       "সোশ্যাল মেডিয়া মেনিটরিং"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "perplexity-pro-personal",
@@ -2713,7 +2761,9 @@
       "কাস্টমার সার্ট এবং তথ্য বিল্ড রিসার্চ",
       "সোশ্যাল মেডিয়া মেনিটরিং"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "perplexity-max-personal",
@@ -2746,7 +2796,9 @@
       "কাস্টমার সার্ট এবং তথ্য বিল্ড রিসার্চ",
       "সোশ্যাল মেডিয়া মেনিটরিং"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "midjourney-std-shared",
@@ -2769,7 +2821,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Midjourney Standard Shared (৳1,199/mo)",
+    "whatsappMsg": "Hi, I want Midjourney Standard Shared",
     "status": "Active",
     "descriptionBN": "Midjourney — বিশ্বের সেরা AI ইমেজ ও ভিডিও জেনারেটর। ফাস্ট GPU, আনলিমিটেড রিল্যাক্স মোড, কমার্শিয়াল রাইটস।",
     "useCases": [
@@ -2778,7 +2830,11 @@
       "ক্লায়েন্ট প্রজেক্টের কনসেপ্ট আর্ট (কমার্শিয়াল রাইটসসহ)",
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
-    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।"
+    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "midjourney-std-premium-shared",
@@ -2800,7 +2856,7 @@
     ],
     "deliverySLA": "5-15 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Midjourney Standard Premium Shared (৳2,399/mo)",
+    "whatsappMsg": "Hi, I want Midjourney Standard Premium Shared",
     "status": "Active",
     "descriptionBN": "Midjourney — বিশ্বের সেরা AI ইমেজ ও ভিডিও জেনারেটর। ফাস্ট GPU, আনলিমিটেড রিল্যাক্স মোড, কমার্শিয়াল রাইটস।",
     "useCases": [
@@ -2809,7 +2865,11 @@
       "ক্লায়েন্ট প্রজেক্টের কনসেপ্ট আর্ট (কমার্শিয়াল রাইটসসহ)",
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
-    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।"
+    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "midjourney-std-personal",
@@ -2840,7 +2900,9 @@
       "ক্লায়েন্ট প্রজেক্টের কনসেপ্ট আর্ট (কমার্শিয়াল রাইটসসহ)",
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
-    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।"
+    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "midjourney-pro-shared",
@@ -2863,7 +2925,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Midjourney Pro Shared (৳4,788/mo)",
+    "whatsappMsg": "Hi, I want Midjourney Pro Shared",
     "status": "Active",
     "descriptionBN": "Midjourney — বিশ্বের সেরা AI ইমেজ ও ভিডিও জেনারেটর। ফাস্ট GPU, আনলিমিটেড রিল্যাক্স মোড, কমার্শিয়াল রাইটস।",
     "useCases": [
@@ -2872,7 +2934,11 @@
       "ক্লায়েন্ট প্রজেক্টের কনসেপ্ট আর্ট (কমার্শিয়াল রাইটসসহ)",
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
-    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।"
+    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "midjourney-pro-personal",
@@ -2904,7 +2970,9 @@
       "ক্লায়েন্ট প্রজেক্টের কনসেপ্ট আর্ট (কমার্শিয়াল রাইটসসহ)",
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
-    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।"
+    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "midjourney-mega-personal",
@@ -2936,7 +3004,9 @@
       "ক্লায়েন্ট প্রজেক্টের কনসেপ্ট আর্ট (কমার্শিয়াল রাইটসসহ)",
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
-    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।"
+    "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "ideogram-plus-personal",
@@ -2968,7 +3038,9 @@
       "মার্কেটিং মেটিরিয়াল ডিজায়ন",
       "ব্যানার এবং প্রিণ্ট ডিজায়ন"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "ideogram-pro-personal",
@@ -3000,7 +3072,9 @@
       "মার্কেটিং মেটিরিয়াল ডিজায়ন",
       "ব্যানার এবং প্রিণ্ট ডিজায়ন"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "leonardo-ai-shared",
@@ -3022,7 +3096,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Leonardo AI Shared (৳599/mo)",
+    "whatsappMsg": "Hi, I want Leonardo AI Shared",
     "status": "Active",
     "descriptionBN": "Leonardo AI — Midjourney-এর বিকল্প একটি budget-friendly AI ছবি তৈরি টুল। Free tier সহ পান, সর্বেধিক ভাল঵িটি এবং সাধারণ কাস্টমাইজেশন সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3032,7 +3106,11 @@
       "চিল্ড্রেন্স এবং বিক্তোরিয়়াল গ্রাফিকস",
       "তীরের থিলে ডিজায়ন এবং এনিমেশন"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "capcut-pro-starter-shared",
@@ -3058,7 +3136,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want CapCut Pro Starter Shared (৳399/mo)",
+    "whatsappMsg": "Hi, I want CapCut Pro Starter Shared",
     "status": "Active",
     "descriptionBN": "CapCut Pro — টিকটক, রিলস ও শর্টসের জন্য সেরা ভিডিও এডিটর। AI ইফেক্ট, অটো ক্যাপশন, কিফ্রেম অ্যানিমেশন, 4K এক্সপোর্ট। bKash/Nagad দিয়ে পেমেন্ট, ৫-১৫ মিনিটে ডেলিভারি।",
     "useCases": [
@@ -3170,7 +3248,11 @@
         "priceBDT": 499,
         "category": "ai-image"
       }
-    ]
+    ],
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "runway-std-personal",
@@ -3204,7 +3286,9 @@
       "বিজনেস প্রেজেন্টেশন এবং এনিমেশন",
       "কামার্শিয়াল ভিডিও সার্ভিসেস"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "runway-pro-personal",
@@ -3237,7 +3321,9 @@
       "বিজনেস প্রেজেন্টেশন এবং এনিমেশন",
       "কামার্শিয়াল ভিডিও সার্ভিসেস"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "runway-unlimited-personal",
@@ -3270,7 +3356,9 @@
       "বিজনেস প্রেজেন্টেশন এবং এনিমেশন",
       "কামার্শিয়াল ভিডিও সার্ভিসেস"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "heygen-creator-shared",
@@ -3292,7 +3380,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want HeyGen Creator Shared (৳1,499/mo)",
+    "whatsappMsg": "Hi, I want HeyGen Creator Shared",
     "status": "Active",
     "descriptionBN": "HeyGen — AI avatar তৈরি এবং ভিডিও ট্রান্সলেশন টুল। আধুনিক থেকে AI avatar, তাদের থেকে কথা অনুভাদ চে রে সম্ভব। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3302,7 +3390,11 @@
       "কল সেন্টার থেকে ভিডিও জেনারেশন",
       "সোশ্যাল মেডিয়া কন্টেন্ট তৈরি"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "elevenlabs-starter-personal",
@@ -3333,7 +3425,9 @@
       "এল-লেরনিং কন্টেন্ট এবং এ-কমার্জ ভাইস",
       "কথা ক্লোনিং এবং ভার্চুয়াল ডেমো"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "elevenlabs-creator-personal",
@@ -3364,7 +3458,9 @@
       "এল-লেরনিং কন্টেন্ট এবং এ-কমার্জ ভাইস",
       "কথা ক্লোনিং এবং ভার্চুয়াল ডেমো"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "elevenlabs-pro-personal",
@@ -3395,7 +3491,9 @@
       "এল-লেরনিং কন্টেন্ট এবং এ-কমার্জ ভাইস",
       "কথা ক্লোনিং এবং ভার্চুয়াল ডেমো"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "suno-pro-personal",
@@ -3427,7 +3525,9 @@
       "আধুনিক AI গান তৈরি জন্য",
       "বানানী ভাষার AI গান এবং ভোয়স কেরিগেশন"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "suno-premier-personal",
@@ -3458,7 +3558,9 @@
       "আধুনিক AI গান তৈরি জন্য",
       "বানানী ভাষার AI গান এবং ভোয়স কেরিগেশন"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "udio-pro-shared",
@@ -3479,7 +3581,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Udio Pro Shared (৳499/mo)",
+    "whatsappMsg": "Hi, I want Udio Pro Shared",
     "status": "Active",
     "descriptionBN": "Udio — AI-powered music জেনারেশন টুল। দুসরা লিংক কি স্তম্ভ কে সূদু লেখা সহ AI গান তৈরি করুন। ভারত এবং বাংলাদেশ জন্য সম্পূর্ণ AI মুসিক সার্ভিস। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3489,7 +3591,11 @@
       "বানানী জাতিয় AI বাও লিরিকস",
       "মুভি ট্রেলার ঔর থিম্বেল সার্স"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "github-copilot-pro-personal",
@@ -3520,7 +3626,9 @@
       "বোরিং বয়লারপ্লেট কোড অটো-জেনারেশন",
       "কোড রিভিউ ও রিফ্যাক্টরিং সাজেশন"
     ],
-    "whyBuyBN": "bKash/Nagad দিয়ে পেমেন্ট, নিজের GitHub অ্যাকাউন্টে অ্যাক্টিভেশন, ৩০ দিনের ওয়ারেন্টি।"
+    "whyBuyBN": "bKash/Nagad দিয়ে পেমেন্ট, নিজের GitHub অ্যাকাউন্টে অ্যাক্টিভেশন, ৩০ দিনের ওয়ারেন্টি।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "github-copilot-proplus-personal",
@@ -3550,7 +3658,9 @@
       "বোরিং বয়লারপ্লেট কোড অটো-জেনারেশন",
       "কোড রিভিউ ও রিফ্যাক্টরিং সাজেশন"
     ],
-    "whyBuyBN": "bKash/Nagad দিয়ে পেমেন্ট, নিজের GitHub অ্যাকাউন্টে অ্যাক্টিভেশন, ৩০ দিনের ওয়ারেন্টি।"
+    "whyBuyBN": "bKash/Nagad দিয়ে পেমেন্ট, নিজের GitHub অ্যাকাউন্টে অ্যাক্টিভেশন, ৩০ দিনের ওয়ারেন্টি।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "cursor-pro-personal",
@@ -3583,7 +3693,9 @@
       "এতরাচাল ওয়েব সার্ভিসেস",
       "ক্লাউড এপ্লিকেশন সার্ভিস ডেভেলপমেন্ট"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "cursor-proplus-personal",
@@ -3615,7 +3727,9 @@
       "এতরাচাল ওয়েব সার্ভিসেস",
       "ক্লাউড এপ্লিকেশন সার্ভিস ডেভেলপমেন্ট"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "v0-dev-shared",
@@ -3637,7 +3751,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want v0.dev Pro Shared (৳999/mo)",
+    "whatsappMsg": "Hi, I want v0.dev Pro Shared",
     "status": "Active",
     "descriptionBN": "v0.dev — Vercel-এর AI UI তৈরি টুল। React + Tailwind CSS কোড জেনারেশন, নেট ডেতা ছাড়াই। সাদা তেকনিকাল এবং নোন-টেকনিকাল উপদের দুসের জন্য সর্বশেষ টুল। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3647,7 +3761,11 @@
       "সাদা তেকনিকাল ব্যবহারকারী জন্য",
       "নোন-টেকনিকাল ফাউন্ডার এবং স্টার্টউপ ডেভেলপমেন্ট"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "replit-core-personal",
@@ -3680,7 +3798,9 @@
       "স্ক্রিপ্ট নিউ তৈরি",
       "ক্লাউদ AI agent জেনারেশন"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "notion-business-monthly",
@@ -3695,7 +3815,6 @@
     "officialUSD": 20,
     "tier": "Monthly",
     "accessType": "personal",
-    "badge": "73% Off",
     "description": "Official Notion Business Plan. Notion AI included, teamspaces, SSO, 90-day history.",
     "capabilities": [
       "workspace",
@@ -3704,7 +3823,7 @@
     ],
     "deliverySLA": "2-4 hours",
     "featured": true,
-    "whatsappMsg": "Hi, I want Notion Business Monthly (৳800/mo)",
+    "whatsappMsg": "Hi, I want Notion Business Monthly",
     "status": "Active",
     "descriptionBN": "Notion AI — টীম ওয়ার্কস্পেস এবং AI কন্টেন্ট মেনেজমেন্ট নিলে কাজ করুন। লেখা লেখা, ডাকুমেন্ট লেখা, প্রোজেক্ট মেনেজ করা এবং AI সার্স খুড়ল সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3714,7 +3833,11 @@
       "দেশের কুন থেকে কলাবেরেট কাজ",
       "ক্লাইন্ট কম্যুনিকেশন এবং ছুটি সার্ভিস"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "customer_owned_activation",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "notion-business-6m",
@@ -3737,7 +3860,7 @@
     ],
     "deliverySLA": "2-4 hours",
     "featured": true,
-    "whatsappMsg": "Hi, I want Notion Business 6-Month (৳4,800)",
+    "whatsappMsg": "Hi, I want Notion Business 6-Month",
     "status": "Active",
     "descriptionBN": "Notion AI — টীম ওয়ার্কস্পেস এবং AI কন্টেন্ট মেনেজমেন্ট নিলে কাজ করুন। লেখা লেখা, ডাকুমেন্ট লেখা, প্রোজেক্ট মেনেজ করা এবং AI সার্স খুড়ল সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3747,7 +3870,11 @@
       "দেশের কুন থেকে কলাবেরেট কাজ",
       "ক্লাইন্ট কম্যুনিকেশন এবং ছুটি সার্ভিস"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "customer_owned_activation",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "manus-ai-personal",
@@ -3781,7 +3908,9 @@
       "মল্টি-স্টেপ AI ওয়ার্কফ্লো এটীড করা",
       "তথ্য এনালাসিস এবং রিপোর্ট সামারি"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "otter-ai-shared",
@@ -3803,7 +3932,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Otter.ai Pro Shared (৳799/mo)",
+    "whatsappMsg": "Hi, I want Otter.ai Pro Shared",
     "status": "Active",
     "descriptionBN": "Otter AI — AI meeting assistant এবং ট্রান্সক্রিপ্ট সার্ভিস। মিটিং-বুলা সময়ে AI অটো ট্রান্সক্রাইব করে, সারামিরী লেখা এবং সিার্ট করে। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3813,7 +3942,11 @@
       "কল কামেরা লেখা",
       "঵াইস নোট এবং সিার্ট করা"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "gamma-plus-shared",
@@ -3835,7 +3968,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Gamma Plus Shared (৳399/mo)",
+    "whatsappMsg": "Hi, I want Gamma Plus Shared",
     "status": "Active",
     "descriptionBN": "Gamma — AI প্রেজেন্টেশন তৈরি টুল। সাদা তেকনিকাল আধুনিক থেকে ডেসের জন্য সর্বশেষ টুল। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3845,7 +3978,11 @@
       "ওয়েব সার্ভিস এবং ল্যান্ডিং পেয়াজ",
       "সাদা তেকনিকাল থেকে কলাবেরেট করা"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "writesonic-shared",
@@ -3867,7 +4004,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Writesonic Shared (৳799/mo)",
+    "whatsappMsg": "Hi, I want Writesonic Shared",
     "status": "Active",
     "descriptionBN": "Writesonic — AI writing assistant সহ SEO ওপ্টিমাইজ করা সার্বসেশন টুল। Blog posts, landing pages, এড কনুবার্সশন এবং সোশ্যাল মেডিয়া কন্টেন্ট লেখা সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3877,7 +4014,11 @@
       "এতরাচাল এমেইল সিরিস",
       "প্রেস রিলিজ এবং ন্যুজ এর্টিকল"
     ],
-    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।"
+    "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "student-essentials",
@@ -3909,7 +4050,9 @@
       "সোশ্যাল মেডিয়া কন্টেন্ট",
       "বানানী গার্দ এবং সাদানু কাজ"
     ],
-    "whyBuyBN": "৳9 টুল একসাথে সারে পান। ফালা মুক্ত সে সেয়ে প্রিয়। bKash/Nagad খরলে সরল ওয়ার্সার এবং সাধারণ জন্য সেয়ে ভালে।"
+    "whyBuyBN": "৳9 টুল একসাথে সারে পান। ফালা মুক্ত সে সেয়ে প্রিয়। bKash/Nagad খরলে সরল ওয়ার্সার এবং সাধারণ জন্য সেয়ে ভালে।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "university-pro",
@@ -3942,7 +4085,9 @@
       "সোশ্যাল মেডিয়া কন্টেন্ট",
       "বানানী গার্দ এবং সাদানু কাজ"
     ],
-    "whyBuyBN": "৳9 টুল একসাথে সারে পান। ফালা মুক্ত সে সেয়ে প্রিয়। bKash/Nagad খরলে সরল ওয়ার্সার এবং সাধারণ জন্য সেয়ে ভালে।"
+    "whyBuyBN": "৳9 টুল একসাথে সারে পান। ফালা মুক্ত সে সেয়ে প্রিয়। bKash/Nagad খরলে সরল ওয়ার্সার এবং সাধারণ জন্য সেয়ে ভালে।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "freelancer-bundle",
@@ -3975,7 +4120,9 @@
       "লরনিং এবং ডেলিভারি সার্ভিস",
       "প্রেজেন্ট লিনুক এবং ওয়ার্কস্পেস সার্ভিস"
     ],
-    "whyBuyBN": "৳9 টুল একসাথে সারে পান। ফালা মুক্ত সে সেয়ে প্রিয়। bKash/Nagad খরলে সরল ওয়ার্সার এবং সাধারণ জন্য় সেয়ে ভালে।"
+    "whyBuyBN": "৳9 টুল একসাথে সারে পান। ফালা মুক্ত সে সেয়ে প্রিয়। bKash/Nagad খরলে সরল ওয়ার্সার এবং সাধারণ জন্য় সেয়ে ভালে।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "business-package",
@@ -4009,7 +4156,9 @@
       "সাতেস রিপোর্ট এবং সাতেস সার্স",
       "জদি টেস্ট এবং রিলিজ"
     ],
-    "whyBuyBN": "৳9 টুল একসাথে সারে পান। ফালা মুক্ত সে সেয়ে প্রিয়। bKash/Nagad খরলে সরল ওয়ার্সার এবং সাধারণ জন্য় সেয়ে ভালে।"
+    "whyBuyBN": "৳9 টুল একসাথে সারে পান। ফালা মুক্ত সে সেয়ে প্রিয়। bKash/Nagad খরলে সরল ওয়ার্সার এবং সাধারণ জন্য় সেয়ে ভালে।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "b2b-implementation",
@@ -4043,7 +4192,9 @@
       "ট্রেনিং এবং অন্বর্দ সারে",
       "এই থিংকিং কাস্টমাইজেশন এবং AI পরামরস"
     ],
-    "whyBuyBN": "৳9 টুল একসাথে সারে পান। ফালা মুক্ত সে সেয়ে প্রিয়। bKash/Nagad খরলে সরল ওয়ার্সার এবং সাধারণ জন্য় সেয়ে ভালে।"
+    "whyBuyBN": "৳9 টুল একসাথে সারে পান। ফালা মুক্ত সে সেয়ে প্রিয়। bKash/Nagad খরলে সরল ওয়ার্সার এবং সাধারণ জন্য় সেয়ে ভালে।",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "grammarly-premium-starter-shared",
@@ -4069,7 +4220,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Grammarly Premium (৳470/mo)",
+    "whatsappMsg": "Hi, I want Grammarly Premium",
     "status": "Active",
     "descriptionBN": "Grammarly Premium — ব্যাকরণ, বানান, টোন ও পরিষ্কারতার জন্য AI পাওয়ারড রাইটিং অ্যাসিস্ট্যান্ট। শিক্ষার্থী, পেশাদার ও কনটেন্ট ক্রিয়েটরদের জন্য অপরিহার্য।",
     "useCases": [
@@ -4132,7 +4283,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "grammarly-premium-personal",
@@ -4219,7 +4374,9 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "quillbot-premium-starter-shared",
@@ -4246,7 +4403,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want QuillBot Premium (৳390/mo)",
+    "whatsappMsg": "Hi, I want QuillBot Premium",
     "status": "Active",
     "descriptionBN": "QuillBot Premium — AI প্যারাফ্রেজিং, সারাংশ, ব্যাকরণ পরীক্ষা এবং প্লাগিয়ারিজম ডিটেকশন। ইংরেজিতে থিসিস ও অ্যাসাইনমেন্ট লেখার জন্য পারফেক্ট।",
     "useCases": [
@@ -4311,7 +4468,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "quillbot-premium-personal",
@@ -4401,7 +4562,9 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "canva-pro-starter-shared",
@@ -4428,7 +4591,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Canva Pro (৳510/mo)",
+    "whatsappMsg": "Hi, I want Canva Pro",
     "status": "Active",
     "descriptionBN": "Canva Pro — AI Magic Studio, ১০ কোটির বেশি স্টক অ্যাসেট, ব্র্যান্ড কিট ও ব্যাকগ্রাউন্ড রিমুভার সহ অল-ইন-ওয়ান ডিজাইন টুল। বাংলাদেশি ক্রিয়েটর ও SME-দের জন্য #1।",
     "useCases": [
@@ -4493,7 +4656,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "canva-pro-personal",
@@ -4583,7 +4750,9 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "microsoft-copilot-pro-starter-shared",
@@ -4610,7 +4779,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Microsoft Copilot Pro (৳780/mo)",
+    "whatsappMsg": "Hi, I want Microsoft Copilot Pro",
     "status": "Active",
     "descriptionBN": "Microsoft Copilot Pro — Word, Excel, PowerPoint, Outlook ও Teams-এ ইন্টিগ্রেটেড AI অ্যাসিস্ট্যান্ট। GPT-4 পাওয়ারড প্রোডাক্টিভিটি।",
     "useCases": [
@@ -4675,7 +4844,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "microsoft-copilot-pro-personal",
@@ -4765,7 +4938,9 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "jasper-ai-starter-shared",
@@ -4792,7 +4967,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Jasper AI Creator (৳1520/mo)",
+    "whatsappMsg": "Hi, I want Jasper AI Creator",
     "status": "Active",
     "descriptionBN": "Jasper AI — ব্লগ, অ্যাড, ইমেইল ও সোশ্যাল মিডিয়ার জন্য AI মার্কেটিং কপিরাইটার। টিম ও এজেন্সির জন্য তৈরি।",
     "useCases": [
@@ -4857,7 +5032,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "jasper-ai-personal",
@@ -4947,7 +5126,9 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "adobe-firefly-starter-shared",
@@ -4973,7 +5154,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Adobe Firefly (৳190/mo)",
+    "whatsappMsg": "Hi, I want Adobe Firefly",
     "status": "Active",
     "descriptionBN": "Adobe Firefly — AI ছবি তৈরি, জেনারেটিভ ফিল ও টেক্সট ইফেক্ট। Photoshop ও Express-এ ইন্টিগ্রেটেড। বাণিজ্যিক ব্যবহারের জন্য নিরাপদ।",
     "useCases": [
@@ -5036,7 +5217,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "pika-labs-starter-shared",
@@ -5061,7 +5246,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Pika Labs (৳310/mo)",
+    "whatsappMsg": "Hi, I want Pika Labs",
     "status": "Active",
     "descriptionBN": "Pika Labs — টেক্সট-টু-ভিডিও AI জেনারেশন। প্রম্পট থেকে সিনেমাটিক ভিডিও তৈরি করুন। বাংলাদেশি ক্রিয়েটরদের জন্য দ্রুত ও সৃজনশীল।",
     "useCases": [
@@ -5122,7 +5307,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "pika-labs-personal",
@@ -5206,7 +5395,9 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "opus-clip-starter-shared",
@@ -5232,7 +5423,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Opus Clip (৳590/mo)",
+    "whatsappMsg": "Hi, I want Opus Clip",
     "status": "Active",
     "descriptionBN": "Opus Clip — AI ভিডিও রিপারপোজিং। লম্বা ভিডিও থেকে অটোমেটিক্যালি ভাইরাল শর্টস, রিলস ও টিকটক ক্লিপ তৈরি করে ক্যাপশন ও হুক সহ।",
     "useCases": [
@@ -5295,7 +5486,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "opus-clip-personal",
@@ -5382,7 +5577,9 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "descript-pro-starter-shared",
@@ -5408,7 +5605,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Descript Pro (৳470/mo)",
+    "whatsappMsg": "Hi, I want Descript Pro",
     "status": "Active",
     "descriptionBN": "Descript Pro — AI ভিডিও ও পডকাস্ট এডিটিং। টেক্সট এডিট করে ভিডিও এডিট করুন। অটো ট্রান্সক্রিপশন, ওভারডাব ভয়েস ক্লোনিং।",
     "useCases": [
@@ -5471,7 +5668,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "descript-pro-personal",
@@ -5558,7 +5759,9 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "murf-ai-starter-shared",
@@ -5584,7 +5787,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Murf AI (৳740/mo)",
+    "whatsappMsg": "Hi, I want Murf AI",
     "status": "Active",
     "descriptionBN": "Murf AI — ১২০+ ভয়েস, ২০+ ভাষায় AI টেক্সট-টু-স্পিচ। ভিডিও, অ্যাড, ই-লার্নিং ও প্রেজেন্টেশনের জন্য স্টুডিও-কোয়ালিটি ভয়েসওভার।",
     "useCases": [
@@ -5647,7 +5850,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "murf-ai-personal",
@@ -5734,7 +5941,9 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "freepik-premium-shared",
@@ -5761,7 +5970,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Freepik Premium (৳450/mo)",
+    "whatsappMsg": "Hi, I want Freepik Premium",
     "status": "Active",
     "descriptionBN": "Freepik Premium — কোটি কোটি প্রিমিয়াম ভেক্টর, ফটো, PSD ও আইকনের অসীম অ্যাক্সেস। AI ছবি তৈরি, AI রিইমাজিন এবং AI আপস্কেলার সহ। ডিজাইনার ও মার্কেটারদের জন্য আদর্শ।",
     "useCases": [
@@ -5886,7 +6095,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "kling-ai-starter-shared",
@@ -5912,7 +6125,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Kling AI (৳270/mo)",
+    "whatsappMsg": "Hi, I want Kling AI",
     "status": "Active",
     "descriptionBN": "Kling AI — টেক্সট ও ছবি থেকে চমৎকার AI ভিডিও তৈরি করে। চীনের সেরা টেক্সট-টু-ভিডিও মডেল, সিনেমাটিক কোয়ালিটি, ক্যারেক্টার কনসিস্টেন্সি এবং মোশন রিয়েলিজম।",
     "useCases": [
@@ -6035,7 +6248,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "synthesia-starter-shared",
@@ -6061,7 +6278,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Synthesia (৳700/mo)",
+    "whatsappMsg": "Hi, I want Synthesia",
     "status": "Active",
     "descriptionBN": "Synthesia — AI avatar ভিডিও তৈরি করুন মিনিটের মধ্যে। ১৪০+ AI avatar, ১২০+ ভাষা, কাস্টম avatar তৈরি। কর্পোরেট ট্রেনিং, মার্কেটিং ও শিক্ষার জন্য আদর্শ।",
     "useCases": [
@@ -6186,7 +6403,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "windsurf-pro-shared",
@@ -6212,7 +6433,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Windsurf Pro (৳590/mo)",
+    "whatsappMsg": "Hi, I want Windsurf Pro",
     "status": "Active",
     "descriptionBN": "Windsurf (Codeium) — AI-native IDE ক্যাসকেড এজেন্ট মোড সহ। AI নিজে থেকে প্ল্যান, লিখুন, টেস্ট ও ডিবাগ করতে পারে। ৭০+ ভাষা ও ফ্রেমওয়ার্ক সাপোর্ট।",
     "useCases": [
@@ -6304,7 +6525,11 @@
       }
     ],
     "relatedProducts": [],
-    "lastVerifiedDate": "2026-07-09"
+    "lastVerifiedDate": "2026-07-09",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "adobe-cc-personal",
@@ -6343,7 +6568,9 @@
     "whatsappMsg": "Hi! I want Adobe Creative Cloud — Personal — please confirm the current price and payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "poe-personal",
@@ -6379,7 +6606,9 @@
     "whatsappMsg": "Hi! I want Poe — Personal (৳3,440/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "luma-dream-machine-personal",
@@ -6415,7 +6644,9 @@
     "whatsappMsg": "Hi! I want Luma Dream Machine — Personal (৳1,728/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "hailuo-minimax-personal",
@@ -6449,7 +6680,9 @@
     "whatsappMsg": "Hi! I want Hailuo AI (MiniMax) — Personal (৳2,592/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "veed-personal",
@@ -6485,7 +6718,9 @@
     "whatsappMsg": "Hi! I want VEED — Personal (৳1,728/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "filmora-annual",
@@ -6520,7 +6755,9 @@
     "whatsappMsg": "Hi! I want Filmora — Annual Licence (৳1,008/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "captions-personal",
@@ -6554,7 +6791,9 @@
     "whatsappMsg": "Hi! I want Captions — Personal (৳1,728/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "speechify-personal",
@@ -6588,7 +6827,9 @@
     "whatsappMsg": "Hi! I want Speechify Reader — Personal (৳2,000/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "playht-personal",
@@ -6623,7 +6864,9 @@
     "whatsappMsg": "Hi! I want PlayHT — Personal (৳5,376/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "krisp-personal",
@@ -6657,7 +6900,9 @@
     "whatsappMsg": "Hi! I want Krisp — Personal (৳1,376/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "lovable-personal",
@@ -6691,7 +6936,9 @@
     "whatsappMsg": "Hi! I want Lovable — Personal (৳4,304/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "bolt-new-personal",
@@ -6725,7 +6972,9 @@
     "whatsappMsg": "Hi! I want Bolt.new — Personal (৳4,304/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "figma-professional",
@@ -6759,7 +7008,9 @@
     "whatsappMsg": "Hi! I want Figma Professional — Personal Seat (৳2,064/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "photoroom-personal",
@@ -6793,7 +7044,9 @@
     "whatsappMsg": "Hi! I want Photoroom — Personal (৳1,296/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "recraft-personal",
@@ -6828,7 +7081,9 @@
     "whatsappMsg": "Hi! I want Recraft — Personal (৳1,728/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "krea-personal",
@@ -6864,7 +7119,9 @@
     "whatsappMsg": "Hi! I want Krea AI — Personal (৳1,552/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "beautiful-ai-personal",
@@ -6898,7 +7155,9 @@
     "whatsappMsg": "Hi! I want Beautiful.ai — Personal (৳2,064/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "plus-ai-personal",
@@ -6931,7 +7190,9 @@
     "whatsappMsg": "Hi! I want Plus AI — Personal (৳1,728/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "fireflies-personal",
@@ -6965,7 +7226,9 @@
     "whatsappMsg": "Hi! I want Fireflies.ai — Personal (৳1,728/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "fathom-personal",
@@ -6999,7 +7262,9 @@
     "whatsappMsg": "Hi! I want Fathom — Personal (৳2,752/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "m365-copilot-seat",
@@ -7037,7 +7302,9 @@
     "whatsappMsg": "Hi! I want Microsoft 365 Copilot — Business Seat — please confirm the current price and payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "google-workspace-ai-seat",
@@ -7073,7 +7340,9 @@
     "whatsappMsg": "Hi! I want Google Workspace with Gemini — Business Seat (৳2,416/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "luma-dream-machine-plus",
@@ -7108,7 +7377,9 @@
     "whatsappMsg": "Hi! I want Luma Dream Machine — Plus (৳5,168/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "captions-max",
@@ -7143,7 +7414,9 @@
     "whatsappMsg": "Hi! I want Captions — Max (৳4,304/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "veed-pro",
@@ -7179,7 +7452,9 @@
     "whatsappMsg": "Hi! I want VEED — Pro (৳4,128/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "krea-pro",
@@ -7215,7 +7490,9 @@
     "whatsappMsg": "Hi! I want Krea AI — Pro (৳3,616/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "zapier-professional",
@@ -7252,7 +7529,9 @@
     "whatsappMsg": "Hi! I want Zapier — Professional (৳3,440/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "zapier-team",
@@ -7288,7 +7567,9 @@
     "whatsappMsg": "Hi! I want Zapier — Team (৳11,872/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "make-core",
@@ -7324,7 +7605,9 @@
     "whatsappMsg": "Hi! I want Make — Core (৳1,552/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "make-pro",
@@ -7359,7 +7642,9 @@
     "whatsappMsg": "Hi! I want Make — Pro (৳2,752/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "make-teams",
@@ -7394,7 +7679,9 @@
     "whatsappMsg": "Hi! I want Make — Teams (৳4,992/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "semrush-seo",
@@ -7431,7 +7718,9 @@
     "whatsappMsg": "Hi! I want Semrush — SEO (৳20,176/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "ahrefs-starter",
@@ -7466,7 +7755,9 @@
     "whatsappMsg": "Hi! I want Ahrefs — Starter (৳4,992/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "ahrefs-lite",
@@ -7502,7 +7793,9 @@
     "whatsappMsg": "Hi! I want Ahrefs — Lite (৳22,192/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "surfer-discovery",
@@ -7537,7 +7830,9 @@
     "whatsappMsg": "Hi! I want Surfer SEO — Discovery (৳8,432/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "surfer-standard",
@@ -7572,7 +7867,9 @@
     "whatsappMsg": "Hi! I want Surfer SEO — Standard (৳17,024/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "coursera-plus-personal",
@@ -7608,7 +7905,9 @@
     "whatsappMsg": "Hi! I want Coursera Plus — Personal (৳2,304/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "mistral-le-chat-pro",
@@ -7644,7 +7943,9 @@
     "whatsappMsg": "Hi! I want Mistral Le Chat — Pro (৳2,592/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "mistral-le-chat-team",
@@ -7680,7 +7981,9 @@
     "whatsappMsg": "Hi! I want Mistral Le Chat — Team (৳4,304/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "loom-business",
@@ -7716,7 +8019,9 @@
     "whatsappMsg": "Hi! I want Loom — Business (৳3,104/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "loom-business-ai",
@@ -7751,7 +8056,9 @@
     "whatsappMsg": "Hi! I want Loom — Business + AI (৳4,128/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "framer-basic",
@@ -7787,7 +8094,9 @@
     "whatsappMsg": "Hi! I want Framer — Basic (৳1,728/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "framer-pro",
@@ -7823,7 +8132,9 @@
     "whatsappMsg": "Hi! I want Framer — Pro (৳5,168/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "miro-starter",
@@ -7858,7 +8169,9 @@
     "whatsappMsg": "Hi! I want Miro — Starter (৳1,376/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "miro-business",
@@ -7894,7 +8207,9 @@
     "whatsappMsg": "Hi! I want Miro — Business (৳3,440/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "airtable-team",
@@ -7930,7 +8245,9 @@
     "whatsappMsg": "Hi! I want Airtable — Team (৳3,440/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "airtable-business",
@@ -7966,7 +8283,9 @@
     "whatsappMsg": "Hi! I want Airtable — Business (৳7,744/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "clickup-unlimited",
@@ -8002,7 +8321,9 @@
     "whatsappMsg": "Hi! I want ClickUp — Unlimited (৳1,216/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "clickup-business",
@@ -8038,6 +8359,8 @@
     "whatsappMsg": "Hi! I want ClickUp — Business (৳2,064/mo) — please share payment details.",
     "whyBuyBN": "bKash, Nagad বা ব্যাংক ট্রান্সফারে পেমেন্ট — ইন্টারন্যাশনাল কার্ড লাগে না। সেটআপ আমরা করে দিই, ৩০ দিনের রিপ্লেসমেন্ট গ্যারান্টি, আর WhatsApp-এ বাংলা সাপোর্ট।",
     "deliveryMethod": "WhatsApp activation on your own account",
-    "lastVerifiedDate": "2026-07-31"
+    "lastVerifiedDate": "2026-07-31",
+    "commercialStatus": "approved_legacy_unreviewed",
+    "accessModel": "customer_owned_activation"
   }
 ]

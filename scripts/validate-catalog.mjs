@@ -1,4 +1,24 @@
 #!/usr/bin/env node
+// SUPERSEDED 2026-08-02 — kept as evidence, no longer wired into `npm run ship`.
+// Reachable as `npm run validate:catalog:legacy`.
+//
+// Why it was retired rather than trusted:
+//   1. It reads data/catalog.json (2 products) — a scaffolding file the site
+//      does NOT render from. The shipped catalog is
+//      client/src/data/products-catalog.json (129 products).
+//   2. It applies a FLAT ৳29,900 floor to every product regardless of access
+//      model, which cannot be right: a shared seat and a personal seat have
+//      different economics by design.
+//   3. As a result it currently FAILS by flagging the CEO's own approved CapCut
+//      relist prices (৳2,510 annual / ৳3,350 monthly, decision F27 2026-07-26)
+//      as "below floor ৳29,900" — the validator contradicts the decision it
+//      should be enforcing.
+//   4. It was never wired into `npm run ship`, so nobody saw it failing.
+//
+// Replacement: scripts/validate-commercial.mjs (access-model aware, reads the
+// catalog the site actually ships). Deleting this file would erase the evidence
+// of the gap, so it stays.
+//
 // Catalog validation script - runs floor-guard checks and reports violations
 
 import fs from 'fs/promises';

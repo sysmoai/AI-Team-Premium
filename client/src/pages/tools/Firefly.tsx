@@ -5,8 +5,8 @@ import { Image as ImageIcon } from "lucide-react";
 export const TOOL_META = {
   "slug": "firefly",
   "category": "image",
-  "priceBdt": 190,
-  "priceLabel": "from ৳190/mo",
+  "priceBdt": 0,
+  "priceLabel": "Price on request",
   "model": "Adobe Firefly v4 + Photoshop",
   "contextWindow": "N/A (image gen)",
   "multimodal": "Text-to-image, text-to-vector, text-to-video",

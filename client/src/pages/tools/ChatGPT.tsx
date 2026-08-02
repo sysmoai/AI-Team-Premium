@@ -13,8 +13,8 @@ import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 export const TOOL_META = {
   "slug": "chatgpt",
   "category": "chat",
-  "priceBdt": 350,
-  "priceLabel": "from ৳350/mo",
+  "priceBdt": 2990,
+  "priceLabel": "from ৳2,990/mo",
   "model": "GPT-4.5 + o3-mini reasoning",
   "contextWindow": "128K tokens",
   "multimodal": "Text, image, voice, files",

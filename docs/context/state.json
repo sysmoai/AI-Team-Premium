@@ -13,7 +13,10 @@
     "uniqueBrands": 72,
     "sharedTierRecords": 32,
     "personalTierRecords": 97,
-    "notionCheckpointClaimed": "107 rows / 99 unique (stale, 2026-07-26)"
+    "notionCheckpointClaimed": "107 rows / 99 unique (stale, 2026-07-26)",
+    "quarantinedPendingEvidence": 34,
+    "priceOnRequest": 36,
+    "approvedLegacyUnreviewed": 95
   },
   "githubActionsStatus": "billing-locked account-wide on sysmoai (shared with sibling AI-Premium-Shop repo)",
   "openP0": [
@@ -24,7 +27,7 @@
     "Legal operator/ownership wording: two canonical Notion documents directly contradict each other (CL-4, upgraded) -- Canonical Brand OS says pending, Market/SEO report names a specific operator and forbids describing Emon as owner. Treated as undecided per authority order; no claim made anywhere."
   ],
   "openP1": [
-    "No automated cost-floor enforcement on the live-serving catalog (CL-3) -- partially addressed: scripts/audit-floor.mjs built this session as a diagnostic (non-blocking) reference-check tool",
+    "NEW P0-adjacent: /ai-tools-vault hardcodes 1990 BDT for shared access to 3 identity-bound accounts, outside the catalog governance layer, emitted to ProductSchema. Not yet quarantined.",
     "Five required service-pillar pages not built (R6)",
     "Earlier bulk-import scaffolding not taxonomy-aware (R7)"
   ],
@@ -40,5 +43,11 @@
     "Market, SEO, Competitor & Growth Intelligence Report"
   ],
   "discoveryPhaseStatus": "complete -- all originally-flagged Notion pages read; remaining work is CEO decisions, not open-ended investigation",
-  "lastUpdated": "2026-08-02 (second continuation)"
+  "lastUpdated": "2026-08-02 (commercial governance batch)",
+  "commercialGovernance": {
+    "file": "data/commercial-governance.json",
+    "validator": "scripts/validate-commercial.mjs (wired into npm run ship)",
+    "appliedBy": "scripts/build-catalog.mjs applyGovernance()",
+    "note": "Quarantine survives catalog rebuild because governance is a sidecar, not a field on the internal export."
+  }
 }

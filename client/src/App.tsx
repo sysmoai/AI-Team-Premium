@@ -19,6 +19,7 @@ const Contact = lazy(() => import("./pages/Contact"));
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/legal/TermsOfService"));
 const RefundPolicy = lazy(() => import("./pages/legal/RefundPolicy"));
+const AccessTypes = lazy(() => import("./pages/legal/AccessTypes"));
 const ChatGPT = lazy(() => import("./pages/tools/ChatGPT"));
 const Claude = lazy(() => import("./pages/tools/Claude"));
 const Gemini = lazy(() => import("./pages/tools/Gemini"));
@@ -136,6 +137,7 @@ function Router() {
         <Route path="/contact" component={Contact} />
         <Route path="/start-a-project" component={Contact} />
         <Route path="/refund-policy" component={RefundPolicy} />
+        <Route path="/access-types" component={AccessTypes} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms" component={TermsOfService} />
         <Route path="/tools/chatgpt" component={ChatGPT} />

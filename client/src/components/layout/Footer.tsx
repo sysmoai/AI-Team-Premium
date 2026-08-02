@@ -163,6 +163,7 @@ export function Footer() {
           <div className="md:col-span-2 col-span-1">
             <FooterHeading>Legal</FooterHeading>
             <FooterLinks links={[
+              { label: "Access Types Explained", to: "/access-types" },
               { label: "Refund Policy", to: "/refund-policy" },
               { label: "Privacy Policy", to: "/privacy-policy" },
               { label: "Terms of Service", to: "/terms" },

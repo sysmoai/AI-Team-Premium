@@ -1,30 +1,33 @@
 {
   "project": "AI Team Premium",
   "branch": "feat/aitp-truth-reconciliation-20260802",
-  "headSha": "2d9477a7fdcfab1b75e285a4a06c2bdb87205aa3",
+  "headSha": "PENDING",
   "productionSha": "444c2411e110523775a57384ddc4a6702241c56b",
-  "activeStage": "All originally-flagged Notion pages read; discovery phase complete; next session should start from the CEO decision queue, not open-ended investigation",
-  "completedBatch": "Read Product Intelligence & Offer Eligibility Protocol + Rebrand Migration & Eradication Ledger + Market/SEO/Competitor Growth Report in full; discovered the live catalog's biggest gap (R0: shared-access legitimacy across 32 records, zero eligibility-protocol application catalog-wide); investigated and upgraded Notion Business finding (unsupported 73% Off claim, no computation backing); built and ran scripts/audit-floor.mjs (committed, non-blocking diagnostic tool); confirmed no unsupported partner/reseller claims on site; found the ownership question is a real conflict between two canonical Notion documents, not a stale snippet -- resolved by NOT resolving it (ownership remains undecided per authority order); found the report's own 'production unverified' P0 is superseded by this session's direct measurement; surfaced a real strategy-vs-execution tension (catalog-heavy build vs. service-led strategic mandate)",
-  "nextAction": "This session's discovery queue is exhausted. Next session should present the CEO decision queue (see blockers) rather than open new investigation threads, unless the CEO has since responded with decisions to implement.",
+  "activeStage": "Compliance controls implemented and enforced; trust foundation started; service pillars not yet built",
+  "completedBatch": "Built data/commercial-governance.json sidecar overlay + gen-governance.mjs; wired governance into build-catalog.mjs so quarantine survives catalog rebuild; quarantined 34 records (32 shared + 2 Notion Business) with price suppression, WhatsApp price stripping and promo-badge removal; built scripts/validate-commercial.mjs (access-model aware) and wired it into npm run ship; superseded the broken scripts/validate-catalog.mjs (kept as evidence); wrote AITP_SHARED_ACCESS_AUDIT.md + shared-access-results.json with 15/17 risk tiering; built and routed /access-types trust page. 42/42 ship checks passing.",
+  "nextAction": "Quarantine or rewrite the /ai-tools-vault bundle page: it hardcodes 1990 BDT for shared access to three identity-bound accounts, sits outside the catalog governance layer, and emits to ProductSchema. Then build the remaining trust pages and the five service pillars.",
   "nextCommand": "cd /c/Users/emonh/SYSmoAI-Stack/apps/AI-Team-Premium && git fetch origin --quiet && git checkout feat/aitp-truth-reconciliation-20260802 && cat docs/context/resume.json",
   "nextFiles": [
-    "docs/context/CONFLICT_LEDGER.md",
-    "docs/context/KNOWN_RISKS.md"
+    "client/src/pages/AIToolsVault.tsx",
+    "docs/audit/AITP_SHARED_ACCESS_AUDIT.md",
+    "data/commercial-governance.json"
   ],
   "blockers": [
-    "CEO: highest priority -- resolve shared-access legitimacy across 32 catalog records (R0)",
-    "CEO: confirm CapCut correct plan/USD basis, approve corrected price",
-    "CEO: confirm what Notion Business tiers represent and whether the 73% Off claim has any basis",
-    "CEO: acknowledge production/Notion divergence before checkpoint update",
-    "Whoever has Notion authority: reconcile the direct ownership-wording conflict between the Canonical Brand OS ('pending') and the Market/SEO report ('operated by Refat Ara Rumi') -- this is a Notion governance conflict, not a website task",
-    "CEO: sequence catalog-fix work vs. building the 5 service-pillar pages, given the report's own warning that catalog volume dilutes the enablement positioning",
-    "CEO/admin: resolve GitHub Actions billing lock (account-wide)"
+    "CEO: 32 shared records are quarantined pending provider-ToS review. 17 are elevated risk (no known official multi-seat plan). Needs per-record ToS reading — see docs/audit/AITP_SHARED_ACCESS_AUDIT.md",
+    "CEO: confirm which CapCut plan officialUSD 7.99 represents (F27 verified official Pro at 19.99), then approve a price",
+    "CEO: confirm what notion-business-monthly/6m represent and whether any discount claim has a basis",
+    "CEO: acknowledge production/Notion divergence before the Notion checkpoint is updated",
+    "Notion authority: reconcile the ownership-wording conflict between Canonical Brand OS (pending) and Market/SEO report (names an operator)",
+    "CEO/admin: GitHub Actions billing lock (account-wide)"
   ],
-  "testsPassing": [],
+  "testsPassing": [
+    "npm run ship: 42/42",
+    "node scripts/validate-commercial.mjs: 0 hard failures, 1 warning (95 legacy-unreviewed records)"
+  ],
   "testsFailing": [
     "GitHub Actions CI/E2E/Monitor — billing-locked, not a real test failure (confirmed via gh run view)"
   ],
-  "notionLastSyncedAt": "2026-08-02 (read AITP Audit Checkpoint v3.2, Canonical Brand & Business OS, Product Intelligence & Offer Eligibility Protocol, Rebrand Migration & Eradication Ledger, Market/SEO/Competitor Growth Report -- all in full; all originally-flagged pages now read)",
-  "catalogSnapshotHash": "129 records / 72 brands / 32 shared / 89 personal-with-cost-basis / 8 request-price-or-no-cost, computed from client/src/data/products-catalog.json at commit 444c241 via scripts/audit-floor.mjs",
-  "resumeToken": "AITP-WINDOWS-AUTONOMOUS-ENABLEMENT-V4-20260802-feat-aitp-truth-reconciliation-444c241"
+  "notionLastSyncedAt": "2026-08-02 (no new pages read this batch; the 5 authority pages were read in prior batches)",
+  "catalogSnapshotHash": "129 records / 72 brands / 32 shared / 92 personal / 5 bundle / 36 price-on-request / 34 quarantined pending_evidence / 95 approved_legacy_unreviewed",
+  "resumeToken": "AITP-WINDOWS-AUTONOMOUS-ENABLEMENT-V4-20260802-commercial-governance-018f474"
 }

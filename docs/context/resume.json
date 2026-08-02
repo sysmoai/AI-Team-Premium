@@ -1,0 +1,28 @@
+{
+  "project": "AI Team Premium",
+  "branch": "feat/aitp-truth-reconciliation-20260802",
+  "headSha": "PENDING_COMMIT",
+  "productionSha": "444c2411e110523775a57384ddc4a6702241c56b",
+  "activeStage": "F32 production-truth reconciliation + P0 pricing conflict discovery",
+  "completedBatch": "Windows capability report, current-production-truth doc, conflict ledger (6 entries), current state, decisions, known risks, next actions; ran real floor-formula check against live catalog (correctly excluding shared tiers)",
+  "nextAction": "Read the Product Intelligence & Offer Eligibility Protocol and Rebrand Migration & Eradication Ledger in Notion; investigate notion-business-monthly/6m pricing anomaly (CL-2b); build a committed floor-guard script against the real catalog file",
+  "nextCommand": "cd /c/Users/emonh/SYSmoAI-Stack/apps/AI-Team-Premium && git fetch origin --quiet && git checkout feat/aitp-truth-reconciliation-20260802 && cat docs/context/resume.json",
+  "nextFiles": [
+    "docs/context/DECISIONS.md",
+    "client/src/data/products-catalog.json",
+    "scripts/audit-prices.mjs"
+  ],
+  "blockers": [
+    "CEO: confirm CapCut correct plan/USD basis, approve corrected price",
+    "CEO: acknowledge production/Notion divergence before checkpoint update",
+    "CEO: resolve legal operator/ownership wording",
+    "CEO/admin: resolve GitHub Actions billing lock (account-wide)"
+  ],
+  "testsPassing": [],
+  "testsFailing": [
+    "GitHub Actions CI/E2E/Monitor — billing-locked, not a real test failure (confirmed via gh run view)"
+  ],
+  "notionLastSyncedAt": "2026-08-02 (read AITP Audit Checkpoint v3.2 + Canonical Brand & Business OS in full)",
+  "catalogSnapshotHash": "129 records / 72 brands / 32 shared / 97 personal, computed from client/src/data/products-catalog.json at commit 444c241",
+  "resumeToken": "AITP-WINDOWS-AUTONOMOUS-ENABLEMENT-V4-20260802-feat-aitp-truth-reconciliation-444c241"
+}

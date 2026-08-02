@@ -1,0 +1,34 @@
+{
+  "project": "AI Team Premium",
+  "brand": "AITP",
+  "domain": "https://aiteampremium.com",
+  "repository": "sysmoai/AI-Team-Premium",
+  "branch": "feat/aitp-truth-reconciliation-20260802",
+  "hosting": {
+    "measured": "Vercel (auto-deploys from main via Git integration)",
+    "notionChecked": "Replit primary / Cloudflare mirror (stale, see CONFLICT_LEDGER CL-1)"
+  },
+  "catalogCounts": {
+    "totalRecords": 129,
+    "uniqueBrands": 72,
+    "sharedTierRecords": 32,
+    "personalTierRecords": 97,
+    "notionCheckpointClaimed": "107 rows / 99 unique (stale, 2026-07-26)"
+  },
+  "githubActionsStatus": "billing-locked account-wide on sysmoai (shared with sibling AI-Premium-Shop repo)",
+  "openP0": [
+    "CapCut priced at 399, violates recorded CEO decision of 2510+/3350+ (CL-2)",
+    "Production/Notion divergence not yet acknowledged by CEO (CL-1)",
+    "Legal operator/ownership wording explicitly pending (CL-4)"
+  ],
+  "openP1": [
+    "notion-business-monthly / notion-business-6m show large unexplained pricing gap, needs investigation (CL-2b)",
+    "No automated cost-floor enforcement on the live-serving catalog (CL-3)",
+    "Five required service-pillar pages not built (R6)",
+    "Earlier bulk-import scaffolding not taxonomy-aware (R7)"
+  ],
+  "verifiedCorrect": [
+    "ChatGPT Pro Premium Shared correctly implements HOLD/request-price CEO decision"
+  ],
+  "lastUpdated": "2026-08-02"
+}

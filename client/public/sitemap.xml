@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- GENERATED FILE — do not edit by hand. Run: npm run gen:sitemap -->
-<!-- Source: lib/route-meta.js (254 indexable routes) -->
+<!-- Source: lib/route-meta.js (261 indexable routes) -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.aiteampremium.com/</loc>
@@ -915,6 +915,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/ai-powered-resume-interview-prep-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/ai-prompts-for-teachers-education-bangladesh</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -934,6 +940,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/blog/ai-tools-bengali-language-best-support-2026</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/ai-tools-content-writers-bloggers-bangladesh</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1011,6 +1023,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/best-ai-tools-freelance-graphic-designers-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/best-ai-tools-php-laravel-developers-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/best-ai-tools-real-estate-agents-bangladesh</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -1059,7 +1083,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.aiteampremium.com/blog/buy-perplexity-pro-research-tool-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.aiteampremium.com/blog/canva-ai-vs-photoshop-ai-graphic-design-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/canva-pro-magic-studio-ai-features-guide</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -1216,6 +1252,12 @@
   </url>
   <url>
     <loc>https://www.aiteampremium.com/blog/github-copilot-vs-cursor-vs-windsurf-coding-bangladesh</loc>
+    <lastmod>2026-08-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.aiteampremium.com/blog/google-gemini-vs-chatgpt-bangla-content-comparison</loc>
     <lastmod>2026-08-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

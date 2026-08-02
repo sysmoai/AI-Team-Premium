@@ -1,7 +1,7 @@
 {
   "project": "AI Team Premium",
   "branch": "feat/aitp-truth-reconciliation-20260802",
-  "headSha": "PENDING_COMMIT",
+  "headSha": "183ca8d62a06287cfe1b5245293c2730933ae07c",
   "productionSha": "444c2411e110523775a57384ddc4a6702241c56b",
   "activeStage": "F32 production-truth reconciliation + P0 pricing conflict discovery",
   "completedBatch": "Windows capability report, current-production-truth doc, conflict ledger (6 entries), current state, decisions, known risks, next actions; ran real floor-formula check against live catalog (correctly excluding shared tiers)",

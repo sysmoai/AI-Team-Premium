@@ -9,6 +9,7 @@ import { db } from "./db";
 import { sql } from "drizzle-orm";
 import { readFileSync } from "fs";
 import { join } from "path";
+import { createHash, timingSafeEqual } from "crypto";
 
 const FALLBACK_USD_BDT = 121.5;
 const RATE_TTL_MS = 24 * 60 * 60 * 1000;
@@ -114,13 +115,44 @@ export async function registerRoutes(
     }
   });
 
-  // Admin authentication middleware
+  // Admin authentication middleware.
+  //
+  // This previously read:
+  //     const adminSecret = process.env.ADMIN_SECRET || "admin-secret-key";
+  // which meant that whenever ADMIN_SECRET was not set, every admin endpoint
+  // accepted the literal string "admin-secret-key" — a value committed to the
+  // repository. ADMIN_SECRET is not documented in .env.example or DEPLOY.md, so
+  // the unset case was the LIKELY one for anyone bringing this server up.
+  //
+  // It was not reachable in production because Vercel serves api/index.js, which
+  // does not mount these Express routes — but "currently unreachable" is not a
+  // security control, and the endpoints behind this guard both read internal
+  // audit data and trigger writes (run-all, resolve).
+  //
+  // Now it fails CLOSED: with no ADMIN_SECRET configured, admin endpoints are
+  // unavailable rather than open. A misconfiguration should cost availability,
+  // never authentication.
   const requireAdminAuth = (req: any, res: any, next: any) => {
-    const adminSecret = process.env.ADMIN_SECRET || "admin-secret-key";
-    const authHeader = req.headers.authorization || "";
-    const token = authHeader.replace("Bearer ", "");
+    const adminSecret = process.env.ADMIN_SECRET;
 
-    if (token !== adminSecret && token !== process.env.ADMIN_SECRET) {
+    if (!adminSecret) {
+      console.error(
+        "[admin] ADMIN_SECRET is not set — admin endpoints are disabled. Set it to enable them."
+      );
+      return res.status(503).json({ message: "Admin API is not configured" });
+    }
+
+    const authHeader = req.headers.authorization || "";
+    const token = authHeader.startsWith("Bearer ")
+      ? authHeader.slice("Bearer ".length)
+      : "";
+
+    // Length-independent comparison. timingSafeEqual throws on unequal lengths,
+    // so compare digests of fixed size instead of the raw values.
+    const provided = createHash("sha256").update(token).digest();
+    const expected = createHash("sha256").update(adminSecret).digest();
+
+    if (token.length === 0 || !timingSafeEqual(provided, expected)) {
       return res.status(401).json({ message: "Unauthorized: Admin access required" });
     }
 

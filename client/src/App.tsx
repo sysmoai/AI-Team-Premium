@@ -84,6 +84,7 @@ const AiAutomation = lazy(() => import("./pages/services/AiAutomation"));
 const ManagedAiOperations = lazy(() => import("./pages/services/ManagedAiOperations"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const BlogCategory = lazy(() => import("./pages/BlogCategory"));
 const AIReadinessAssessment = lazy(() => import("./pages/AIReadinessAssessment"));
 
 function ScrollToTop() {
@@ -191,6 +192,7 @@ function Router() {
         <Route path="/compare" component={ComparePage} />
         <Route path="/compare/:slug" component={ComparePage} />
         <Route path="/blog" component={Blog} />
+        <Route path="/blog/category/:slug">{(params) => <BlogCategory slug={params.slug} />}</Route>
         <Route path="/blog/:slug" component={BlogPost} />
         <Route path="/ai-readiness" component={AIReadinessAssessment} />
         <Route component={NotFound} />

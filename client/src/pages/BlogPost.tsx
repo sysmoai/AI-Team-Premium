@@ -7,6 +7,7 @@ import { Clock, Calendar, MessageCircle, ArrowRight } from "lucide-react";
 import { config } from "@/lib/config";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { BLOG_POSTS, getBlogPost } from "@/data/blog-posts";
+import { categorySlug } from "@/pages/BlogCategory";
 
 const SITE_URL = "https://www.aiteampremium.com";
 
@@ -52,7 +53,29 @@ export default function BlogPost() {
     "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
   };
 
-  const related = BLOG_POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
+  // Related posts were `.filter(...).slice(0, 3)` — which returns the SAME first
+  // three posts on every single article. With 50 posts that meant 3 posts
+  // received all 50 inbound internal links and the other 47 received none, so
+  // most of the blog accumulated no internal authority and offered a reader who
+  // finished an article nothing relevant to read next.
+  //
+  // Now: prefer same-category posts (topical relevance is what makes an internal
+  // link worth following, and what clusters authority around a subject), then
+  // fill from other categories. Rotating the start position by the post's own
+  // index spreads inbound links across the whole set instead of piling them on
+  // whichever posts happen to sort first — deterministic, so the rendered HTML
+  // is stable between builds and does not churn the diff.
+  const idx = Math.max(0, BLOG_POSTS.findIndex((p) => p.slug === post.slug));
+  const rotate = (arr: typeof BLOG_POSTS) =>
+    arr.length ? arr.slice(idx % arr.length).concat(arr.slice(0, idx % arr.length)) : arr;
+
+  const sameCategory = rotate(
+    BLOG_POSTS.filter((p) => p.slug !== post.slug && p.category === post.category)
+  );
+  const otherCategory = rotate(
+    BLOG_POSTS.filter((p) => p.slug !== post.slug && p.category !== post.category)
+  );
+  const related = [...sameCategory, ...otherCategory].slice(0, 3);
 
   return (
     <Layout>
@@ -62,9 +85,17 @@ export default function BlogPost() {
 
       <section className="py-14" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
-          <span className="inline-flex rounded-full px-3 py-1 mb-4" style={{ background: BRAND.white, color: BRAND.blue, fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.04em" }}>
+          {/* Was inert text. Now a link to the category hub, so a reader who
+              finishes this post has somewhere topical to go, and the category
+              page accumulates inbound links from every post it contains. */}
+          <Link
+            href={`/blog/category/${categorySlug(post.category)}`}
+            className="inline-flex rounded-full px-3 py-1 mb-4 hover-elevate transition-all"
+            style={{ background: BRAND.white, color: BRAND.blue, fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.04em", textDecoration: "none" }}
+            data-testid="link-post-category"
+          >
             {post.category}
-          </span>
+          </Link>
           <h1 style={{ color: BRAND.navy, fontSize: "clamp(1.6rem, 4vw, 2.4rem)", fontWeight: 700, lineHeight: 1.25 }}>
             {post.heroEmoji} {post.title}
           </h1>

@@ -7,6 +7,11 @@ import { Clock, ArrowRight, MessageCircle } from "lucide-react";
 import { config } from "@/lib/config";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { BLOG_POSTS } from "@/data/blog-posts";
+import { categorySlug } from "@/pages/BlogCategory";
+
+const CATEGORIES = Array.from(new Set(BLOG_POSTS.map((p) => p.category)))
+  .map((name) => ({ name, slug: categorySlug(name), count: BLOG_POSTS.filter((p) => p.category === name).length }))
+  .sort((a, b) => b.count - a.count);
 
 export default function Blog() {
   usePageMeta({
@@ -46,6 +51,29 @@ export default function Blog() {
         </div>
       </section>
 
+
+      {/* Category bar. The 50 posts already carried a category, but it rendered
+          as inert text with nowhere to go — so the blog was a flat list of 50
+          items with no topical structure and no page that could rank for a
+          topic. These links give each hub an inbound link from the index. */}
+      <section className="pb-2">
+        <div className="mx-auto max-w-6xl px-6 lg:px-10">
+          <div className="flex flex-wrap gap-2.5 justify-center">
+            {CATEGORIES.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/blog/category/${c.slug}`}
+                className="inline-flex items-center gap-2 rounded-full px-4 py-2 transition-all hover-elevate"
+                style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.12)", color: BRAND.navy, fontSize: "0.82rem", fontWeight: 600, textDecoration: "none" }}
+                data-testid={`link-blog-category-${c.slug}`}
+              >
+                {c.name}
+                <span style={{ color: BRAND.blue, opacity: 0.7 }}>{c.count}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
       <section className="py-16">
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

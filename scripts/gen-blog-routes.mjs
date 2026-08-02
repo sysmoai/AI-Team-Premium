@@ -40,7 +40,8 @@ for (const block of postBlocks) {
   // Needed for BlogPosting.datePublished. Only a real date ships — a post
   // without one gets no date rather than today's, which would be a claim.
   const publishedDate = block.match(/publishedDate:\s*"(\d{4}-\d{2}-\d{2})"/)?.[1] ?? null;
-  if (slug && title && excerpt) posts.push({ slug, title, excerpt, lang, publishedDate });
+  const category = block.match(/category:\s*"([^"]+)"/)?.[1] ?? null;
+  if (slug && title && excerpt) posts.push({ slug, title, excerpt, lang, publishedDate, category });
 }
 
 if (posts.length === 0) {
@@ -69,6 +70,41 @@ const records = posts
       lang: p.lang,
       headline: title,
       publishedDate: p.publishedDate,
+    };
+  })
+  .sort((a, b) => a.path.localeCompare(b.path));
+
+// Category slug: lowercase, ampersands spelled out, spaces to hyphens.
+// "Career & Income" -> "career-and-income", "For Students" -> "for-students".
+const categorySlug = (name) =>
+  name
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
+const categoryCounts = new Map();
+for (const p of posts) {
+  if (!p.category) continue;
+  categoryCounts.set(p.category, (categoryCounts.get(p.category) ?? 0) + 1);
+}
+
+const categoryRecords = [...categoryCounts.entries()]
+  .map(([name, count]) => {
+    const slug = categorySlug(name);
+    const path = `/blog/category/${slug}`;
+    // Descriptions are built from what is actually true of the category — its
+    // name and how many guides are in it — rather than a hand-written claim per
+    // category that would go stale the moment a post is added.
+    const plural = count === 1 ? "guide" : "guides";
+    return {
+      name,
+      slug,
+      path,
+      count,
+      title: `${name} — AI Guides for Bangladesh | AI Team Premium`,
+      description: `${count} ${plural} on ${name.toLowerCase()} for Bangladesh — practical, locally relevant, written for bKash/Nagad users. Read free, no signup.`,
+      canonical: `${SITE}${path}`,
     };
   })
   .sort((a, b) => a.path.localeCompare(b.path));
@@ -104,6 +140,33 @@ ${records
   )
   .join("\n")}
 };
+
+// Category hubs.
+//
+// The 50 posts already carried a category field, but it rendered as inert text:
+// no landing page, no filtering, not even a link. So the blog was a flat list of
+// 50 items with no topical structure — nothing grouped related posts, and a
+// category with 13 posts in it had no page that could rank for that topic.
+//
+// These pages also fix an internal-linking problem structurally: every post now
+// has a guaranteed inbound link from its category hub, which the per-post
+// "related" rotation alone could not promise.
+export const BLOG_CATEGORY_ROUTE_META = {
+${categoryRecords
+  .map(
+    (c) =>
+      `  "${c.path}": { title: "${esc(c.title)}", description: "${esc(
+        c.description
+      )}", canonical: "${c.canonical}" },`
+  )
+  .join("\n")}
+};
+
+export const BLOG_CATEGORIES = ${JSON.stringify(
+  categoryRecords.map((c) => ({ name: c.name, slug: c.slug, path: c.path, count: c.count })),
+  null,
+  2
+)};
 `;
 
 const OUT = resolve(ROOT, "lib/blog-routes.js");

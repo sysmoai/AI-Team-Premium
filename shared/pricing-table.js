@@ -217,7 +217,7 @@ export const PRICING_SECTIONS = [
   {
     "title": "🎨 AI Image Generation",
     "category": "ai-image",
-    "subtitle": "15 plans · from ৳450/mo · bKash/Nagad",
+    "subtitle": "15 plans · from ৳1,296/mo · bKash/Nagad",
     "items": [
       {
         "name": "Adobe Firefly — Starter Shared",
@@ -229,19 +229,19 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Freepik Premium — Shared",
-        "price": "৳450/mo",
-        "priceBdt": 450,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/freepik-premium-bangladesh",
-        "waText": "Hi, I want Freepik Premium — Shared (৳450/mo) — please share payment details."
+        "waText": "Hi, I want Freepik Premium — Shared — please quote a price."
       },
       {
         "name": "Leonardo AI — Shared",
-        "price": "৳599/mo",
-        "priceBdt": 599,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/leonardo-ai-bangladesh",
-        "waText": "Hi, I want Leonardo AI — Shared (৳599/mo) — please share payment details."
+        "waText": "Hi, I want Leonardo AI — Shared — please quote a price."
       },
       {
         "name": "Midjourney Standard — Shared",
@@ -344,23 +344,23 @@ export const PRICING_SECTIONS = [
   {
     "title": "🎬 AI Video",
     "category": "ai-video",
-    "subtitle": "21 plans · from ৳270/mo · bKash/Nagad",
+    "subtitle": "21 plans · from ৳1,008/mo · bKash/Nagad",
     "items": [
       {
         "name": "Kling AI — Starter Shared",
-        "price": "৳270/mo",
-        "priceBdt": 270,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/kling-ai-bangladesh",
-        "waText": "Hi, I want Kling AI — Starter Shared (৳270/mo) — please share payment details."
+        "waText": "Hi, I want Kling AI — Starter Shared — please quote a price."
       },
       {
         "name": "Pika Labs — Starter Shared",
-        "price": "৳310/mo",
-        "priceBdt": 310,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/pika-labs-bangladesh",
-        "waText": "Hi, I want Pika Labs — Starter Shared (৳310/mo) — please share payment details."
+        "waText": "Hi, I want Pika Labs — Starter Shared — please quote a price."
       },
       {
         "name": "CapCut Pro — Starter Shared",
@@ -380,11 +380,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Opus Clip — Starter Shared",
-        "price": "৳590/mo",
-        "priceBdt": 590,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/opus-clip-bangladesh",
-        "waText": "Hi, I want Opus Clip — Starter Shared (৳590/mo) — please share payment details."
+        "waText": "Hi, I want Opus Clip — Starter Shared — please quote a price."
       },
       {
         "name": "Synthesia — Starter Shared",
@@ -412,11 +412,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "HeyGen Creator — Shared",
-        "price": "৳1,499/mo",
-        "priceBdt": 1499,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/heygen-bangladesh",
-        "waText": "Hi, I want HeyGen Creator — Shared (৳1,499/mo) — please share payment details."
+        "waText": "Hi, I want HeyGen Creator — Shared — please quote a price."
       },
       {
         "name": "Captions — Personal",
@@ -519,23 +519,23 @@ export const PRICING_SECTIONS = [
   {
     "title": "🎙️ Voice & Music",
     "category": "ai-voice-music",
-    "subtitle": "11 plans · from ৳499/mo · bKash/Nagad",
+    "subtitle": "11 plans · from ৳748/mo · bKash/Nagad",
     "items": [
       {
         "name": "Udio Pro — Shared",
-        "price": "৳499/mo",
-        "priceBdt": 499,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/udio-bangladesh",
-        "waText": "Hi, I want Udio Pro — Shared (৳499/mo) — please share payment details."
+        "waText": "Hi, I want Udio Pro — Shared — please quote a price."
       },
       {
         "name": "Murf AI — Starter Shared",
-        "price": "৳740/mo",
-        "priceBdt": 740,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/murf-ai-bangladesh",
-        "waText": "Hi, I want Murf AI — Starter Shared (৳740/mo) — please share payment details."
+        "waText": "Hi, I want Murf AI — Starter Shared — please quote a price."
       },
       {
         "name": "ElevenLabs Starter — Personal",
@@ -614,15 +614,15 @@ export const PRICING_SECTIONS = [
   {
     "title": "✍️ Writing",
     "category": "ai-writing",
-    "subtitle": "7 plans · from ৳390/mo · bKash/Nagad",
+    "subtitle": "7 plans · from ৳1,490/mo · bKash/Nagad",
     "items": [
       {
         "name": "QuillBot Premium — Starter Shared",
-        "price": "৳390/mo",
-        "priceBdt": 390,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/quillbot-premium-bangladesh",
-        "waText": "Hi, I want QuillBot Premium — Starter Shared (৳390/mo) — please share payment details."
+        "waText": "Hi, I want QuillBot Premium — Starter Shared — please quote a price."
       },
       {
         "name": "Grammarly Premium — Starter Shared",
@@ -634,11 +634,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Writesonic Individual — Shared",
-        "price": "৳799/mo",
-        "priceBdt": 799,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/writesonic-bangladesh",
-        "waText": "Hi, I want Writesonic Individual — Shared (৳799/mo) — please share payment details."
+        "waText": "Hi, I want Writesonic Individual — Shared — please quote a price."
       },
       {
         "name": "QuillBot Premium — Personal",
@@ -677,23 +677,23 @@ export const PRICING_SECTIONS = [
   {
     "title": "💻 Coding",
     "category": "ai-code",
-    "subtitle": "9 plans · from ৳590/mo · bKash/Nagad",
+    "subtitle": "9 plans · from ৳1,495/mo · bKash/Nagad",
     "items": [
       {
         "name": "Windsurf Pro — Shared",
-        "price": "৳590/mo",
-        "priceBdt": 590,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/windsurf-bangladesh",
-        "waText": "Hi, I want Windsurf Pro — Shared (৳590/mo) — please share payment details."
+        "waText": "Hi, I want Windsurf Pro — Shared — please quote a price."
       },
       {
         "name": "v0.dev Pro — Shared",
-        "price": "৳999/mo",
-        "priceBdt": 999,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "5-30 min",
         "href": "/tools/v0-dev-bangladesh",
-        "waText": "Hi, I want v0.dev Pro — Shared (৳999/mo) — please share payment details."
+        "waText": "Hi, I want v0.dev Pro — Shared — please quote a price."
       },
       {
         "name": "GitHub Copilot Pro — Personal",
@@ -811,7 +811,7 @@ export const PRICING_SECTIONS = [
   {
     "title": "🗂️ Workspace & Productivity",
     "category": "ai-workspace",
-    "subtitle": "19 plans · from ৳800/mo · bKash/Nagad",
+    "subtitle": "19 plans · from ৳1,216/mo · bKash/Nagad",
     "items": [
       {
         "name": "Gamma Plus — Shared",
@@ -831,11 +831,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Notion Business — Monthly",
-        "price": "৳800/mo",
-        "priceBdt": 800,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "2-4 hours",
         "href": "/tools/notion-business-bangladesh",
-        "waText": "Hi, I want Notion Business — Monthly (৳800/mo) — please share payment details."
+        "waText": "Hi, I want Notion Business — Monthly — please quote a price."
       },
       {
         "name": "ClickUp — Unlimited",
@@ -943,11 +943,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Notion Business — 6 Month Plan",
-        "price": "৳4,800/mo",
-        "priceBdt": 4800,
+        "price": "Price on request",
+        "priceBdt": null,
         "delivery": "2-4 hours",
         "href": "/tools/notion-business-bangladesh",
-        "waText": "Hi, I want Notion Business — 6 Month Plan (৳4,800/mo) — please share payment details."
+        "waText": "Hi, I want Notion Business — 6 Month Plan — please quote a price."
       },
       {
         "name": "Airtable — Business",
@@ -1127,6 +1127,6 @@ export const PRICING_SECTIONS = [
 
 export const PRICING_SUMMARY = {
   rows: 129,
-  priceFrom: 270,
+  priceFrom: 449,
   priceTo: 29900,
 };

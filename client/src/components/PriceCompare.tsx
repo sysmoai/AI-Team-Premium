@@ -12,8 +12,16 @@ interface PriceCompareProps {
   accentColor: string;
 }
 
-function parseBDT(s: string): number {
-  return parseInt(s.replace(/[^0-9]/g, ""), 10) || 0;
+// Returns null, not 0, when the string carries no digits (e.g. a quarantined
+// product's "Confirm on WhatsApp" placeholder). A caller passing a non-numeric
+// planPriceBDT for a quarantined product already happened once
+// (client/src/pages/tools/ChatGPT.tsx) — with the old `|| 0` fallback, that
+// silently computed "you save 100%" (our price treated as free vs. the full
+// international price). Returning null forces the caller to explicitly decide
+// what "no real price" means instead of getting a wrong number by default.
+function parseBDT(s: string): number | null {
+  const digits = s.replace(/[^0-9]/g, "");
+  return digits ? parseInt(digits, 10) : null;
 }
 
 function formatBDT(n: number): string {
@@ -28,9 +36,8 @@ export function PriceCompare({ toolName, planLabel, planPriceBDT, accentColor }:
   const usd = getUsdRetail(toolName, planLabel);
   const { rate, isFallback, isLoading } = useUsdToBdt();
 
-  if (!usd) return null;
-
   const ourBDT = parseBDT(planPriceBDT);
+  if (!usd || ourBDT === null) return null;
   const intlBDT = usd * rate;
   const savings = Math.max(0, intlBDT - ourBDT);
   const savingsPct = intlBDT > 0 ? Math.round((savings / intlBDT) * 100) : 0;

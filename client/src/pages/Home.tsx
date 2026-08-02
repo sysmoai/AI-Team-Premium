@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { BRAND, LogoStacked, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { chatgptPlans } from "@/lib/plans";
+import { bnDigits } from "@/lib/bangla-numerals";
 import { SupportUpsell } from "@/components/SupportUpsell";
 import { config } from "@/lib/config";
 import { FAQSchema, JsonLd, BreadcrumbSchema } from "@/components/seo/JsonLd";
@@ -35,12 +36,6 @@ import {
 
 const IMG_HERO = "/hero-bg.jpg";
 
-const OFFERS = [
-  { badge: "Solo", color: "#22C55E", tier: "Student / Freelancer", price: "৳499", period: "/mo", tool: "ChatGPT Plus Shared", delivery: "5-15 min", whatsapp: "https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+ChatGPT+Plus+Shared+(Solo)" },
-  { badge: "Pro", color: "#2563EB", tier: "Coder / Designer / Researcher", price: "৳999", period: "/mo", tool: "ChatGPT Plus Premium Shared", delivery: "5-15 min", whatsapp: "https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+ChatGPT+Plus+Premium+Shared+(Pro)" },
-  { badge: "Team", color: "#0F172A", tier: "Agency / Startup", price: "৳699", period: "/seat/mo", tool: "ChatGPT Business Shared", delivery: "5-15 min", whatsapp: "https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+ChatGPT+Business+Shared" },
-  { badge: "Services", color: "#7C3AED", tier: "AI Consulting", price: "From ৳3,500", period: "/mo", tool: "AI Advisory, Training, Automation & Managed Ops", delivery: "Free consult", whatsapp: "https://wa.me/8801533262758?text=Hi%2C+I+want+to+ask+about+AI+consulting+services" },
-];
 
 const SERVICES = [
   { icon: Brain, title: "AI Subscriptions", desc: "ChatGPT, Claude, Gemini, Perplexity, Grok, Canva, Grammarly, Midjourney" },
@@ -110,10 +105,20 @@ const TRAINING_TRACKS = [
   { icon: Building2, title: "ব্যবসার জন্য", price: "৳১২,৯৯৯ থেকে", points: ["পুরো টিমের AI ট্রেনিং", "কাস্টমার সাপোর্ট অটোমেশন", "রিপোর্ট ও কনটেন্ট সিস্টেম"], color: "#7C3AED" },
 ];
 
+// Was hardcoded at ৳499 across 5 separate places on this page (title, hero,
+// body paragraph, student tagline, stat tile) — a sixth and seventh
+// independent, disagreeing "ChatGPT starts at X" figure found in this
+// codebase in one session. None derived from anything. Now derived once,
+// from the same real, currently-purchasable catalog data every other fixed
+// page on the site uses.
+const HOME_CHATGPT_MIN = Math.min(
+  ...chatgptPlans.filter((p) => !p.quarantined).map((p) => p.priceBDT)
+);
+
 export default function Home() {
   usePageMeta({
     title: "ChatGPT, Claude & AI Tools in Bangladesh",
-    description: "Buy ChatGPT Plus from ৳499/mo. Claude Pro, Gemini Advanced & more. Pay via bKash/Nagad. 5-15 min delivery. Bangladesh's trusted AI subscription provider.",
+    description: `Buy ChatGPT from ৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}/mo. Claude Pro, Gemini Advanced & more. Pay via bKash/Nagad. Bangladesh premium AI subscription provider.`,
     path: "/",
   });
   useReveal();
@@ -150,7 +155,7 @@ export default function Home() {
               <LogoStacked size="xl" iconColor={BRAND.white} textColor={BRAND.white} animated />
             </div>
             <h1 style={{ color: BRAND.white, fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em" }}>
-              বাংলাদেশে ChatGPT — ৳৪৯৯ থেকে শুরু
+              বাংলাদেশে ChatGPT — ৳{bnDigits(HOME_CHATGPT_MIN)} থেকে শুরু
               <br />
               <span style={{ color: BRAND.blue }}>Premium AI & Digital Solutions</span>
             </h1>
@@ -209,7 +214,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="rounded-2xl p-6 md:p-8 mb-4" style={{ background: BRAND.white, boxShadow: "0 8px 40px rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.06)" }}>
             <p style={{ color: BRAND.navy, fontSize: "1.02rem", lineHeight: 1.7, fontWeight: 500 }}>
-              <strong>AI Team Premium</strong> is a local access provider of premium AI subscriptions in Bangladesh — ChatGPT Plus from <strong>৳499/month</strong>, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via <strong>bKash and Nagad</strong>, with <strong>5–15 minute delivery</strong>, a <strong>30-day replacement warranty</strong>, and Bangla + English WhatsApp support, serving <strong>Bangladeshi users</strong> since 2024.
+              <strong>AI Team Premium</strong> is a local access provider of premium AI subscriptions in Bangladesh — ChatGPT from <strong>৳{HOME_CHATGPT_MIN.toLocaleString("en-US")}/month</strong>, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via <strong>bKash and Nagad</strong>, with <strong>5–15 minute delivery</strong>, a <strong>30-day replacement warranty</strong>, and Bangla + English WhatsApp support, serving <strong>Bangladeshi users</strong> since 2024.
             </p>
           </div>
         </div>
@@ -238,7 +243,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: GraduationCap, title: "Students", tagline: "৳499/mo থেকে শুরু", tools: "ChatGPT · Grammarly · Perplexity", desc: "Assignment writing, research summaries, IELTS prep, thesis — let AI do the heavy lifting while you focus on understanding.", color: "#16A34A", link: "/tools/chatgpt" },
+              { icon: GraduationCap, title: "Students", tagline: `৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}/mo থেকে শুরু`, tools: "ChatGPT · Grammarly · Perplexity", desc: "Assignment writing, research summaries, IELTS prep, thesis — let AI do the heavy lifting while you focus on understanding.", color: "#16A34A", link: "/tools/chatgpt" },
               { icon: Briefcase, title: "Freelancers", tagline: "Fiverr & Upwork-এ এগিয়ে থাকুন", tools: "Claude Pro · Canva Pro · Midjourney", desc: "Faster proposals, better content, stunning visuals — outperform competitors on Fiverr and Upwork with AI-powered work.", color: BRAND.blue, link: "/ai-subscriptions" },
               { icon: Building2, title: "Businesses", tagline: "Team-wide AI দক্ষতা", tools: "ChatGPT Team · Copilot · Gemini", desc: "Equip your entire team with AI tools. Boost productivity, automate reports, and get live Bangla AI training for your staff.", color: "#7C3AED", link: "/chatgpt-plans" },
               { icon: Video, title: "Content Creators", tagline: "ভাইরাল কন্টেন্ট বানান", tools: "Midjourney · ElevenLabs · Canva", desc: "AI-generated images, voice-overs in Bangla, thumbnail design — create professional content without a studio or equipment.", color: "#F59E0B", link: "/tools/midjourney" },
@@ -571,7 +576,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
               { value: "37", label: "Premium AI Tools" },
-              { value: "৳499", label: "Starting Price / mo" },
+              { value: `৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}`, label: "Starting Price / mo" },
               { value: "5–15 min", label: "Avg. Delivery Time" },
               { value: "30 days", label: "Replacement Warranty" },
             ].map((stat) => (

@@ -19,11 +19,22 @@ export function PlanDetail({ slug }: PlanDetailProps) {
   const plan = chatgptPlans.find((p) => p.slug === slug);
   const [, setLocation] = useLocation();
 
+  // usePageMeta runs client-side after hydration and OVERWRITES whatever
+  // lib/route-meta.js injected server-side. Fixing the server metadata for a
+  // quarantined plan without fixing this call is therefore not a fix at all —
+  // this is the exact mechanism that put ৳4,990 back into the tab title for
+  // pro-premium-shared after the server-rendered title said something else.
   usePageMeta({
-    title: plan ? `${plan.title} Bangladesh — ৳${plan.priceBDT}` : "ChatGPT Plan — AI Team Premium",
-    description: plan
-      ? `Buy ${plan.title} in Bangladesh for ${plan.priceLabel}. ${plan.deliverySLA} delivery via bKash/Nagad. 30-day replacement warranty. ${plan.targetBuyer}.`
-      : "Get premium ChatGPT subscriptions in Bangladesh.",
+    title: !plan
+      ? "ChatGPT Plan — AI Team Premium"
+      : plan.quarantined
+        ? `${plan.title} in Bangladesh | AI Team Premium`
+        : `${plan.title} Bangladesh — ৳${plan.priceBDT}`,
+    description: !plan
+      ? "Get premium ChatGPT subscriptions in Bangladesh."
+      : plan.quarantined
+        ? "Availability and current price confirmed after plan verification — ask on WhatsApp. Pay via bKash/Nagad, no international card needed."
+        : `Buy ${plan.title} in Bangladesh for ${plan.priceLabel}. ${plan.deliverySLA} delivery via bKash/Nagad. 30-day replacement warranty. ${plan.targetBuyer}.`,
     path: plan ? `/chatgpt/${plan.slug}` : "/chatgpt-plans",
   });
 
@@ -40,7 +51,9 @@ export function PlanDetail({ slug }: PlanDetailProps) {
     );
   }
 
-  const whatsappMessage = (config as any).whatsappPlanTemplates?.[slug] || `Hi, I want to order ${plan.title}`;
+  const whatsappMessage = plan.quarantined
+    ? `Hi, I want to ask about ${plan.title}`
+    : (config as any).whatsappPlanTemplates?.[slug] || `Hi, I want to order ${plan.title}`;
   const whatsappUrl = `${config.whatsappUrl}?text=${encodeURIComponent(whatsappMessage)}`;
 
   const features = {
@@ -51,13 +64,23 @@ export function PlanDetail({ slug }: PlanDetailProps) {
 
   const planFeatures = plan.plan === "Pro" ? features.pro : plan.plan === "Business" ? features.business : features.plus;
 
-  const planFaqs = [
-    { q: `How long does ${plan.title} delivery take?`, a: `Our standard delivery time for ${plan.title} is ${plan.deliverySLA}. Once payment is verified via bKash or Nagad on WhatsApp, we send the login details or workspace invite directly to your WhatsApp.` },
-    { q: `How much does ${plan.title} cost in Bangladesh?`, a: `${plan.title} costs ${plan.priceLabel} for a ${plan.duration} subscription from AI Team Premium, payable in BDT via bKash, Nagad, Rocket or Bank Transfer — no international credit card required.` },
-    { q: `Is there a warranty on ${plan.title}?`, a: `Yes. We provide a full 30-day replacement warranty. If the account fails for any non-misuse reason, we replace it within 24 hours. ${plan.warranty}` },
-    { q: `Can I pay for ${plan.title} via bKash or Nagad?`, a: "Yes. AI Team Premium accepts bKash, Nagad, Rocket and Bank Transfer in BDT. Payment numbers are shared privately on WhatsApp after you confirm your order." },
-    { q: `Who is ${plan.title} best for?`, a: `${plan.title} is best for ${plan.targetBuyer}. It includes ${plan.seats} seat${typeof plan.seats === "number" && plan.seats > 1 ? "s" : ""}, ${plan.deviceRule.toLowerCase()}, and ${plan.deliverySLA} delivery.` },
-  ];
+  // Quarantined plans get FAQ copy that matches their actual state: no
+  // delivery-time promise, no price, no warranty claim, no fixed-price payment
+  // instruction. They keep only the one question that's still true regardless
+  // — who the plan is aimed at — since that's about fit, not availability.
+  const planFaqs = plan.quarantined
+    ? [
+        { q: `How much does ${plan.title} cost in Bangladesh?`, a: `We are not publishing a fixed price for ${plan.title} right now — we are confirming the access model and current terms first. Ask us on WhatsApp and we'll tell you where that review stands.` },
+        { q: `Can I pay for ${plan.title} via bKash or Nagad?`, a: "Yes, once availability is confirmed. AI Team Premium accepts bKash, Nagad, Rocket and Bank Transfer in BDT." },
+        { q: `Who is ${plan.title} best for?`, a: `${plan.title} is aimed at ${plan.targetBuyer}, subject to the access-model review above.` },
+      ]
+    : [
+        { q: `How long does ${plan.title} delivery take?`, a: `Our standard delivery time for ${plan.title} is ${plan.deliverySLA}. Once payment is verified via bKash or Nagad on WhatsApp, we send the login details directly to your WhatsApp.` },
+        { q: `How much does ${plan.title} cost in Bangladesh?`, a: `${plan.title} costs ${plan.priceLabel} for a ${plan.duration} subscription from AI Team Premium, payable in BDT via bKash, Nagad, Rocket or Bank Transfer — no international credit card required.` },
+        { q: `Is there a warranty on ${plan.title}?`, a: `Yes. We provide a full 30-day replacement warranty. If the account fails for any non-misuse reason, we replace it within 24 hours. ${plan.warranty}` },
+        { q: `Can I pay for ${plan.title} via bKash or Nagad?`, a: "Yes. AI Team Premium accepts bKash, Nagad, Rocket and Bank Transfer in BDT. Payment numbers are shared privately on WhatsApp after you confirm your order." },
+        { q: `Who is ${plan.title} best for?`, a: `${plan.title} is best for ${plan.targetBuyer}. It includes ${plan.seats} seat${typeof plan.seats === "number" && plan.seats > 1 ? "s" : ""}, ${plan.deviceRule.toLowerCase()}, and ${plan.deliverySLA} delivery.` },
+      ];
 
   return (
     <Layout>
@@ -68,14 +91,21 @@ export function PlanDetail({ slug }: PlanDetailProps) {
           { name: plan.title, path: `/chatgpt/${plan.slug}` },
         ]}
       />
-      <ProductSchema
-        name={plan.title}
-        description={`${plan.title} subscription in Bangladesh from AI Team Premium. ${plan.priceLabel}, ${plan.duration}, ${plan.deliverySLA} delivery via bKash/Nagad. ${plan.targetBuyer}.`}
-        path={`/chatgpt/${plan.slug}`}
-        priceBDT={plan.priceBDT}
-        category="AI Subscription / ChatGPT"
-
-      />
+      {/*
+        No ProductSchema while quarantined: a Product/Offer node is a
+        machine-readable claim that something is for sale at a price, and
+        search engines act on it independently of what the visible page says.
+        Restore together with plan.quarantined = false in lib/plans.ts.
+      */}
+      {!plan.quarantined && (
+        <ProductSchema
+          name={plan.title}
+          description={`${plan.title} subscription in Bangladesh from AI Team Premium. ${plan.priceLabel}, ${plan.duration}, ${plan.deliverySLA} delivery via bKash/Nagad. ${plan.targetBuyer}.`}
+          path={`/chatgpt/${plan.slug}`}
+          priceBDT={plan.priceBDT}
+          category="AI Subscription / ChatGPT"
+        />
+      )}
       <FAQSchema items={planFaqs} />
 
       {/* 1. BREADCRUMB */}
@@ -105,37 +135,44 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                 {/* DIRECT ANSWER BLOCK (GEO) */}
                 <div className="mt-6 rounded-xl p-5 border" style={{ background: "#EFF6FF", borderColor: "rgba(37,99,235,0.15)" }}>
                   <p style={{ color: BRAND.navy, fontSize: "0.96rem", lineHeight: 1.7 }}>
-                    <strong>{plan.title}</strong> costs <strong>{plan.priceLabel}</strong> ({plan.duration}) from AI Team Premium in Bangladesh. It is a {plan.tier.toLowerCase()} {plan.plan} plan with <strong>{plan.seats} seat{typeof plan.seats === "number" && plan.seats > 1 ? "s" : ""}</strong>, <strong>{plan.deliverySLA}</strong> delivery via bKash/Nagad, a 30-day replacement warranty, and is best suited for <strong>{plan.targetBuyer}</strong>.
+                    {plan.quarantined ? (
+                      <>
+                        <strong>{plan.title}</strong> is a {plan.tier.toLowerCase()} {plan.plan} plan, best suited for <strong>{plan.targetBuyer}</strong>. We are currently confirming the access model and current provider terms for this tier, so pricing and availability are <strong>confirmed after plan verification</strong> — ask us on WhatsApp.
+                      </>
+                    ) : (
+                      <>
+                        <strong>{plan.title}</strong> costs <strong>{plan.priceLabel}</strong> ({plan.duration}) from AI Team Premium in Bangladesh. It is a {plan.tier.toLowerCase()} {plan.plan} plan with <strong>{plan.seats} seat{typeof plan.seats === "number" && plan.seats > 1 ? "s" : ""}</strong>, <strong>{plan.deliverySLA}</strong> delivery via bKash/Nagad, a 30-day replacement warranty, and is best suited for <strong>{plan.targetBuyer}</strong>.
+                      </>
+                    )}
                   </p>
                 </div>
               </div>
 
-              {/* 3. RULES/DISCLOSURE BOX */}
+              {/* 3. RULES/DISCLOSURE BOX
+                  Previously described shared-credential terms ("No recovery
+                  access", "No password changes") as a normal, marketed feature
+                  of a settled product, for tiers that in fact have zero
+                  documented provider authorization. Quarantined tiers now say
+                  that plainly instead of presenting the arrangement as decided. */}
               <div className="rounded-2xl border-2 p-6 bg-red-50/30 border-red-200">
                 <div className="flex gap-3">
                   <AlertTriangle className="text-red-600 shrink-0" size={24} />
                   <div className="space-y-2">
-                    <h3 className="font-bold text-red-900">Important Rules & Disclosure</h3>
+                    <h3 className="font-bold text-red-900">
+                      {plan.quarantined ? "Access Model Under Review" : "Important Rules & Disclosure"}
+                    </h3>
                     <div className="text-red-800 text-sm leading-relaxed">
-                      {plan.accessType === "shared" && (
-                        <ul className="list-disc pl-4 space-y-1">
-                          <li><strong>1 device only:</strong> Concurrent multi-device use is strictly prohibited.</li>
-                          <li><strong>No password changes:</strong> Changing account password will void your warranty.</li>
-                          <li><strong>No recovery access:</strong> You will not have access to the recovery email.</li>
-                          <li><strong>Shared environment:</strong> This is a shared seat model for better affordability.</li>
-                        </ul>
-                      )}
-                      {plan.accessType === "workspace-invite" && (
+                      {plan.quarantined ? (
                         <p>
-                          <strong>Note:</strong> OpenAI's official minimum is 2 seats when buying directly. 
-                          Our tiers are local service wrappers provided via Workspace invite model.
+                          We are reviewing how this tier is delivered against the provider's current terms before
+                          offering it for sale again. It is not available for direct purchase right now — ask us on
+                          WhatsApp for its current status.
                         </p>
-                      )}
-                      {plan.accessType === "customer-owned" && (
+                      ) : plan.accessType === "customer-owned" ? (
                         <p className="text-green-800 font-medium">
                           ✅ You own and control the account. No device restrictions or sharing limitations.
                         </p>
-                      )}
+                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -159,8 +196,8 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                 </div>
               </div>
 
-              {/* 5. WHAT YOU DON'T GET (for shared only) */}
-              {plan.accessType === "shared" && (
+              {/* 5. WHAT YOU DON'T GET (for shared only, and only once sellable again) */}
+              {plan.accessType === "shared" && !plan.quarantined && (
                 <div className="bg-white rounded-2xl border p-8">
                   <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-slate-800">
                     <X className="text-red-500" size={20} />
@@ -186,18 +223,30 @@ export function PlanDetail({ slug }: PlanDetailProps) {
               <div className="space-y-4">
                 <h2 className="text-xl font-bold" style={{ color: BRAND.navy }}>Frequently Asked Questions</h2>
                 <Accordion type="single" collapsible className="w-full bg-white rounded-2xl border px-6 text-slate-900">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>How long does delivery take?</AccordionTrigger>
-                    <AccordionContent>
-                      Our standard delivery time is {plan.deliverySLA}. Once payment is verified via bKash or Nagad, we send the login details or invite link to your WhatsApp.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger>Is there a warranty?</AccordionTrigger>
-                    <AccordionContent>
-                      Yes, we provide a full {plan.duration} warranty. If the account face any issues, we replace it within 24 hours. {plan.warranty}
-                    </AccordionContent>
-                  </AccordionItem>
+                  {plan.quarantined ? (
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger>Why isn't a price or delivery time shown?</AccordionTrigger>
+                      <AccordionContent>
+                        We're confirming this plan's access model and current provider terms before selling it again.
+                        Ask us on WhatsApp for its current status.
+                      </AccordionContent>
+                    </AccordionItem>
+                  ) : (
+                    <>
+                      <AccordionItem value="item-1">
+                        <AccordionTrigger>How long does delivery take?</AccordionTrigger>
+                        <AccordionContent>
+                          Our standard delivery time is {plan.deliverySLA}. Once payment is verified via bKash or Nagad, we send the login details or invite link to your WhatsApp.
+                        </AccordionContent>
+                      </AccordionItem>
+                      <AccordionItem value="item-2">
+                        <AccordionTrigger>Is there a warranty?</AccordionTrigger>
+                        <AccordionContent>
+                          Yes, we provide a full {plan.duration} warranty. If the account face any issues, we replace it within 24 hours. {plan.warranty}
+                        </AccordionContent>
+                      </AccordionItem>
+                    </>
+                  )}
                   <AccordionItem value="item-3">
                     <AccordionTrigger>Can I pay via bKash/Nagad?</AccordionTrigger>
                     <AccordionContent>
@@ -222,10 +271,14 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                 <div className="bg-blue-600 p-6 text-white">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-blue-100 text-sm font-medium uppercase tracking-wider">{plan.plan} Plan</span>
-                    <span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold">{plan.badge}</span>
+                    {plan.badge && (
+                      <span className="bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold">{plan.badge}</span>
+                    )}
                   </div>
-                  <div className="text-3xl font-bold">{plan.priceLabel}</div>
-                  <div className="text-blue-100 text-sm mt-1">Duration: {plan.duration}</div>
+                  <div className={plan.quarantined ? "text-lg font-bold" : "text-3xl font-bold"}>
+                    {plan.quarantined ? "Request current price" : plan.priceLabel}
+                  </div>
+                  {!plan.quarantined && <div className="text-blue-100 text-sm mt-1">Duration: {plan.duration}</div>}
                 </div>
                 
                 <div className="p-6 space-y-4">
@@ -258,20 +311,27 @@ export function PlanDetail({ slug }: PlanDetailProps) {
 
                   <div className="pt-4 border-t">
                     <div className="flex items-center justify-between text-xs mb-4">
-                      <span className="text-slate-500">Status: <span className="text-green-600 font-bold">Active</span></span>
-                      <span className="text-slate-500 italic">Verified: {config.lastVerified}</span>
+                      <span className="text-slate-500">
+                        Status:{" "}
+                        {plan.quarantined ? (
+                          <span className="text-amber-600 font-bold">Under Review</span>
+                        ) : (
+                          <span className="text-green-600 font-bold">Active</span>
+                        )}
+                      </span>
+                      {!plan.quarantined && <span className="text-slate-500 italic">Verified: {config.lastVerified}</span>}
                     </div>
 
                     <a
                       href={whatsappUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackWhatsAppClick(plan.title, undefined, plan.priceLabel, "plan-detail")}
+                      onClick={() => trackWhatsAppClick(plan.title, undefined, plan.quarantined ? "price-on-request" : plan.priceLabel, "plan-detail")}
                       className="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#22c35e] text-white py-4 rounded-xl font-bold transition-all shadow-md active:scale-[0.98]"
                       data-testid={`button-order-whatsapp-${slug}`}
                     >
                       <WhatsAppIcon size={22} />
-                      Order on WhatsApp
+                      {plan.quarantined ? "Ask on WhatsApp" : "Order on WhatsApp"}
                     </a>
                     <a
                       href={config.messenger}
@@ -282,7 +342,7 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                       data-testid={`button-order-messenger-${slug}`}
                     >
                       <MessageSquare size={20} />
-                      Or Order on Messenger
+                      {plan.quarantined ? "Or Ask on Messenger" : "Or Order on Messenger"}
                     </a>
                     
                     <p className="mt-4 text-[10px] text-center text-slate-500 leading-tight">
@@ -292,17 +352,20 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                 </div>
               </div>
 
-              {/* Trust badges */}
-              <div className="mt-6 grid grid-cols-2 gap-3">
-                <div className="bg-white p-3 rounded-xl border flex items-center gap-3">
-                  <Shield size={20} className="text-blue-600" />
-                  <span className="text-xs font-bold leading-tight text-slate-900">30-Day Warranty</span>
+              {/* Trust badges — both claims (a warranty, and delivery speed)
+                  depend on the product actually being sellable. */}
+              {!plan.quarantined && (
+                <div className="mt-6 grid grid-cols-2 gap-3">
+                  <div className="bg-white p-3 rounded-xl border flex items-center gap-3">
+                    <Shield size={20} className="text-blue-600" />
+                    <span className="text-xs font-bold leading-tight text-slate-900">30-Day Warranty</span>
+                  </div>
+                  <div className="bg-white p-3 rounded-xl border flex items-center gap-3">
+                    <Zap size={20} className="text-orange-500" />
+                    <span className="text-xs font-bold leading-tight text-slate-900">Instant Activation</span>
+                  </div>
                 </div>
-                <div className="bg-white p-3 rounded-xl border flex items-center gap-3">
-                  <Zap size={20} className="text-orange-500" />
-                  <span className="text-xs font-bold leading-tight text-slate-900">Instant Activation</span>
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

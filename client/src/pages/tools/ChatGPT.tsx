@@ -107,10 +107,12 @@ export default function ChatGPT() {
                 </ul>
                 <div className="mt-6 flex flex-col gap-2">
                   <a
-                    href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(plan.title)}`}
+                    href={`https://wa.me/8801533262758?text=${encodeURIComponent(
+                      plan.quarantined ? `Hi, I want to ask about ${plan.title}` : `Hi, I want to buy ${plan.title}`
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={() => trackWhatsAppClick("ChatGPT", plan.title, plan.priceLabel, "tool-chatgpt")}
+                    onClick={() => trackWhatsAppClick("ChatGPT", plan.title, plan.quarantined ? "price-on-request" : plan.priceLabel, "tool-chatgpt")}
                     data-testid={`button-wa-${plan.slug}`}
                     className="inline-flex items-center justify-center gap-2 rounded-full py-3 transition-all"
                     style={{
@@ -121,7 +123,7 @@ export default function ChatGPT() {
                       textDecoration: "none",
                     }}
                   >
-                    <WhatsAppIcon size={14} color="#fff" /> Order on WhatsApp
+                    <WhatsAppIcon size={14} color="#fff" /> {plan.quarantined ? "Ask on WhatsApp" : "Order on WhatsApp"}
                   </a>
                   <a
                     href={config.messenger}
@@ -141,12 +143,23 @@ export default function ChatGPT() {
                     <MessageCircle size={13} color="#fff" /> Or Messenger
                   </a>
                 </div>
-                <PriceCompare
-                  toolName="ChatGPT"
-                  planLabel={plan.title}
-                  planPriceBDT={plan.priceLabel}
-                  accentColor={plan.color === 'blue' ? BRAND.blue : plan.color === 'purple' ? '#7C3AED' : plan.color === 'green' ? '#16A34A' : plan.color === 'orange' ? '#F59E0B' : '#EF4444'}
-                />
+                {/*
+                  Not rendered while quarantined. PriceCompare parses
+                  planPriceBDT with parseInt(...) || 0 — passing the sentinel
+                  text "Confirm on WhatsApp" silently parses to 0, which would
+                  make it compute and display a false "you save 100%" claim
+                  (our price vs. the full international price, with our side
+                  treated as free). A savings claim needs a real price on both
+                  sides, which a quarantined plan does not have.
+                */}
+                {!plan.quarantined && (
+                  <PriceCompare
+                    toolName="ChatGPT"
+                    planLabel={plan.title}
+                    planPriceBDT={plan.priceLabel}
+                    accentColor={plan.color === 'blue' ? BRAND.blue : plan.color === 'purple' ? '#7C3AED' : plan.color === 'green' ? '#16A34A' : plan.color === 'orange' ? '#F59E0B' : '#EF4444'}
+                  />
+                )}
               </div>
             ))}
           </div>

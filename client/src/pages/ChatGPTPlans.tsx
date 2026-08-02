@@ -5,6 +5,18 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter }
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { chatgptPlans } from "@/lib/plans";
+import { bnDigits } from "@/lib/bangla-numerals";
+
+// This was a fifth independent hardcoded "ChatGPT starts at ৳X" figure found in
+// this codebase in one session (route-meta ৳350, this page's old hero ৳399,
+// this page's old client-side title ৳499, plans.ts ৳499, Home.tsx ৳499) — none
+// of them agreed, and none derived from anything. chatgptPlans itself already
+// derives its customer-owned prices from the real catalog (see lib/plans.ts),
+// so deriving the page's own headline number from it, rather than typing a
+// sixth guess, is the fix.
+const CHATGPT_MIN_BDT = Math.min(
+  ...chatgptPlans.filter((p) => !p.quarantined).map((p) => p.priceBDT)
+);
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { config } from "@/lib/config";
 import { SupportUpsell } from "@/components/SupportUpsell";
@@ -23,12 +35,12 @@ import {
   ArrowRight
 } from "lucide-react";
 import { useState, useRef } from "react";
-import { BreadcrumbSchema, FAQSchema, ProductSchema } from "@/components/seo/JsonLd";
+import { BreadcrumbSchema, FAQSchema } from "@/components/seo/JsonLd";
 
 export default function ChatGPTPlans() {
   usePageMeta({ path: "/chatgpt-plans",
-    title: "ChatGPT Plans in Bangladesh 2026 — ৳৪৯৯ থেকে",
-    description: "বাংলাদেশে সরাসরি bKash/Nagad দিয়ে ChatGPT Plus, Business এবং Pro সাবস্ক্রিপশন কিনুন। ৫-১৫ মিনিটে ডেলিভারি ও ৩০ দিনের ওয়ারেন্টি।"
+    title: `ChatGPT Plans in Bangladesh 2026 — Personal from ৳${CHATGPT_MIN_BDT.toLocaleString("en-US")}`,
+    description: "বাংলাদেশে সরাসরি bKash/Nagad দিয়ে ChatGPT Plus, Business এবং Pro সাবস্ক্রিপশন কিনুন। Personal-seat pricing দেখুন প্রতিটি প্ল্যানে; shared-seat availability যাচাইয়ের পর confirm করা হবে।"
   });
 
   const [activePlanSlug, setActivePlanSlug] = useState<string | null>(null);
@@ -113,21 +125,23 @@ export default function ChatGPTPlans() {
     <Layout>
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "ChatGPT Plans", path: "/chatgpt-plans" }]} />
       <FAQSchema items={faqs} />
-      <ProductSchema
-        name="ChatGPT Plus Bangladesh"
-        description="Genuine ChatGPT Plus subscription in Bangladesh from ৳499/month. Pay via bKash, Nagad, Rocket or Bank Transfer. 5-15 min delivery, 30-day warranty. AI Team Premium."
-        path="/chatgpt-plans"
-        priceBDT={499}
-        category="AI Subscription"
-
-      />
+      {/*
+        No ProductSchema on this page. It was hardcoded at ৳499 — a fourth
+        independent, disagreeing "ChatGPT starts at X" figure found in this
+        codebase in one day (route-meta said ৳350, this page's own hero said
+        ৳399, plans.ts said ৳499). ProductSchema's priceBDT is a required
+        single number, but this page covers Plus/Business/Pro across shared
+        (quarantined, no price) and personal (real, priced) tiers at once —
+        there is no single honest price to give it. Each individual plan's own
+        page at /chatgpt/[slug] carries its own ProductSchema when sellable.
+      */}
     <div className="flex flex-col gap-0 pb-20">
 
       {/* 1. HERO */}
       <section className="relative py-20 overflow-hidden" style={{ backgroundColor: BRAND.sky }}>
         <div className="container px-4 mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6" style={{ color: BRAND.navy }}>
-            বাংলাদেশে ChatGPT — <span style={{ color: BRAND.blue }}>৳৩৯৯</span> থেকে শুরু
+            বাংলাদেশে ChatGPT — <span style={{ color: BRAND.blue }}>৳{bnDigits(CHATGPT_MIN_BDT)}</span> থেকে শুরু
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-slate-600 max-w-3xl mx-auto">
             Get genuine ChatGPT Plus, Team, and Pro subscriptions with local bKash/Nagad payment and fast delivery.
@@ -247,15 +261,19 @@ export default function ChatGPTPlans() {
                     </CardContent>
                     <CardFooter className="flex flex-col gap-2 pb-8">
                       <a
-                        href={`${config.whatsappUrl}?text=${encodeURIComponent((config as any).whatsappPlanTemplates?.[plan.slug] || `Hi, I want to order ${plan.title}`)}`}
+                        href={`${config.whatsappUrl}?text=${encodeURIComponent(
+                          plan.quarantined
+                            ? `Hi, I want to ask about ${plan.title}`
+                            : (config as any).whatsappPlanTemplates?.[plan.slug] || `Hi, I want to order ${plan.title}`
+                        )}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackWhatsAppClick("ChatGPT", plan.title, plan.priceLabel, "chatgpt-plan")}
+                        onClick={() => trackWhatsAppClick("ChatGPT", plan.title, plan.quarantined ? "price-on-request" : plan.priceLabel, "chatgpt-plan")}
                         data-testid={`button-order-${plan.slug}`}
                         className="w-full inline-flex items-center justify-center gap-2 rounded-md py-2.5 font-bold text-white text-sm"
                         style={{ background: "#25D366" }}
                       >
-                        <WhatsAppIcon size={15} color="#fff" /> Order on WhatsApp
+                        <WhatsAppIcon size={15} color="#fff" /> {plan.quarantined ? "Ask on WhatsApp" : "Order on WhatsApp"}
                       </a>
                       <a
                         href={config.messenger}

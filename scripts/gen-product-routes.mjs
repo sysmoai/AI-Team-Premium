@@ -21,6 +21,16 @@ const SITE = "https://www.aiteampremium.com";
 const catalog = JSON.parse(
   readFileSync(resolve(ROOT, "client/src/data/products-catalog.json"), "utf-8")
 );
+const governance = JSON.parse(
+  readFileSync(resolve(ROOT, "data/commercial-governance.json"), "utf-8")
+).records;
+
+// Kept identical to the set in scripts/validate-commercial.mjs on purpose — the
+// two must agree on what "not publicly purchasable" means.
+const NO_PUBLIC_PURCHASE = new Set([
+  "pending_evidence", "not_for_resale", "prohibited",
+  "request_price_only", "unavailable", "retired",
+]);
 
 // Variants that share a slug are one product family and get one page.
 const families = new Map();
@@ -120,20 +130,48 @@ const esc = (s) => s.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
 //
 // A missing id is a hard failure: emitting a stale number is exactly the bug
 // this exists to prevent, so generation stops instead of falling back.
+// A quarantined record RETAINS its internal numeric "price" field on purpose,
+// as an audit reference — see data/commercial-governance.json. That is exactly
+// why checking `price > 0` alone is not enough here: on 2026-08-02,
+// /chatgpt-plans's <title> and meta description read "from ৳350/mo" and quoted
+// ৳950 as a second comparison price, sourced through this exact function,
+// because chatgpt-plus-starter-shared and chatgpt-plus-premium-shared were both
+// quarantined (pending_evidence) — priceOf() had no way to know that and handed
+// their withdrawn price straight to hand-written site copy. Suppressing a price
+// on a product's own page and then re-surfacing the identical number through an
+// "anchor" used by a DIFFERENT page is the same defect with an extra hop.
 const priceOf = (id) => {
   const p = catalog.find((x) => x.id === id);
   if (!p) throw new Error(`price anchor: no product with id "${id}"`);
   if (!(p.price > 0)) throw new Error(`price anchor: "${id}" has no published price`);
+  const g = governance[id];
+  if (g && NO_PUBLIC_PURCHASE.has(g.commercial_status)) {
+    throw new Error(
+      `price anchor: "${id}" is quarantined (${g.commercial_status}) — its price must not be used ` +
+        `in hand-written copy. Pick a currently-purchasable anchor product instead.`
+    );
+  }
   return p.price;
 };
 
-const published = catalog.filter((p) => p.price > 0);
-if (!published.length) throw new Error("price anchor: catalog has no published prices");
+// Same blind spot as priceOf() above, at catalog scope: a naive `price > 0`
+// filter still counts every quarantined record's retained internal price. This
+// number feeds the HOMEPAGE'S OWN <title> ("from ৳X/mo") — the single most
+// important line on the site for search — so it is exactly the wrong place to
+// let a withdrawn price back in through a different door.
+const publishable = catalog.filter((p) => {
+  if (!(p.price > 0)) return false;
+  const g = governance[p.id];
+  return !(g && NO_PUBLIC_PURCHASE.has(g.commercial_status));
+});
+if (!publishable.length) throw new Error("price anchor: no publishable (non-quarantined) product in the catalog");
 
 const ANCHORS = {
-  catalogMin: Math.min(...published.map((p) => p.price)),
-  chatgptPlusShared: priceOf("chatgpt-plus-starter-shared"),
-  chatgptPlusPremiumShared: priceOf("chatgpt-plus-premium-shared"),
+  catalogMin: Math.min(...publishable.map((p) => p.price)),
+  // chatgpt-plus-starter-shared / -premium-shared are quarantined
+  // (pending_evidence, see docs/audit/AITP_SHARED_ACCESS_AUDIT.md) — there is no
+  // legitimate "Shared" anchor to quote right now. Personal is the only
+  // currently-purchasable ChatGPT Plus tier.
   chatgptPlusPersonal: priceOf("chatgpt-plus-personal"),
 };
 

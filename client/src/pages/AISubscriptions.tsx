@@ -63,14 +63,15 @@ export default function AISubscriptions() {
       <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "AI Subscriptions", path: "/ai-subscriptions" }]} />
       <JsonLd data={itemListSchema} />
       <FAQSchema items={AI_SUB_FAQS} />
-      <ProductSchema
-        name="AI Subscriptions Bangladesh — ChatGPT, Claude, Gemini"
-        description="37 AI tools and 80 subscription plans in Bangladesh from ৳499/month. ChatGPT Plus, Claude Pro, Gemini Advanced, Canva Pro and more, payable via bKash/Nagad."
-        path="/ai-subscriptions"
-        priceBDT={499}
-        category="AI Subscription"
-
-      />
+      {/*
+        No ProductSchema on this listing page. It was hardcoded at ৳499 (an
+        eighth independent, disagreeing "starts at ৳X" figure found in this
+        codebase in one session) and a "37 AI tools and 80 subscription plans"
+        count that is also stale against the current 129-record catalog.
+        ProductSchema's priceBDT is a required single number, but this page
+        lists many products across shared (quarantined) and personal (real,
+        priced) tiers — there is no single honest price or count to give it.
+      */}
       <section className="py-8" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="rounded-2xl p-6 md:p-7" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.08)" }}>
@@ -152,15 +153,17 @@ export default function AISubscriptions() {
                 <div className="mt-5 flex flex-col gap-2">
                   <div className="flex gap-2">
                     <a
-                      href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(sub.title)}`}
+                      href={`https://wa.me/8801533262758?text=${encodeURIComponent(
+                        sub.quarantined ? `Hi, I want to ask about ${sub.title}` : `Hi, I want to buy ${sub.title}`
+                      )}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => trackWhatsAppClick(sub.title, undefined, sub.priceLabel, "ai-sub-card")}
+                      onClick={() => trackWhatsAppClick(sub.title, undefined, sub.quarantined ? "price-on-request" : sub.priceLabel, "ai-sub-card")}
                       data-testid={`button-wa-chatgpt-${i}`}
                       className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full py-2.5 transition-all"
                       style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
                     >
-                      <WhatsAppIcon size={13} color="#fff" /> Order on WhatsApp
+                      <WhatsAppIcon size={13} color="#fff" /> {sub.quarantined ? "Ask on WhatsApp" : "Order on WhatsApp"}
                     </a>
                     <a
                       href={config.messenger}

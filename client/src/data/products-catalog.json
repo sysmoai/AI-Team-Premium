@@ -2725,8 +2725,8 @@
       "সোশ্যাল মেডিয়া মেনিটরিং"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "not_for_resale",
-    "accessModel": "managed_service",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
     "priceOnRequest": true,
     "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
@@ -2831,8 +2831,8 @@
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
     "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
-    "commercialStatus": "not_for_resale",
-    "accessModel": "managed_service",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
     "priceOnRequest": true,
     "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
@@ -2866,8 +2866,8 @@
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
     "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
-    "commercialStatus": "not_for_resale",
-    "accessModel": "managed_service",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
     "priceOnRequest": true,
     "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
@@ -2935,8 +2935,8 @@
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
     "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
-    "commercialStatus": "not_for_resale",
-    "accessModel": "managed_service",
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
     "priceOnRequest": true,
     "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
@@ -3096,7 +3096,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Leonardo AI Shared (৳599/mo)",
+    "whatsappMsg": "Hi, I want Leonardo AI Shared",
     "status": "Active",
     "descriptionBN": "Leonardo AI — Midjourney-এর বিকল্প একটি budget-friendly AI ছবি তৈরি টুল। Free tier সহ পান, সর্বেধিক ভাল঵িটি এবং সাধারণ কাস্টমাইজেশন সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3107,8 +3107,10 @@
       "তীরের থিলে ডিজায়ন এবং এনিমেশন"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "capcut-pro-starter-shared",
@@ -3378,7 +3380,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want HeyGen Creator Shared (৳1,499/mo)",
+    "whatsappMsg": "Hi, I want HeyGen Creator Shared",
     "status": "Active",
     "descriptionBN": "HeyGen — AI avatar তৈরি এবং ভিডিও ট্রান্সলেশন টুল। আধুনিক থেকে AI avatar, তাদের থেকে কথা অনুভাদ চে রে সম্ভব। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3389,8 +3391,10 @@
       "সোশ্যাল মেডিয়া কন্টেন্ট তৈরি"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "elevenlabs-starter-personal",
@@ -3577,7 +3581,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Udio Pro Shared (৳499/mo)",
+    "whatsappMsg": "Hi, I want Udio Pro Shared",
     "status": "Active",
     "descriptionBN": "Udio — AI-powered music জেনারেশন টুল। দুসরা লিংক কি স্তম্ভ কে সূদু লেখা সহ AI গান তৈরি করুন। ভারত এবং বাংলাদেশ জন্য সম্পূর্ণ AI মুসিক সার্ভিস। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3588,8 +3592,10 @@
       "মুভি ট্রেলার ঔর থিম্বেল সার্স"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "github-copilot-pro-personal",
@@ -3745,7 +3751,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want v0.dev Pro Shared (৳999/mo)",
+    "whatsappMsg": "Hi, I want v0.dev Pro Shared",
     "status": "Active",
     "descriptionBN": "v0.dev — Vercel-এর AI UI তৈরি টুল। React + Tailwind CSS কোড জেনারেশন, নেট ডেতা ছাড়াই। সাদা তেকনিকাল এবং নোন-টেকনিকাল উপদের দুসের জন্য সর্বশেষ টুল। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3756,8 +3762,10 @@
       "নোন-টেকনিকাল ফাউন্ডার এবং স্টার্টউপ ডেভেলপমেন্ট"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "replit-core-personal",
@@ -3816,7 +3824,7 @@
     ],
     "deliverySLA": "2-4 hours",
     "featured": true,
-    "whatsappMsg": "Hi, I want Notion Business Monthly (৳800/mo)",
+    "whatsappMsg": "Hi, I want Notion Business Monthly",
     "status": "Active",
     "descriptionBN": "Notion AI — টীম ওয়ার্কস্পেস এবং AI কন্টেন্ট মেনেজমেন্ট নিলে কাজ করুন। লেখা লেখা, ডাকুমেন্ট লেখা, প্রোজেক্ট মেনেজ করা এবং AI সার্স খুড়ল সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3827,8 +3835,10 @@
       "ক্লাইন্ট কম্যুনিকেশন এবং ছুটি সার্ভিস"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "approved",
-    "accessModel": "managed_service"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "customer_owned_activation",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "notion-business-6m",
@@ -3851,7 +3861,7 @@
     ],
     "deliverySLA": "2-4 hours",
     "featured": true,
-    "whatsappMsg": "Hi, I want Notion Business 6-Month (৳4,800)",
+    "whatsappMsg": "Hi, I want Notion Business 6-Month",
     "status": "Active",
     "descriptionBN": "Notion AI — টীম ওয়ার্কস্পেস এবং AI কন্টেন্ট মেনেজমেন্ট নিলে কাজ করুন। লেখা লেখা, ডাকুমেন্ট লেখা, প্রোজেক্ট মেনেজ করা এবং AI সার্স খুড়ল সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3862,8 +3872,10 @@
       "ক্লাইন্ট কম্যুনিকেশন এবং ছুটি সার্ভিস"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "approved",
-    "accessModel": "managed_service"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "customer_owned_activation",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "manus-ai-personal",
@@ -3993,7 +4005,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Writesonic Shared (৳799/mo)",
+    "whatsappMsg": "Hi, I want Writesonic Shared",
     "status": "Active",
     "descriptionBN": "Writesonic — AI writing assistant সহ SEO ওপ্টিমাইজ করা সার্বসেশন টুল। Blog posts, landing pages, এড কনুবার্সশন এবং সোশ্যাল মেডিয়া কন্টেন্ট লেখা সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -4004,8 +4016,10 @@
       "প্রেস রিলিজ এবং ন্যুজ এর্টিকল"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "student-essentials",
@@ -4390,7 +4404,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want QuillBot Premium (৳390/mo)",
+    "whatsappMsg": "Hi, I want QuillBot Premium",
     "status": "Active",
     "descriptionBN": "QuillBot Premium — AI প্যারাফ্রেজিং, সারাংশ, ব্যাকরণ পরীক্ষা এবং প্লাগিয়ারিজম ডিটেকশন। ইংরেজিতে থিসিস ও অ্যাসাইনমেন্ট লেখার জন্য পারফেক্ট।",
     "useCases": [
@@ -4456,8 +4470,10 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "quillbot-premium-personal",
@@ -5231,7 +5247,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Pika Labs (৳310/mo)",
+    "whatsappMsg": "Hi, I want Pika Labs",
     "status": "Active",
     "descriptionBN": "Pika Labs — টেক্সট-টু-ভিডিও AI জেনারেশন। প্রম্পট থেকে সিনেমাটিক ভিডিও তৈরি করুন। বাংলাদেশি ক্রিয়েটরদের জন্য দ্রুত ও সৃজনশীল।",
     "useCases": [
@@ -5293,8 +5309,10 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "pika-labs-personal",
@@ -5406,7 +5424,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Opus Clip (৳590/mo)",
+    "whatsappMsg": "Hi, I want Opus Clip",
     "status": "Active",
     "descriptionBN": "Opus Clip — AI ভিডিও রিপারপোজিং। লম্বা ভিডিও থেকে অটোমেটিক্যালি ভাইরাল শর্টস, রিলস ও টিকটক ক্লিপ তৈরি করে ক্যাপশন ও হুক সহ।",
     "useCases": [
@@ -5470,8 +5488,10 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "opus-clip-personal",
@@ -5768,7 +5788,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Murf AI (৳740/mo)",
+    "whatsappMsg": "Hi, I want Murf AI",
     "status": "Active",
     "descriptionBN": "Murf AI — ১২০+ ভয়েস, ২০+ ভাষায় AI টেক্সট-টু-স্পিচ। ভিডিও, অ্যাড, ই-লার্নিং ও প্রেজেন্টেশনের জন্য স্টুডিও-কোয়ালিটি ভয়েসওভার।",
     "useCases": [
@@ -5832,8 +5852,10 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "murf-ai-personal",
@@ -5949,7 +5971,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Freepik Premium (৳450/mo)",
+    "whatsappMsg": "Hi, I want Freepik Premium",
     "status": "Active",
     "descriptionBN": "Freepik Premium — কোটি কোটি প্রিমিয়াম ভেক্টর, ফটো, PSD ও আইকনের অসীম অ্যাক্সেস। AI ছবি তৈরি, AI রিইমাজিন এবং AI আপস্কেলার সহ। ডিজাইনার ও মার্কেটারদের জন্য আদর্শ।",
     "useCases": [
@@ -6075,8 +6097,10 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "kling-ai-starter-shared",
@@ -6102,7 +6126,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Kling AI (৳270/mo)",
+    "whatsappMsg": "Hi, I want Kling AI",
     "status": "Active",
     "descriptionBN": "Kling AI — টেক্সট ও ছবি থেকে চমৎকার AI ভিডিও তৈরি করে। চীনের সেরা টেক্সট-টু-ভিডিও মডেল, সিনেমাটিক কোয়ালিটি, ক্যারেক্টার কনসিস্টেন্সি এবং মোশন রিয়েলিজম।",
     "useCases": [
@@ -6226,8 +6250,10 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "synthesia-starter-shared",
@@ -6408,7 +6434,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Windsurf Pro (৳590/mo)",
+    "whatsappMsg": "Hi, I want Windsurf Pro",
     "status": "Active",
     "descriptionBN": "Windsurf (Codeium) — AI-native IDE ক্যাসকেড এজেন্ট মোড সহ। AI নিজে থেকে প্ল্যান, লিখুন, টেস্ট ও ডিবাগ করতে পারে। ৭০+ ভাষা ও ফ্রেমওয়ার্ক সাপোর্ট।",
     "useCases": [
@@ -6501,8 +6527,10 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "approved",
-    "accessModel": "customer_owned_activation"
+    "commercialStatus": "pending_evidence",
+    "accessModel": "UNVERIFIED_SHARED",
+    "priceOnRequest": true,
+    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
   {
     "id": "adobe-cc-personal",

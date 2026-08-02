@@ -20,6 +20,10 @@ const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/legal/TermsOfService"));
 const RefundPolicy = lazy(() => import("./pages/legal/RefundPolicy"));
 const AccessTypes = lazy(() => import("./pages/legal/AccessTypes"));
+const PricingHowItWorks = lazy(() => import("./pages/legal/PricingHowItWorks"));
+const NonAffiliationPage = lazy(() => import("./pages/legal/NonAffiliation"));
+const CorrectionsPolicyPage = lazy(() => import("./pages/legal/CorrectionsPolicy"));
+const IncidentEscalationPage = lazy(() => import("./pages/legal/IncidentEscalation"));
 const ChatGPT = lazy(() => import("./pages/tools/ChatGPT"));
 const Claude = lazy(() => import("./pages/tools/Claude"));
 const Gemini = lazy(() => import("./pages/tools/Gemini"));
@@ -148,6 +152,10 @@ function Router() {
         <Route path="/start-a-project" component={Contact} />
         <Route path="/refund-policy" component={RefundPolicy} />
         <Route path="/access-types" component={AccessTypes} />
+        <Route path="/pricing-how-it-works" component={PricingHowItWorks} />
+        <Route path="/non-affiliation" component={NonAffiliationPage} />
+        <Route path="/corrections" component={CorrectionsPolicyPage} />
+        <Route path="/incident-escalation" component={IncidentEscalationPage} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms" component={TermsOfService} />
         <Route path="/tools/chatgpt" component={ChatGPT} />

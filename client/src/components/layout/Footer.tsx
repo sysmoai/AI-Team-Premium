@@ -164,6 +164,10 @@ export function Footer() {
             <FooterHeading>Legal</FooterHeading>
             <FooterLinks links={[
               { label: "Access Types Explained", to: "/access-types" },
+              { label: "Pricing — How It Works", to: "/pricing-how-it-works" },
+              { label: "Non-Affiliation", to: "/non-affiliation" },
+              { label: "Corrections Policy", to: "/corrections" },
+              { label: "Incident & Escalation", to: "/incident-escalation" },
               { label: "Refund Policy", to: "/refund-policy" },
               { label: "Privacy Policy", to: "/privacy-policy" },
               { label: "Terms of Service", to: "/terms" },

@@ -1,12 +1,17 @@
 # AITP Known Risks
 
+## P0 — TOP FINDING (this session, after reading the eligibility protocol in full)
+- **R0 — The entire live catalog (129 products) was built without ever going through the CEO-approved Product Intelligence & Offer Eligibility Protocol.** No record carries `commercialStatus`, an eligibility state, evidence IDs, or verification dates. Most critically: **32 records are `accessType: "shared"` with zero documented provider-authorization evidence**, despite the protocol explicitly stating shared-credential sales are presumptively prohibited unless written provider rules permit the exact arrangement and management approves it per product. This mirrors an identical finding already made on the sibling AIPS repo in this same conversation. CL-2 (CapCut) and CL-2b (Notion Business) are two specific instances this session happened to catch — not the full scope. See CONFLICT_LEDGER CL-1b. Owner: CEO (prioritization + per-product review, likely the single largest open item in this repo).
+
 ## P0
 - **R1 — CapCut underpriced, violates recorded CEO decision.** Live at ৳399/mo vs. approved ৳2,510+/৳3,350+. See CONFLICT_LEDGER CL-2. Owner: CEO (confirm correct plan/USD basis, then approve fix).
 - **R2 — Production/Notion divergence not yet acknowledged by CEO.** Site is far more built (129 products, 322 posts, 12 category pages) and on different hosting (Vercel, not Replit) than the last Notion checkpoint reflects. See CL-1. Owner: CEO (acknowledge, then Notion gets updated to match).
 - **R3 — Ownership/operator wording undecided.** Canonical brand doc marks this "pending"; a separate unverified search snippet suggested a name that conflicts with that pending status. No claim made anywhere. Owner: CEO.
 
+## P0 (upgraded from P1 this session)
+- **R3b — Notion Business tiers carry an unsupported "73% Off" claim AND price far below the formula floor, with no legitimate bulk/shared explanation in the data.** Confirmed: these are the only two Notion records in the catalog (no Team/Shared tier exists to imply bulk-purchase economics), and the "73% Off" badge has zero computational backing anywhere in the codebase — a standalone claims-registry violation independent of the pricing question. See CL-2b (upgraded). Owner: CEO (both the price and the claim need a decision).
+
 ## P1
-- **R3b — Notion Business tiers (`notion-business-monthly`, `notion-business-6m`) show a large, unexplained gap against the formula floor** (৳2,192 and ৳13,152 respectively) — lower confidence than R1/CapCut since it's derived from formula reconstruction, not a dated CEO decision, but the gap size (73–93% shortfall) is too large to dismiss as rounding. See CL-2b. Owner: next session to investigate what these records actually represent before flagging to CEO as a price question.
 - **R4 — No automated cost-floor enforcement on the live-serving catalog.** `lib/floor-guard.js` validates the wrong file. See CL-3. This is how R1 (CapCut) shipped unnoticed and could recur for any future addition.
 - **R5 — GitHub Actions billing-locked account-wide.** Blocks all CI gating (lint/typecheck/test/E2E/security-scan). Vercel deploy is unaffected. Shared condition with the sibling AIPS repo. Owner: CEO/admin (billing).
 - **R6 — Five required service-pillar pages don't exist.** `/services/ai-advisory`, `/ai-setup-security`, `/ai-training`, `/ai-automation`, `/managed-ai-operations` are specified in the canonical brand OS but not built; only unrelated service pages exist. This is central to AITP's stated positioning ("not a cheap-account shop").

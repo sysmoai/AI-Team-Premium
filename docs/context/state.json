@@ -17,18 +17,26 @@
   },
   "githubActionsStatus": "billing-locked account-wide on sysmoai (shared with sibling AI-Premium-Shop repo)",
   "openP0": [
+    "R0 (NEW, top finding): entire live catalog built without CEO eligibility protocol; 32 shared-access records have zero documented provider-authorization evidence (CL-1b)",
     "CapCut priced at 399, violates recorded CEO decision of 2510+/3350+ (CL-2)",
+    "Notion Business tiers: unsupported 73% Off claim with no computation backing, plus large pricing gap (CL-2b, upgraded)",
     "Production/Notion divergence not yet acknowledged by CEO (CL-1)",
     "Legal operator/ownership wording explicitly pending (CL-4)"
   ],
   "openP1": [
-    "notion-business-monthly / notion-business-6m show large unexplained pricing gap, needs investigation (CL-2b)",
-    "No automated cost-floor enforcement on the live-serving catalog (CL-3)",
+    "No automated cost-floor enforcement on the live-serving catalog (CL-3) -- partially addressed: scripts/audit-floor.mjs built this session as a diagnostic (non-blocking) reference-check tool",
     "Five required service-pillar pages not built (R6)",
     "Earlier bulk-import scaffolding not taxonomy-aware (R7)"
   ],
   "verifiedCorrect": [
-    "ChatGPT Pro Premium Shared correctly implements HOLD/request-price CEO decision"
+    "ChatGPT Pro Premium Shared correctly implements HOLD/request-price CEO decision",
+    "No unsupported official-partner/authorized-reseller claims found on site"
   ],
-  "lastUpdated": "2026-08-02"
+  "notionPagesReadInFull": [
+    "AITP Audit Checkpoint v3.2",
+    "Canonical Brand & Business Operating System",
+    "Product Intelligence & Offer Eligibility Protocol",
+    "Rebrand Migration & Eradication Ledger"
+  ],
+  "lastUpdated": "2026-08-02 (continuation)"
 }

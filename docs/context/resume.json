@@ -1,19 +1,20 @@
 {
   "project": "AI Team Premium",
   "branch": "feat/aitp-truth-reconciliation-20260802",
-  "headSha": "183ca8d62a06287cfe1b5245293c2730933ae07c",
+  "headSha": "PENDING_COMMIT",
   "productionSha": "444c2411e110523775a57384ddc4a6702241c56b",
-  "activeStage": "F32 production-truth reconciliation + P0 pricing conflict discovery",
-  "completedBatch": "Windows capability report, current-production-truth doc, conflict ledger (6 entries), current state, decisions, known risks, next actions; ran real floor-formula check against live catalog (correctly excluding shared tiers)",
-  "nextAction": "Read the Product Intelligence & Offer Eligibility Protocol and Rebrand Migration & Eradication Ledger in Notion; investigate notion-business-monthly/6m pricing anomaly (CL-2b); build a committed floor-guard script against the real catalog file",
+  "activeStage": "F32 reconciliation complete; eligibility-protocol gap discovery complete; next is CEO decision batch, not more discovery",
+  "completedBatch": "Read Product Intelligence & Offer Eligibility Protocol + Rebrand Migration & Eradication Ledger in full; discovered the live catalog's biggest gap (R0: shared-access legitimacy across 32 records, zero eligibility-protocol application catalog-wide); investigated and upgraded Notion Business finding (unsupported 73% Off claim, no computation backing); built and ran scripts/audit-floor.mjs (committed, non-blocking diagnostic tool); confirmed no unsupported partner/reseller claims on site",
+  "nextAction": "Fetch the Market/SEO/Competitor report in full to resolve the unverified 'operated by Refat' search snippet; then this session's discovery work is largely done -- remaining items are CEO decisions (see blockers), not further investigation",
   "nextCommand": "cd /c/Users/emonh/SYSmoAI-Stack/apps/AI-Team-Premium && git fetch origin --quiet && git checkout feat/aitp-truth-reconciliation-20260802 && cat docs/context/resume.json",
   "nextFiles": [
-    "docs/context/DECISIONS.md",
-    "client/src/data/products-catalog.json",
-    "scripts/audit-prices.mjs"
+    "docs/context/CONFLICT_LEDGER.md",
+    "docs/context/KNOWN_RISKS.md"
   ],
   "blockers": [
+    "CEO: highest priority -- resolve shared-access legitimacy across 32 catalog records (R0)",
     "CEO: confirm CapCut correct plan/USD basis, approve corrected price",
+    "CEO: confirm what Notion Business tiers represent and whether the 73% Off claim has any basis",
     "CEO: acknowledge production/Notion divergence before checkpoint update",
     "CEO: resolve legal operator/ownership wording",
     "CEO/admin: resolve GitHub Actions billing lock (account-wide)"
@@ -22,7 +23,7 @@
   "testsFailing": [
     "GitHub Actions CI/E2E/Monitor — billing-locked, not a real test failure (confirmed via gh run view)"
   ],
-  "notionLastSyncedAt": "2026-08-02 (read AITP Audit Checkpoint v3.2 + Canonical Brand & Business OS in full)",
-  "catalogSnapshotHash": "129 records / 72 brands / 32 shared / 97 personal, computed from client/src/data/products-catalog.json at commit 444c241",
+  "notionLastSyncedAt": "2026-08-02 (read AITP Audit Checkpoint v3.2, Canonical Brand & Business OS, Product Intelligence & Offer Eligibility Protocol, Rebrand Migration & Eradication Ledger -- all in full)",
+  "catalogSnapshotHash": "129 records / 72 brands / 32 shared / 89 personal-with-cost-basis / 8 request-price-or-no-cost, computed from client/src/data/products-catalog.json at commit 444c241 via scripts/audit-floor.mjs",
   "resumeToken": "AITP-WINDOWS-AUTONOMOUS-ENABLEMENT-V4-20260802-feat-aitp-truth-reconciliation-444c241"
 }

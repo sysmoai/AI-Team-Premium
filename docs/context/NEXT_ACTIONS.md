@@ -1,17 +1,23 @@
 # AITP Next Actions
 
+## Done this session (continuation)
+1. ✅ Built `scripts/audit-floor.mjs` — committed, reusable diagnostic script. Correctly excludes 32 shared-tier records and 8 request-price/no-cost-basis records; flags 2 material anomalies (Notion Business, 73% gap each) out of 89 checked, cleanly separated from 27 immaterial (<2%) rounding-level gaps. Explicitly framed as a human-review signal, not a pricing authority, per the eligibility protocol's own rule against automatic formula-based pricing.
+2. ✅ Read "AI Team Premium — Product Intelligence & Offer Eligibility Protocol" in full. **Major finding:** it explicitly prohibits shared-credential sales unless provider terms clearly permit it and management approves per-product — directly implicating all 32 `accessType:"shared"` catalog records, none of which carry documented authorization evidence. See CONFLICT_LEDGER CL-1b (new) and KNOWN_RISKS R0 (new top P0).
+3. ✅ Read "AI Team Premium — Rebrand Migration & Eradication Ledger" in full. Confirms the eligibility protocol was only ever applied to a handful of example pages (ChatGPT, Claude Pro) as of "Batch 3, started 2026-07-19" — never completed across the catalog. This is the root cause of R0: the live 129-product catalog was built later, via a different process, without this governance layer.
+4. ✅ Checked for unsupported "official partner"/"authorized reseller" claims on the site — none found, clean.
+
 ## Unblocked — safe to start immediately (green lane)
-1. **Partially done this session:** ran the formula check manually (excluding 32 `accessType:"shared"` records, since shared tiers legitimately price below full-retail floor). Result: 27 personal-tier records show only ৳2–14 immaterial gaps (formula-precision artifacts, not real issues); 2 show a large, unexplained gap (`notion-business-monthly`, `notion-business-6m` — see CL-2b). **Remaining work:** turn this ad-hoc check into a committed script (e.g. `scripts/audit-floor.mjs`) so it runs on every future catalog change instead of being re-derived by hand each session.
-2. Fetch the full "AI Team Premium — Market, SEO, Competitor & Growth Intelligence Report" to resolve whether the "operated by Refat" snippet is real content or a stale/wrong fragment, before it can even be logged properly (currently only a search highlight, not verified).
-3. Read "AI Team Premium — Product Intelligence & Offer Eligibility Protocol" — needed before deciding whether to rewrite or retire the earlier bulk-import scaffolding (Decision D1).
-4. Read "AI Team Premium — Rebrand Migration & Eradication Ledger" — needed for Stage 1 ("workspace audit and identity eradication") which the Canonical Brand OS marks as the *current immediate priority*.
+1. Fetch the full "AI Team Premium — Market, SEO, Competitor & Growth Intelligence Report" to resolve whether the "operated by Refat" snippet (from a search highlight only, never fetched in full) is real content or a stale/wrong fragment.
+2. Given R0's scale (127 of 129 products never eligibility-reviewed), consider whether a lightweight per-product triage pass (even just classifying each into "clearly fine" vs "needs review," without full protocol depth) is more tractable than waiting for a full CEO-sequenced review of all 129 records.
 
 ## Blocked — require CEO/owner decision (do not act without one)
-1. Confirm CapCut's correct plan/USD basis and approve the corrected price (CL-2 / R1).
-2. Acknowledge the production/Notion divergence (CL-1 / R2) before the checkpoint is updated.
-3. Resolve legal operator/ownership wording (CL-4 / R3).
-4. Sequencing call: fix P0 truth/pricing conflicts first vs. prioritize building the five service-pillar pages (R6) — recommend the former given the contract's own "highest priority first" instruction, but flagging for CEO awareness since the five-pillar architecture is central to positioning.
-5. Resolve GitHub Actions billing lock (R5) — account-wide, not project-specific.
+1. **Highest priority (new, R0):** the shared-access legitimacy question across 32 catalog records — this is a legal/ToS exposure question, not an engineering one, and is now the single largest known gap in this repo.
+2. Confirm CapCut's correct plan/USD basis and approve the corrected price (CL-2 / R1).
+3. Confirm what Notion Business tiers actually represent and whether the "73% Off" claim has any legitimate basis (CL-2b, upgraded to P0).
+4. Acknowledge the production/Notion divergence (CL-1 / R2) before the checkpoint is updated.
+5. Resolve legal operator/ownership wording (CL-4 / R3).
+6. Sequencing call: fix P0 truth/pricing/access-legitimacy conflicts first vs. prioritize building the five service-pillar pages (R6).
+7. Resolve GitHub Actions billing lock (R5) — account-wide, not project-specific.
 
 ## Exact next command for the next session
 ```bash

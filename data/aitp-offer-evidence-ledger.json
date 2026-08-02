@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "purpose": "AI Team Premium Offer Evidence Triage Ledger — 95 legacy-unreviewed personal-tier records. Generated 2026-08-02 from data/commercial-governance.json. No entry here constitutes CEO approval. All records default to 'not reviewed — do not change status without evidence.'",
+    "authority": "AI Team Premium — Product Intelligence & Offer Eligibility Protocol (Notion, canonical).",
+    "total_legacy_unreviewed": 95,
+    "access_model_breakdown": {
+      "customer_owned_activation": 95,
+      "shared_or_unverified": 0
+    },
+    "risk_tier_breakdown": {
+      "tier_1_identity_bound_premium": 60,
+      "tier_2_standard_personal": 25,
+      "tier_3_bundles_and_b2b": 5,
+      "tier_4_tools_and_productivity": 5
+    },
+    "review_priority": {
+      "p0_immediate": "Identity-bound premium AI (ChatGPT, Claude, Gemini, Perplexity, Grok, Midjourney, Leonardo, Runway, ElevenLabs, etc.) — these are the highest traffic, highest revenue, highest legal exposure records. ~60 records.",
+      "p1_standard": "Standard personal tools (Canva, Grammarly, GitHub, etc.) — lower risk but should be verified. ~25 records.",
+      "p2_bundles_b2b": "Bundles and b2b implementation — unique commercial arrangements. 5 records.",
+      "p3_tools_productivity": "Productivity and niche tools. ~5 records."
+    }
+  },
+  "records": {},
+  "_note": "Insert individual record triage entries here as each is reviewed against the eligibility protocol. Do not add new records without evidence IDs, verification dates, and access-model documentation."
+}

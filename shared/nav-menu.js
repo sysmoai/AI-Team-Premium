@@ -78,27 +78,27 @@ export const NAV_COLUMNS = [
         "label": "Video Generation",
         "href": "/category/ai-video",
         "count": 13,
-        "priceFrom": 1008,
+        "priceFrom": 270,
         "top": [
+          {
+            "name": "Kling AI",
+            "href": "/tools/kling-ai-bangladesh",
+            "priceFrom": 270
+          },
           {
             "name": "Pika",
             "href": "/tools/pika-labs-bangladesh",
-            "priceFrom": 1200
+            "priceFrom": 310
+          },
+          {
+            "name": "Opus",
+            "href": "/tools/opus-clip-bangladesh",
+            "priceFrom": 590
           },
           {
             "name": "Runway",
             "href": "/tools/runway-bangladesh",
             "priceFrom": 1794
-          },
-          {
-            "name": "Descript",
-            "href": "/tools/descript-pro-bangladesh",
-            "priceFrom": 2090
-          },
-          {
-            "name": "Opus",
-            "href": "/tools/opus-clip-bangladesh",
-            "priceFrom": 2590
           }
         ]
       },
@@ -110,14 +110,14 @@ export const NAV_COLUMNS = [
         "priceFrom": 499,
         "top": [
           {
+            "name": "Murf",
+            "href": "/tools/murf-ai-bangladesh",
+            "priceFrom": 740
+          },
+          {
             "name": "Suno",
             "href": "/tools/suno-ai-bangladesh",
             "priceFrom": 1495
-          },
-          {
-            "name": "Murf",
-            "href": "/tools/murf-ai-bangladesh",
-            "priceFrom": 2840
           },
           {
             "name": "Udio",
@@ -199,8 +199,13 @@ export const NAV_COLUMNS = [
         "label": "Coding",
         "href": "/category/ai-code",
         "count": 7,
-        "priceFrom": 1495,
+        "priceFrom": 590,
         "top": [
+          {
+            "name": "Windsurf",
+            "href": "/tools/windsurf-bangladesh",
+            "priceFrom": 590
+          },
           {
             "name": "GitHub",
             "href": "/tools/github-copilot-bangladesh",
@@ -212,14 +217,9 @@ export const NAV_COLUMNS = [
             "priceFrom": 2990
           },
           {
-            "name": "Windsurf",
-            "href": "/tools/windsurf-bangladesh",
-            "priceFrom": null
-          },
-          {
-            "name": "Replit",
-            "href": "/tools/replit-bangladesh",
-            "priceFrom": 3390
+            "name": "v0.dev",
+            "href": "/tools/v0-dev-bangladesh",
+            "priceFrom": 999
           }
         ]
       },
@@ -228,12 +228,12 @@ export const NAV_COLUMNS = [
         "label": "Writing",
         "href": "/category/ai-writing",
         "count": 4,
-        "priceFrom": 1490,
+        "priceFrom": 390,
         "top": [
           {
             "name": "QuillBot",
             "href": "/tools/quillbot-premium-bangladesh",
-            "priceFrom": 1490
+            "priceFrom": 390
           },
           {
             "name": "Grammarly",
@@ -248,7 +248,7 @@ export const NAV_COLUMNS = [
           {
             "name": "Writesonic",
             "href": "/tools/writesonic-bangladesh",
-            "priceFrom": null
+            "priceFrom": 799
           }
         ]
       }
@@ -353,5 +353,5 @@ export const NAV_CATEGORIES = NAV_COLUMNS.flatMap((c) => c.categories);
 export const CATALOG_TOTALS = {
   families: 78,
   tiers: 129,
-  priceFrom: 449,
+  priceFrom: 270,
 };

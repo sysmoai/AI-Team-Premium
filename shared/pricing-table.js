@@ -344,23 +344,23 @@ export const PRICING_SECTIONS = [
   {
     "title": "🎬 AI Video",
     "category": "ai-video",
-    "subtitle": "21 plans · from ৳1,008/mo · bKash/Nagad",
+    "subtitle": "21 plans · from ৳270/mo · bKash/Nagad",
     "items": [
       {
         "name": "Kling AI — Starter Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳270/mo",
+        "priceBdt": 270,
         "delivery": "5-30 min",
         "href": "/tools/kling-ai-bangladesh",
-        "waText": "Hi, I want Kling AI — Starter Shared — please quote a price."
+        "waText": "Hi, I want Kling AI — Starter Shared (৳270/mo) — please share payment details."
       },
       {
         "name": "Pika Labs — Starter Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳310/mo",
+        "priceBdt": 310,
         "delivery": "5-30 min",
         "href": "/tools/pika-labs-bangladesh",
-        "waText": "Hi, I want Pika Labs — Starter Shared — please quote a price."
+        "waText": "Hi, I want Pika Labs — Starter Shared (৳310/mo) — please share payment details."
       },
       {
         "name": "CapCut Pro — Starter Shared",
@@ -380,11 +380,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Opus Clip — Starter Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳590/mo",
+        "priceBdt": 590,
         "delivery": "5-30 min",
         "href": "/tools/opus-clip-bangladesh",
-        "waText": "Hi, I want Opus Clip — Starter Shared — please quote a price."
+        "waText": "Hi, I want Opus Clip — Starter Shared (৳590/mo) — please share payment details."
       },
       {
         "name": "Synthesia — Starter Shared",
@@ -531,11 +531,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Murf AI — Starter Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳740/mo",
+        "priceBdt": 740,
         "delivery": "5-30 min",
         "href": "/tools/murf-ai-bangladesh",
-        "waText": "Hi, I want Murf AI — Starter Shared — please quote a price."
+        "waText": "Hi, I want Murf AI — Starter Shared (৳740/mo) — please share payment details."
       },
       {
         "name": "ElevenLabs Starter — Personal",
@@ -614,15 +614,15 @@ export const PRICING_SECTIONS = [
   {
     "title": "✍️ Writing",
     "category": "ai-writing",
-    "subtitle": "7 plans · from ৳1,490/mo · bKash/Nagad",
+    "subtitle": "7 plans · from ৳390/mo · bKash/Nagad",
     "items": [
       {
         "name": "QuillBot Premium — Starter Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳390/mo",
+        "priceBdt": 390,
         "delivery": "5-30 min",
         "href": "/tools/quillbot-premium-bangladesh",
-        "waText": "Hi, I want QuillBot Premium — Starter Shared — please quote a price."
+        "waText": "Hi, I want QuillBot Premium — Starter Shared (৳390/mo) — please share payment details."
       },
       {
         "name": "Grammarly Premium — Starter Shared",
@@ -634,11 +634,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Writesonic Individual — Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳799/mo",
+        "priceBdt": 799,
         "delivery": "5-30 min",
         "href": "/tools/writesonic-bangladesh",
-        "waText": "Hi, I want Writesonic Individual — Shared — please quote a price."
+        "waText": "Hi, I want Writesonic Individual — Shared (৳799/mo) — please share payment details."
       },
       {
         "name": "QuillBot Premium — Personal",
@@ -677,23 +677,23 @@ export const PRICING_SECTIONS = [
   {
     "title": "💻 Coding",
     "category": "ai-code",
-    "subtitle": "9 plans · from ৳1,495/mo · bKash/Nagad",
+    "subtitle": "9 plans · from ৳590/mo · bKash/Nagad",
     "items": [
       {
         "name": "Windsurf Pro — Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳590/mo",
+        "priceBdt": 590,
         "delivery": "5-30 min",
         "href": "/tools/windsurf-bangladesh",
-        "waText": "Hi, I want Windsurf Pro — Shared — please quote a price."
+        "waText": "Hi, I want Windsurf Pro — Shared (৳590/mo) — please share payment details."
       },
       {
         "name": "v0.dev Pro — Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳999/mo",
+        "priceBdt": 999,
         "delivery": "5-30 min",
         "href": "/tools/v0-dev-bangladesh",
-        "waText": "Hi, I want v0.dev Pro — Shared — please quote a price."
+        "waText": "Hi, I want v0.dev Pro — Shared (৳999/mo) — please share payment details."
       },
       {
         "name": "GitHub Copilot Pro — Personal",
@@ -1127,6 +1127,6 @@ export const PRICING_SECTIONS = [
 
 export const PRICING_SUMMARY = {
   rows: 129,
-  priceFrom: 449,
+  priceFrom: 270,
   priceTo: 29900,
 };

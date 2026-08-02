@@ -3745,7 +3745,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want v0.dev Pro Shared",
+    "whatsappMsg": "Hi, I want v0.dev Pro Shared (৳999/mo)",
     "status": "Active",
     "descriptionBN": "v0.dev — Vercel-এর AI UI তৈরি টুল। React + Tailwind CSS কোড জেনারেশন, নেট ডেতা ছাড়াই। সাদা তেকনিকাল এবং নোন-টেকনিকাল উপদের দুসের জন্য সর্বশেষ টুল। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3756,10 +3756,8 @@
       "নোন-টেকনিকাল ফাউন্ডার এবং স্টার্টউপ ডেভেলপমেন্ট"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "replit-core-personal",
@@ -3995,7 +3993,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Writesonic Shared",
+    "whatsappMsg": "Hi, I want Writesonic Shared (৳799/mo)",
     "status": "Active",
     "descriptionBN": "Writesonic — AI writing assistant সহ SEO ওপ্টিমাইজ করা সার্বসেশন টুল। Blog posts, landing pages, এড কনুবার্সশন এবং সোশ্যাল মেডিয়া কন্টেন্ট লেখা সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -4006,10 +4004,8 @@
       "প্রেস রিলিজ এবং ন্যুজ এর্টিকল"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "student-essentials",
@@ -4394,7 +4390,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want QuillBot Premium",
+    "whatsappMsg": "Hi, I want QuillBot Premium (৳390/mo)",
     "status": "Active",
     "descriptionBN": "QuillBot Premium — AI প্যারাফ্রেজিং, সারাংশ, ব্যাকরণ পরীক্ষা এবং প্লাগিয়ারিজম ডিটেকশন। ইংরেজিতে থিসিস ও অ্যাসাইনমেন্ট লেখার জন্য পারফেক্ট।",
     "useCases": [
@@ -4460,10 +4456,8 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "quillbot-premium-personal",
@@ -5237,7 +5231,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Pika Labs",
+    "whatsappMsg": "Hi, I want Pika Labs (৳310/mo)",
     "status": "Active",
     "descriptionBN": "Pika Labs — টেক্সট-টু-ভিডিও AI জেনারেশন। প্রম্পট থেকে সিনেমাটিক ভিডিও তৈরি করুন। বাংলাদেশি ক্রিয়েটরদের জন্য দ্রুত ও সৃজনশীল।",
     "useCases": [
@@ -5299,10 +5293,8 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "pika-labs-personal",
@@ -5414,7 +5406,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Opus Clip",
+    "whatsappMsg": "Hi, I want Opus Clip (৳590/mo)",
     "status": "Active",
     "descriptionBN": "Opus Clip — AI ভিডিও রিপারপোজিং। লম্বা ভিডিও থেকে অটোমেটিক্যালি ভাইরাল শর্টস, রিলস ও টিকটক ক্লিপ তৈরি করে ক্যাপশন ও হুক সহ।",
     "useCases": [
@@ -5478,10 +5470,8 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "opus-clip-personal",
@@ -5778,7 +5768,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Murf AI",
+    "whatsappMsg": "Hi, I want Murf AI (৳740/mo)",
     "status": "Active",
     "descriptionBN": "Murf AI — ১২০+ ভয়েস, ২০+ ভাষায় AI টেক্সট-টু-স্পিচ। ভিডিও, অ্যাড, ই-লার্নিং ও প্রেজেন্টেশনের জন্য স্টুডিও-কোয়ালিটি ভয়েসওভার।",
     "useCases": [
@@ -5842,10 +5832,8 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "murf-ai-personal",
@@ -6114,7 +6102,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Kling AI",
+    "whatsappMsg": "Hi, I want Kling AI (৳270/mo)",
     "status": "Active",
     "descriptionBN": "Kling AI — টেক্সট ও ছবি থেকে চমৎকার AI ভিডিও তৈরি করে। চীনের সেরা টেক্সট-টু-ভিডিও মডেল, সিনেমাটিক কোয়ালিটি, ক্যারেক্টার কনসিস্টেন্সি এবং মোশন রিয়েলিজম।",
     "useCases": [
@@ -6238,10 +6226,8 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "synthesia-starter-shared",
@@ -6422,7 +6408,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Windsurf Pro",
+    "whatsappMsg": "Hi, I want Windsurf Pro (৳590/mo)",
     "status": "Active",
     "descriptionBN": "Windsurf (Codeium) — AI-native IDE ক্যাসকেড এজেন্ট মোড সহ। AI নিজে থেকে প্ল্যান, লিখুন, টেস্ট ও ডিবাগ করতে পারে। ৭০+ ভাষা ও ফ্রেমওয়ার্ক সাপোর্ট।",
     "useCases": [
@@ -6515,10 +6501,8 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "adobe-cc-personal",

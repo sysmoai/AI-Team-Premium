@@ -83,7 +83,7 @@ export default function FreepikPage() {
       plans={[
         {
           label: "Freepik Premium — Shared",
-          price: "৳499",
+          price: "৳450",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

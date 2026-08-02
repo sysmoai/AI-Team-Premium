@@ -151,7 +151,7 @@ export default function Grammarly() {
       plans={[
         {
           label: "Grammarly Premium — Monthly",
-          price: "৳499",
+          price: "৳470",
           period: "/mo",
           delivery: "1–2 hr delivery",
           type: "Private",
@@ -163,7 +163,7 @@ export default function Grammarly() {
         },
         {
           label: "Grammarly Premium — Annual",
-          price: "৳3,999",
+          price: "৳2,090",
           period: "/yr",
           delivery: "1–2 hr delivery",
           type: "Private",

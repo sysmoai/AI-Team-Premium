@@ -92,7 +92,7 @@ export default function ManusPage() {
       plans={[
         {
           label: "Manus AI — Shared",
-          price: "৳1,499",
+          price: "৳2,500",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Shared",

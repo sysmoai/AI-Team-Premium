@@ -148,7 +148,7 @@ export default function Midjourney() {
       plans={[
         {
           label: "Midjourney — Shared",
-          price: "৳1,200",
+          price: "৳1,199",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

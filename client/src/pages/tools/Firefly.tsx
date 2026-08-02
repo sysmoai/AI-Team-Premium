@@ -85,7 +85,7 @@ export default function FireflyPage() {
       plans={[
         {
           label: "Adobe Firefly — Shared",
-          price: "৳599",
+          price: "৳190",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

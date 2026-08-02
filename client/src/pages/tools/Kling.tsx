@@ -56,7 +56,7 @@ export default function KlingPage() {
       plans={[
         {
           label: "Kling AI Standard — Shared",
-          price: "৳599",
+          price: "৳270",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

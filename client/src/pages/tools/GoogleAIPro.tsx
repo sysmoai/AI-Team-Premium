@@ -37,7 +37,7 @@ export default function GoogleAIPro() {
     <ToolDetail
       name="Google AI Pro"
       tagline="in Bangladesh"
-      description="Google's most complete AI bundle — Google AI Pro (formerly Google One AI Premium) includes Gemini 2.5 Pro Ultra, NotebookLM Plus, Imagen 4 image generation, Veo 2 video generation, 2TB Google Drive storage, and Google Workspace AI. All from ৳599/month via bKash/Nagad."
+      description="Google's most complete AI bundle — Google AI Pro (formerly Google One AI Premium) includes Gemini 2.5 Pro Ultra, NotebookLM Plus, Imagen 4 image generation, Veo 2 video generation, 2TB Google Drive storage, and Google Workspace AI. All from ৳3,390/month via bKash/Nagad."
       accentColor="#4285F4"
       icon={Sparkles}
       features={[
@@ -55,7 +55,7 @@ export default function GoogleAIPro() {
       plans={[
         {
           label: "Google AI Pro — Shared Seat",
-          price: "৳599",
+          price: "৳3,390",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

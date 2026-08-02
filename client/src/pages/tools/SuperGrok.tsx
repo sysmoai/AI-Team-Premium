@@ -37,7 +37,7 @@ export default function SuperGrok() {
     <ToolDetail
       name="SuperGrok"
       tagline="by xAI — in Bangladesh"
-      description="xAI's most powerful AI tier — SuperGrok brings Grok 3 with Big Brain mode, unlimited Aurora image generation, video generation, real-time X + web data, and 1M-token context. The only AI with live X/Twitter intelligence. Pay with bKash/Nagad from ৳699/month."
+      description="xAI's most powerful AI tier — SuperGrok brings Grok 3 with Big Brain mode, unlimited Aurora image generation, video generation, real-time X + web data, and 1M-token context. The only AI with live X/Twitter intelligence. Pay with bKash/Nagad from ৳1,495/month."
       accentColor="#7C3AED"
       icon={Cpu}
       features={[
@@ -55,7 +55,7 @@ export default function SuperGrok() {
       plans={[
         {
           label: "SuperGrok — Shared Seat",
-          price: "৳699",
+          price: "৳1,495",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

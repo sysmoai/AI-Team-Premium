@@ -145,7 +145,7 @@ export default function Grok() {
       plans={[
         {
           label: "SuperGrok — Shared (Recommended)",
-          price: "৳499",
+          price: "৳1,495",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",
@@ -157,7 +157,7 @@ export default function Grok() {
         },
         {
           label: "SuperGrok — Personal Seat",
-          price: "৳3,990",
+          price: "৳4,990",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Personal",

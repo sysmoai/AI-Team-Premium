@@ -38,7 +38,7 @@ export default function LeonardoPage() {
     <ToolDetail
       name="Leonardo AI"
       tagline="in Bangladesh"
-      description="Leonardo AI is the world's most versatile AI image generation platform — with 20+ fine-tuned models including Phoenix, Flux Pro, and Leonardo Diffusion. Perfect for Bangladeshi designers, freelancers, and content creators. Generate consistent game assets, product images, and social content from ৳349/month via bKash/Nagad."
+      description="Leonardo AI is the world's most versatile AI image generation platform — with 20+ fine-tuned models including Phoenix, Flux Pro, and Leonardo Diffusion. Perfect for Bangladeshi designers, freelancers, and content creators. Generate consistent game assets, product images, and social content from ৳599/month via bKash/Nagad."
       accentColor="#FF6B35"
       icon={Palette}
       features={[
@@ -56,7 +56,7 @@ export default function LeonardoPage() {
       plans={[
         {
           label: "Leonardo Artisan — Shared",
-          price: "৳349",
+          price: "৳599",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

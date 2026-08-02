@@ -83,7 +83,7 @@ export default function AdobeCCPage() {
       plans={[
         {
           label: "Adobe CC Photography — Shared",
-          price: "৳499",
+          price: "৳190",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Shared",

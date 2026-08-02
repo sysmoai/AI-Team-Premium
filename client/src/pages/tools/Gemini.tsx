@@ -148,7 +148,7 @@ export default function Gemini() {
       plans={[
         {
           label: "Gemini Advanced — Shared",
-          price: "৳899",
+          price: "৳3,390",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

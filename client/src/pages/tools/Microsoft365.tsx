@@ -147,7 +147,7 @@ export default function Microsoft365Page() {
       plans={[
         {
           label: "Microsoft 365 Copilot — Shared",
-          price: "৳899",
+          price: "৳780",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Shared",

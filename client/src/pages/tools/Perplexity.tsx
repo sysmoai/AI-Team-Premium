@@ -145,7 +145,7 @@ export default function Perplexity() {
       plans={[
         {
           label: "Perplexity Pro — Shared",
-          price: "৳499",
+          price: "৳350",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

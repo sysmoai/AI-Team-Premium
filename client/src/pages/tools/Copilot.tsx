@@ -150,7 +150,7 @@ export default function Copilot() {
       plans={[
         {
           label: "GitHub Copilot — Private",
-          price: "৳999",
+          price: "৳1,495",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Private",

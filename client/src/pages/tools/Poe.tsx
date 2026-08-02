@@ -85,7 +85,7 @@ export default function PoePage() {
       plans={[
         {
           label: "Poe AI — Shared",
-          price: "৳799",
+          price: "৳3,440",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

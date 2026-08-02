@@ -83,7 +83,7 @@ export default function IdeogramPage() {
       plans={[
         {
           label: "Ideogram AI — Shared",
-          price: "৳599",
+          price: "৳2,990",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Shared",

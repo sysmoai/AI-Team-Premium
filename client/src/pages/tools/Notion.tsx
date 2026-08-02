@@ -146,7 +146,7 @@ export default function NotionPage() {
       plans={[
         {
           label: "Notion AI — Team Seat",
-          price: "৳450",
+          price: "৳800",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Team",
@@ -158,7 +158,7 @@ export default function NotionPage() {
         },
         {
           label: "Notion AI — Personal Seat",
-          price: "৳1,800",
+          price: "৳4,800",
           period: "/mo",
           delivery: "2–4 hr delivery",
           type: "Personal",

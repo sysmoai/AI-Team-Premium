@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Layout } from "@/components/layout/Layout";
+import { usePageMeta } from "@/hooks/use-page-meta";
 import catalog from "../data/products-catalog.json";
 import { CATEGORY_LABELS, categoryLabel } from "@/lib/categories";
 import { ProductCard } from "@/components/product/ProductCard";
@@ -46,6 +47,12 @@ function categoryFromUrl(): string | null {
 }
 
 export default function AllProducts() {
+  usePageMeta({
+    title: "All AI Tools & Services — 129+ Premium Subscriptions",
+    description: "Browse our complete catalog of 129+ AI tools and services — ChatGPT, Claude, Midjourney, Notion, Grammarly, and more. All payable in BDT via bKash and Nagad.",
+    path: "/all-products",
+  });
+
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(categoryFromUrl);

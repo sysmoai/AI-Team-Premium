@@ -148,7 +148,7 @@ export default function Canva() {
       plans={[
         {
           label: "Canva Pro — Team Seat",
-          price: "৳599",
+          price: "৳510",
           period: "/mo",
           delivery: "5–15 min delivery",
           type: "Team",

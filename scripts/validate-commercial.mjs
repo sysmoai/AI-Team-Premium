@@ -22,6 +22,7 @@
 
 import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
+import { pathToFileURL } from "node:url";
 import { fileURLToPath } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -106,6 +107,81 @@ for (const p of catalog) {
 const unreviewed = catalog.filter((p) => governance[p.id]?.commercial_status === "approved_legacy_unreviewed");
 if (unreviewed.length) {
   warnings.push(`${unreviewed.length} record(s) still carry "approved_legacy_unreviewed" — they predate the eligibility protocol and their status is unknown, not approved`);
+}
+
+// ---------- 5b. quarantined prices must not survive in DERIVED artifacts ----------
+// Suppressing a price in the catalog is not enough. Route metadata, product
+// route descriptions and JSON-LD are all generated FROM the catalog, and they
+// are generated in a dependency order: gen:routes produces the descriptions that
+// gen:schema then embeds. Regenerating them out of order leaves a quarantined
+// price sitting in structured data — which Google ingests as a literal price
+// claim — while every component-level check still passes.
+//
+// Checked against the REAL rendered output rather than by grepping the
+// generated files. Two earlier regex attempts produced only false positives:
+// grepping whole files matched a code comment in route-meta.js describing a past
+// bug and a blog post's editorial copy about monthly budgets; narrowing to a
+// character window around each slug then spilled into neighbouring entries and
+// flagged other products' perfectly legitimate prices. A validator that cries
+// wolf gets ignored, which is worse than not having one.
+//
+// The serverless handler is ground truth: it is the surface a customer and a
+// crawler actually receive, with metadata and JSON-LD already injected. Asking
+// it directly removes all of the guessing.
+//
+// This matters because the artifacts are generated in a dependency order —
+// gen:routes produces the descriptions that gen:schema embeds. Running them out
+// of order leaves a quarantined price in structured data, which Google ingests
+// as a literal price claim, while every component-level check still passes.
+// That exact failure occurred here with CapCut ("From ৳399/month" in JSON-LD).
+const bySlug = new Map();
+for (const p of catalog) {
+  if (!bySlug.has(p.slug)) bySlug.set(p.slug, []);
+  bySlug.get(p.slug).push(p);
+}
+
+// Only slugs where EVERY variant is quarantined can be asserted price-free: a
+// family with a quarantined shared tier and a priced personal tier should still
+// legitimately show the sibling's price.
+const fullyQuarantined = [...bySlug.entries()].filter(([, vs]) =>
+  vs.every((v) => {
+    const g = governance[v.id];
+    return g && NO_PUBLIC_PURCHASE.has(g.commercial_status);
+  })
+);
+
+let handler = null;
+try {
+  const mod = await import(pathToFileURL(resolve(ROOT, "api/index.js")).href);
+  handler = mod.default || mod.handler;
+} catch {
+  warnings.push("api/index.js could not be loaded — skipped the rendered-output price-leak check (run `npm run build` first)");
+}
+
+if (handler) {
+  for (const [slug, variants] of fullyQuarantined) {
+    const res = {
+      statusCode: 200, headers: {}, body: "",
+      setHeader(k, v) { this.headers[k] = v; },
+      status(c) { this.statusCode = c; return this; },
+      send(b) { this.body = b; return this; },
+      end(b) { this.body = b || ""; return this; },
+    };
+    try {
+      await handler({ url: `/tools/${slug}`, method: "GET", headers: {} }, res);
+    } catch {
+      continue;
+    }
+    for (const v of variants) {
+      if (typeof v.price !== "number" || !v.price) continue;
+      const money = new RegExp(`৳\\s?${v.price.toLocaleString("en-US")}(?![\\d,])|৳\\s?${v.price}(?![\\d,])`);
+      if (money.test(res.body)) {
+        failures.push(
+          `/tools/${slug}: served HTML still quotes ৳${v.price} for quarantined record ${v.id} — regenerate in order: npm run gen:routes && npm run gen:schema`
+        );
+      }
+    }
+  }
 }
 
 // ---------- 6. brand firewall ----------

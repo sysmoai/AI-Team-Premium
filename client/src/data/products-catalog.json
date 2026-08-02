@@ -2725,8 +2725,8 @@
       "সোশ্যাল মেডিয়া মেনিটরিং"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
+    "commercialStatus": "not_for_resale",
+    "accessModel": "managed_service",
     "priceOnRequest": true,
     "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
@@ -2813,7 +2813,7 @@
     "officialUSD": 30,
     "tier": "Shared",
     "accessType": "shared",
-    "badge": "Best Seller",
+    "badge": "Inquire on WhatsApp",
     "description": "Shared Midjourney Standard. 15hr fast GPU, unlimited relax mode, image + video gen.",
     "capabilities": [
       "image-gen",
@@ -2831,8 +2831,8 @@
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
     "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
+    "commercialStatus": "not_for_resale",
+    "accessModel": "managed_service",
     "priceOnRequest": true,
     "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
@@ -2866,8 +2866,8 @@
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
     "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
+    "commercialStatus": "not_for_resale",
+    "accessModel": "managed_service",
     "priceOnRequest": true,
     "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
@@ -2935,8 +2935,8 @@
       "ইউটিউব থাম্বনেইল ও ব্র্যান্ড কনটেন্ট"
     ],
     "whyBuyBN": "Midjourney-র international card লাগে — -এ bKash/Nagad-এই হয়ে যায়। শেয়ার্ড থেকে পার্সোনাল, সব প্ল্যান।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
+    "commercialStatus": "not_for_resale",
+    "accessModel": "managed_service",
     "priceOnRequest": true,
     "priceOnRequestReason": "Availability and current price confirmed after plan verification."
   },
@@ -3096,7 +3096,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Leonardo AI Shared",
+    "whatsappMsg": "Hi, I want Leonardo AI Shared (৳599/mo)",
     "status": "Active",
     "descriptionBN": "Leonardo AI — Midjourney-এর বিকল্প একটি budget-friendly AI ছবি তৈরি টুল। Free tier সহ পান, সর্বেধিক ভাল঵িটি এবং সাধারণ কাস্টমাইজেশন সহ পান। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3107,10 +3107,8 @@
       "তীরের থিলে ডিজায়ন এবং এনিমেশন"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "capcut-pro-starter-shared",
@@ -3380,7 +3378,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want HeyGen Creator Shared",
+    "whatsappMsg": "Hi, I want HeyGen Creator Shared (৳1,499/mo)",
     "status": "Active",
     "descriptionBN": "HeyGen — AI avatar তৈরি এবং ভিডিও ট্রান্সলেশন টুল। আধুনিক থেকে AI avatar, তাদের থেকে কথা অনুভাদ চে রে সম্ভব। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3391,10 +3389,8 @@
       "সোশ্যাল মেডিয়া কন্টেন্ট তৈরি"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "elevenlabs-starter-personal",
@@ -3581,7 +3577,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": false,
-    "whatsappMsg": "Hi, I want Udio Pro Shared",
+    "whatsappMsg": "Hi, I want Udio Pro Shared (৳499/mo)",
     "status": "Active",
     "descriptionBN": "Udio — AI-powered music জেনারেশন টুল। দুসরা লিংক কি স্তম্ভ কে সূদু লেখা সহ AI গান তৈরি করুন। ভারত এবং বাংলাদেশ জন্য সম্পূর্ণ AI মুসিক সার্ভিস। bKash/Nagad দিয়ে পে করুন।",
     "useCases": [
@@ -3592,10 +3588,8 @@
       "মুভি ট্রেলার ঔর থিম্বেল সার্স"
     ],
     "whyBuyBN": "International card ছাড়াই bKash/Nagad দিয়ে পে করুন। তাত্ক্ষণিক সময়ে ডেলিভারি এবং সাপোর্ট।",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "github-copilot-pro-personal",
@@ -5967,7 +5961,7 @@
     ],
     "deliverySLA": "5-30 min",
     "featured": true,
-    "whatsappMsg": "Hi, I want Freepik Premium",
+    "whatsappMsg": "Hi, I want Freepik Premium (৳450/mo)",
     "status": "Active",
     "descriptionBN": "Freepik Premium — কোটি কোটি প্রিমিয়াম ভেক্টর, ফটো, PSD ও আইকনের অসীম অ্যাক্সেস। AI ছবি তৈরি, AI রিইমাজিন এবং AI আপস্কেলার সহ। ডিজাইনার ও মার্কেটারদের জন্য আদর্শ।",
     "useCases": [
@@ -6093,10 +6087,8 @@
     ],
     "relatedProducts": [],
     "lastVerifiedDate": "2026-07-09",
-    "commercialStatus": "pending_evidence",
-    "accessModel": "UNVERIFIED_SHARED",
-    "priceOnRequest": true,
-    "priceOnRequestReason": "Availability and current price confirmed after plan verification."
+    "commercialStatus": "approved",
+    "accessModel": "customer_owned_activation"
   },
   {
     "id": "kling-ai-starter-shared",

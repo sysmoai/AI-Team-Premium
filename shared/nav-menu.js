@@ -49,8 +49,13 @@ export const NAV_COLUMNS = [
         "label": "Image Generation",
         "href": "/category/ai-image",
         "count": 8,
-        "priceFrom": 1296,
+        "priceFrom": 450,
         "top": [
+          {
+            "name": "Freepik",
+            "href": "/tools/freepik-premium-bangladesh",
+            "priceFrom": 450
+          },
           {
             "name": "Midjourney",
             "href": "/tools/midjourney-bangladesh",
@@ -62,14 +67,9 @@ export const NAV_COLUMNS = [
             "priceFrom": null
           },
           {
-            "name": "Freepik",
-            "href": "/tools/freepik-premium-bangladesh",
-            "priceFrom": null
-          },
-          {
-            "name": "Photoroom",
-            "href": "/tools/photoroom-bangladesh",
-            "priceFrom": 1296
+            "name": "Leonardo AI",
+            "href": "/tools/leonardo-ai-bangladesh",
+            "priceFrom": 599
           }
         ]
       },
@@ -107,7 +107,7 @@ export const NAV_COLUMNS = [
         "label": "Voice & Music",
         "href": "/category/ai-voice-music",
         "count": 7,
-        "priceFrom": 748,
+        "priceFrom": 499,
         "top": [
           {
             "name": "Suno",
@@ -120,14 +120,14 @@ export const NAV_COLUMNS = [
             "priceFrom": 2840
           },
           {
+            "name": "Udio",
+            "href": "/tools/udio-bangladesh",
+            "priceFrom": 499
+          },
+          {
             "name": "ElevenLabs",
             "href": "/tools/elevenlabs-bangladesh",
             "priceFrom": 748
-          },
-          {
-            "name": "Krisp",
-            "href": "/tools/krisp-bangladesh",
-            "priceFrom": 1376
           }
         ]
       },

@@ -217,7 +217,7 @@ export const PRICING_SECTIONS = [
   {
     "title": "🎨 AI Image Generation",
     "category": "ai-image",
-    "subtitle": "15 plans · from ৳1,296/mo · bKash/Nagad",
+    "subtitle": "15 plans · from ৳450/mo · bKash/Nagad",
     "items": [
       {
         "name": "Adobe Firefly — Starter Shared",
@@ -229,19 +229,19 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "Freepik Premium — Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳450/mo",
+        "priceBdt": 450,
         "delivery": "5-30 min",
         "href": "/tools/freepik-premium-bangladesh",
-        "waText": "Hi, I want Freepik Premium — Shared — please quote a price."
+        "waText": "Hi, I want Freepik Premium — Shared (৳450/mo) — please share payment details."
       },
       {
         "name": "Leonardo AI — Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳599/mo",
+        "priceBdt": 599,
         "delivery": "5-30 min",
         "href": "/tools/leonardo-ai-bangladesh",
-        "waText": "Hi, I want Leonardo AI — Shared — please quote a price."
+        "waText": "Hi, I want Leonardo AI — Shared (৳599/mo) — please share payment details."
       },
       {
         "name": "Midjourney Standard — Shared",
@@ -412,11 +412,11 @@ export const PRICING_SECTIONS = [
       },
       {
         "name": "HeyGen Creator — Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳1,499/mo",
+        "priceBdt": 1499,
         "delivery": "5-30 min",
         "href": "/tools/heygen-bangladesh",
-        "waText": "Hi, I want HeyGen Creator — Shared — please quote a price."
+        "waText": "Hi, I want HeyGen Creator — Shared (৳1,499/mo) — please share payment details."
       },
       {
         "name": "Captions — Personal",
@@ -519,15 +519,15 @@ export const PRICING_SECTIONS = [
   {
     "title": "🎙️ Voice & Music",
     "category": "ai-voice-music",
-    "subtitle": "11 plans · from ৳748/mo · bKash/Nagad",
+    "subtitle": "11 plans · from ৳499/mo · bKash/Nagad",
     "items": [
       {
         "name": "Udio Pro — Shared",
-        "price": "Price on request",
-        "priceBdt": null,
+        "price": "৳499/mo",
+        "priceBdt": 499,
         "delivery": "5-30 min",
         "href": "/tools/udio-bangladesh",
-        "waText": "Hi, I want Udio Pro — Shared — please quote a price."
+        "waText": "Hi, I want Udio Pro — Shared (৳499/mo) — please share payment details."
       },
       {
         "name": "Murf AI — Starter Shared",

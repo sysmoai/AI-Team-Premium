@@ -1,10 +1,11 @@
 import { Layout } from "@/components/layout/Layout";
-import { BRAND } from "@/components/brand/LogoIcons";
+import { BRAND, THEME_COLORS } from "@/components/brand/LogoIcons";
+import { useDarkMode } from "@/hooks/use-dark-mode";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { BLOG_POSTS } from "@/data/blog-posts";
 import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 import { Link } from "wouter";
-import { ArrowRight, ArrowLeft } from "lucide-react";
+import { ArrowRight, ArrowLeft, Clock, BookOpen } from "lucide-react";
 
 // Blog category hub.
 //
@@ -31,15 +32,10 @@ interface BlogCategoryProps {
 }
 
 export default function BlogCategory({ slug }: BlogCategoryProps) {
+  const { isDark } = useDarkMode();
   const posts = BLOG_POSTS.filter((p) => categorySlug(p.category) === slug);
   const name = posts[0]?.category ?? slug.replace(/-/g, " ");
 
-  // No "| AI Team Premium" suffix here — usePageMeta appends it (see
-  // use-page-meta.ts: `${title} | ${BASE}`). Including it produced
-  // "… | AI Team Premium | AI Team Premium" in the real browser tab, which the
-  // build could not catch because the generated route-meta entry (which does
-  // carry the suffix, correctly, since it is injected server-side without
-  // usePageMeta) looked right on its own.
   usePageMeta({
     title: `${name} — AI Guides for Bangladesh`,
     description: `${posts.length} ${posts.length === 1 ? "guide" : "guides"} on ${name.toLowerCase()} for Bangladesh — practical, locally relevant, written for bKash/Nagad users. Read free, no signup.`,
@@ -57,7 +53,7 @@ export default function BlogCategory({ slug }: BlogCategoryProps) {
     return (
       <Layout>
         <section className="py-24 text-center">
-          <h1 className="text-2xl font-bold" style={{ color: BRAND.navy }}>Category not found</h1>
+          <h1 className="text-2xl font-bold" style={{ color: THEME_COLORS.heading(isDark) }}>Category not found</h1>
           <Link href="/blog" className="mt-4 inline-flex items-center gap-2" style={{ color: BRAND.blue, fontWeight: 600 }}>
             <ArrowLeft size={16} /> Back to all guides
           </Link>
@@ -76,27 +72,31 @@ export default function BlogCategory({ slug }: BlogCategoryProps) {
         ]}
       />
 
-      <section className="py-16 md:py-20" style={{ background: BRAND.sky }}>
+      <section className="py-16 md:py-24" style={{ background: THEME_COLORS.sectionBg(isDark) }}>
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 mb-6"
-            style={{ color: BRAND.blue, fontSize: "0.85rem", fontWeight: 600, textDecoration: "none" }}
+            className="inline-flex items-center gap-2 mb-6 hover:gap-3 transition-all"
+            style={{ color: BRAND.blue, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
             data-testid="link-back-to-blog"
           >
-            <ArrowLeft size={14} /> All guides
+            <ArrowLeft size={16} /> All guides
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: BRAND.navy }}>
-            {name}
-          </h1>
-          <p className="text-lg max-w-2xl" style={{ color: BRAND.navy, opacity: 0.65 }}>
-            {posts.length} {posts.length === 1 ? "guide" : "guides"} written for people using AI tools
-            from Bangladesh — local payment methods, real prices, no signup needed.
+          <div className="flex items-start gap-3 mb-4">
+            <BookOpen size={32} color={BRAND.blue} />
+            <div>
+              <h1 style={{ color: THEME_COLORS.heading(isDark), fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, lineHeight: 1.1 }}>
+                {name}
+              </h1>
+            </div>
+          </div>
+          <p style={{ color: THEME_COLORS.text(isDark), fontSize: "1rem", lineHeight: 1.7, maxWidth: "40rem" }}>
+            {posts.length} {posts.length === 1 ? "guide" : "guides"} written for people using AI tools from Bangladesh — local payment methods, real prices, no signup needed.
           </p>
         </div>
       </section>
 
-      <section className="py-14 md:py-16">
+      <section className="py-14 md:py-20">
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {posts.map((post) => (
@@ -107,28 +107,36 @@ export default function BlogCategory({ slug }: BlogCategoryProps) {
                 data-testid={`card-category-post-${post.slug}`}
               >
                 <article
-                  className="rounded-2xl p-6 h-full flex flex-col hover-elevate transition-all cursor-pointer"
-                  style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}
+                  className="rounded-2xl p-6 h-full flex flex-col hover-elevate card-lift transition-all cursor-pointer"
+                  style={{
+                    background: THEME_COLORS.cardBg(isDark),
+                    border: `1px solid ${THEME_COLORS.border(isDark)}`
+                  }}
                 >
-                  <div className="text-2xl mb-3">{post.heroEmoji}</div>
+                  <div className="text-3xl mb-3">{post.heroEmoji}</div>
                   <h2
-                    className="mb-2"
-                    style={{ color: BRAND.navy, fontSize: "1rem", fontWeight: 700, lineHeight: 1.4 }}
+                    className="mb-3"
+                    style={{ color: THEME_COLORS.heading(isDark), fontSize: "1.1rem", fontWeight: 700, lineHeight: 1.4 }}
                   >
                     {post.title}
                   </h2>
                   <p
-                    className="flex-1"
-                    style={{ color: BRAND.navy, opacity: 0.6, fontSize: "0.85rem", lineHeight: 1.6 }}
+                    className="flex-1 mb-4"
+                    style={{ color: THEME_COLORS.text(isDark), fontSize: "0.9rem", lineHeight: 1.6, opacity: 0.8 }}
                   >
                     {post.excerpt}
                   </p>
-                  <span
-                    className="mt-4 inline-flex items-center gap-1"
-                    style={{ color: BRAND.blue, fontSize: "0.8rem", fontWeight: 600 }}
-                  >
-                    Read <ArrowRight size={12} />
-                  </span>
+                  <div className="flex items-center justify-between pt-3" style={{ borderTop: `1px solid ${THEME_COLORS.border(isDark)}` }}>
+                    <span className="flex items-center gap-1" style={{ color: THEME_COLORS.textMuted(isDark), fontSize: "0.8rem" }}>
+                      <Clock size={12} /> {post.readMinutes} min
+                    </span>
+                    <span
+                      className="inline-flex items-center gap-1"
+                      style={{ color: BRAND.blue, fontSize: "0.85rem", fontWeight: 600 }}
+                    >
+                      Read <ArrowRight size={14} />
+                    </span>
+                  </div>
                 </article>
               </Link>
             ))}
@@ -136,29 +144,31 @@ export default function BlogCategory({ slug }: BlogCategoryProps) {
         </div>
       </section>
 
-      <section className="py-14" style={{ background: BRAND.sky }}>
+      <section className="py-14" style={{ background: THEME_COLORS.sectionBg(isDark) }}>
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
-          <h2 className="mb-6" style={{ color: BRAND.navy, fontSize: "1.15rem", fontWeight: 700 }}>
-            Other topics
+          <h2 className="mb-6" style={{ color: THEME_COLORS.heading(isDark), fontSize: "1.2rem", fontWeight: 700 }}>
+            📚 Explore Other Topics
           </h2>
           <div className="flex flex-wrap gap-3">
             {others.map((c) => (
               <Link
                 key={c.slug}
                 href={`/blog/category/${c.slug}`}
-                className="inline-flex items-center gap-2 rounded-full px-4 py-2 transition-all hover-elevate"
+                className="inline-flex items-center gap-2 rounded-lg px-4 py-2 transition-all hover-elevate"
                 style={{
-                  background: BRAND.white,
-                  border: "1px solid rgba(37,99,235,0.12)",
-                  color: BRAND.navy,
-                  fontSize: "0.85rem",
+                  background: THEME_COLORS.cardBg(isDark),
+                  border: `1px solid ${THEME_COLORS.border(isDark)}`,
+                  color: THEME_COLORS.heading(isDark),
+                  fontSize: "0.9rem",
                   fontWeight: 600,
                   textDecoration: "none",
                 }}
                 data-testid={`link-other-category-${c.slug}`}
               >
                 {c.name}
-                <span style={{ color: BRAND.blue, opacity: 0.7 }}>{c.count}</span>
+                <span style={{ background: BRAND.blue, color: BRAND.white, borderRadius: "0.25rem", padding: "0.2rem 0.5rem", fontSize: "0.75rem", fontWeight: 700 }}>
+                  {c.count}
+                </span>
               </Link>
             ))}
           </div>

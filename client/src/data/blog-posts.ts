@@ -3,6 +3,7 @@ export interface BlogPost {
   title: string;
   excerpt: string;
   category: string;
+  subcategory?: string;
   publishedDate: string;
   readMinutes: number;
   heroEmoji: string;

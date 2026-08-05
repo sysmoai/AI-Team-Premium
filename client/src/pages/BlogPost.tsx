@@ -1,9 +1,10 @@
 import { Layout } from "@/components/layout/Layout";
-import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
+import { BRAND, WhatsAppIcon, THEME_COLORS } from "@/components/brand/LogoIcons";
+import { useDarkMode } from "@/hooks/use-dark-mode";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { BreadcrumbSchema, FAQSchema, JsonLd } from "@/components/seo/JsonLd";
 import { Link, useLocation, useParams } from "wouter";
-import { Clock, Calendar, MessageCircle, ArrowRight } from "lucide-react";
+import { Clock, Calendar, MessageCircle, ArrowRight, Bookmark } from "lucide-react";
 import { config } from "@/lib/config";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { BLOG_POSTS, getBlogPost } from "@/data/blog-posts";
@@ -12,6 +13,7 @@ import { categorySlug } from "@/pages/BlogCategory";
 const SITE_URL = "https://www.aiteampremium.com";
 
 export default function BlogPost() {
+  const { isDark } = useDarkMode();
   const { slug } = useParams<{ slug: string }>();
   const post = getBlogPost(slug);
   const [, setLocation] = useLocation();
@@ -83,51 +85,73 @@ export default function BlogPost() {
       <JsonLd data={articleSchema} />
       <FAQSchema items={post.faqs} />
 
-      <section className="py-14" style={{ background: BRAND.sky }}>
+      <section className="py-14 md:py-20" style={{ background: THEME_COLORS.sectionBg(isDark) }}>
         <div className="mx-auto max-w-3xl px-6 lg:px-10">
-          {/* Was inert text. Now a link to the category hub, so a reader who
-              finishes this post has somewhere topical to go, and the category
-              page accumulates inbound links from every post it contains. */}
           <Link
             href={`/blog/category/${categorySlug(post.category)}`}
-            className="inline-flex rounded-full px-3 py-1 mb-4 hover-elevate transition-all"
-            style={{ background: BRAND.white, color: BRAND.blue, fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.04em", textDecoration: "none" }}
+            className="inline-flex rounded-lg px-3 py-1.5 mb-5 hover-elevate transition-all"
+            style={{
+              background: THEME_COLORS.cardBg(isDark),
+              color: BRAND.blue,
+              fontSize: "0.75rem",
+              fontWeight: 700,
+              letterSpacing: "0.03em",
+              textDecoration: "none",
+              border: `1px solid ${THEME_COLORS.border(isDark)}`
+            }}
             data-testid="link-post-category"
           >
-            {post.category}
+            ← {post.category}
           </Link>
-          <h1 style={{ color: BRAND.navy, fontSize: "clamp(1.6rem, 4vw, 2.4rem)", fontWeight: 700, lineHeight: 1.25 }}>
+          <h1 style={{ color: THEME_COLORS.heading(isDark), fontSize: "clamp(1.8rem, 5vw, 2.8rem)", fontWeight: 800, lineHeight: 1.2, marginBottom: "1.5rem" }}>
             {post.heroEmoji} {post.title}
           </h1>
-          <div className="flex items-center gap-4 mt-5" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.82rem" }}>
-            <span className="flex items-center gap-1.5"><Calendar size={13} /> {new Date(post.publishedDate).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
-            <span className="flex items-center gap-1.5"><Clock size={13} /> {post.readMinutes} min read</span>
+          <div className="flex flex-wrap items-center gap-4" style={{ color: THEME_COLORS.textMuted(isDark), fontSize: "0.9rem" }}>
+            <span className="flex items-center gap-1.5">
+              <Calendar size={16} />
+              {new Date(post.publishedDate).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Clock size={16} />
+              {post.readMinutes} min read
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Bookmark size={16} />
+              {post.subcategory || "General"}
+            </span>
           </div>
         </div>
       </section>
 
-      <section className="py-14">
+      <section className="py-14 md:py-20">
         <div className="mx-auto max-w-3xl px-6 lg:px-10" lang={post.lang === "bn" ? "bn" : undefined}>
-          <p className="text-slate-900/75 dark:text-slate-300" style={{ fontSize: "1.02rem", lineHeight: 1.8, fontWeight: 500 }}>
+          <p style={{ color: THEME_COLORS.text(isDark), fontSize: "1.05rem", lineHeight: 1.9, fontWeight: 500, marginBottom: "2rem" }}>
             {post.excerpt}
           </p>
 
-          <div className="mt-10 space-y-10">
+          <div className="mt-10 space-y-12">
             {post.sections.map((section, i) => (
               <div key={i}>
-                <h2 className="mb-4 text-slate-900 dark:text-white" style={{ fontSize: "1.25rem", fontWeight: 700 }}>{section.heading}</h2>
-                <div className="space-y-3">
+                <h2 style={{ color: THEME_COLORS.heading(isDark), fontSize: "1.3rem", fontWeight: 700, marginBottom: "1rem" }}>
+                  {section.heading}
+                </h2>
+                <div className="space-y-4">
                   {section.body.map((para, j) => (
-                    <p key={j} className="text-slate-900/70 dark:text-slate-300" style={{ fontSize: "0.95rem", lineHeight: 1.8 }}>{para}</p>
+                    <p key={j} style={{ color: THEME_COLORS.text(isDark), fontSize: "0.95rem", lineHeight: 1.85 }}>
+                      {para}
+                    </p>
                   ))}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 rounded-2xl p-7" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.08)" }}>
-            <h3 style={{ color: BRAND.navy, fontSize: "1.1rem", fontWeight: 700 }}>Ready to get started?</h3>
-            <p className="mt-2 mb-5" style={{ color: BRAND.navy, opacity: 0.6, fontSize: "0.88rem", lineHeight: 1.6 }}>
+          <div className="mt-12 rounded-2xl p-7 md:p-8" style={{ background: THEME_COLORS.sectionBg(isDark), border: `1px solid ${THEME_COLORS.border(isDark)}` }}>
+            <div className="flex items-start gap-3 mb-3">
+              <Bookmark size={22} color={BRAND.blue} />
+              <h3 style={{ color: THEME_COLORS.heading(isDark), fontSize: "1.15rem", fontWeight: 700 }}>Ready to get started?</h3>
+            </div>
+            <p style={{ color: THEME_COLORS.text(isDark), fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
               Message us on WhatsApp — pay via bKash/Nagad, get access in minutes.
             </p>
             <div className="flex flex-wrap gap-3">

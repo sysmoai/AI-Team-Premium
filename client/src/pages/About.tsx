@@ -74,7 +74,7 @@ export default function About() {
       <FAQSchema items={ABOUT_FAQS} />
       <section className="py-20" style={{ background: THEME_COLORS.sectionBg(isDark) }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
-          <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>About Us</p>
+          <p className="mb-3 uppercase" style={{ color: THEME_COLORS.accent(isDark), fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>About Us</p>
           <h1 style={{ color: THEME_COLORS.heading(isDark), fontSize: "clamp(1.6rem, 4vw, 2.5rem)", fontWeight: 700, lineHeight: 1.15 }}>
             About AI Team Premium
           </h1>
@@ -115,7 +115,7 @@ export default function About() {
                   { n: "24 h", l: "Replacement SLA" },
                 ].map((s) => (
                   <div key={s.l} className="rounded-2xl p-5 text-center" style={{ background: THEME_COLORS.cardBg(isDark), border: `1px solid ${THEME_COLORS.border(isDark)}` }}>
-                    <p style={{ color: BRAND.blue, fontSize: "1.3rem", fontWeight: 700, opacity: 1 }}>{s.n}</p>
+                    <p style={{ color: THEME_COLORS.accent(isDark), fontSize: "1.3rem", fontWeight: 700, opacity: 1 }}>{s.n}</p>
                     <p className="mt-1" style={{ color: THEME_COLORS.textMuted(isDark), fontSize: "0.78rem" }}>{s.l}</p>
                   </div>
                 ))}
@@ -141,7 +141,7 @@ export default function About() {
             {VALUES.map((v) => (
               <div key={v.title} className="rounded-2xl p-8" style={{ background: THEME_COLORS.cardBg(isDark), border: `1px solid ${THEME_COLORS.border(isDark)}` }}>
                 <div className="inline-flex items-center justify-center rounded-xl mb-5" style={{ width: 48, height: 48, background: THEME_COLORS.sectionBg(isDark) }}>
-                  <v.icon size={22} color={BRAND.blue} strokeWidth={2} />
+                  <v.icon size={22} color={THEME_COLORS.accent(isDark)} strokeWidth={2} />
                 </div>
                 <h3 className="mb-3" style={{ color: THEME_COLORS.heading(isDark), fontSize: "1.05rem", fontWeight: 600 }}>{v.title}</h3>
                 <p style={{ color: THEME_COLORS.textMuted(isDark), fontSize: "0.85rem", lineHeight: 1.65 }}>{v.desc}</p>

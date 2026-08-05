@@ -113,11 +113,11 @@ export default function AllProducts() {
             <h1 className="text-3xl md:text-4xl font-bold mb-3">
               Complete AI Catalog — {products.length} Premium Tools
             </h1>
-            <p className="text-blue-100 text-base md:text-lg">
+            <p className="text-blue-50 text-base md:text-lg">
               {products.length} subscription plans across {brands.length} brands and {categories.length} categories.
               Pay with bKash or Nagad. Order on WhatsApp.
             </p>
-            <p className="text-blue-100/90 text-sm md:text-base mt-2">
+            <p className="text-blue-50 text-sm md:text-base mt-2">
               বাংলাদেশ থেকে bKash/Nagad-এ পেমেন্ট। ইন্টারন্যাশনাল কার্ড লাগবে না।
             </p>
           </div>

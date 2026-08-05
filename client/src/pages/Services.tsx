@@ -75,7 +75,7 @@ export default function Services() {
       <section className="py-8" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="flex items-center gap-2 justify-center mb-4">
-            <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(34,197,94,0.1)", color: "#16a34a", fontSize: "0.78rem" }}>
+            <span className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(34,197,94,0.1)", color: "#15803D", fontSize: "0.78rem" }}>
               <Clock size={12} /> সকাল ৯টা – রাত ১১টা · ৭ দিন · 9 AM – 11 PM BST · 7 days a week
             </span>
           </div>

@@ -139,7 +139,7 @@ export default function AppDevelopment() {
               <div key={p.step} className="text-center">
                 <div className="w-12 h-12 rounded-2xl mx-auto mb-4 flex items-center justify-center font-bold text-lg" style={{ background: BRAND.blue, color: "#fff" }}>{p.step}</div>
                 <h3 className="font-bold mb-1 text-slate-900 dark:text-white">{p.title}</h3>
-                <p className="text-xs text-slate-900/55 dark:text-slate-400">{p.desc}</p>
+                <p className="text-xs text-slate-900/70 dark:text-slate-400">{p.desc}</p>
               </div>
             ))}
           </div>

@@ -92,13 +92,13 @@ export default function Contact() {
             Need AI subscriptions, a website, or a brand makeover? Reach out — fastest response on WhatsApp.
           </p>
           <div className="mt-5 flex items-center gap-2 justify-center flex-wrap">
-            <span data-testid="badge-operating-hours" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(34,197,94,0.1)", color: "#16a34a", fontSize: "0.78rem" }}>
+            <span data-testid="badge-operating-hours" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(34,197,94,0.1)", color: "#15803D", fontSize: "0.78rem" }}>
               <Clock size={12} /> সকাল ৯টা – রাত ১১টা · ৭ দিন · 9 AM – 11 PM BST · 7 days
             </span>
             <span data-testid="badge-payment-methods" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(37,99,235,0.08)", color: BRAND.blue, fontSize: "0.78rem" }}>
               <CreditCard size={12} /> Pay via bKash, Nagad, or Bank Transfer
             </span>
-            <span data-testid="badge-delivery-time" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(245,158,11,0.08)", color: "#d97706", fontSize: "0.78rem" }}>
+            <span data-testid="badge-delivery-time" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(245,158,11,0.08)", color: "#B45309", fontSize: "0.78rem" }}>
               <Zap size={12} /> Delivery: 5–15 minutes
             </span>
           </div>
@@ -149,17 +149,17 @@ export default function Contact() {
                   <div>
                     <p className="text-slate-900 dark:text-white" style={{ fontSize: "0.88rem", fontWeight: 600 }}>{ch.label}</p>
                     {ch.url ? (
-                      <a href={ch.url} data-testid={`link-contact-${ch.label.toLowerCase().replace(/[\s/]+/g, '-')}`} className="text-slate-900/60 dark:text-slate-300" style={{ fontSize: "0.85rem", textDecoration: "none" }}>{ch.value}</a>
+                      <a href={ch.url} data-testid={`link-contact-${ch.label.toLowerCase().replace(/[\s/]+/g, '-')}`} className="text-slate-900/70 dark:text-slate-300" style={{ fontSize: "0.85rem", textDecoration: "none" }}>{ch.value}</a>
                     ) : (
-                      <p className="text-slate-900/60 dark:text-slate-300" style={{ fontSize: "0.85rem" }}>{ch.value}</p>
+                      <p className="text-slate-900/70 dark:text-slate-300" style={{ fontSize: "0.85rem" }}>{ch.value}</p>
                     )}
-                    {ch.sub && <p className="text-slate-900/40 dark:text-slate-400" style={{ fontSize: "0.75rem", marginTop: 2 }}>{ch.sub}</p>}
+                    {ch.sub && <p className="text-slate-900/70 dark:text-slate-400" style={{ fontSize: "0.75rem", marginTop: 2 }}>{ch.sub}</p>}
                   </div>
                 </div>
               ))}
 
               <div>
-                <p className="mb-3 text-slate-900/50 dark:text-slate-300" style={{ fontSize: "0.78rem", fontWeight: 600 }}>Follow Us</p>
+                <p className="mb-3 text-slate-900/70 dark:text-slate-300" style={{ fontSize: "0.78rem", fontWeight: 600 }}>Follow Us</p>
                 <div className="flex items-center gap-2">
                   {SOCIAL.map((s) => (
                     <a
@@ -224,7 +224,11 @@ export default function Contact() {
                           <FormLabel style={{ color: BRAND.navy, fontSize: "0.82rem", fontWeight: 500 }}>What do you need?</FormLabel>
                           <Select onValueChange={field.onChange} defaultValue={field.value ?? ""}>
                             <FormControl>
-                              <SelectTrigger data-testid="select-service" className="h-11 rounded-xl" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.08)" }}>
+                              {/* This card is hardcoded-light in both themes, but the
+                                  placeholder alone inherits --muted-foreground, which
+                                  flips to a light grey in dark mode — 2.36:1 on the sky
+                                  fill. Pin it so the token can't fight its surface. */}
+                              <SelectTrigger data-testid="select-service" className="h-11 rounded-xl data-[placeholder]:text-slate-600" style={{ background: BRAND.sky, border: "1px solid rgba(37,99,235,0.08)" }}>
                                 <SelectValue placeholder="Select a service (optional)" />
                               </SelectTrigger>
                             </FormControl>

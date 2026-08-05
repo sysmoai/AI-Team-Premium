@@ -43,7 +43,7 @@ export function Footer() {
                   Derived, and in Bengali numerals to match the sentence. */}
               বাংলাদেশে AI Tools — ৳{toBengaliDigits(CATALOG_TOTALS.priceFrom)} থেকে শুরু
             </h3>
-            <p className="mt-1.5" style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.85rem" }}>
+            <p className="mt-1.5" style={{ color: "rgba(255,255,255,0.62)", fontSize: "0.85rem" }}>
               Get in touch — fastest response on WhatsApp.
             </p>
           </div>
@@ -89,17 +89,17 @@ export function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-12 gap-8 md:gap-6">
           <div className="col-span-2 md:col-span-4">
             <LogoHorizontal size="md" iconColor={BRAND.white} textColor={BRAND.white} />
-            <p className="mt-5 max-w-xs" style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.84rem", lineHeight: 1.7 }}>
+            <p className="mt-5 max-w-xs" style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.84rem", lineHeight: 1.7 }}>
               Affordable premium AI subscriptions + dedicated Bangla support for Bangladesh users — the price shown is the price you pay, with fast delivery.
             </p>
             <div className="mt-6 space-y-3">
               <a href="tel:+8801533262758" className="flex items-center gap-2.5" style={{ textDecoration: "none" }} data-testid="link-footer-phone">
-                <Phone size={14} color="rgba(255,255,255,0.3)" strokeWidth={2} />
-                <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.82rem" }}>+880 1533-262758</span>
+                <Phone size={14} color="rgba(255,255,255,0.55)" strokeWidth={2} />
+                <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.82rem" }}>+880 1533-262758</span>
               </a>
               <div className="flex items-center gap-2.5">
-                <MapPin size={14} color="rgba(255,255,255,0.3)" strokeWidth={2} />
-                <span style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.82rem" }}>Dhaka, Bangladesh</span>
+                <MapPin size={14} color="rgba(255,255,255,0.55)" strokeWidth={2} />
+                <span style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.82rem" }}>Dhaka, Bangladesh</span>
               </div>
             </div>
             <div className="mt-6 flex items-center gap-2">
@@ -116,7 +116,7 @@ export function Footer() {
                     width: 36,
                     height: 36,
                     background: "rgba(255,255,255,0.06)",
-                    color: "rgba(255,255,255,0.45)",
+                    color: "rgba(255,255,255,0.62)",
                   }}
                 >
                   {s.icon}
@@ -195,11 +195,11 @@ export function Footer() {
 
       <div className="border-t" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-6 flex flex-col items-center justify-between gap-3">
-          <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.68rem", textAlign: "center", maxWidth: "640px", lineHeight: 1.5 }}>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.68rem", textAlign: "center", maxWidth: "640px", lineHeight: 1.5 }}>
             AI Team Premium is not affiliated with OpenAI, Anthropic, Google, Canva, Grammarly, Midjourney, Perplexity, xAI, Microsoft, or other third-party tool providers.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 w-full">
-            <p style={{ color: "rgba(255,255,255,0.25)", fontSize: "0.75rem" }}>
+            <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "0.75rem" }}>
               &copy; {new Date().getFullYear()} AI Team Premium. All rights reserved.
             </p>
           <button
@@ -208,7 +208,7 @@ export function Footer() {
             style={{
               background: "none",
               border: "none",
-              color: "rgba(255,255,255,0.3)",
+              color: "rgba(255,255,255,0.6)",
               fontSize: "0.72rem",
               cursor: "pointer",
               padding: 0,
@@ -245,12 +245,12 @@ function FooterLinks({ links }: { links: { label: string; to: string; external?:
               target="_blank"
               rel="noopener noreferrer"
               data-testid={`link-footer-${l.label.toLowerCase().replace(/\s+/g, '-')}`}
-              style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.82rem", textDecoration: "none" }}
+              style={{ color: "rgba(255,255,255,0.62)", fontSize: "0.82rem", textDecoration: "none" }}
             >
               {l.label}
             </a>
           ) : (
-            <Link href={l.to} data-testid={`link-footer-${l.label.toLowerCase().replace(/\s+/g, '-')}`} style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.82rem", textDecoration: "none" }}>
+            <Link href={l.to} data-testid={`link-footer-${l.label.toLowerCase().replace(/\s+/g, '-')}`} style={{ color: "rgba(255,255,255,0.62)", fontSize: "0.82rem", textDecoration: "none" }}>
               {l.label}
             </Link>
           )}

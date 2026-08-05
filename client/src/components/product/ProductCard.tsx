@@ -67,7 +67,7 @@ export function ProductCard({ product }: { product: ProductCardItem }) {
           {product.descriptionBN && (
             <p
               {...langOf(product.descriptionBN)}
-              className="text-sm text-gray-500 dark:text-gray-500 mt-2 line-clamp-3"
+              className="text-sm text-gray-500 dark:text-gray-400 mt-2 line-clamp-3"
             >
               {product.descriptionBN}
             </p>
@@ -130,7 +130,7 @@ export function ProductCard({ product }: { product: ProductCardItem }) {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Order ${product.name} on WhatsApp`}
-          className="mt-auto w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2.5 px-4 rounded-lg transition flex items-center justify-center gap-2"
+          className="mt-auto w-full bg-green-700 hover:bg-green-800 text-white font-bold py-2.5 px-4 rounded-lg transition flex items-center justify-center gap-2"
         >
           Order on WhatsApp
         </a>

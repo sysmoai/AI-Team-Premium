@@ -29,7 +29,7 @@ export default function BlogPost() {
       <Layout>
         <div className="py-24 text-center">
           <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Post not found</h1>
-          <button onClick={() => setLocation("/blog")} className="mt-6 inline-flex items-center gap-1 font-semibold" style={{ color: BRAND.blue }}>
+          <button onClick={() => setLocation("/blog")} className="mt-6 inline-flex items-center gap-1 font-semibold" style={{ color: THEME_COLORS.accent(isDark) }}>
             Back to Blog <ArrowRight size={16} />
           </button>
         </div>
@@ -92,7 +92,7 @@ export default function BlogPost() {
             className="inline-flex rounded-lg px-3 py-1.5 mb-5 hover-elevate transition-all"
             style={{
               background: THEME_COLORS.cardBg(isDark),
-              color: BRAND.blue,
+              color: THEME_COLORS.accent(isDark),
               fontSize: "0.75rem",
               fontWeight: 700,
               letterSpacing: "0.03em",
@@ -148,7 +148,7 @@ export default function BlogPost() {
 
           <div className="mt-12 rounded-2xl p-7 md:p-8" style={{ background: THEME_COLORS.sectionBg(isDark), border: `1px solid ${THEME_COLORS.border(isDark)}` }}>
             <div className="flex items-start gap-3 mb-3">
-              <Bookmark size={22} color={BRAND.blue} />
+              <Bookmark size={22} color={THEME_COLORS.accent(isDark)} />
               <h3 style={{ color: THEME_COLORS.heading(isDark), fontSize: "1.15rem", fontWeight: 700 }}>Ready to get started?</h3>
             </div>
             <p style={{ color: THEME_COLORS.text(isDark), fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
@@ -204,7 +204,7 @@ export default function BlogPost() {
                   <div className="rounded-2xl p-6 h-full hover-elevate transition-all cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
                     <div className="text-2xl mb-3">{p.heroEmoji}</div>
                     <h3 style={{ color: BRAND.navy, fontSize: "0.95rem", fontWeight: 700, lineHeight: 1.4 }}>{p.title}</h3>
-                    <span className="mt-3 inline-flex items-center gap-1" style={{ color: BRAND.blue, fontSize: "0.78rem", fontWeight: 600 }}>
+                    <span className="mt-3 inline-flex items-center gap-1" style={{ color: THEME_COLORS.accent(isDark), fontSize: "0.78rem", fontWeight: 600 }}>
                       Read <ArrowRight size={12} />
                     </span>
                   </div>

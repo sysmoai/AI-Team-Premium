@@ -54,7 +54,7 @@ export default function BlogCategory({ slug }: BlogCategoryProps) {
       <Layout>
         <section className="py-24 text-center">
           <h1 className="text-2xl font-bold" style={{ color: THEME_COLORS.heading(isDark) }}>Category not found</h1>
-          <Link href="/blog" className="mt-4 inline-flex items-center gap-2" style={{ color: BRAND.blue, fontWeight: 600 }}>
+          <Link href="/blog" className="mt-4 inline-flex items-center gap-2" style={{ color: THEME_COLORS.accent(isDark), fontWeight: 600 }}>
             <ArrowLeft size={16} /> Back to all guides
           </Link>
         </section>
@@ -77,13 +77,13 @@ export default function BlogCategory({ slug }: BlogCategoryProps) {
           <Link
             href="/blog"
             className="inline-flex items-center gap-2 mb-6 hover:gap-3 transition-all"
-            style={{ color: BRAND.blue, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
+            style={{ color: THEME_COLORS.accent(isDark), fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
             data-testid="link-back-to-blog"
           >
             <ArrowLeft size={16} /> All guides
           </Link>
           <div className="flex items-start gap-3 mb-4">
-            <BookOpen size={32} color={BRAND.blue} />
+            <BookOpen size={32} color={THEME_COLORS.accent(isDark)} />
             <div>
               <h1 style={{ color: THEME_COLORS.heading(isDark), fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, lineHeight: 1.1 }}>
                 {name}
@@ -132,7 +132,7 @@ export default function BlogCategory({ slug }: BlogCategoryProps) {
                     </span>
                     <span
                       className="inline-flex items-center gap-1"
-                      style={{ color: BRAND.blue, fontSize: "0.85rem", fontWeight: 600 }}
+                      style={{ color: THEME_COLORS.accent(isDark), fontSize: "0.85rem", fontWeight: 600 }}
                     >
                       Read <ArrowRight size={14} />
                     </span>

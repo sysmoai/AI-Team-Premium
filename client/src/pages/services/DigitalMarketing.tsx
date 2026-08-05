@@ -175,7 +175,7 @@ export default function DigitalMarketing() {
               </div>
             ))}
           </div>
-          <p className="text-center mt-6 text-sm text-slate-900/50 dark:text-slate-400">* Management fee only. Ad spend billed separately directly to Facebook/Google.</p>
+          <p className="text-center mt-6 text-sm text-slate-900/70 dark:text-slate-400">* Management fee only. Ad spend billed separately directly to Facebook/Google.</p>
         </div>
       </section>
 

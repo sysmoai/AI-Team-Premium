@@ -13,12 +13,24 @@ export const BRAND = {
 
 /** Theme-aware color helpers for dark/light mode */
 export const THEME_COLORS = {
+  /**
+   * Accent for text and icons. BRAND.blue is tuned for white backgrounds and
+   * measures 2.83:1 on the dark card fill — below the 4.5:1 AA floor — so link
+   * text, stat figures and category labels were all failing in dark mode.
+   * #60A5FA measures 5.75:1 on cardBg and 7.02:1 on sectionBg, and is the same
+   * blue `.dark .gradient-text` already uses, so the palette stays consistent.
+   *
+   * Use BRAND.blue directly only for large solid fills (buttons, badges) where
+   * the accompanying text supplies its own contrast.
+   */
+  accent: (isDark?: boolean) => isDark ? "#60A5FA" : "#2563EB",
   /** Heading color - dark navy in light mode, bright white in dark mode */
   heading: (isDark?: boolean) => isDark ? "#F0F9FF" : "#0F172A",
   /** Body text color */
   text: (isDark?: boolean) => isDark ? "#E0E7FF" : "#1E293B",
-  /** Muted/secondary text */
-  textMuted: (isDark?: boolean) => isDark ? "#94A3B8" : "#64748B",
+  /** Muted/secondary text. Light value is slate-600, not slate-500: #64748B
+   *  measured 4.37:1 on the #EFF6FF section fill, just under the 4.5 AA floor. */
+  textMuted: (isDark?: boolean) => isDark ? "#94A3B8" : "#475569",
   /** Section background - light blue in light mode, dark gray in dark mode */
   sectionBg: (isDark?: boolean) => isDark ? "#0F172A" : "#EFF6FF",
   /** Card background */

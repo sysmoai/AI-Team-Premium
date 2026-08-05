@@ -108,14 +108,14 @@ export default function AIReadinessAssessment() {
                 <div className="rounded-xl p-5" style={{ background: "rgba(34,197,94,0.06)", border: "1px solid rgba(34,197,94,0.2)" }}>
                   <div className="flex items-center gap-2 mb-2">
                     <Check size={16} color="#16A34A" />
-                    <span className="text-sm font-bold" style={{ color: "#16A34A" }}>YES — You're on track</span>
+                    <span className="text-sm font-bold text-green-700 dark:text-green-500">YES — You're on track</span>
                   </div>
                   <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">{cp.yes}</p>
                 </div>
                 <div className="rounded-xl p-5" style={{ background: "rgba(239,68,68,0.04)", border: "1px solid rgba(239,68,68,0.15)" }}>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-lg">⚠️</span>
-                    <span className="text-sm font-bold" style={{ color: "#DC2626" }}>NO — Opportunity here</span>
+                    <span className="text-sm font-bold text-red-600 dark:text-red-400">NO — Opportunity here</span>
                   </div>
                   <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">{cp.no}</p>
                 </div>

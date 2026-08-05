@@ -100,7 +100,7 @@ const COMPARISONS = [
 ];
 
 const TRAINING_TRACKS = [
-  { icon: GraduationCap, title: "শিক্ষার্থীদের জন্য", price: "৳১,৯৯৯ থেকে", points: ["অ্যাসাইনমেন্ট ও রিসার্চে AI", "IELTS ও ইংরেজি লেখা", "থিসিস ও প্রেজেন্টেশন"], color: "#16A34A" },
+  { icon: GraduationCap, title: "শিক্ষার্থীদের জন্য", price: "৳১,৯৯৯ থেকে", points: ["অ্যাসাইনমেন্ট ও রিসার্চে AI", "IELTS ও ইংরেজি লেখা", "থিসিস ও প্রেজেন্টেশন"], color: "#15803D" },
   { icon: Briefcase, title: "ফ্রিল্যান্সারদের জন্য", price: "৳৪,৯৯৯ থেকে", points: ["প্রপোজাল ও ক্লায়েন্ট কমিউনিকেশন", "দ্রুত ডেলিভারি ওয়ার্কফ্লো", "কাস্টম prompt pack"], color: "#2563EB" },
   { icon: Building2, title: "ব্যবসার জন্য", price: "৳১২,৯৯৯ থেকে", points: ["পুরো টিমের AI ট্রেনিং", "কাস্টমার সাপোর্ট অটোমেশন", "রিপোর্ট ও কনটেন্ট সিস্টেম"], color: "#7C3AED" },
 ];
@@ -243,7 +243,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: GraduationCap, title: "Students", tagline: `৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}/mo থেকে শুরু`, tools: "ChatGPT · Grammarly · Perplexity", desc: "Assignment writing, research summaries, IELTS prep, thesis — let AI do the heavy lifting while you focus on understanding.", color: "#16A34A", link: "/tools/chatgpt" },
+              { icon: GraduationCap, title: "Students", tagline: `৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}/mo থেকে শুরু`, tools: "ChatGPT · Grammarly · Perplexity", desc: "Assignment writing, research summaries, IELTS prep, thesis — let AI do the heavy lifting while you focus on understanding.", color: "#15803D", link: "/tools/chatgpt" },
               { icon: Briefcase, title: "Freelancers", tagline: "Fiverr & Upwork-এ এগিয়ে থাকুন", tools: "Claude Pro · Canva Pro · Midjourney", desc: "Faster proposals, better content, stunning visuals — outperform competitors on Fiverr and Upwork with AI-powered work.", color: BRAND.blue, link: "/ai-subscriptions" },
               { icon: Building2, title: "Businesses", tagline: "Team-wide AI দক্ষতা", tools: "ChatGPT Team · Copilot · Gemini", desc: "Equip your entire team with AI tools. Boost productivity, automate reports, and get live Bangla AI training for your staff.", color: "#7C3AED", link: "/chatgpt-plans" },
               { icon: Video, title: "Content Creators", tagline: "ভাইরাল কন্টেন্ট বানান", tools: "Midjourney · ElevenLabs · Canva", desc: "AI-generated images, voice-overs in Bangla, thumbnail design — create professional content without a studio or equipment.", color: "#F59E0B", link: "/tools/midjourney" },
@@ -368,7 +368,7 @@ export default function Home() {
           <div className="text-center mb-14" data-reveal>
             <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Live AI Training</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>শুধু Subscription নয় — ব্যবহারটাও শিখুন</h2>
-            <p className="mt-4 max-w-xl mx-auto text-slate-900/55 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.7 }}>
+            <p className="mt-4 max-w-xl mx-auto text-slate-900/70 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.7 }}>
               লাইভ Google Meet সেশনে বাংলা ভাষায় হাতে-কলমে শেখানো হয়। প্রতিটি সেশনের পর আপনার কাজ অনুযায়ী custom prompt pack ও workflow ডকুমেন্ট পাবেন।
             </p>
           </div>
@@ -423,7 +423,7 @@ export default function Home() {
           <div className="text-center mb-14" data-reveal>
             <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>How It Works</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>৩ ধাপে AI Subscription নিন</h2>
-            <p className="mt-4 max-w-md mx-auto text-slate-900/50 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.65 }}>No credit card setup, no registration. Just WhatsApp → Pay → Get access.</p>
+            <p className="mt-4 max-w-md mx-auto text-slate-900/70 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.65 }}>No credit card setup, no registration. Just WhatsApp → Pay → Get access.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             {[
@@ -439,7 +439,7 @@ export default function Home() {
                   <span style={{ color: bestTextOn(s.color), fontSize: "0.65rem", fontWeight: 800 }}>{s.step}</span>
                 </div>
                 <h3 className="text-lg font-bold mb-3 text-slate-900 dark:text-white">{s.title}</h3>
-                <p className="text-slate-900/50 dark:text-slate-300" style={{ fontSize: "0.85rem", lineHeight: 1.7 }}>{s.desc}</p>
+                <p className="text-slate-900/70 dark:text-slate-300" style={{ fontSize: "0.85rem", lineHeight: 1.7 }}>{s.desc}</p>
               </div>
             ))}
           </div>
@@ -515,7 +515,7 @@ export default function Home() {
           <div className="text-center mb-10" data-reveal>
             <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Still Deciding?</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2rem", fontWeight: 700, lineHeight: 1.15 }}>কোন AI টুল আপনার জন্য?</h2>
-            <p className="mt-4 max-w-lg mx-auto text-slate-900/55 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.65 }}>
+            <p className="mt-4 max-w-lg mx-auto text-slate-900/70 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.65 }}>
               পাশাপাশি তুলনা দেখে সিদ্ধান্ত নিন — ফিচার, দাম আর কোনটা কার জন্য ভালো।
             </p>
           </div>
@@ -582,7 +582,7 @@ export default function Home() {
             ].map((stat) => (
               <div key={stat.label}>
                 <p style={{ color: BRAND.white, fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)", fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1 }}>{stat.value}</p>
-                <p className="mt-2" style={{ color: "rgba(255,255,255,0.42)", fontSize: "0.78rem", fontWeight: 500 }}>{stat.label}</p>
+                <p className="mt-2" style={{ color: "rgba(255,255,255,0.62)", fontSize: "0.78rem", fontWeight: 500 }}>{stat.label}</p>
               </div>
             ))}
           </div>
@@ -592,7 +592,10 @@ export default function Home() {
       <section className="py-16 pb-24" style={{ background: BRAND.navy }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-center mb-14" data-reveal>
-            <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Customer Reviews</p>
+            {/* This band is BRAND.navy in both themes, so BRAND.blue measured
+                3.45:1 here — under AA for 0.72rem text. Same lighter blue as
+                THEME_COLORS.accent(dark) / .dark .gradient-text. */}
+            <p className="mb-3 uppercase" style={{ color: "#60A5FA", fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Customer Reviews</p>
             <h2 style={{ color: BRAND.white, fontSize: "2rem", fontWeight: 700, lineHeight: 1.15 }}>Trusted by BD Professionals</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -624,7 +627,7 @@ export default function Home() {
                 </p>
                 <div>
                   <p style={{ color: BRAND.white, fontSize: "0.84rem", fontWeight: 700 }}>{name}</p>
-                  <p className="mt-0.5" style={{ color: "rgba(255,255,255,0.35)", fontSize: "0.76rem" }}>{role}</p>
+                  <p className="mt-0.5" style={{ color: "rgba(255,255,255,0.62)", fontSize: "0.76rem" }}>{role}</p>
                 </div>
               </div>
             ))}
@@ -654,7 +657,7 @@ export default function Home() {
           <h2 style={{ color: BRAND.white, fontSize: "clamp(1.5rem, 4vw, 2.4rem)", fontWeight: 700, lineHeight: 1.15 }}>
             Ready to start? Message us now
           </h2>
-          <p className="mt-4 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.45)", fontSize: "0.95rem", lineHeight: 1.7 }}>
+          <p className="mt-4 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.62)", fontSize: "0.95rem", lineHeight: 1.7 }}>
             Get your premium AI subscription delivered in minutes, or start a digital project with our team.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-10">

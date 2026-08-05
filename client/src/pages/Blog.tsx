@@ -14,15 +14,20 @@ const CATEGORIES = Array.from(new Set(BLOG_POSTS.map((p) => p.category)))
   .map((name) => ({ name, slug: categorySlug(name), count: BLOG_POSTS.filter((p) => p.category === name).length }))
   .sort((a, b) => b.count - a.count);
 
+// Keys must match the `category` values in blog-posts.ts exactly — an unmatched
+// key silently falls back to the generic icon, which is how every chip but two
+// ended up looking identical.
 const CATEGORY_ICONS: Record<string, string> = {
   "Buying Guides": "🛍️",
-  "For Students": "🎓",
+  "Comparisons": "⚖️",
+  "How-To Guides": "🛠️",
+  "Career & Income": "📈",
+  "Industry Guides": "🏢",
   "For Freelancers": "💼",
-  "For Businesses": "🏢",
-  "Tool Comparisons": "⚖️",
-  "Learning & Tutorials": "📚",
-  "News & Updates": "📰",
-  "AI Tips": "💡",
+  "Bangla Guides": "🇧🇩",
+  "For Students": "🎓",
+  "For Developers": "👨‍💻",
+  "Learning": "📚",
 };
 
 export default function Blog() {
@@ -54,39 +59,48 @@ export default function Blog() {
       <JsonLd data={blogSchema} />
 
       <section className="py-20 md:py-28" style={{ background: THEME_COLORS.sectionBg(isDark) }}>
-        <div className="mx-auto max-w-5xl px-6 lg:px-10">
-          <div className="flex items-center gap-3 mb-6">
-            <BookOpen size={28} color={BRAND.blue} />
-            <p className="uppercase" style={{ color: BRAND.blue, fontSize: "0.75rem", letterSpacing: "0.15em", fontWeight: 700 }}>Knowledge Base</p>
+        <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
+          <div className="inline-flex items-center gap-2.5 mb-6">
+            <BookOpen size={22} color={THEME_COLORS.accent(isDark)} />
+            <p className="uppercase" style={{ color: THEME_COLORS.accent(isDark), fontSize: "0.75rem", letterSpacing: "0.15em", fontWeight: 700 }}>Knowledge Base</p>
           </div>
-          <div className="text-center">
-            <h1 style={{ color: THEME_COLORS.heading(isDark), fontSize: "clamp(2rem, 5vw, 3.2rem)", fontWeight: 800, lineHeight: 1.1, marginBottom: "1.5rem" }}>
-              AI Guides, Tools & Learning for Bangladesh
-            </h1>
-            <p className="max-w-3xl mx-auto" style={{ color: THEME_COLORS.text(isDark), fontSize: "1.05rem", lineHeight: 1.8, marginBottom: "2rem" }}>
-              Real, practical guides — not generic hype. Written for students, freelancers and businesses figuring out which AI tool to use, how much it costs, and how to pay for it in BDT.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <div style={{ background: THEME_COLORS.cardBg(isDark), padding: "1rem 1.5rem", borderRadius: "0.75rem", border: `1px solid ${THEME_COLORS.border(isDark)}` }}>
-                <p style={{ color: BRAND.blue, fontSize: "1.5rem", fontWeight: 700 }}>50+</p>
-                <p style={{ color: THEME_COLORS.textMuted(isDark), fontSize: "0.85rem" }}>Quality Guides</p>
+          <h1 style={{ color: THEME_COLORS.heading(isDark), fontSize: "clamp(1.9rem, 5vw, 3.2rem)", fontWeight: 800, lineHeight: 1.15, marginBottom: "1.5rem" }}>
+            AI Guides, Tools &amp; Learning for Bangladesh
+          </h1>
+          <p className="max-w-3xl mx-auto" style={{ color: THEME_COLORS.text(isDark), fontSize: "1.05rem", lineHeight: 1.8, marginBottom: "2rem" }}>
+            Real, practical guides — not generic hype. Written for students, freelancers and businesses figuring out which AI tool to use, how much it costs, and how to pay for it in BDT.
+          </p>
+          {/* Counts are derived, not typed. The hardcoded "50+/12+" was already
+              wrong by 20 posts and 2 categories the day it shipped. */}
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            {[
+              { n: `${BLOG_POSTS.length}`, l: "Free Guides" },
+              { n: `${CATEGORIES.length}`, l: "Topics" },
+              { n: "Free", l: "No Signup" },
+            ].map((s) => (
+              <div
+                key={s.l}
+                className="px-5 py-4 sm:px-6"
+                style={{ background: THEME_COLORS.cardBg(isDark), borderRadius: "0.75rem", border: `1px solid ${THEME_COLORS.border(isDark)}`, minWidth: "7rem" }}
+              >
+                <p style={{ color: THEME_COLORS.accent(isDark), fontSize: "1.5rem", fontWeight: 700, lineHeight: 1.2 }}>{s.n}</p>
+                <p style={{ color: THEME_COLORS.textMuted(isDark), fontSize: "0.85rem" }}>{s.l}</p>
               </div>
-              <div style={{ background: THEME_COLORS.cardBg(isDark), padding: "1rem 1.5rem", borderRadius: "0.75rem", border: `1px solid ${THEME_COLORS.border(isDark)}` }}>
-                <p style={{ color: BRAND.blue, fontSize: "1.5rem", fontWeight: 700 }}>12+</p>
-                <p style={{ color: THEME_COLORS.textMuted(isDark), fontSize: "0.85rem" }}>Categories</p>
-              </div>
-              <div style={{ background: THEME_COLORS.cardBg(isDark), padding: "1rem 1.5rem", borderRadius: "0.75rem", border: `1px solid ${THEME_COLORS.border(isDark)}` }}>
-                <p style={{ color: BRAND.blue, fontSize: "1.5rem", fontWeight: 700 }}>Free</p>
-                <p style={{ color: THEME_COLORS.textMuted(isDark), fontSize: "0.85rem" }}>No Signup</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
 
-      {/* Category navigation */}
-      <section className="py-8 sticky top-0 z-20" style={{ background: THEME_COLORS.sectionBg(isDark), borderBottom: `1px solid ${THEME_COLORS.border(isDark)}` }}>
+      {/* Category navigation. Deliberately NOT sticky: 10 chips wrap to 3 rows
+          at 942px and ~5 rows at 375px, so pinning it measured 264px — 29% of
+          the viewport permanently consumed, which costs more than the scroll-up
+          it saves. (It also has to clear the 80px sticky Navbar, so top-0 hides
+          it behind the header.) */}
+      <section
+        className="py-8"
+        style={{ background: THEME_COLORS.sectionBg(isDark), borderBottom: `1px solid ${THEME_COLORS.border(isDark)}` }}
+      >
         <div className="mx-auto max-w-6xl px-6 lg:px-10">
           <p className="mb-4 text-sm font-semibold" style={{ color: THEME_COLORS.textMuted(isDark) }}>Browse by Topic</p>
           <div className="flex flex-wrap gap-3">
@@ -126,7 +140,7 @@ export default function Blog() {
                   <div className="flex flex-wrap gap-2 mb-3">
                     <span className="inline-flex rounded-lg px-3 py-1" style={{
                       background: THEME_COLORS.sectionBg(isDark),
-                      color: BRAND.blue,
+                      color: THEME_COLORS.accent(isDark),
                       fontSize: "0.7rem",
                       fontWeight: 700,
                       letterSpacing: "0.03em"
@@ -136,7 +150,7 @@ export default function Blog() {
                     {post.subcategory && (
                       <span className="inline-flex rounded-lg px-3 py-1" style={{
                         background: `${BRAND.blue}15`,
-                        color: BRAND.blue,
+                        color: THEME_COLORS.accent(isDark),
                         fontSize: "0.7rem",
                         fontWeight: 600,
                         letterSpacing: "0.03em"
@@ -155,7 +169,7 @@ export default function Blog() {
                     <span className="flex items-center gap-1.5" style={{ color: THEME_COLORS.textMuted(isDark), fontSize: "0.8rem" }}>
                       <Clock size={14} /> {post.readMinutes} min
                     </span>
-                    <span className="flex items-center gap-1" style={{ color: BRAND.blue, fontSize: "0.85rem", fontWeight: 600 }}>
+                    <span className="flex items-center gap-1" style={{ color: THEME_COLORS.accent(isDark), fontSize: "0.85rem", fontWeight: 600 }}>
                       Read <ArrowRight size={14} />
                     </span>
                   </div>
@@ -168,9 +182,12 @@ export default function Blog() {
 
       <section className="py-16 md:py-20" style={{ background: "#0F172A" }}>
         <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
+          {/* This band is #0F172A in BOTH themes, so it always needs the
+              dark-surface accent — accent(isDark) would hand back the light-mode
+              blue here and measure 3.45:1 whenever the site is in light mode. */}
           <div className="inline-flex items-center gap-2 mb-4 p-3" style={{ background: "rgba(37,99,235,0.1)", borderRadius: "0.75rem" }}>
-            <Zap size={18} color={BRAND.blue} />
-            <span style={{ color: BRAND.blue, fontSize: "0.85rem", fontWeight: 600 }}>Need Personal Guidance?</span>
+            <Zap size={18} color={THEME_COLORS.accent(true)} />
+            <span style={{ color: THEME_COLORS.accent(true), fontSize: "0.85rem", fontWeight: 600 }}>Need Personal Guidance?</span>
           </div>
           <h2 style={{ color: "#FFFFFF", fontSize: "1.8rem", fontWeight: 800, marginBottom: "1rem" }}>
             Book a Live AI Coaching Session

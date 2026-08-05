@@ -132,7 +132,7 @@ export function Navbar() {
                           </span>
                           <span
                             style={{
-                              color: isDark ? "rgba(255,255,255,0.45)" : "rgba(15,23,42,0.45)",
+                              color: isDark ? "rgba(255,255,255,0.45)" : "rgba(15,23,42,0.62)",
                               fontSize: "0.7rem",
                               marginLeft: 6,
                             }}
@@ -182,7 +182,7 @@ export function Navbar() {
                   <Link href="/compare" data-testid="link-nav-compare" style={{ textDecoration: "none", color: isDark ? "rgba(255,255,255,0.7)" : BRAND.navy, fontSize: "0.78rem" }}>
                     Compare tools
                   </Link>
-                  <span style={{ color: isDark ? "rgba(255,255,255,0.4)" : "rgba(15,23,42,0.4)", fontSize: "0.74rem" }}>
+                  <span style={{ color: isDark ? "rgba(255,255,255,0.4)" : "rgba(15,23,42,0.62)", fontSize: "0.74rem" }}>
                     {CATALOG_TOTALS.tiers} plans from {bdt(CATALOG_TOTALS.priceFrom)}/mo
                   </span>
                 </div>
@@ -318,7 +318,7 @@ export function Navbar() {
                   <span style={{ color: isDark ? "rgba(255,255,255,0.85)" : BRAND.navy, fontSize: "0.88rem", fontWeight: 500 }}>
                     {c.label}
                   </span>
-                  <span style={{ color: isDark ? "rgba(255,255,255,0.45)" : "rgba(15,23,42,0.45)", fontSize: "0.75rem" }}>
+                  <span style={{ color: isDark ? "rgba(255,255,255,0.45)" : "rgba(15,23,42,0.62)", fontSize: "0.75rem" }}>
                     {c.count}
                     {c.priceFrom !== null && ` · from ${bdt(c.priceFrom)}`}
                   </span>

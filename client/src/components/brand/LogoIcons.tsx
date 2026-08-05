@@ -11,6 +11,22 @@ export const BRAND = {
   muted: "rgba(37, 99, 235, 0.08)",
 };
 
+/** Theme-aware color helpers for dark/light mode */
+export const THEME_COLORS = {
+  /** Heading color - dark navy in light mode, bright white in dark mode */
+  heading: (isDark?: boolean) => isDark ? "#F0F9FF" : "#0F172A",
+  /** Body text color */
+  text: (isDark?: boolean) => isDark ? "#E0E7FF" : "#1E293B",
+  /** Muted/secondary text */
+  textMuted: (isDark?: boolean) => isDark ? "#94A3B8" : "#64748B",
+  /** Section background - light blue in light mode, dark gray in dark mode */
+  sectionBg: (isDark?: boolean) => isDark ? "#0F172A" : "#EFF6FF",
+  /** Card background */
+  cardBg: (isDark?: boolean) => isDark ? "#1E293B" : "#FFFFFF",
+  /** Divider/border color */
+  border: (isDark?: boolean) => isDark ? "#334155" : "#E2E8F0",
+};
+
 interface IconProps {
   size?: number;
   color?: string;

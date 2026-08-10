@@ -56,6 +56,38 @@ jobs:
         run: npm run lint 2>/dev/null || echo "No lint script"
         continue-on-error: true
 
+      - name: Start production server for E2E
+        shell: bash
+        run: |
+          set -euo pipefail
+          DATABASE_URL="postgresql://localhost:5432/ci" \
+          NODE_ENV=production \
+          PORT=5000 \
+          npm start > /tmp/aitp-ci-server.log 2>&1 &
+          echo "SERVER_PID=$!" >> "$GITHUB_ENV"
+
+      - name: Wait for production server
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 20); do
+            http_code="$(curl -s -o /dev/null -w '%{http_code}' http://localhost:5000/pricing || true)"
+            if [ "$http_code" = "200" ]; then
+              echo "Server is ready (attempt $i, status $http_code)"
+              exit 0
+            fi
+            if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+              echo "Server exited before becoming ready."
+              cat /tmp/aitp-ci-server.log || true
+              exit 1
+            fi
+            echo "Waiting for server... attempt $i (status ${http_code:-unavailable})"
+            sleep 2
+          done
+          echo "Server did not become ready in time."
+          cat /tmp/aitp-ci-server.log || true
+          exit 1
+
       - name: ✅ Run E2E tests
         run: npx playwright test e2e/verify-all.spec.ts --reporter=list
         continue-on-error: false

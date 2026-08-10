@@ -20,6 +20,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: 🔐 Reject tracked environment files
+        shell: bash
+        run: |
+          set -euo pipefail
+          tracked_env="$(git ls-files | grep -E '(^|/)\.env($|\.)' | grep -vE '(^|/)\.env\.example$' || true)"
+          if [ -n "$tracked_env" ]; then
+            echo "Tracked environment files are forbidden. Move secrets to the deployment environment and keep only .env.example in git."
+            printf '%s\n' "$tracked_env"
+            exit 1
+          fi
+          echo "No tracked environment secret files found."
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:

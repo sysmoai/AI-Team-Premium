@@ -14,35 +14,23 @@ declare module "http" {
   }
 }
 
-// Rate limiting middleware
-const generalLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: process.env.NODE_ENV === "development" ? 10000 : 100,
-  message: "Too many requests from this IP, please try again later.",
-  standardHeaders: true,
-  legacyHeaders: false,
-  skip: (req) => {
-    if (process.env.NODE_ENV === "development") {
-      return req.path.startsWith("/@") || req.path.startsWith("/src/") || req.path.endsWith(".js") || req.path.endsWith(".css");
-    }
-    return false;
-  },
-});
-
+// Rate-limit API traffic only. Public storefront pages and static assets must
+// not consume an API abuse budget: a normal browser navigation can request many
+// JS/CSS/image files and previously exhausted the global 100-request window.
 const apiLimiter = rateLimit({
   windowMs: 1 * 60 * 1000, // 1 minute
   max: process.env.NODE_ENV === "development" ? 10000 : 30,
   message: "Too many API requests, please try again later.",
+  standardHeaders: true,
+  legacyHeaders: false,
   skip: (req) => {
-    if (req.path === "/api/health") return true;
-    if (process.env.NODE_ENV === "development") {
-      return req.path.startsWith("/@") || req.path.startsWith("/src/");
-    }
+    // When mounted at /api, Express may expose the trimmed path as /health;
+    // originalUrl remains stable across mount points.
+    if (req.path === "/health" || req.originalUrl?.startsWith("/api/health")) return true;
     return false;
   },
 });
 
-app.use(generalLimiter);
 app.use("/api", apiLimiter);
 
 // CSRF protection - simple token generation

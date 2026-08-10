@@ -66,6 +66,7 @@ jobs:
         run: |
           DATABASE_URL="postgresql://localhost:5432/ci" \
           NODE_ENV=production \
+          PORT=5000 \
           npx tsx server/index.ts &
           SERVER_PID=$!
           echo "SERVER_PID=$SERVER_PID" >> $GITHUB_ENV

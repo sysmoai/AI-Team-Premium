@@ -17,7 +17,7 @@ const TOOLS = [
   // Image Generation
   { slug: "midjourney",  name: "Midjourney",       pricingName: "Midjourney",       compareName: "Midjourney" },
   { slug: "leonardo",    name: "Leonardo AI",      pricingName: "Leonardo AI",      compareName: "Leonardo AI" },
-  { slug: "ideogram",    name: "Ideogram AI",      pricingName: "Ideogram AI",      compareName: "Ideogram AI" },
+  { slug: "ideogram",    name: "Ideogram AI",      pricingName: "Ideogram Plus",    compareName: "Ideogram AI" },
   { slug: "freepik",     name: "Freepik",          pricingName: "Freepik",          compareName: "Freepik" },
   { slug: "firefly",     name: "Adobe Firefly",    pricingName: "Adobe Firefly",    compareName: "Adobe Firefly" },
   { slug: "adobe-cc",    name: "Adobe Creative Cloud", pricingName: "Adobe CC",         compareName: "adobe-cc" },

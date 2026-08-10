@@ -105,8 +105,10 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Checkout code
+      - name: Checkout full history for security scan
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -115,7 +117,7 @@ jobs:
           cache: 'npm'
 
       - name: 🔐 Dependency audit
-        run: npm audit --audit-level=moderate || true
+        run: npm audit --audit-level=moderate
 
       - name: 🔍 Check for secrets
         uses: trufflesecurity/trufflehog@main

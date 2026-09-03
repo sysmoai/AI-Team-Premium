@@ -16,14 +16,17 @@ for old, new in replacements.items():
         raise SystemExit(f"runner patch target missing: {old}")
     text = text.replace(old, new)
 
-# This TypeScript regex is itself written through a Python re.sub replacement.
-# Double its source escapes so Python's replacement parser emits literal \s, \d
-# and \/ sequences into the TS regex instead of treating them as replacements.
 needle = r"within\\s+\\d+|24\\/7"
 replacement = r"within\\\\s+\\\\d+|24\\\\/7"
 if needle not in text:
     raise SystemExit("ProductDetail unsafe-promise regex escape target missing")
 text = text.replace(needle, replacement, 1)
 
+schema_pattern = r'r"<ProductSchema\\n\\s*name=\\{familyName\\}[\\s\\S]*?\\n\\s*/>",'
+schema_replacement = r'r"<ProductSchema[\\s\\S]*?\\n\\s*/>",'
+if schema_pattern not in text:
+    raise SystemExit("ProductDetail ProductSchema matcher target missing")
+text = text.replace(schema_pattern, schema_replacement, 1)
+
 path.write_text(text, encoding="utf-8")
-print("hotfix runner aligned with current App routes and literal regex escapes")
+print("hotfix runner aligned with current App routes, regex escapes and ProductSchema JSX")

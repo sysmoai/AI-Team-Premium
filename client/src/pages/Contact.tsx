@@ -22,7 +22,7 @@ const CONTACT_FAQS = [
 ];
 
 const CHANNELS = [
-  { icon: Phone, label: "WhatsApp / Phone", value: "+880 1533-262758", sub: "9 AM – 11 PM BST · 7 days", url: "tel:+8801533262758" },
+  { icon: Phone, label: "WhatsApp / Phone", value: "+880 1533-262758", sub: "WhatsApp is the primary contact channel", url: "tel:+8801533262758" },
   { icon: MapPin, label: "Location", value: "Dhaka, Bangladesh", sub: null, url: null },
 ];
 
@@ -63,9 +63,9 @@ const SERVICE_OPTIONS = [
 
 export default function Contact() {
   usePageMeta({
-    title: "Contact AI Team Premium — Order on WhatsApp (+880 1533-262758)",
-    description: "Order ChatGPT, Claude, Gemini and AI subscriptions in Bangladesh. WhatsApp +880 1533-262758 or fill out the form. Open 9 AM–11 PM BST, 7 days. We reply within 5–15 minutes.",
-    path: "/start-a-project",
+    title: "Contact AI Team Premium — WhatsApp, Messenger & Phone",
+    description: "Contact AI Team Premium for current product availability, approved access model, payment instructions, support scope and next steps. Response and fulfillment timing vary and are confirmed for the specific request.",
+    path: "/contact",
   });
 
   const form = useForm<InsertContact>({
@@ -81,7 +81,7 @@ export default function Contact() {
 
   return (
     <Layout>
-      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/start-a-project" }]} />
+      <BreadcrumbSchema items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
       <FAQSchema items={CONTACT_FAQS} />
       <section className="py-20" style={{ background: BRAND.sky }}>
         <div className="mx-auto max-w-7xl px-6 lg:px-10 text-center">
@@ -90,17 +90,17 @@ export default function Contact() {
             Let's Start a Project
           </h1>
           <p className="mt-4 mx-auto max-w-xl" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.95rem", lineHeight: 1.65 }}>
-            Need AI subscriptions, a website, or a brand makeover? Reach out — fastest response on WhatsApp.
+            Need an AI subscription or digital service? WhatsApp is our primary contact channel; current availability, scope and next steps are confirmed for your request.
           </p>
           <div className="mt-5 flex items-center gap-2 justify-center flex-wrap">
             <span data-testid="badge-operating-hours" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(34,197,94,0.1)", color: "#15803D", fontSize: "0.78rem" }}>
-              <Clock size={12} /> সকাল ৯টা – রাত ১১টা · ৭ দিন · 9 AM – 11 PM BST · 7 days
+              <Clock size={12} /> Response timing varies · WhatsApp is the primary channel
             </span>
             <span data-testid="badge-payment-methods" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(37,99,235,0.08)", color: BRAND.blue, fontSize: "0.78rem" }}>
               <CreditCard size={12} /> Pay via bKash, Nagad, or Bank Transfer
             </span>
             <span data-testid="badge-delivery-time" className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 font-semibold" style={{ background: "rgba(245,158,11,0.08)", color: "#B45309", fontSize: "0.78rem" }}>
-              <Zap size={12} /> Delivery: 5–15 minutes
+              <Zap size={12} /> Fulfillment timing confirmed for the specific offer
             </span>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function Contact() {
                 <WhatsAppIcon size={24} color="#fff" />
                 <div>
                   <p style={{ color: "#fff", fontSize: "0.95rem", fontWeight: 600 }}>Chat on WhatsApp</p>
-                  <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.78rem" }}>Fastest response — usually within minutes</p>
+                  <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.78rem" }}>Primary contact channel · response timing varies</p>
                 </div>
                 <ArrowUpRight size={18} color="#fff" className="ml-auto" />
               </a>
@@ -137,7 +137,7 @@ export default function Contact() {
                 <MessageCircle size={24} color="#fff" />
                 <div>
                   <p style={{ color: "#fff", fontSize: "0.95rem", fontWeight: 600 }}>Chat on Messenger</p>
-                  <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.78rem" }}>Also fast — Facebook Messenger</p>
+                  <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.78rem" }}>Facebook Messenger contact channel</p>
                 </div>
                 <ArrowUpRight size={18} color="#fff" className="ml-auto" />
               </a>
@@ -272,7 +272,7 @@ export default function Contact() {
                       style={{ background: BRAND.blue, color: BRAND.white, fontSize: "0.92rem", fontWeight: 600, border: "none", cursor: isPending ? "not-allowed" : "pointer" }}
                     >
                       <Send size={16} />
-                      {isPending ? "Sending..." : "Submit Request"}
+                      {isPending ? "Opening WhatsApp..." : "Continue on WhatsApp"}
                     </button>
                     <p className="text-center" style={{ color: BRAND.navy, opacity: 0.35, fontSize: "0.72rem" }}>
                       By submitting, you agree to our <a href="/privacy-policy" data-testid="link-contact-privacy" style={{ textDecoration: "underline" }}>Privacy Policy</a>.

@@ -152,3 +152,28 @@ test.describe("Compare Page", () => {
     }
   });
 });
+
+
+test.describe("Contact public truth", () => {
+  test("/contact is canonical and makes no fixed response or fulfillment promise", async ({ page }) => {
+    await page.goto(`${BASE}/contact`);
+    await page.waitForLoadState("networkidle");
+
+    const body = page.locator("body");
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/contact\/?$/);
+    await expect(page.getByTestId("button-submit-contact")).toContainText("Continue on WhatsApp");
+    await expect(body).toContainText("Response timing varies", { ignoreCase: true });
+    await expect(body).toContainText("Fulfillment timing confirmed", { ignoreCase: true });
+    await expect(body).not.toContainText(/5\s*[-–]\s*15\s*(?:min|minute)/i);
+    await expect(body).not.toContainText(/within\s+(?:a few\s+)?minutes/i);
+    await expect(body).not.toContainText(/9\s*AM\s*[-–]\s*11\s*PM/i);
+    await expect(body).not.toContainText(/30[- ]day\s+(?:replacement\s+)?warranty/i);
+  });
+
+  test("/start-a-project remains an alias of /contact", async ({ page }) => {
+    await page.goto(`${BASE}/start-a-project`);
+    await page.waitForLoadState("networkidle");
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/contact\/?$/);
+    await expect(page.getByTestId("button-submit-contact")).toContainText("Continue on WhatsApp");
+  });
+});

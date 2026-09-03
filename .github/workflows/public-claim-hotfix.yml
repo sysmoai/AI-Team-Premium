@@ -26,6 +26,9 @@ jobs:
       - name: Install reproducibly
         run: npm ci --ignore-scripts
 
+      - name: Align transformation runner with current routes
+        run: python3 scripts/patch-public-claim-hotfix-runner.py
+
       - name: Apply public-claim transformations
         run: python3 scripts/apply-public-claim-hotfix.py
 

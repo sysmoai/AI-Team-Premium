@@ -24,9 +24,6 @@ if needle in text:
 elif replacement not in text:
     raise SystemExit("ProductDetail unsafe-promise regex escape target missing")
 
-# The application currently renders ProductSchema with a template-literal name.
-# Make the transformation script match the whole first ProductSchema block rather
-# than depending on a particular name prop shape.
 general_schema = '    r"<ProductSchema[\\s\\S]*?\\n\\s*/>",' 
 if general_schema not in text:
     start = text.find('    r"<ProductSchema')
@@ -38,9 +35,6 @@ if general_schema not in text:
     end += len('/>",')
     text = text[:start] + general_schema + text[end:]
 
-# gen-structured-data.mjs builds lib/structured-data.js inside one outer template
-# literal. A raw nested backtick in the replacement closes that outer literal.
-# Use string concatenation in generated JS instead.
 nested_template = 'items.push({ name: label, item: `${SITE}/${section}` });'
 safe_concat = 'items.push({ name: label, item: SITE + "/" + section });'
 if nested_template in text:
@@ -48,5 +42,27 @@ if nested_template in text:
 elif safe_concat not in text:
     raise SystemExit("structured-data nested template target missing")
 
+# Avoid slash-regex escaping entirely in generated registries. This makes the
+# generated JS robust regardless of the Python string-escaping layer.
+patched_lines = []
+seen_slug = False
+seen_normalized = False
+for line in text.splitlines():
+    if 'const slug = path.slice("/blog/".length).replace(' in line:
+        patched_lines.append('  const rawSlug = path.slice("/blog/".length);')
+        patched_lines.append('  const slug = rawSlug.endsWith("/") ? rawSlug.slice(0, -1) : rawSlug;')
+        seen_slug = True
+        continue
+    if 'const normalized = path.length > 1 ? path.replace(' in line:
+        patched_lines.append('  const normalized = path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;')
+        seen_normalized = True
+        continue
+    patched_lines.append(line)
+text = "\n".join(patched_lines) + ("\n" if text.endswith("\n") else "")
+if not seen_slug and 'const rawSlug = path.slice("/blog/".length);' not in text:
+    raise SystemExit("content quarantine path-normalization target missing")
+if not seen_normalized and 'path.length > 1 && path.endsWith("/")' not in text:
+    raise SystemExit("public review path-normalization target missing")
+
 path.write_text(text, encoding="utf-8")
-print("hotfix runner aligned with current routes, regex escapes, ProductSchema JSX and schema generator quoting")
+print("hotfix runner aligned with current routes, schema generation and escaping-free path normalization")

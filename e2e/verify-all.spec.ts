@@ -65,6 +65,24 @@ const PRICING_CATALOG_EXPECTATIONS = [
 
 // ── Tests ───────────────────────────────────────────────────────────────
 
+test.describe("Homepage public truth", () => {
+  test("homepage publishes only non-quarantined featured ChatGPT offers", async ({ page }) => {
+    await page.goto(`${BASE}/`);
+    await page.waitForLoadState("networkidle");
+
+    const body = page.locator("body");
+    await expect(page.getByTestId("button-offer-go-personal")).toBeVisible();
+    await expect(page.getByTestId("button-offer-plus-personal-seat")).toBeVisible();
+    await expect(page.getByTestId("button-offer-pro-personal")).toBeVisible();
+    await expect(page.getByTestId("button-offer-plus-shared")).toHaveCount(0);
+    await expect(page.getByTestId("button-offer-plus-premium-shared")).toHaveCount(0);
+    await expect(page.getByTestId("button-offer-pro-premium-shared")).toHaveCount(0);
+    await expect(body).not.toContainText(/5\s*[-–]\s*15\s*(?:min|minute)/i);
+    await expect(body).not.toContainText(/30[- ]day\s+(?:replacement\s+)?warranty/i);
+    await expect(body).not.toContainText(/24[- ]hour\s+replacement/i);
+  });
+});
+
 test.describe("Legacy tool aliases — evidence review", () => {
   for (const tool of TOOLS) {
     test(`${tool.name} legacy alias is preserved but not commercially published`, async ({ page }) => {

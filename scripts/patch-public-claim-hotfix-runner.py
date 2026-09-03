@@ -42,8 +42,6 @@ if nested_template in text:
 elif safe_concat not in text:
     raise SystemExit("structured-data nested template target missing")
 
-# Avoid slash-regex escaping entirely in generated registries. This makes the
-# generated JS robust regardless of the Python string-escaping layer.
 patched_lines = []
 seen_slug = False
 seen_normalized = False
@@ -64,5 +62,12 @@ if not seen_slug and 'const rawSlug = path.slice("/blog/".length);' not in text:
 if not seen_normalized and 'path.length > 1 && path.endsWith("/")' not in text:
     raise SystemExit("public review path-normalization target missing")
 
+faq_old = '`${faq.q} ${faq.a}`'
+faq_new = '`${faq.question} ${faq.answer}`'
+if faq_old in text:
+    text = text.replace(faq_old, faq_new, 1)
+elif faq_new not in text:
+    raise SystemExit("catalog FAQ field-name target missing")
+
 path.write_text(text, encoding="utf-8")
-print("hotfix runner aligned with current routes, schema generation and escaping-free path normalization")
+print("hotfix runner aligned with current routes, schema generation, path normalization and FAQ types")

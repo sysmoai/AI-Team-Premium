@@ -129,17 +129,17 @@ function Router() {
         <Route path="/grok-plans" component={EvidenceReviewPage} />
         <Route path="/ai-tools-vault" component={AIToolsVault} />
         <Route path="/services/ai-ops-sprint" component={EvidenceReviewPage} />
-        <Route path="/services/brand-design" component={BrandDesign} />
-        <Route path="/services/web-development" component={WebDevelopment} />
-        <Route path="/services/digital-marketing" component={DigitalMarketing} />
-        <Route path="/services/app-development" component={AppDevelopment} />
-        <Route path="/services/ai-advisory" component={AiAdvisory} />
-        <Route path="/services/ai-setup-security" component={AiSetupSecurity} />
-        <Route path="/services/ai-training" component={AiTraining} />
-        <Route path="/services/ai-automation" component={AiAutomation} />
+        <Route path="/services/brand-design" component={EvidenceReviewPage} />
+        <Route path="/services/web-development" component={EvidenceReviewPage} />
+        <Route path="/services/digital-marketing" component={EvidenceReviewPage} />
+        <Route path="/services/app-development" component={EvidenceReviewPage} />
+        <Route path="/services/ai-advisory" component={EvidenceReviewPage} />
+        <Route path="/services/ai-setup-security" component={EvidenceReviewPage} />
+        <Route path="/services/ai-training" component={EvidenceReviewPage} />
+        <Route path="/services/ai-automation" component={EvidenceReviewPage} />
         <Route path="/services/managed-ai-operations" component={EvidenceReviewPage} />
-        <Route path="/support" component={Services} />
-        <Route path="/services" component={Services} />
+        <Route path="/support" component={EvidenceReviewPage} />
+        <Route path="/services" component={EvidenceReviewPage} />
         <Route path="/ai-subscriptions" component={AISubscriptions} />
         <Route path="/all-products" component={AllProducts} />
         <Route path="/products" component={AllProducts} />

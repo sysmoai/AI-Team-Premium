@@ -177,3 +177,43 @@ test.describe("Contact public truth", () => {
     await expect(page.getByTestId("button-submit-contact")).toContainText("Continue on WhatsApp");
   });
 });
+
+
+const SERVICE_REVIEW_PATHS = [
+  "/services",
+  "/support",
+  "/services/ai-ops-sprint",
+  "/services/brand-design",
+  "/services/web-development",
+  "/services/digital-marketing",
+  "/services/app-development",
+  "/services/ai-advisory",
+  "/services/ai-setup-security",
+  "/services/ai-training",
+  "/services/ai-automation",
+  "/services/managed-ai-operations",
+];
+
+test.describe("Service commercial truth quarantine", () => {
+  for (const path of SERVICE_REVIEW_PATHS) {
+    test(`${path} is preserved but non-commercial while evidence is incomplete`, async ({ page }) => {
+      await page.goto(`${BASE}${path}`);
+      await page.waitForLoadState("networkidle");
+      const body = page.locator("body");
+      await expect(page.locator("h1")).toHaveText("This commercial page is being re-verified");
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex\s*,\s*follow/i);
+      await expect(body).not.toContainText(/৳\s*[\d,]+/);
+      await expect(body).not.toContainText(/\b(?:5|7|14|15|21|30|45)[-– ]day\b/i);
+      await expect(body).not.toContainText(/free\s+(?:consultation|assessment|audit)/i);
+      await expect(body).not.toContainText(/4\.2×|50[–-]200|35%/);
+    });
+  }
+
+  test("About metadata is evidence-safe", async ({ page }) => {
+    await page.goto(`${BASE}/about`);
+    await page.waitForLoadState("networkidle");
+    await expect(page).toHaveTitle(/About AI Team Premium/);
+    await expect(page).not.toHaveTitle(/Trusted AI Partner/i);
+    await expect(page.locator("body")).toContainText("independent Bangladesh-focused", { ignoreCase: true });
+  });
+});

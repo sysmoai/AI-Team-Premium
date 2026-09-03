@@ -19,10 +19,8 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { lookupMeta, SITE_URL } from "../lib/route-meta.js";
 import { jsonLdFor } from "../lib/structured-data.js";
+import { isQuarantinedBlogPath } from "../shared/content-quarantine.js";
 
-// Candidate locations for the built shell. process.cwd() is /var/task in the
-// lambda, but resolving relative to this module as well keeps the lookup
-// working regardless of what the caller's working directory happens to be.
 const HERE = dirname(fileURLToPath(import.meta.url));
 const INDEX_CANDIDATES = [
   resolve(process.cwd(), "dist", "public", "index.html"),
@@ -32,7 +30,6 @@ const INDEX_CANDIDATES = [
   resolve(process.cwd(), "index.html"),
 ];
 
-// Read once per container, not per request.
 let cachedTemplate = null;
 
 function loadTemplate() {
@@ -46,8 +43,6 @@ function loadTemplate() {
   return null;
 }
 
-// Escape for an HTML attribute context. The 404 canonical embeds the requested
-// path, which is attacker-controlled, so this is required.
 function escapeHtml(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -57,9 +52,6 @@ function escapeHtml(value) {
     .replace(/'/g, "&#39;");
 }
 
-// Rewritten requests arrive with the visitor-facing path still on req.url, but
-// a direct /api/... hit is also tolerated: strip that prefix so both forms
-// resolve to the same route key.
 function resolveRequestPath(req) {
   const raw = req.url || "/";
   let pathname;
@@ -73,8 +65,6 @@ function resolveRequestPath(req) {
   return pathname || "/";
 }
 
-// Swap the first match for `replacement`, or insert it before </head> when the
-// tag is absent. Without the insert fallback a missing tag silently no-ops.
 function replaceOrInsert(html, pattern, replacement) {
   if (pattern.test(html)) return html.replace(pattern, replacement);
   return html.replace(/<\/head>/i, `    ${replacement}\n  </head>`);
@@ -126,16 +116,13 @@ function inject(template, { title, description, canonical }) {
   return html;
 }
 
-function make404NonIndexable(html) {
+function makeNonIndexable(html) {
   let output = replaceOrInsert(
     html,
     /<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/,
     '<meta name="robots" content="noindex, follow" />'
   );
 
-  // The static template contains the homepage Organization/WebSite graph.
-  // A 404 must not inherit page-level structured data that describes it as the
-  // homepage or another valid indexable page.
   output = output.replace(
     /<!-- ld\+json:home:start -->[\s\S]*?<!-- ld\+json:home:end -->/,
     ""
@@ -144,31 +131,15 @@ function make404NonIndexable(html) {
   return output;
 }
 
-// Emit the JSON-LD graph into the served HTML.
-//
-// The page body is an empty SPA mount point, so without this a crawler that
-// does not execute JavaScript receives no machine-readable description of the
-// page at all — which is every AI answer-engine bot robots.txt invites in.
-//
-// "</" inside a <script> block would close it early, so the only escaping that
-// matters here is breaking that sequence. The payload is generated from our own
-// catalog rather than from the request, but the requested path reaches the
-// breadcrumb on a 404, so this is not optional.
 function injectJsonLd(html, path, meta) {
   let payload;
   try {
     payload = JSON.stringify(jsonLdFor(path, meta));
   } catch {
-    return html; // never fail a page render over structured data
+    return html;
   }
   const safe = payload.replace(/<\//g, "<\\/");
   const tag = `<script type="application/ld+json">${safe}</script>`;
-
-  // The template is dist/public/index.html, which already carries the homepage
-  // graph baked in for "/" (that route is served straight off the CDN and never
-  // reaches this function). Appending here would leave every other route
-  // shipping two graphs — the homepage's and its own. Replace the marked block
-  // instead, so each route ends up with exactly one.
   const marked = /<!-- ld\+json:home:start -->[\s\S]*?<!-- ld\+json:home:end -->/;
   if (marked.test(html)) return html.replace(marked, tag);
   return html.replace(/<\/head>/i, `    ${tag}\n  </head>`);
@@ -177,9 +148,6 @@ function injectJsonLd(html, path, meta) {
 export default function handler(req, res) {
   const path = resolveRequestPath(req);
 
-  // An asset reaching this function means the file genuinely is not in the
-  // build. Return 404 rather than the HTML shell — handing HTML back for a .js
-  // request breaks the page with a confusing MIME error.
   if (/\.(js|mjs|css|png|jpe?g|svg|webp|ico|woff2?|ttf|map|json|xml|txt)$/i.test(path)) {
     res.setHeader("Content-Type", "text/plain; charset=utf-8");
     res.status(404).send("Not found");
@@ -198,7 +166,7 @@ export default function handler(req, res) {
   const meta = lookupMeta(path);
 
   if (!meta) {
-    const body = make404NonIndexable(
+    const body = makeNonIndexable(
       inject(template, {
         title: "404 — Page Not Found | AI Team Premium",
         description:
@@ -210,6 +178,22 @@ export default function handler(req, res) {
     res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
     res.setHeader("X-Robots-Tag", "noindex, follow");
     res.status(404).send(body);
+    return;
+  }
+
+  if (isQuarantinedBlogPath(path)) {
+    const body = makeNonIndexable(
+      inject(template, {
+        title: "Guide Under Evidence Review | AI Team Premium",
+        description:
+          "This guide is temporarily under evidence review. Commercial, pricing and provider-policy claims are being re-verified before republication.",
+        canonical: SITE_URL + path,
+      })
+    );
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
+    res.setHeader("X-Robots-Tag", "noindex, follow");
+    res.status(200).send(body);
     return;
   }
 

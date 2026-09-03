@@ -70,7 +70,6 @@ function familyDisplayName(variants) {
 // Titles lead with the product name and the "in Bangladesh" / price qualifier
 // because that is how the demand is actually typed into search.
 function buildMeta(slug, variants) {
-  const anchor = variants.reduce((a, b) => (a.price <= b.price ? a : b));
   const priced = variants.filter((v) => !v.priceOnRequest);
   const from = priced.length ? Math.min(...priced.map((v) => v.price)) : null;
   const brand = familyDisplayName(variants);
@@ -82,7 +81,6 @@ function buildMeta(slug, variants) {
   const planPhrase =
     variants.length > 1 ? `${variants.length} plans. ` : "";
   const pricePhrase = from ? `From ${bdt(from)}/month. ` : "";
-  const sla = anchor.deliverySLA || "5–30 min";
 
   // `from === null` means every variant on this slug is price-on-request, i.e.
   // the whole family is quarantined pending an access-model review.
@@ -98,12 +96,8 @@ function buildMeta(slug, variants) {
   // "buy", no delivery time, no guarantee. Those promises return with the price,
   // once there is an approved one.
   const description = from
-    ? `Buy ${brand} in Bangladesh. ${pricePhrase}${planPhrase}` +
-      `Pay with bKash or Nagad — no international card needed. ` +
-      `${sla} delivery, 30-day replacement guarantee, Bangla WhatsApp support.`
-    : `${brand} in Bangladesh. ${planPhrase}` +
-      `Pricing and availability are confirmed after plan verification — ` +
-      `ask on WhatsApp. Pay in BDT with bKash or Nagad, no international card needed.`;
+    ? `${brand} in Bangladesh. ${pricePhrase}${planPhrase}Current access model, availability, fulfillment timing and support terms are confirmed before purchase. Ask on WhatsApp for the current order instructions.`
+    : `${brand} in Bangladesh. ${planPhrase}Pricing, access model and availability are confirmed after plan verification — ask on WhatsApp before payment.`;
 
   return {
     path: `/tools/${slug}`,

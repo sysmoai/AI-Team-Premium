@@ -163,7 +163,7 @@ function ComparisonDetail({ a, b }: { a: CompareTool; b: CompareTool }) {
 
   const faqs = [
     { q: `Which is better: ${a.name} or ${b.name}?`, a: rec.reason },
-    { q: `What is the price difference between ${a.name} and ${b.name} in Bangladesh?`, a: `From AI Team Premium, ${a.name} starts at ${a.priceFromLabel} and ${b.name} starts at ${b.priceFromLabel}. Both are payable via bKash or Nagad with 5–15 minute delivery and a 30-day replacement warranty.` },
+    { q: `What is the price difference between ${a.name} and ${b.name} in Bangladesh?`, a: `Current public catalog prices are shown above where available. Confirm the exact plan, access model, availability, fulfillment timing and support terms before payment.` },
     { q: `Can I use ${a.name} and ${b.name} in Bangla?`, a: `${a.name}: ${a.specs.banglaQuality}. ${b.name}: ${b.specs.banglaQuality}.` },
     { q: `How do I buy ${a.name} or ${b.name} in Bangladesh?`, a: `Message AI Team Premium on WhatsApp (+880 1533-262758) with the tool and plan you want. We send the bKash/Nagad number privately, confirm payment, and deliver login or invite details within 5–15 minutes.` },
   ];

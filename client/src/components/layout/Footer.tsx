@@ -90,7 +90,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-4">
             <LogoHorizontal size="md" iconColor={BRAND.white} textColor={BRAND.white} />
             <p className="mt-5 max-w-xs" style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.84rem", lineHeight: 1.7 }}>
-              Affordable premium AI subscriptions + dedicated Bangla support for Bangladesh users — the price shown is the price you pay, with fast delivery.
+              AI subscription discovery, ordering coordination and Bangla support for Bangladesh users — current commercial terms are confirmed before payment.
             </p>
             <div className="mt-6 space-y-3">
               <a href="tel:+8801533262758" className="flex items-center gap-2.5" style={{ textDecoration: "none" }} data-testid="link-footer-phone">

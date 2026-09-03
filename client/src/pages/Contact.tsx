@@ -15,9 +15,10 @@ import { BreadcrumbSchema, FAQSchema } from "@/components/seo/JsonLd";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 const CONTACT_FAQS = [
-  { q: "How do I order from AI Team Premium?", a: "The fastest way is WhatsApp at +880 1533-262758 — we typically reply within 5 minutes. You can also message on Facebook Messenger or fill out the contact form on this page." },
-  { q: "What is the WhatsApp number for AI Team Premium?", a: "AI Team Premium's WhatsApp and phone number is +880 1533-262758. We are available from 9 AM to 11 PM Bangladesh Standard Time, 7 days a week." },
-  { q: "How quickly does AI Team Premium respond?", a: "We typically respond on WhatsApp within 5 minutes during 9 AM–11 PM BST. Most shared plan orders are delivered within 5–15 minutes of payment confirmation." },
+  { q: "How do I contact AI Team Premium?", a: "WhatsApp is the primary contact channel. The form on this page prepares a WhatsApp message so you can send the request with the details already filled in." },
+  { q: "How quickly will I receive a reply?", a: "Response times vary. WhatsApp is generally the fastest channel, but we do not publish a fixed response SLA." },
+  { q: "When will an order be fulfilled?", a: "Current availability and fulfillment timing are confirmed for the specific offer before payment." },
+  { q: "What should I include in my message?", a: "Tell us the product or service, your preferred plan if known, and what you need help with. Do not send passwords or recovery codes in the initial message." },
 ];
 
 const CHANNELS = [
@@ -183,7 +184,7 @@ export default function Contact() {
             <div className="lg:col-span-3">
               <div className="rounded-2xl p-8 md:p-10" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)", boxShadow: "0 4px 24px rgba(37,99,235,0.06)" }}>
                 <h2 className="mb-1" style={{ color: BRAND.navy, fontSize: "1.15rem", fontWeight: 700 }}>Send us a message</h2>
-                <p className="mb-6" style={{ color: BRAND.navy, opacity: 0.4, fontSize: "0.82rem" }}>We'll get back to you within 24 hours.</p>
+                <p className="mb-6" style={{ color: BRAND.navy, opacity: 0.4, fontSize: "0.82rem" }}>The form prepares a WhatsApp message; send it there to continue.</p>
 
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">

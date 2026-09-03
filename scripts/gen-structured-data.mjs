@@ -107,7 +107,6 @@ for (const [slug, tiers] of families) {
       url: `${SITE}${path}`,
       priceCurrency: "BDT",
       price: String(sellable[0].price),
-      availability: "https://schema.org/InStock",
       areaServed: "BD",
       seller: { "@id": `${SITE}/#organization` },
     };
@@ -120,7 +119,6 @@ for (const [slug, tiers] of families) {
       lowPrice: String(Math.min(...prices)),
       highPrice: String(Math.max(...prices)),
       offerCount: String(sellable.length),
-      availability: "https://schema.org/InStock",
       areaServed: "BD",
       seller: { "@id": `${SITE}/#organization` },
     };
@@ -177,26 +175,27 @@ export const PRODUCT_SCHEMA = ${JSON.stringify(PRODUCT_SCHEMA, null, 2)};
 
 export const ARTICLE_SCHEMA = ${JSON.stringify(ARTICLE_SCHEMA, null, 2)};
 
-// Breadcrumbs from the path itself. "/tools/canva-pro-bangladesh" becomes
-// Home > Tools > <page title>, which is what the page's own trail shows.
+// Breadcrumbs use the canonical destination, not an alias path. Product pages
+// point to the real product hub rather than /tools, because /tools is not a public hub.
 function breadcrumbFor(path, meta) {
   if (path === "/") return null;
-  const parts = path.split("/").filter(Boolean);
+  const canonicalUrl = meta.canonical || SITE + path;
+  const canonicalPath = new URL(canonicalUrl).pathname;
+  const parts = canonicalPath.split("/").filter(Boolean);
   const items = [{ name: "Home", item: SITE + "/" }];
   if (parts.length > 1) {
     const section = parts[0];
-    const label = section.charAt(0).toUpperCase() + section.slice(1).replace(/-/g, " ");
-    items.push({ name: label, item: \`\${SITE}/\${section}\` });
+    if (section === "tools") items.push({ name: "Products", item: SITE + "/all-products" });
+    else if (section === "blog") items.push({ name: "Blog", item: SITE + "/blog" });
+    else {
+      const label = section.charAt(0).toUpperCase() + section.slice(1).replace(/-/g, " ");
+      items.push({ name: label, item: SITE + "/" + section });
+    }
   }
-  items.push({ name: meta.title.split(" — ")[0].split(" | ")[0], item: SITE + path });
+  items.push({ name: meta.title.split(" — ")[0].split(" | ")[0], item: canonicalUrl });
   return {
     "@type": "BreadcrumbList",
-    itemListElement: items.map((it, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: it.name,
-      item: it.item,
-    })),
+    itemListElement: items.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.name, item: it.item })),
   };
 }
 

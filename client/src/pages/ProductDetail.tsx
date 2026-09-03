@@ -40,6 +40,13 @@ interface CatalogPlan {
   inStock?: boolean;
 }
 
+interface CatalogFaq {
+  question?: string;
+  answer?: string;
+  q?: string;
+  a?: string;
+}
+
 interface CatalogProduct {
   id: string;
   name: string;
@@ -64,12 +71,14 @@ interface CatalogProduct {
   useCases?: string[];
   whyBuyBN?: string;
   plans?: CatalogPlan[];
-  faq?: { question: string; answer: string }[];
+  faq?: CatalogFaq[];
   uniqueSellingPoints?: string[];
   howItWorksSteps?: string[];
   deliveryMethod?: string;
   lastVerifiedDate?: string;
   priceOnRequest?: boolean;
+  commercialStatus?: string;
+  accessModel?: string;
 }
 
 const products = catalog as unknown as CatalogProduct[];
@@ -192,7 +201,16 @@ function formatBDT(n: number) {
 // Every variant sharing a slug is one product family (e.g. all ChatGPT Plus
 // tiers). The cheapest variant anchors the hero price and the page title.
 function familyFor(slug: string) {
-  return products.filter((p) => p.slug === slug);
+  const matches = products.filter((p) => p.slug === slug);
+  // When a family mixes approved offers with explicitly unverified/pending
+  // variants, publish only the approved variants. This keeps legacy catalog
+  // records available to governance tooling without turning them into live
+  // purchase options. Families with no governance metadata retain their
+  // historical behaviour until Catalog Domain V2 takes ownership.
+  const approved = matches.filter(
+    (p) => p.commercialStatus === "approved" && !/^UNVERIFIED/i.test(p.accessModel || "")
+  );
+  return approved.length ? approved : matches;
 }
 
 // Keep in sync with familyDisplayName() in scripts/gen-product-routes.mjs — the
@@ -224,56 +242,41 @@ function whatsappHref(p: CatalogProduct) {
   return `${config.whatsappUrl}?text=${encodeURIComponent(`${base} — please share payment details.`)}`;
 }
 
-// Only facts already present in the catalog are turned into FAQ entries. Nothing
-// here invents a price, a guarantee or a delivery time that the data doesn't state.
+const UNSAFE_PUBLIC_PROMISE = /(warranty|guarantee|replacement|delivery|within\s+\d+|24\/7|instant|trusted|served since|most customers|official provider requires|shared plan safe|private from other users|productivity gains|most students)/i;
+const UNSAFE_PUBLIC_PROMISE_BN = /(ওয়ারেন্টি|ওয়ারেন্টি|ডেলিভারি|প্রতিস্থাপন|গ্যারান্টি|মিনিট|ঘণ্টা|ঘন্টা)/i;
+
+function safePublicCopy(value?: string) {
+  if (!value) return undefined;
+  return UNSAFE_PUBLIC_PROMISE.test(value) || UNSAFE_PUBLIC_PROMISE_BN.test(value) ? undefined : value;
+}
+
+function normalizeFaq(faq: CatalogFaq) {
+  const question = (faq.question || faq.q || "").trim();
+  const answer = (faq.answer || faq.a || "").trim();
+  if (!question || !answer) return null;
+  if (!safePublicCopy(`${question} ${answer}`)) return null;
+  return { question, answer };
+}
+
+function planHighlights(p: CatalogProduct) {
+  const nested = p.plans?.find(
+    (plan) => plan.planName?.trim().toLowerCase() === p.tier?.trim().toLowerCase()
+  );
+  return nested?.whatsIncluded ?? p.capabilities?.map(capabilityLabel) ?? [];
+}
+
 function buildFaqs(family: CatalogProduct[], name: string) {
-  const authored = family.flatMap((p) => p.faq ?? []);
-  if (authored.length >= 4) return dedupeFaq(authored);
-
-  const cheapest = family.reduce((a, b) => (a.price <= b.price ? a : b));
-  const sla = cheapest.deliverySLA || "5–30 minutes";
-  const hasShared = family.some((p) => p.accessType === "shared");
-  const hasPersonal = family.some((p) => p.accessType === "personal");
+  const authored = family
+    .flatMap((p) => p.faq ?? [])
+    .map(normalizeFaq)
+    .filter((faq): faq is { question: string; answer: string } => faq !== null);
   const priced = family.filter((p) => !p.priceOnRequest);
-
   const generated = [
-    {
-      question: `How much does ${name} cost in Bangladesh?`,
-      answer: priced.length
-        ? `${name} starts at ${formatBDT(Math.min(...priced.map((p) => p.price)))} per month from AI Team Premium. ${
-            family.length > 1 ? `There are ${family.length} plan options, so you can pick the tier that matches how much you actually use it.` : ""
-          } Prices are in BDT and you pay locally — no international card needed.`
-        : `Pricing for ${name} is quoted per enquiry on WhatsApp so you get the current rate rather than an out-of-date number. Message us and we'll confirm before you pay.`,
-    },
-    {
-      question: `Can I pay for ${name} with bKash or Nagad?`,
-      answer: `Yes. bKash, Nagad and bank transfer are all accepted. This is the main reason most customers in Bangladesh use us — the official provider requires an international card, which most people here don't have.`,
-    },
-    {
-      question: `How fast is delivery for ${name}?`,
-      answer: `Delivery is typically ${sla} after payment is confirmed. You order on WhatsApp, we confirm payment, then we activate access and walk you through the first login.`,
-    },
-    hasShared && hasPersonal
-      ? {
-          question: `What is the difference between the shared and personal plans?`,
-          answer: `A shared plan is a seat on a managed multi-seat plan — it's much cheaper and best if you use ${name} occasionally. A personal plan is a dedicated account with no one else on it, which is the right choice if you use it daily or handle client work.`,
-        }
-      : {
-          question: `Is this account mine, or shared with other people?`,
-          answer: hasPersonal
-            ? `This is a personal account — it's yours, with your own login and no one else using it.`
-            : `This is a managed seat on a multi-seat plan. It keeps the price low. If you want a fully private account instead, message us and we'll quote the personal option.`,
-        },
-    {
-      question: `What happens if access stops working?`,
-      answer: `Message us on WhatsApp and we'll fix or replace it. Every subscription comes with a 30-day replacement guarantee covering issues on our side. Please read the refund policy before ordering — digital access can't be refunded once it's delivered and used.`,
-    },
-    {
-      question: `Do I need a VPN to use ${name} in Bangladesh?`,
-      answer: `No. Everything is set up so it works normally from Bangladesh. If you hit any access issue, our support will sort it out on WhatsApp.`,
-    },
-  ].filter(Boolean) as { question: string; answer: string }[];
-
+    { question: `How much does ${name} cost in Bangladesh?`, answer: priced.length ? `${name} currently starts at ${formatBDT(Math.min(...priced.map((p) => p.price)))} per month on the public catalog. Confirm the exact plan and current price before payment.` : `Public pricing for ${name} is currently price-on-request. Ask on WhatsApp and confirm the current rate before payment.` },
+    { question: `How do I order ${name}?`, answer: `Ask on WhatsApp. Before payment we confirm the approved access model, current price, availability, fulfillment timing and applicable support terms for the specific offer.` },
+    { question: `What access model will I receive?`, answer: `The access model varies by product and offer. We confirm whether the approved method is a customer-owned account, workspace seat or another supported model before payment.` },
+    { question: `What happens if there is an access issue?`, answer: `Contact WhatsApp support with your order details. Recovery, replacement, refund or service-credit eligibility is assessed against the terms confirmed for that order and applicable law.` },
+  ];
   return dedupeFaq([...authored, ...generated]);
 }
 
@@ -296,7 +299,7 @@ function toUseCases(raw: string[], name: string): UseCase[] {
     emoji: EMOJI[i % EMOJI.length],
     title: u,
     who: "",
-    what: `${name} handles this end to end, so the work that used to take hours takes minutes.`,
+    what: `${name} can support this workflow depending on the provider features available to your plan.`,
     timeSaved: "",
     examplePrompt: "",
   }));
@@ -327,11 +330,7 @@ export default function ProductDetail() {
         : `${familyName} in Bangladesh — Pricing & Plans`
       : "AI Tools in Bangladesh",
     description: anchor
-      ? `Buy ${familyName} in Bangladesh. ` +
-        (startPrice.length ? `From ${formatBDT(Math.min(...startPrice.map((p) => p.price)))}/month. ` : "") +
-        (family.length > 1 ? `${family.length} plans. ` : "") +
-        `Pay with bKash or Nagad — no international card needed. ` +
-        `${anchor.deliverySLA || "5–30 min"} delivery, 30-day replacement guarantee, Bangla WhatsApp support.`
+      ? `${familyName} in Bangladesh. ${startPrice.length ? `Public catalog pricing starts at ${formatBDT(Math.min(...startPrice.map((p) => p.price)))}/month. ` : "Pricing is confirmed on request. "}Current access model, availability, fulfillment timing and support terms are confirmed before purchase.`
       : undefined,
     path: `/tools/${slug}`,
   });
@@ -343,9 +342,9 @@ export default function ProductDetail() {
   const faqs = buildFaqs(family, familyName);
   const useCaseStrings = Array.from(new Set(family.flatMap((p) => p.useCases ?? [])));
   const capabilities = Array.from(new Set(family.flatMap((p) => p.capabilities ?? [])));
-  const usps = Array.from(new Set(family.flatMap((p) => p.uniqueSellingPoints ?? [])));
-  const bnBlurb = family.find((p) => p.descriptionBN)?.descriptionBN;
-  const whyBN = family.find((p) => p.whyBuyBN)?.whyBuyBN;
+  const usps = Array.from(new Set(family.flatMap((p) => p.uniqueSellingPoints ?? []))).filter((item) => Boolean(safePublicCopy(item)));
+  const bnBlurb = safePublicCopy(family.find((p) => p.descriptionBN)?.descriptionBN);
+  const whyBN = safePublicCopy(family.find((p) => p.whyBuyBN)?.whyBuyBN);
 
   const related = products
     .filter((p) => p.category === anchor.category && p.slug !== slug)
@@ -363,14 +362,16 @@ export default function ProductDetail() {
           { name: familyName, path: `/tools/${slug}` },
         ]}
       />
-      <ProductSchema
-        name={`${familyName} — Bangladesh`}
-        description={anchor.description}
-        path={`/tools/${slug}`}
-        priceBDT={anchor.price}
-        brand={anchor.provider || anchor.brand}
-        category={categoryLabel(anchor.category)}
-      />
+      {startPrice.length > 0 && (
+        <ProductSchema
+          name={familyName}
+          description={`${familyName} in Bangladesh. Current access model, availability, fulfillment timing and support terms are confirmed before purchase.`}
+          priceBDT={Math.min(...startPrice.map((p) => p.price))}
+          brand={anchor.brand}
+          category={anchor.category}
+          path={`/tools/${slug}`}
+        />
+      )}
 
       {/* ---------------------------------------------------------- hero */}
       <section ref={heroRef} className="py-16 md:py-20" style={{ background: BRAND.sky }}>
@@ -395,7 +396,7 @@ export default function ProductDetail() {
               </h1>
 
               <p className="mt-4 max-w-xl" style={{ color: BRAND.navy, opacity: 0.6, fontSize: "1rem", lineHeight: 1.7 }}>
-                {anchor.description}
+                {safePublicCopy(anchor.description) || `${familyName} plan details are confirmed against the current catalog before purchase.`}
               </p>
 
               {bnBlurb && (
@@ -405,8 +406,8 @@ export default function ProductDetail() {
               )}
 
               <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3" style={{ fontSize: "0.82rem", color: BRAND.navy, opacity: 0.65 }}>
-                <span className="inline-flex items-center gap-1.5"><Clock size={14} color={accent} /> {anchor.deliverySLA || "5–30 min"} delivery</span>
-                <span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} color={accent} /> 30-day replacement</span>
+                <span className="inline-flex items-center gap-1.5"><Clock size={14} color={accent} /> Timing confirmed before payment</span>
+                <span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} color={accent} /> Support terms confirmed before payment</span>
                 <span className="inline-flex items-center gap-1.5"><Check size={14} color={accent} strokeWidth={3} /> bKash · Nagad · Bank</span>
               </div>
 
@@ -450,7 +451,7 @@ export default function ProductDetail() {
               )}
               {anchor.officialUSD ? (
                 <p className="mt-2" style={{ color: BRAND.navy, opacity: 0.45, fontSize: "0.78rem" }}>
-                  Official price ${anchor.officialUSD}/mo — needs an international card
+                  Official reference price ${anchor.officialUSD}/mo — provider billing and taxes can vary by account and region
                 </p>
               ) : null}
 
@@ -484,7 +485,7 @@ export default function ProductDetail() {
             {familyName} plans &amp; pricing
           </h2>
           <p className="mt-2 max-w-2xl" style={{ color: BRAND.navy, opacity: 0.55, fontSize: "0.92rem", lineHeight: 1.7 }}>
-            Every plan is paid in BDT via bKash, Nagad or bank transfer. Pick the tier that matches your usage — you can upgrade later.
+            Choose from the currently published plan options. We confirm the current price, approved access model, availability and fulfillment timing before payment.
           </p>
 
           <div className="mt-9 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -514,15 +515,15 @@ export default function ProductDetail() {
                 </p>
 
                 <p className="mt-2.5 flex items-center gap-1.5" style={{ color: accent, fontSize: "0.75rem", fontWeight: 500 }}>
-                  <Clock size={12} /> {p.deliverySLA || "5–30 min"}
+                  <Clock size={12} /> Fulfillment timing confirmed before payment
                 </p>
 
                 <p className="mt-4" style={{ color: BRAND.navy, opacity: 0.6, fontSize: "0.84rem", lineHeight: 1.65 }}>
-                  {p.description}
+                  {safePublicCopy(p.description) || `${familyName} plan details are confirmed before purchase.`}
                 </p>
 
                 <ul className="mt-5 space-y-2.5 flex-1">
-                  {(p.plans?.[0]?.whatsIncluded ?? p.capabilities?.map(capabilityLabel) ?? [])
+                  {planHighlights(p)
                     .slice(0, 5)
                     .map((f, i) => (
                       <li key={i} className="flex items-start gap-2" style={{ fontSize: "0.82rem", color: BRAND.navy, opacity: 0.65 }}>
@@ -585,7 +586,7 @@ export default function ProductDetail() {
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-10">
             <h2 className="mb-9" style={{ color: BRAND.navy, fontSize: "clamp(1.35rem, 3vw, 1.9rem)", fontWeight: 700 }}>
-              How people in Bangladesh use it
+              Potential workflows in Bangladesh
             </h2>
             <UseCaseCards useCases={toUseCases(useCaseStrings, familyName)} productName={familyName} />
           </div>
@@ -609,9 +610,9 @@ export default function ProductDetail() {
                 ? usps
                 : [
                     "Pay with bKash, Nagad or bank transfer — no international card required",
-                    `Delivery in ${anchor.deliverySLA || "5–30 minutes"} after payment is confirmed`,
-                    "30-day replacement guarantee on every subscription",
-                    "Bangla and English support on WhatsApp, 7 days a week",
+                    "Fulfillment timing is confirmed before payment for the selected offer",
+                    "Applicable support and recovery terms confirmed before payment",
+                    "Current access model and availability are confirmed before payment",
                   ]
               ).map((u, i) => (
                 <div key={i} className="flex items-start gap-3 rounded-xl p-5" style={{ background: BRAND.white, border: `1px solid ${BRAND.navy}0F` }}>
@@ -655,7 +656,7 @@ export default function ProductDetail() {
                   <p style={{ color: r.brandColor || BRAND.blue, fontSize: "0.72rem", fontWeight: 600 }}>{r.brand}</p>
                   <p className="mt-1.5" style={{ color: BRAND.navy, fontSize: "0.95rem", fontWeight: 600 }}>{r.name}</p>
                   <p className="mt-2 line-clamp-2" style={{ color: BRAND.navy, opacity: 0.55, fontSize: "0.82rem", lineHeight: 1.6 }}>
-                    {r.description}
+                    {safePublicCopy(r.description) || "Current offer details are confirmed before purchase."}
                   </p>
                   <p className="mt-3" style={{ color: BRAND.navy, fontWeight: 600, fontSize: "0.88rem" }}>
                     {r.priceOnRequest ? "Price on request" : `${formatBDT(r.price)}/mo`}

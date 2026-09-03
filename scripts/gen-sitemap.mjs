@@ -30,6 +30,9 @@ const { CANONICAL_MAP } = await import(
 const { isQuarantinedBlogPath } = await import(
   pathToFileURL(resolve(ROOT, "shared/content-quarantine.js")).href
 );
+const { isPublicReviewPath } = await import(
+  pathToFileURL(resolve(ROOT, "shared/public-review.js")).href
+);
 
 const canonicalCompare = new Set(CANONICAL_COMPARE_PATHS);
 const aliases = new Set(Object.keys(CANONICAL_MAP));
@@ -39,6 +42,7 @@ function excluded(path) {
   if (path.startsWith("/compare/") && !canonicalCompare.has(path)) return true;
   if (aliases.has(path)) return true;
   if (isQuarantinedBlogPath(path)) return true;
+  if (isPublicReviewPath(path)) return true;
   return false;
 }
 

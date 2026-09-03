@@ -86,7 +86,6 @@ export function ProductSchema({
       "url": url,
       "priceCurrency": "BDT",
       "price": String(priceBDT).replace(/[^0-9.]/g, ""),
-      "availability": "https://schema.org/InStock",
       "areaServed": "BD",
       "seller": { "@type": "Organization", "name": "AI Team Premium" },
     },

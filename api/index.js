@@ -20,6 +20,7 @@ import { fileURLToPath } from "node:url";
 import { lookupMeta, SITE_URL } from "../lib/route-meta.js";
 import { jsonLdFor } from "../lib/structured-data.js";
 import { isQuarantinedBlogPath } from "../shared/content-quarantine.js";
+import { isPublicReviewPath } from "../shared/public-review.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const INDEX_CANDIDATES = [
@@ -178,6 +179,21 @@ export default function handler(req, res) {
     res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
     res.setHeader("X-Robots-Tag", "noindex, follow");
     res.status(404).send(body);
+    return;
+  }
+
+  if (isPublicReviewPath(path)) {
+    const body = makeNonIndexable(
+      inject(template, {
+        title: "Commercial Page Under Evidence Review | AI Team Premium",
+        description: "This commercial page is temporarily under evidence review. Current access model, availability, fulfillment timing and support terms are confirmed before purchase.",
+        canonical: meta.canonical || SITE_URL + path,
+      })
+    );
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
+    res.setHeader("X-Robots-Tag", "noindex, follow");
+    res.status(200).send(body);
     return;
   }
 

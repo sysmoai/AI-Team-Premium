@@ -82,6 +82,7 @@ const AiSetupSecurity = lazy(() => import("./pages/services/AiSetupSecurity"));
 const AiTraining = lazy(() => import("./pages/services/AiTraining"));
 const AiAutomation = lazy(() => import("./pages/services/AiAutomation"));
 const ManagedAiOperations = lazy(() => import("./pages/services/ManagedAiOperations"));
+const EvidenceReviewPage = lazy(() => import("@/pages/EvidenceReviewPage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const BlogCategory = lazy(() => import("./pages/BlogCategory"));
@@ -110,24 +111,24 @@ function Router() {
       <Suspense fallback={<RouteFallback />}>
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/chatgpt-plans" component={ChatGPTPlans} />
-        <Route path="/chatgpt/plus-shared" component={PlusShared} />
-        <Route path="/chatgpt/go-shared" component={GoShared} />
-        <Route path="/chatgpt/go-personal" component={GoPersonal} />
-        <Route path="/chatgpt/plus-premium-shared" component={PlusPremiumShared} />
-        <Route path="/chatgpt/plus-personal-seat" component={PlusPersonalSeat} />
-        <Route path="/chatgpt/business-shared" component={BusinessShared} />
-        <Route path="/chatgpt/business-premium-shared" component={BusinessPremiumShared} />
-        <Route path="/chatgpt/business-personal-like" component={BusinessPersonalLike} />
-        <Route path="/chatgpt/pro-premium-shared" component={ProPremiumShared} />
-        <Route path="/claude-plans" component={ClaudePlans} />
-        <Route path="/gemini-plans" component={GeminiPlans} />
-        <Route path="/grammarly-plans" component={GrammarlyPlans} />
-        <Route path="/canva-plans" component={CanvaPlans} />
-        <Route path="/perplexity-plans" component={PerplexityPlans} />
-        <Route path="/grok-plans" component={GrokPlans} />
+        <Route path="/chatgpt-plans" component={EvidenceReviewPage} />
+        <Route path="/chatgpt/plus-shared" component={EvidenceReviewPage} />
+        <Route path="/chatgpt/go-shared" component={EvidenceReviewPage} />
+        <Route path="/chatgpt/go-personal" component={EvidenceReviewPage} />
+        <Route path="/chatgpt/plus-premium-shared" component={EvidenceReviewPage} />
+        <Route path="/chatgpt/plus-personal-seat" component={EvidenceReviewPage} />
+        <Route path="/chatgpt/business-shared" component={EvidenceReviewPage} />
+        <Route path="/chatgpt/business-premium-shared" component={EvidenceReviewPage} />
+        <Route path="/chatgpt/business-personal-like" component={EvidenceReviewPage} />
+        <Route path="/chatgpt/pro-premium-shared" component={EvidenceReviewPage} />
+        <Route path="/claude-plans" component={EvidenceReviewPage} />
+        <Route path="/gemini-plans" component={EvidenceReviewPage} />
+        <Route path="/grammarly-plans" component={EvidenceReviewPage} />
+        <Route path="/canva-plans" component={EvidenceReviewPage} />
+        <Route path="/perplexity-plans" component={EvidenceReviewPage} />
+        <Route path="/grok-plans" component={EvidenceReviewPage} />
         <Route path="/ai-tools-vault" component={AIToolsVault} />
-        <Route path="/services/ai-ops-sprint" component={AIOpsSprint} />
+        <Route path="/services/ai-ops-sprint" component={EvidenceReviewPage} />
         <Route path="/services/brand-design" component={BrandDesign} />
         <Route path="/services/web-development" component={WebDevelopment} />
         <Route path="/services/digital-marketing" component={DigitalMarketing} />
@@ -136,7 +137,7 @@ function Router() {
         <Route path="/services/ai-setup-security" component={AiSetupSecurity} />
         <Route path="/services/ai-training" component={AiTraining} />
         <Route path="/services/ai-automation" component={AiAutomation} />
-        <Route path="/services/managed-ai-operations" component={ManagedAiOperations} />
+        <Route path="/services/managed-ai-operations" component={EvidenceReviewPage} />
         <Route path="/support" component={Services} />
         <Route path="/services" component={Services} />
         <Route path="/ai-subscriptions" component={AISubscriptions} />
@@ -160,31 +161,31 @@ function Router() {
         <Route path="/incident-escalation" component={IncidentEscalationPage} />
         <Route path="/privacy-policy" component={PrivacyPolicy} />
         <Route path="/terms" component={TermsOfService} />
-        <Route path="/tools/chatgpt" component={ChatGPT} />
-        <Route path="/tools/claude" component={Claude} />
-        <Route path="/tools/gemini" component={Gemini} />
-        <Route path="/tools/grammarly" component={Grammarly} />
-        <Route path="/tools/canva" component={Canva} />
-        <Route path="/tools/midjourney" component={Midjourney} />
-        <Route path="/tools/perplexity" component={Perplexity} />
-        <Route path="/tools/grok" component={Grok} />
-        <Route path="/tools/copilot" component={Copilot} />
-        <Route path="/tools/vault" component={Vault} />
-        <Route path="/tools/notion" component={NotionPage} />
-        <Route path="/tools/microsoft365" component={Microsoft365Page} />
-        <Route path="/tools/linkedin" component={LinkedInPage} />
-        <Route path="/tools/elevenlabs" component={ElevenLabsPage} />
-        <Route path="/tools/supergrok" component={SuperGrok} />
-        <Route path="/tools/google-ai-pro" component={GoogleAIPro} />
-        <Route path="/tools/leonardo" component={LeonardoPage} />
-        <Route path="/tools/runway" component={RunwayPage} />
-        <Route path="/tools/kling" component={KlingPage} />
-        <Route path="/tools/manus" component={ManusPage} />
-        <Route path="/tools/poe" component={PoePage} />
-        <Route path="/tools/firefly" component={FireflyPage} />
-        <Route path="/tools/ideogram" component={IdeogramPage} />
-        <Route path="/tools/freepik" component={FreepikPage} />
-        <Route path="/tools/adobe-cc" component={AdobeCCPage} />
+        <Route path="/tools/chatgpt" component={EvidenceReviewPage} />
+        <Route path="/tools/claude" component={EvidenceReviewPage} />
+        <Route path="/tools/gemini" component={EvidenceReviewPage} />
+        <Route path="/tools/grammarly" component={EvidenceReviewPage} />
+        <Route path="/tools/canva" component={EvidenceReviewPage} />
+        <Route path="/tools/midjourney" component={EvidenceReviewPage} />
+        <Route path="/tools/perplexity" component={EvidenceReviewPage} />
+        <Route path="/tools/grok" component={EvidenceReviewPage} />
+        <Route path="/tools/copilot" component={EvidenceReviewPage} />
+        <Route path="/tools/vault" component={EvidenceReviewPage} />
+        <Route path="/tools/notion" component={EvidenceReviewPage} />
+        <Route path="/tools/microsoft365" component={EvidenceReviewPage} />
+        <Route path="/tools/linkedin" component={EvidenceReviewPage} />
+        <Route path="/tools/elevenlabs" component={EvidenceReviewPage} />
+        <Route path="/tools/supergrok" component={EvidenceReviewPage} />
+        <Route path="/tools/google-ai-pro" component={EvidenceReviewPage} />
+        <Route path="/tools/leonardo" component={EvidenceReviewPage} />
+        <Route path="/tools/runway" component={EvidenceReviewPage} />
+        <Route path="/tools/kling" component={EvidenceReviewPage} />
+        <Route path="/tools/manus" component={EvidenceReviewPage} />
+        <Route path="/tools/poe" component={EvidenceReviewPage} />
+        <Route path="/tools/firefly" component={EvidenceReviewPage} />
+        <Route path="/tools/ideogram" component={EvidenceReviewPage} />
+        <Route path="/tools/freepik" component={EvidenceReviewPage} />
+        <Route path="/tools/adobe-cc" component={EvidenceReviewPage} />
         {/* Catalog fallback: serves every product family that has no bespoke
             page above. wouter matches in order, so this never shadows them. */}
         <Route path="/tools/:slug" component={ProductDetail} />

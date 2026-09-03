@@ -1,0 +1,139 @@
+name: Patch ProductDetail hotfix
+
+on:
+  push:
+    branches: [hotfix/public-claim-integrity-20260903]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: hotfix/public-claim-integrity-20260903
+      - name: Apply guarded ProductDetail repair
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('client/src/pages/ProductDetail.tsx')
+          s = p.read_text()
+
+          def once(old, new, label):
+              global s
+              count = s.count(old)
+              if count != 1:
+                  raise SystemExit(f'{label}: expected exactly 1 match, found {count}')
+              s = s.replace(old, new)
+
+          once(
+              'interface CatalogProduct {',
+              '''interface CatalogFaq {\n  question?: string;\n  answer?: string;\n  q?: string;\n  a?: string;\n}\n\ninterface CatalogProduct {''',
+              'CatalogFaq interface',
+          )
+          once(
+              '  faq?: { question: string; answer: string }[];',
+              '  faq?: CatalogFaq[];',
+              'FAQ type',
+          )
+          once(
+              '  priceOnRequest?: boolean;\n}',
+              '  priceOnRequest?: boolean;\n  commercialStatus?: string;\n  accessModel?: string;\n}',
+              'governance fields',
+          )
+          once(
+              '''function familyFor(slug: string) {\n  return products.filter((p) => p.slug === slug);\n}''',
+              '''function familyFor(slug: string) {\n  const matches = products.filter((p) => p.slug === slug);\n  // When a family mixes approved offers with explicitly unverified/pending\n  // variants, publish only the approved variants. This keeps legacy catalog\n  // records available to governance tooling without turning them into live\n  // purchase options. Families with no governance metadata retain their\n  // historical behaviour until Catalog Domain V2 takes ownership.\n  const approved = matches.filter(\n    (p) => p.commercialStatus === "approved" && !/^UNVERIFIED/i.test(p.accessModel || "")\n  );\n  return approved.length ? approved : matches;\n}''',
+              'family governance preference',
+          )
+          once(
+              '''const UNSAFE_PUBLIC_PROMISE = /(warranty|guarantee|replacement|delivery|within\\s+\\d+|24\\/7|instant|trusted|served since|most customers|official provider requires)/i;\n\nfunction buildFaqs(family: CatalogProduct[], name: string) {\n  const authored = family.flatMap((p) => p.faq ?? []).filter((faq) => !UNSAFE_PUBLIC_PROMISE.test(`${faq.question} ${faq.answer}`));''',
+              '''const UNSAFE_PUBLIC_PROMISE = /(warranty|guarantee|replacement|delivery|within\\s+\\d+|24\\/7|instant|trusted|served since|most customers|official provider requires|shared plan safe|private from other users|productivity gains|most students)/i;\nconst UNSAFE_PUBLIC_PROMISE_BN = /(ওয়ারেন্টি|ওয়ারেন্টি|ডেলিভারি|প্রতিস্থাপন|গ্যারান্টি|মিনিট|ঘণ্টা|ঘন্টা)/i;\n\nfunction safePublicCopy(value?: string) {\n  if (!value) return undefined;\n  return UNSAFE_PUBLIC_PROMISE.test(value) || UNSAFE_PUBLIC_PROMISE_BN.test(value) ? undefined : value;\n}\n\nfunction normalizeFaq(faq: CatalogFaq) {\n  const question = (faq.question || faq.q || "").trim();\n  const answer = (faq.answer || faq.a || "").trim();\n  if (!question || !answer) return null;\n  if (!safePublicCopy(`${question} ${answer}`)) return null;\n  return { question, answer };\n}\n\nfunction planHighlights(p: CatalogProduct) {\n  const nested = p.plans?.find(\n    (plan) => plan.planName?.trim().toLowerCase() === p.tier?.trim().toLowerCase()\n  );\n  return nested?.whatsIncluded ?? p.capabilities?.map(capabilityLabel) ?? [];\n}\n\nfunction buildFaqs(family: CatalogProduct[], name: string) {\n  const authored = family\n    .flatMap((p) => p.faq ?? [])\n    .map(normalizeFaq)\n    .filter((faq): faq is { question: string; answer: string } => faq !== null);''',
+              'FAQ normalization and safe copy',
+          )
+          once(
+              '  const bnBlurb = family.find((p) => p.descriptionBN)?.descriptionBN;\n  const whyBN = family.find((p) => p.whyBuyBN)?.whyBuyBN;',
+              '  const bnBlurb = safePublicCopy(family.find((p) => p.descriptionBN)?.descriptionBN);\n  const whyBN = safePublicCopy(family.find((p) => p.whyBuyBN)?.whyBuyBN);',
+              'Bangla unsafe copy suppression',
+          )
+          once(
+              '  const usps = Array.from(new Set(family.flatMap((p) => p.uniqueSellingPoints ?? []))).filter((item) => !UNSAFE_PUBLIC_PROMISE.test(item));',
+              '  const usps = Array.from(new Set(family.flatMap((p) => p.uniqueSellingPoints ?? []))).filter((item) => Boolean(safePublicCopy(item)));',
+              'USP safe filter',
+          )
+          once(
+              '{anchor.description}',
+              '{safePublicCopy(anchor.description) || `${familyName} plan details are confirmed against the current catalog before purchase.`}',
+              'hero description',
+          )
+          once(
+              '<span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} color={accent} /> 30-day replacement</span>',
+              '<span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} color={accent} /> Support terms confirmed before payment</span>',
+              'hardcoded warranty',
+          )
+          once(
+              'Official price ${anchor.officialUSD}/mo — needs an international card',
+              'Official reference price ${anchor.officialUSD}/mo — provider billing and taxes can vary by account and region',
+              'official price qualifier',
+          )
+          once(
+              'Every plan is paid in BDT via bKash, Nagad or bank transfer. Pick the tier that matches your usage — you can upgrade later.',
+              'Choose from the currently published plan options. We confirm the current price, approved access model, availability and fulfillment timing before payment.',
+              'plans intro',
+          )
+          once(
+              '<Clock size={12} /> {p.deliverySLA || "5–30 min"}',
+              '<Clock size={12} /> Fulfillment timing confirmed before payment',
+              'plan delivery SLA',
+          )
+          once(
+              '{p.description}',
+              '{safePublicCopy(p.description) || `${familyName} plan details are confirmed before purchase.`}',
+              'plan description',
+          )
+          once(
+              '''{(p.plans?.[0]?.whatsIncluded ?? p.capabilities?.map(capabilityLabel) ?? [])\n                    .slice(0, 5)''',
+              '''{planHighlights(p)\n                    .slice(0, 5)''',
+              'matching nested plan highlights',
+          )
+          once(
+              'How people in Bangladesh use it',
+              'Potential workflows in Bangladesh',
+              'use case evidence wording',
+          )
+          once(
+              '`Delivery in ${anchor.deliverySLA || "5–30 minutes"} after payment is confirmed`,',
+              '"Fulfillment timing is confirmed before payment for the selected offer",',
+              'why fallback delivery',
+          )
+          once(
+              '"Bangla and English support on WhatsApp, 7 days a week",',
+              '"Current access model and availability are confirmed before payment",',
+              'support schedule claim',
+          )
+          once(
+              '{r.description}',
+              '{safePublicCopy(r.description) || "Current offer details are confirmed before purchase."}',
+              'related description',
+          )
+
+          p.write_text(s)
+          PY
+          git diff --check
+          git diff -- client/src/pages/ProductDetail.tsx
+      - name: Commit repaired renderer
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No changes required"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add client/src/pages/ProductDetail.tsx
+          git commit -m "fix: fail closed on legacy product claim data"
+          git push origin HEAD:hotfix/public-claim-integrity-20260903

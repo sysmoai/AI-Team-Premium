@@ -1,41 +1,51 @@
 import { useMutation } from "@tanstack/react-query";
-import { api, type ContactInput } from "@shared/routes";
+import { type ContactInput } from "@shared/routes";
 import { useToast } from "@/hooks/use-toast";
+import { config } from "@/lib/config";
+import { trackWhatsAppClick } from "@/lib/analytics";
+
+function buildContactWhatsAppUrl(data: ContactInput) {
+  const message = [
+    "Hi! I want help from AI Team Premium.",
+    "",
+    `Name: ${data.name}`,
+    `My WhatsApp: ${data.whatsapp}`,
+    `Service: ${data.service || "General inquiry"}`,
+    `What I need: ${data.needs}`,
+    "",
+    "Please confirm the current access model, availability, commercial terms and next steps before purchase.",
+  ].join("\n");
+
+  const url = new URL(config.whatsappUrl);
+  url.searchParams.set("text", message);
+  return url.toString();
+}
 
 export function useCreateContact() {
   const { toast } = useToast();
 
   return useMutation({
     mutationFn: async (data: ContactInput) => {
-      const res = await fetch(api.contacts.create.path, {
-        method: api.contacts.create.method,
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const url = buildContactWhatsAppUrl(data);
+      trackWhatsAppClick(undefined, undefined, undefined, "contact-form-handoff");
 
-      if (!res.ok) {
-        let errorMessage = "Failed to submit request";
-        try {
-          const errorData = await res.json();
-          errorMessage = errorData.message || errorMessage;
-        } catch (e) {
-          // ignore parsing error
-        }
-        throw new Error(errorMessage);
+      const opened = window.open(url, "_blank", "noopener,noreferrer");
+      if (!opened) {
+        window.location.assign(url);
       }
 
-      return await res.json();
+      return { handoff: "whatsapp" as const };
     },
     onSuccess: () => {
       toast({
-        title: "Request Submitted!",
-        description: "We'll get back to you on WhatsApp shortly.",
+        title: "WhatsApp message prepared",
+        description: "Send the pre-filled message in WhatsApp to complete your request.",
       });
     },
-    onError: (error) => {
+    onError: () => {
       toast({
-        title: "Submission Failed",
-        description: error.message,
+        title: "Could not open WhatsApp",
+        description: `Please message us directly at ${config.phoneDisplay}.`,
         variant: "destructive",
       });
     },

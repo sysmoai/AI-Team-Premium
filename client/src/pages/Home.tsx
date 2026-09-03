@@ -69,10 +69,10 @@ const POPULAR_TOOLS = [
   { name: "Google AI Pro", desc: "Gemini + NotebookLM + 2TB", href: "/tools/google-ai-pro", emoji: "🔷" },
   { name: "SuperGrok", desc: "লাইভ X ডেটা + ছবি", href: "/tools/supergrok-bangladesh", emoji: "⚡" },
   { name: "Perplexity Pro", desc: "সোর্সসহ AI সার্চ", href: "/tools/perplexity-pro-bangladesh", emoji: "🔍" },
-  { name: "Midjourney", desc: "সেরা মানের AI ছবি", href: "/tools/midjourney-bangladesh", emoji: "🎨" },
-  { name: "Leonardo AI", desc: "২০+ মডেল, সাশ্রয়ী", href: "/tools/leonardo-ai-bangladesh", emoji: "🖼️" },
+  { name: "Midjourney", desc: "AI image generation", href: "/tools/midjourney-bangladesh", emoji: "🎨" },
+  { name: "Leonardo AI", desc: "AI image generation & editing", href: "/tools/leonardo-ai-bangladesh", emoji: "🖼️" },
   { name: "Runway ML", desc: "প্রফেশনাল AI ভিডিও", href: "/tools/runway-bangladesh", emoji: "🎬" },
-  { name: "Kling AI", desc: "৫ মিনিটের ভিডিও", href: "/tools/kling-ai-bangladesh", emoji: "📹" },
+  { name: "Kling AI", desc: "AI video generation", href: "/tools/kling-ai-bangladesh", emoji: "📹" },
   { name: "Canva Pro", desc: "ডিজাইন + Magic Studio", href: "/tools/canva-pro-bangladesh", emoji: "🖌️" },
   { name: "Grammarly", desc: "ইংরেজি লেখা নিখুঁত করুন", href: "/tools/grammarly-premium-bangladesh", emoji: "✍️" },
   { name: "ElevenLabs", desc: "বাংলা ভয়েস ও ডাবিং", href: "/tools/elevenlabs-bangladesh", emoji: "🎙️" },
@@ -94,9 +94,9 @@ const COMPARISONS = [
 ];
 
 const TRAINING_TRACKS = [
-  { icon: GraduationCap, title: "শিক্ষার্থীদের জন্য", price: "৳১,৯৯৯ থেকে", points: ["অ্যাসাইনমেন্ট ও রিসার্চে AI", "IELTS ও ইংরেজি লেখা", "থিসিস ও প্রেজেন্টেশন"], color: "#15803D" },
-  { icon: Briefcase, title: "ফ্রিল্যান্সারদের জন্য", price: "৳৪,৯৯৯ থেকে", points: ["প্রপোজাল ও ক্লায়েন্ট কমিউনিকেশন", "দ্রুত ডেলিভারি ওয়ার্কফ্লো", "কাস্টম prompt pack"], color: "#2563EB" },
-  { icon: Building2, title: "ব্যবসার জন্য", price: "৳১২,৯৯৯ থেকে", points: ["পুরো টিমের AI ট্রেনিং", "কাস্টমার সাপোর্ট অটোমেশন", "রিপোর্ট ও কনটেন্ট সিস্টেম"], color: "#7C3AED" },
+  { icon: GraduationCap, title: "শিক্ষার্থীদের জন্য", price: "Scope & price confirmed", points: ["অ্যাসাইনমেন্ট ও রিসার্চে AI", "IELTS ও ইংরেজি লেখা", "থিসিস ও প্রেজেন্টেশন"], color: "#15803D" },
+  { icon: Briefcase, title: "ফ্রিল্যান্সারদের জন্য", price: "Scope & price confirmed", points: ["প্রপোজাল ও ক্লায়েন্ট কমিউনিকেশন", "দ্রুত ডেলিভারি ওয়ার্কফ্লো", "কাস্টম prompt pack"], color: "#2563EB" },
+  { icon: Building2, title: "ব্যবসার জন্য", price: "Scope & price confirmed", points: ["পুরো টিমের AI ট্রেনিং", "কাস্টমার সাপোর্ট অটোমেশন", "রিপোর্ট ও কনটেন্ট সিস্টেম"], color: "#7C3AED" },
 ];
 
 // Was hardcoded at ৳499 across 5 separate places on this page (title, hero,
@@ -112,7 +112,7 @@ const HOME_CHATGPT_MIN = Math.min(
 export default function Home() {
   usePageMeta({
     title: "ChatGPT, Claude & AI Tools in Bangladesh",
-    description: `Buy ChatGPT from ৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}/mo. Claude Pro, Gemini Advanced & more. Pay via bKash/Nagad. Bangladesh premium AI subscription provider.`,
+    description: `Explore current ChatGPT, Claude, Gemini and other AI options in Bangladesh. Pay via supported BDT methods where available. AI Team Premium is an independent Bangladesh-focused AI access and enablement platform; current terms are confirmed before purchase.`,
     path: "/",
   });
   useReveal();
@@ -128,10 +128,10 @@ export default function Home() {
     "isPartOf": { "@id": "https://www.aiteampremium.com/#website" },
   };
   const featuredPlans = [
-    chatgptPlans.find(p => p.slug === 'plus-shared'),
-    chatgptPlans.find(p => p.slug === 'plus-premium-shared'),
-    chatgptPlans.find(p => p.slug === 'pro-premium-shared')
-  ].filter(Boolean);
+    chatgptPlans.find(p => p.slug === 'go-personal'),
+    chatgptPlans.find(p => p.slug === 'plus-personal-seat'),
+    chatgptPlans.find(p => p.slug === 'pro-personal')
+  ].filter((p) => p && !p.quarantined);
 
   return (
     <Layout>
@@ -140,7 +140,7 @@ export default function Home() {
       <FAQSchema items={homeFaqs} />
       <section className="relative overflow-hidden" style={{ background: BRAND.navy }}>
         <div className="absolute inset-0">
-          <img src={IMG_HERO} alt="AI Team Premium — Bangladesh's trusted AI subscription provider, offering ChatGPT Plus, Claude Pro, and Gemini Advanced payable via bKash and Nagad" className="w-full h-full object-cover" style={{ opacity: 0.15, mixBlendMode: "luminosity" }} loading="eager" />
+          <img src={IMG_HERO} alt="AI Team Premium — Bangladesh-focused AI access and enablement platform" className="w-full h-full object-cover" style={{ opacity: 0.15, mixBlendMode: "luminosity" }} loading="eager" />
           <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${BRAND.navy} 0%, rgba(15,23,42,0.6) 50%, ${BRAND.navy} 100%)` }} />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-24 pb-28 md:pt-32 md:pb-36">
@@ -276,7 +276,7 @@ export default function Home() {
                   </p>
                   <p className="mt-3" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.82rem", lineHeight: 1.5 }}>{o.title}</p>
                   <p className="mt-1 flex items-center gap-1.5" style={{ color: BRAND.blue, fontSize: "0.75rem", fontWeight: 500 }}>
-                    <Clock size={12} /> {o.deliverySLA} delivery
+                    <Clock size={12} /> Fulfillment timing confirmed before payment
                   </p>
                   <div className="mt-auto pt-5 flex gap-2">
                     <a
@@ -321,7 +321,7 @@ export default function Home() {
             <p className="mb-3 uppercase" style={{ color: BRAND.blue, fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Browse by Tool</p>
             <h2 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>জনপ্রিয় AI Tools</h2>
             <p className="mt-4 max-w-lg mx-auto" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.9rem", lineHeight: 1.65 }}>
-              ৩৭টি premium AI tool · ৮০টি subscription plan — সবই bKash / Nagad দিয়ে টাকায়।
+              Premium AI tools ও subscription options দেখুন। Current price, access model, availability এবং payment instructions purchase-এর আগে confirm করা হয়।
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -342,7 +342,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
               style={{ background: BRAND.blue, color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
             >
-              সব ৮০টি প্ল্যান দেখুন <ChevronRight size={16} />
+              সব প্ল্যান দেখুন <ChevronRight size={16} />
             </Link>
             <Link
               href="/pricing"

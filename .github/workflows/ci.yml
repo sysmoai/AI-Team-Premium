@@ -20,6 +20,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: 🔐 Reject tracked environment files
+        shell: bash
+        run: |
+          set -euo pipefail
+          tracked_env="$(git ls-files | grep -E '(^|/)\.env($|\.)' | grep -vE '(^|/)\.env\.example$' || true)"
+          if [ -n "$tracked_env" ]; then
+            echo "Tracked environment files are forbidden. Move secrets to the deployment environment and keep only .env.example in git."
+            printf '%s\n' "$tracked_env"
+            exit 1
+          fi
+          echo "No tracked environment secret files found."
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -28,6 +40,9 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
 
       - name: ✅ TypeScript check
         run: npm run check
@@ -40,6 +55,38 @@ jobs:
       - name: ✅ Lint code
         run: npm run lint 2>/dev/null || echo "No lint script"
         continue-on-error: true
+
+      - name: Start production server for E2E
+        shell: bash
+        run: |
+          set -euo pipefail
+          DATABASE_URL="postgresql://localhost:5432/ci" \
+          NODE_ENV=production \
+          PORT=5000 \
+          npm start > /tmp/aitp-ci-server.log 2>&1 &
+          echo "SERVER_PID=$!" >> "$GITHUB_ENV"
+
+      - name: Wait for production server
+        shell: bash
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 20); do
+            http_code="$(curl -s -o /dev/null -w '%{http_code}' http://localhost:5000/pricing || true)"
+            if [ "$http_code" = "200" ]; then
+              echo "Server is ready (attempt $i, status $http_code)"
+              exit 0
+            fi
+            if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+              echo "Server exited before becoming ready."
+              cat /tmp/aitp-ci-server.log || true
+              exit 1
+            fi
+            echo "Waiting for server... attempt $i (status ${http_code:-unavailable})"
+            sleep 2
+          done
+          echo "Server did not become ready in time."
+          cat /tmp/aitp-ci-server.log || true
+          exit 1
 
       - name: ✅ Run E2E tests
         run: npx playwright test e2e/verify-all.spec.ts --reporter=list
@@ -58,8 +105,10 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Checkout code
+      - name: Checkout full history for security scan
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -68,14 +117,16 @@ jobs:
           cache: 'npm'
 
       - name: 🔐 Dependency audit
-        run: npm audit --audit-level=moderate || true
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
 
       - name: 🔍 Check for secrets
+        if: always()
         uses: trufflesecurity/trufflehog@main
         with:
           path: ./
-          base: ${{ github.event.repository.default_branch }}
-          head: HEAD
+          base: ${{ github.event.pull_request.base.sha || github.event.before }}
+          head: ${{ github.event.pull_request.head.sha || github.sha }}
           extra_args: --debug
 
   notify:
@@ -87,9 +138,9 @@ jobs:
       - name: 📬 Check results
         run: |
           if [ "${{ needs.quality-checks.result }}" = "success" ] && [ "${{ needs.security-scan.result }}" = "success" ]; then
-            echo "✅ All checks passed - Ready for deployment"
+            echo "✅ Required P0 checks passed - Ready for preview validation"
             exit 0
           else
-            echo "❌ Some checks failed - Deployment blocked"
+            echo "❌ Required checks failed - Deployment blocked"
             exit 1
           fi

@@ -1,0 +1,105 @@
+name: Patch homepage truth hotfix
+
+on:
+  push:
+    branches: [hotfix/home-truth-integrity-20260903]
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: hotfix/home-truth-integrity-20260903
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Apply guarded homepage truth repair
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          def patch(path, changes):
+              p = Path(path)
+              s = p.read_text()
+              for label, old, new in changes:
+                  n = s.count(old)
+                  if n != 1:
+                      raise SystemExit(f'{path} :: {label}: expected 1 match, found {n}')
+                  s = s.replace(old, new)
+              p.write_text(s)
+
+          patch('client/src/pages/Home.tsx', [
+            ('meta description',
+             'description: `Buy ChatGPT from ৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}/mo. Claude Pro, Gemini Advanced & more. Pay via bKash/Nagad. Bangladesh premium AI subscription provider.`,',
+             'description: `Explore current ChatGPT, Claude, Gemini and other AI options in Bangladesh. Pay via supported BDT methods where available. AI Team Premium is an independent Bangladesh-focused AI access and enablement platform; current terms are confirmed before purchase.`,') ,
+            ('featured approved plans',
+             "const featuredPlans = [\n    chatgptPlans.find(p => p.slug === 'plus-shared'),\n    chatgptPlans.find(p => p.slug === 'plus-premium-shared'),\n    chatgptPlans.find(p => p.slug === 'pro-premium-shared')\n  ].filter(Boolean);",
+             "const featuredPlans = [\n    chatgptPlans.find(p => p.slug === 'go-personal'),\n    chatgptPlans.find(p => p.slug === 'plus-personal-seat'),\n    chatgptPlans.find(p => p.slug === 'pro-personal')\n  ].filter((p) => p && !p.quarantined);") ,
+            ('hero image alt',
+             'alt="AI Team Premium — Bangladesh\'s trusted AI subscription provider, offering ChatGPT Plus, Claude Pro, and Gemini Advanced payable via bKash and Nagad"',
+             'alt="AI Team Premium — Bangladesh-focused AI access and enablement platform"'),
+            ('featured delivery',
+             '<Clock size={12} /> {o.deliverySLA} delivery',
+             '<Clock size={12} /> Fulfillment timing confirmed before payment'),
+            ('popular counts',
+             '৩৭টি premium AI tool · ৮০টি subscription plan — সবই bKash / Nagad দিয়ে টাকায়।',
+             'Premium AI tools ও subscription options দেখুন। Current price, access model, availability এবং payment instructions purchase-এর আগে confirm করা হয়।'),
+            ('all plans button',
+             'সব ৮০টি প্ল্যান দেখুন <ChevronRight size={16} />',
+             'সব প্ল্যান দেখুন <ChevronRight size={16} />'),
+            ('midjourney claim',
+             '{ name: "Midjourney", desc: "সেরা মানের AI ছবি", href: "/tools/midjourney-bangladesh", emoji: "🎨" },',
+             '{ name: "Midjourney", desc: "AI image generation", href: "/tools/midjourney-bangladesh", emoji: "🎨" },'),
+            ('leonardo claim',
+             '{ name: "Leonardo AI", desc: "২০+ মডেল, সাশ্রয়ী", href: "/tools/leonardo-ai-bangladesh", emoji: "🖼️" },',
+             '{ name: "Leonardo AI", desc: "AI image generation & editing", href: "/tools/leonardo-ai-bangladesh", emoji: "🖼️" },'),
+            ('kling claim',
+             '{ name: "Kling AI", desc: "৫ মিনিটের ভিডিও", href: "/tools/kling-ai-bangladesh", emoji: "📹" },',
+             '{ name: "Kling AI", desc: "AI video generation", href: "/tools/kling-ai-bangladesh", emoji: "📹" },'),
+            ('training student price',
+             '{ icon: GraduationCap, title: "শিক্ষার্থীদের জন্য", price: "৳১,৯৯৯ থেকে",',
+             '{ icon: GraduationCap, title: "শিক্ষার্থীদের জন্য", price: "Scope & price confirmed",'),
+            ('training freelancer price',
+             '{ icon: Briefcase, title: "ফ্রিল্যান্সারদের জন্য", price: "৳৪,৯৯৯ থেকে",',
+             '{ icon: Briefcase, title: "ফ্রিল্যান্সারদের জন্য", price: "Scope & price confirmed",'),
+            ('training business price',
+             '{ icon: Building2, title: "ব্যবসার জন্য", price: "৳১২,৯৯৯ থেকে",',
+             '{ icon: Building2, title: "ব্যবসার জন্য", price: "Scope & price confirmed",'),
+          ])
+
+          patch('lib/route-meta.js', [
+            ('homepage title floor',
+             '\"/\": { title: `Buy ChatGPT Plus in Bangladesh — from ${bdt(P.catalogMin)}/mo with bKash & Nagad | AI Team Premium`, description:',
+             '\"/\": { title: `ChatGPT & Premium AI Tools in Bangladesh — bKash & Nagad | AI Team Premium`, description:')
+          ])
+
+          p = Path('e2e/verify-all.spec.ts')
+          s = p.read_text()
+          marker = '// ── Tests ───────────────────────────────────────────────────────────────\n\n'
+          if s.count(marker) != 1:
+              raise SystemExit('e2e marker drift')
+          home_test = '''test.describe("Homepage public truth", () => {\n  test("homepage publishes only non-quarantined featured ChatGPT offers", async ({ page }) => {\n    await page.goto(`${BASE}/`);\n    await page.waitForLoadState("networkidle");\n\n    const body = page.locator("body");\n    await expect(page.getByTestId("button-offer-go-personal")).toBeVisible();\n    await expect(page.getByTestId("button-offer-plus-personal-seat")).toBeVisible();\n    await expect(page.getByTestId("button-offer-pro-personal")).toBeVisible();\n    await expect(page.getByTestId("button-offer-plus-shared")).toHaveCount(0);\n    await expect(page.getByTestId("button-offer-plus-premium-shared")).toHaveCount(0);\n    await expect(page.getByTestId("button-offer-pro-premium-shared")).toHaveCount(0);\n    await expect(body).not.toContainText(/5\\s*[-–]\\s*15\\s*(?:min|minute)/i);\n    await expect(body).not.toContainText(/30[- ]day\\s+(?:replacement\\s+)?warranty/i);\n    await expect(body).not.toContainText(/24[- ]hour\\s+replacement/i);\n  });\n});\n\n'''
+          p.write_text(s.replace(marker, marker + home_test))
+          PY
+
+          npm run gen:index-meta
+          git diff --check
+      - name: Commit repair
+        shell: bash
+        run: |
+          if git diff --quiet; then
+            echo "No changes required"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add client/src/pages/Home.tsx lib/route-meta.js client/index.html e2e/verify-all.spec.ts
+          git commit -m "fix: remove quarantined homepage offers and stale claims"
+          git push origin HEAD:hotfix/home-truth-integrity-20260903

@@ -1,14 +1,16 @@
+import { useEffect } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { BRAND, WhatsAppIcon, THEME_COLORS } from "@/components/brand/LogoIcons";
 import { useDarkMode } from "@/hooks/use-dark-mode";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { BreadcrumbSchema, FAQSchema, JsonLd } from "@/components/seo/JsonLd";
 import { Link, useLocation, useParams } from "wouter";
-import { Clock, Calendar, MessageCircle, ArrowRight, Bookmark } from "lucide-react";
+import { Clock, Calendar, MessageCircle, ArrowRight, Bookmark, ShieldAlert } from "lucide-react";
 import { config } from "@/lib/config";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { BLOG_POSTS, getBlogPost } from "@/data/blog-posts";
 import { categorySlug } from "@/pages/BlogCategory";
+import { QUARANTINED_BLOG_SLUGS } from "@shared/content-quarantine.js";
 
 const SITE_URL = "https://www.aiteampremium.com";
 
@@ -16,13 +18,38 @@ export default function BlogPost() {
   const { isDark } = useDarkMode();
   const { slug } = useParams<{ slug: string }>();
   const post = getBlogPost(slug);
+  const quarantined = Boolean(slug && QUARANTINED_BLOG_SLUGS.has(slug));
   const [, setLocation] = useLocation();
 
   usePageMeta({
-    title: post ? post.title : "Blog Post Not Found",
-    description: post ? post.excerpt : "This blog post could not be found.",
+    title: quarantined ? "Guide Under Evidence Review" : post ? post.title : "Blog Post Not Found",
+    description: quarantined
+      ? "This guide is temporarily under evidence review. Commercial, pricing and provider-policy claims are being re-verified before republication."
+      : post
+        ? post.excerpt
+        : "This blog post could not be found.",
     path: post ? `/blog/${post.slug}` : "/blog",
   });
+
+  useEffect(() => {
+    if (!quarantined) return;
+
+    let robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]');
+    const created = !robots;
+    const previous = robots?.content ?? "";
+    if (!robots) {
+      robots = document.createElement("meta");
+      robots.name = "robots";
+      document.head.appendChild(robots);
+    }
+    robots.content = "noindex, follow";
+
+    return () => {
+      if (!robots) return;
+      if (created) robots.remove();
+      else robots.content = previous;
+    };
+  }, [quarantined]);
 
   if (!post) {
     return (
@@ -33,6 +60,34 @@ export default function BlogPost() {
             Back to Blog <ArrowRight size={16} />
           </button>
         </div>
+      </Layout>
+    );
+  }
+
+  if (quarantined) {
+    return (
+      <Layout>
+        <section className="py-20 md:py-28" style={{ background: THEME_COLORS.sectionBg(isDark) }}>
+          <div className="mx-auto max-w-3xl px-6 lg:px-10 text-center">
+            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full" style={{ background: THEME_COLORS.cardBg(isDark), border: `1px solid ${THEME_COLORS.border(isDark)}` }}>
+              <ShieldAlert size={26} color={THEME_COLORS.accent(isDark)} />
+            </div>
+            <h1 style={{ color: THEME_COLORS.heading(isDark), fontSize: "clamp(1.8rem, 5vw, 2.6rem)", fontWeight: 800, lineHeight: 1.2 }}>
+              Guide under evidence review
+            </h1>
+            <p className="mx-auto mt-5 max-w-2xl" style={{ color: THEME_COLORS.text(isDark), fontSize: "1rem", lineHeight: 1.8 }}>
+              We temporarily removed this article's commercial, pricing and provider-policy guidance while we re-verify it against current provider rules and AI Team Premium's approved operating evidence. We will republish only after those claims are supported.
+            </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <button onClick={() => setLocation("/blog")} className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold text-white" style={{ background: BRAND.blue }}>
+                Back to Blog <ArrowRight size={16} />
+              </button>
+              <a href="/access-types" className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold" style={{ color: THEME_COLORS.accent(isDark), border: `1px solid ${THEME_COLORS.border(isDark)}` }}>
+                Review access types
+              </a>
+            </div>
+          </div>
+        </section>
       </Layout>
     );
   }
@@ -55,27 +110,16 @@ export default function BlogPost() {
     "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}` },
   };
 
-  // Related posts were `.filter(...).slice(0, 3)` — which returns the SAME first
-  // three posts on every single article. With 50 posts that meant 3 posts
-  // received all 50 inbound internal links and the other 47 received none, so
-  // most of the blog accumulated no internal authority and offered a reader who
-  // finished an article nothing relevant to read next.
-  //
-  // Now: prefer same-category posts (topical relevance is what makes an internal
-  // link worth following, and what clusters authority around a subject), then
-  // fill from other categories. Rotating the start position by the post's own
-  // index spreads inbound links across the whole set instead of piling them on
-  // whichever posts happen to sort first — deterministic, so the rendered HTML
-  // is stable between builds and does not churn the diff.
   const idx = Math.max(0, BLOG_POSTS.findIndex((p) => p.slug === post.slug));
   const rotate = (arr: typeof BLOG_POSTS) =>
     arr.length ? arr.slice(idx % arr.length).concat(arr.slice(0, idx % arr.length)) : arr;
 
+  const eligibleRelated = BLOG_POSTS.filter((p) => !QUARANTINED_BLOG_SLUGS.has(p.slug));
   const sameCategory = rotate(
-    BLOG_POSTS.filter((p) => p.slug !== post.slug && p.category === post.category)
+    eligibleRelated.filter((p) => p.slug !== post.slug && p.category === post.category)
   );
   const otherCategory = rotate(
-    BLOG_POSTS.filter((p) => p.slug !== post.slug && p.category !== post.category)
+    eligibleRelated.filter((p) => p.slug !== post.slug && p.category !== post.category)
   );
   const related = [...sameCategory, ...otherCategory].slice(0, 3);
 
@@ -149,10 +193,10 @@ export default function BlogPost() {
           <div className="mt-12 rounded-2xl p-7 md:p-8" style={{ background: THEME_COLORS.sectionBg(isDark), border: `1px solid ${THEME_COLORS.border(isDark)}` }}>
             <div className="flex items-start gap-3 mb-3">
               <Bookmark size={22} color={THEME_COLORS.accent(isDark)} />
-              <h3 style={{ color: THEME_COLORS.heading(isDark), fontSize: "1.15rem", fontWeight: 700 }}>Ready to get started?</h3>
+              <h3 style={{ color: THEME_COLORS.heading(isDark), fontSize: "1.15rem", fontWeight: 700 }}>Need help choosing an access model?</h3>
             </div>
             <p style={{ color: THEME_COLORS.text(isDark), fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
-              Message us on WhatsApp — pay via bKash/Nagad, get access in minutes.
+              Message us for the current governed options, availability and support details. We will confirm the exact access model and current commercial terms before you purchase.
             </p>
             <div className="flex flex-wrap gap-3">
               <a

@@ -27,6 +27,7 @@ Thumbs.db
 # Build artifacts
 build/
 coverage/
+client/public/sitemap.xml
 
 # Logs
 *.log

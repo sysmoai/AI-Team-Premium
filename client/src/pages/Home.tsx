@@ -47,43 +47,37 @@ const SERVICES = [
 ];
 
 const DIFFERENTIATORS = [
-  { icon: CreditCard, title: "No fees added at checkout", desc: "The price shown is the price you pay" },
-  { icon: Shield, title: "bKash / Nagad / Bank Transfer", desc: "No international card needed" },
-  { icon: Clock, title: "5-15 min delivery", desc: "For shared seats" },
-  { icon: Headphones, title: "Bangla + English support", desc: "WhatsApp support" },
-  { icon: RefreshCw, title: "Replacement guarantee", desc: "Within 24h SLA" },
-  { icon: Zap, title: "Free AI consultation", desc: "Which tool is right for you?" },
+  { icon: CreditCard, title: "Local payment coordination", desc: "Current BDT payment instructions are confirmed before payment" },
+  { icon: Clock, title: "Fulfillment timing", desc: "Confirmed for the specific offer before payment" },
+  { icon: Headphones, title: "WhatsApp support", desc: "Bangla + English support channel" },
+  { icon: RefreshCw, title: "Support & recovery terms", desc: "Confirmed for the specific order before payment" },
 ];
 
 const FAQS = [
-  { q: "কতক্ষণে access পাবো?", a: "Shared seat-এ payment confirm হওয়ার ৫–১৫ মিনিটের মধ্যে WhatsApp-এ login details পাঠানো হয়। Personal seat-এ ২–৪ ঘণ্টা, আর Business workspace plan-এ সর্বোচ্চ ১২ ঘণ্টা লাগতে পারে।" },
-  { q: "কীভাবে পেমেন্ট করবো?", a: "bKash, Nagad, Rocket বা Bank Transfer — সবই টাকায়। কোনো international credit card লাগবে না। অর্ডার confirm করার পর পেমেন্ট নম্বর ব্যক্তিগতভাবে WhatsApp-এ পাঠানো হয়, নিরাপত্তার জন্য কখনো publicly পোস্ট করা হয় না।" },
-  { q: "অ্যাকাউন্ট কি genuine, নাকি cracked?", a: "১০০% genuine। আমরা official subscription কিনে রাখি — কোনো cracked, mod বা fake access নয়। এজন্যই আমরা ৩০ দিনের replacement warranty দিতে পারি।" },
-  { q: "ব্যান হওয়ার ভয় আছে কি?", a: "নিয়ম মানলে নেই। Shared seat-এ তিনটি নিয়ম: একসাথে একটি device, password বা recovery email পরিবর্তন না করা, এবং platform-এর usage policy না ভাঙা। Delivery-র সময় নিয়মগুলো লিখিতভাবে দেওয়া হয়।" },
-  { q: "Shared আর Personal seat-এর পার্থক্য কী?", a: "Shared seat-এ অল্প কয়েকজন ব্যবহারকারী একটি subscription ভাগ করেন — দাম অনেক কম, তবে একসাথে একটি device-এ ব্যবহার করতে হয় এবং password পাবেন না। Personal seat-এ পুরো অ্যাকাউন্ট আপনার — password, device, সবকিছুতে স্বাধীনতা, দাম বেশি।" },
-  { q: "শেয়ার্ড অ্যাকাউন্টে আমার চ্যাট কি অন্যরা দেখবে?", a: "না। প্রতিটি ব্যবহারকারীর chat history তার নিজের সেশনের সাথে যুক্ত, অন্য কেউ দেখতে পায় না। শুধু subscription-টা শেয়ার হয়, আপনার কথোপকথন নয়।" },
-  { q: "কাজ না করলে টাকা ফেরত পাবো?", a: "Subscription fee non-refundable, তবে আমাদের দিক থেকে কোনো সমস্যা হলে ২৪ ঘণ্টার মধ্যে বিনামূল্যে replace করে দেওয়া হয় — ৩০ দিন পর্যন্ত এই warranty চলে। বিস্তারিত আমাদের Refund Policy পেজে আছে।" },
-  { q: "দাম কি প্রতি মাসে automatically কাটবে?", a: "না। প্রতিটি subscription নির্দিষ্ট মেয়াদের (সাধারণত ৩০ দিন) জন্য। মেয়াদ শেষে renew করতে চাইলে WhatsApp-এ জানালেই হবে — কোনো auto-debit নেই।" },
-  { q: "আমি কোন প্ল্যান নেবো বুঝতে পারছি না — সাহায্য পাবো?", a: "অবশ্যই। WhatsApp-এ আপনার কাজের ধরন বললে আমরা বিনামূল্যে পরামর্শ দিই কোন tool ও কোন tier আপনার জন্য সবচেয়ে উপযুক্ত। অপ্রয়োজনীয় বেশি দামি প্ল্যান আমরা suggest করি না।" },
-  { q: "AI ব্যবহার শিখতে চাই — কোনো training আছে?", a: "হ্যাঁ। লাইভ Google Meet-এ বাংলা ভাষায় AI coaching সেশন আছে, ৳৭৯৯/ঘণ্টা থেকে শুরু। প্রতিটি সেশনের পর আপনার কাজ অনুযায়ী custom prompt pack ও workflow ডকুমেন্ট দেওয়া হয়।" },
+  { q: "কীভাবে অর্ডার করব?", a: "WhatsApp-এ যে AI tool বা service দরকার সেটি জানান। Payment-এর আগে আমরা current price, access model, availability, fulfillment timing এবং applicable support terms confirm করি।" },
+  { q: "bKash/Nagad-এ payment করা যায়?", a: "Current BDT payment instructions order-এর জন্য WhatsApp-এ confirm করা হয়। Payment confirmation পাওয়ার আগে কোনো public account-এ টাকা পাঠাবেন না।" },
+  { q: "Shared বা personal access কোনটা পাব?", a: "Access model product ও provider policy অনুযায়ী ভিন্ন হতে পারে। Specific offer-এর approved access model payment-এর আগে confirm করা হয়।" },
+  { q: "Delivery কত সময় লাগে?", a: "Availability ও fulfillment timing offer অনুযায়ী পরিবর্তিত হয়। আমরা fixed public delivery SLA publish করি না; current timing payment-এর আগে confirm করা হয়।" },
+  { q: "Access issue হলে কী হবে?", a: "WhatsApp support-এ order details দিন। Recovery, replacement, refund বা service-credit eligibility সেই order-এর confirmed terms এবং applicable law অনুযায়ী assess করা হয়।" },
+  { q: "Training বা setup help আছে?", a: "প্রয়োজন অনুযায়ী setup বা training scope আলাদাভাবে confirm করা যায়।" },
 ];
 
 const POPULAR_TOOLS = [
-  { name: "ChatGPT", desc: "সবচেয়ে জনপ্রিয় AI চ্যাট", href: "/tools/chatgpt", emoji: "💬" },
-  { name: "Claude Pro", desc: "লম্বা ডকুমেন্ট ও কোডিং", href: "/tools/claude", emoji: "🧠" },
-  { name: "Gemini Advanced", desc: "Google Workspace-এর সাথে", href: "/tools/gemini", emoji: "✨" },
+  { name: "ChatGPT", desc: "সবচেয়ে জনপ্রিয় AI চ্যাট", href: "/tools/chatgpt-plus-bangladesh", emoji: "💬" },
+  { name: "Claude Pro", desc: "লম্বা ডকুমেন্ট ও কোডিং", href: "/tools/claude-pro-bangladesh", emoji: "🧠" },
+  { name: "Gemini Advanced", desc: "Google Workspace-এর সাথে", href: "/tools/gemini-advanced-bangladesh", emoji: "✨" },
   { name: "Google AI Pro", desc: "Gemini + NotebookLM + 2TB", href: "/tools/google-ai-pro", emoji: "🔷" },
-  { name: "SuperGrok", desc: "লাইভ X ডেটা + ছবি", href: "/tools/supergrok", emoji: "⚡" },
-  { name: "Perplexity Pro", desc: "সোর্সসহ AI সার্চ", href: "/tools/perplexity", emoji: "🔍" },
-  { name: "Midjourney", desc: "সেরা মানের AI ছবি", href: "/tools/midjourney", emoji: "🎨" },
-  { name: "Leonardo AI", desc: "২০+ মডেল, সাশ্রয়ী", href: "/tools/leonardo", emoji: "🖼️" },
-  { name: "Runway ML", desc: "প্রফেশনাল AI ভিডিও", href: "/tools/runway", emoji: "🎬" },
-  { name: "Kling AI", desc: "৫ মিনিটের ভিডিও", href: "/tools/kling", emoji: "📹" },
-  { name: "Canva Pro", desc: "ডিজাইন + Magic Studio", href: "/tools/canva", emoji: "🖌️" },
-  { name: "Grammarly", desc: "ইংরেজি লেখা নিখুঁত করুন", href: "/tools/grammarly", emoji: "✍️" },
-  { name: "ElevenLabs", desc: "বাংলা ভয়েস ও ডাবিং", href: "/tools/elevenlabs", emoji: "🎙️" },
-  { name: "GitHub Copilot", desc: "AI কোড অ্যাসিস্ট্যান্ট", href: "/tools/copilot", emoji: "👨‍💻" },
-  { name: "Notion AI", desc: "AI ওয়ার্কস্পেস ও নোট", href: "/tools/notion", emoji: "📝" },
+  { name: "SuperGrok", desc: "লাইভ X ডেটা + ছবি", href: "/tools/supergrok-bangladesh", emoji: "⚡" },
+  { name: "Perplexity Pro", desc: "সোর্সসহ AI সার্চ", href: "/tools/perplexity-pro-bangladesh", emoji: "🔍" },
+  { name: "Midjourney", desc: "সেরা মানের AI ছবি", href: "/tools/midjourney-bangladesh", emoji: "🎨" },
+  { name: "Leonardo AI", desc: "২০+ মডেল, সাশ্রয়ী", href: "/tools/leonardo-ai-bangladesh", emoji: "🖼️" },
+  { name: "Runway ML", desc: "প্রফেশনাল AI ভিডিও", href: "/tools/runway-bangladesh", emoji: "🎬" },
+  { name: "Kling AI", desc: "৫ মিনিটের ভিডিও", href: "/tools/kling-ai-bangladesh", emoji: "📹" },
+  { name: "Canva Pro", desc: "ডিজাইন + Magic Studio", href: "/tools/canva-pro-bangladesh", emoji: "🖌️" },
+  { name: "Grammarly", desc: "ইংরেজি লেখা নিখুঁত করুন", href: "/tools/grammarly-premium-bangladesh", emoji: "✍️" },
+  { name: "ElevenLabs", desc: "বাংলা ভয়েস ও ডাবিং", href: "/tools/elevenlabs-bangladesh", emoji: "🎙️" },
+  { name: "GitHub Copilot", desc: "AI কোড অ্যাসিস্ট্যান্ট", href: "/tools/github-copilot-bangladesh", emoji: "👨‍💻" },
+  { name: "Notion AI", desc: "AI ওয়ার্কস্পেস ও নোট", href: "/tools/notion-business-bangladesh", emoji: "📝" },
   { name: "AI Tools Vault", desc: "৩টি টুল এক বান্ডিলে", href: "/ai-tools-vault", emoji: "💎" },
 ];
 
@@ -129,7 +123,7 @@ export default function Home() {
     "name": "AI Team Premium — Premium AI Subscriptions in Bangladesh",
     "url": "https://www.aiteampremium.com/",
     "description":
-      "AI Team Premium sells premium ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly Premium, Midjourney and other premium AI subscriptions in Bangladesh, payable via bKash and Nagad, with 5–15 minute delivery and a 30-day replacement warranty.",
+      "AI Team Premium helps Bangladesh users evaluate and order eligible AI subscriptions with local support. Current access model, price, availability, fulfillment timing and support terms are confirmed before purchase.",
     "inLanguage": ["en", "bn"],
     "isPartOf": { "@id": "https://www.aiteampremium.com/#website" },
   };
@@ -160,7 +154,7 @@ export default function Home() {
               <span style={{ color: BRAND.blue }}>Premium AI & Digital Solutions</span>
             </h1>
             <p className="mt-6 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.55)", fontSize: "1.05rem", lineHeight: 1.75 }}>
-              ChatGPT Plus, Pro & Business at Bangladesh-friendly prices. Fast delivery. bKash & Nagad accepted.
+              Explore current ChatGPT options for Bangladesh. Access model, price and fulfillment terms are confirmed before purchase.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-10">
               <a
@@ -214,7 +208,7 @@ export default function Home() {
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="rounded-2xl p-6 md:p-8 mb-4" style={{ background: BRAND.white, boxShadow: "0 8px 40px rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.06)" }}>
             <p style={{ color: BRAND.navy, fontSize: "1.02rem", lineHeight: 1.7, fontWeight: 500 }}>
-              <strong>AI Team Premium</strong> is a local access provider of premium AI subscriptions in Bangladesh — ChatGPT from <strong>৳{HOME_CHATGPT_MIN.toLocaleString("en-US")}/month</strong>, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via <strong>bKash and Nagad</strong>, with <strong>5–15 minute delivery</strong>, a <strong>30-day replacement warranty</strong>, and Bangla + English WhatsApp support, serving <strong>Bangladeshi users</strong> since 2024.
+              <strong>AI Team Premium</strong> is an independent Bangladesh-focused AI access and enablement platform. Current access model, price, availability, fulfillment timing and support terms are confirmed for each offer before purchase.
             </p>
           </div>
         </div>
@@ -223,7 +217,7 @@ export default function Home() {
       <section className="relative z-10">
         <div className="mx-auto max-w-5xl px-6 lg:px-10">
           <div className="rounded-2xl p-6 md:p-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-8 text-center" style={{ background: BRAND.white, boxShadow: "0 8px 40px rgba(37,99,235,0.08)", border: "1px solid rgba(37,99,235,0.06)" }}>
-            {["5-15 min delivery", "bKash/Nagad accepted", "No checkout fees", "WhatsApp support", "Replacement guarantee"].map((t) => (
+            {["Current terms confirmed", "BDT payment coordination", "WhatsApp support", "Provider-policy review", "Evidence-first catalog"].map((t) => (
               <div key={t} className="flex flex-col items-center gap-1.5">
                 <Check size={16} color={BRAND.blue} strokeWidth={3} />
                 <p style={{ color: BRAND.navy, fontSize: "0.75rem", fontWeight: 500, opacity: 0.7 }}>{t}</p>
@@ -427,9 +421,9 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             {[
-              { step: "01", icon: MessageCircle, color: "#25D366", title: "Message on WhatsApp", desc: "Tell us which AI tool you want. We confirm price and payment details within 5 minutes — in Bangla or English." },
+              { step: "01", icon: MessageCircle, color: "#25D366", title: "Message on WhatsApp", desc: "Tell us which AI tool you want. We confirm the current offer details in Bangla or English before payment." },
               { step: "02", icon: CreditCard, color: BRAND.blue, title: "Pay via bKash or Nagad", desc: "We share the bKash/Nagad number privately. Pay in BDT. No international card, no hidden fees, no registration." },
-              { step: "03", icon: Zap, color: "#F59E0B", title: "Get Access Instantly", desc: "Shared plans delivered in 5–15 minutes. Personal plans in 2–4 hours. Your AI tool is ready — we guide setup." },
+              { step: "03", icon: Zap, color: "#F59E0B", title: "Confirm & Fulfill", desc: "After the offer and payment are confirmed, fulfillment follows the timing agreed for that specific order. Setup guidance is provided where applicable." },
             ].map((s, i) => (
               <div data-reveal="item" data-reveal-delay={i * 140} key={s.step} className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 rounded-2xl mb-5 flex items-center justify-center" style={{ background: `${s.color}15`, border: `2px solid ${s.color}30` }}>
@@ -491,7 +485,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-center mb-16" data-reveal>
             <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Why AI Team Premium</p>
-            <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>Bangladesh's Trusted AI Team</h2>
+            <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>AI Access & Support for Bangladesh</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {DIFFERENTIATORS.map((d) => (
@@ -570,68 +564,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATS STRIP */}
-      <section className="py-12" style={{ background: BRAND.navy }}>
-        <div className="mx-auto max-w-5xl px-6 lg:px-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "37", label: "Premium AI Tools" },
-              { value: `৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}`, label: "Starting Price / mo" },
-              { value: "5–15 min", label: "Avg. Delivery Time" },
-              { value: "30 days", label: "Replacement Warranty" },
-            ].map((stat) => (
-              <div key={stat.label}>
-                <p style={{ color: BRAND.white, fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)", fontWeight: 800, letterSpacing: "-0.02em", lineHeight: 1 }}>{stat.value}</p>
-                <p className="mt-2" style={{ color: "rgba(255,255,255,0.62)", fontSize: "0.78rem", fontWeight: 500 }}>{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 pb-24" style={{ background: BRAND.navy }}>
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
-          <div className="text-center mb-14" data-reveal>
-            {/* This band is BRAND.navy in both themes, so BRAND.blue measured
-                3.45:1 here — under AA for 0.72rem text. Same lighter blue as
-                THEME_COLORS.accent(dark) / .dark .gradient-text. */}
-            <p className="mb-3 uppercase" style={{ color: "#60A5FA", fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>Customer Reviews</p>
-            <h2 style={{ color: BRAND.white, fontSize: "2rem", fontWeight: 700, lineHeight: 1.15 }}>Trusted by BD Professionals</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                review: "ChatGPT Plus access in 8 minutes! bKash payment was super smooth. I was worried at first but the delivery was faster than expected. Now I use it daily for my freelance work.",
-                name: "Farhan Ahmed",
-                role: "Freelance Graphic Designer, Dhaka",
-              },
-              {
-                review: "The AI Tools Vault bundle is perfect — ChatGPT, Claude and Gemini all in one subscription. One WhatsApp order and all three were ready within 6 hours. The support on WhatsApp is also very responsive.",
-                name: "Tasnia Rahman",
-                role: "Content Manager, Chittagong",
-              },
-              {
-                review: "I've been using AI Team Premium for 6 months for GitHub Copilot and Claude Pro. The 30-day replacement guarantee is real — they replaced my slot once within an hour when there was an issue. Highly reliable.",
-                name: "Mehedi Hossain",
-                role: "Software Developer, Rajshahi",
-              },
-            ].map(({ review, name, role }) => (
-              <div key={name} className="rounded-2xl p-8 flex flex-col" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div className="flex gap-1 mb-5">
-                  {[1, 2, 3, 4, 5].map((s) => (
-                    <Star key={s} size={14} fill={BRAND.blue} color={BRAND.blue} />
-                  ))}
-                </div>
-                <p className="flex-1 mb-6" style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.88rem", lineHeight: 1.75 }}>
-                  "{review}"
-                </p>
-                <div>
-                  <p style={{ color: BRAND.white, fontSize: "0.84rem", fontWeight: 700 }}>{name}</p>
-                  <p className="mt-0.5" style={{ color: "rgba(255,255,255,0.62)", fontSize: "0.76rem" }}>{role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+      {/* PURCHASE CHECKS */}
+      <section className="py-16" style={{ background: BRAND.navy }}>
+        <div className="mx-auto max-w-5xl px-6 lg:px-10 text-center">
+          <p className="uppercase" style={{ color: "#60A5FA", fontSize: "0.72rem", letterSpacing: "0.16em", fontWeight: 700 }}>Before you pay</p>
+          <h2 className="mt-3" style={{ color: BRAND.white, fontSize: "2rem", fontWeight: 700 }}>We confirm the commercial facts that can change</h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8 text-left">{["Access model", "Current price", "Availability & timing", "Support / recovery terms"].map((item) => <div key={item} className="rounded-xl p-4" style={{ background: "rgba(255,255,255,.05)", color: BRAND.white }}>{item}</div>)}</div>
         </div>
       </section>
 
@@ -658,7 +596,7 @@ export default function Home() {
             Ready to start? Message us now
           </h2>
           <p className="mt-4 max-w-xl mx-auto" style={{ color: "rgba(255,255,255,0.62)", fontSize: "0.95rem", lineHeight: 1.7 }}>
-            Get your premium AI subscription delivered in minutes, or start a digital project with our team.
+            Ask about a current AI subscription offer or start a digital project with our team. Commercial terms are confirmed before payment.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mt-10">
             <a

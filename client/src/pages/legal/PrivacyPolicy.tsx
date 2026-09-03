@@ -45,7 +45,7 @@ export default function PrivacyPolicy() {
             <ul className="space-y-2 pl-5" style={{ opacity: 0.65 }}>
               <li style={{ listStyleType: "disc" }}>To process and deliver your AI subscription or service.</li>
               <li style={{ listStyleType: "disc" }}>To communicate with you about your order via WhatsApp or Messenger.</li>
-              <li style={{ listStyleType: "disc" }}>To provide post-delivery support and warranty service.</li>
+              <li style={{ listStyleType: "disc" }}>To provide post-purchase support and respond to service issues.</li>
               <li style={{ listStyleType: "disc" }}>To send you renewal reminders (WhatsApp only, opt-out available on request).</li>
               <li style={{ listStyleType: "disc" }}>To improve our website and product offerings.</li>
             </ul>
@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
 
           <div>
             <h2 className="mb-3" style={{ fontSize: "1.15rem", fontWeight: 700 }}>4. Data Retention</h2>
-            <p style={{ opacity: 0.65 }}>We retain order data for up to 12 months for warranty and support purposes. Contact form submissions are stored in our PostgreSQL database and reviewed only by our support team. You may request deletion at any time by messaging us on WhatsApp.</p>
+            <p style={{ opacity: 0.65 }}>The current contact form prepares a WhatsApp message and does not persist the form payload to an AI Team Premium database. If you continue in WhatsApp, that conversation is processed through WhatsApp/Meta under their applicable terms. You may contact us to request deletion of information we control, subject to legal and operational retention requirements.</p>
           </div>
 
           <div>

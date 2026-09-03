@@ -121,7 +121,7 @@ export function ProductCard({ product }: { product: ProductCardItem }) {
 
         {product.deliverySLA && (
           <div className="text-sm text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-slate-700/50 p-2 rounded">
-            Delivery: {product.deliverySLA}
+            Delivery: Timing confirmed before payment
           </div>
         )}
 

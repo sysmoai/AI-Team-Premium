@@ -19,7 +19,7 @@ export function OrganizationSchema() {
         "height": 512,
       },
       "description":
-        "AI Team Premium is Bangladesh's premium provider of AI subscriptions — ChatGPT Plus, Pro, Team, Claude Pro, Gemini Advanced, Canva Pro, Grammarly, Midjourney and more — payable in BDT via bKash and Nagad with 5-15 minute delivery and a 30-day replacement warranty.",
+        "AI Team Premium is an independent Bangladesh-focused AI access and enablement platform. Current commercial terms are confirmed before purchase.",
       "foundingDate": "2024",
       "areaServed": {
         "@type": "Country",

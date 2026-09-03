@@ -92,6 +92,31 @@ else
     [...new Set(unservable)].slice(0, 10).join("\n")
   );
 
+// ---------------------------------------------------------------- public claims
+section("Public claim integrity");
+const PUBLIC_SURFACES = [
+  "lib/route-meta.js", "lib/product-routes.js", "lib/structured-data.js", "client/index.html",
+  "client/src/pages/Home.tsx", "client/src/pages/Contact.tsx", "client/src/pages/About.tsx",
+  "client/src/pages/AISubscriptions.tsx", "client/src/pages/ProductDetail.tsx",
+  "client/src/pages/legal/TermsOfService.tsx", "client/src/pages/legal/RefundPolicy.tsx",
+  "client/src/components/OrganizationSchema.tsx", "client/src/components/product/TrustAndBuySection.tsx",
+];
+const publicText = PUBLIC_SURFACES.map((p) => `${p}\n${readFileSync(resolve(ROOT, p), "utf-8")}`).join("\n");
+const prohibitedClaims = [
+  [/\b\d+\s*[-–]\s*\d+\s*(?:min|minute|minutes|hour|hours)\s+delivery\b/gi, "fixed quantitative delivery promise"],
+  [/30[- ]day\s+(?:replacement\s+)?(?:warranty|guarantee)/gi, "fixed 30-day warranty/guarantee"],
+  [/24[- ]hour\s+replacement|24h\s+replacement\s+SLA/gi, "fixed 24-hour replacement promise"],
+  [/Trusted by Bangladesh|Trusted by BD Professionals/gi, "unsupported trust claim"],
+  [/Get Access Instantly/gi, "instant-access promise"],
+  [/"availability"\s*:\s*"https:\/\/schema.org\/InStock"/gi, "unsupported InStock structured-data claim"],
+  [/Contact form submissions are stored in our PostgreSQL database/gi, "stale contact-form database claim"],
+];
+const claimLeaks = prohibitedClaims
+  .map(([re, label]) => { re.lastIndex = 0; const n = (publicText.match(re) || []).length; return [label, n]; })
+  .filter(([, n]) => n > 0);
+if (claimLeaks.length === 0) ok("critical public surfaces contain no fixed SLA/warranty/trust/stock claims");
+else fail("unsupported public claim(s) remain on critical surfaces", claimLeaks.map(([label, n]) => `${n} x ${label}`).join("\n"));
+
 // ---------------------------------------------------------------- content
 section("Product catalog");
 
@@ -993,7 +1018,7 @@ if (handler) {
   const cases = [
     ["/api/", 200, ROUTE_META["/"].title],
     ["/api/all-products", 200, ROUTE_META["/all-products"].title],
-    ["/api/tools/midjourney", 200, ROUTE_META["/tools/midjourney"].title],
+    ["/api/tools/midjourney", 200, "Commercial Page Under Evidence Review | AI Team Premium"],
     ["/api/compare/claude-vs-chatgpt", 200, null],
     ["/api/no-such-page", 404, null],
   ];

@@ -45,7 +45,8 @@ export const QUARANTINED_BLOG_SLUGS = new Set([
 
 export function isQuarantinedBlogPath(path) {
   if (!path.startsWith("/blog/")) return false;
-  const slug = path.slice("/blog/".length).replace(/\\\/$/, "");
+  const rawSlug = path.slice("/blog/".length);
+  const slug = rawSlug.endsWith("/") ? rawSlug.slice(0, -1) : rawSlug;
   return QUARANTINED_BLOG_SLUGS.has(slug);
 }
 ''',
@@ -65,21 +66,21 @@ export const PUBLIC_REVIEW_PATHS = new Set([
   ...mappedCommercialAliases,
   "/tools/vault",
   "/tools/linkedin",
-  "/chatgpt/plus-starter-shared",
+  "/chatgpt/plus-shared",
   "/chatgpt/plus-premium-shared",
   "/chatgpt/plus-personal-seat",
-  "/chatgpt/team-starter-shared",
-  "/chatgpt/team-premium-shared",
-  "/chatgpt/team-personal-seat",
+  "/chatgpt/business-shared",
+  "/chatgpt/business-premium-shared",
+  "/chatgpt/business-personal-like",
   "/chatgpt/go-personal",
   "/chatgpt/pro-premium-shared",
-  "/chatgpt/pro-personal-seat",
+  "/chatgpt/go-shared",
   "/services/ai-ops-sprint",
   "/services/managed-ai-operations",
 ]);
 
 export function isPublicReviewPath(path) {
-  const normalized = path.length > 1 ? path.replace(/\\\/$/, "") : path;
+  const normalized = path.length > 1 && path.endsWith("/") ? path.slice(0, -1) : path;
   return PUBLIC_REVIEW_PATHS.has(normalized);
 }
 ''',
@@ -137,13 +138,13 @@ export default function EvidenceReviewPage() {
 
 # ---------------------------------------------------------------- route containment
 app = read("client/src/App.tsx")
-marker = 'const ManagedAiOperations = lazy(() => import("@/pages/services/ManagedAiOperations"));'
+marker = 'const ManagedAiOperations = lazy(() => import("./pages/services/ManagedAiOperations"));'
 if marker not in app:
     raise SystemExit("App.tsx lazy marker not found")
 app = app.replace(marker, marker + '\nconst EvidenceReviewPage = lazy(() => import("@/pages/EvidenceReviewPage"));', 1)
 review_paths = [
     "/chatgpt-plans", "/claude-plans", "/gemini-plans", "/grammarly-plans", "/canva-plans", "/perplexity-plans", "/grok-plans",
-    "/chatgpt/plus-starter-shared", "/chatgpt/plus-premium-shared", "/chatgpt/plus-personal-seat", "/chatgpt/team-starter-shared", "/chatgpt/team-premium-shared", "/chatgpt/team-personal-seat", "/chatgpt/go-personal", "/chatgpt/pro-premium-shared", "/chatgpt/pro-personal-seat",
+    "/chatgpt/plus-shared", "/chatgpt/plus-premium-shared", "/chatgpt/plus-personal-seat", "/chatgpt/business-shared", "/chatgpt/business-premium-shared", "/chatgpt/business-personal-like", "/chatgpt/go-personal", "/chatgpt/pro-premium-shared", "/chatgpt/go-shared",
     "/tools/chatgpt", "/tools/claude", "/tools/gemini", "/tools/supergrok", "/tools/perplexity", "/tools/grok", "/tools/google-ai-pro", "/tools/midjourney", "/tools/leonardo", "/tools/runway", "/tools/kling", "/tools/grammarly", "/tools/canva", "/tools/copilot", "/tools/firefly", "/tools/ideogram", "/tools/freepik", "/tools/poe", "/tools/microsoft365", "/tools/vault", "/tools/elevenlabs", "/tools/notion", "/tools/linkedin", "/tools/manus", "/tools/adobe-cc",
     "/services/ai-ops-sprint", "/services/managed-ai-operations",
 ]
@@ -304,7 +305,7 @@ import { BRAND } from "@/components/brand/LogoIcons";
 import { usePageMeta } from "@/hooks/use-page-meta";
 export default function TermsOfService() {
   usePageMeta({ title: "Terms of Service", description: "Current ordering and service-term disclosure for AI Team Premium. Order-specific commercial terms are confirmed before payment.", path: "/terms" });
-  return <Layout><section className="py-20"><div className="mx-auto max-w-3xl px-6 lg:px-10"><h1 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 800 }}>Terms of Service</h1><div className="mt-8 space-y-6" style={{ color: BRAND.navy, opacity: 0.72, lineHeight: 1.85 }}><p>These public terms describe the current ordering process at a high level. Before payment, AI Team Premium confirms the specific product or service, access model, current price, availability, fulfillment expectations and any order-specific support, recovery, refund or replacement terms.</p><p>Third-party AI products remain subject to their providers' own terms, eligibility rules and account policies. AITP does not grant permission to bypass provider restrictions.</p><p>Older site copies may have contained fixed delivery, warranty or replacement promises. Those statements are not a substitute for the written terms confirmed for the current order.</p><p>Do not send passwords, recovery codes or other sensitive account credentials unless a verified workflow explicitly requires a secure handoff. Contact us before payment if any term is unclear.</p><p>Applicable consumer rights and law are not waived by this page.</p></div></div></section></Layout>;
+  return <Layout><section className="py-20"><div className="mx-auto max-w-3xl px-6 lg:px-10"><h1 style={{ color: BRAND.navy, fontSize: "2.2rem", fontWeight: 800 }}>Terms of Service</h1><div className="mt-8 space-y-6" style={{ color: BRAND.navy, opacity: 0.72, lineHeight: 1.85 }}><p>These public terms describe the current ordering process at a high level. Before payment, AI Team Premium confirms the specific product or service, access model, current price, availability, fulfillment expectations and any order-specific support, recovery, refund or replacement terms.</p><p>Third-party AI products remain subject to their providers' own terms, eligibility rules and account policies. AI Team Premium does not grant permission to bypass provider restrictions.</p><p>Older site copies may have contained fixed delivery, warranty or replacement promises. Those statements are not a substitute for the written terms confirmed for the current order.</p><p>Do not send passwords, recovery codes or other sensitive account credentials unless a verified workflow explicitly requires a secure handoff. Contact us before payment if any term is unclear.</p><p>Applicable consumer rights and law are not waived by this page.</p></div></div></section></Layout>;
 }
 ''',
 )
@@ -417,10 +418,10 @@ write("client/src/components/product/ProductCard.tsx", card)
 pd = read("client/src/pages/ProductDetail.tsx")
 pd, n = re.subn(
     r"// Only facts already present in the catalog are turned into FAQ entries\.[\s\S]*?\nfunction dedupeFaq",
-    '''const UNSAFE_PUBLIC_PROMISE = /(warranty|guarantee|replacement|delivery|within\\s+\\d+|24\\/7|instant|trusted|served since|most customers|official provider requires)/i;
+    '''const UNSAFE_PUBLIC_PROMISE = /(warranty|guarantee|replacement|delivery|within\\\\s+\\\\d+|24\\\\/7|instant|trusted|served since|most customers|official provider requires)/i;
 
 function buildFaqs(family: CatalogProduct[], name: string) {
-  const authored = family.flatMap((p) => p.faq ?? []).filter((faq) => !UNSAFE_PUBLIC_PROMISE.test(`${faq.q} ${faq.a}`));
+  const authored = family.flatMap((p) => p.faq ?? []).filter((faq) => !UNSAFE_PUBLIC_PROMISE.test(`${faq.question} ${faq.answer}`));
   const priced = family.filter((p) => !p.priceOnRequest);
   const generated = [
     { question: `How much does ${name} cost in Bangladesh?`, answer: priced.length ? `${name} currently starts at ${formatBDT(Math.min(...priced.map((p) => p.price)))} per month on the public catalog. Confirm the exact plan and current price before payment.` : `Public pricing for ${name} is currently price-on-request. Ask on WhatsApp and confirm the current rate before payment.` },
@@ -454,7 +455,7 @@ pd = pd.replace('"Fast delivery via WhatsApp after payment confirmation",', '"Cu
 pd = pd.replace('"30-day replacement guarantee on every subscription",', '"Applicable support and recovery terms confirmed before payment",')
 pd = pd.replace("const usps = Array.from(new Set(family.flatMap((p) => p.uniqueSellingPoints ?? [])));", "const usps = Array.from(new Set(family.flatMap((p) => p.uniqueSellingPoints ?? []))).filter((item) => !UNSAFE_PUBLIC_PROMISE.test(item));")
 pd, n = re.subn(
-    r"<ProductSchema\n\s*name=\{familyName\}[\s\S]*?\n\s*/>",
+    r"<ProductSchema[\s\S]*?\n\s*/>",
     '''{startPrice.length > 0 && (
         <ProductSchema
           name={familyName}
@@ -518,7 +519,7 @@ function breadcrumbFor(path, meta) {
     else if (section === "blog") items.push({ name: "Blog", item: SITE + "/blog" });
     else {
       const label = section.charAt(0).toUpperCase() + section.slice(1).replace(/-/g, " ");
-      items.push({ name: label, item: `${SITE}/${section}` });
+      items.push({ name: label, item: SITE + "/" + section });
     }
   }
   items.push({ name: meta.title.split(" — ")[0].split(" | ")[0], item: canonicalUrl });
@@ -573,6 +574,11 @@ if (claimLeaks.length === 0) ok("critical public surfaces contain no fixed SLA/w
 else fail("unsupported public claim(s) remain on critical surfaces", claimLeaks.map(([label, n]) => `${n} x ${label}`).join("\\n"));
 
 '''
-write("scripts/verify.mjs", verify.replace(anchor, gate + anchor, 1))
+verify = verify.replace(anchor, gate + anchor, 1)
+verify = verify.replace(
+    '["/api/tools/midjourney", 200, ROUTE_META["/tools/midjourney"].title],',
+    '["/api/tools/midjourney", 200, "Commercial Page Under Evidence Review | AI Team Premium"],',
+)
+write("scripts/verify.mjs", verify)
 
 print("public-claim hotfix transformations applied")

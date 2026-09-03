@@ -224,56 +224,17 @@ function whatsappHref(p: CatalogProduct) {
   return `${config.whatsappUrl}?text=${encodeURIComponent(`${base} — please share payment details.`)}`;
 }
 
-// Only facts already present in the catalog are turned into FAQ entries. Nothing
-// here invents a price, a guarantee or a delivery time that the data doesn't state.
+const UNSAFE_PUBLIC_PROMISE = /(warranty|guarantee|replacement|delivery|within\s+\d+|24\/7|instant|trusted|served since|most customers|official provider requires)/i;
+
 function buildFaqs(family: CatalogProduct[], name: string) {
-  const authored = family.flatMap((p) => p.faq ?? []);
-  if (authored.length >= 4) return dedupeFaq(authored);
-
-  const cheapest = family.reduce((a, b) => (a.price <= b.price ? a : b));
-  const sla = cheapest.deliverySLA || "5–30 minutes";
-  const hasShared = family.some((p) => p.accessType === "shared");
-  const hasPersonal = family.some((p) => p.accessType === "personal");
+  const authored = family.flatMap((p) => p.faq ?? []).filter((faq) => !UNSAFE_PUBLIC_PROMISE.test(`${faq.question} ${faq.answer}`));
   const priced = family.filter((p) => !p.priceOnRequest);
-
   const generated = [
-    {
-      question: `How much does ${name} cost in Bangladesh?`,
-      answer: priced.length
-        ? `${name} starts at ${formatBDT(Math.min(...priced.map((p) => p.price)))} per month from AI Team Premium. ${
-            family.length > 1 ? `There are ${family.length} plan options, so you can pick the tier that matches how much you actually use it.` : ""
-          } Prices are in BDT and you pay locally — no international card needed.`
-        : `Pricing for ${name} is quoted per enquiry on WhatsApp so you get the current rate rather than an out-of-date number. Message us and we'll confirm before you pay.`,
-    },
-    {
-      question: `Can I pay for ${name} with bKash or Nagad?`,
-      answer: `Yes. bKash, Nagad and bank transfer are all accepted. This is the main reason most customers in Bangladesh use us — the official provider requires an international card, which most people here don't have.`,
-    },
-    {
-      question: `How fast is delivery for ${name}?`,
-      answer: `Delivery is typically ${sla} after payment is confirmed. You order on WhatsApp, we confirm payment, then we activate access and walk you through the first login.`,
-    },
-    hasShared && hasPersonal
-      ? {
-          question: `What is the difference between the shared and personal plans?`,
-          answer: `A shared plan is a seat on a managed multi-seat plan — it's much cheaper and best if you use ${name} occasionally. A personal plan is a dedicated account with no one else on it, which is the right choice if you use it daily or handle client work.`,
-        }
-      : {
-          question: `Is this account mine, or shared with other people?`,
-          answer: hasPersonal
-            ? `This is a personal account — it's yours, with your own login and no one else using it.`
-            : `This is a managed seat on a multi-seat plan. It keeps the price low. If you want a fully private account instead, message us and we'll quote the personal option.`,
-        },
-    {
-      question: `What happens if access stops working?`,
-      answer: `Message us on WhatsApp and we'll fix or replace it. Every subscription comes with a 30-day replacement guarantee covering issues on our side. Please read the refund policy before ordering — digital access can't be refunded once it's delivered and used.`,
-    },
-    {
-      question: `Do I need a VPN to use ${name} in Bangladesh?`,
-      answer: `No. Everything is set up so it works normally from Bangladesh. If you hit any access issue, our support will sort it out on WhatsApp.`,
-    },
-  ].filter(Boolean) as { question: string; answer: string }[];
-
+    { question: `How much does ${name} cost in Bangladesh?`, answer: priced.length ? `${name} currently starts at ${formatBDT(Math.min(...priced.map((p) => p.price)))} per month on the public catalog. Confirm the exact plan and current price before payment.` : `Public pricing for ${name} is currently price-on-request. Ask on WhatsApp and confirm the current rate before payment.` },
+    { question: `How do I order ${name}?`, answer: `Ask on WhatsApp. Before payment we confirm the approved access model, current price, availability, fulfillment timing and applicable support terms for the specific offer.` },
+    { question: `What access model will I receive?`, answer: `The access model varies by product and offer. We confirm whether the approved method is a customer-owned account, workspace seat or another supported model before payment.` },
+    { question: `What happens if there is an access issue?`, answer: `Contact WhatsApp support with your order details. Recovery, replacement, refund or service-credit eligibility is assessed against the terms confirmed for that order and applicable law.` },
+  ];
   return dedupeFaq([...authored, ...generated]);
 }
 
@@ -296,7 +257,7 @@ function toUseCases(raw: string[], name: string): UseCase[] {
     emoji: EMOJI[i % EMOJI.length],
     title: u,
     who: "",
-    what: `${name} handles this end to end, so the work that used to take hours takes minutes.`,
+    what: `${name} can support this workflow depending on the provider features available to your plan.`,
     timeSaved: "",
     examplePrompt: "",
   }));
@@ -327,11 +288,7 @@ export default function ProductDetail() {
         : `${familyName} in Bangladesh — Pricing & Plans`
       : "AI Tools in Bangladesh",
     description: anchor
-      ? `Buy ${familyName} in Bangladesh. ` +
-        (startPrice.length ? `From ${formatBDT(Math.min(...startPrice.map((p) => p.price)))}/month. ` : "") +
-        (family.length > 1 ? `${family.length} plans. ` : "") +
-        `Pay with bKash or Nagad — no international card needed. ` +
-        `${anchor.deliverySLA || "5–30 min"} delivery, 30-day replacement guarantee, Bangla WhatsApp support.`
+      ? `${familyName} in Bangladesh. ${startPrice.length ? `Public catalog pricing starts at ${formatBDT(Math.min(...startPrice.map((p) => p.price)))}/month. ` : "Pricing is confirmed on request. "}Current access model, availability, fulfillment timing and support terms are confirmed before purchase.`
       : undefined,
     path: `/tools/${slug}`,
   });
@@ -343,7 +300,7 @@ export default function ProductDetail() {
   const faqs = buildFaqs(family, familyName);
   const useCaseStrings = Array.from(new Set(family.flatMap((p) => p.useCases ?? [])));
   const capabilities = Array.from(new Set(family.flatMap((p) => p.capabilities ?? [])));
-  const usps = Array.from(new Set(family.flatMap((p) => p.uniqueSellingPoints ?? [])));
+  const usps = Array.from(new Set(family.flatMap((p) => p.uniqueSellingPoints ?? []))).filter((item) => !UNSAFE_PUBLIC_PROMISE.test(item));
   const bnBlurb = family.find((p) => p.descriptionBN)?.descriptionBN;
   const whyBN = family.find((p) => p.whyBuyBN)?.whyBuyBN;
 
@@ -363,14 +320,16 @@ export default function ProductDetail() {
           { name: familyName, path: `/tools/${slug}` },
         ]}
       />
-      <ProductSchema
-        name={`${familyName} — Bangladesh`}
-        description={anchor.description}
-        path={`/tools/${slug}`}
-        priceBDT={anchor.price}
-        brand={anchor.provider || anchor.brand}
-        category={categoryLabel(anchor.category)}
-      />
+      {startPrice.length > 0 && (
+        <ProductSchema
+          name={familyName}
+          description={`${familyName} in Bangladesh. Current access model, availability, fulfillment timing and support terms are confirmed before purchase.`}
+          priceBDT={Math.min(...startPrice.map((p) => p.price))}
+          brand={anchor.brand}
+          category={anchor.category}
+          path={`/tools/${slug}`}
+        />
+      )}
 
       {/* ---------------------------------------------------------- hero */}
       <section ref={heroRef} className="py-16 md:py-20" style={{ background: BRAND.sky }}>
@@ -405,7 +364,7 @@ export default function ProductDetail() {
               )}
 
               <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3" style={{ fontSize: "0.82rem", color: BRAND.navy, opacity: 0.65 }}>
-                <span className="inline-flex items-center gap-1.5"><Clock size={14} color={accent} /> {anchor.deliverySLA || "5–30 min"} delivery</span>
+                <span className="inline-flex items-center gap-1.5"><Clock size={14} color={accent} /> Timing confirmed before payment</span>
                 <span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} color={accent} /> 30-day replacement</span>
                 <span className="inline-flex items-center gap-1.5"><Check size={14} color={accent} strokeWidth={3} /> bKash · Nagad · Bank</span>
               </div>
@@ -610,7 +569,7 @@ export default function ProductDetail() {
                 : [
                     "Pay with bKash, Nagad or bank transfer — no international card required",
                     `Delivery in ${anchor.deliverySLA || "5–30 minutes"} after payment is confirmed`,
-                    "30-day replacement guarantee on every subscription",
+                    "Applicable support and recovery terms confirmed before payment",
                     "Bangla and English support on WhatsApp, 7 days a week",
                   ]
               ).map((u, i) => (

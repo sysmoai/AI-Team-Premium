@@ -13,6 +13,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Identify blog slugs requiring evidence quarantine
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          text = Path('client/src/data/blog-posts.ts').read_text(encoding='utf-8')
+          hits = list(re.finditer(r'\n\s*slug:\s*"([^"]+)"', text))
+          risky = re.compile(r'(AI Team Premium[\s\S]{0,500}(?:warranty|replacement|deliver(?:y|ed)|within\s+\d+\s*(?:min|minute|hour|day)|24/7)|(?:warranty|replacement|deliver(?:y|ed)|within\s+\d+\s*(?:min|minute|hour|day)|24/7)[\s\S]{0,500}AI Team Premium)', re.I)
+          slugs=[]
+          for i,m in enumerate(hits):
+              end = hits[i+1].start() if i+1 < len(hits) else len(text)
+              segment = text[m.start():end]
+              if risky.search(segment):
+                  slugs.append(m.group(1))
+          print('BLOG_QUARANTINE_CANDIDATES=' + ','.join(slugs))
+          print('COUNT=' + str(len(slugs)))
+          PY
       - name: Scan public rendering sources for unsupported promise patterns
         shell: bash
         run: |

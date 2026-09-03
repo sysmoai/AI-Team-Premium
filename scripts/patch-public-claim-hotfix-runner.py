@@ -10,6 +10,7 @@ replacements = {
     '"/chatgpt/team-premium-shared"': '"/chatgpt/business-premium-shared"',
     '"/chatgpt/team-personal-seat"': '"/chatgpt/business-personal-like"',
     '"/chatgpt/pro-personal-seat"': '"/chatgpt/go-shared"',
+    'AITP does not grant permission to bypass provider restrictions.': 'AI Team Premium does not grant permission to bypass provider restrictions.',
 }
 for old, new in replacements.items():
     if old in text:
@@ -69,5 +70,19 @@ if faq_old in text:
 elif faq_new not in text:
     raise SystemExit("catalog FAQ field-name target missing")
 
+# The permanent handler verification must reflect the new evidence-review
+# contract for legacy commercial aliases instead of expecting the old page title.
+old_write = 'write("scripts/verify.mjs", verify.replace(anchor, gate + anchor, 1))'
+new_write = '''verify = verify.replace(anchor, gate + anchor, 1)
+verify = verify.replace(
+    '["/api/tools/midjourney", 200, ROUTE_META["/tools/midjourney"].title],',
+    '["/api/tools/midjourney", 200, "Commercial Page Under Evidence Review | AI Team Premium"],',
+)
+write("scripts/verify.mjs", verify)'''
+if old_write in text:
+    text = text.replace(old_write, new_write, 1)
+elif 'Commercial Page Under Evidence Review | AI Team Premium' not in text:
+    raise SystemExit("handler verify contract target missing")
+
 path.write_text(text, encoding="utf-8")
-print("hotfix runner aligned with current routes, schema generation, path normalization and FAQ types")
+print("hotfix runner aligned with current routes, claim-safe legal copy and evidence-review verification")

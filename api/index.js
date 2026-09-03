@@ -126,6 +126,24 @@ function inject(template, { title, description, canonical }) {
   return html;
 }
 
+function make404NonIndexable(html) {
+  let output = replaceOrInsert(
+    html,
+    /<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/,
+    '<meta name="robots" content="noindex, follow" />'
+  );
+
+  // The static template contains the homepage Organization/WebSite graph.
+  // A 404 must not inherit page-level structured data that describes it as the
+  // homepage or another valid indexable page.
+  output = output.replace(
+    /<!-- ld\+json:home:start -->[\s\S]*?<!-- ld\+json:home:end -->/,
+    ""
+  );
+
+  return output;
+}
+
 // Emit the JSON-LD graph into the served HTML.
 //
 // The page body is an empty SPA mount point, so without this a crawler that
@@ -180,14 +198,17 @@ export default function handler(req, res) {
   const meta = lookupMeta(path);
 
   if (!meta) {
-    const body = inject(template, {
-      title: "404 — Page Not Found | AI Team Premium",
-      description:
-        "The page you requested was not found. Browse our AI subscriptions or return home.",
-      canonical: SITE_URL + path,
-    });
+    const body = make404NonIndexable(
+      inject(template, {
+        title: "404 — Page Not Found | AI Team Premium",
+        description:
+          "The page you requested was not found. Browse our AI subscriptions or return home.",
+        canonical: SITE_URL + path,
+      })
+    );
     res.setHeader("Content-Type", "text/html; charset=utf-8");
     res.setHeader("Cache-Control", "public, max-age=0, must-revalidate");
+    res.setHeader("X-Robots-Tag", "noindex, follow");
     res.status(404).send(body);
     return;
   }

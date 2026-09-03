@@ -1,45 +1,57 @@
-// e2e/verify-all.spec.ts — End-to-end tests for ALL 25 editorial tool pages
+// e2e/verify-all.spec.ts — governance-aware end-to-end coverage for legacy aliases and canonical catalog pages
 import { test, expect } from "@playwright/test";
 
 const BASE = "http://localhost:5000";
 
-// ── All 25 editorial tool pages ─────────────────────────────────────────
+// The 25 historical editorial /tools/<short> routes are intentionally preserved
+// for link continuity, but are no longer commercial truth surfaces. They must
+// render the evidence-review state instead of stale product copy or prices.
 const TOOLS = [
   // Chat / AI Assistants
-  { slug: "chatgpt",     name: "ChatGPT",          compareName: "ChatGPT" },
-  { slug: "claude",      name: "Claude",           compareName: "Claude" },
-  { slug: "gemini",      name: "Gemini",           compareName: "Gemini" },
-  { slug: "perplexity",  name: "Perplexity",       compareName: "Perplexity" },
-  { slug: "grok",        name: "Grok",             compareName: "Grok" },
-  { slug: "supergrok",   name: "SuperGrok",        compareName: "SuperGrok" },
-  { slug: "google-ai-pro", name: "Google AI Pro",  compareName: "Google AI Pro" },
-  { slug: "copilot",     name: "GitHub Copilot",   compareName: "Copilot" },
+  { slug: "chatgpt",       name: "ChatGPT",              compareName: "ChatGPT",          canonical: "/tools/chatgpt-plus-bangladesh" },
+  { slug: "claude",        name: "Claude",               compareName: "Claude",           canonical: "/tools/claude-pro-bangladesh" },
+  { slug: "gemini",        name: "Gemini",               compareName: "Gemini",           canonical: "/tools/gemini-advanced-bangladesh" },
+  { slug: "perplexity",    name: "Perplexity",           compareName: "Perplexity",       canonical: "/tools/perplexity-pro-bangladesh" },
+  { slug: "grok",          name: "Grok",                 compareName: "Grok",             canonical: "/tools/supergrok-bangladesh" },
+  { slug: "supergrok",     name: "SuperGrok",            compareName: "SuperGrok",        canonical: "/tools/supergrok-bangladesh" },
+  { slug: "google-ai-pro", name: "Google AI Pro",        compareName: "Google AI Pro",    canonical: "/tools/gemini-advanced-bangladesh" },
+  { slug: "copilot",       name: "GitHub Copilot",       compareName: "Copilot",          canonical: "/tools/github-copilot-bangladesh" },
   // Image Generation
-  { slug: "midjourney",  name: "Midjourney",       compareName: "Midjourney" },
-  { slug: "leonardo",    name: "Leonardo AI",      compareName: "Leonardo AI" },
-  { slug: "ideogram",    name: "Ideogram AI",      compareName: "Ideogram AI" },
-  { slug: "freepik",     name: "Freepik",          compareName: "Freepik" },
-  { slug: "firefly",     name: "Adobe Firefly",    compareName: "Adobe Firefly" },
-  { slug: "adobe-cc",    name: "Adobe Creative Cloud", compareName: "adobe-cc" },
-  { slug: "canva",       name: "Canva Pro",        compareName: "Canva Pro" },
+  { slug: "midjourney",    name: "Midjourney",           compareName: "Midjourney",       canonical: "/tools/midjourney-bangladesh" },
+  { slug: "leonardo",      name: "Leonardo AI",          compareName: "Leonardo AI",      canonical: "/tools/leonardo-ai-bangladesh" },
+  { slug: "ideogram",      name: "Ideogram AI",          compareName: "Ideogram AI",      canonical: "/tools/ideogram-bangladesh" },
+  { slug: "freepik",       name: "Freepik",              compareName: "Freepik",          canonical: "/tools/freepik-premium-bangladesh" },
+  { slug: "firefly",       name: "Adobe Firefly",        compareName: "Adobe Firefly",    canonical: "/tools/adobe-firefly-bangladesh" },
+  { slug: "adobe-cc",      name: "Adobe Creative Cloud", compareName: "adobe-cc",         canonical: "/tools/adobe-creative-cloud-bangladesh" },
+  { slug: "canva",         name: "Canva Pro",            compareName: "Canva Pro",        canonical: "/tools/canva-pro-bangladesh" },
   // Video Generation
-  { slug: "runway",      name: "Runway ML",        compareName: "Runway ML" },
-  { slug: "kling",       name: "Kling AI",         compareName: "Kling AI" },
+  { slug: "runway",        name: "Runway ML",            compareName: "Runway ML",        canonical: "/tools/runway-bangladesh" },
+  { slug: "kling",         name: "Kling AI",             compareName: "Kling AI",         canonical: "/tools/kling-ai-bangladesh" },
   // Writing & Productivity
-  { slug: "grammarly",   name: "Grammarly",        compareName: "Grammarly" },
-  { slug: "notion",      name: "Notion AI",        compareName: "Notion AI" },
-  { slug: "manus",       name: "Manus AI",         compareName: "Manus AI" },
-  { slug: "poe",         name: "Poe AI",           compareName: "Poe AI" },
-  { slug: "microsoft365", name: "Microsoft 365",   compareName: "Microsoft 365" },
-  { slug: "linkedin",    name: "LinkedIn Premium", compareName: "LinkedIn Premium" },
+  { slug: "grammarly",     name: "Grammarly",            compareName: "Grammarly",        canonical: "/tools/grammarly-premium-bangladesh" },
+  { slug: "notion",        name: "Notion AI",            compareName: "Notion AI",        canonical: "/tools/notion-business-bangladesh" },
+  { slug: "manus",         name: "Manus AI",             compareName: "Manus AI",         canonical: "/tools/manus-ai-bangladesh" },
+  { slug: "poe",           name: "Poe AI",               compareName: "Poe AI",           canonical: "/tools/poe-bangladesh" },
+  { slug: "microsoft365",  name: "Microsoft 365",        compareName: "Microsoft 365",    canonical: "/tools/microsoft-365-copilot-bangladesh" },
+  { slug: "linkedin",      name: "LinkedIn Premium",     compareName: "LinkedIn Premium", canonical: null },
   // Audio & Special
-  { slug: "elevenlabs",  name: "ElevenLabs",       compareName: "ElevenLabs" },
-  { slug: "vault",       name: "AI Tools Vault",   compareName: "AI Tools Vault" },
+  { slug: "elevenlabs",    name: "ElevenLabs",           compareName: "ElevenLabs",       canonical: "/tools/elevenlabs-bangladesh" },
+  { slug: "vault",         name: "AI Tools Vault",       compareName: "AI Tools Vault",   canonical: null },
+];
+
+// Representative canonical catalog routes retain the actual product-detail
+// contract. This preserves positive commercial coverage while the legacy aliases
+// are deliberately noindex/evidence-review pages.
+const CANONICAL_PRODUCT_EXPECTATIONS = [
+  { path: "/tools/chatgpt-plus-bangladesh", name: "ChatGPT" },
+  { path: "/tools/adobe-creative-cloud-bangladesh", name: "Adobe Creative Cloud" },
+  { path: "/tools/runway-bangladesh", name: "Runway" },
+  { path: "/tools/github-copilot-bangladesh", name: "GitHub Copilot" },
+  { path: "/tools/elevenlabs-bangladesh", name: "ElevenLabs" },
 ];
 
 // Representative purchasable catalog entries across the governed pricing
-// categories. Editorial tool names intentionally do not have a 1:1 mapping to
-// current sellable plan names, so pricing assertions must follow catalog truth.
+// categories. Pricing assertions follow catalog truth, not legacy editorial copy.
 const PRICING_CATALOG_EXPECTATIONS = [
   "129 AI subscription plans",
   "ChatGPT Plus",
@@ -53,21 +65,49 @@ const PRICING_CATALOG_EXPECTATIONS = [
 
 // ── Tests ───────────────────────────────────────────────────────────────
 
-test.describe("All 25 Tool Pages", () => {
+test.describe("Legacy tool aliases — evidence review", () => {
   for (const tool of TOOLS) {
-    test(`${tool.name} page renders at /tools/${tool.slug}`, async ({ page }) => {
+    test(`${tool.name} legacy alias is preserved but not commercially published`, async ({ page }) => {
       await page.goto(`${BASE}/tools/${tool.slug}`);
       await page.waitForLoadState("networkidle");
 
-      // Page loads without crash
-      await expect(page.locator("body")).not.toHaveText(/not found/i);
+      const body = page.locator("body");
+      await expect(body).not.toHaveText(/not found/i);
+      await expect(page.locator("h1")).toHaveText("This commercial page is being re-verified");
+      await expect(body).toContainText("re-checking provider policy", { ignoreCase: true });
 
-      // Product name is visible in the H1 or H2
-      const heading = page.locator("h1, h2").first();
-      await expect(heading).toContainText(tool.name, { ignoreCase: true });
+      // Governance invariant: historical aliases must not expose a fixed BDT
+      // commercial price or the fixed SLA/warranty claims removed by the hotfix.
+      await expect(body).not.toContainText(/৳\s*[\d,]+/);
+      await expect(body).not.toContainText(/5\s*[-–]\s*30\s*(?:min|minute)/i);
+      await expect(body).not.toContainText(/30[- ]day\s+(?:replacement\s+)?warranty/i);
+      await expect(body).not.toContainText(/24[- ]hour\s+replacement/i);
 
-      // Page has pricing info (৳ symbol)
-      await expect(page.locator("body")).toContainText("৳");
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", /noindex\s*,\s*follow/i);
+
+      if (tool.canonical) {
+        await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+          "href",
+          new RegExp(`${tool.canonical.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/?$`)
+        );
+        await expect(page.getByRole("link", { name: "View current canonical page" })).toHaveAttribute("href", tool.canonical);
+      } else {
+        await expect(page.getByRole("link", { name: "Browse current catalog" })).toHaveAttribute("href", "/all-products");
+      }
+    });
+  }
+});
+
+test.describe("Canonical product pages", () => {
+  for (const product of CANONICAL_PRODUCT_EXPECTATIONS) {
+    test(`${product.name} canonical route retains governed product detail`, async ({ page }) => {
+      await page.goto(`${BASE}${product.path}`);
+      await page.waitForLoadState("networkidle");
+
+      const body = page.locator("body");
+      await expect(body).not.toContainText("This commercial page is being re-verified");
+      await expect(page.locator("h1, h2").first()).toContainText(product.name, { ignoreCase: true });
+      await expect(body).toContainText("৳");
     });
   }
 });
@@ -85,7 +125,7 @@ test.describe("Pricing Page", () => {
 });
 
 test.describe("Compare Page", () => {
-  test("/compare contains all 25 tool slugs", async ({ page }) => {
+  test("/compare contains all 25 historical tool slugs", async ({ page }) => {
     await page.goto(`${BASE}/compare`);
     await page.waitForLoadState("networkidle");
 

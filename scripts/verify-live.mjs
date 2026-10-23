@@ -1,32 +1,42 @@
 #!/usr/bin/env node
-// Post-deploy smoke test against production.
+// Post-deploy smoke test against production (Cloudflare Workers), staging, or a
+// local `wrangler dev`.
 //
-// Deliberately gentle: a representative sample, one request at a time, spaced
-// out. Vercel's automatic DDoS mitigation challenges bursts from a single IP,
-// and a challenged request returns 403 with X-Vercel-Mitigated: challenge —
-// which looks exactly like an outage but is not. This script reports that as
+// Expectations are computed from lib/render-page.js — the same code the Worker
+// runs — so a route under evidence review or quarantine is checked for its
+// review title and noindex, not the commercial title it would otherwise carry.
+//
+// Deliberately gentle: one request at a time, spaced out. A Cloudflare
+// challenge page (403/503 with cf-mitigated: challenge) is reported as
 // INCONCLUSIVE rather than a failure, so a green/red result can be trusted.
 //
 // Usage:
-//   npm run verify:live            check the live site
-//   npm run verify:live -- --all   check every sitemap URL (slow, may be challenged)
+//   npm run verify:live                         production, representative sample
+//   npm run verify:live -- --all                every sitemap URL
+//   npm run verify:live -- --base <url> --all   staging / local (expects noindex)
 
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const BASE = "https://www.aiteampremium.com";
-const SPACING_MS = 1200;
+const PROD = "https://www.aiteampremium.com";
+const argBase = process.argv.indexOf("--base");
+const BASE = (argBase > -1 ? process.argv[argBase + 1] : PROD).replace(/\/$/, "");
+const IS_PROD = BASE === PROD;
+// `wrangler dev` on localhost: _headers only marks *.workers.dev noindex, so
+// the staging-noindex check applies to static files on real staging only.
+const IS_LOCAL = /^http:\/\/(localhost|127\.0\.0\.1)(:|$)/.test(BASE);
+const SPACING_MS = IS_PROD ? 600 : 50;
 
-const { ROUTE_META, lookupMeta } = await import(
-  pathToFileURL(resolve(ROOT, "lib/route-meta.js")).href
+const { renderPage, SECURITY_HEADERS } = await import(
+  pathToFileURL(resolve(ROOT, "lib/render-page.js")).href
 );
 
 const checkAll = process.argv.includes("--all");
 
 // A spread across every route shape: root, catalog, single-segment, nested,
-// dynamic-prefix, and a path that must 404.
+// dynamic-prefix, review, quarantine, and paths that must 404.
 const SAMPLE = [
   "/",
   "/all-products",
@@ -36,93 +46,165 @@ const SAMPLE = [
   "/services/brand-design",
   "/compare/claude-vs-chatgpt",
   "/about",
+  "/contact",
+  "/blog/chatgpt-plus-price-bangladesh-bkash-guide",
 ];
+const MUST_404 = ["/this-page-does-not-exist-aitp", "/tools/", "/assets/does-not-exist.js", "/images/README.md"];
 
-const paths = checkAll
-  ? [...new Set(Object.keys(ROUTE_META))]
-  : SAMPLE;
+function sitemapPaths() {
+  const file = resolve(ROOT, "dist/public/sitemap.xml");
+  if (!existsSync(file)) return [];
+  return [...readFileSync(file, "utf-8").matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) =>
+    m[1].replace(PROD, "") || "/"
+  );
+}
+
+const paths = checkAll ? [...new Set([...SAMPLE, ...sitemapPaths()])] : SAMPLE;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const decode = (s) =>
+  s.replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+const titleOf = (body) => decode((body.match(/<title>([\s\S]*?)<\/title>/) || [, ""])[1]);
+const canonicalOf = (body) => (body.match(/<link\s+rel="canonical"\s+href="([^"]*)"/) || [, ""])[1];
+
+let template = null;
+try {
+  template = readFileSync(resolve(ROOT, "dist/public/index.html"), "utf-8");
+} catch {}
 
 let pass = 0;
 const failed = [];
 const challenged = [];
 
-console.log(`\nChecking ${paths.length} path(s) against ${BASE}\n`);
+function isChallenge(res) {
+  return (res.status === 403 || res.status === 503) && res.headers.get("cf-mitigated") === "challenge";
+}
+
+async function get(path) {
+  const res = await fetch(BASE + path, { redirect: "manual" });
+  const body = await res.text();
+  return { res, body };
+}
+
+console.log(`\nChecking ${paths.length} path(s) + ${MUST_404.length} 404 probe(s) against ${BASE}\n`);
 
 for (const path of paths) {
-  const meta = lookupMeta(path);
   let res, body;
   try {
-    res = await fetch(BASE + path, { redirect: "follow" });
-    body = await res.text();
+    ({ res, body } = await get(path));
   } catch (e) {
     failed.push(`${path} — network error: ${e.message}`);
-    await sleep(SPACING_MS);
     continue;
   }
-
-  if (res.status === 403 && (res.headers.get("x-vercel-mitigated") || body.includes("Security Checkpoint"))) {
+  if (isChallenge(res)) {
     challenged.push(path);
-    await sleep(SPACING_MS * 2);
+    await sleep(SPACING_MS * 4);
     continue;
   }
 
-  const title = (body.match(/<title>([\s\S]*?)<\/title>/) || [, ""])[1]
-    .replace(/&amp;/g, "&").replace(/&#39;/g, "'").replace(/&quot;/g, '"')
-    .replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-  const canonical = (body.match(/<link rel="canonical" href="([^"]*)"/) || [, ""])[1];
+  // "/" is served straight from static assets as the built index.html.
+  const expected = path === "/" ? { status: 200, body: template } : renderPage(path, template);
+  const robots = (res.headers.get("x-robots-tag") || "").toLowerCase();
+  const problems = [];
 
-  if (res.status !== 200) failed.push(`${path} — HTTP ${res.status}`);
-  else if (!body.includes('id="root"')) failed.push(`${path} — no SPA mount point`);
-  else if (!/\/assets\/index-[^"]+\.js/.test(body)) failed.push(`${path} — no JS bundle reference`);
-  else if (meta && title !== meta.title) failed.push(`${path} — title is "${title.slice(0, 50)}"`);
-  else if (meta && canonical !== meta.canonical) failed.push(`${path} — canonical is "${canonical}"`);
+  if (res.status !== expected.status) problems.push(`HTTP ${res.status}, expected ${expected.status}`);
+  if (!body.includes('id="root"')) problems.push("no SPA mount point");
+  if (!/\/assets\/index-[^"]+\.js/.test(body)) problems.push("no JS bundle reference");
+  if (expected.body) {
+    if (titleOf(body) !== titleOf(expected.body)) problems.push(`title is "${titleOf(body).slice(0, 60)}"`);
+    if (canonicalOf(body) !== canonicalOf(expected.body)) problems.push(`canonical is "${canonicalOf(body)}"`);
+    if (!canonicalOf(body).startsWith(PROD)) problems.push("canonical is not on the www host");
+    const wantNoindex = /noindex/.test(expected.headers?.["X-Robots-Tag"] || "");
+    if (wantNoindex && !/noindex/.test(robots)) problems.push("review/quarantine page is missing X-Robots-Tag noindex");
+    if (IS_PROD && !wantNoindex && /noindex/.test(robots)) problems.push("indexable page is served noindex");
+    const ld = body.match(/<script type="application\/ld\+json">[\s\S]*?<\/script>/g) || [];
+    if (!wantNoindex && ld.length !== 1) problems.push(`${ld.length} JSON-LD graph(s), expected 1`);
+  }
+  if (!IS_PROD && !(IS_LOCAL && path === "/") && !/noindex/.test(robots)) problems.push("staging response is indexable");
+  for (const h of Object.keys(SECURITY_HEADERS)) {
+    if (!res.headers.get(h)) problems.push(`missing ${h}`);
+  }
+
+  if (problems.length) failed.push(`${path} — ${problems.join("; ")}`);
   else pass++;
-
   await sleep(SPACING_MS);
 }
 
-// The bare domain must reach the canonical host over HTTPS.
-//
-// A network-level failure here is usually NOT a fault: some networks (including
-// the ISP this was built on) cannot open a TCP connection to Vercel's apex IP
-// from Node or curl, while browsers on the same machine load it fine. Only a
-// wrong landing URL is a real failure.
-let apex = "unknown";
-let apexInconclusive = false;
-try {
-  const r = await fetch("https://aiteampremium.com/", { redirect: "follow" });
-  apex = r.url.startsWith(BASE) ? "ok" : `WRONG — lands on ${r.url}`;
-  if (!r.url.startsWith(BASE)) failed.push(`apex does not redirect to ${BASE}`);
-} catch {
-  apexInconclusive = true;
-  apex = "not checkable from this network — open https://aiteampremium.com in a browser";
+let notFoundOk = 0;
+for (const path of MUST_404) {
+  try {
+    const { res } = await get(path);
+    if (isChallenge(res)) challenged.push(path);
+    else if (res.status === 404) notFoundOk++;
+    else failed.push(`${path} — HTTP ${res.status}, expected 404`);
+  } catch (e) {
+    failed.push(`${path} — network error: ${e.message}`);
+  }
+  await sleep(SPACING_MS);
 }
 
-// The live bundle should match what the last local build produced.
+for (const [path, type] of [["/robots.txt", "text/plain"], ["/sitemap.xml", "xml"]]) {
+  try {
+    const { res, body } = await get(path);
+    if (res.status !== 200 || !(res.headers.get("content-type") || "").includes(type))
+      failed.push(`${path} — HTTP ${res.status} ${res.headers.get("content-type")}`);
+    else if (path === "/robots.txt" && !body.includes(`Sitemap: ${PROD}/sitemap.xml`))
+      failed.push("robots.txt does not point at the www sitemap");
+  } catch (e) {
+    failed.push(`${path} — network error: ${e.message}`);
+  }
+}
+
+// The live bundle should match what the last local build produced, and its
+// hashed assets must be long-cacheable.
 let bundleState = "unknown";
 try {
-  const localHtml = readFileSync(resolve(ROOT, "dist/public/index.html"), "utf-8");
-  const local = (localHtml.match(/\/assets\/(index-[^"]+\.js)/) || [, null])[1];
-  const liveHtml = await (await fetch(BASE + "/")).text();
-  const live = (liveHtml.match(/\/assets\/(index-[^"]+\.js)/) || [, null])[1];
+  const local = (template.match(/\/assets\/(index-[^"]+\.js)/) || [, null])[1];
+  const live = ((await get("/")).body.match(/\/assets\/(index-[^"]+\.js)/) || [, null])[1];
   if (!local || !live) bundleState = "could not read bundle name";
-  else bundleState = local === live ? `in sync (${live})` : `LOCAL ${local} != LIVE ${live} — deploy still in progress or failed`;
+  else if (local !== live) bundleState = `LOCAL ${local} != LIVE ${live} — deploy still in progress or failed`;
+  else {
+    const r = await fetch(`${BASE}/assets/${live}`);
+    const cc = r.headers.get("cache-control") || "";
+    bundleState = r.ok && cc.includes("immutable") ? `in sync (${live})` : `bundle HTTP ${r.status}, cache-control "${cc}"`;
+    if (!r.ok) failed.push(`/assets/${live} — HTTP ${r.status}`);
+  }
 } catch (e) {
   bundleState = `check failed (${e.message})`;
 }
 
-console.log(`  routes OK      ${pass}/${paths.length - challenged.length}`);
+// Production only: the bare domain must 301/308 to www, keeping path + query.
+let apex = "skipped (not production)";
+let apexInconclusive = false;
+if (IS_PROD) {
+  for (const probe of ["http://aiteampremium.com/pricing?ref=verify", "https://aiteampremium.com/pricing?ref=verify"]) {
+    try {
+      const r = await fetch(probe, { redirect: "manual" });
+      const loc = r.headers.get("location") || "";
+      const okLoc = loc === `${PROD}/pricing?ref=verify` || (probe.startsWith("http:") && loc === "https://aiteampremium.com/pricing?ref=verify");
+      if (![301, 308].includes(r.status) || !okLoc) failed.push(`${probe} — ${r.status} → "${loc}"`);
+    } catch {
+      apexInconclusive = true;
+    }
+  }
+  apex = apexInconclusive ? "not checkable from this network" : "checked";
+  try {
+    const r = await fetch(`${PROD}/`, { method: "HEAD" });
+    const server = r.headers.get("server") || "";
+    if (r.headers.get("x-vercel-id") || /vercel/i.test(server)) failed.push("production is still answered by Vercel");
+    else if (!/cloudflare/i.test(server)) failed.push(`production Server header is "${server}", expected cloudflare`);
+  } catch {}
+}
+
+console.log(`  routes OK      ${pass}/${paths.length - challenged.filter((p) => paths.includes(p)).length}`);
+console.log(`  404 probes OK  ${notFoundOk}/${MUST_404.length}`);
 console.log(`  apex redirect  ${apex}`);
 console.log(`  live bundle    ${bundleState}`);
 
 if (challenged.length) {
   console.log(
-    `\n  ${challenged.length} path(s) were rate-limit challenged by Vercel, not tested:` +
-    `\n    ${challenged.slice(0, 6).join(", ")}${challenged.length > 6 ? ", ..." : ""}` +
-    `\n  This is DDoS mitigation reacting to automated traffic, not a site fault.` +
-    `\n  Wait a few minutes and re-run, or check those paths in a browser.`
+    `\n  INCONCLUSIVE: ${challenged.length} path(s) got a Cloudflare challenge, not tested:` +
+      `\n    ${challenged.slice(0, 6).join(", ")}${challenged.length > 6 ? ", ..." : ""}`
   );
 }
 

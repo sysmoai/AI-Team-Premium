@@ -1,0 +1,39 @@
+// Cloudflare Workers + Static Assets config for AI Team Premium.
+// Deployed by .github/workflows/cloudflare-deploy.yml — the single deploy
+// authority. See docs/operations/AITP-PRODUCTION-RUNBOOK.md.
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "ai-team-premium",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist/public",
+    "binding": "ASSETS",
+    // Unmatched paths fall through to the Worker, which serves route metadata
+    // or a real 404. Never "single-page-application": that answers every
+    // unknown URL with an indexable 200.
+    "not_found_handling": "none",
+    "html_handling": "auto-trailing-slash",
+    // client/public/blog/index.html is a legacy static blog hub. /blog is the
+    // React blog (its metadata lives in lib/route-meta.js and it is the sitemap
+    // URL), so the Worker answers it instead of the stale static file. The
+    // legacy /blog/<category>/<slug>/ pages stay static, as they were on Vercel.
+    "run_worker_first": ["/blog", "/blog/"]
+  },
+  "observability": { "enabled": true },
+  // Production: only the canonical host is served by the Worker. The apex is
+  // a proxied DNS record plus a zone Redirect Rule to www (see runbook).
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "www.aiteampremium.com", "custom_domain": true }],
+  "env": {
+    // Staging: workers.dev only, no custom domain. The Worker and _headers mark
+    // every non-www response noindex.
+    "staging": {
+      "name": "ai-team-premium-staging",
+      "workers_dev": true,
+      "preview_urls": true,
+      "routes": []
+    }
+  }
+}

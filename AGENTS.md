@@ -4,7 +4,7 @@
 - Repo: github.com/sysmoai/AI-Team-Premium
 - Stack: Express 5 + React 18 + Vite + Tailwind
 - Owner: Emon Hossain
-- Live: https://www.aiteampremium.com (Vercel)
+- Live: https://www.aiteampremium.com — migrating to Cloudflare Workers (see docs/operations/AITP-MIGRATION-CHECKPOINT.md)
 - Dev: `C:\Users\emonh\SYSmoAI-Stack\apps\AI-Team-Premium`
 
 ## Status (2026-07-30)
@@ -22,14 +22,17 @@
 
 ## Ship Gate
 ```
-npm run check && npm run build && npm run verify && npm run verify:live
+npm run check && npm run build && npm run validate:commercial && npm run verify && npm run verify:live
 ```
 
 ## Deploy
+Cloudflare Workers + Static Assets. `.github/workflows/cloudflare-deploy.yml` is the only deploy path
+(PR → staging Worker, main → production). Runbook: `docs/operations/AITP-PRODUCTION-RUNBOOK.md`.
 ```
-npx vercel deploy --prod --yes    # CLI deploy (free tier: 100/day)
-git push origin main              # Triggers Vercel auto-deploy
+npm run build && npm run cf:dev                                   # local Worker on :8787
+npm run verify:live -- --base http://127.0.0.1:8787 --all         # check it
 ```
+Do not deploy with `npx vercel` — Vercel is being retired.
 
 ## Key Files
 - Catalog: `client/src/data/products-catalog.json` (80 products)

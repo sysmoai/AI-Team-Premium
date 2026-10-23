@@ -1060,6 +1060,104 @@ if (handler) {
   else ok("missing assets return a non-HTML 404");
 }
 
+// ---------------------------------------------------------------- worker
+section("Cloudflare Worker");
+
+// Production runs worker/index.js behind Workers Static Assets. Drive it with a
+// stub ASSETS binding serving the built index.html, exactly as Cloudflare does.
+let worker;
+try {
+  worker = (await import(pathToFileURL(resolve(ROOT, "worker/index.js")).href)).default;
+  ok("worker/index.js loads as ESM");
+} catch (e) {
+  fail("worker/index.js failed to load", e.message);
+}
+
+if (worker && existsSync(indexPath)) {
+  const built = readFileSync(indexPath, "utf-8");
+  const env = {
+    ASSETS: {
+      fetch: async (u) =>
+        new URL(u).pathname === "/" ? new Response(built, { status: 200 }) : new Response("", { status: 404 }),
+    },
+  };
+  const hit = (path, host = "www.aiteampremium.com", init) =>
+    worker.fetch(new Request(`https://${host}${path}`, init), env);
+
+  const cases = [
+    ["/all-products", 200, ROUTE_META["/all-products"].title, false],
+    ["/tools/midjourney", 200, "Commercial Page Under Evidence Review | AI Team Premium", true],
+    ["/blog/chatgpt-plus-price-bangladesh-bkash-guide", 200, "Guide Under Evidence Review | AI Team Premium", true],
+    ["/blog", 200, ROUTE_META["/blog"].title, false],
+    ["/no-such-page", 404, "404 — Page Not Found | AI Team Premium", true],
+    ["/api/health", 404, null, true],
+  ];
+  const bad = [];
+  for (const [path, status, title, noindex] of cases) {
+    const r = await hit(path);
+    const body = await r.text();
+    if (r.status !== status) bad.push(`${path}: HTTP ${r.status}, expected ${status}`);
+    const got = (body.match(/<title>([\s\S]*?)<\/title>/) || [, ""])[1];
+    if (title && got !== title.replace(/&/g, "&amp;")) bad.push(`${path}: title "${got}"`);
+    if (noindex !== /noindex/.test(r.headers.get("x-robots-tag") || "")) bad.push(`${path}: X-Robots-Tag "${r.headers.get("x-robots-tag")}"`);
+  }
+  if (bad.length === 0) ok(`worker answers ${cases.length} representative paths correctly`);
+  else fail("worker routing is wrong", bad.join("\n"));
+
+  const asset = await hit("/assets/does-not-exist.js");
+  if (asset.status === 404 && !(asset.headers.get("content-type") || "").startsWith("text/html"))
+    ok("worker: missing assets return a non-HTML 404");
+  else fail("worker: missing asset returned " + asset.status + " " + asset.headers.get("content-type"));
+
+  const apex = await hit("/pricing?ref=x", "aiteampremium.com");
+  if (apex.status === 301 && apex.headers.get("location") === "https://www.aiteampremium.com/pricing?ref=x")
+    ok("worker: apex fallback redirects to www, keeping path and query");
+  else fail("worker: apex redirect wrong", `${apex.status} -> ${apex.headers.get("location")}`);
+
+  const staging = await hit("/all-products", "ai-team-premium-staging.example.workers.dev");
+  if (/noindex/.test(staging.headers.get("x-robots-tag") || "")) ok("worker: non-production hosts are noindex");
+  else fail("worker: staging host is indexable");
+
+  const head = await hit("/all-products", "www.aiteampremium.com", { method: "HEAD" });
+  if (head.status === 200 && (await head.text()) === "") ok("worker: HEAD returns headers without a body");
+  else fail("worker: HEAD handling wrong");
+
+  const post = await hit("/contact", "www.aiteampremium.com", { method: "POST" });
+  if (post.status === 405) ok("worker: non-GET methods are rejected");
+  else fail("worker: POST returned " + post.status);
+
+  // Security headers must match between Worker responses and static files.
+  const { SECURITY_HEADERS } = await import(pathToFileURL(resolve(ROOT, "lib/render-page.js")).href);
+  const page = await hit("/all-products");
+  const missing = Object.entries(SECURITY_HEADERS).filter(([k, v]) => page.headers.get(k) !== v);
+  const headersFile = readFileSync(resolve(ROOT, "client/public/_headers"), "utf-8");
+  const notInFile = Object.entries(SECURITY_HEADERS).filter(([k, v]) => !headersFile.includes(`  ${k}: ${v}\n`));
+  if (missing.length === 0 && notInFile.length === 0) ok("security headers identical on Worker responses and in _headers");
+  else fail("security headers drifted", [...missing, ...notInFile].map(([k]) => k).join(", "));
+}
+
+// The wrangler config must keep real 404s and the static asset directory.
+{
+  const cfg = readFileSync(resolve(ROOT, "wrangler.jsonc"), "utf-8");
+  if (/"not_found_handling":\s*"single-page-application"/.test(cfg))
+    fail("wrangler.jsonc uses SPA fallback", "every unknown URL would return an indexable 200");
+  else if (!/"directory":\s*"\.\/dist\/public"/.test(cfg)) fail("wrangler.jsonc assets.directory is not ./dist/public");
+  else ok("wrangler.jsonc serves dist/public with real 404s");
+}
+
+// No source or tooling files may be uploaded as public assets.
+{
+  const ignore = existsSync(resolve(ROOT, "client/public/.assetsignore"))
+    ? readFileSync(resolve(ROOT, "client/public/.assetsignore"), "utf-8").split("\n").map((l) => l.trim()).filter((l) => l && !l.startsWith("#"))
+    : [];
+  const pub = resolve(ROOT, "dist/public");
+  const leaks = walkFiles(pub, /\.(tsx?|md|mjs|env|sql|map)$|package\.json$/)
+    .map((f) => relative(pub, f).replace(/\\/g, "/"))
+    .filter((f) => !ignore.some((pat) => (pat.endsWith("/") ? f.startsWith(pat) : f === pat)));
+  if (leaks.length === 0) ok("no source/tooling files would be published as assets");
+  else fail("source files would be published", leaks.slice(0, 10).join("\n"));
+}
+
 // ---------------------------------------------------------------- summary
 console.log(
   failures === 0

@@ -1,0 +1,17 @@
+# Workers Static Assets headers for files served without the Worker.
+# Keep the security set identical to SECURITY_HEADERS in lib/render-page.js
+# (npm run verify enforces this).
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
+
+# Vite emits content-hashed filenames here, so they never change in place.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Staging and preview hosts must never be indexed.
+https://:name.:account.workers.dev/*
+  X-Robots-Tag: noindex, nofollow

@@ -14,11 +14,11 @@ Never put tokens, passwords or recovery codes in this file or in chat.
 | Registrar | Squarespace Domains (historical; confirm in the Squarespace account) |
 | Email | Zoho Mail (MX `mx/mx2/mx3.zoho.com`, SPF `include:zohomail.com`) |
 
-The Cloudflare account visible to the recovery session already holds `ai-premium-shop` and `saveonsub-store`, which belong to other businesses. Never edit, route to, or reuse them. If AITP shares that account, an account-wide Workers Admin token can also change those Workers. Either host AITP in its own (free) Cloudflare account, or, after the first deploy has created the two AITP Workers, replace the token with one that has per-Worker **Editor** on `ai-team-premium` and `ai-team-premium-staging` only, plus Workers Routes Write on the AITP zone.
+**Decision (founder, 2026-10-23): AITP gets its own free Cloudflare account.** Don't use the account that holds `ai-premium-shop` and `saveonsub-store` (other businesses). Create the AITP zone, the Workers and the API token only in the AITP account. In that account, an account-scoped Workers Admin token touches nothing outside AITP.
 
 ## One-time setup (human, about 10 minutes)
 
-1. **Cloudflare API token.** In the Cloudflare dashboard, go to Manage Account → Account API Tokens → Create Token. Account-owned tokens are preferred. Grant **Workers Admin** on the account (needed to *create* the two Workers the first time) plus Account Settings Read. After the zone exists (cutover step 2), edit the token to add **Zone → Workers Routes → Write**, scoped to `aiteampremium.com` only. That permission is what lets the deploy attach the `www` custom domain. Don't give the token access to other zones.
+1. **Cloudflare API token.** Sign up for a new free Cloudflare account for AITP (dash.cloudflare.com/sign-up) and use it for everything below. In that account's dashboard, go to Manage Account → Account API Tokens → Create Token. Account-owned tokens are preferred. Grant **Workers Admin** on the account (needed to *create* the two Workers the first time) plus Account Settings Read. After the zone exists (cutover step 2), edit the token to add **Zone → Workers Routes → Write**, scoped to `aiteampremium.com` only. That permission is what lets the deploy attach the `www` custom domain. Don't give the token access to other zones.
 2. **GitHub secrets.** Go to github.com/sysmoai/AI-Team-Premium → Settings → Secrets and variables → Actions. Add `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` (the account ID is shown on the Workers & Pages overview).
 3. Re-run the "Deploy to Cloudflare Workers" workflow on the migration PR, or run it manually with target `staging`. The job summary prints the staging URL, and the workflow verifies every sitemap URL against it.
 

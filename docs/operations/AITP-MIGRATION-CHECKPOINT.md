@@ -18,7 +18,7 @@ Read this first when resuming. Re-verify every line against Git, GitHub Actions 
 
 ## Pending external dependencies (human)
 
-1. Decide which Cloudflare account hosts AITP (see the runbook, "Identity").
+1. ~~Decide the Cloudflare account~~: decided 2026-10-23, a **new AITP-only Cloudflare account**. The founder creates it.
 2. Create the API token and add the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` GitHub secrets (runbook, "One-time setup").
 3. After staging passes: DNS cutover steps 1–7 (Squarespace login, DNSSEC off, nameserver change).
 

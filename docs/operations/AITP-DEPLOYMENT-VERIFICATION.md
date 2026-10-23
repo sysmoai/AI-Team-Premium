@@ -52,9 +52,14 @@ Spot checks (curl):
 - **Tablet (820 px):** the document is 8 px wider than the viewport on every page, but no element is detectably outside it. The assets are the same ones Vercel served, so this is not a migration regression. Logged as a follow-up.
 - Performance: a warm render in the Worker takes about 0.03 ms. The main JS chunk triggers Vite's >500 kB warning (pre-existing).
 
-## Staging (workers.dev)
+## Staging (workers.dev): PASS
 
-Not yet deployed. It needs `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` as GitHub secrets, and the recovery environment cannot reach api.cloudflare.com. Once they're set, the PR's "Deploy to Cloudflare Workers / staging" job deploys and runs the same `verify:live --all` against the staging URL.
+- Cloudflare account: the AITP-only account (sysmoaiprivatelimited@gmail.com, ID `312f8683be42143016fe5478457dc00c`). Its Workers list was empty beforehand.
+- Worker `ai-team-premium-staging`, URL https://ai-team-premium-staging.sysmoaiprivatelimited.workers.dev
+- GitHub Actions run 39900436698 (workflow_dispatch, target staging, branch head `2661503`).
+  - Attempt 1: version `8b7d8cf2-2293-42a9-83f3-6258dc7c7ec2`. verify:live gave 199/203. The 4 failures were the first requests to a brand-new workers.dev hostname: Cloudflare's own "Page not found" with none of our headers, which is a propagation delay. The workflow now waits 20 s before verifying.
+  - Attempt 2: version `f863d3fd-65c9-4dd8-a792-991e2c469802`. **verify:live --all gave 203/203 routes, 4/4 404 probes, bundle in sync, PASS.**
+- An independent fetch from outside GitHub (WebFetch) returned the homepage title "ChatGPT & Premium AI Tools in Bangladesh — bKash & Nagad | AI Team Premium".
 
 ## Production
 

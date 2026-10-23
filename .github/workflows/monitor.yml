@@ -90,7 +90,7 @@ jobs:
 
       - name: 📊 CDN cache status
         run: |
-          curl -sI "https://www.aiteampremium.com" | grep -E "X-Vercel-Cache:|Cache-Control:|Age:" || echo "Cache headers not present"
+          curl -sI "https://www.aiteampremium.com" | grep -iE "^(server|cf-cache-status|cache-control|age):" || echo "Cache headers not present"
 
       - name: 🎯 DNS check
         run: |

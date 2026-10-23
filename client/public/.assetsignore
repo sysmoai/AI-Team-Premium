@@ -1,0 +1,5 @@
+# Files in dist/public that Wrangler must not upload as public assets.
+# images/ is a stray design-system source project (tsx/ts/md/package.json),
+# not site images — nothing in client/src references it.
+images/
+.assetsignore

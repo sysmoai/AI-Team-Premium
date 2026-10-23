@@ -17,3 +17,4 @@ shared/nav-menu.js                      text eol=lf
 client/index.html                       text eol=lf
 lib/category-routes.js                  text eol=lf
 shared/category-intros.js               text eol=lf
+client/public/_headers                  text eol=lf

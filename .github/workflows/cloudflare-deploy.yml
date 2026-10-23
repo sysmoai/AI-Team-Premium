@@ -1,0 +1,170 @@
+name: Deploy to Cloudflare Workers
+
+# The single deploy authority for www.aiteampremium.com.
+#   pull_request -> build + verify + deploy to the staging Worker (workers.dev)
+#   push to main -> build + verify + deploy production, then live smoke test
+#   manual       -> deploy staging/production, or roll production back
+#
+# Needs repository secrets CLOUDFLARE_API_TOKEN (account token: Workers Admin,
+# Account Settings Read; plus Zone > Workers Routes Write on aiteampremium.com
+# for production) and CLOUDFLARE_ACCOUNT_ID. Production deploys stay off until the repository
+# variable CLOUDFLARE_PRODUCTION_ENABLED is "true" — set it at DNS cutover, when
+# the aiteampremium.com zone is active in the Cloudflare account, so the www
+# custom domain can attach. See docs/operations/AITP-PRODUCTION-RUNBOOK.md.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "What to do"
+        required: true
+        type: choice
+        options: [staging, production, rollback-production]
+      rollback_version:
+        description: "Version ID for rollback (blank = previous version)"
+        required: false
+        type: string
+
+concurrency:
+  group: cloudflare-${{ github.event_name == 'pull_request' && 'staging' || github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    if: github.event_name != 'workflow_dispatch' || inputs.target != 'rollback-production'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - name: Typecheck
+        run: npm run check
+      - name: Build
+        run: npm run build
+      - name: Commercial-claims gate
+        run: npm run validate:commercial
+      - name: Route, SEO, quarantine and Worker gate
+        run: npm run verify
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/public
+          include-hidden-files: true
+          retention-days: 7
+
+  staging:
+    needs: build
+    if: >-
+      github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository ||
+      github.event_name == 'workflow_dispatch' && inputs.target == 'staging'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: staging
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/public
+      - name: Check credentials
+        id: creds
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "::warning::CLOUDFLARE_API_TOKEN / CLOUDFLARE_ACCOUNT_ID not set — staging deploy skipped."
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Deploy staging Worker
+        id: deploy
+        if: steps.creds.outputs.ok == 'true'
+        run: |
+          set -o pipefail
+          npx wrangler deploy --env staging --message "staging ${GITHUB_SHA::7}" 2>&1 | tee /tmp/deploy.log
+          url=$(grep -oE 'https://[a-z0-9.-]+\.workers\.dev' /tmp/deploy.log | head -1)
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          echo "Staging: $url (commit $GITHUB_SHA)" >> "$GITHUB_STEP_SUMMARY"
+      - name: Verify staging (every sitemap URL)
+        if: steps.deploy.outputs.url != ''
+        # A brand-new workers.dev hostname answers Cloudflare's own 404 for a
+        # few seconds after the first deploy; give it time to propagate.
+        run: |
+          sleep 20
+          npm run verify:live -- --base "${{ steps.deploy.outputs.url }}" --all
+
+  production:
+    needs: build
+    if: >-
+      vars.CLOUDFLARE_PRODUCTION_ENABLED == 'true' && (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch' && inputs.target == 'production' && github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: production
+      url: https://www.aiteampremium.com
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/public
+      - name: Deploy production Worker
+        run: |
+          set -o pipefail
+          npx wrangler deploy --message "production ${GITHUB_SHA::7}" 2>&1 | tee /tmp/deploy.log
+          grep -E 'Current Version ID' /tmp/deploy.log >> "$GITHUB_STEP_SUMMARY" || true
+          echo "Commit: $GITHUB_SHA" >> "$GITHUB_STEP_SUMMARY"
+      - name: Live smoke test
+        run: |
+          sleep 20
+          npm run verify:live
+
+  rollback:
+    if: github.event_name == 'workflow_dispatch' && inputs.target == 'rollback-production'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: production
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - name: Roll back production Worker
+        env:
+          VERSION: ${{ inputs.rollback_version }}
+        run: npx wrangler rollback ${VERSION:+"$VERSION"} --message "rollback by ${GITHUB_ACTOR}" -y

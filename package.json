@@ -33,7 +33,10 @@
     "validate:commercial": "node scripts/validate-commercial.mjs",
     "validate:floor": "node scripts/audit-floor.mjs",
     "gen:governance": "node scripts/gen-governance.mjs",
-    "validate:catalog:legacy": "node scripts/validate-catalog.mjs"
+    "validate:catalog:legacy": "node scripts/validate-catalog.mjs",
+    "cf:dev": "wrangler dev --env staging",
+    "cf:deploy:staging": "npm run build && npm run verify && wrangler deploy --env staging",
+    "cf:deploy": "npm run build && npm run verify && wrangler deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -129,7 +132,8 @@
     "postcss": "^8.5.23",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.6.3",
-    "vite": "^7.3.6"
+    "vite": "^7.3.6",
+    "wrangler": "4.150.0"
   },
   "overrides": {
     "drizzle-kit": {

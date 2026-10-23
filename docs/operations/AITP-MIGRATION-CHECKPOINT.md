@@ -10,7 +10,7 @@ Read this first when resuming. Re-verify every line against Git, GitHub Actions 
 | Baseline commit | `6ee610b8e36568c8c5037ef014f1616073deb8ab` |
 | Branch | `migration/aitp-cloudflare-recovery-20261023` (see `git log` for the head SHA) |
 | PR | see GitHub, "Cloudflare Workers migration" |
-| Production | **DOWN** on Vercel since about 2026-10-03 (monitor workflow). DNS is unchanged: Squarespace nameservers, DNSSEC on, `www` CNAME to Vercel. |
+| Production | **DOWN** on Vercel since about 2026-10-03 (monitor workflow). Cause confirmed: Vercel status "Account is blocked." DNS is unchanged: Squarespace nameservers, DNSSEC on, `www` CNAME to Vercel. |
 | Cloudflare | Nothing deployed for AITP. The account seen by the connector has only other brands' Workers (`ai-premium-shop`, `saveonsub-store`), which were not touched. |
 | Tests passed | check, build, validate:commercial, verify 54/54, local Worker verify:live 203/203 + 4/4, Playwright on 3 viewports |
 | Tests failed | `npm run audit` 62/63 (pre-existing risky-language scan); tablet 8 px overflow (pre-existing) |

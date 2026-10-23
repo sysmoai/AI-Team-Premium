@@ -11,9 +11,9 @@ Mission: AITP-CLOUDFLARE-RECOVERY-2026-10-23. Restore https://www.aiteampremium.
 | `https://www.aiteampremium.com`, `https://aiteampremium.com` and `https://ai-team-premium.vercel.app` all return a client error to an external fetcher. | WebFetch, 2026-10-23 03:3x UTC |
 | No commit to `main` since 2026-09-03 (last Vercel production deployment `6242833490`, commit `6ee610b`, status success). | GitHub deployments API |
 
-**Probable root cause:** a Vercel-side failure (project/deployment paused, suspended, removed or blocked by account billing). The code and DNS have not changed since the site last worked, DNS still resolves to Vercel, and the `*.vercel.app` hostname fails as well, which rules out a custom-domain-only problem.
+**Root cause (confirmed):** the Vercel account is blocked. Vercel's own GitHub commit status on this migration PR (2026-10-23 03:43 UTC, commit `bee9153`) reads `Vercel — failure — "Account is blocked."` and links to vercel.com/knowledge/why-is-my-account-deployment-blocked. Neither code nor DNS changed between the last good check and the outage. DNS still points to Vercel, and Vercel refuses to serve or deploy for the blocked account. That also explains why `*.vercel.app` fails.
 
-**Remaining uncertainty:** the exact Vercel HTTP status and error code were not visible from the recovery environment (its network policy blocked direct requests to the domain). Not needed for recovery, because the decision is to leave Vercel.
+**Remaining uncertainty:** why Vercel blocked the account (billing, usage limits or policy). Only the account owner can see that in the Vercel dashboard. It doesn't need resolving for recovery, because the site is moving off Vercel.
 
 **Fastest safe recovery route:** deploy the unchanged site to Cloudflare Workers (staging first), then move DNS to Cloudflare.
 

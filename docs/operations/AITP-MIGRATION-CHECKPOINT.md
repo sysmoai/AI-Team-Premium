@@ -25,6 +25,8 @@ Read this first when resuming. Re-verify every line against Git, GitHub Actions,
 2. Wait until **T + 24 h** (the DS TTL is 86400, so cached copies expire by then).
 3. Only then: Squarespace → aiteampremium.com → Domain Nameservers → custom → `isla.ns.cloudflare.com`, `khalid.ns.cloudflare.com`.
 
+**Gate status:** DS removed at registry, first seen 2026-10-23 13:52 UTC (no DS from a/b/m.gtld-servers.net; none cached at 1.1.1.1 or 8.8.8.8; Squarespace serves no DNSKEY; Squarespace DNSSEC page shows OFF with no pending notice). The previous check, at 08:11 UTC, still showed DS 46186, so the true removal time is somewhere between these two checks; 13:52 is used as T to be safe. **Earliest nameserver switch: 2026-10-24 13:52 UTC (19:52 +06:00).**
+
 ## After the gate (runbook steps 4–8)
 
 1. Wait for the zone to show **Active**.

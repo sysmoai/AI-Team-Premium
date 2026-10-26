@@ -4,16 +4,16 @@
 - Repo: github.com/sysmoai/AI-Team-Premium
 - Stack: Express 5 + React 18 + Vite + Tailwind
 - Owner: Emon Hossain
-- Live: https://www.aiteampremium.com — migrating to Cloudflare Workers (see docs/operations/AITP-MIGRATION-CHECKPOINT.md)
+- Live: https://www.aiteampremium.com on Cloudflare Workers (since 2026-10-26; see docs/operations/AITP-MIGRATION-CHECKPOINT.md)
 - Dev: `C:\Users\emonh\SYSmoAI-Stack\apps\AI-Team-Premium`
 
 ## Status (2026-07-30)
-- Domain: ✅ LIVE (custom domain on Vercel)
+- Domain: LIVE on Cloudflare (zone aiteampremium.com, account 312f8683…, DNSSEC on)
 - Build: ✅ Clean (TypeScript 0 errors)
 - Verify: ✅ 18/18 gate passes
 - SEO: ✅ 57/58 audit checks (AllProducts.tsx missing metadata — P1)
 - Price drift: ❌ 19/23 tool pages don't match catalog (P0 — financial impact)
-- Deploy: `npx vercel deploy --prod --yes` or push to origin
+- Deploy: push to main (cloudflare-deploy.yml)
 
 ## Critical Alerts
 - **Price drift:** 19 products show wrong prices on tool pages vs catalog. Several undercharge.
@@ -32,7 +32,7 @@ Cloudflare Workers + Static Assets. `.github/workflows/cloudflare-deploy.yml` is
 npm run build && npm run cf:dev                                   # local Worker on :8787
 npm run verify:live -- --base http://127.0.0.1:8787 --all         # check it
 ```
-Do not deploy with `npx vercel` — Vercel is being retired.
+Vercel is retired (domains detached, Git disconnected, vercel.json removed). `api/index.js` stays: the verify and validate:commercial gates load it as the shared renderer.
 
 ## Key Files
 - Catalog: `client/src/data/products-catalog.json` (80 products)

@@ -44,10 +44,9 @@ Read this first when resuming. Re-verify every line against Git, GitHub Actions,
 
 ## Open items
 
-1. **Mail delivery test (founder).** The DNS side is verified: MX, SPF, DKIM and verification resolve at 8.8.8.8 and 1.1.1.1 and validate under DNSSEC. A real delivery test is still needed: send one email from an outside address to the Zoho mailbox.
-2. **Repository Vercel leftovers (optional cleanup PR).** `vercel.json`, `api/index.js` and the local `.vercel/` link (gitignored) are not used by Cloudflare production. Remove them in a separate PR once the founder agrees.
-3. **HSTS** is not enabled (the monitor prints a warning only). Enabling it is a deliberate decision because it's hard to undo; it's not done here.
-4. No DMARC record exists (pre-existing; out of scope).
+1. **Mail: fixed by switching the site to `help@aiteampremium.com`.** At 12:20 UTC a test from Gmail to `support@`, `hello@` and `escalation@` bounced `550 5.1.1 User does not exist` from `mx.zoho.com` (so DNS routing worked, but the mailboxes never existed). The founder confirmed `help@aiteampremium.com` is the only mailbox for this business. A test to `help@` at 12:29 UTC produced no bounce (the bad addresses bounced within 3 s). Every public address (legal pages, `data/policies.json`, `data/seo-config.json`, the static blog footers) now uses `help@`.
+2. **DMARC and HSTS not added.** Both are optional hardening. Adding the `_dmarc` TXT (`v=DMARC1; p=none`) was refused by the PC session's Auto-mode policy ("DNS / Domain / Cert Changes"), and HSTS falls under the same policy, so neither was retried. To finish them, switch the session to Ask/Default permissions and approve them, or add them in the Cloudflare dashboard.
+3. Repository Vercel leftovers were removed (`vercel.json`, `.vercelignore`, `vercel-deploy.yml`, the Vercel-only `rollback.yml`). `api/index.js` stays, because the `verify` and `validate:commercial` gates load it as the shared server renderer. The local `.vercel/` link is gitignored and unused.
 
 ## Rollback state
 

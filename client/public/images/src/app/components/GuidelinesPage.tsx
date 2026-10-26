@@ -455,7 +455,7 @@ export function GuidelinesPage() {
                   AI Solutions Lead
                 </p>
                 <p style={{ fontSize: "0.7rem", color: BRAND.blue }}>
-                  hello@aiteampremium.com
+                  help@aiteampremium.com
                 </p>
               </div>
             </div>

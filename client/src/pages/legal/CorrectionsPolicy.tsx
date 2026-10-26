@@ -88,7 +88,7 @@ export default function CorrectionsPolicy() {
           <div>
             <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Report an error</h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              If you spot something wrong — a price that does not match the provider's official page, a feature description that is incorrect, a Bangla translation that miscommunicates — please tell us on WhatsApp at <strong>+880 1533-262758</strong> or email <strong>support@aiteampremium.com</strong>. We will verify it and fix it, and if it was substantive, we will publish the correction here.
+              If you spot something wrong — a price that does not match the provider's official page, a feature description that is incorrect, a Bangla translation that miscommunicates — please tell us on WhatsApp at <strong>+880 1533-262758</strong> or email <strong>help@aiteampremium.com</strong>. We will verify it and fix it, and if it was substantive, we will publish the correction here.
             </p>
           </div>
         </div>

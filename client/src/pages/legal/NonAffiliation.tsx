@@ -75,7 +75,7 @@ export default function NonAffiliation() {
           <div>
             <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Corrections</h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              If any provider believes their trademark or product is misrepresented on this site, please contact us at <strong>support@aiteampremium.com</strong>. We will review and correct the issue promptly.
+              If any provider believes their trademark or product is misrepresented on this site, please contact us at <strong>help@aiteampremium.com</strong>. We will review and correct the issue promptly.
             </p>
           </div>
         </div>

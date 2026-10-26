@@ -47,7 +47,7 @@ export default function IncidentEscalation() {
           <div>
             <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Step 2: If WhatsApp is not suitable</h2>
             <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-              Email <strong>support@aiteampremium.com</strong> with the same details. Email is checked during business hours. Response may take up to 4 hours.
+              Email <strong>help@aiteampremium.com</strong> with the same details. Email is checked during business hours. Response may take up to 4 hours.
             </p>
           </div>
 
@@ -80,7 +80,7 @@ export default function IncidentEscalation() {
             </p>
             <ol className="list-decimal pl-6 space-y-2 mt-2 text-slate-700 dark:text-slate-300 leading-relaxed">
               <li><strong>Request escalation on WhatsApp.</strong> Say "I would like to escalate this issue." Your case will be reviewed by a senior team member within 4 business hours.</li>
-              <li><strong>Email escalation.</strong> Send to <strong>escalation@aiteampremium.com</strong> with your WhatsApp conversation reference. This reaches management directly.</li>
+              <li><strong>Email escalation.</strong> Send to <strong>help@aiteampremium.com</strong> with "Escalation" in the subject and your WhatsApp conversation reference.</li>
               <li><strong>Refund request.</strong> If you believe you are entitled to a refund under our <a href="/refund-policy" className="text-blue-600 underline">refund policy</a>, state this clearly and we will process it according to the policy terms.</li>
             </ol>
           </div>

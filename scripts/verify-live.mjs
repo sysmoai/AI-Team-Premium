@@ -49,7 +49,7 @@ const SAMPLE = [
   "/contact",
   "/blog/chatgpt-plus-price-bangladesh-bkash-guide",
 ];
-const MUST_404 = ["/this-page-does-not-exist-aitp", "/tools/", "/assets/does-not-exist.js", "/images/README.md"];
+const MUST_404 = ["/this-page-does-not-exist-aitp", "/tools/", "/tools/no-such-tool-aitp", "/assets/does-not-exist.js", "/images/README.md"];
 
 function sitemapPaths() {
   const file = resolve(ROOT, "dist/public/sitemap.xml");

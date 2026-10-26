@@ -89,6 +89,14 @@ html = existing.test(html)
   ? html.replace(existing, ldBlock)
   : html.replace(/<\/head>/i, `    ${ldBlock}\n  </head>`);
 
+// Same reason for the crawlable body fallback: the Worker injects one per
+// route, but "/" is served from the static file, so it is baked in here. The
+// Worker replaces this block on every other route.
+const { fallbackBody, BODY_MARK } = await import(
+  pathToFileURL(resolve(ROOT, "lib/render-page.js")).href
+);
+EDITS.push([BODY_MARK, fallbackBody(home)]);
+
 const missing = [];
 for (const [re, to] of EDITS) {
   if (!re.test(html)) {

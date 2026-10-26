@@ -1090,6 +1090,8 @@ if (worker && existsSync(indexPath)) {
     ["/blog/chatgpt-plus-price-bangladesh-bkash-guide", 200, "Guide Under Evidence Review | AI Team Premium", true],
     ["/blog", 200, ROUTE_META["/blog"].title, false],
     ["/no-such-page", 404, "404 — Page Not Found | AI Team Premium", true],
+    ["/tools/no-such-tool-aitp", 404, "404 — Page Not Found | AI Team Premium", true],
+    ["/compare/no-such-pair-aitp", 404, "404 — Page Not Found | AI Team Premium", true],
     ["/api/health", 404, null, true],
   ];
   const bad = [];
@@ -1103,6 +1105,22 @@ if (worker && existsSync(indexPath)) {
   }
   if (bad.length === 0) ok(`worker answers ${cases.length} representative paths correctly`);
   else fail("worker routing is wrong", bad.join("\n"));
+
+  // Crawlable body: indexable pages carry their own H1 and the hub links,
+  // non-indexable ones carry none (not the homepage fallback from the template).
+  {
+    const { FALLBACK_LINKS } = await import(pathToFileURL(resolve(ROOT, "lib/render-page.js")).href);
+    const sm = readFileSync(resolve(ROOT, "client/public/sitemap.xml"), "utf-8");
+    const offMap = FALLBACK_LINKS.map(([h]) => h).filter((h) => !sm.includes(`<loc>https://www.aiteampremium.com${h === "/" ? "/" : h}</loc>`));
+    const prod = await (await hit("/tools/canva-pro-bangladesh")).text();
+    const gone = await (await hit("/no-such-page")).text();
+    const bodyBad = [];
+    if (offMap.length) bodyBad.push(`fallback links not in sitemap: ${offMap.join(", ")}`);
+    if (!/<div id="root"><!-- ssr-body:start --><main[^>]*><h1>Canva Pro/.test(prod)) bodyBad.push("/tools/canva-pro-bangladesh: no server-rendered H1");
+    if (/<h1>/.test(gone)) bodyBad.push("/no-such-page: 404 carries a fallback body");
+    if (bodyBad.length === 0) ok("worker: indexable pages ship a crawlable H1 + hub links; 404s ship none");
+    else fail("worker: crawlable body fallback wrong", bodyBad.join("\n"));
+  }
 
   const asset = await hit("/assets/does-not-exist.js");
   if (asset.status === 404 && !(asset.headers.get("content-type") || "").startsWith("text/html"))

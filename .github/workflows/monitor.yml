@@ -114,32 +114,41 @@ jobs:
             exit 1
           fi
 
-  api-routes-check:
+  # Production is the Cloudflare Worker `ai-team-premium` (no Vercel, no /api
+  # routes). Fail if www stops being served by Cloudflare, Vercel reappears,
+  # the apex loses its 301 to www, unknown URLs stop 404ing, or DNSSEC breaks.
+  edge-check:
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
     steps:
-      - name: Check API endpoints
+      - name: Cloudflare edge, redirects, 404 and DNSSEC
         run: |
-          echo "Checking API routes..."
+          set -u
+          fail=0
+          H=$(curl -sI "https://www.aiteampremium.com/")
+          echo "$H" | grep -qi '^server: cloudflare' && echo "OK www served by Cloudflare" || { echo "FAIL www not served by Cloudflare"; fail=1; }
+          echo "$H" | grep -qi '^x-vercel' && { echo "FAIL Vercel header present"; fail=1; } || echo "OK no Vercel headers"
 
-          # Check pricing endpoint
-          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://www.aiteampremium.com/api/pricing" 2>/dev/null || echo "404")
-          echo "Pricing API: HTTP $HTTP_CODE"
+          for src in "https://aiteampremium.com/pricing?m=1" "http://aiteampremium.com/pricing?m=1" "http://www.aiteampremium.com/pricing?m=1"; do
+            out=$(curl -s -o /dev/null -w "%{http_code} %{redirect_url}" "$src")
+            [ "$out" = "301 https://www.aiteampremium.com/pricing?m=1" ] && echo "OK $src -> $out" || { echo "FAIL $src -> $out"; fail=1; }
+          done
 
-          # Check products endpoint
-          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://www.aiteampremium.com/api/products" 2>/dev/null || echo "404")
-          echo "Products API: HTTP $HTTP_CODE"
+          code=$(curl -s -o /dev/null -w "%{http_code}" "https://www.aiteampremium.com/monitor-404-probe")
+          [ "$code" = "404" ] && echo "OK unknown URL 404" || { echo "FAIL unknown URL returned $code"; fail=1; }
 
-          # Check health endpoint
-          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "https://www.aiteampremium.com/api/health" 2>/dev/null || echo "404")
-          echo "Health API: HTTP $HTTP_CODE"
+          ad=$(curl -s "https://dns.google/resolve?name=www.aiteampremium.com&type=A" | grep -o '"AD":[a-z]*')
+          [ "$ad" = '"AD":true' ] && echo "OK DNSSEC validates" || { echo "FAIL DNSSEC $ad"; fail=1; }
 
-          echo "✅ API checks completed"
+          mx=$(curl -s "https://dns.google/resolve?name=aiteampremium.com&type=MX" | grep -c 'zoho.com')
+          [ "$mx" -ge 1 ] && echo "OK Zoho MX present" || { echo "FAIL Zoho MX missing"; fail=1; }
+
+          exit $fail
 
   report:
     runs-on: ubuntu-latest
-    needs: [health-check, api-routes-check]
+    needs: [health-check, edge-check]
     if: always()
 
     steps:
@@ -159,7 +168,7 @@ jobs:
           ✅ SSL/TLS Certificate
           ✅ CDN Cache Status
           ✅ DNS Resolution
-          ✅ API Routes
+          ✅ Cloudflare edge, redirects, DNSSEC
 
           Report Time: $(date)
           ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

@@ -2,55 +2,54 @@
 
 Read this first when resuming. Re-verify every line against Git, GitHub Actions, Cloudflare and public DNS before acting on it. Don't trust a planned step as done.
 
-**Last updated:** 2026-10-23 14:40 UTC, project thread (cloud session), after the merge of PR #38
+**Last updated:** 2026-10-26 12:10 UTC, Claude Code session on the founder's Windows PC (browser: founder's Chrome), after the production cutover.
 
 | Item | State |
 |---|---|
-| Current phase | Code merged and staging re-verified on `main`. DNS cutover **in its DNSSEC safety window**. Nameservers are NOT changed yet. |
-| Branch / PR | PR #38 **merged** into `main` 2026-10-23 14:01 UTC, merge commit `7eb6adf563261e679efd715c95985fd6df44f490`. Push runs on `main`: CI — Build & Test, E2E and Deploy to Cloudflare Workers all green (production job skipped because the variable is unset). |
-| Production | **DOWN**: `www.aiteampremium.com` returns HTTP 402 from Vercel ("Account is blocked"). |
-| AITP Cloudflare account | `Sysmoaiprivatelimited@gmail.com's Account`, ID `312f8683be42143016fe5478457dc00c`. The only account that login can see. |
-| Isolation | The shared SYSmoAI account (the Cloudflare connector on the founder's PC) holds `ai-premium-shop` and `saveonsub-store` and is a different account. The AITP account has only `ai-team-premium-staging`. Nothing in the shared account was touched. |
-| API token | `aitp-github-actions-workers-deploy` (AITP account). Account: Workers Scripts Write, Account Settings Read. Zone `aiteampremium.com` only: Workers Routes Write, Zone Read. No expiry. |
-| GitHub secrets | `CLOUDFLARE_API_TOKEN` (2026-10-23 04:17 UTC), `CLOUDFLARE_ACCOUNT_ID` (2026-10-23 04:19 UTC, AITP ID). `CLOUDFLARE_PRODUCTION_ENABLED` is **not** set. |
-| Staging | Re-deployed from `main` (7eb6adf) by workflow_dispatch run 39970708050, 2026-10-23 14:35 UTC: `verify:live --all` **203/203 routes, 4/4 404 probes**, bundle `index-BoXwXmyR.js` in sync. Earlier: run 39899071809. URL: https://ai-team-premium-staging.sysmoaiprivatelimited.workers.dev |
-| Cloudflare zone | `aiteampremium.com` added (Free), status **Pending**. Assigned nameservers: `isla.ns.cloudflare.com`, `khalid.ns.cloudflare.com`. Bot Preference Sync is OFF (robots.txt untouched). |
-| Zone records | Only Zoho, all DNS only: MX 10 mx.zoho.com, MX 20 mx2.zoho.com, MX 50 mx3.zoho.com, TXT `v=spf1 include:zohomail.com ~all`, TXT `zoho-verification=zb77136606.zmverify.zoho.com`, TXT `zoho._domainkey` DKIM. Vercel A/CNAME deleted. Verified byte-identical to Squarespace by querying both nameservers directly (DKIM 410/410 chars). |
-| Squarespace | Records unchanged (still include Vercel A/CNAME). Nameservers still `nsa1-4.squarespacedns.com`. Domain lock ON, auto-renew ON, expires 2027-07-04. |
-| DNSSEC | **Turned OFF at Squarespace 2026-10-23 08:10 UTC (14:10 +06:00).** At 08:11 UTC the .com registry still served DS 46186 (TTL 86400); Squarespace says removal can take up to 48 h. |
+| Current phase | **Cutover complete. Production is LIVE on Cloudflare Workers.** Only an end-to-end mail delivery test is still open (see "Open items"). |
+| Production | https://www.aiteampremium.com → HTTP 200, `server: cloudflare`, no Vercel headers. Worker `ai-team-premium`, version `0669ac45-86f3-45c6-8f6c-f3ec9a57f019`, custom domain `www.aiteampremium.com`. |
+| Deployed commit | `main` @ `481402f` (merge of PR #39; includes PR #38 `7eb6adf`). |
+| Deploy run | GitHub Actions run [40318665627](https://github.com/sysmoai/AI-Team-Premium/actions/runs/40318665627) (workflow_dispatch, target `production`, 2026-10-26 11:55:36 UTC): build, typecheck, commercial gate, verify, deploy and live smoke test all green. |
+| AITP Cloudflare account | `Sysmoaiprivatelimited@gmail.com's Account`, ID `312f8683be42143016fe5478457dc00c` (checked in the dashboard URL and header before every change). Nothing in any other account was touched. |
+| Cloudflare zone | `aiteampremium.com`, Free plan, **Active** (seen 2026-10-26 ~11:55 UTC). Nameservers `isla.ns.cloudflare.com`, `khalid.ns.cloudflare.com`. |
+| Zone records | Zoho (all DNS only): MX 10 mx / 20 mx2 / 50 mx3 `.zoho.com`, TXT SPF `v=spf1 include:zohomail.com ~all`, TXT `zoho-verification=zb77136606.zmverify.zoho.com`, TXT `zoho._domainkey` DKIM (410 chars). Web: `AAAA @ 100::` **proxied**. `www` is the Worker custom-domain record created by the deploy (not hand-made). |
+| Zone settings | Always Use HTTPS **ON**. Redirect Rule "Apex to www (301, keep path and query)": `(http.host eq "aiteampremium.com")` → dynamic `concat("https://www.aiteampremium.com", http.request.uri.path)`, 301, preserve query string. Real User Monitoring (RUM) **disabled**: its auto-injected `static.cloudflareinsights.com` beacon was blocked by our CSP and logged a console error on every page. Disabling it fixes the cause without weakening the CSP. |
+| Registrar (Squarespace) | Nameservers **custom: isla/khalid** (saved 2026-10-26 11:51 UTC after the founder's passkey re-verification). DS record 2371 / 13 / 2 / `DB161E55337DC4653168BCF8A28ABD9B6166F401A5EDB2F7E2AA4003B61A68EB` (added 11:59 UTC). Domain lock ON, auto-renew ON, expires 2027-07-04, all unchanged. |
+| DNSSEC | **Enabled in Cloudflare and validating.** The DS was computed independently from the live DNSKEY (KSK tag 2371, alg 13) and matched the dashboard. The registry (a.gtld-servers.net) served DS 2371/13/2 at 12:00:27 UTC. dns.google and cloudflare-dns.com return **AD=true** for A, AAAA, MX, TXT and www at 12:01 UTC. |
+| GitHub | Variable `CLOUDFLARE_PRODUCTION_ENABLED=true` (set 2026-10-26 11:55:33 UTC). Secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` unchanged. From now on, every push to `main` deploys production. |
+| Staging | https://ai-team-premium-staging.sysmoaiprivatelimited.workers.dev re-verified 2026-10-26 ~11:50 UTC before cutover: 203/203 routes, 4/4 404 probes. |
+| Vercel | Project `ai-team-premium` (team `sysmoaigits-projects`, suspended): domains `aiteampremium.com` and `www.aiteampremium.com` **removed**, Git connection to `sysmoai/AI-Team-Premium` **disconnected** (2026-10-26 ~12:05 UTC). The project, team and account were **not** deleted. Only `ai-team-premium.vercel.app` remains attached to the project. |
 
-## Gate before changing nameservers (do not skip)
+## Cutover timeline (UTC, 2026-10-26)
 
-1. `Resolve-DnsName aiteampremium.com -Type DS -Server a.gtld-servers.net -DnsOnly` returns **no DS answer**. Note that time (T).
-2. Wait until **T + 24 h** (the DS TTL is 86400, so cached copies expire by then).
-3. Only then: Squarespace → aiteampremium.com → Domain Nameservers → custom → `isla.ns.cloudflare.com`, `khalid.ns.cloudflare.com`.
+| Time | Step | Evidence |
+|---|---|---|
+| 11:44:47 | Preflight: no DS at a.gtld-servers.net (SOA only); dns.google cd=1 no DS | `Resolve-DnsName -Type DS -Server a.gtld-servers.net` |
+| 11:45 | isla and khalid both serve the zone: SOA, NS, 3 MX, SPF, verification, DKIM 410 chars | direct queries to both nameservers |
+| 11:49 | Dashboard: account `312f8683…`, zone Pending, assigned NS isla/khalid, 6 Zoho records all DNS only | dashboard Overview and DNS pages |
+| 11:50 | Local `npm ci` and `npm run build` PASS; staging `verify:live --all` 203/203 + 4/4 | terminal |
+| 11:51 | Squarespace nameservers → isla/khalid saved ("Nameservers updated … Oct 26, 2026, 5:51 PM" +06:00) | Squarespace banner |
+| 11:52–11:54 | AAAA `@` 100:: proxied, Always Use HTTPS ON, Redirect Rule deployed | dashboard |
+| 11:54:56 | .com registry delegates to isla/khalid | `nslookup -type=ns … a.gtld-servers.net` |
+| ~11:55 | Zone **Active** ("Your domain is now protected by Cloudflare") | dashboard Overview |
+| 11:55:33 | `CLOUDFLARE_PRODUCTION_ENABLED=true` | `gh variable list` |
+| 11:55:36–11:57 | Production deploy run 40318665627 green; version `0669ac45…`; smoke 10/10 + 4/4, apex checked | Actions log |
+| 11:57:46 | www 200 Cloudflare; apex https/http 301 → www with path and query; http://www 301 → https; 404 real; Let's Encrypt cert for apex + `*.aiteampremium.com`, valid to 2027-01-24 | curl, openssl |
+| ~11:58 | Production `verify:live --all`: **203/203 routes, 4/4 404 probes**, apex redirect checked, bundle in sync | terminal |
+| 11:58–11:59 | DNSSEC enabled in Cloudflare; DS added at Squarespace | dashboards |
+| 12:00:27 | DS 2371/13/2 at a.gtld-servers.net | `Resolve-DnsName -Type DS` |
+| 12:01:52 | AD=true at dns.google and 1.1.1.1; Zoho MX intact | DoH queries |
+| 12:02–12:04 | Browser QA (desktop + mobile 375 px). RUM beacon CSP error found and fixed by disabling RUM | built-in browser |
+| ~12:05 | Vercel: domains removed, Git disconnected | Vercel dashboard |
 
-**Gate status (founder reconfirmed the 24 h gate 2026-10-23 14:32 UTC):** DS removed at registry, first seen 2026-10-23 13:52 UTC (no DS from a/b/m.gtld-servers.net; none cached at 1.1.1.1 or 8.8.8.8; Squarespace serves no DNSKEY; Squarespace DNSSEC page shows OFF with no pending notice). The previous check, at 08:11 UTC, still showed DS 46186, so the true removal time is somewhere between these two checks; 13:52 is used as T to be safe. **Earliest nameserver switch: 2026-10-24 13:52 UTC (19:52 +06:00).**
+## Open items
 
-At 13:58 UTC a fresh query sent to a .com server (`2001:502:1ca1::30`, via dns.google with `cd=1`) returned NSEC3 proof of no DS. Google Public DNS's normal cache still held DS 46186 with 21600 s left. That stale copy expires by about 19:58 UTC, well inside the gate.
-
-## Execution blocker on the Windows PC
-
-The Claude Code session on the founder's PC runs in **Auto** permission mode. Its safety classifier refused the Squarespace nameserver change and the PR merge ("DNS / Domain change", "Merge without review"), even with the founder's chat approval. It was not worked around. Required: the founder switches that session from Auto to **Ask permissions** (or Default), then approves each native prompt. The cloud session's network proxy blocks the GitHub Actions variables API, so the cloud session cannot set `CLOUDFLARE_PRODUCTION_ENABLED` either.
-
-## Mail inventory (public DNS via dns.google, 2026-10-23 14:35 UTC)
-
-MX 10 mx.zoho.com, 20 mx2.zoho.com, 50 mx3.zoho.com (TTL 14400). Apex TXT: `v=spf1 include:zohomail.com ~all`, `zoho-verification=zb77136606.zmverify.zoho.com`. `zoho._domainkey` TXT DKIM present (`v=DKIM1; k=rsa; p=MIIBIjAN…QIDAQAB`). `_dmarc`: NXDOMAIN (no DMARC; not added, out of scope). Matches the Cloudflare zone records listed above.
-
-## Next executable action
-
-At or after **2026-10-24 13:52 UTC** (a scheduled follow-up is set for 13:56 UTC), from a PC session that is not in Auto mode: re-check DS absent, then run the steps below.
-
-## After the gate (runbook steps 4–8)
-
-1. Wait for the zone to show **Active**.
-2. ~~Merge PR #38~~ (done). Set the repo variable `CLOUDFLARE_PRODUCTION_ENABLED=true`. Run the workflow with target `production` (or let the merge push deploy it).
-3. Apex: `AAAA @ 100::` Proxied, a Redirect Rule from the apex to `https://www.aiteampremium.com` + path (301, keep query), Always Use HTTPS.
-4. Turn on DNSSEC in Cloudflare and add its DS record at Squarespace.
-5. `npm run verify:live -- --all`, check headers and SEO, send a test email to the Zoho mailbox.
+1. **Mail delivery test (founder).** The DNS side is verified: MX, SPF, DKIM and verification resolve at 8.8.8.8 and 1.1.1.1 and validate under DNSSEC. A real delivery test is still needed: send one email from an outside address to the Zoho mailbox.
+2. **Repository Vercel leftovers (optional cleanup PR).** `vercel.json`, `api/index.js` and the local `.vercel/` link (gitignored) are not used by Cloudflare production. Remove them in a separate PR once the founder agrees.
+3. **HSTS** is not enabled (the monitor prints a warning only). Enabling it is a deliberate decision because it's hard to undo; it's not done here.
+4. No DMARC record exists (pre-existing; out of scope).
 
 ## Rollback state
 
-- Zone: deleting the Pending zone has no public effect.
-- DNSSEC: can be re-enabled in Squarespace. Do that only if the nameservers stay on Squarespace.
-- Nothing in production has changed.
+- **Bad Worker release:** Actions → "Deploy to Cloudflare Workers" → `rollback-production` (blank = previous version), or the dashboard (Workers → ai-team-premium → Deployments → Rollback).
+- **DNS:** do NOT switch nameservers back to Squarespace while the Cloudflare DS is at the registry. First remove the DS at Squarespace and wait at least 24 h (DS TTL 86400). Vercel is suspended and detached, so it is not a working fallback.

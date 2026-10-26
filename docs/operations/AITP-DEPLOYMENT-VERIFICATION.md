@@ -61,6 +61,46 @@ Spot checks (curl):
   - Attempt 2: version `f863d3fd-65c9-4dd8-a792-991e2c469802`. **verify:live --all gave 203/203 routes, 4/4 404 probes, bundle in sync, PASS.**
 - An independent fetch from outside GitHub (WebFetch) returned the homepage title "ChatGPT & Premium AI Tools in Bangladesh — bKash & Nagad | AI Team Premium".
 
-## Production
+## Production (2026-10-26): LIVE
 
-Not yet cut over. See the runbook, "DNS cutover".
+Cut over on 2026-10-26 from the founder's Windows PC. The full timeline is in `AITP-MIGRATION-CHECKPOINT.md`.
+
+- Worker `ai-team-premium`, version `0669ac45-86f3-45c6-8f6c-f3ec9a57f019`, custom domain `www.aiteampremium.com`. AITP account `312f8683be42143016fe5478457dc00c`.
+- Deployed from `main` @ `481402f` by run [40318665627](https://github.com/sysmoai/AI-Team-Premium/actions/runs/40318665627). Build, typecheck, commercial gate, verify and live smoke test (10/10 routes, 4/4 404 probes, apex checked) all passed.
+- `npm run verify:live -- --all` against https://www.aiteampremium.com from the founder's PC: **203/203 routes, 4/4 404 probes, apex redirect checked, bundle `index-BoXwXmyR.js` in sync**.
+
+### HTTP and TLS (curl, 11:57 UTC)
+
+| Request | Result |
+|---|---|
+| `https://www.aiteampremium.com/` | 200, `server: cloudflare`, CSP, XFO DENY, nosniff, Referrer-Policy and Permissions-Policy present, no `x-vercel-*` |
+| `https://aiteampremium.com/pricing?x=1&y=2` | 301 → `https://www.aiteampremium.com/pricing?x=1&y=2` |
+| `http://aiteampremium.com/blog?q=a` | 301 → `https://www.aiteampremium.com/blog?q=a` |
+| `http://www.aiteampremium.com/pricing?z=3` | 301 → `https://www.aiteampremium.com/pricing?z=3` |
+| `https://www.aiteampremium.com/this-does-not-exist-xyz` | 404, `X-Robots-Tag: noindex, follow`, security headers |
+| Certificate (www and apex) | Let's Encrypt YE1, SAN `aiteampremium.com`, `*.aiteampremium.com`, valid until 2027-01-24 |
+
+### DNS and DNSSEC (12:01 UTC)
+
+- The .com registry delegates to `isla.ns.cloudflare.com` and `khalid.ns.cloudflare.com` and serves DS `2371 13 2 DB161E55…3B61A68EB`.
+- dns.google and cloudflare-dns.com return **AD=true** for A, AAAA, MX, TXT and `www`.
+- Zoho MX 10/20/50, SPF and the verification TXT resolve at 8.8.8.8 and 1.1.1.1.
+
+### Browser (Claude app browser, Chromium; desktop and mobile 375×812)
+
+| Page | Result |
+|---|---|
+| `/` | Title "ChatGPT, Claude & AI Tools in Bangladesh \| AI Team Premium", canonical www, `index, follow`, 5 JSON-LD blocks, WhatsApp links `wa.me/8801533262758…`, no broken images, no horizontal overflow on mobile |
+| `/pricing` | 200, canonical `/pricing` |
+| `/all-products` | 200, canonical `/all-products` |
+| `/tools/chatgpt-plus-bangladesh` | `index, follow`, 5 JSON-LD blocks, 9 WhatsApp links, renders on mobile |
+| `/tools/chatgpt` | quarantine "Commercial Page Under Evidence Review", canonical → `/tools/chatgpt-plus-bangladesh` (by design) |
+| `/blog`, `/blog/category/buying-guides` | 200 |
+| `/blog/chatgpt-plus-price-bangladesh-bkash-guide` | quarantine page, `noindex, follow` (by design) |
+| `/nope-404-check` | "Page Not Found", `noindex, follow` |
+
+Console: the only error at first was Cloudflare's auto-injected Web Analytics (RUM) beacon, blocked by `script-src 'self'`. I disabled RUM for the zone, which fixes the cause and keeps the CSP as it was. Afterwards, curl of six pages and a DOM check showed no `cloudflareinsights` script. Apart from that, only the expected 404 status on the 404 page.
+
+### Not verified here
+
+- Real email delivery to the Zoho mailbox (it needs the founder to send a test message).

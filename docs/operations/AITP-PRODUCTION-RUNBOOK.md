@@ -22,7 +22,22 @@ Never put tokens, passwords or recovery codes in this file or in chat.
 2. **GitHub secrets.** Go to github.com/sysmoai/AI-Team-Premium → Settings → Secrets and variables → Actions. Add `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` (the account ID is shown on the Workers & Pages overview).
 3. Re-run the "Deploy to Cloudflare Workers" workflow on the migration PR, or run it manually with target `staging`. The job summary prints the staging URL, and the workflow verifies every sitemap URL against it.
 
-## DNS cutover (only after staging passes)
+## Current production state (2026-10-26)
+
+| | |
+|---|---|
+| Status | LIVE on Cloudflare since 2026-10-26 ~11:57 UTC |
+| Cloudflare account | `312f8683be42143016fe5478457dc00c` (AITP only) |
+| Authoritative nameservers | `isla.ns.cloudflare.com`, `khalid.ns.cloudflare.com` (set at Squarespace) |
+| DNSSEC | ON. Cloudflare signs; DS `2371 13 2 DB161E55…3B61A68EB` is at Squarespace |
+| Apex | `AAAA @ 100::` proxied + Redirect Rule "Apex to www (301, keep path and query)" + Always Use HTTPS |
+| Real User Monitoring | OFF. Its auto-injected beacon violates our CSP; leave it off, or add `static.cloudflareinsights.com` to the CSP on purpose if you ever want it |
+| Production deploys | ON (`CLOUDFLARE_PRODUCTION_ENABLED=true`): every push to `main` deploys |
+| Vercel | Domains removed and Git disconnected on the `ai-team-premium` project (suspended team). Not a fallback. |
+
+The steps below are the historical cutover procedure, kept for reference. They are done; don't repeat them.
+
+## DNS cutover (done 2026-10-26)
 
 The domain currently uses **Squarespace nameservers with DNSSEC on** (DS `46186 8 2 F9A7…20C7`). Changing nameservers while that DS record exists makes the domain fail validation and go dark. Order matters:
 
@@ -44,7 +59,7 @@ Local run: `npm run build && npm run cf:dev`, then `npm run verify:live -- --bas
 ## Rollback
 
 - **Bad Worker release:** Actions → "Deploy to Cloudflare Workers" → Run workflow → `rollback-production` (blank means the previous version). Or in the dashboard: Workers → ai-team-premium → Deployments → Rollback.
-- **Bad cutover (before Vercel is retired):** at Squarespace, set the nameservers back to `nsa1`–`nsa4.squarespacedns.com`. The old records are still in Squarespace, and Vercel would only help if the Vercel project itself is restored. Re-enable Squarespace DNSSEC afterwards.
+- **DNS:** don't move the nameservers away from Cloudflare while the Cloudflare DS is at Squarespace, or the domain fails DNSSEC validation and goes dark. To leave Cloudflare: delete the DS at Squarespace, wait at least 24 h (DS TTL 86400), then change nameservers. Vercel is retired and is not a rollback target.
 
 ## Incident checklist
 
@@ -57,4 +72,4 @@ Local run: `npm run build && npm run cf:dev`, then `npm run verify:live -- --bas
 
 ## Monitoring
 
-The only persistent monitor is the GitHub Actions schedule in `monitor.yml`. GitHub emails the repo owner when a run fails, if notifications are on. Nothing watches the site beyond that.
+The only persistent monitor is the GitHub Actions schedule in `monitor.yml` (every 6 h). Its `edge-check` job fails if www stops being served by Cloudflare, a Vercel header appears, the apex or http redirects stop returning 301 to www with path and query, unknown URLs stop returning 404, DNSSEC stops validating, or the Zoho MX disappears. GitHub emails the repo owner when a run fails, if notifications are on. Nothing watches the site beyond that.

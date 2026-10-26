@@ -44,10 +44,9 @@ Read this first when resuming. Re-verify every line against Git, GitHub Actions,
 
 ## Open items
 
-1. **Mail delivery test (founder).** The DNS side is verified: MX, SPF, DKIM and verification resolve at 8.8.8.8 and 1.1.1.1 and validate under DNSSEC. A real delivery test is still needed: send one email from an outside address to the Zoho mailbox.
-2. **Repository Vercel leftovers (optional cleanup PR).** `vercel.json`, `api/index.js` and the local `.vercel/` link (gitignored) are not used by Cloudflare production. Remove them in a separate PR once the founder agrees.
-3. **HSTS** is not enabled (the monitor prints a warning only). Enabling it is a deliberate decision because it's hard to undo; it's not done here.
-4. No DMARC record exists (pre-existing; out of scope).
+1. **The site's email addresses have no Zoho mailboxes (founder, Zoho admin).** At 12:20 UTC a test sent from Gmail to `support@`, `hello@` and `escalation@aiteampremium.com` bounced from every address with `550 5.1.1 User does not exist`. The bounce names `Remote-MTA: mx.zoho.com (the server for the domain aiteampremium.com)`, so DNS mail routing works after the cutover. The addresses themselves are missing in the Zoho organisation that holds aiteampremium.com, so DNS changes can't fix this. `support@` appears 264 times on the site. Fix: in Zoho Mail Admin, create `support@aiteampremium.com` (or add it as an alias or group on an existing mailbox), plus `hello@` and `escalation@`, then re-send the test.
+2. **DMARC and HSTS not added.** Both are optional hardening. Adding the `_dmarc` TXT (`v=DMARC1; p=none`) was refused by the PC session's Auto-mode policy ("DNS / Domain / Cert Changes"), and HSTS falls under the same policy, so neither was retried. To finish them, switch the session to Ask/Default permissions and approve them, or add them in the Cloudflare dashboard.
+3. Repository Vercel leftovers were removed (`vercel.json`, `.vercelignore`, `vercel-deploy.yml`, the Vercel-only `rollback.yml`). `api/index.js` stays, because the `verify` and `validate:commercial` gates load it as the shared server renderer. The local `.vercel/` link is gitignored and unused.
 
 ## Rollback state
 

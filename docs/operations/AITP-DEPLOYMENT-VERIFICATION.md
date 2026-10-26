@@ -101,6 +101,6 @@ Cut over on 2026-10-26 from the founder's Windows PC. The full timeline is in `A
 
 Console: the only error at first was Cloudflare's auto-injected Web Analytics (RUM) beacon, blocked by `script-src 'self'`. I disabled RUM for the zone, which fixes the cause and keeps the CSP as it was. Afterwards, curl of six pages and a DOM check showed no `cloudflareinsights` script. Apart from that, only the expected 404 status on the 404 page.
 
-### Not verified here
+### Mail delivery
 
-- Real email delivery to the Zoho mailbox (it needs the founder to send a test message).
+- 2026-10-26 12:29 UTC: a test from Gmail to `help@aiteampremium.com` (the only mailbox for this business) was delivered to the Zoho inbox. The site's earlier addresses (`support@`, `hello@`, `escalation@`) bounced 550 because they don't exist; PR #41 replaced them with `help@`.

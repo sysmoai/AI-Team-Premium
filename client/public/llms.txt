@@ -1,0 +1,26 @@
+# AI Team Premium
+
+> AI Team Premium is an independent, Bangladesh-focused platform that helps people get access to paid AI tools and subscriptions, with prices shown in BDT. The current access model, availability, fulfillment timing and support terms are confirmed before purchase. It is not affiliated with the AI providers whose products it lists.
+
+## Main pages
+
+- [All products](https://www.aiteampremium.com/all-products): catalog of AI tools and plans
+- [Pricing](https://www.aiteampremium.com/pricing): plans and prices in BDT
+- [How pricing works](https://www.aiteampremium.com/pricing-how-it-works): how prices are set
+- [Access types explained](https://www.aiteampremium.com/access-types): who owns the account under each access model
+- [Compare AI tools](https://www.aiteampremium.com/compare): side-by-side comparisons
+- [Blog](https://www.aiteampremium.com/blog): guides for students, freelancers and businesses in Bangladesh
+- [About](https://www.aiteampremium.com/about)
+- [Contact](https://www.aiteampremium.com/contact)
+
+## Policies
+
+- [Refund policy](https://www.aiteampremium.com/refund-policy)
+- [Terms](https://www.aiteampremium.com/terms)
+- [Privacy policy](https://www.aiteampremium.com/privacy-policy)
+- [Non-affiliation disclosure](https://www.aiteampremium.com/non-affiliation)
+- [Corrections policy](https://www.aiteampremium.com/corrections)
+
+## Machine-readable
+
+- [Sitemap](https://www.aiteampremium.com/sitemap.xml)

@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BRAND, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { Link } from "wouter";
 import { MessageCircle, ArrowRight } from "lucide-react";
+import { SERVICE, serviceInquiryHref } from "@/lib/service-links";
 import { config } from "@/lib/config";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
@@ -55,7 +56,7 @@ export function SupportUpsell() {
             style={{ borderColor: BRAND.blue, color: BRAND.blue }}
             data-testid="link-support-details"
           >
-            <Link href="/support">
+            <Link href={serviceInquiryHref(SERVICE.aiSupport)}>
               বিস্তারিত
               <ArrowRight className="w-4 h-4" />
             </Link>

@@ -8,9 +8,11 @@ import { OrganizationSchema } from "../OrganizationSchema";
 interface LayoutProps {
   children: ReactNode;
   productWhatsAppText?: string;
+  /** Names the product for the mobile order bar's label and click tracking. */
+  productName?: string;
 }
 
-export function Layout({ children, productWhatsAppText }: LayoutProps) {
+export function Layout({ children, productWhatsAppText, productName }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950">
       <OrganizationSchema />
@@ -20,7 +22,7 @@ export function Layout({ children, productWhatsAppText }: LayoutProps) {
       </main>
       <Footer />
       <FloatingWhatsApp productWhatsAppText={productWhatsAppText} />
-      <StickyMobileCTABar />
+      <StickyMobileCTABar productWhatsAppText={productWhatsAppText} productName={productName} />
     </div>
   );
 }

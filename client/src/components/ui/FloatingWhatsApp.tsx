@@ -13,7 +13,10 @@ export function FloatingWhatsApp({ productWhatsAppText }: FloatingWhatsAppProps)
   const waUrl = useContextualWhatsAppUrl(productWhatsAppText);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-2.5 md:bottom-8 md:right-8">
+    // Desktop only. On phones the sticky bottom bar (StickyMobileCTA) carries the
+    // same two buttons, and these floated on top of it, covering page content
+    // and showing every visitor four chat buttons at once.
+    <div className="fixed bottom-6 right-6 z-50 hidden md:flex flex-col items-center gap-2.5 md:bottom-8 md:right-8">
       <a
         href={config.messenger}
         target="_blank"

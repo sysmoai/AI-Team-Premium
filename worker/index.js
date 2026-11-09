@@ -11,6 +11,45 @@ import { renderPage, SECURITY_HEADERS } from "../lib/render-page.js";
 const CANONICAL_HOST = "www.aiteampremium.com";
 const APEX_HOST = "aiteampremium.com";
 
+// ------------------------------------------------------------ click events
+// The site had no working measurement: no analytics ID is set in the build, and
+// the CSP (connect-src 'self') would block a third-party tracker anyway. So no
+// one could tell which products, pages or buttons produced WhatsApp orders.
+//
+// client/src/lib/analytics.ts beacons each CTA click and page view here. The
+// Worker writes one structured log line per event, which Workers Logs (enabled
+// by "observability" in wrangler.jsonc) keeps and lets you filter and count by
+// field in the Cloudflare dashboard. No IP, cookie or identifier is recorded.
+const EVENT_PATH = "/api/e";
+const EVENT_NAMES = new Set([
+  "page_view", "whatsapp_cta_click", "messenger_cta_click", "plan_cta_click", "pricing_view",
+  "service_cta_click", "tool_cta_click", "compare_cta_click", "contact_cta_click",
+  "footer_cta_click", "hero_cta_click",
+]);
+const EVENT_FIELDS = ["path", "product", "plan", "price", "source", "ref"];
+
+async function handleEvent(request) {
+  const noContent = () => new Response(null, { status: 204, headers: { "Cache-Control": "no-store" } });
+  if (request.method !== "POST") return new Response(null, { status: 405, headers: { Allow: "POST" } });
+  try {
+    const raw = await request.text();
+    if (raw.length > 2048) return noContent();
+    const data = JSON.parse(raw);
+    if (!data || !EVENT_NAMES.has(data.event)) return noContent();
+    const out = { aitp_event: data.event };
+    for (const k of EVENT_FIELDS) {
+      if (typeof data[k] === "string" && data[k]) out[k] = data[k].slice(0, 160);
+    }
+    const cf = request.cf || {};
+    if (cf.country) out.country = cf.country;
+    out.mobile = /Mobi|Android/i.test(request.headers.get("user-agent") || "");
+    console.log(JSON.stringify(out));
+  } catch {
+    // Malformed beacons are dropped; the page never waits on this response.
+  }
+  return noContent();
+}
+
 // The built index.html, fetched once per isolate. A new deployment starts new
 // isolates, so this never serves a stale bundle reference.
 let templatePromise = null;
@@ -39,6 +78,8 @@ export default {
       url.protocol = "https:";
       return Response.redirect(url.toString(), 301);
     }
+
+    if (url.pathname === EVENT_PATH) return handleEvent(request);
 
     if (request.method !== "GET" && request.method !== "HEAD") {
       return new Response("Method not allowed", {

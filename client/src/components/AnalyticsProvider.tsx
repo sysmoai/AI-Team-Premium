@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { analyticsConfig } from "@/lib/analytics";
+import { useLocation } from "wouter";
+import { analyticsConfig, trackPageView } from "@/lib/analytics";
 
 /**
  * AnalyticsProvider
@@ -89,6 +90,13 @@ export default function AnalyticsProvider() {
       // Analytics initialization failed, app continues normally
     }
   }, []);
+
+  // First-party page views (see beacon() in lib/analytics.ts), so product-page
+  // traffic can be set against the WhatsApp clicks it produced.
+  const [location] = useLocation();
+  useEffect(() => {
+    trackPageView();
+  }, [location]);
 
   return null;
 }

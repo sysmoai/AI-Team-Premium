@@ -242,6 +242,13 @@ function whatsappHref(p: CatalogProduct) {
   return `${config.whatsappUrl}?text=${encodeURIComponent(`${base} — please share payment details.`)}`;
 }
 
+// The mobile bottom bar and desktop floating button are the CTAs most visitors
+// actually see on a phone. They used to send the generic "I want help" text,
+// so the chat opened without saying which product the visitor was looking at.
+function familyWhatsAppText(name: string) {
+  return `Hi! I'm looking at ${name} on AI Team Premium. Which plan fits me? Please confirm the current price and payment details.`;
+}
+
 const UNSAFE_PUBLIC_PROMISE = /(warranty|guarantee|replacement|delivery|within\s+\d+|24\/7|instant|trusted|served since|most customers|official provider requires|shared plan safe|private from other users|productivity gains|most students)/i;
 const UNSAFE_PUBLIC_PROMISE_BN = /(ওয়ারেন্টি|ওয়ারেন্টি|ডেলিভারি|প্রতিস্থাপন|গ্যারান্টি|মিনিট|ঘণ্টা|ঘন্টা)/i;
 
@@ -354,7 +361,7 @@ export default function ProductDetail() {
   const sorted = [...family].sort((a, b) => a.price - b.price);
 
   return (
-    <Layout>
+    <Layout productWhatsAppText={familyWhatsAppText(familyName)} productName={familyName}>
       <BreadcrumbSchema
         items={[
           { name: "Home", path: "/" },

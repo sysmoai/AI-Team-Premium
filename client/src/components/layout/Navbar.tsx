@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown, Layers, Briefcase, Sun, Moon } from "lucide-react";
 import { BRAND, LogoHorizontal, WhatsAppIcon } from "@/components/brand/LogoIcons";
 import { config } from "@/lib/config";
+import { SERVICE, serviceInquiryHref } from "@/lib/service-links";
 import { trackWhatsAppClick } from "@/lib/analytics";
 import { useTheme } from "@/components/ThemeProvider";
 import { NAV_COLUMNS, NAV_CATEGORIES, CATALOG_TOTALS } from "@shared/nav-menu.js";
@@ -22,18 +23,23 @@ import { NAV_COLUMNS, NAV_CATEGORIES, CATALOG_TOTALS } from "@shared/nav-menu.js
 // describes 78 families in four scannable columns instead of naming 17.
 const bdt = (n: number) => `৳${n.toLocaleString("en-US")}`;
 
+// Each item opens the contact form with the service preselected. The /services/*
+// and /support pages are under evidence review (see lib/service-links.ts), and
+// the prices that used to sit here were for those unpublished offers — shown on
+// every page, including the review pages that must not quote a price.
 const SERVICES_MENU = [
-  { name: "🤝 AI Ops Sprint (1:1)", href: "/services/ai-ops-sprint", desc: "৳৯,৯০০ · 3-session implementation" },
-  { name: "🎓 AI Coaching & Support", href: "/support", desc: "৳৭৯৯/hr · Live Bangla sessions" },
-  { name: "🎨 Brand Design", href: "/services/brand-design", desc: "Logo, identity, social kit" },
-  { name: "🌐 Web Development", href: "/services/web-development", desc: "Landing pages, web apps" },
-  { name: "📢 Digital Marketing", href: "/services/digital-marketing", desc: "Ads, SEO, social media" },
-  { name: "📱 App Development", href: "/services/app-development", desc: "iOS, Android, cross-platform" },
+  { name: "🤝 AI Consultancy (1:1)", href: serviceInquiryHref(SERVICE.consultancy), desc: "Scope and price confirmed with you" },
+  { name: "🎓 AI Coaching & Support", href: serviceInquiryHref(SERVICE.aiSupport), desc: "Live Bangla sessions" },
+  { name: "🎨 Brand Design", href: serviceInquiryHref(SERVICE.brandDesign), desc: "Logo, identity, social kit" },
+  { name: "🌐 Web Development", href: serviceInquiryHref(SERVICE.webDev), desc: "Landing pages, web apps" },
+  { name: "📢 Digital Marketing", href: serviceInquiryHref(SERVICE.marketing), desc: "Ads, SEO, social media" },
+  { name: "📱 App Development", href: serviceInquiryHref(SERVICE.appDev), desc: "iOS, Android, cross-platform" },
 ];
 
 const PLAIN_LINKS = [
   { name: "Blog", href: "/blog" },
-  { name: "Support", href: "/support" },
+  { name: "Pricing", href: "/pricing" },
+  { name: "Contact", href: "/contact" },
   { name: "About", href: "/about" },
 ];
 

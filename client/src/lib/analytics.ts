@@ -46,7 +46,53 @@ export interface TrackingPayload {
  * Safely push an event to all configured trackers.
  * Fails silently if trackers are unavailable.
  */
+/**
+ * First-party event log. Every event is also beaconed to the site's own Worker
+ * (/api/e), which writes it to Workers Logs. This is the measurement that works
+ * with no third-party ID configured and inside the strict CSP; the trackers
+ * below only add to it when their IDs are set.
+ */
+let landingSent = false;
+
+function beacon(payload: TrackingPayload): void {
+  try {
+    if (typeof navigator === "undefined" || typeof navigator.sendBeacon !== "function") return;
+    const body = JSON.stringify({
+      event: payload.event,
+      path: window.location.pathname,
+      product: payload.product,
+      plan: payload.plan,
+      price: payload.price,
+      source: payload.source,
+      // document.referrer never changes during client-side navigation, so only
+      // the landing page view carries it.
+      ref: payload.event === "page_view" && !landingSent ? referrerHost() : undefined,
+    });
+    if (payload.event === "page_view") landingSent = true;
+    navigator.sendBeacon("/api/e", new Blob([body], { type: "text/plain" }));
+  } catch {
+    // never block navigation
+  }
+}
+
+// Only the referring site's host, never its full URL (which can carry search
+// terms or personal data). Internal navigation reports nothing.
+function referrerHost(): string | undefined {
+  try {
+    const host = document.referrer ? new URL(document.referrer).hostname : "";
+    return host && host !== window.location.hostname ? host : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+/** One page_view per route, including client-side navigations. */
+export function trackPageView(): void {
+  beacon({ event: "page_view" });
+}
+
 export function trackEvent(payload: TrackingPayload): void {
+  beacon(payload);
   try {
     const eventName = payload.event;
     const { event: _evt, ...restPayload } = payload;

@@ -29,9 +29,15 @@ export function useCreateContact() {
       const url = buildContactWhatsAppUrl(data);
       trackWhatsAppClick(undefined, undefined, undefined, "contact-form-handoff");
 
-      const opened = window.open(url, "_blank", "noopener,noreferrer");
-      if (!opened) {
-        window.location.assign(url);
+      // window.open() with the "noopener" feature always returns null, so the
+      // old `if (!opened)` fallback fired on every submit: WhatsApp opened in a
+      // new tab AND this tab navigated away to wa.me, losing the site. Open
+      // without the feature and cut the opener by hand instead.
+      const opened = window.open(url, "_blank");
+      if (opened) {
+        opened.opener = null;
+      } else {
+        window.location.assign(url); // popup blocked
       }
 
       return { handoff: "whatsapp" as const };

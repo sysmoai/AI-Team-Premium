@@ -5,6 +5,7 @@ import { BRAND, LogoHorizontal, WhatsAppIcon } from "@/components/brand/LogoIcon
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 
 import { config } from "@/lib/config";
+import { SERVICE, serviceInquiryHref } from "@/lib/service-links";
 
 // The Bangla headline reads in Bengali numerals, so a derived price has to be
 // converted rather than dropped in as ASCII digits mid-sentence.
@@ -132,7 +133,7 @@ export function Footer() {
               { label: "AI Readiness", to: "/ai-readiness" },
               { label: "Blog", to: "/blog" },
               { label: "Compare Tools", to: "/compare" },
-              { label: "Support", to: "/support" },
+              { label: "Contact", to: "/contact" },
               { label: "Pricing", to: "/pricing" },
               { label: "About", to: "/about" },
             ]} />
@@ -153,16 +154,14 @@ export function Footer() {
           <div className="md:col-span-2 col-span-1">
             <FooterHeading>Services</FooterHeading>
             <FooterLinks links={[
-              { label: "AI Advisory", to: "/services/ai-advisory" },
-              { label: "Setup & Security", to: "/services/ai-setup-security" },
-              { label: "AI Training", to: "/services/ai-training" },
-              { label: "AI Automation", to: "/services/ai-automation" },
-              { label: "Managed AI Ops", to: "/services/managed-ai-operations" },
-              { label: "AI Ops Sprint", to: "/services/ai-ops-sprint" },
-              { label: "AI Coaching", to: "/support" },
-              { label: "Brand Design", to: "/services/brand-design" },
-              { label: "Web Development", to: "/services/web-development" },
-              { label: "Digital Marketing", to: "/services/digital-marketing" },
+              // Service pages are under evidence review; these open the contact
+              // form with the service preselected instead (lib/service-links.ts).
+              { label: "AI Consultancy", to: serviceInquiryHref(SERVICE.consultancy) },
+              { label: "AI Coaching & Training", to: serviceInquiryHref(SERVICE.aiSupport) },
+              { label: "Brand Design", to: serviceInquiryHref(SERVICE.brandDesign) },
+              { label: "Web Development", to: serviceInquiryHref(SERVICE.webDev) },
+              { label: "Digital Marketing", to: serviceInquiryHref(SERVICE.marketing) },
+              { label: "App Development", to: serviceInquiryHref(SERVICE.appDev) },
             ]} />
           </div>
 

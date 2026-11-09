@@ -7,6 +7,7 @@ import { chatgptPlans } from "@/lib/plans";
 import { bnDigits } from "@/lib/bangla-numerals";
 import { SupportUpsell } from "@/components/SupportUpsell";
 import { config } from "@/lib/config";
+import { SERVICE, serviceInquiryHref } from "@/lib/service-links";
 import { FAQSchema, JsonLd, BreadcrumbSchema } from "@/components/seo/JsonLd";
 import { BLOG_POSTS } from "@/data/blog-posts";
 import { useReveal } from "@/hooks/use-reveal";
@@ -37,13 +38,15 @@ import {
 const IMG_HERO = "/hero-bg.jpg";
 
 
+// href: the service pages are under evidence review, so each card opens the
+// contact form with its service preselected (lib/service-links.ts).
 const SERVICES = [
-  { icon: Brain, title: "AI Subscriptions", desc: "ChatGPT, Claude, Gemini, Perplexity, Grok, Canva, Grammarly, Midjourney" },
-  { icon: Paintbrush, title: "Brand Design", desc: "Logo, identity, brand guidelines, creative direction" },
-  { icon: Code, title: "Web Development", desc: "Modern, fast, SEO-optimized websites" },
-  { icon: LineChart, title: "Digital Marketing", desc: "Growth strategy, content, campaign execution" },
-  { icon: Smartphone, title: "App Development", desc: "Mobile-first apps and product builds" },
-  { icon: MessageSquare, title: "AI Consultancy", desc: "1:1 sessions, team workshops" },
+  { icon: Brain, title: "AI Subscriptions", desc: "ChatGPT, Claude, Gemini, Perplexity, Grok, Canva, Grammarly, Midjourney", href: "/all-products" },
+  { icon: Paintbrush, title: "Brand Design", desc: "Logo, identity, brand guidelines, creative direction", href: serviceInquiryHref(SERVICE.brandDesign) },
+  { icon: Code, title: "Web Development", desc: "Modern, fast, SEO-optimized websites", href: serviceInquiryHref(SERVICE.webDev) },
+  { icon: LineChart, title: "Digital Marketing", desc: "Growth strategy, content, campaign execution", href: serviceInquiryHref(SERVICE.marketing) },
+  { icon: Smartphone, title: "App Development", desc: "Mobile-first apps and product builds", href: serviceInquiryHref(SERVICE.appDev) },
+  { icon: MessageSquare, title: "AI Consultancy", desc: "1:1 sessions, team workshops", href: serviceInquiryHref(SERVICE.consultancy) },
 ];
 
 const DIFFERENTIATORS = [
@@ -66,7 +69,7 @@ const POPULAR_TOOLS = [
   { name: "ChatGPT", desc: "সবচেয়ে জনপ্রিয় AI চ্যাট", href: "/tools/chatgpt-plus-bangladesh", emoji: "💬" },
   { name: "Claude Pro", desc: "লম্বা ডকুমেন্ট ও কোডিং", href: "/tools/claude-pro-bangladesh", emoji: "🧠" },
   { name: "Gemini Advanced", desc: "Google Workspace-এর সাথে", href: "/tools/gemini-advanced-bangladesh", emoji: "✨" },
-  { name: "Google AI Pro", desc: "Gemini + NotebookLM + 2TB", href: "/tools/google-ai-pro", emoji: "🔷" },
+  { name: "Google AI Pro", desc: "Gemini + NotebookLM + 2TB", href: "/tools/gemini-advanced-bangladesh", emoji: "🔷" },
   { name: "SuperGrok", desc: "লাইভ X ডেটা + ছবি", href: "/tools/supergrok-bangladesh", emoji: "⚡" },
   { name: "Perplexity Pro", desc: "সোর্সসহ AI সার্চ", href: "/tools/perplexity-pro-bangladesh", emoji: "🔍" },
   { name: "Midjourney", desc: "AI image generation", href: "/tools/midjourney-bangladesh", emoji: "🎨" },
@@ -143,9 +146,12 @@ export default function Home() {
           <img src={IMG_HERO} alt="AI Team Premium — Bangladesh-focused AI access and enablement platform" className="w-full h-full object-cover" style={{ opacity: 0.15, mixBlendMode: "luminosity" }} loading="eager" />
           <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${BRAND.navy} 0%, rgba(15,23,42,0.6) 50%, ${BRAND.navy} 100%)` }} />
         </div>
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-24 pb-28 md:pt-32 md:pb-36">
+        {/* On a phone the stacked logo filled the whole first screen, pushing the
+            price and the order buttons below the fold. The navbar already shows
+            the logo, so the hero opens with the offer on small screens. */}
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-10 pt-12 pb-24 md:pt-32 md:pb-36">
           <div className="flex flex-col items-center text-center">
-            <div className="mb-10">
+            <div className="mb-10 hidden md:block">
               <LogoStacked size="xl" iconColor={BRAND.white} textColor={BRAND.white} animated />
             </div>
             <h1 style={{ color: BRAND.white, fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em" }}>
@@ -182,7 +188,7 @@ export default function Home() {
                 Messenger
               </a>
               <Link
-                href="/chatgpt-plans"
+                href="/tools/chatgpt-plus-bangladesh"
                 data-testid="link-hero-chatgpt-plans"
                 className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate"
                 style={{ background: BRAND.blue, color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
@@ -237,10 +243,10 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: GraduationCap, title: "Students", tagline: `৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}/mo থেকে শুরু`, tools: "ChatGPT · Grammarly · Perplexity", desc: "Assignment writing, research summaries, IELTS prep, thesis — let AI do the heavy lifting while you focus on understanding.", color: "#15803D", link: "/tools/chatgpt" },
-              { icon: Briefcase, title: "Freelancers", tagline: "Fiverr & Upwork-এ এগিয়ে থাকুন", tools: "Claude Pro · Canva Pro · Midjourney", desc: "Faster proposals, better content, stunning visuals — outperform competitors on Fiverr and Upwork with AI-powered work.", color: BRAND.blue, link: "/ai-subscriptions" },
-              { icon: Building2, title: "Businesses", tagline: "Team-wide AI দক্ষতা", tools: "ChatGPT Team · Copilot · Gemini", desc: "Equip your entire team with AI tools. Boost productivity, automate reports, and get live Bangla AI training for your staff.", color: "#7C3AED", link: "/chatgpt-plans" },
-              { icon: Video, title: "Content Creators", tagline: "ভাইরাল কন্টেন্ট বানান", tools: "Midjourney · ElevenLabs · Canva", desc: "AI-generated images, voice-overs in Bangla, thumbnail design — create professional content without a studio or equipment.", color: "#F59E0B", link: "/tools/midjourney" },
+              { icon: GraduationCap, title: "Students", tagline: `৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}/mo থেকে শুরু`, tools: "ChatGPT · Grammarly · Perplexity", desc: "Assignment writing, research summaries, IELTS prep, thesis — let AI do the heavy lifting while you focus on understanding.", color: "#15803D", link: "/tools/chatgpt-plus-bangladesh" },
+              { icon: Briefcase, title: "Freelancers", tagline: "Fiverr & Upwork-এ এগিয়ে থাকুন", tools: "Claude Pro · Canva Pro · Midjourney", desc: "Faster proposals, better content, stunning visuals — outperform competitors on Fiverr and Upwork with AI-powered work.", color: BRAND.blue, link: "/all-products" },
+              { icon: Building2, title: "Businesses", tagline: "Team-wide AI দক্ষতা", tools: "ChatGPT Team · Copilot · Gemini", desc: "Equip your entire team with AI tools. Boost productivity, automate reports, and get live Bangla AI training for your staff.", color: "#7C3AED", link: "/tools/chatgpt-business-bangladesh" },
+              { icon: Video, title: "Content Creators", tagline: "ভাইরাল কন্টেন্ট বানান", tools: "Midjourney · ElevenLabs · Canva", desc: "AI-generated images, voice-overs in Bangla, thumbnail design — create professional content without a studio or equipment.", color: "#F59E0B", link: "/tools/midjourney-bangladesh" },
             ].map((p, i) => (
               <Link data-reveal="item" data-reveal-delay={i * 80} key={p.title} href={p.link} style={{ textDecoration: "none" }} data-testid={`card-persona-${p.title.toLowerCase().replace(/\s+/g, '-')}`}>
                 <div className="rounded-2xl p-7 h-full flex flex-col hover-elevate card-lift cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
@@ -307,7 +313,7 @@ export default function Home() {
             })}
           </div>
           <div className="mt-12 text-center">
-            <Link href="/chatgpt-plans" className="inline-flex items-center gap-1 font-semibold hover:underline text-blue-600 dark:text-blue-400">
+            <Link href="/tools/chatgpt-plus-bangladesh" className="inline-flex items-center gap-1 font-semibold hover:underline text-blue-600 dark:text-blue-400">
               View All ChatGPT Plans <ChevronRight size={16} />
             </Link>
           </div>
@@ -398,7 +404,7 @@ export default function Home() {
               <WhatsAppIcon size={17} color="#fff" /> সেশন বুক করুন
             </a>
             <Link
-              href="/support"
+              href={serviceInquiryHref(SERVICE.aiSupport)}
               data-testid="link-home-training-details"
               className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 transition-all hover-elevate border border-blue-600 text-blue-600 dark:border-blue-400 dark:text-blue-400"
               style={{ fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
@@ -468,9 +474,9 @@ export default function Home() {
                 <h3 className="mb-3" style={{ color: BRAND.navy, fontSize: "1.05rem", fontWeight: 600, lineHeight: 1.3 }}>{svc.title}</h3>
                 <p style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.85rem", lineHeight: 1.65 }}>{svc.desc}</p>
                 <Link
-                  href={svc.title === "AI Subscriptions" ? "/pricing" : svc.title === "AI Consultancy" ? "/support" : `/services/${svc.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  href={svc.href}
                   data-testid={`link-service-${svc.title.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="mt-5 inline-flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="mt-5 inline-flex items-center gap-1 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
                   style={{ color: BRAND.blue, fontSize: "0.8rem", fontWeight: 600, textDecoration: "none" }}
                 >
                   Learn more <ChevronRight size={14} />

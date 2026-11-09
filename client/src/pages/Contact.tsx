@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { useSearch } from "wouter";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertContactSchema, type InsertContact } from "@shared/schema";
@@ -68,9 +69,15 @@ export default function Contact() {
     path: "/contact",
   });
 
+  // Header, footer and homepage service links arrive as /contact?service=<option>
+  // (lib/service-links.ts). Preselect it so the visitor doesn't have to say twice
+  // what they came for. Anything not in the list is ignored.
+  const requested = new URLSearchParams(useSearch()).get("service") ?? "";
+  const presetService = SERVICE_OPTIONS.includes(requested) ? requested : "";
+
   const form = useForm<InsertContact>({
     resolver: zodResolver(insertContactSchema),
-    defaultValues: { name: "", whatsapp: "", service: "", needs: "" },
+    defaultValues: { name: "", whatsapp: "", service: presetService, needs: "" },
   });
 
   const { mutate: submitContact, isPending } = useCreateContact();

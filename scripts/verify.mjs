@@ -1144,6 +1144,25 @@ if (worker && existsSync(indexPath)) {
   if (post.status === 405) ok("worker: non-GET methods are rejected");
   else fail("worker: POST returned " + post.status);
 
+  // First-party click tracking (client/src/lib/analytics.ts -> /api/e).
+  {
+    const logs = [];
+    const realLog = console.log;
+    console.log = (s) => logs.push(String(s));
+    let good, junk, get;
+    try {
+      good = await hit("/api/e", "www.aiteampremium.com", { method: "POST", body: JSON.stringify({ event: "whatsapp_cta_click", path: "/tools/canva-pro-bangladesh", product: "Canva Pro", source: "sticky-mobile" }) });
+      junk = await hit("/api/e", "www.aiteampremium.com", { method: "POST", body: JSON.stringify({ event: "made_up" }) });
+      get = await hit("/api/e");
+    } finally {
+      console.log = realLog;
+    }
+    const logged = logs.map((l) => { try { return JSON.parse(l); } catch { return null; } }).filter(Boolean);
+    if (good.status === 204 && junk.status === 204 && get.status === 405 && logged.length === 1 && logged[0].aitp_event === "whatsapp_cta_click" && logged[0].product === "Canva Pro")
+      ok("worker: /api/e logs known click events once and drops unknown ones");
+    else fail("worker: /api/e event logging wrong", `POST ${good.status}, junk ${junk.status}, GET ${get.status}, logged ${JSON.stringify(logged)}`);
+  }
+
   // Security headers must match between Worker responses and static files.
   const { SECURITY_HEADERS } = await import(pathToFileURL(resolve(ROOT, "lib/render-page.js")).href);
   const page = await hit("/all-products");

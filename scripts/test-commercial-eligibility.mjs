@@ -197,7 +197,7 @@ const unsafe = [
   ["nested plan price", { plans: [{ planName: "x", priceBDT: 350 }] }, /plans\[\]\.priceBDT/],
   ["officialUSD without a displayable price", { officialUSD: 20 }, /officialUSD shipped/],
   ["a payment ask in the WhatsApp message", { whatsappMsg: "Hi, please share payment details." }, /payment wording/],
-  ["another business's phone number", { faq: [{ q: "Contact", a: "WhatsApp +880 1865-385348" }] }, /phone number 88018 .* not AITP's|is not AITP's/],
+  ["another business's phone number", { faq: [{ q: "Contact", a: "WhatsApp +880 1865-385348" }] }, /is not this site's/],
   ["another storefront's name", { description: "Bought through AIPS" }, /another storefront's name/],
   ["dangling brand placeholder", { faq: [{ q: "Is it safe to buy through ?", a: "x" }] }, /dangling brand placeholder/],
   ["instant delivery claim", { description: "Instant delivery" }, /delivery\/warranty/],

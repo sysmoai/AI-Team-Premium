@@ -31,7 +31,7 @@
     "gen:nav": "node scripts/gen-nav.mjs",
     "gen:pricing": "node scripts/gen-pricing-table.mjs",
     "validate:commercial": "node scripts/validate-commercial.mjs",
-    "test:commercial": "node --test scripts/test-commercial-eligibility.mjs",
+    "test:commercial": "node --test scripts/test-commercial-eligibility.mjs && tsx --test scripts/test-ui-logic.ts",
     "validate:floor": "node scripts/audit-floor.mjs",
     "gen:governance": "node scripts/gen-governance.mjs",
     "validate:catalog:legacy": "node scripts/validate-catalog.mjs",

@@ -25,9 +25,10 @@ const SVC = { id: "syn-training", status: "owner_approved", approved_bdt_price: 
 const POLICY = { businessId: "U05", status: "owner_approved", version: "syn-pay-v1", methods: ["synthetic-wallet"], validUntil: "2027-01-31" };
 const ctx = (over = {}) => ({ actor: SALES, governance: realGovernance, services: [SVC], paymentPolicy: POLICY, now: NOW, ...over });
 let qn = 0;
-const freshQuote = () => prepareQuote({ offer: { kind: "service", id: "syn-training" }, quantity: 2, termsVersion: "syn-terms-v1", price: 1 }, ctx({ newId: (p) => `${p}-syn-${++qn}` }));
-// Prepare → persist → customer accepts. Returns the stored quote id (the only thing orders trust).
-const acceptedQuoteId = (store) => { const q = registerQuote(store, freshQuote(), { actor: SALES, now: NOW }); acceptQuote(store, q.id, { actor: SALES, now: NOW }); return q.id; };
+const quoteReq = { offer: { kind: "service", id: "syn-training" }, quantity: 2, termsVersion: "syn-terms-v1", price: 1, totalBdt: 1 };
+const qctx = () => ctx({ newId: (p) => `${p}-syn-${++qn}` });
+// Server prepares + persists (from the REQUEST) → customer accepts. Returns the stored quote id.
+const acceptedQuoteId = (store) => { const q = registerQuote(store, quoteReq, qctx()); acceptQuote(store, q.id, { actor: SALES, now: NOW }); return q.id; };
 
 // --------------------------------------------------------------------- RBAC
 test("RBAC: anonymous, wrong business, unknown, inactive, revoked, expired grants are rejected", () => {
@@ -79,7 +80,7 @@ test("C: duplicate create with the same idempotency key returns one durable orde
   assert.throws(() => createOrder(store, { quoteId: "Q-other", idempotencyKey: "idem-0001-abc" }, { actor: SALES, now: NOW }), /REUSED_FOR_DIFFERENT_QUOTE/);
   assert.throws(() => createOrder(store, { quoteId: q, idempotencyKey: "x" }, { actor: SALES, now: NOW }), /IDEMPOTENCY_KEY_REQUIRED/);
   assert.throws(() => createOrder(store, { quoteId: q, idempotencyKey: "idem-0003-abc" }, { actor: SALES, now: NOW }), /QUOTE_ALREADY_CONVERTED/);
-  const pending = registerQuote(store, freshQuote(), { actor: SALES, now: NOW });
+  const pending = registerQuote(store, quoteReq, qctx());
   assert.throws(() => createOrder(store, { quoteId: pending.id, idempotencyKey: "idem-0002-abc" }, { actor: SALES, now: NOW }), /QUOTE_NOT_ACCEPTED/);
   assert.throws(() => createOrder(store, { quoteId: "Q-unknown", idempotencyKey: "idem-0004-abc" }, { actor: SALES, now: NOW }), /QUOTE_NOT_FOUND/);
 });
@@ -89,7 +90,16 @@ test("Security: a tampered stored quote or a caller-supplied amount cannot set t
   const id = acceptedQuoteId(store);
   store.quotes.get(id).totalBdt = 1; // tamper after acceptance
   assert.throws(() => createOrder(store, { quoteId: id, idempotencyKey: "idem-t-0001", totalBdt: 1 }, { actor: SALES, now: NOW }), /QUOTE_TAMPERED/);
-  assert.throws(() => registerQuote(store, { ...freshQuote(), totalBdt: 5 }, { actor: SALES, now: NOW }), /QUOTE_AMOUNT_INCONSISTENT/);
+  // forging acceptance by a direct store write is detected (acceptance is signed)
+  const p2 = registerQuote(store, quoteReq, qctx());
+  store.quotes.get(p2.id).customerAcceptance = "ACCEPTED";
+  assert.throws(() => createOrder(store, { quoteId: p2.id, idempotencyKey: "idem-t-0003" }, { actor: SALES, now: NOW }), /QUOTE_TAMPERED/);
+  // re-signing with a guessed digest does not help: the key is server-side
+  store.quotes.get(p2.id).digest = "0".repeat(64);
+  assert.throws(() => createOrder(store, { quoteId: p2.id, idempotencyKey: "idem-t-0004" }, { actor: SALES, now: NOW }), /QUOTE_TAMPERED/);
+  // the price always comes from governance, whatever the request says
+  assert.equal(registerQuote(store, quoteReq, qctx()).totalBdt, 2000);
+  assert.throws(() => registerQuote(store, { ...quoteReq, offer: { kind: "product", id: "chatgpt-plus-personal" } }, qctx()), /QUOTE_INELIGIBLE_OFFER/);
   const s2 = createMemoryStore();
   const o = createOrder(s2, { quoteId: acceptedQuoteId(s2), idempotencyKey: "idem-t-0002", amountBdt: 1 }, { actor: SALES, now: NOW });
   assert.equal(o.amountBdt, 2000);
@@ -221,6 +231,12 @@ test("J: another business's identity or payment number in output fails the gate"
   assert.ok(crossBusinessViolations("call 1865385348").length > 0, "bare 10-digit");
   assert.ok(crossBusinessViolations("https://wa.me/8801865385348").length > 0, "wa.me link");
   assert.deepEqual(crossBusinessViolations("https://wa.me/8801533262758 or 01533-262758"), []);
+  assert.ok(crossBusinessViolations("dial 00880 1865 385348").length > 0, "00 international prefix");
+  assert.ok(crossBusinessViolations("0186.538.5348").length > 0, "dot separators");
+  assert.ok(crossBusinessViolations("(0186) 538-5348").length > 0, "brackets");
+  assert.deepEqual(crossBusinessViolations("+880 (1533) 262758"), []);
+  assert.ok(crossBusinessViolations("০১৮৬৫-৩৮৫৩৪৮").length > 0, "Bengali digits");
+  assert.ok(crossBusinessViolations("+880 1533 262758 99").length > 0, "over-long run fails closed");
 });
 
 // ------------------------------------------------------------- CRM + support

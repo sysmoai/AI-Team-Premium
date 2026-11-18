@@ -94,12 +94,17 @@ test("Security: a tampered stored quote or a caller-supplied amount cannot set t
   const p2 = registerQuote(store, quoteReq, qctx());
   store.quotes.get(p2.id).customerAcceptance = "ACCEPTED";
   assert.throws(() => createOrder(store, { quoteId: p2.id, idempotencyKey: "idem-t-0003" }, { actor: SALES, now: NOW }), /QUOTE_TAMPERED/);
+  // the signing key is not reachable from the store record
+  assert.ok(!JSON.stringify(Object.keys(store)).includes("signingKey"));
   // re-signing with a guessed digest does not help: the key is server-side
   store.quotes.get(p2.id).digest = "0".repeat(64);
   assert.throws(() => createOrder(store, { quoteId: p2.id, idempotencyKey: "idem-t-0004" }, { actor: SALES, now: NOW }), /QUOTE_TAMPERED/);
   // the price always comes from governance, whatever the request says
   assert.equal(registerQuote(store, quoteReq, qctx()).totalBdt, 2000);
   assert.throws(() => registerQuote(store, { ...quoteReq, offer: { kind: "product", id: "chatgpt-plus-personal" } }, qctx()), /QUOTE_INELIGIBLE_OFFER/);
+  assert.throws(() => registerQuote(store, { ...quoteReq, termsVersion: "v1; password=x" }, qctx()), /QUOTE_NO_TERMS_VERSION/);
+  assert.throws(() => registerQuote(store, { ...quoteReq, offer: { kind: "service", id: "../etc" } }, qctx()), /QUOTE_BAD_OFFER/);
+  assert.ok(store.audit.some((a) => a.type === "quote.registered"));
   const s2 = createMemoryStore();
   const o = createOrder(s2, { quoteId: acceptedQuoteId(s2), idempotencyKey: "idem-t-0002", amountBdt: 1 }, { actor: SALES, now: NOW });
   assert.equal(o.amountBdt, 2000);
@@ -237,6 +242,11 @@ test("J: another business's identity or payment number in output fails the gate"
   assert.deepEqual(crossBusinessViolations("+880 (1533) 262758"), []);
   assert.ok(crossBusinessViolations("০১৮৬৫-৩৮৫৩৪৮").length > 0, "Bengali digits");
   assert.ok(crossBusinessViolations("+880 1533 262758 99").length > 0, "over-long run fails closed");
+  const ZW = String.fromCharCode(0x2060), EN_DASH = String.fromCharCode(0x2013), DEV = "०१८६५३८५३४८"; // Devanagari digits
+  assert.ok(crossBusinessViolations("0186" + ZW + "5385348").length > 0, "word-joiner inside number");
+  assert.ok(crossBusinessViolations("0186" + EN_DASH + "538" + EN_DASH + "5348").length > 0, "en dashes");
+  assert.ok(crossBusinessViolations(DEV).length > 0, "other-script digits");
+  assert.ok(crossBusinessViolations("0" + " ".repeat(60) + "1865385348").length > 0, "long separator padding");
 });
 
 // ------------------------------------------------------------- CRM + support

@@ -1,0 +1,18 @@
+// LOCAL-ONLY configuration for `wrangler dev --local` (Business OS self-test).
+// No routes, no workers.dev, no preview URLs; the D1 binding is used only in
+// local (miniflare) mode. Do NOT run `wrangler deploy` or `--remote` with it.
+{
+  "name": "aitp-business-os-selftest-local",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "aitp-business-os-local",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "../../../docs/business-os/migrations"
+    }
+  ]
+}

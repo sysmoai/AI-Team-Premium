@@ -31,7 +31,7 @@
     "gen:nav": "node scripts/gen-nav.mjs",
     "gen:pricing": "node scripts/gen-pricing-table.mjs",
     "validate:commercial": "node scripts/validate-commercial.mjs",
-    "test:commercial": "node --test scripts/test-commercial-eligibility.mjs && tsx --test scripts/test-ui-logic.ts scripts/test-c6-surfaces.ts",
+    "test:commercial": "node --test scripts/test-commercial-eligibility.mjs && tsx --test scripts/test-ui-logic.ts scripts/test-c6-surfaces.ts && node --test scripts/test-business-os.mjs",
     "audit:surface": "node scripts/audit-public-surface.mjs",
     "validate:floor": "node scripts/audit-floor.mjs",
     "gen:governance": "node scripts/gen-governance.mjs",

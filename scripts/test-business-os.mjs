@@ -9,7 +9,7 @@ import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { check, authorize, AuthzError, CAPABILITIES } from "../lib/business-os/rbac.js";
 import { prepareQuote, QuoteError } from "../lib/business-os/quote.js";
-import { createMemoryStore, createOrder, recordCustomerPaymentReport, recordSettlement, verifyPayment, transition, verifyEvents, dispatchOutbox, OrderError } from "../lib/business-os/orders.js";
+import { createMemoryStore, registerQuote, acceptQuote, createOrder, recordCustomerPaymentReport, recordSettlement, verifyPayment, transition, verifyEvents, dispatchOutbox, OrderError } from "../lib/business-os/orders.js";
 import { createLead, exportLeads, purgeExpiredLeads, moveTicket, renewalReminderDecision, contribution, operatingProfit, crossBusinessViolations } from "../lib/business-os/operations.js";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -24,7 +24,10 @@ const OWNER = who("business_owner"), SALES = who("sales_support"), FIN = who("fi
 const SVC = { id: "syn-training", status: "owner_approved", approved_bdt_price: 1000, price_unit: "session", price_approval_id: "SYN-APPROVAL-1", approval_valid_until: "2027-01-31", scope_approved: true, deliverables_approved: true, payment_terms_approved: true, refund_terms_approved: true, support_terms_approved: true };
 const POLICY = { businessId: "U05", status: "owner_approved", version: "syn-pay-v1", methods: ["synthetic-wallet"], validUntil: "2027-01-31" };
 const ctx = (over = {}) => ({ actor: SALES, governance: realGovernance, services: [SVC], paymentPolicy: POLICY, now: NOW, ...over });
-const acceptedQuote = () => ({ ...prepareQuote({ offer: { kind: "service", id: "syn-training" }, quantity: 2, termsVersion: "syn-terms-v1", price: 1 }, ctx()), customerAcceptance: "ACCEPTED" });
+let qn = 0;
+const freshQuote = () => prepareQuote({ offer: { kind: "service", id: "syn-training" }, quantity: 2, termsVersion: "syn-terms-v1", price: 1 }, ctx({ newId: (p) => `${p}-syn-${++qn}` }));
+// Prepare → persist → customer accepts. Returns the stored quote id (the only thing orders trust).
+const acceptedQuoteId = (store) => { const q = registerQuote(store, freshQuote(), { actor: SALES, now: NOW }); acceptQuote(store, q.id, { actor: SALES, now: NOW }); return q.id; };
 
 // --------------------------------------------------------------------- RBAC
 test("RBAC: anonymous, wrong business, unknown, inactive, revoked, expired grants are rejected", () => {
@@ -68,20 +71,51 @@ test("B: an owner-approved service under a verified policy yields a server-price
 // --------------------------------------------------------------- Scenario C
 test("C: duplicate create with the same idempotency key returns one durable order", () => {
   const store = createMemoryStore();
-  const q = acceptedQuote();
-  const a = createOrder(store, { quote: q, idempotencyKey: "idem-0001-abc" }, { actor: SALES, now: NOW });
-  const b = createOrder(store, { quote: q, idempotencyKey: "idem-0001-abc" }, { actor: SALES, now: NOW });
+  const q = acceptedQuoteId(store);
+  const a = createOrder(store, { quoteId: q, idempotencyKey: "idem-0001-abc" }, { actor: SALES, now: NOW });
+  const b = createOrder(store, { quoteId: q, idempotencyKey: "idem-0001-abc" }, { actor: SALES, now: NOW });
   assert.equal(a.id, b.id);
   assert.equal(store.orders.size, 1);
-  assert.throws(() => createOrder(store, { quote: { ...q, id: "Q-other" }, idempotencyKey: "idem-0001-abc" }, { actor: SALES, now: NOW }), /REUSED_FOR_DIFFERENT_QUOTE/);
-  assert.throws(() => createOrder(store, { quote: q, idempotencyKey: "x" }, { actor: SALES, now: NOW }), /IDEMPOTENCY_KEY_REQUIRED/);
-  assert.throws(() => createOrder(store, { quote: { ...q, customerAcceptance: "PENDING" }, idempotencyKey: "idem-0002-abc" }, { actor: SALES, now: NOW }), /QUOTE_NOT_ACCEPTED/);
+  assert.throws(() => createOrder(store, { quoteId: "Q-other", idempotencyKey: "idem-0001-abc" }, { actor: SALES, now: NOW }), /REUSED_FOR_DIFFERENT_QUOTE/);
+  assert.throws(() => createOrder(store, { quoteId: q, idempotencyKey: "x" }, { actor: SALES, now: NOW }), /IDEMPOTENCY_KEY_REQUIRED/);
+  assert.throws(() => createOrder(store, { quoteId: q, idempotencyKey: "idem-0003-abc" }, { actor: SALES, now: NOW }), /QUOTE_ALREADY_CONVERTED/);
+  const pending = registerQuote(store, freshQuote(), { actor: SALES, now: NOW });
+  assert.throws(() => createOrder(store, { quoteId: pending.id, idempotencyKey: "idem-0002-abc" }, { actor: SALES, now: NOW }), /QUOTE_NOT_ACCEPTED/);
+  assert.throws(() => createOrder(store, { quoteId: "Q-unknown", idempotencyKey: "idem-0004-abc" }, { actor: SALES, now: NOW }), /QUOTE_NOT_FOUND/);
+});
+
+test("Security: a tampered stored quote or a caller-supplied amount cannot set the order amount", () => {
+  const store = createMemoryStore();
+  const id = acceptedQuoteId(store);
+  store.quotes.get(id).totalBdt = 1; // tamper after acceptance
+  assert.throws(() => createOrder(store, { quoteId: id, idempotencyKey: "idem-t-0001", totalBdt: 1 }, { actor: SALES, now: NOW }), /QUOTE_TAMPERED/);
+  assert.throws(() => registerQuote(store, { ...freshQuote(), totalBdt: 5 }, { actor: SALES, now: NOW }), /QUOTE_AMOUNT_INCONSISTENT/);
+  const s2 = createMemoryStore();
+  const o = createOrder(s2, { quoteId: acceptedQuoteId(s2), idempotencyKey: "idem-t-0002", amountBdt: 1 }, { actor: SALES, now: NOW });
+  assert.equal(o.amountBdt, 2000);
+});
+
+test("Security: truncating the event log is detected; secrets of several shapes are rejected", () => {
+  const store = createMemoryStore();
+  const o = createOrder(store, { quoteId: acceptedQuoteId(store), idempotencyKey: "idem-s-0001" }, { actor: SALES, now: NOW });
+  assert.equal(verifyEvents(store), null);
+  store.events.pop();
+  assert.equal(verifyEvents(store), "TRUNCATED");
+  const s2 = createMemoryStore();
+  const o2 = createOrder(s2, { quoteId: acceptedQuoteId(s2), idempotencyKey: "idem-s-0002" }, { actor: SALES, now: NOW });
+  for (const bad of [{ reference: "password hunter2" }, { reference: "OTP 482913" }, { reference: "পাসওয়ার্ড abc" }, { reference: "card 4111 1111 1111 1111" }]) {
+    assert.throws(() => recordCustomerPaymentReport(s2, o2.id, bad, { actor: SALES, now: NOW }), /SECRET_IN_RECORD/, JSON.stringify(bad));
+  }
+  recordSettlement(s2, { businessId: "U05", reference: "SYN-TX-S", amountBdt: 2000, receivingAccountRef: "syn-acct", source: "receiving_side_statement" }, { actor: FIN, now: NOW });
+  verifyPayment(s2, o2.id, { settlementReference: "SYN-TX-S" }, { actor: FIN, now: NOW });
+  assert.throws(() => transition(s2, o2.id, "ASSIGNED", { actor: FUL, now: NOW, evidence: { loginEmail: "x" } }), /EVIDENCE_FIELD_NOT_ALLOWED/);
+  void o;
 });
 
 // --------------------------------------------------------------- Scenario D
 test("D: a customer-reported payment without receiving-side settlement stays in PAYMENT_REVIEW", () => {
   const store = createMemoryStore();
-  const o = createOrder(store, { quote: acceptedQuote(), idempotencyKey: "idem-d-0001" }, { actor: SALES, now: NOW });
+  const o = createOrder(store, { quoteId: acceptedQuoteId(store), idempotencyKey: "idem-d-0001" }, { actor: SALES, now: NOW });
   recordCustomerPaymentReport(store, o.id, { method: "synthetic-wallet", reference: "SYN-TX-1", screenshotRef: "syn.png" }, { actor: SALES, now: NOW });
   assert.equal(store.orders.get(o.id).state, "PAYMENT_REVIEW");
   assert.throws(() => verifyPayment(store, o.id, { settlementReference: "SYN-TX-1" }, { actor: FIN, now: NOW }), /NO_RECEIVING_SIDE_SETTLEMENT/);
@@ -94,7 +128,7 @@ test("D: a customer-reported payment without receiving-side settlement stays in 
 // --------------------------------------------------------------- Scenario E
 test("E: staff without permission cannot confirm payment; the denial is audited", () => {
   const store = createMemoryStore();
-  const o = createOrder(store, { quote: acceptedQuote(), idempotencyKey: "idem-e-0001" }, { actor: SALES, now: NOW });
+  const o = createOrder(store, { quoteId: acceptedQuoteId(store), idempotencyKey: "idem-e-0001" }, { actor: SALES, now: NOW });
   recordSettlement(store, { businessId: "U05", reference: "SYN-TX-E", amountBdt: 2000, receivingAccountRef: "syn-acct", source: "receiving_side_statement" }, { actor: FIN, now: NOW });
   for (const actor of [SALES, FUL, OPS, { ...FIN, businessId: "U02" }]) {
     assert.throws(() => verifyPayment(store, o.id, { settlementReference: "SYN-TX-E" }, { actor, now: NOW }), AuthzError);
@@ -107,7 +141,7 @@ test("E: staff without permission cannot confirm payment; the denial is audited"
 // --------------------------------------------------------------- Scenario F
 test("F: a verified order is assigned and fulfilled with an intact, tamper-evident history", () => {
   const store = createMemoryStore();
-  const o = createOrder(store, { quote: acceptedQuote(), idempotencyKey: "idem-f-0001" }, { actor: SALES, now: NOW });
+  const o = createOrder(store, { quoteId: acceptedQuoteId(store), idempotencyKey: "idem-f-0001" }, { actor: SALES, now: NOW });
   recordSettlement(store, { businessId: "U05", reference: "SYN-TX-F", amountBdt: 2000, receivingAccountRef: "syn-acct", source: "receiving_side_statement" }, { actor: FIN, now: NOW });
   verifyPayment(store, o.id, { settlementReference: "SYN-TX-F" }, { actor: FIN, now: NOW });
   assert.throws(() => verifyPayment(store, o.id, { settlementReference: "SYN-TX-F" }, { actor: FIN, now: NOW }), /NOT_IN_PAYMENT_REVIEW/);
@@ -129,7 +163,7 @@ test("F: a verified order is assigned and fulfilled with an intact, tamper-evide
 // --------------------------------------------------------------- Scenario G
 test("G: notification provider failure leaves the order durable; outbox retries then dead-letters", async () => {
   const store = createMemoryStore();
-  const o = createOrder(store, { quote: acceptedQuote(), idempotencyKey: "idem-g-0001" }, { actor: SALES, now: NOW });
+  const o = createOrder(store, { quoteId: acceptedQuoteId(store), idempotencyKey: "idem-g-0001" }, { actor: SALES, now: NOW });
   let calls = 0;
   const failing = async () => { calls++; throw new Error("provider 503"); };
   for (let k = 0; k < 3; k++) await dispatchOutbox(store, failing, { maxAttempts: 3 });
@@ -139,7 +173,7 @@ test("G: notification provider failure leaves the order durable; outbox retries 
   await dispatchOutbox(store, failing, { maxAttempts: 3 });
   assert.equal(calls, 3, "no retry after dead-letter");
   const s2 = createMemoryStore();
-  createOrder(s2, { quote: acceptedQuote(), idempotencyKey: "idem-g-0002" }, { actor: SALES, now: NOW });
+  createOrder(s2, { quoteId: acceptedQuoteId(s2), idempotencyKey: "idem-g-0002" }, { actor: SALES, now: NOW });
   let first = true;
   await dispatchOutbox(s2, async () => { if (first) { first = false; throw new Error("timeout"); } });
   await dispatchOutbox(s2, async () => {});
@@ -182,6 +216,11 @@ test("J: another business's identity or payment number in output fails the gate"
   assert.ok(crossBusinessViolations("bKash 01865385348").length > 0);
   assert.ok(crossBusinessViolations("Order via AI Premium Shop").length > 0);
   assert.ok(crossBusinessViolations("Bought on SaveOnSub").length > 0);
+  // bypass attempts the first version allowed
+  assert.ok(crossBusinessViolations("+880 1533-2627589").length > 0, "allowed prefix + extra digit");
+  assert.ok(crossBusinessViolations("call 1865385348").length > 0, "bare 10-digit");
+  assert.ok(crossBusinessViolations("https://wa.me/8801865385348").length > 0, "wa.me link");
+  assert.deepEqual(crossBusinessViolations("https://wa.me/8801533262758 or 01533-262758"), []);
 });
 
 // ------------------------------------------------------------- CRM + support
@@ -205,7 +244,7 @@ test("Support: tickets follow the lifecycle and close only after customer confir
 });
 test("Refund: only the owner approves; finance can only review", () => {
   const store = createMemoryStore();
-  const o = createOrder(store, { quote: acceptedQuote(), idempotencyKey: "idem-r-0001" }, { actor: SALES, now: NOW });
+  const o = createOrder(store, { quoteId: acceptedQuoteId(store), idempotencyKey: "idem-r-0001" }, { actor: SALES, now: NOW });
   recordSettlement(store, { businessId: "U05", reference: "SYN-TX-R", amountBdt: 2000, receivingAccountRef: "syn-acct", source: "receiving_side_statement" }, { actor: FIN, now: NOW });
   verifyPayment(store, o.id, { settlementReference: "SYN-TX-R" }, { actor: FIN, now: NOW });
   transition(store, o.id, "REFUND_REVIEW", { actor: FIN, now: NOW });

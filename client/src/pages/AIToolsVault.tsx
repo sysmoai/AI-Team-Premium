@@ -5,6 +5,7 @@ import { Check, Shield, Zap, Clock, Package, MessageCircle, Star } from "lucide-
 import { config } from "@/lib/config";
 import { BreadcrumbSchema, FAQSchema } from "@/components/seo/JsonLd";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
+import catalog from "../data/products-catalog.json";
 
 const INCLUDED = [
   "ChatGPT Plus access (shared seat)",
@@ -19,14 +20,24 @@ const INCLUDED = [
 // here at ৳2,500 and Gemini at ৳1,800 — neither matched the catalog, and the
 // ৳7,250 total below was the sum of those wrong figures, which understated the
 // comparison the whole section exists to make.
+// Cycle 5: prices come from the governed catalog projection, never typed here.
+// A price appears only for a SKU whose eligibility layer allows it; otherwise the
+// row says so and no total (and no saving argument) is shown.
+type CatalogRow = { id: string; canOrder?: boolean; priceOnRequest?: boolean; price: number };
+const governedPrice = (id: string): number | null => {
+  const p = (catalog as CatalogRow[]).find((x) => x.id === id);
+  return p && p.canOrder && !p.priceOnRequest && p.price > 0 ? p.price : null;
+};
 const COMPARISON = [
-  { tool: "ChatGPT Plus", individualBdt: 2990, type: "Personal Seat" },
-  { tool: "Claude Pro", individualBdt: 2990, type: "Personal Seat" },
-  { tool: "Google AI Pro (Gemini Advanced)", individualBdt: 3390, type: "Personal Seat" },
+  { tool: "ChatGPT Plus", individualBdt: governedPrice("chatgpt-plus-personal"), type: "Personal Seat" },
+  { tool: "Claude Pro", individualBdt: governedPrice("claude-pro-personal"), type: "Personal Seat" },
+  { tool: "Google AI Pro (Gemini Advanced)", individualBdt: governedPrice("google-ai-pro-personal"), type: "Personal Seat" },
 ];
 
 const bdt = (n: number) => `৳${n.toLocaleString("en-US")}`;
-const COMPARISON_TOTAL = COMPARISON.reduce((s, r) => s + r.individualBdt, 0);
+const COMPARISON_TOTAL: number | null = COMPARISON.every((r) => r.individualBdt !== null)
+  ? COMPARISON.reduce((s, r) => s + (r.individualBdt as number), 0)
+  : null;
 
 // The Bangla section quotes the same comparison total in Bangla numerals. It had
 // been typed separately and was left at ৳৭,২৫০ when the English figure was
@@ -185,7 +196,7 @@ export default function AIToolsVault() {
                 className="w-full inline-flex items-center justify-center gap-2 rounded-full py-3.5 font-bold text-white text-base"
                 style={{ background: "#25D366" }}
               >
-                <WhatsAppIcon size={16} color="#fff" /> Order on WhatsApp
+                <WhatsAppIcon size={16} color="#fff" /> Ask on WhatsApp
               </a>
               <a
                 href={config.messenger}
@@ -204,7 +215,7 @@ export default function AIToolsVault() {
             <div>
               <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">কেন Vault নেবেন?</h3>
               <p className="mb-4 text-sm text-slate-900/65 dark:text-slate-300" style={{ lineHeight: 1.7 }}>
-                তিনটি AI tool আলাদাভাবে Personal Seat হিসেবে কিনলে মাসে {bnBdt(COMPARISON_TOTAL)} খরচ হয়। Vault-এ Shared access-এর <strong>দাম যাচাইয়ের পর জানানো হবে</strong> — একটি payment, একটি WhatsApp support channel, এবং bundled onboarding।
+                {COMPARISON_TOTAL !== null ? `তিনটি AI tool আলাদাভাবে Personal Seat হিসেবে কিনলে মাসে ${bnBdt(COMPARISON_TOTAL)} খরচ হয়। ` : ""}Vault-এ Shared access-এর <strong>দাম যাচাইয়ের পর জানানো হবে</strong> — একটি payment, একটি WhatsApp support channel, এবং bundled onboarding।
               </p>
               <div className="rounded-2xl overflow-hidden border" style={{ borderColor: "rgba(37,99,235,0.10)" }}>
                 <table className="w-full text-sm">
@@ -218,13 +229,15 @@ export default function AIToolsVault() {
                     {COMPARISON.map((row, i) => (
                       <tr key={row.tool} style={{ borderTop: "1px solid rgba(37,99,235,0.06)", background: i % 2 === 0 ? BRAND.white : "rgba(239,246,255,0.4)" }}>
                         <td className="px-5 py-3" style={{ color: BRAND.navy, opacity: 0.75 }}>{row.tool}</td>
-                        <td className="px-5 py-3 text-right font-medium" style={{ color: BRAND.navy }}>{bdt(row.individualBdt)}/mo</td>
+                        <td className="px-5 py-3 text-right font-medium" style={{ color: BRAND.navy }}>{row.individualBdt !== null ? `${bdt(row.individualBdt)}/mo` : "Ask on WhatsApp"}</td>
                       </tr>
                     ))}
-                    <tr style={{ borderTop: `2px solid rgba(37,99,235,0.15)`, background: BRAND.sky }}>
-                      <td className="px-5 py-3 font-bold" style={{ color: BRAND.navy }}>Total (3 Personal Seats)</td>
-                      <td className="px-5 py-3 text-right font-bold" style={{ color: "#EF4444" }}>{bdt(COMPARISON_TOTAL)}/mo</td>
-                    </tr>
+                    {COMPARISON_TOTAL !== null && (
+                      <tr style={{ borderTop: `2px solid rgba(37,99,235,0.15)`, background: BRAND.sky }}>
+                        <td className="px-5 py-3 font-bold" style={{ color: BRAND.navy }}>Total (3 Personal Seats)</td>
+                        <td className="px-5 py-3 text-right font-bold" style={{ color: "#EF4444" }}>{bdt(COMPARISON_TOTAL)}/mo</td>
+                      </tr>
+                    )}
                     <tr style={{ background: BRAND.blue }}>
                       <td className="px-5 py-3 font-bold text-white">🎁 Vault Bundle (Shared)</td>
                       <td className="px-5 py-3 text-right font-bold text-white">Request price</td>

@@ -134,7 +134,7 @@ if (products) {
   // Fields AllProducts.tsx reads. `badge` is genuinely optional.
   const REQUIRED = [
     "id", "name", "brand", "brandColor", "category", "price",
-    "tier", "description", "capabilities", "deliverySLA", "whatsappMsg",
+    "tier", "description", "capabilities", "whatsappMsg",
   ];
 
   const problems = [];
@@ -150,6 +150,10 @@ if (products) {
       return;
     }
     for (const f of REQUIRED) {
+      // The projection deletes the prefill for records that may not even be
+      // enquired about (prohibited, retired, unknown...): require it only when
+      // the page will show a WhatsApp button.
+      if (f === "whatsappMsg" && !(p.canOrder || p.canQuote)) continue;
       const v = p[f];
       if (v === undefined || v === null || v === "") problems.push(`${label}: missing "${f}"`);
     }
@@ -554,7 +558,8 @@ else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.
   const sellable = products.filter((p) => p.price > 0 && !p.priceOnRequest);
   if (CATALOG_TOTALS.tiers !== products.length)
     bad.push(`nav tier count ${CATALOG_TOTALS.tiers} vs catalog ${products.length}`);
-  const floor = Math.min(...sellable.map((p) => p.price));
+  // null (never Infinity) while no record may display a price.
+  const floor = sellable.length ? Math.min(...sellable.map((p) => p.price)) : null;
   if (CATALOG_TOTALS.priceFrom !== floor)
     bad.push(`nav price floor ৳${CATALOG_TOTALS.priceFrom} vs catalog ৳${floor}`);
   for (const c of NAV_CATEGORIES) {
@@ -1112,6 +1117,15 @@ if (worker && existsSync(indexPath)) {
     const { FALLBACK_LINKS } = await import(pathToFileURL(resolve(ROOT, "lib/render-page.js")).href);
     const sm = readFileSync(resolve(ROOT, "client/public/sitemap.xml"), "utf-8");
     const offMap = FALLBACK_LINKS.map(([h]) => h).filter((h) => !sm.includes(`<loc>https://www.aiteampremium.com${h === "/" ? "/" : h}</loc>`));
+    // Every sitemap URL must be reachable by a plain link from the fallback
+    // bodies of the hub pages (Semrush flagged 187 orphaned sitemap pages).
+    const linked = new Set();
+    for (const hub of ["/", "/all-products", "/blog", "/compare"]) {
+      const r = await (await hit(hub)).text();
+      for (const m of r.matchAll(/href="(\/[^"]*)"/g)) linked.add(m[1]);
+    }
+    const orphans = [...sm.matchAll(/<loc>https:\/\/www\.aiteampremium\.com([^<]*)<\/loc>/g)].map((m) => m[1] || "/").filter((u) => !linked.has(u));
+    if (orphans.length) offMap.push(`orphaned sitemap pages: ${orphans.slice(0, 5).join(", ")}${orphans.length > 5 ? ` (+${orphans.length - 5})` : ""}`);
     const prod = await (await hit("/tools/canva-pro-bangladesh")).text();
     const gone = await (await hit("/no-such-page")).text();
     const bodyBad = [];

@@ -66,17 +66,20 @@ const PRICING_CATALOG_EXPECTATIONS = [
 // ── Tests ───────────────────────────────────────────────────────────────
 
 test.describe("Homepage public truth", () => {
-  test("homepage publishes only non-quarantined featured ChatGPT offers", async ({ page }) => {
+  test("homepage offers no order-style ChatGPT offer while nothing has provider evidence", async ({ page }) => {
     await page.goto(`${BASE}/`);
     await page.waitForLoadState("networkidle");
 
     const body = page.locator("body");
-    await expect(page.getByTestId("button-offer-go-personal")).toBeVisible();
-    await expect(page.getByTestId("button-offer-plus-personal-seat")).toBeVisible();
-    await expect(page.getByTestId("button-offer-pro-personal")).toBeVisible();
-    await expect(page.getByTestId("button-offer-plus-shared")).toHaveCount(0);
-    await expect(page.getByTestId("button-offer-plus-premium-shared")).toHaveCount(0);
-    await expect(page.getByTestId("button-offer-pro-premium-shared")).toHaveCount(0);
+    // Cycle 5: an offer card appears only for a plan whose eligibility layer allows
+    // an order (lib/commercial-eligibility.js). No record has provider evidence yet,
+    // so none of the offer cards may render — personal or shared.
+    for (const id of ["go-personal", "plus-personal-seat", "pro-personal", "plus-shared", "plus-premium-shared", "pro-premium-shared"]) {
+      await expect(page.getByTestId(`button-offer-${id}`)).toHaveCount(0);
+    }
+    await expect(page.getByTestId("button-hero-whatsapp")).toContainText("Ask on WhatsApp");
+    await expect(body).not.toContainText("Order on WhatsApp");
+    await expect(body).not.toContainText(/৳\s*[\d,]+/);
     await expect(body).not.toContainText(/5\s*[-–]\s*15\s*(?:min|minute)/i);
     await expect(body).not.toContainText(/30[- ]day\s+(?:replacement\s+)?warranty/i);
     await expect(body).not.toContainText(/24[- ]hour\s+replacement/i);
@@ -125,7 +128,16 @@ test.describe("Canonical product pages", () => {
       const body = page.locator("body");
       await expect(body).not.toContainText("This commercial page is being re-verified");
       await expect(page.locator("h1, h2").first()).toContainText(product.name, { ignoreCase: true });
-      await expect(body).toContainText("৳");
+      // Cycle 5: the page still teaches/discovers, but without evidence it shows no
+      // price, no order CTA and no payment ask — only an availability enquiry.
+      await expect(body).not.toContainText(/৳\s*[\d,]+/);
+      await expect(body).not.toContainText("Order on WhatsApp");
+      await expect(body).not.toContainText("Order this plan");
+      await expect(page.getByTestId("notice-not-orderable")).toBeVisible();
+      const hero = page.getByTestId("button-wa-hero");
+      await expect(hero).toContainText("Ask about availability");
+      const href = decodeURIComponent((await hero.getAttribute("href")) ?? "");
+      expect(href).not.toMatch(/payment|৳|1865/i);
     });
   }
 });
@@ -215,5 +227,73 @@ test.describe("Service commercial truth quarantine", () => {
     await expect(page).toHaveTitle(/About AI Team Premium/);
     await expect(page).not.toHaveTitle(/Trusted AI Partner/i);
     await expect(page.locator("body")).toContainText("independent Bangladesh-focused", { ignoreCase: true });
+  });
+});
+
+test.describe("Withheld prices never render as placeholders or foreign contacts", () => {
+  // Cycle 5 regression: with every price withheld, Math.min over an empty set made the
+  // homepage hero read "৳∞ থেকে শুরু". Also guards the foreign WhatsApp number.
+  for (const path of ["/", "/pricing", "/all-products", "/chatgpt-plans", "/category/ai-assistant", "/tools/capcut-pro-bangladesh", "/tools/chatgpt-plus-bangladesh", "/ai-tools-vault"]) {
+    test(`${path}: no ∞ / NaN / Infinity / ৳0 / foreign number / payment ask`, async ({ page }) => {
+      await page.goto(`${BASE}${path}`);
+      await page.waitForLoadState("networkidle");
+      const text = await page.locator("body").innerText();
+      const html = await page.content();
+      expect(text).not.toMatch(/∞|NaN|Infinity|৳\s*0(?![\d,])|undefined/);
+      expect(html).not.toContain("1865");
+      expect(html).not.toMatch(/please share payment details/i);
+      expect(html).not.toContain("through ?");
+    });
+  }
+});
+
+test.describe("Cycle 6: hydrated surfaces the C5 suite did not cover", () => {
+  test("compare pair page: no Offer, no price 0 InStock, no bKash-number or delivery promise", async ({ page }) => {
+    await page.goto(`${BASE}/compare/chatgpt-vs-claude`);
+    await page.waitForLoadState("networkidle");
+    const ld = await page.locator('script[type="application/ld+json"]').allTextContents();
+    expect(ld.join(" ")).not.toMatch(/"@type":\s*"(Aggregate)?Offer"/);
+    const html = await page.content();
+    expect(html).not.toMatch(/bKash\/Nagad number|within 5[–-]15 minutes/i);
+    expect(await page.locator("body").innerText()).not.toMatch(/৳\s?\d/);
+  });
+
+  test("blog index lists no held post and states no Taka amount in cards", async ({ page }) => {
+    await page.goto(`${BASE}/blog`);
+    await page.waitForLoadState("networkidle");
+    const html = await page.content();
+    for (const slug of ["complete-guide-ai-subscriptions-bangladesh-pricing", "chatgpt-plus-personal-vs-shared-bangladesh", "bkash-diye-chatgpt-kena-bangla-guide"])
+      expect(html).not.toContain(`/blog/${slug}"`);
+    expect(await page.locator("body").innerText()).not.toMatch(/৳\s?\d/);
+  });
+
+  // SSR status/noindex for these paths is a Worker behaviour and is asserted in
+  // scripts/test-commercial-eligibility.mjs (Worker module test); this Express
+  // build checks what a visitor actually sees after hydration.
+  test("held post and legacy static blog URL show no price or purchase promise after hydration", async ({ page, request }) => {
+    for (const path of ["/blog/complete-guide-ai-subscriptions-bangladesh-pricing", "/blog/bonus/chatgpt-bKash-how-to/", "/blog/students/ai-arts-humanities/"]) {
+      await page.goto(`${BASE}${path}`);
+      await page.waitForLoadState("networkidle");
+      const text = await page.locator("body").innerText();
+      expect(text, path).not.toMatch(/৳\s?\d|bKash\/Nagad number|replacement guarantee|5[–-]15 min/);
+    }
+    const legacyData = await request.get(`${BASE}/blog/blog-data.js`);
+    expect(await legacyData.text()).not.toMatch(/৳\s?\d/);
+  });
+
+  test("pricing card WhatsApp links are real wa.me URLs (were relative 404s)", async ({ page }) => {
+    await page.goto(`${BASE}/pricing`);
+    await page.waitForLoadState("networkidle");
+    const hrefs = await page.locator('[data-testid^="button-order-"]').evaluateAll((els) => els.map((e) => e.getAttribute("href")));
+    expect(hrefs.length).toBeGreaterThan(0);
+    for (const h of hrefs) if (h) expect(h).toMatch(/^https:\/\/wa\.me\/8801533262758\?text=/);
+  });
+
+  test("AI readiness and blog CTA show no ungoverned service price", async ({ page }) => {
+    for (const path of ["/ai-readiness", "/blog"]) {
+      await page.goto(`${BASE}${path}`);
+      await page.waitForLoadState("networkidle");
+      expect(await page.locator("body").innerText(), path).not.toMatch(/৳\s?\d/);
+    }
   });
 });

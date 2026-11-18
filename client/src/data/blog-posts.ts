@@ -17,197 +17,50 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "chatgpt-plus-price-bangladesh-bkash-guide",
     title: "ChatGPT Plus Price in Bangladesh (2026): Full bKash & Nagad Payment Guide",
-    excerpt: "OpenAI doesn't accept Bangladeshi cards directly. Here's exactly what ChatGPT Plus costs in BDT, how shared vs personal seats work, and how to pay with bKash or Nagad without an international credit card.",
+    excerpt: "Under evidence review: \"ChatGPT Plus Price in Bangladesh (2026): Full bKash & Nagad Payment Guide\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Buying Guides",
     publishedDate: "2026-06-02",
     readMinutes: 6,
     heroEmoji: "💬",
-    faqs: [
-      { q: "Why can't I pay OpenAI directly from Bangladesh?", a: "OpenAI's checkout requires a Visa/Mastercard capable of recurring USD billing. Fewer than 5% of Bangladeshi bank cards support this reliably, and many get declined by 3D Secure verification even when the card technically works internationally." },
-      { q: "Is a shared ChatGPT Plus seat safe?", a: "Yes, if you follow the device rule (one device at a time, no password changes). AI Team Premium adds a small number of users to a genuine OpenAI account and enforces these rules to keep every seat stable." },
-      { q: "How fast is delivery after bKash payment?", a: "Shared seats are typically delivered in 5–15 minutes after payment confirmation on WhatsApp. Personal seats (your own account, no sharing) take 2–4 hours." },
-    ],
-    sections: [
-      {
-        heading: "The core problem: OpenAI billing wasn't built for BDT",
-        body: [
-          "ChatGPT Plus is priced at $20/month on OpenAI's own checkout — billed in USD, to a card that supports recurring international charges. That single requirement locks out most Bangladeshi users before they even see a subscribe button.",
-          "The workaround that's grown across Dhaka, Chittagong and university campuses over the last two years is simple: a local provider buys and manages the OpenAI seat, then resells access priced in taka, paid via bKash or Nagad — the two payment rails almost everyone in Bangladesh already has on their phone.",
-        ],
-      },
-      {
-        heading: "What ChatGPT Plus actually costs in BDT right now",
-        body: [
-          "Shared Seat — ৳350/month. You get a login on a genuine ChatGPT Plus account shared with a small number of other users, restricted to one device at a time. This is the cheapest way to get GPT-4.5-class access, image generation, and file uploads.",
-          "Premium Shared — ৳999/month. Same shared-seat model but with fewer users per account, so response speed and availability during peak hours (evening, exam season) stay noticeably better.",
-          "Personal Seat — ৳2,990/month. Your own dedicated OpenAI account — you control the password, recovery email, and billing. No sharing, no device restriction.",
-          "ChatGPT Pro (o3 / extended reasoning) — from ৳4,990/month for Premium Shared. This is OpenAI's top tier, aimed at power users who need extended context and priority server access.",
-          "Every tier above is the full price — nothing is added at checkout, so the figure you see is the figure you pay.",
-        ],
-      },
-      {
-        heading: "How the bKash / Nagad payment flow actually works",
-        body: [
-          "1. Message on WhatsApp (+880 1533-262758) and say which plan you want.",
-          "2. AI Team Premium confirms the exact price and sends a personal bKash or Nagad number — never posted publicly, for your privacy and to avoid scam lookalikes.",
-          "3. You send the payment and share the transaction ID.",
-          "4. Login details (or a workspace invite for Team plans) arrive on WhatsApp — 5–15 minutes for shared seats, 2–4 hours for personal seats.",
-          "No signup form, no card details typed anywhere, no OTP from a foreign bank. If you've ever sent bKash to a friend, you already know the entire payment step.",
-        ],
-      },
-      {
-        heading: "What breaks a shared seat (and how to avoid it)",
-        body: [
-          "Shared seats are the most affordable option specifically because the account is professionally managed to a small set of rules: one device signed in at a time, no changing the password or recovery email, and no automation/scripted abuse against OpenAI's usage policy.",
-          "Break one of these and the seat can get flagged — which is why every AI Team Premium order comes with a 30-day replacement warranty. If access stops working for any reason on our side, it's replaced within 24 hours at no extra cost.",
-        ],
-      },
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "best-ai-tools-bangladeshi-university-students",
     title: "5 Best AI Tools for Bangladeshi University Students in 2026",
-    excerpt: "From assignment research to IELTS prep and thesis writing — a practical, budget-first breakdown of which AI subscriptions are actually worth ৳499/month for students in Bangladesh.",
+    excerpt: "Under evidence review: \"5 Best AI Tools for Bangladeshi University Students in 2026\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "For Students",
     publishedDate: "2026-06-10",
     readMinutes: 7,
     heroEmoji: "🎓",
-    faqs: [
-      { q: "Is ChatGPT Plus worth it for a student on a tight budget?", a: "At ৳499/month shared, it's usually the single highest-value tool for students — it replaces the need for several separate paid apps (writing help, research summarizing, basic image generation) in one subscription." },
-      { q: "Will using AI for assignments get flagged as plagiarism?", a: "Use AI to understand and structure your work, not to submit unedited output. Ask it to explain concepts, outline arguments, or check your own writing — then write the final answer in your own words. Most universities in Bangladesh now explicitly allow AI as a study aid, not as a submission generator." },
-      { q: "Can I share one subscription with a study group?", a: "Only shared-seat plans are designed for multiple users, and even then it's capped at a small group with a one-device-at-a-time rule. Personal/private tools like Grammarly are single-user by design." },
-    ],
-    sections: [
-      {
-        heading: "1. ChatGPT Plus — the general-purpose workhorse",
-        body: [
-          "Assignment structuring, explaining difficult textbook concepts in plain Bangla or English, summarizing long PDFs before an exam, and drafting cover letters for internships. At ৳499/month shared, it's the best starting point for almost any student.",
-        ],
-      },
-      {
-        heading: "2. Grammarly Premium — for anyone writing in English",
-        body: [
-          "IELTS/TOEFL essay prep, English-medium assignment writing, and application essays all benefit from Grammarly's grammar, tone, and clarity suggestions beyond what a free spell-checker catches. Pairs well with ChatGPT: draft with ChatGPT, polish with Grammarly.",
-        ],
-      },
-      {
-        heading: "3. Perplexity Pro — for research that needs real sources",
-        body: [
-          "Unlike a plain chatbot answer, Perplexity cites its sources inline — genuinely useful for literature reviews and thesis research where a professor will ask 'where did this come from?' It also handles recent events better than a model with an older knowledge cutoff.",
-        ],
-      },
-      {
-        heading: "4. Canva Pro — for presentations, posters, and club events",
-        body: [
-          "Every student eventually needs a presentation deck, a club event poster, or a CV that doesn't look like a Word template. Canva Pro's Magic Studio tools (background removal, AI image generation, brand kit) turn a two-hour design task into fifteen minutes.",
-        ],
-      },
-      {
-        heading: "5. Claude Pro — for long documents and careful writing",
-        body: [
-          "When a task involves reading and reasoning over a long PDF (a full research paper, a 40-page policy document) or writing something that needs a careful, less-repetitive tone — a thesis chapter, a scholarship essay — Claude Pro tends to hold context better across long conversations.",
-        ],
-      },
-      {
-        heading: "Suggested student starting stack",
-        body: [
-          "Most students in Bangladesh get the best value starting with just ChatGPT Plus Shared (৳350/mo) and adding Grammarly Premium once they're doing serious English writing. For anyone in a bundle-friendly household or shared flat, the AI Tools Vault (ChatGPT + Claude + Gemini for ৳1,990/mo) usually works out cheaper than buying two tools separately.",
-        ],
-      },
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "chatgpt-vs-claude-vs-gemini-bangladesh-freelancers",
     title: "ChatGPT vs Claude vs Gemini: Which AI Should Freelancers in Bangladesh Actually Use?",
-    excerpt: "A practical comparison for Bangladeshi Fiverr and Upwork freelancers — not a spec sheet, but which tool wins for proposals, code, long documents, and client communication.",
+    excerpt: "Under evidence review: \"ChatGPT vs Claude vs Gemini: Which AI Should Freelancers in Bangladesh Actually Use?\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Comparisons",
     publishedDate: "2026-06-18",
     readMinutes: 8,
     heroEmoji: "⚖️",
-    faqs: [
-      { q: "Do I need all three tools as a freelancer?", a: "No. Most freelancers do fine with one primary tool matched to their main service line, and only add a second when a specific client project needs it. The AI Tools Vault (৳1,990/mo for all three shared) makes trying all three affordable if you're unsure which fits your workflow." },
-      { q: "Which is best for writing client proposals?", a: "ChatGPT and Claude are both strong; Claude tends to produce less generic-sounding client-facing copy out of the box, while ChatGPT is faster for quick iteration on multiple proposal drafts." },
-      { q: "Which is best for coding freelance work?", a: "ChatGPT Plus and GitHub Copilot cover most day-to-day coding work well. For reviewing or refactoring a large, unfamiliar codebase in one sitting, Claude's longer effective context tends to hold up better." },
-    ],
-    sections: [
-      {
-        heading: "For Fiverr/Upwork proposal writing",
-        body: [
-          "Winner: Claude Pro, with ChatGPT Plus as a close second. Claude's tone tends to read less like an obviously-AI-generated proposal, which matters when a client is skimming twenty pitches in a row. ChatGPT wins if you need to generate and compare five proposal variations quickly — it's faster to iterate with.",
-        ],
-      },
-      {
-        heading: "For design and content creation work",
-        body: [
-          "Winner: ChatGPT, paired with Canva Pro or Midjourney. ChatGPT's image generation (GPT-image-1) handles quick client mockups and social content well; for higher-fidelity creative work, Midjourney remains the stronger dedicated tool.",
-        ],
-      },
-      {
-        heading: "For development and coding gigs",
-        body: [
-          "Winner: ChatGPT Plus + GitHub Copilot together. Copilot's in-editor autocomplete speeds up day-to-day coding, while ChatGPT is better for architecture discussions, debugging explanations, and generating full functions from a spec a client sent over WhatsApp or email.",
-        ],
-      },
-      {
-        heading: "For long documents — contracts, reports, research",
-        body: [
-          "Winner: Claude Pro. When a client sends a 30-page brief or contract and asks for a summary, redline notes, or a rewritten section, Claude tends to stay coherent across the whole document rather than losing track partway through.",
-        ],
-      },
-      {
-        heading: "Cost comparison for a Bangladeshi freelancer's budget",
-        body: [
-          "ChatGPT Plus Shared: ৳350/month — the cheapest entry point with the broadest general use.",
-          "Claude Pro: ৳1,495/month — higher cost, but often earns itself back on a single well-written client proposal or long-document project.",
-          "Gemini Advanced: ৳899/month — strongest when work already lives in Google Docs/Sheets/Workspace, since it integrates directly.",
-          "AI Tools Vault (all three, shared): ৳1,990/month — cheaper than buying Claude and Gemini separately, and a practical way to keep all three available for whichever client project needs which tool.",
-        ],
-      },
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "pay-chatgpt-without-international-credit-card-bangladesh",
     title: "How to Pay for ChatGPT Plus Without an International Credit Card in Bangladesh",
-    excerpt: "No dual-currency card? No problem. Here are the real options Bangladeshi users have for accessing premium AI subscriptions — and the tradeoffs of each.",
+    excerpt: "Under evidence review: \"How to Pay for ChatGPT Plus Without an International Credit Card in Bangladesh\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Buying Guides",
     publishedDate: "2026-06-25",
     readMinutes: 5,
     heroEmoji: "💳",
-    faqs: [
-      { q: "Can I use a prepaid dollar card instead?", a: "Some banks in Bangladesh issue dual-currency or prepaid dollar cards, but many still fail OpenAI's 3D Secure verification or get blocked for recurring billing. It's not a reliable long-term solution for most users." },
-      { q: "Is buying through a local reseller against OpenAI's terms?", a: "OpenAI's terms don't prohibit account sharing for personal, non-commercial use within reasonable limits — the shared-seat model used by local providers operates within that framing, which is why it has remained a stable option for years rather than being shut down." },
-      { q: "What's the safest payment method locally?", a: "bKash and Nagad are the most widely used, verifiable, and reversible-in-dispute payment rails in Bangladesh — safer than sending money to an unknown bank account with no transaction trail." },
-    ],
-    sections: [
-      {
-        heading: "Option 1: Get a dual-currency bank card",
-        body: [
-          "A handful of Bangladeshi banks offer cards that support USD billing. This is the 'official' route, but it usually requires a minimum balance, annual fees, and still frequently fails OpenAI's fraud/3D-Secure checks simply because the billing country doesn't match the card issuer's usual patterns. Realistic for some, but not accessible or reliable for most.",
-        ],
-      },
-      {
-        heading: "Option 2: Virtual dollar cards (Payoneer, etc.)",
-        body: [
-          "Virtual card services can technically work, but they require loading USD balance first (itself a currency-conversion cost), and OpenAI has gotten stricter about flagging virtual/prepaid cards over the past year. Success rates vary and there's no guarantee of a stable, renewing subscription.",
-        ],
-      },
-      {
-        heading: "Option 3: A local access provider (bKash/Nagad)",
-        body: [
-          "This is why the local-provider model exists and has grown: a provider maintains genuine OpenAI subscriptions and resells access priced in BDT, paid through bKash or Nagad — payment methods nearly every Bangladeshi adult already uses daily. No currency conversion, no card decline risk, no OTP from a foreign bank.",
-          "The tradeoff: shared-seat plans mean a small number of users share one account under simple usage rules (one device, no password changes). Personal-seat plans avoid this entirely for a higher price — you get your own dedicated account, just funded and set up through a local provider instead of a direct OpenAI card charge.",
-        ],
-      },
-      {
-        heading: "What to check before trusting any local provider",
-        body: [
-          "A written replacement/warranty policy (30 days is standard) — not just a verbal promise.",
-          "A real, responsive support channel (WhatsApp is the norm in Bangladesh) rather than only a contact form that goes unanswered.",
-          "Transparent, VAT-inclusive pricing shown upfront — not a low headline price with fees added at checkout.",
-          "A payment number shared privately per order, not posted publicly where it can be spoofed by scammers.",
-        ],
-      },
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "ai-tools-fiverr-upwork-freelancers-bangladesh",
@@ -218,7 +71,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readMinutes: 7,
     heroEmoji: "💼",
     faqs: [
-      { q: "How much should a freelancer budget for AI tools monthly?", a: "A solid starting stack (ChatGPT Plus Shared ৳350 + Canva Pro ৳510) runs about ৳860/month — usually recovered from the time saved on a single project, let alone the extra gigs it enables you to take on." },
+      { q: "How much should a freelancer budget for AI tools monthly?", a: "A solid starting stack (ChatGPT Plus + Canva Pro) is usually recovered from the time saved on a single project, let alone the extra gigs it enables you to take on." },
       { q: "Do clients mind if I use AI tools?", a: "Most clients care about outcomes, turnaround time, and quality — not the tools behind them. The exception is submitting obviously unedited AI output without review; always treat AI as a speed multiplier, not a replacement for your own judgment and final polish." },
       { q: "What's the single highest-ROI AI tool for a new freelancer?", a: "ChatGPT Plus, by a wide margin — it touches proposal writing, client communication drafts, quick research, and first-pass content or code across almost every freelance category." },
     ],
@@ -247,9 +100,9 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "A realistic monthly toolkit budget",
         body: [
-          "Starter: ChatGPT Plus Shared (৳350) + Grammarly Premium (৳470) ≈ ৳820/month.",
-          "Design-focused: add Canva Pro (৳510) for another ≈ ৳510/month.",
-          "Full stack for a serious full-time freelancer: AI Tools Vault (ChatGPT + Claude + Gemini, ৳1,990) + Canva Pro (৳510) + Grammarly (৳470) ≈ ৳2,970/month — usually less than the earnings from a single extra project the toolkit helps you land or deliver faster.",
+          "Starter: ChatGPT Plus + Grammarly Premium — ask AI Team Premium on WhatsApp for current availability.",
+          "Design-focused: add Canva Pro.",
+          "Full stack for a serious full-time freelancer: ChatGPT + Claude + Gemini, plus Canva Pro and Grammarly.",
         ],
       },
     ],
@@ -264,7 +117,7 @@ export const BLOG_POSTS: BlogPost[] = [
     heroEmoji: "🎥",
     faqs: [
       { q: "Is the training in Bangla or English?", a: "Both — sessions run live in Bangla, with English used naturally for technical terms, so nothing gets lost in translation the way pre-recorded English-only courses often do for learners in Bangladesh." },
-      { q: "How much does a live session cost?", a: "Hourly sessions start from ৳799/hour. Packaged options exist for students (from ৳1,999), freelancers (from ৳4,999), and businesses needing team-wide training (from ৳12,999)." },
+      { q: "How much does a live session cost?", a: "Hourly sessions and packaged options exist for students, freelancers, and businesses needing team-wide training — ask AI Team Premium on WhatsApp for current availability." },
       { q: "What do I actually walk away with after a session?", a: "A recording of the session (if requested), a custom prompt pack built around your specific work, and a written workflow document — not just spoken advice you have to remember." },
     ],
     sections: [
@@ -292,7 +145,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "How to book",
         body: [
-          "Message on WhatsApp (+880 1533-262758), pick an hourly session or a package, pay via bKash/Nagad, and get a session time confirmed — live, Bangla-language, 9 AM–11 PM BST, 7 days a week.",
+          "Message on WhatsApp (+880 1533-262758), pick an hourly session or a package, and get a session time confirmed — live, Bangla-language, 9 AM–11 PM BST, 7 days a week.",
         ],
       },
     ],
@@ -428,8 +281,8 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "বাংলাদেশে ChatGPT Plus কিভাবে নেবেন",
         body: [
           "সমস্যা হলো OpenAI-এর সরাসরি পেমেন্টে ইন্টারন্যাশনাল কার্ড লাগে, যা বেশিরভাগ বাংলাদেশির নেই।",
-          "সমাধান: লোকাল প্রোভাইডারের মাধ্যমে bKash/Nagad দিয়ে পেমেন্ট করে অ্যাক্সেস নেওয়া। AI Team Premium-এ ChatGPT Plus Shared ৳৪৯৯/মাস থেকে শুরু, ডেলিভারি ৫–১৫ মিনিটে, সাথে ৩০ দিনের রিপ্লেসমেন্ট ওয়ারেন্টি।",
-          "শেয়ার্ড সিটের নিয়ম: একসাথে একটা ডিভাইসে ব্যবহার করতে হবে, পাসওয়ার্ড পরিবর্তন করা যাবে না। এই নিয়মগুলো মানলে কোনো সমস্যা হয় না।",
+          "সমাধান: লোকাল প্রোভাইডারের মাধ্যমে অ্যাক্সেস নেওয়া। বর্তমান প্রাপ্যতা জানতে WhatsApp-এ AI Team Premium-কে জিজ্ঞেস করুন।",
+          "অ্যাকাউন্ট ব্যবহারের নিয়ম: একসাথে একটা ডিভাইসে ব্যবহার করতে হবে, পাসওয়ার্ড পরিবর্তন করা যাবে না।",
         ],
       },
     ],
@@ -437,49 +290,14 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "canva-pro-price-bangladesh-worth-it",
     title: "Canva Pro Price in Bangladesh (2026): Is It Worth Paying For?",
-    excerpt: "Canva's free tier is genuinely good — so when does Pro actually pay for itself? An honest breakdown for Bangladeshi students, freelancers and small business owners.",
+    excerpt: "Under evidence review: \"Canva Pro Price in Bangladesh (2026): Is It Worth Paying For?\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Buying Guides",
     publishedDate: "2026-07-22",
     readMinutes: 6,
     heroEmoji: "🎨",
-    faqs: [
-      { q: "Is Canva free version enough for most people?", a: "For occasional personal use — a CV, a birthday card, a few social posts — yes, the free tier is genuinely capable. Pro becomes worth it when design is part of how you earn, or when you're producing content weekly rather than occasionally." },
-      { q: "What's the single biggest Pro feature?", a: "For most users it's Brand Kit plus one-click background removal. Brand Kit keeps every design consistent with saved fonts/colors, and background removal alone replaces a task that used to require Photoshop skills." },
-      { q: "Can I use Canva Pro designs commercially?", a: "Yes — Pro includes a commercial license for its stock content, which matters if you're delivering designs to paying clients. This is a genuine legal difference from the free tier, not just a convenience feature." },
-    ],
-    sections: [
-      {
-        heading: "The honest answer first",
-        body: [
-          "Canva's free tier is genuinely good — better than most paid tools were five years ago. If you make a design once a month, stay on free. This guide is for people deciding whether Pro earns its cost, and the honest answer depends entirely on how often you design and whether you get paid for it.",
-        ],
-      },
-      {
-        heading: "What Pro actually adds that matters",
-        body: [
-          "Background remover — one click, no Photoshop. For anyone doing product photos for an online shop or F-commerce page, this alone justifies the subscription.",
-          "Brand Kit — save your fonts, colors and logo once, apply everywhere. If you handle multiple clients, this saves real hours per month and keeps output consistent.",
-          "Magic Studio (AI tools) — AI image generation, Magic Write, Magic Resize. Magic Resize is the underrated one: design once, instantly resize for Facebook, Instagram, YouTube thumbnail, and print.",
-          "Full stock library — the free tier's watermark-free selection is limited. Pro removes that constraint plus adds the commercial license.",
-        ],
-      },
-      {
-        heading: "Who it's genuinely worth it for",
-        body: [
-          "Freelance designers — obviously yes. It pays for itself on a single client order.",
-          "F-commerce / online shop owners — yes. Product images, offer posts, and story graphics are constant work, and background removal plus Magic Resize cut that time down dramatically.",
-          "Students — usually no, unless you're running a club page or doing design work on the side. Free tier handles presentations and assignments fine.",
-          "Small business owners — yes if you post weekly, no if you post occasionally. The break-even is roughly the point where you'd otherwise pay someone to make the graphics.",
-        ],
-      },
-      {
-        heading: "Paying for it from Bangladesh",
-        body: [
-          "Canva bills in USD and requires an international card — the same barrier that blocks most Bangladeshi users from paying AI subscriptions directly.",
-          "AI Team Premium provides Canva Pro access payable in BDT via bKash or Nagad. Check the current price on our pricing page, since tier pricing changes periodically. Delivery is typically same-day, with a 30-day replacement warranty.",
-        ],
-      },
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "ai-detector-plagiarism-assignment-bangladesh",
@@ -534,106 +352,27 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "shared-vs-personal-ai-subscription-which-to-buy",
     title: "Shared vs Personal AI Subscriptions: Which Should You Actually Buy?",
-    excerpt: "Shared seats cost a fraction of personal accounts — but they come with real rules and real tradeoffs. A straight comparison so you buy the right one the first time.",
+    excerpt: "Under evidence review: \"Shared vs Personal AI Subscriptions: Which Should You Actually Buy?\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Buying Guides",
     publishedDate: "2026-07-29",
     readMinutes: 6,
     heroEmoji: "🔑",
-    faqs: [
-      { q: "Can other users see my conversations on a shared seat?", a: "No. Each user's chat history is tied to their own session and is not visible to other users on the account. What is shared is the subscription itself and its usage limits, not your conversation content." },
-      { q: "What actually voids a shared seat warranty?", a: "Changing the account password or recovery email, using multiple devices at the same time, and any usage that violates the AI platform's own terms of service. Follow those three rules and shared seats are stable." },
-      { q: "Can I upgrade from shared to personal later?", a: "Yes. Message on WhatsApp and the price difference is calculated for the remaining period — you don't have to wait for your current cycle to end." },
-    ],
-    sections: [
-      {
-        heading: "The actual difference",
-        body: [
-          "A shared seat means you get a login to a genuine subscription that a small number of users share, under managed rules. It costs a fraction of the personal price.",
-          "A personal seat means the account is yours — your password, your recovery email, your device freedom, no sharing. It costs substantially more.",
-          "Both are genuine subscriptions with full feature access. The difference is ownership and freedom, not capability.",
-        ],
-      },
-      {
-        heading: "Choose shared if...",
-        body: [
-          "You're a student or just starting out and price is the deciding factor.",
-          "You use the tool on one device — typically your laptop or phone, not both simultaneously.",
-          "You're testing whether a tool actually fits your workflow before committing to a higher price.",
-          "You want several tools at once. Three shared seats often cost less than one personal seat, which is exactly why bundles like the AI Tools Vault exist.",
-        ],
-      },
-      {
-        heading: "Choose personal if...",
-        body: [
-          "You work across multiple devices during the same session and can't work around a one-device rule.",
-          "You're using it for client or business work where any interruption is unacceptable.",
-          "You need to control the account's password and recovery email — for example, if it's tied to business processes.",
-          "You want to install integrations or connect the account to other services, which shared accounts generally can't support.",
-        ],
-      },
-      {
-        heading: "The honest recommendation",
-        body: [
-          "Most individual users in Bangladesh should start shared. It's the lowest-risk way to find out whether a tool genuinely earns a place in your workflow, and the majority never need to upgrade.",
-          "Upgrade to personal when a specific limitation actually blocks your work — not preemptively. If you're doing paid client work where downtime costs you money, that's the clear signal to move up.",
-          "You can always compare current pricing for both tiers on our pricing page, or message on WhatsApp for a recommendation based on your specific use case — that consultation is free.",
-        ],
-      },
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "bkash-diye-chatgpt-kena-bangla-guide",
     title: "বিকাশ দিয়ে ChatGPT কেনার সম্পূর্ণ গাইড (২০২৬)",
-    excerpt: "ইন্টারন্যাশনাল কার্ড ছাড়া বিকাশ বা নগদ দিয়ে ChatGPT Plus কিভাবে নেবেন — ধাপে ধাপে, প্রতারণা এড়ানোর উপায়সহ সম্পূর্ণ বাংলা গাইড।",
+    excerpt: "Under evidence review: \"বিকাশ দিয়ে ChatGPT কেনার সম্পূর্ণ গাইড (২০২৬)\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Bangla Guides",
     publishedDate: "2026-07-30",
     readMinutes: 7,
     heroEmoji: "📲",
     lang: "bn",
-    faqs: [
-      { q: "বিকাশ দিয়ে কি সরাসরি OpenAI-কে পেমেন্ট করা যায়?", a: "না। OpenAI শুধু ইন্টারন্যাশনাল ক্রেডিট/ডেবিট কার্ড নেয়, বিকাশ বা নগদ সরাসরি সাপোর্ট করে না। তাই বাংলাদেশ থেকে লোকাল প্রোভাইডারের মাধ্যমে নিতে হয়, যারা নিজেরা সাবস্ক্রিপশন কিনে টাকায় অ্যাক্সেস দেয়।" },
-      { q: "শেয়ার্ড অ্যাকাউন্টে আমার চ্যাট কি অন্যরা দেখতে পাবে?", a: "না। প্রতিটি ব্যবহারকারীর চ্যাট হিস্ট্রি তার নিজের সেশনের সাথে যুক্ত থাকে, অন্য কেউ দেখতে পায় না। শেয়ার হয় সাবস্ক্রিপশনটা, আপনার কথোপকথন নয়।" },
-      { q: "টাকা দেওয়ার পর যদি অ্যাকাউন্ট না পাই?", a: "এজন্যই বিশ্বস্ত প্রোভাইডার বেছে নেওয়া জরুরি। AI Team Premium-এ ৩০ দিনের রিপ্লেসমেন্ট ওয়ারেন্টি আছে এবং WhatsApp-এ সরাসরি যোগাযোগ করা যায়। কোনো প্রোভাইডার যদি অগ্রিম টাকা চায় কিন্তু কোনো লিখিত পলিসি বা যোগাযোগের মাধ্যম না দেয় — সেটা এড়িয়ে চলুন।" },
-    ],
-    sections: [
-      {
-        heading: "কেন বিকাশ দিয়ে সরাসরি কেনা যায় না",
-        body: [
-          "ChatGPT Plus-এর দাম OpenAI-এর সাইটে মাসিক ২০ ডলার। কিন্তু পেমেন্ট করতে হয় এমন কার্ড দিয়ে যেটা ডলারে রিকারিং (প্রতি মাসে স্বয়ংক্রিয়) পেমেন্ট সাপোর্ট করে।",
-          "বাংলাদেশের বেশিরভাগ ব্যাংক কার্ডে এই সুবিধা নেই। যাদের ডুয়াল-কারেন্সি কার্ড আছে, তাদেরও অনেক সময় 3D Secure ভেরিফিকেশনে পেমেন্ট আটকে যায় — কারণ বিলিং দেশ ও কার্ড ইস্যুয়ারের প্যাটার্ন OpenAI-এর ফ্রড চেকে সন্দেহজনক মনে হয়।",
-          "এই কারণেই বাংলাদেশে লোকাল প্রোভাইডার মডেল তৈরি হয়েছে — প্রোভাইডার নিজে জেনুইন সাবস্ক্রিপশন কিনে রাখে, আর আপনি টাকায় বিকাশ/নগদ দিয়ে পেমেন্ট করে অ্যাক্সেস নেন।",
-        ],
-      },
-      {
-        heading: "ধাপে ধাপে কেনার প্রক্রিয়া",
-        body: [
-          "ধাপ ১ — কোন প্ল্যান লাগবে ঠিক করুন। শিক্ষার্থী বা নতুন ব্যবহারকারী হলে ChatGPT Plus Shared (৳৪৯৯/মাস) দিয়ে শুরু করাই যথেষ্ট। বেশি ব্যস্ত সময়ে স্থিতিশীলতা চাইলে Premium Shared (৳৯৯৯/মাস)। নিজের আলাদা অ্যাকাউন্ট চাইলে Personal Seat।",
-          "ধাপ ২ — WhatsApp-এ মেসেজ দিন (+৮৮০ ১৫৩৩-২৬২৭৫৮)। কোন প্ল্যান চান সেটা বলুন।",
-          "ধাপ ৩ — দাম নিশ্চিত করার পর বিকাশ/নগদ নম্বর ব্যক্তিগতভাবে পাঠানো হবে। নিরাপত্তার জন্য এই নম্বর কখনো পাবলিকলি পোস্ট করা হয় না — এটা ভুয়া পেজ থেকে প্রতারণা ঠেকানোর জন্য।",
-          "ধাপ ৪ — পেমেন্ট করে ট্রানজেকশন আইডি পাঠান।",
-          "ধাপ ৫ — শেয়ার্ড সিট হলে ৫–১৫ মিনিটে, পার্সোনাল সিট হলে ২–৪ ঘণ্টায় লগইন তথ্য WhatsApp-এ পেয়ে যাবেন।",
-        ],
-      },
-      {
-        heading: "প্রতারণা এড়ানোর ৫টি নিয়ম",
-        body: [
-          "১. যে পেজ বা প্রোভাইডার লিখিত ওয়ারেন্টি/রিপ্লেসমেন্ট পলিসি দেয় না — এড়িয়ে চলুন। মুখের কথায় গ্যারান্টি যথেষ্ট নয়।",
-          "২. অস্বাভাবিক কম দাম দেখলে সতর্ক হোন। ৳২০০-তে ChatGPT Plus সম্ভব নয় — প্রোভাইডারের নিজেরই খরচ তার চেয়ে বেশি। অস্বাভাবিক কম দাম মানে হয় ক্র্যাকড অ্যাকাউন্ট, নয়তো কিছুদিন পর বন্ধ হয়ে যাবে।",
-          "৩. পেমেন্টের আগে যোগাযোগের মাধ্যম যাচাই করুন — সক্রিয় WhatsApp নম্বর, ফেসবুক পেজে পুরোনো রিভিউ, ওয়েবসাইট।",
-          "৪. পার্সোনাল আইডেন্টিটি ডকুমেন্ট (NID ছবি, ব্যাংক তথ্য) কখনো দেবেন না — সাবস্ক্রিপশন কিনতে এসবের দরকার হয় না।",
-          "৫. ট্রানজেকশনের স্ক্রিনশট ও চ্যাট হিস্ট্রি সংরক্ষণ করুন। সমস্যা হলে এগুলোই আপনার প্রমাণ।",
-        ],
-      },
-      {
-        heading: "কেনার পর যে নিয়মগুলো মানতে হবে",
-        body: [
-          "শেয়ার্ড সিটে একসাথে একটা ডিভাইসে ব্যবহার করুন। দুই ডিভাইসে একসাথে লগইন করলে অ্যাকাউন্ট ফ্ল্যাগ হতে পারে।",
-          "পাসওয়ার্ড বা রিকভারি ইমেইল পরিবর্তন করবেন না — এটা করলে ওয়ারেন্টি বাতিল হয়ে যায়।",
-          "OpenAI-এর ব্যবহার নীতিমালা লঙ্ঘন করে এমন কাজ (স্বয়ংক্রিয় স্ক্রিপ্ট দিয়ে অপব্যবহার, নিষিদ্ধ কনটেন্ট তৈরি) করবেন না।",
-          "এই তিনটি নিয়ম মানলে শেয়ার্ড সিট স্থিতিশীলভাবে চলে। কোনো সমস্যা হলে ২৪ ঘণ্টার মধ্যে বিনামূল্যে রিপ্লেস করা হয়।",
-        ],
-      },
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "ai-diye-cv-cover-letter-chakri-bangla",
@@ -800,17 +539,17 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "Month 4+: only once the toolkit is already earning back its cost",
         body: [
           "This is where it's worth expanding into adjacent income streams the earlier tools unlock — not before.",
-          "Video and voice work: CapCut Pro (request pricing on WhatsApp) for editing plus ElevenLabs (from ৳748/mo) for voiceover — together these let a writer-freelancer take on short-form video gigs without hiring anyone.",
-          "Presentation and pitch-deck work: Figma (from ৳2,064/mo) or Gamma, if client work is starting to include investor decks or product presentations.",
-          "Workspace and delivery organisation: Notion Business (from ৳800/mo), once you're running multiple concurrent clients and a spreadsheet stops being enough.",
+          "Video and voice work: CapCut Pro for editing plus ElevenLabs for voiceover — together these let a writer-freelancer take on short-form video gigs without hiring anyone.",
+          "Presentation and pitch-deck work: Figma or Gamma, if client work is starting to include investor decks or product presentations.",
+          "Workspace and delivery organisation: Notion Business, once you're running multiple concurrent clients and a spreadsheet stops being enough.",
         ],
       },
       {
         heading: "A realistic budget by stage",
         body: [
-          "Starting out: ChatGPT Plus Shared (৳350/mo). One tool, used properly, beats five tools used badly.",
-          "Established, 3+ regular clients: ChatGPT Plus Shared + Grammarly Premium Shared (৳470) + Canva Pro Shared (৳510) ≈ ৳1,330/month.",
-          "Full-time, diversifying income streams: add CapCut Pro (request pricing on WhatsApp) and either Claude Pro or GitHub Copilot depending on your niche ≈ ৳2,200–3,200/month — still less than most freelancers lose to a single missed deadline caused by working without these tools.",
+          "Starting out: ChatGPT Plus. One tool, used properly, beats five tools used badly.",
+          "Established, 3+ regular clients: ChatGPT Plus + Grammarly Premium + Canva Pro.",
+          "Full-time, diversifying income streams: add CapCut Pro and either Claude Pro or GitHub Copilot depending on your niche.",
           "There's no guaranteed income figure any tool combination produces — how much you earn depends on your skill, your niche and how consistently you work. What these tools reliably do is remove hours of manual effort per project, which is time you can spend on more billable work or a better pitch.",
         ],
       },
@@ -827,7 +566,7 @@ export const BLOG_POSTS: BlogPost[] = [
     faqs: [
       { q: "Do I need Runway if I already have CapCut Pro?", a: "Not immediately. CapCut handles cutting, captions, transitions and effects — the bulk of short-form editing. Runway is for generating or transforming footage that doesn't exist yet (AI video, style transfer), which most creators only need once they're taking on more ambitious client briefs. Official CapCut pricing varies by region and platform — check the current CapCut checkout or message us on WhatsApp for the AI Team Premium offer." },
       { q: "Can I do voiceover without hiring a voice actor?", a: "Yes — ElevenLabs generates natural-sounding narration in multiple languages and accents from typed text, which is genuinely usable for tutorials, ads and explainer videos. For a brand's flagship content, many creators still mix in a real voice for the final polish, but for volume content it removes the biggest bottleneck." },
-      { q: "What's the realistic monthly cost to start?", a: "CapCut Pro pricing varies — check with our team on WhatsApp for the currently available option and offer price. Add ElevenLabs (from ৳748/month) once voiceover work becomes a regular part of your deliverables — there's no need to pay for both from day one." },
+      { q: "What's the realistic monthly cost to start?", a: "CapCut Pro pricing varies — ask AI Team Premium on WhatsApp for current availability. Add ElevenLabs once voiceover work becomes a regular part of your deliverables — there's no need to pay for both from day one." },
     ],
     sections: [
       {
@@ -840,14 +579,14 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Add ElevenLabs once voiceover becomes a bottleneck",
         body: [
-          "The moment a client asks for narration, tutorial voiceover, or an explainer video and you don't have a voice talent on hand, ElevenLabs (from ৳748/mo) removes that bottleneck entirely — type the script, get natural speech back in minutes.",
+          "The moment a client asks for narration, tutorial voiceover, or an explainer video and you don't have a voice talent on hand, ElevenLabs removes that bottleneck entirely — type the script, get natural speech back in minutes.",
           "This is also where a video editor can genuinely expand into new income: offering narrated explainer videos or product demo voiceovers as a distinct service, priced separately from the editing work.",
         ],
       },
       {
         heading: "Add Runway when the brief needs footage that doesn't exist",
         body: [
-          "Runway (from ৳1,794/mo) is for generating video from a text prompt or transforming existing footage — useful when a client wants a concept shot, an abstract background, or a style you can't film practically on a Bangladesh budget.",
+          "Runway is for generating video from a text prompt or transforming existing footage — useful when a client wants a concept shot, an abstract background, or a style you can't film practically on a Bangladesh budget.",
           "This is the highest-cost tool in the stack and the one to add last — most client briefs don't need generated video, and CapCut plus good stock footage covers the rest. Add it once you have a specific brief that actually calls for it, not speculatively.",
         ],
       },
@@ -855,8 +594,8 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: "A realistic progression",
         body: [
           "Just starting: CapCut Pro — get genuinely fast at editing and captioning before adding anything else. Contact WhatsApp for current pricing.",
-          "Taking narration/explainer briefs: CapCut Pro + ElevenLabs Starter (৳748/mo). Contact WhatsApp for CapCut pricing.",
-          "Full-service creator or small agency: CapCut Pro + ElevenLabs Creator (৳3,289/mo) + Runway Standard (৳1,794/mo) — appropriate once video work is a primary income stream, not a starting point. Contact WhatsApp for CapCut pricing.",
+          "Taking narration/explainer briefs: CapCut Pro + ElevenLabs Starter. Ask AI Team Premium on WhatsApp for current availability.",
+          "Full-service creator or small agency: CapCut Pro + ElevenLabs Creator + Runway Standard — appropriate once video work is a primary income stream, not a starting point. Ask AI Team Premium on WhatsApp for current availability.",
         ],
       },
     ],
@@ -878,14 +617,14 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "Start with GitHub Copilot if you want zero switching cost",
         body: [
-          "GitHub Copilot Pro (৳1,495/mo) installs as an extension in the editor you already use — VS Code, JetBrains, Neovim. There's no new editor to learn, no project re-setup, no changed keybindings. You get inline completions and chat immediately.",
+          "GitHub Copilot Pro installs as an extension in the editor you already use — VS Code, JetBrains, Neovim. There's no new editor to learn, no project re-setup, no changed keybindings. You get inline completions and chat immediately.",
           "This is the right starting point if your priority is speed of adoption: you'll be productively using it within the hour, and the habit of reading and verifying every suggestion before accepting it — the single most important Copilot skill — is one you build the same way regardless of which tool you pick.",
         ],
       },
       {
         heading: "Start with Cursor if your work is large refactors or new projects",
         body: [
-          "Cursor Pro (৳2,990/mo) is a full editor built around AI from the ground up — multi-file editing, a codebase-aware chat, and an agent mode that can plan and execute a multi-step change across several files at once.",
+          "Cursor Pro is a full editor built around AI from the ground up — multi-file editing, a codebase-aware chat, and an agent mode that can plan and execute a multi-step change across several files at once.",
           "The switching cost is real: it's a different editor, and muscle memory takes a week or two to rebuild. That cost is worth paying if your work regularly involves large refactors, unfamiliar codebases, or building new projects from scratch — situations where Cursor's wider context and multi-file agent genuinely save more time than Copilot's inline-only model.",
         ],
       },
@@ -899,7 +638,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "When it's worth running both",
         body: [
-          "Once you're earning meaningfully from freelance or contract development work, running Copilot in your day-to-day editor (৳1,495/mo) and reaching for Cursor (৳2,990/mo) specifically for large refactors or greenfield projects is a reasonable combined cost — about ৳4,485/month — for a developer billing client hours where either tool measurably cuts delivery time.",
+          "Once you're earning meaningfully from freelance or contract development work, running Copilot in your day-to-day editor and reaching for Cursor specifically for large refactors or greenfield projects is a reasonable combination for a developer billing client hours where either tool measurably cuts delivery time.",
           "For a student or someone just starting out, that combined cost rarely makes sense yet. Pick one, get fast at it, and add the second only when you can point to a specific type of task the first one struggles with.",
         ],
       },
@@ -915,7 +654,7 @@ export const BLOG_POSTS: BlogPost[] = [
     heroEmoji: "🎯",
     faqs: [
       { q: "Will an AI-written CV actually get past ATS systems?", a: "AI helps you structure a CV with the keywords and formatting ATS systems parse correctly, which meaningfully improves your odds versus a poorly formatted CV — but it doesn't guarantee an interview. The content still has to accurately represent your real experience; an ATS-optimised CV describing skills you don't have gets caught in the interview, not before it." },
-      { q: "Is LinkedIn Premium worth it for a job seeker, or just ChatGPT?", a: "ChatGPT is the higher-leverage starting tool — it's cheaper and touches every stage of the process. LinkedIn Premium (৳999/mo) adds InMail credits, applicant insights and who's-viewed-you data, which is genuinely useful once you're actively applying and want visibility into how your profile performs, but it's a month-2 addition, not a starting point." },
+      { q: "Is LinkedIn Premium worth it for a job seeker, or just ChatGPT?", a: "ChatGPT is the higher-leverage starting tool — it's cheaper and touches every stage of the process. LinkedIn Premium adds InMail credits, applicant insights and who's-viewed-you data, which is genuinely useful once you're actively applying and want visibility into how your profile performs, but it's a month-2 addition, not a starting point." },
       { q: "How many hours a day does this roadmap take?", a: "Roughly 45–60 minutes on weekdays if you're following it step by step — most of the actual work is applying and practising, with AI cutting the drafting and prep time down rather than adding a new task on top of the job search." },
     ],
     sections: [
@@ -954,8 +693,8 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: "What this costs",
         body: [
-          "Minimum: ChatGPT Plus Shared (৳350/mo) — covers the CV, cover letters, interview prep and follow-up messages for the full 30 days and beyond.",
-          "With LinkedIn visibility tools once you're actively applying: add LinkedIn Premium (৳999/mo) ≈ ৳1,350/month total.",
+          "Minimum: ChatGPT Plus — covers the CV, cover letters, interview prep and follow-up messages for the full 30 days and beyond.",
+          "With LinkedIn visibility tools once you're actively applying: add LinkedIn Premium.",
           "No tool guarantees a job offer — hiring depends on your actual skills, the market, and fit for the specific role. What this roadmap does is remove the friction that causes good candidates to apply less, prepare less, and follow up less than they should.",
         ],
       },
@@ -964,36 +703,14 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "midjourney-vs-ideogram-vs-leonardo-ai-image-bangladesh",
     title: "Midjourney vs Ideogram vs Leonardo AI: Best Image Generator for Bangladesh (2026)",
-    excerpt: "Three AI image generators, three different strengths. Compare Midjourney, Ideogram and Leonardo AI on pricing in BDT, image quality, text rendering, and which works best for Bangladeshi freelancers and designers.",
+    excerpt: "Under evidence review: \"Midjourney vs Ideogram vs Leonardo AI: Best Image Generator for Bangladesh (2026)\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Comparisons",
     publishedDate: "2026-08-02",
     readMinutes: 7,
     heroEmoji: "🎨",
-    faqs: [
-      { q: "Which is cheapest for Bangladeshi users?", a: "Ideogram Plus starts at ৳2,990/mo via AI Team Premium, Leonardo AI from ৳599/mo shared, and Midjourney Standard from ৳1,199/mo shared. Leonardo shared is the most affordable entry point, but Midjourney's image quality is generally considered the benchmark." },
-      { q: "Can I pay with bKash or Nagad?", a: "Yes — all three are available through AI Team Premium with bKash, Nagad, or Rocket payment. No international credit card needed." },
-      { q: "Which is best for text in images?", a: "Ideogram is purpose-built for text rendering and consistently outperforms both Midjourney and Leonardo when you need readable text inside generated images — logos, posters, social media graphics with captions." },
-    ],
-    sections: [
-      { heading: "The three contenders at a glance", body: [
-        "Midjourney: the artistic benchmark. Known for photorealistic outputs, cinematic lighting, and a distinctive aesthetic that's hard to replicate. Midjourney v6.1 is the current standard. Best for: concept art, visual storytelling, high-end social media visuals.",
-        "Ideogram: the text specialist. Built from the ground up to solve the problem every other AI image generator struggles with — readable, accurate text inside images. Best for: logos with text, posters, infographics, merchandise mockups, any image where the words matter as much as the visuals.",
-        "Leonardo AI: the workflow tool. Strong on consistency and control — you can generate variations of the same character or scene, train custom models on your own style, and build production pipelines. Best for: game assets, consistent brand imagery, high-volume output.",
-      ]},
-      { heading: "Pricing in Bangladesh (BDT)", body: [
-        "Midjourney Standard Shared: ৳1,199/mo. Good for trying the platform at a low entry price, with sufficient generations for light use.",
-        "Midjourney Personal: ৳4,990/mo (Standard), ৳8,970/mo (Pro). Your own account, unlimited relaxed generations on Pro.",
-        "Ideogram Plus Personal: ৳2,990/mo. Excellent value for a personal account with strong text rendering.",
-        "Leonardo AI Shared: ৳599/mo. The lowest entry point of the three — great for students and beginners.",
-        "All prices via AI Team Premium, payable with bKash/Nagad. 5-15 minute delivery for shared seats, 2-4 hours for personal accounts.",
-      ]},
-      { heading: "Which one should you choose?", body: [
-        "If you do client work where image quality is the primary differentiator — photo editing, concept art, luxury branding — Midjourney is the standard and clients often ask for it by name.",
-        "If you create social media graphics, posters, logos, or any image where the text inside matters — Ideogram solves a problem the others still struggle with and saves you from manually adding text in a separate tool.",
-        "If you need consistent output at volume — game assets, product variants, branded content where the style must stay identical across dozens of images — Leonardo's consistency tools make it the practical choice.",
-        "On a tight budget: start with Leonardo Shared at ৳599/mo. Once you're earning from the output, upgrade to Midjourney or add Ideogram for text-heavy work.",
-      ]},
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "best-ai-video-editing-tools-bangladesh-freelancers",
@@ -1015,11 +732,11 @@ export const BLOG_POSTS: BlogPost[] = [
         "Descript: worth mentioning for content creators who edit talking-head video — it transcribes your speech and lets you edit the video by editing the text. A different paradigm that saves enormous time on interview, podcast and educational content.",
       ]},
       { heading: "What each costs in BDT", body: [
-        "CapCut Pro Shared: currently request-price (under commercial review). Runway Standard Personal: ৳1,794/mo. Runway Pro Personal: ৳4,186/mo. Kling AI Shared: request-price. Descript Pro Personal: ৳2,090/mo.",
-        "For a freelancer starting out: a CapCut Pro or Runway Standard subscription plus ChatGPT Plus for scripting is a complete content-creation stack under ৳3,000/mo.",
+        "CapCut Pro, Runway Standard, Runway Pro, Kling AI and Descript Pro: ask AI Team Premium on WhatsApp for current availability.",
+        "For a freelancer starting out: a CapCut Pro or Runway Standard subscription plus ChatGPT Plus for scripting is a complete content-creation stack.",
       ]},
       { heading: "The ROI calculation for freelancers", body: [
-        "A single video editing gig on Fiverr typically pays $15-50. At ৳1,794/mo for Runway Standard, you recover the subscription cost with one small project. The real value is in speed — AI tools cut editing time by 40-60% on repetitive tasks, which means more projects per month at the same quality.",
+        "A single video editing gig on Fiverr typically pays $15-50. The real value is in speed — AI tools cut editing time by 40-60% on repetitive tasks, which means more projects per month at the same quality.",
         "The freelancers earning the most are not the ones using the most tools — they're the ones who picked one tool, mastered it, and built a portfolio that proves it. Start with one, get good, then expand.",
       ]},
     ],
@@ -1048,40 +765,23 @@ export const BLOG_POSTS: BlogPost[] = [
         "The combination is powerful: use Perplexity to gather 5-10 credible sources on your topic in 10 minutes (instead of an hour of manual searching), then use ChatGPT to help you synthesise those sources into a coherent argument or paper structure.",
       ]},
       { heading: "Pricing for Bangladeshi users", body: [
-        "Perplexity Pro Personal: ৳2,990/mo. Includes Pro Search with deeper research capabilities, file upload for analysis, and access to multiple AI models.",
-        "ChatGPT Plus Shared: ৳350/mo (most affordable entry). ChatGPT Plus Personal: ৳2,990/mo.",
-        "Most students can start with the combination that costs ৳3,340/mo (Perplexity Pro + ChatGPT Plus Shared) — full research capability plus writing assistance for roughly the cost of one restaurant meal.",
+        "Perplexity Pro includes Pro Search with deeper research capabilities, file upload for analysis, and access to multiple AI models.",
+        "ChatGPT Plus: ask AI Team Premium on WhatsApp for current availability.",
+        "Most students can start with the combination of Perplexity Pro + ChatGPT Plus — full research capability plus writing assistance.",
       ]},
     ],
   },
   {
     slug: "claude-pro-bangladesh-price-bkash-guide",
     title: "Claude Pro in Bangladesh (2026): Price, Payment Guide & Is It Worth It?",
-    excerpt: "Claude Pro gives you access to Claude Sonnet 4.5 and Opus 4 — Anthropic's most capable models. Here's the BDT price, how to pay with bKash, and whether it's better than ChatGPT Plus for your work.",
+    excerpt: "Under evidence review: \"Claude Pro in Bangladesh (2026): Price, Payment Guide & Is It Worth It?\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Buying Guides",
     publishedDate: "2026-08-02",
     readMinutes: 5,
     heroEmoji: "🧠",
-    faqs: [
-      { q: "Is Claude better than ChatGPT for coding?", a: "Claude Sonnet 4.5 and Opus 4 are widely considered among the strongest models for code generation and debugging, particularly for complex, multi-file projects. ChatGPT Plus (GPT-4.5) is also excellent. The practical difference for most users is smaller than the internet debates suggest — try both for your specific workflow." },
-      { q: "Can I use Claude Pro in Bangladesh without a VPN?", a: "Anthropic's Claude is not directly available in Bangladesh — you cannot sign up or pay from a Bangladeshi IP or with a Bangladeshi card. AI Team Premium handles the account creation and payment, so you get a working login without needing a VPN or international card." },
-    ],
-    sections: [
-      { heading: "What Claude Pro actually gets you", body: [
-        "Claude Pro is Anthropic's premium tier — access to Claude Sonnet 4.5 (fast, capable, excellent for coding and analysis) and Claude Opus 4 (the most powerful model, best for complex reasoning and long-form writing). You also get higher usage limits, priority access during peak times, and Projects — a workspace feature for organising conversations and documents.",
-        "The key differentiator from ChatGPT Plus: Claude has a much larger context window (200K tokens), which means you can upload entire documents, codebases, or books and ask questions across the whole thing. For anyone working with long documents — legal contracts, research papers, code repositories — this alone justifies the subscription.",
-      ]},
-      { heading: "Claude Pro pricing in BDT", body: [
-        "Claude Pro Premium Shared: request-price (under commercial review — message on WhatsApp for current availability). Claude Pro Personal: ৳2,990/mo — your own account, full control. Claude Max 5x Personal: ৳14,950/mo — 5x the usage limits of Pro. Claude Max 20x Personal: ৳29,900/mo — 20x usage, for power users.",
-        "For most users, Claude Pro Personal at ৳2,990/mo is the sweet spot — full access to both Sonnet and Opus models with generous usage. All payable via bKash, Nagad, or Rocket.",
-      ]},
-      { heading: "Claude Pro vs ChatGPT Plus: a practical comparison", body: [
-        "For coding: Claude wins on complex, multi-file projects where understanding the full codebase matters. ChatGPT wins on quick scripts, debugging isolated functions, and explaining concepts to beginners.",
-        "For writing: Claude produces more natural, less 'AI-sounding' prose out of the box. ChatGPT is more flexible with tone and style when given explicit instructions. Both are excellent — your preference will be subjective.",
-        "For analysis: Claude's large context window means you can upload a 100-page PDF and ask questions across all of it. ChatGPT's context is smaller. For document-heavy work, Claude has a clear advantage.",
-        "The practical answer: many professionals subscribe to both. At ৳350/mo for ChatGPT Plus Shared plus ৳2,990/mo for Claude Pro Personal, the combined cost is ৳3,340/mo — less than a single dinner out, for access to the two best AI models available.",
-      ]},
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "gemini-advanced-vs-chatgpt-plus-bangladesh",
@@ -1102,12 +802,12 @@ export const BLOG_POSTS: BlogPost[] = [
         "Both offer mobile apps, voice conversation, and image understanding. The choice depends more on your ecosystem and specific needs than on a clear winner in capability.",
       ]},
       { heading: "Pricing comparison in BDT", body: [
-        "ChatGPT Plus Shared: ৳350/mo (most affordable). ChatGPT Plus Personal: ৳2,990/mo.",
-        "Gemini Advanced Shared: request-price. Google AI Pro Personal: ৳3,390/mo.",
-        "ChatGPT has a clear advantage on entry price — the ৳350/mo shared seat is the cheapest way to access a frontier AI model in Bangladesh. Gemini Advanced's Google One storage inclusion (2TB normally costs $9.99/mo alone) adds meaningful value if you need cloud storage.",
+        "ChatGPT Plus: ask AI Team Premium on WhatsApp for current availability.",
+        "Gemini Advanced / Google AI Pro: ask AI Team Premium on WhatsApp for current availability.",
+        "Gemini Advanced's Google One storage inclusion (2TB normally costs $9.99/mo alone) adds meaningful value if you need cloud storage.",
       ]},
       { heading: "Which should you choose?", body: [
-        "Choose ChatGPT Plus if: you want the most versatile tool (writing, coding, images, analysis), the lowest entry price (shared seat at ৳350/mo), or you work across many different tasks and want one subscription that handles all of them.",
+        "Choose ChatGPT Plus if: you want the most versatile tool (writing, coding, images, analysis) or you work across many different tasks and want one subscription that handles all of them.",
         "Choose Gemini Advanced if: you're deep in the Google ecosystem (Gmail, Docs, Drive), you need cloud storage (2TB included), you value the Google integration for productivity, or you prefer Google's approach to AI safety and factual accuracy.",
         "Many users eventually subscribe to both, using ChatGPT for creative and analytical work and Gemini for Google-integrated productivity. Start with one, identify the gaps, and add the second if the value justifies it.",
       ]},
@@ -1123,7 +823,7 @@ export const BLOG_POSTS: BlogPost[] = [
     heroEmoji: "✍️",
     faqs: [
       { q: "Can AI writing tools produce good Bangla content?", a: "Grammarly does not support Bangla. ChatGPT, Claude and Gemini all produce good-quality Bangla, though native speakers should always review and edit. For professional Bangla content, AI is best used as a drafting assistant — generate the structure and first draft in Bangla, then refine it yourself." },
-      { q: "Which tool do Bangladeshi freelance writers use most?", a: "ChatGPT Plus is the most commonly used — it handles English and Bangla, is affordable (৳350/mo shared), and is versatile enough for writing, research, and client communication. Grammarly is the standard for English-only professional writing and editing." },
+      { q: "Which tool do Bangladeshi freelance writers use most?", a: "ChatGPT Plus is the most commonly used — it handles English and Bangla and is versatile enough for writing, research, and client communication. Grammarly is the standard for English-only professional writing and editing." },
     ],
     sections: [
       { heading: "The lineup: 5 tools compared", body: [
@@ -1134,8 +834,8 @@ export const BLOG_POSTS: BlogPost[] = [
         "5. QuillBot Premium: the paraphrasing and academic tool. Popular with students and researchers for paraphrasing, summarising, and ensuring originality. Also useful for content creators who need to rewrite and repurpose existing content.",
       ]},
       { heading: "What each costs in Bangladesh", body: [
-        "ChatGPT Plus Shared: ৳350/mo. Grammarly Premium Personal: ৳2,090/mo. Claude Pro Personal: ৳2,990/mo. Jasper AI Personal: ৳5,830/mo. QuillBot Premium Personal: ৳1,490/mo.",
-        "The budget content creator stack: ChatGPT Plus Shared (৳350) + Grammarly Premium (৳2,090) = ৳2,440/mo for drafting and quality-checking all your English content. Add QuillBot (৳1,490) if you do academic or research writing.",
+        "ChatGPT Plus, Grammarly Premium, Claude Pro, Jasper AI and QuillBot Premium: ask AI Team Premium on WhatsApp for current availability.",
+        "The budget content creator stack: ChatGPT Plus + Grammarly Premium for drafting and quality-checking all your English content. Add QuillBot if you do academic or research writing.",
       ]},
       { heading: "When to upgrade from free tools", body: [
         "Free ChatGPT and Claude are excellent — you can produce professional content without paying anything. Upgrade when: (a) you hit usage limits during important deadlines, (b) you need the latest model for complex writing tasks, (c) you're earning from your writing and the subscription pays for itself, or (d) you need features like file upload and custom instructions.",
@@ -1146,7 +846,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ai-automation-tools-small-business-bangladesh",
     title: "AI Automation for Small Businesses in Bangladesh: A Practical Getting-Started Guide",
-    excerpt: "You don't need a developer or a big budget to automate your business with AI. Here's how Bangladeshi SMEs are using Zapier, Make, and ChatGPT to automate customer follow-ups, invoice generation, and social media — starting from ৳5,000.",
+    excerpt: "You don't need a developer or a big budget to automate your business with AI. Here's how Bangladeshi SMEs are using Zapier, Make, and ChatGPT to automate customer follow-ups, invoice generation, and social media.",
     category: "How-To Guides",
     publishedDate: "2026-08-02",
     readMinutes: 7,
@@ -1158,7 +858,7 @@ export const BLOG_POSTS: BlogPost[] = [
     sections: [
       { heading: "What small business automation actually looks like", body: [
         "A Dhaka-based clothing retailer receives 40 WhatsApp messages daily asking the same five questions: 'Price of X?', 'Is Y in stock?', 'Delivery time?', 'bKash number?', 'Size guide?'. Manually responding takes 2-3 hours every day — time the owner could spend on sourcing, marketing, or actually growing the business.",
-        "An automation setup: customer messages on WhatsApp → ChatGPT reads the message, identifies which question it is → auto-replies with the correct answer from your product sheet → if the question doesn't match, forwards to you for manual reply. Setup cost: ৳5,000-15,000 one-time. Time saved: 15-20 hours per week.",
+        "An automation setup: customer messages on WhatsApp → ChatGPT reads the message, identifies which question it is → auto-replies with the correct answer from your product sheet → if the question doesn't match, forwards to you for manual reply. Time saved: 15-20 hours per week.",
         "This is not hypothetical — it's the most common automation we build for Bangladeshi SMEs. The technology exists, it's affordable, and the ROI is measured in weeks, not months.",
       ]},
       { heading: "The tools: Zapier, Make, and n8n", body: [
@@ -1191,7 +891,7 @@ export const BLOG_POSTS: BlogPost[] = [
     sections: [
       { heading: "Why Bangladeshi creators are switching to AI voiceovers", body: [
         "Traditional voiceover: book studio time, hire a voice artist, schedule recording sessions, pay per minute of finished audio, wait for revisions. Cost: ৳2,000-10,000+ per project. Timeline: days to weeks.",
-        "AI voiceover: type your script, select a voice, generate. Revise instantly by editing the text. Cost: subscription from ৳748/mo. Timeline: minutes.",
+        "AI voiceover: type your script, select a voice, generate. Revise instantly by editing the text. Timeline: minutes.",
         "For YouTube creators publishing weekly, podcasters building a catalogue, and e-learning developers creating course content — the economics are decisive. AI voiceover has gone from 'interesting experiment' to 'default choice' for independent creators in under two years.",
       ]},
       { heading: "ElevenLabs vs Murf AI: feature comparison", body: [
@@ -1200,9 +900,9 @@ export const BLOG_POSTS: BlogPost[] = [
         "For pure voice quality: ElevenLabs. For business presentation workflow: Murf AI. For Bangla content: test both — neither is clearly superior for Bangla yet.",
       ]},
       { heading: "Pricing in Bangladesh", body: [
-        "ElevenLabs Starter Personal: ৳748/mo. Creator Personal: ৳3,289/mo. Pro Personal: ৳14,802/mo.",
-        "Murf AI Personal: ৳2,840/mo.",
-        "Most Bangladeshi YouTube creators start with ElevenLabs Starter (৳748/mo) for basic narration and upgrade to Creator (৳3,289/mo) when they need voice cloning and higher usage limits.",
+        "ElevenLabs Starter, Creator and Pro: ask AI Team Premium on WhatsApp for current availability.",
+        "Murf AI: ask AI Team Premium on WhatsApp for current availability.",
+        "Most Bangladeshi YouTube creators start with ElevenLabs Starter for basic narration and upgrade to Creator when they need voice cloning and higher usage limits.",
       ]},
     ],
   },
@@ -1215,7 +915,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readMinutes: 5,
     heroEmoji: "📋",
     faqs: [
-      { q: "Can I use Microsoft 365 Copilot in Bangladesh?", a: "Microsoft 365 Copilot is available globally but the official subscription requires an international payment method. AI Team Premium provides Microsoft 365 Copilot Business Seat access payable via bKash/Nagad." },
+      { q: "Can I use Microsoft 365 Copilot in Bangladesh?", a: "Microsoft 365 Copilot is available globally but the official subscription requires an international payment method. For Microsoft 365 Copilot Business Seat access, ask AI Team Premium on WhatsApp for current availability." },
       { q: "Which is better for team collaboration?", a: "Notion excels at team wikis, project documentation, and knowledge management. Microsoft 365 Copilot excels when your team already lives in Word, Excel, PowerPoint, and Teams. Choose based on where your team's work actually happens." },
     ],
     sections: [
@@ -1225,7 +925,7 @@ export const BLOG_POSTS: BlogPost[] = [
       ]},
       { heading: "Pricing comparison", body: [
         "Notion AI Business Monthly: request-price (under review). Notion AI Business 6-month: request-price (under review). Notion AI Personal: request-price.",
-        "Microsoft 365 Copilot Business Seat: request-price (৳7,776 internal reference — confirm current pricing on WhatsApp).",
+        "Microsoft 365 Copilot Business Seat: ask AI Team Premium on WhatsApp for current availability.",
         "At current pricing, Notion AI is generally more affordable than Microsoft 365 Copilot, but the value depends entirely on which ecosystem your team uses. If your team doesn't use Microsoft Office, Copilot's integration adds no value.",
       ]},
       { heading: "The practical recommendation", body: [
@@ -1239,26 +939,26 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ai-tools-social-media-marketing-bangladesh",
     title: "AI Tools for Social Media Marketing in Bangladesh: Complete 2026 Stack",
-    excerpt: "From ChatGPT for captions to Canva for graphics to AI scheduling — build a complete AI-powered social media marketing stack for Bangladeshi businesses. Every tool priced in BDT with bKash payment.",
+    excerpt: "From ChatGPT for captions to Canva for graphics to AI scheduling — build a complete AI-powered social media marketing stack for Bangladeshi businesses.",
     category: "Buying Guides",
     publishedDate: "2026-08-02",
     readMinutes: 8,
     heroEmoji: "📱",
     faqs: [
       { q: "Can AI really replace a social media manager?", a: "No — AI can draft content, generate images, suggest hashtags, and schedule posts, but strategy, brand voice, community engagement, and crisis response still need human judgment. AI makes a social media manager 3-5x more productive; it doesn't replace them." },
-      { q: "What's the minimum budget for an AI marketing stack?", a: "ChatGPT Plus Shared (৳350/mo) + Canva Pro Shared (৳510 request-price) = under ৳1,000/mo for AI-written captions and templates for graphics. Add your own strategic thinking, and you have a functional one-person marketing department." },
+      { q: "What's the minimum budget for an AI marketing stack?", a: "ChatGPT Plus + Canva Pro for AI-written captions and templates for graphics. Add your own strategic thinking, and you have a functional one-person marketing department." },
     ],
     sections: [
       { heading: "The complete AI marketing stack", body: [
-        "Content writing: ChatGPT Plus (৳350/mo shared) — captions, threads, video scripts, hashtag research, content calendars. The foundation of the entire stack.",
+        "Content writing: ChatGPT Plus — captions, threads, video scripts, hashtag research, content calendars. The foundation of the entire stack.",
         "Visual design: Canva Pro + AI features — templates, Magic Write, background remover, brand kit. Midjourney or Ideogram for original AI-generated imagery when stock photos won't cut it.",
         "Video creation: CapCut Pro — auto-captions (crucial — most social video is watched on mute), templates, effects. Runway ML for advanced AI video effects.",
         "Scheduling and analytics: Meta Business Suite (free) for Facebook/Instagram scheduling. Later or Buffer for multi-platform scheduling with analytics.",
         "Community engagement: ChatGPT for drafting responses to comments and DMs. The human still reviews and personalises before sending.",
       ]},
       { heading: "What this stack costs in BDT", body: [
-        "Minimum viable stack (one person, all platforms): ChatGPT Plus Shared ৳350 + Canva Pro ৳510 + CapCut Pro (request-price). Total: under ৳1,500/mo.",
-        "Professional stack (agency or dedicated marketer): ChatGPT Plus Personal ৳2,990 + Canva Pro Personal ৳2,190 + Midjourney Personal ৳4,990 + Runway Personal ৳4,186. Total: ~৳14,356/mo.",
+        "Minimum viable stack (one person, all platforms): ChatGPT Plus + Canva Pro + CapCut Pro.",
+        "Professional stack (agency or dedicated marketer): ChatGPT Plus + Canva Pro + Midjourney + Runway.",
         "The professional stack replaces roughly ৳40,000-80,000/mo in outsourced content creation costs — a content writer, a junior designer, and a video editor. The ROI is immediate for any business already spending on content.",
       ]},
       { heading: "The workflow that actually produces results", body: [
@@ -1279,27 +979,14 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "chatgpt-plus-personal-vs-shared-bangladesh",
     title: "ChatGPT Plus Personal vs Shared in Bangladesh: Which Should You Buy?",
-    excerpt: "Shared seat at ৳350/mo vs personal account at ৳2,990/mo — what's actually different, who should buy which, and how to decide based on your work, not the price tag.",
+    excerpt: "Under evidence review: \"ChatGPT Plus Personal vs Shared in Bangladesh: Which Should You Buy?\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Buying Guides",
     publishedDate: "2026-08-02",
     readMinutes: 5,
     heroEmoji: "💬",
-    faqs: [
-      { q: "Is shared ChatGPT safe?", a: "Yes, when properly managed. AI Team Premium enforces one-device-per-seat rules and prevents password changes. Your conversations are in separate threads within the same account — similar to different tabs in one browser, not visible to each other." },
-      { q: "When should I get a personal account?", a: "If you handle confidential client data, need guaranteed availability during peak hours, want to use custom GPTs extensively, or build your own GPT for business use — a personal account gives you full control." },
-    ],
-    sections: [
-      { heading: "The real differences beyond price", body: [
-        "Shared (৳350/mo): you share a genuine ChatGPT Plus account with a small group. You get full GPT-4.5 access, image generation, file uploads, and web browsing. The trade-off: one device at a time, no password changes, and during peak evening hours, you might wait if others are active.",
-        "Personal (৳2,990/mo): your own OpenAI account. You set the password, recovery email, and 2FA. No sharing, no device limits, no waiting. You can build and publish custom GPTs, use advanced voice mode, and access features as they roll out.",
-        "The practical difference for most users: ৳350/mo shared works perfectly for daily 1-2 hour usage during off-peak hours. If ChatGPT is central to your business — you use it 4+ hours daily, handle client work, or need guaranteed availability — the personal account pays for itself in reliability alone.",
-      ]},
-      { heading: "Who should choose which", body: [
-        "Shared is right for: students, casual users, part-time freelancers testing AI tools, anyone on a budget who wants GPT-4.5 access without the full commitment.",
-        "Personal is right for: full-time freelancers, business owners, anyone handling confidential client data, heavy daily users, people who build custom GPTs, and anyone for whom ChatGPT downtime directly costs money.",
-        "If you're unsure, start with shared at ৳350. If you hit its limitations — you're waiting too often, you need custom GPTs, or data privacy becomes a concern — upgrade to personal. The shared seat is a no-risk way to discover whether ChatGPT is worth the full investment for your specific work.",
-      ]},
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "ai-vs-non-ai-freelancer-earnings-bangladesh",
@@ -1311,7 +998,7 @@ export const BLOG_POSTS: BlogPost[] = [
     heroEmoji: "📈",
     faqs: [
       { q: "Do AI tools really increase freelancer income?", a: "The evidence is directional, not causal — freelancers who adopt AI tools tend to complete projects faster, handle more clients simultaneously, and bid on higher-value work. Whether AI causes higher earnings or higher-earning freelancers simply adopt AI first is debated, but the correlation is strong and consistent." },
-      { q: "How much do I need to invest in AI tools?", a: "A functional starting stack (ChatGPT Plus Shared + Canva Pro) costs ~৳860/mo. The return comes from speed: if AI saves you 5 hours per week and you bill at $10/hour, the ROI is 20x the subscription cost." },
+      { q: "How much do I need to invest in AI tools?", a: "A functional starting stack is ChatGPT Plus + Canva Pro. The return comes from speed." },
     ],
     sections: [
       { heading: "The data we can actually measure", body: [
@@ -1340,7 +1027,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readMinutes: 6,
     heroEmoji: "🤖",
     faqs: [
-      { q: "Is Grok available in Bangladesh?", a: "Grok (xAI) is not directly available in Bangladesh — it requires an X Premium+ subscription which cannot be purchased with Bangladeshi payment methods. AI Team Premium provides SuperGrok access starting at ৳1,495/mo via bKash/Nagad." },
+      { q: "Is Grok available in Bangladesh?", a: "Grok (xAI) is not directly available in Bangladesh — it requires an X Premium+ subscription which cannot be purchased with Bangladeshi payment methods. For SuperGrok access, ask AI Team Premium on WhatsApp for current availability." },
       { q: "Which AI is most 'up-to-date' with current events?", a: "Grok has real-time access to X (Twitter) data, making it potentially strongest for current events and trending topics. ChatGPT and Claude both have web browsing capabilities but may not match Grok's real-time social media awareness." },
     ],
     sections: [
@@ -1350,10 +1037,10 @@ export const BLOG_POSTS: BlogPost[] = [
         "Grok (xAI): the most opinionated. Built by Elon Musk's xAI with a mandate to be 'maximally truth-seeking' and less constrained than other AIs. Strong on real-time information via X integration. The newest of the three and evolving rapidly. Appeals to users who find ChatGPT and Claude too cautious.",
       ]},
       { heading: "Pricing comparison in Bangladesh", body: [
-        "ChatGPT Plus Shared: ৳350/mo. ChatGPT Plus Personal: ৳2,990/mo.",
-        "Claude Pro Personal: ৳2,990/mo. Claude Pro Shared: request-price.",
-        "SuperGrok Lite Personal: ৳1,495/mo. SuperGrok Personal: ৳4,990/mo.",
-        "Most users start with ChatGPT Plus Shared at ৳350 — the lowest entry price to any frontier AI model. As needs become clearer, they add Claude for document-heavy work or Grok for real-time awareness.",
+        "ChatGPT Plus: ask AI Team Premium on WhatsApp for current availability.",
+        "Claude Pro: ask AI Team Premium on WhatsApp for current availability.",
+        "SuperGrok Lite and SuperGrok: ask AI Team Premium on WhatsApp for current availability.",
+        "Most users start with ChatGPT Plus. As needs become clearer, they add Claude for document-heavy work or Grok for real-time awareness.",
       ]},
     ],
   },
@@ -1379,7 +1066,7 @@ export const BLOG_POSTS: BlogPost[] = [
         "Tier 1 (start here): Zapier or Make — visual automation builders. Learn one deeply before moving on. Free tiers available for practice.",
         "Tier 2 (add when you have clients): ChatGPT/Claude — for AI-powered steps inside automations (reading messages, generating responses, classifying data).",
         "Tier 3 (scale with these): n8n (self-hosted, cheaper at scale), Airtable (automation-friendly database), Google Sheets + Apps Script (free, surprisingly powerful).",
-        "Your first investment: a ChatGPT Plus subscription (৳350/mo shared) for learning and building, plus free Zapier/Make accounts for practice. Total startup cost: under ৳500.",
+        "Your first investment: a ChatGPT Plus subscription for learning and building, plus free Zapier/Make accounts for practice.",
       ]},
       { heading: "How to find your first clients", body: [
         "1. Start local: walk into 5 businesses near you and ask what repetitive task they hate doing. Listen more than you pitch. Most business owners will tell you exactly what to automate.",
@@ -1433,22 +1120,22 @@ export const BLOG_POSTS: BlogPost[] = [
     heroEmoji: "🛒",
     faqs: [
       { q: "Can AI write my product descriptions in Bangla?", a: "Yes — ChatGPT and Claude both handle Bangla product descriptions well. Give them the product features, target audience, and tone, and they'll draft descriptions optimised for both SEO and customer conversion. Always review and adjust for your specific product and brand voice." },
-      { q: "Is AI automation affordable for small Daraz sellers?", a: "Absolutely. ChatGPT Plus Shared at ৳350/mo handles product descriptions, customer message templates, and ad copy. That's one-tenth the cost of hiring a content writer and available 24/7." },
+      { q: "Is AI automation affordable for small Daraz sellers?", a: "Absolutely. ChatGPT Plus handles product descriptions, customer message templates, and ad copy, and is available 24/7." },
     ],
     sections: [
       { heading: "Five ways AI is transforming Bangladeshi e-commerce", body: [
-        "1. Product descriptions at scale: a seller with 200 products used to spend weeks writing descriptions. ChatGPT generates all 200 in hours, each unique and SEO-optimised, with Bangla versions for local customers. Cost: ৳350/mo vs ৳20,000+ for a content writer.",
+        "1. Product descriptions at scale: a seller with 200 products used to spend weeks writing descriptions. ChatGPT generates all 200 in hours, each unique and SEO-optimised, with Bangla versions for local customers.",
         "2. Customer service automation: the most common Daraz and Facebook Shop questions ('Is this in stock?', 'What size?', 'When will it arrive?') are answered automatically via AI-powered WhatsApp. Human agents only handle complex queries. Time saved: 20-30 hours/week.",
         "3. Ad creative generation: ChatGPT writes Facebook ad copy variants, Canva AI generates product images for different ad formats. A/B testing becomes practical when creative generation takes minutes instead of hours.",
         "4. Competitor and market analysis: Perplexity AI researches competitor pricing, trending products, and customer sentiment in minutes. Replaces hours of manual browsing and spreadsheet work.",
         "5. Inventory and order management automation: Zapier/Make workflows connect orders from multiple platforms, update inventory counts, and send automated customer updates. One seller reduced order processing time from 15 minutes to 30 seconds per order.",
       ]},
       { heading: "The productivity stack for e-commerce sellers", body: [
-        "Content & copy: ChatGPT Plus (৳350/mo shared) — product descriptions, ad copy, customer message templates, email campaigns. Also handles English↔Bangla translation.",
-        "Images & design: Canva Pro (৳510 shared) — product photos, banner ads, social media graphics, brand kit. Midjourney or Ideogram for original lifestyle imagery.",
+        "Content & copy: ChatGPT Plus — product descriptions, ad copy, customer message templates, email campaigns. Also handles English↔Bangla translation.",
+        "Images & design: Canva Pro — product photos, banner ads, social media graphics, brand kit. Midjourney or Ideogram for original lifestyle imagery.",
         "Customer communication: WhatsApp Business (free) + AI-powered auto-responder. Customers get instant answers; you get your time back.",
         "Operations & automation: Zapier or Make — connect your store, payment confirmations, shipping updates, and customer notifications into one automated workflow.",
-        "Total investment for a functional stack: under ৳1,500/mo. The time savings alone justify the cost within the first week.",
+        "Total investment for a functional stack: ask AI Team Premium on WhatsApp for current availability. The time savings alone justify the cost within the first week.",
       ]},
       { heading: "Platform-specific tips", body: [
         "Daraz: use ChatGPT to optimise product titles for Daraz's search algorithm (include key specs, brand, category in the title). Generate keyword-rich bullet points. Daraz's algorithm rewards complete, detailed listings with better visibility.",
@@ -1482,10 +1169,10 @@ export const BLOG_POSTS: BlogPost[] = [
         "Senior developers (5+ years): most use Copilot for autocomplete and keep their existing editor/terminal workflow. The AI is a productivity tool, not a workflow change. Some add Cursor for complex refactoring sessions but keep VS Code or Neovim as primary.",
       ]},
       { heading: "Pricing in Bangladesh", body: [
-        "GitHub Copilot Pro Personal: ৳1,495/mo (৳5,831/mo for Pro+). Free for verified students.",
-        "Cursor Pro Personal: ৳2,990/mo (৳8,970/mo for Pro+). 14-day free trial.",
+        "GitHub Copilot Pro and Pro+: ask AI Team Premium on WhatsApp for current availability. Free for verified students.",
+        "Cursor Pro and Pro+: ask AI Team Premium on WhatsApp for current availability. 14-day free trial.",
         "Windsurf Pro: request-price (under review).",
-        "Recommendation: start with Copilot Free (student) or Copilot Pro (৳1,495/mo). If you find yourself wanting more AI integration, try Cursor's free trial. Most Bangladeshi developers we work with end up using Copilot plus occasional Cursor sessions for complex work.",
+        "Recommendation: start with Copilot Free (student) or Copilot Pro. If you find yourself wanting more AI integration, try Cursor's free trial. Most Bangladeshi developers we work with end up using Copilot plus occasional Cursor sessions for complex work.",
       ]},
     ],
   },
@@ -1508,7 +1195,7 @@ export const BLOG_POSTS: BlogPost[] = [
         "The practical difference: Semrush is a marketing Swiss Army knife, Ahrefs is a professional-grade SEO tool. If SEO is 80%+ of your work, Ahrefs. If you also do PPC, social, and content marketing, Semrush's broader toolkit may justify the price.",
       ]},
       { heading: "What they cost in Bangladesh", body: [
-        "Semrush Pro Personal: ৳20,176/mo (confirm current pricing on WhatsApp). Guru and Business plans available at higher tiers.",
+        "Semrush Pro: ask AI Team Premium on WhatsApp for current availability. Guru and Business plans available at higher tiers.",
         "Ahrefs Lite Personal: request-price. Standard, Advanced, and Enterprise plans available.",
         "Both are significant investments for Bangladeshi freelancers and small agencies. The key question: will the tool help you land enough additional client work to pay for itself? For most growing agencies, the answer is yes — one additional SEO client per month covers the subscription.",
       ]},
@@ -1555,28 +1242,28 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "digital-marketing-ai-stack-bangladesh-2026",
     title: "The Ultimate AI Digital Marketing Stack for Bangladesh (2026)",
-    excerpt: "SEO, content, social media, email, ads, analytics — here's the complete AI tool stack Bangladeshi digital marketers need, with every tool priced in BDT and payable via bKash.",
+    excerpt: "SEO, content, social media, email, ads, analytics — here's the complete AI tool stack Bangladeshi digital marketers need.",
     category: "Buying Guides",
     publishedDate: "2026-08-02",
     readMinutes: 8,
     heroEmoji: "📊",
     faqs: [
-      { q: "What's the minimum I need to spend on AI marketing tools?", a: "A functional starting stack: ChatGPT Plus Shared (৳350/mo) for content + Canva Pro (৳510/mo shared) for visuals + Google tools (free) for analytics = under ৳1,000/mo. Add specialised tools as you prove ROI on each." },
-      { q: "Which AI tool gives the fastest ROI for marketers?", a: "ChatGPT Plus — it accelerates content creation, ad copy, email sequences, social media captions, and competitive research. At ৳350/mo shared, one extra client or one faster campaign pays for it instantly." },
+      { q: "What's the minimum I need to spend on AI marketing tools?", a: "A functional starting stack: ChatGPT Plus for content + Canva Pro for visuals + Google tools (free) for analytics. Add specialised tools as you prove ROI on each." },
+      { q: "Which AI tool gives the fastest ROI for marketers?", a: "ChatGPT Plus — it accelerates content creation, ad copy, email sequences, social media captions, and competitive research." },
     ],
     sections: [
       { heading: "The complete stack by marketing function", body: [
-        "Content & copywriting: ChatGPT Plus (৳350/mo shared) — blog posts, ad copy, email sequences, social captions, video scripts. Claude Pro (৳2,990/mo) for long-form content and document analysis.",
-        "SEO & keyword research: Semrush/Ahrefs (from ৳20,176/mo) or Ubersuggest (from ~৳1,500/mo) for keyword research. Surfer SEO (request-price) for content optimisation. Google Search Console (free) for performance monitoring.",
-        "Social media: Canva Pro (৳510 shared) for graphics. CapCut Pro for video. ChatGPT for caption generation. Meta Business Suite (free) for scheduling and analytics.",
+        "Content & copywriting: ChatGPT Plus — blog posts, ad copy, email sequences, social captions, video scripts. Claude Pro for long-form content and document analysis.",
+        "SEO & keyword research: Semrush/Ahrefs or Ubersuggest for keyword research. Surfer SEO for content optimisation. Google Search Console (free) for performance monitoring.",
+        "Social media: Canva Pro for graphics. CapCut Pro for video. ChatGPT for caption generation. Meta Business Suite (free) for scheduling and analytics.",
         "Email marketing: ChatGPT for email copy and sequences. Mailchimp (free tier available) or Brevo (free tier) for sending and automation.",
         "Advertising: ChatGPT for ad copy variants and A/B test ideas. Canva for ad creative. Google Ads and Meta Ads platforms (free to use, pay for ads).",
         "Analytics: Google Analytics 4 (free), Google Looker Studio (free) for dashboards, ChatGPT for interpreting data and generating reports.",
       ]},
       { heading: "Three stack tiers for different budgets", body: [
-        "Starter stack (৳860-1,000/mo): ChatGPT Plus Shared + Canva Pro Shared + free Google tools. Handles content, basic graphics, and analytics for one marketer. Enough to run digital marketing for a small business or start freelancing.",
-        "Professional stack (৳8,000-15,000/mo): ChatGPT Plus Personal + Canva Pro Personal + Semrush/Ahrefs + CapCut Pro. Full content, SEO, social, and ad creative capability. Enough to run marketing for multiple clients as an agency.",
-        "Enterprise stack (৳30,000+/mo): full suite including Claude Pro, Midjourney, Runway, Surfer SEO, advanced email marketing, and automation tools. For agencies managing 10+ clients or in-house teams at growing companies.",
+        "Starter stack: ChatGPT Plus + Canva Pro + free Google tools. Handles content, basic graphics, and analytics for one marketer. Enough to run digital marketing for a small business or start freelancing.",
+        "Professional stack: ChatGPT Plus + Canva Pro + Semrush/Ahrefs + CapCut Pro. Full content, SEO, social, and ad creative capability. Enough to run marketing for multiple clients as an agency.",
+        "Enterprise stack: full suite including Claude Pro, Midjourney, Runway, Surfer SEO, advanced email marketing, and automation tools. For agencies managing 10+ clients or in-house teams at growing companies.",
       ]},
       { heading: "How to phase your investment", body: [
         "Month 1: ChatGPT Plus Shared + Canva Pro Shared. Master content creation and basic design. Start offering services or improving your own marketing.",
@@ -1608,7 +1295,7 @@ export const BLOG_POSTS: BlogPost[] = [
         "AI-Enabled Virtual Assistant (৳15,000-40,000/month freelance): provide VA services to international clients using AI to multiply your output. Bangladeshi VAs who use AI are winning higher-paying clients than those who don't.",
       ]},
       { heading: "Your 90-day employability plan", body: [
-        "Days 1-7: Pick ONE AI tool (ChatGPT Plus, ৳350/mo shared). Learn it thoroughly — not just basic prompts, but how to use it for real work output. Create 5 sample projects: a blog post, a social media campaign plan, a customer email sequence, a research summary, a data analysis.",
+        "Days 1-7: Pick ONE AI tool (ChatGPT Plus). Learn it thoroughly — not just basic prompts, but how to use it for real work output. Create 5 sample projects: a blog post, a social media campaign plan, a customer email sequence, a research summary, a data analysis.",
         "Days 8-30: Build a portfolio. Put your 5 projects on a simple portfolio site (Notion page or Google Sites works fine). Add context: what was the goal, how did you use AI, what was the outcome. This portfolio is more valuable than your CV.",
         "Days 31-60: Start freelancing or apply for internships. Target companies that mention 'AI,' 'digital,' or 'tech-enabled' in their job posts. Your portfolio plus AI proficiency is your differentiator against hundreds of other fresh graduates.",
         "Days 61-90: Get your first paid work. Freelance platforms (Fiverr, Upwork), local job boards, LinkedIn outreach. Focus on delivering quality and getting testimonials. One good testimonial is worth more than any certification.",
@@ -1685,13 +1372,13 @@ export const BLOG_POSTS: BlogPost[] = [
     heroEmoji: "🎧",
     faqs: [
       { q: "Can AI handle Bangla customer queries?", a: "Yes — ChatGPT and Claude both understand and respond in Bangla with good accuracy. For customer service, use AI as a first-response filter (answer FAQs, collect information) with human escalation for complex or emotional situations. Never let AI handle complaints or refunds unsupervised." },
-      { q: "How much does an AI customer service system cost?", a: "A basic system (WhatsApp + ChatGPT Plus Shared + simple automation) costs under ৳1,000/mo and handles ~70% of common queries automatically. A professional system with multiple channels and custom training costs ৳5,000-15,000/mo." },
+      { q: "How much does an AI customer service system cost?", a: "A basic system (WhatsApp + ChatGPT Plus + simple automation) handles ~70% of common queries automatically. A professional system adds multiple channels and custom training." },
     ],
     sections: [
       { heading: "The customer service stack", body: [
-        "Tier 1 — AI auto-responder: ChatGPT connected to WhatsApp Business. Reads incoming messages, identifies the question type, sends a pre-written answer from your FAQ bank. Forwards anything it can't answer to a human. Cost: ৳350/mo (ChatGPT Plus Shared).",
-        "Tier 2 — Multi-channel system: covers WhatsApp, Facebook Messenger, and email. Routes queries by topic (sales, support, billing) to the right person or AI. Tracks response times and customer satisfaction. Cost: ৳5,000-15,000/mo setup + ৳2,000-5,000/mo maintenance.",
-        "Tier 3 — Custom-trained AI: trained on your specific products, policies, and past customer conversations. Handles 85%+ of queries without human intervention. Integrates with your order system to check real-time status. Cost: ৳25,000-50,000 setup + ৳5,000-10,000/mo.",
+        "Tier 1 — AI auto-responder: ChatGPT connected to WhatsApp Business. Reads incoming messages, identifies the question type, sends a pre-written answer from your FAQ bank. Forwards anything it can't answer to a human.",
+        "Tier 2 — Multi-channel system: covers WhatsApp, Facebook Messenger, and email. Routes queries by topic (sales, support, billing) to the right person or AI. Tracks response times and customer satisfaction.",
+        "Tier 3 — Custom-trained AI: trained on your specific products, policies, and past customer conversations. Handles 85%+ of queries without human intervention. Integrates with your order system to check real-time status.",
       ]},
       { heading: "What AI customer service can and cannot do", body: [
         "CAN do: answer FAQs instantly, collect customer information, provide order status, send payment details, schedule callbacks, route complex issues to the right department, operate 24/7.",
@@ -1744,7 +1431,7 @@ export const BLOG_POSTS: BlogPost[] = [
     heroEmoji: "💰",
     faqs: [
       { q: "How much can a student realistically earn with AI?", a: "Part-time (10-15 hours/week): ৳5,000-15,000/month doing content writing, basic design, or virtual assistance. Full-time focus (20-30 hours/week): ৳15,000-50,000/month. Top performers doing specialised work (automation, professional design, high-end content): ৳50,000-150,000/month. These are real ranges from actual Bangladeshi freelancers, not aspirational estimates." },
-      { q: "Do I need to invest money to start?", a: "A ChatGPT Plus Shared subscription at ৳350/month is your only essential investment. Everything else — Canva (free tier), Google tools (free), social media (free) — you can start with free versions and upgrade when you're earning." },
+      { q: "Do I need to invest money to start?", a: "A ChatGPT Plus subscription is your only essential investment. Everything else — Canva (free tier), Google tools (free), social media (free) — you can start with free versions and upgrade when you're earning." },
     ],
     sections: [
       { heading: "7 real ways students are earning", body: [
@@ -1757,7 +1444,7 @@ export const BLOG_POSTS: BlogPost[] = [
         "7. AI automation services for local businesses (৳5,000-30,000/project): find a business doing something manually → automate it → charge for the setup. The most scalable option because each automation is a product you can sell to multiple businesses.",
       ]},
       { heading: "The 30-day launch plan", body: [
-        "Week 1: pick ONE path from the 7 above. Not two — one. Set up your Fiverr/Upwork profile or approach 5 local businesses. Create 3 sample work pieces using AI tools. Your only cost: ChatGPT Plus Shared (৳350).",
+        "Week 1: pick ONE path from the 7 above. Not two — one. Set up your Fiverr/Upwork profile or approach 5 local businesses. Create 3 sample work pieces using AI tools. Your only cost: ChatGPT Plus.",
         "Week 2: get your first client or order. Price low for the first one — your goal is a completed project and a review/testimonial, not maximum income. Deliver quality work. Ask for feedback.",
         "Week 3: get your second client. Apply what you learned from the first one — better communication, faster delivery, clearer expectations. Raise your price slightly. Start building a repeatable process.",
         "Week 4: evaluate. Which path is working? Which do you enjoy? Double down on what's producing results. Add a second AI tool if justified (Canva Pro for designers, Midjourney for visual work).",
@@ -1809,7 +1496,7 @@ export const BLOG_POSTS: BlogPost[] = [
     heroEmoji: "🎨",
     faqs: [
       { q: "Can Canva really replace Photoshop?", a: "For social media graphics, presentations, simple photo editing, and template-based design — yes, Canva is often faster and more convenient. For professional photo manipulation, complex compositing, print-ready design, and pixel-level control — no, Photoshop remains the professional standard." },
-      { q: "Which is better value for Bangladeshi freelancers?", a: "Canva Pro at ~৳510/mo (shared) vs Adobe CC at ~৳10,464/mo (personal). For most Bangladeshi freelancers starting out, Canva provides 80% of the capability at 5% of the price. Upgrade to Adobe CC when client work demands it." },
+      { q: "Which is better value for Bangladeshi freelancers?", a: "Canva Pro vs Adobe CC: for most Bangladeshi freelancers starting out, Canva provides 80% of the capability at a fraction of the price. Upgrade to Adobe CC when client work demands it." },
     ],
     sections: [
       { heading: "Canva AI: fast, accessible, surprisingly capable", body: [
@@ -1826,8 +1513,8 @@ export const BLOG_POSTS: BlogPost[] = [
         "Best for: professional designers, photographers, anyone doing client work where quality expectations are high and pixel-level control matters.",
       ]},
       { heading: "The practical recommendation", body: [
-        "Start with Canva Pro (৳510/mo shared). Learn design fundamentals — layout, typography, colour theory, visual hierarchy. Canva teaches you what good design looks like without the tool complexity getting in the way.",
-        "When you hit Canva's limits — a client needs complex photo manipulation, a print-ready file with specific colour profiles, or pixel-level compositing — add Adobe Creative Cloud (Photoshop + Illustrator, ৳10,464/mo personal). By then, you'll have paying clients to justify the cost.",
+        "Start with Canva Pro. Learn design fundamentals — layout, typography, colour theory, visual hierarchy. Canva teaches you what good design looks like without the tool complexity getting in the way.",
+        "When you hit Canva's limits — a client needs complex photo manipulation, a print-ready file with specific colour profiles, or pixel-level compositing — add Adobe Creative Cloud (Photoshop + Illustrator). By then, you'll have paying clients to justify the cost.",
         "Many professional Bangladeshi designers use both: Canva for quick social media work and client drafts, Adobe CC for final deliverables and complex projects. The tools complement each other — Canva for speed, Adobe for precision.",
       ]},
     ],
@@ -1846,11 +1533,11 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     sections: [
       { heading: "The real estate AI tool stack", body: [
-        "Property descriptions: ChatGPT Plus (৳350/mo shared) — write compelling Bangla and English descriptions, generate neighbourhood highlights, create comparison tables. One agent can write 20 property descriptions in the time it previously took to write 2.",
-        "Virtual staging: Midjourney or Photoshop AI — furnish empty rooms digitally. Cost: ৳1,199-10,464/mo depending on tool. ROI: one virtually staged listing that sells faster justifies months of subscription.",
-        "Client communication: ChatGPT-powered WhatsApp auto-responder — answer common buyer questions (price, location, size, amenities) instantly 24/7. Forward serious inquiries to the agent. Setup cost: ৳5,000-15,000 one-time.",
-        "Market analysis: Perplexity Pro (৳2,990/mo) — research area prices, upcoming developments, infrastructure projects, and market trends. Generate client-ready market reports in minutes.",
-        "Social media content: Canva Pro (৳510/mo shared) + ChatGPT — create property showcase posts, market update infographics, and agent branding content. Consistent social presence without a dedicated marketing person.",
+        "Property descriptions: ChatGPT Plus — write compelling Bangla and English descriptions, generate neighbourhood highlights, create comparison tables. One agent can write 20 property descriptions in the time it previously took to write 2.",
+        "Virtual staging: Midjourney or Photoshop AI — furnish empty rooms digitally. ROI: one virtually staged listing that sells faster justifies months of subscription.",
+        "Client communication: ChatGPT-powered WhatsApp auto-responder — answer common buyer questions (price, location, size, amenities) instantly 24/7. Forward serious inquiries to the agent.",
+        "Market analysis: Perplexity Pro — research area prices, upcoming developments, infrastructure projects, and market trends. Generate client-ready market reports in minutes.",
+        "Social media content: Canva Pro + ChatGPT — create property showcase posts, market update infographics, and agent branding content. Consistent social presence without a dedicated marketing person.",
       ]},
       { heading: "Before and after: a real workflow comparison", body: [
         "Before AI: agent photographs property → writes description manually (30 min) → posts on 2 portals (15 min) → responds to inquiries manually throughout the day (1-2 hours) → follows up manually (30 min). Total: 2-3 hours per listing.",
@@ -1905,7 +1592,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     sections: [
       { heading: "Responsible AI use in healthcare", body: [
-        "Research and literature review: Perplexity Pro (৳2,990/mo) for finding recent papers with citations. ChatGPT Plus or Claude for summarising and explaining complex papers in simpler terms. Time saved per paper: 20-40 minutes.",
+        "Research and literature review: Perplexity Pro for finding recent papers with citations. ChatGPT Plus or Claude for summarising and explaining complex papers in simpler terms. Time saved per paper: 20-40 minutes.",
         "Patient education materials: ChatGPT Plus for drafting easy-to-understand explanations of conditions, procedures, and medications — in both English and Bangla. Review every output for medical accuracy before sharing with patients.",
         "Medical writing and documentation: Claude Pro for drafting case reports, research proposals, and academic papers. Claude's large context window handles long medical documents well.",
         "Study preparation: ChatGPT Plus for generating practice questions, explaining difficult concepts, and creating study schedules. Medical students in Bangladesh use it extensively for exam preparation.",
@@ -1974,26 +1661,14 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "buy-chatgpt-pro-bangladesh-bkash-guide",
     title: "ChatGPT Pro in Bangladesh (2026): Price, Features & How to Buy with bKash",
-    excerpt: "ChatGPT Pro unlocks GPT-5 and o3 reasoning models for advanced research and coding. Here's the BDT price, how shared vs personal Pro works, and how to pay with bKash or Nagad in Bangladesh.",
+    excerpt: "Under evidence review: \"ChatGPT Pro in Bangladesh (2026): Price, Features & How to Buy with bKash\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Buying Guides",
     publishedDate: "2026-08-02",
     readMinutes: 5,
     heroEmoji: "🚀",
-    faqs: [
-      { q: "Is ChatGPT Pro worth the upgrade from Plus?", a: "For most users, ChatGPT Plus (GPT-4.5) handles daily work well. Pro is for power users who need extended reasoning for research, complex coding, multi-step analysis, and large-context tasks. If you don't hit Plus limits regularly, Pro won't transform your workflow." },
-      { q: "How much does ChatGPT Pro cost in Bangladesh?", a: "ChatGPT Pro Premium Shared is available through AI Team Premium — contact WhatsApp for current pricing. Pro Personal (your own account) starts from ৳29,900/mo. Official OpenAI price: $200/mo." },
-    ],
-    sections: [
-      { heading: "What ChatGPT Pro actually unlocks", body: [
-        "ChatGPT Pro gives you access to GPT-5 and the o3 reasoning model family — OpenAI's most capable systems. These models think step-by-step through complex problems, making them significantly better at research analysis, mathematical proofs, coding architecture, and multi-step reasoning than the standard GPT-4.5 in Plus.",
-        "The key difference: Pro models can reason for extended periods before answering. Where Plus gives you a quick answer, Pro can spend minutes working through a problem — producing more thorough, accurate results for complex tasks. For most daily work, this is overkill. For research, advanced coding, and analysis, it's transformative.",
-      ]},
-      { heading: "ChatGPT Pro pricing in Bangladesh", body: [
-        "Pro Premium Shared: contact WhatsApp for current pricing. Pro Personal (your own account, full control): from ৳29,900/mo. Official OpenAI Pro price: $200/month.",
-        "At this price point, Pro is an investment — not an impulse purchase. It makes sense if: (a) you're doing research or analytical work where accuracy matters more than speed, (b) you're writing or debugging complex codebases, (c) you're a freelancer or business where the extended reasoning directly improves your output quality, or (d) you've consistently hit ChatGPT Plus usage limits.",
-        "For comparison: ChatGPT Plus Personal at ৳2,990/mo handles 90% of daily AI needs. Pro is for the remaining 10% — when the thinking quality matters more than the price.",
-      ]},
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "best-free-ai-tools-alternatives-bangladesh",
@@ -2004,7 +1679,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readMinutes: 6,
     heroEmoji: "🆓",
     faqs: [
-      { q: "Can I use ChatGPT for free in Bangladesh?", a: "Yes — ChatGPT Free gives you access to GPT-4.5-mini with some limitations. It's genuinely useful for casual use: basic questions, simple writing, learning. The free tier has usage caps and doesn't include image generation, file upload, or web browsing. For professional daily use, ChatGPT Plus (৳350/mo shared) removes these limits." },
+      { q: "Can I use ChatGPT for free in Bangladesh?", a: "Yes — ChatGPT Free gives you access to GPT-4.5-mini with some limitations. It's genuinely useful for casual use: basic questions, simple writing, learning. The free tier has usage caps and doesn't include image generation, file upload, or web browsing. For professional daily use, ChatGPT Plus removes these limits." },
       { q: "Which free AI is best for coding?", a: "GitHub Copilot Free (for verified students) is the best free coding AI. Claude Free (claude.ai) is excellent for code explanation and review. ChatGPT Free handles basic coding questions well. None match the paid versions for complex projects." },
     ],
     sections: [
@@ -2019,7 +1694,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { heading: "When to upgrade from free to paid", body: [
         "Upgrade when: (a) you hit usage limits during important work, (b) you need latest models for complex tasks, (c) the free version's responses aren't detailed enough for professional output, (d) you need features like file upload, image generation, or custom GPTs.",
         "Don't upgrade when: (a) you're just exploring what AI can do, (b) your usage is casual (a few questions per day), (c) your tasks are simple (translation, basic writing, quick answers), (d) you're a student who qualifies for free Copilot and uses ChatGPT Free for everything else.",
-        "The upgrade sweet spot: ChatGPT Plus Shared at ৳350/mo. It's the cheapest entry to GPT-4.5-class AI with full features, and the price is low enough that you'll know within one month whether it's worth it for your specific work.",
+        "The upgrade sweet spot: ChatGPT Plus. It's an entry to GPT-4.5-class AI with full features, and you'll know within one month whether it's worth it for your specific work.",
       ]},
     ],
   },
@@ -2033,17 +1708,17 @@ export const BLOG_POSTS: BlogPost[] = [
     heroEmoji: "📞",
     faqs: [
       { q: "Can AI handle Bangla customer questions?", a: "Yes. ChatGPT and Gemini both understand and respond in Bangla well enough for customer support. The key is to give the AI a clear FAQ database in Bangla and test responses before going live. AI handles 70-80% of common questions successfully; complex or emotional situations still need human escalation." },
-      { q: "How much does AI customer support cost?", a: "A basic system (ChatGPT Plus Shared at ৳350/mo + a simple WhatsApp integration) handles FAQ-level support for under ৳1,000/mo. A professional multi-channel system with custom training: ৳5,000-15,000 setup + ৳2,000-5,000/mo maintenance." },
+      { q: "How much does AI customer support cost?", a: "A basic system (ChatGPT Plus + a simple WhatsApp integration) handles FAQ-level support. A professional multi-channel system adds custom training." },
     ],
     sections: [
       { heading: "Example 1: Dhaka clothing store — WhatsApp FAQ automation", body: [
         "A Dhaka-based clothing retailer was receiving 40-60 WhatsApp messages daily asking the same five questions: 'Price of X?', 'Is Y in stock?', 'Delivery time?', 'bKash number?', 'Size guide?'. Manually responding took 2-3 hours daily.",
-        "Solution: AI-powered WhatsApp auto-responder connected to their product sheet. Customer sends message → ChatGPT identifies the question → auto-replies with the correct answer → forwards complex queries to the owner. Setup cost: ৳8,000. Monthly: ৳350 (ChatGPT Plus Shared). Time saved: 15-20 hours/week.",
+        "Solution: AI-powered WhatsApp auto-responder connected to their product sheet. Customer sends message → ChatGPT identifies the question → auto-replies with the correct answer → forwards complex queries to the owner. Time saved: 15-20 hours/week.",
         "Result: customers get instant answers 24/7. Owner handles ~5 complex queries daily instead of 40-60 repetitive ones. The business didn't need to hire a customer support person.",
       ]},
       { heading: "Example 2: Chittagong restaurant — order confirmation automation", body: [
         "A restaurant receiving 30+ food orders daily via WhatsApp was manually sending the same confirmation message each time: 'Order received. Total: X BDT. Delivery in Y minutes. bKash: Z.' Each message took 30 seconds to type, totaling 15 minutes daily.",
-        "Solution: AI automation — when an order comes in, ChatGPT reads it, calculates the total, and generates a confirmation message with the correct numbers and a personalized greeting. The restaurant owner reviews and sends. Setup: ৳5,000. Time saved: small but consistent, and zero typing errors in payment amounts.",
+        "Solution: AI automation — when an order comes in, ChatGPT reads it, calculates the total, and generates a confirmation message with the correct numbers and a personalized greeting. The restaurant owner reviews and sends. Time saved: small but consistent, and zero typing errors in payment amounts.",
       ]},
       { heading: "Example 3-5: E-commerce, clinic, and coaching center", body: [
         "E-commerce shop (Gazipur): AI handles post-purchase follow-ups — 'How's the product?' on day 3, review request on day 7. Automated via Zapier + ChatGPT. 20% increase in review rates.",
@@ -2073,7 +1748,7 @@ export const BLOG_POSTS: BlogPost[] = [
       ]},
       { heading: "Real prompt examples that work", body: [
         "For Fiverr proposal: 'You are a professional freelancer on Fiverr. I need a proposal for a logo design project. Client wants a modern minimalist logo for a tech startup. My experience: 3 years, 50+ projects, 4.9 rating. Write a 3-paragraph proposal that's professional but friendly, mentions my relevant experience, and includes a specific question about their brand colors.'",
-        "For Bangla social media post: 'Write a Facebook post in Bangla promoting our ChatGPT Plus shared subscription at ৳350/month. Target audience: Bangladeshi university students. Tone: friendly and helpful, not salesy. Include: why students need ChatGPT, how bKash payment works, and a call to message on WhatsApp.'",
+        "For Bangla social media post: 'Write a Facebook post in Bangla explaining how ChatGPT Plus helps students. Target audience: Bangladeshi university students. Tone: friendly and helpful, not salesy. Include: why students need ChatGPT and a call to message on WhatsApp.'",
         "For research summary: 'Summarize this research paper in 300 words for a non-technical audience. Focus on: what was studied, key findings, and practical implications. Avoid jargon. If you mention a statistic, note which page it comes from.'",
       ]},
       { heading: "Common prompt mistakes and how to fix them", body: [
@@ -2087,28 +1762,28 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "best-ai-tools-small-business-owners-bangladesh",
     title: "5 Best AI Tools for Small Business Owners in Bangladesh (2026)",
-    excerpt: "Not every AI tool is right for a Bangladeshi small business. Here are the 5 that actually save time and money — with real use cases, pricing in BDT, and bKash payment for each.",
+    excerpt: "Not every AI tool is right for a Bangladeshi small business. Here are the 5 that actually save time and money — with real use cases.",
     category: "Buying Guides",
     publishedDate: "2026-08-02",
     readMinutes: 6,
     heroEmoji: "🏪",
     faqs: [
-      { q: "Which AI tool gives the fastest ROI for a small business?", a: "ChatGPT Plus Shared at ৳350/mo. It handles content writing, customer messages, product descriptions, market research, and basic data analysis — effectively a ₤100/day assistant for the price of a lunch. Most small business owners recover the cost in saved time within the first week." },
+      { q: "Which AI tool gives the fastest ROI for a small business?", a: "ChatGPT Plus. It handles content writing, customer messages, product descriptions, market research, and basic data analysis. Most small business owners recover the cost in saved time within the first week." },
       { q: "Do I need technical skills to use these tools?", a: "No. All five tools below work through chat interfaces or simple apps. If you can use WhatsApp, you can use any of them. The learning curve is measured in hours, not weeks." },
     ],
     sections: [
       { heading: "5 tools ranked by business impact", body: [
-        "1. ChatGPT Plus (৳350/mo shared): your AI employee. Write social media posts, respond to customer inquiries, draft emails, create product descriptions in English and Bangla, analyze competitor strategies. For most small businesses, this single tool replaces hiring a part-time content writer.",
-        "2. Canva Pro (৳510/mo shared): your design department. Create professional social media graphics, product showcase images, promotional banners, menus, price lists — all from templates, no design experience needed. The AI features (Magic Write, background remover) make it dramatically faster than the free version.",
+        "1. ChatGPT Plus: your AI employee. Write social media posts, respond to customer inquiries, draft emails, create product descriptions in English and Bangla, analyze competitor strategies. For most small businesses, this single tool replaces hiring a part-time content writer.",
+        "2. Canva Pro: your design department. Create professional social media graphics, product showcase images, promotional banners, menus, price lists — all from templates, no design experience needed. The AI features (Magic Write, background remover) make it dramatically faster than the free version.",
         "3. Notion AI (800 BDT/mo): your organized brain. Track orders, manage inventory lists, document processes, create a customer database. When a team member asks 'where's the supplier list?' — it's in Notion, searchable, and AI can find it in seconds.",
-        "4. Perplexity Pro (৳2,990/mo): your research assistant. Research competitors, find market trends, check what similar businesses charge, gather information for proposals. Better than Googling because it gives you answers with source links, not a list of websites to read yourself.",
+        "4. Perplexity Pro: your research assistant. Research competitors, find market trends, check what similar businesses charge, gather information for proposals. Better than Googling because it gives you answers with source links, not a list of websites to read yourself.",
         "5. CapCut Pro (request pricing): your video team. Create product showcase videos, promotional reels, and customer testimonial edits. Auto-captions in Bangla dramatically increase engagement on social platforms where most people watch on mute.",
       ]},
       { heading: "The 30-minute daily AI routine", body: [
         "Morning (10 min): ask ChatGPT 'What should I post on social media today?' Get 3 post ideas with captions in under 60 seconds. Pick one, edit lightly, post.",
         "Midday (10 min): ask ChatGPT to draft replies to any pending customer messages. Review, personalize, send. A task that used to take 30-60 minutes now takes 10.",
         "Evening (10 min): use Perplexity to check one competitor or market trend. Spend 5 minutes reading. This daily habit compounds into genuine market knowledge without the time investment of serious research.",
-        "This routine takes 30 minutes daily and covers content creation, customer service, and market awareness — the three things most small business owners never have enough time for. The total tool cost: under ৳1,500/mo.",
+        "This routine takes 30 minutes daily and covers content creation, customer service, and market awareness — the three things most small business owners never have enough time for.",
       ]},
     ],
   },
@@ -2127,13 +1802,13 @@ export const BLOG_POSTS: BlogPost[] = [
     sections: [
       { heading: "Runway ML: the established leader", body: [
         "Runway is the most mature AI video platform — text-to-video, image-to-video, video-to-video (style transfer), motion tracking, green screen, inpainting. Best for: professional-looking outputs with the most control and the largest community of tutorials.",
-        "Pricing: Standard Personal ৳1,794/mo, Pro Personal ৳4,186/mo, Unlimited Personal ৳11,362/mo. Good value at the Pro tier for serious creators.",
+        "Pricing: Standard, Pro and Unlimited plans — ask AI Team Premium on WhatsApp for current availability. Good value at the Pro tier for serious creators.",
       ]},
       { heading: "Kling AI, Pika Labs, and HaiLuo: the contenders", body: [
         "Kling AI: strongest on motion consistency — generated characters move naturally and backgrounds stay coherent. Capable of 5-minute continuous video. Best for: narrative content, character-driven scenes, longer-format AI video.",
         "Pika Labs: the most beginner-friendly. Simple interface, quick generation, fun effects. Best for: social media creators who want to experiment quickly, meme-style content, short-form experimentation.",
         "HaiLuo (MiniMax): the newest and most affordable. Text-to-video and image-to-video with decent quality. Best for: budget-conscious creators testing AI video for the first time.",
-        "Pricing: Kling AI and Pika Labs both available via AI Team Premium — contact WhatsApp for current pricing. HaiLuo personal from ৳2,592/mo.",
+        "Pricing: Kling AI, Pika Labs and HaiLuo — ask AI Team Premium on WhatsApp for current availability.",
       ]},
       { heading: "Which one should you choose?", body: [
         "For professional/commercial work: Runway. Most features, most tutorials, most reliable. The higher price is justified if video is your primary income stream.",
@@ -2157,13 +1832,13 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     sections: [
       { heading: "Days 1-7: Foundation — learn one AI tool deeply", body: [
-        "Pick ChatGPT Plus (৳350/mo shared). This will be your primary tool for the next 60 days. Not five tools — one. Mastery of one tool beats superficial knowledge of ten.",
+        "Pick ChatGPT Plus. This will be your primary tool for the next 60 days. Not five tools — one. Mastery of one tool beats superficial knowledge of ten.",
         "Daily practice: spend 30 minutes doing real tasks with ChatGPT. Write a blog post. Draft a business email. Research a topic. Create a content calendar. Translate something between Bangla and English. Analyze some data. The goal is not perfect output — it's getting comfortable with what AI can and can't do.",
         "By day 7, you should be able to: write a good prompt, evaluate whether an AI output is useful, iterate to improve bad outputs, and identify which types of tasks ChatGPT handles well vs poorly.",
       ]},
       { heading: "Days 8-30: Add specialized tools by need", body: [
-        "Week 2: if you create visual content, add Canva Pro (৳510/mo shared). Learn to combine ChatGPT-written captions with Canva-designed graphics. Create 10 social media posts combining both tools.",
-        "Week 3: if you do professional writing, add Grammarly Premium (৳2,090/mo). Learn the workflow: ChatGPT drafts → you edit → Grammarly polishes. This three-step process produces professional-quality English content faster than any single tool alone.",
+        "Week 2: if you create visual content, add Canva Pro. Learn to combine ChatGPT-written captions with Canva-designed graphics. Create 10 social media posts combining both tools.",
+        "Week 3: if you do professional writing, add Grammarly Premium. Learn the workflow: ChatGPT drafts → you edit → Grammarly polishes. This three-step process produces professional-quality English content faster than any single tool alone.",
         "Week 4: choose one more tool based on your work: Claude Pro for long documents, Midjourney for visual work, Perplexity for research, or GitHub Copilot for coding. The decision should be driven by what you actually do, not what's trending.",
       ]},
       { heading: "Days 31-60: Build a portfolio and get paid", body: [
@@ -2182,7 +1857,7 @@ export const BLOG_POSTS: BlogPost[] = [
     readMinutes: 5,
     heroEmoji: "🤝",
     faqs: [
-      { q: "Can NGOs use AI tools for free?", a: "Yes. ChatGPT Free, Claude Free, Google Gemini Free, and Canva Free all provide genuine value at no cost. For professional NGO work, upgrading to ChatGPT Plus Shared (৳350/mo) gives substantially better output for report writing, proposal drafting, and donor communications." },
+      { q: "Can NGOs use AI tools for free?", a: "Yes. ChatGPT Free, Claude Free, Google Gemini Free, and Canva Free all provide genuine value at no cost. For professional NGO work, upgrading to ChatGPT Plus gives substantially better output for report writing, proposal drafting, and donor communications." },
       { q: "Is it ethical for NGOs to use AI?", a: "Yes, with clear guidelines: (1) always disclose AI use in reports and proposals when significant portions are AI-drafted, (2) never use AI for sensitive beneficiary data, (3) always have a human review AI-generated content, (4) AI should assist human judgment, not replace it. Transparency builds trust with donors and communities." },
     ],
     sections: [
@@ -2193,8 +1868,8 @@ export const BLOG_POSTS: BlogPost[] = [
         "Training material development: AI generates training outlines, facilitator guides, and participant handouts in both English and Bangla. Staff customize for their specific community context.",
       ]},
       { heading: "Budget-friendly AI stack for NGOs", body: [
-        "Minimum viable: ChatGPT Plus Shared (৳350/mo) + free Canva + free Google tools. Handles report writing and basic design for under ৳500/mo.",
-        "Growing organization: ChatGPT Plus Personal (৳2,990/mo) + Canva Pro Shared (৳510/mo) + Perplexity Pro (৳2,990/mo) for research. Total ~৳6,500/mo for a full content + research + design capability.",
+        "Minimum viable: ChatGPT Plus + free Canva + free Google tools. Handles report writing and basic design.",
+        "Growing organization: ChatGPT Plus + Canva Pro + Perplexity Pro for research — a full content + research + design capability.",
         "The ROI for an NGO: if AI saves a program officer 5 hours/week on report writing (a conservative estimate for organizations that produce frequent donor reports), at a typical NGO salary, the tool cost is recovered within 2-3 days of saved time per month.",
       ]},
     ],
@@ -2209,7 +1884,7 @@ export const BLOG_POSTS: BlogPost[] = [
     heroEmoji: "💼",
     faqs: [
       { q: "Which is best for business proposals and professional writing?", a: "Claude produces the most natural, professional-sounding business writing out of the box. ChatGPT is more flexible when given detailed instructions. Gemini is good but slightly less polished. Grok is the weakest for formal business writing. For most business users, ChatGPT Plus is the best all-rounder." },
-      { q: "Can I use one subscription for my entire team?", a: "Shared seats exist but come with limitations (one device at a time, no password changes). For team use, ChatGPT Team (from ৳4,990/mo personal) or Claude Team (৳4,990/mo personal) provide dedicated seats with admin controls. Contact WhatsApp for team setup options." },
+      { q: "Can I use one subscription for my entire team?", a: "Shared accounts come with limitations (one device at a time, no password changes). For team use, ChatGPT Team or Claude Team provide dedicated seats with admin controls. Contact WhatsApp for team setup options." },
     ],
     sections: [
       { heading: "Business use case comparison", body: [
@@ -2220,8 +1895,8 @@ export const BLOG_POSTS: BlogPost[] = [
         "Creative marketing copy: ChatGPT (best) > Claude > Gemini > Grok. ChatGPT's flexibility with tone and style makes it the best for marketing copy across different formats.",
       ]},
       { heading: "The business recommendation", body: [
-        "If you can only have ONE: ChatGPT Plus. It's the most versatile — handles writing, analysis, research, and creative work equally well. At ৳350/mo shared or ৳2,990/mo personal, it's the obvious starting point for any Bangladeshi business.",
-        "If you do a lot of formal writing (proposals, reports): add Claude Pro. The writing quality difference is noticeable for professional documents. Total with ChatGPT: ৳2,990 + ৳2,990 = ৳5,980/mo.",
+        "If you can only have ONE: ChatGPT Plus. It's the most versatile — handles writing, analysis, research, and creative work equally well. It's the obvious starting point for any Bangladeshi business.",
+        "If you do a lot of formal writing (proposals, reports): add Claude Pro. The writing quality difference is noticeable for professional documents.",
         "If your team uses Google Workspace: Gemini Advanced integrates directly with Gmail, Docs, and Sheets. The productivity gain from not switching apps may justify the subscription even if the AI itself is slightly less capable than ChatGPT for some tasks.",
         "For Grok: specialized use case for real-time social media monitoring and trend analysis. Most businesses don't need it. If you're in social media marketing or PR, its X/Twitter access is unique.",
       ]},
@@ -2230,59 +1905,14 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "complete-guide-ai-subscriptions-bangladesh-pricing",
     title: "Complete Guide to AI Subscriptions in Bangladesh: Every Plan, Every Price (2026)",
-    excerpt: "Every AI subscription available in Bangladesh in one place — ChatGPT, Claude, Gemini, Midjourney, Canva, Grammarly, and 70+ more. All prices in BDT, all payable via bKash or Nagad.",
+    excerpt: "Under evidence review: \"Complete Guide to AI Subscriptions in Bangladesh: Every Plan, Every Price (2026)\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Buying Guides",
     publishedDate: "2026-08-02",
     readMinutes: 8,
     heroEmoji: "📋",
-    faqs: [
-      { q: "How do I pay for AI subscriptions from Bangladesh?", a: "AI Team Premium handles all payments. You pay in BDT via bKash, Nagad, Rocket, or Bank Transfer. We handle the international payment, account setup, and ongoing support. No international credit card needed." },
-      { q: "Which AI subscription should I start with?", a: "ChatGPT Plus Shared at ৳350/mo. It's the most versatile and affordable entry point. Use it for a month, identify what tasks it doesn't handle well for your specific work, then add a second tool based on that gap — not based on what's popular." },
-    ],
-    sections: [
-      { heading: "AI Chat & Assistants", body: [
-        "ChatGPT Plus: from ৳350/mo shared, ৳2,990/mo personal. The most versatile AI. Writing, coding, analysis, images, research — all in one.",
-        "ChatGPT Pro: contact WhatsApp. GPT-5 + o3 reasoning. For power users and researchers.",
-        "ChatGPT Team: from ৳4,990/mo personal. Team workspace with admin controls.",
-        "Claude Pro: ৳2,990/mo personal. Best for long-form writing and document analysis. 200K context window.",
-        "Google AI Pro (Gemini Advanced): ৳3,390/mo personal. Google integration + 2TB storage.",
-        "SuperGrok: from ৳1,495/mo. xAI's Grok with real-time X/Twitter data.",
-        "Perplexity Pro: ৳2,990/mo personal. Best for research with source citations.",
-        "Mistral Le Chat: from ৳2,592/mo. European AI, strong privacy focus.",
-        "Poe: ৳3,440/mo personal. Access multiple AI models through one interface.",
-        "Manus AI: ৳2,500/mo personal. Premium AI tools package.",
-      ]},
-      { heading: "Image, Video & Design", body: [
-        "Midjourney: from ৳4,990/mo personal (Standard). Industry standard for AI image generation.",
-        "Ideogram: ৳2,990/mo personal. Best for text-in-image generation.",
-        "Leonardo AI: ৳599/mo. Affordable AI image generation.",
-        "Canva Pro: from ৳2,190/mo personal. Design + AI Magic Studio.",
-        "Adobe Creative Cloud: ৳10,464/mo personal. Professional creative suite with Firefly AI.",
-        "Runway ML: from ৳1,794/mo personal. AI video generation and editing.",
-        "Kling AI: contact WhatsApp. AI video with strong motion consistency.",
-        "Freepik Premium: ৳450/mo. Design resources + AI tools.",
-      ]},
-      { heading: "Writing, Productivity & Business", body: [
-        "Grammarly Premium: ৳2,090/mo personal. Professional English writing assistant.",
-        "Jasper AI: ৳5,830/mo personal. Marketing-focused AI writing.",
-        "QuillBot Premium: ৳1,490/mo personal. Paraphrasing and academic writing.",
-        "Notion AI: 800 BDT/mo (managed workspace). AI-powered workspace and notes.",
-        "Microsoft 365 Copilot: contact WhatsApp. AI across Office suite.",
-        "GitHub Copilot: from ৳1,495/mo personal. AI code assistance. Free for students.",
-        "Cursor Pro: from ৳2,990/mo personal. AI-first code editor.",
-        "Semrush: ৳20,176/mo personal. Professional SEO toolkit.",
-        "Ahrefs: from ৳4,992/mo. Backlink analysis and SEO.",
-        "Zapier: from ৳3,440/mo personal. Workflow automation.",
-        "Make: from ৳1,552/mo personal. Visual automation builder.",
-      ]},
-      { heading: "How to choose: a practical framework", body: [
-        "Step 1: identify your primary work. Writing? Coding? Design? Research? Pick the AI that's strongest for that specific task.",
-        "Step 2: start with the cheapest tier. ChatGPT Plus Shared at ৳350/mo is the starting point for most users. Test whether AI genuinely improves your work before upgrading.",
-        "Step 3: add tools only when you hit a specific limitation. 'I need better images' → add Midjourney. 'I need source citations' → add Perplexity. 'I need professional design templates' → add Canva.",
-        "Step 4: upgrade tiers only when usage justifies it. Upgrade from shared to personal when you need guaranteed availability, privacy, or custom features. Don't upgrade preemptively.",
-        "The most common mistake: subscribing to 5+ AI tools immediately. You'll use none of them well and cancel most within 2 months. One tool, used well, beats five tools used superficially.",
-      ]},
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "canva-pro-tips-tricks-bangladesh-designers",
@@ -2377,7 +2007,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "best-ai-tools-freelance-graphic-designers-bangladesh",
     title: "Best AI Tools for Freelance Graphic Designers in Bangladesh (2026)",
-    excerpt: "Canva, Midjourney, Ideogram, Photoshop AI, and Leonardo AI — which actually helps Bangladeshi freelance designers earn more? Real comparison with BDT pricing and bKash payment.",
+    excerpt: "Canva, Midjourney, Ideogram, Photoshop AI, and Leonardo AI — which actually helps Bangladeshi freelance designers earn more? Real comparison.",
     category: "For Freelancers",
     publishedDate: "2026-08-02",
     readMinutes: 6,
@@ -2451,27 +2081,14 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "buy-perplexity-pro-research-tool-bangladesh",
     title: "Buy Perplexity Pro in Bangladesh: Best AI Research Tool with bKash Payment",
-    excerpt: "Perplexity Pro is the best AI for research and fact-checking. Compare it with ChatGPT, see BDT pricing, and learn how to pay with bKash or Nagad in Bangladesh.",
+    excerpt: "Under evidence review: \"Buy Perplexity Pro in Bangladesh: Best AI Research Tool with bKash Payment\". Its commercial and pricing claims are being re-verified before it is republished.",
     category: "Buying Guides",
     publishedDate: "2026-08-02",
     readMinutes: 5,
     heroEmoji: "🔍",
-    faqs: [
-      { q: "Is Perplexity better than ChatGPT for research?", a: "For finding sources and verifying facts — yes. Perplexity searches the web in real-time and provides clickable citations for every claim. ChatGPT is better for synthesizing, writing, and creative work. The best research workflow uses both: Perplexity to find sources, ChatGPT to write the analysis." },
-      { q: "Can I pay for Perplexity Pro with bKash?", a: "Yes — through AI Team Premium. You pay in BDT via bKash, Nagad, or Rocket. We provide the Perplexity Pro account. No international credit card needed." },
-    ],
-    sections: [
-      { heading: "Why Perplexity Pro matters for research", body: [
-        "Perplexity is fundamentally different from ChatGPT and Claude. It's a research engine that uses AI, not an AI that can search. Every answer includes clickable source citations — you can verify every claim yourself. This is critical for academic work, journalism, market research, legal research, and any context where being wrong has consequences.",
-        "Pro Search: Perplexity Pro's deep research mode asks clarifying questions before searching, searches more sources, and produces longer, more thorough answers. For serious research, the difference between free and Pro is the difference between a quick summary and a detailed report.",
-        "File upload: upload PDFs, Word docs, and images for Perplexity to analyze and answer questions about. Useful for research papers, contracts, and reports.",
-      ]},
-      { heading: "Pricing in Bangladesh", body: [
-        "Perplexity Pro Personal: 2,990 BDT/mo — your own account with Pro Search, file upload, and unlimited queries.",
-        "Perplexity Pro Shared: contact WhatsApp for current pricing and availability.",
-        "Perplexity is available through AI Team Premium. Pay via bKash, Nagad, Rocket, or Bank Transfer. 5-15 min delivery for shared, 2-4 hours for personal accounts.",
-      ]},
-    ],
+    // Body withheld from the public bundle (content held in docs/content-hold/blog-held-posts.ts).
+    faqs: [],
+    sections: [],
   },
   {
     slug: "canva-pro-magic-studio-ai-features-guide",
@@ -2556,6 +2173,106 @@ export const BLOG_POSTS: BlogPost[] = [
         "For mixed Banglish content (social media, casual communication): ChatGPT. Handles code-switching better than any other AI.",
         "For translation: both are good. Use whichever you already subscribe to. The quality difference isn't large enough to justify an additional subscription just for translation.",
         "Most Bangladeshi content creators subscribe to ChatGPT Plus (350 BDT/mo shared) as their primary tool and use it for both Bangla and English. The Bangla quality is good enough for drafting, and the versatility for other tasks (writing, research, analysis) makes it the better all-round investment.",
+      ]},
+    ],
+  },
+  {
+    slug: "how-to-use-chatgpt-effectively-beginner-guide-bangladesh",
+    title: "How to Use ChatGPT Effectively: A Beginner's Guide for Students and Freelancers in Bangladesh",
+    excerpt: "Seven practical habits for getting useful answers from ChatGPT: clear prompts, step-by-step tasks, learning support, client messages, Bangla prompts, fact-checking and follow-ups, with prompts you can copy.",
+    category: "How-To Guides",
+    publishedDate: "2026-10-26",
+    readMinutes: 6,
+    heroEmoji: "💡",
+    faqs: [
+      { q: "Can beginners use ChatGPT without technical knowledge?", a: "Yes. Start with everyday questions and simple instructions. Learning to give context and ask follow-up questions matters more than knowing how to program." },
+      { q: "Can Bangladeshi students use ChatGPT for assignments?", a: "Yes, as a learning and drafting assistant where your institution's rules allow it. Verify information, acknowledge AI help when required, and submit work that reflects your own understanding." },
+      { q: "Is ChatGPT useful for beginner freelancers?", a: "It can help with proposals, brainstorming, outlines, communication and task planning. You remain responsible for the accuracy, originality and quality of what you deliver." },
+      { q: "Can ChatGPT understand Bangla prompts?", a: "Yes. You can write in Bangla, English or a mix of both. Review important responses, because translations and language-specific explanations can contain errors." },
+      { q: "How can I get more accurate answers from ChatGPT?", a: "Give specific instructions, relevant context and examples, ask for clarification when needed, check factual claims against reliable sources, and review the final output before using it." },
+    ],
+    sections: [
+      { heading: "1. Write clear and specific prompts", body: [
+        "A prompt is the instruction you give ChatGPT. A vague instruction usually gets a general answer, while a specific one tells the AI what you expect. Instead of \"Write about marketing\", state your topic, audience, purpose and preferred format.",
+        "Example prompt: \"Act as a digital marketing tutor. Explain social media marketing to a Bangladeshi university student using simple English, practical examples from local businesses, and five key learning points.\"",
+        "Good prompts usually include your goal, relevant background, the tone you want and the output format.",
+      ]},
+      { heading: "2. Break complex tasks into smaller steps", body: [
+        "Large tasks work better when you split them up. Instead of asking for a full research report at once, start with an outline, then develop one section at a time, review the arguments, and polish the final draft.",
+        "Example prompt: \"I need to prepare a university presentation about artificial intelligence in Bangladesh. First suggest a clear outline. After I approve it, help me develop each section with explanations and examples.\"",
+        "Freelancers can use the same approach for website planning, content calendars and client projects. It gives you more control and makes mistakes easier to spot.",
+      ]},
+      { heading: "3. Use ChatGPT as a learning assistant", body: [
+        "Students can use ChatGPT to understand unfamiliar concepts, practise English, prepare for exams and explore subjects. Rather than copying an answer, ask the AI to explain how something works.",
+        "Example prompt: \"Act as my accounting tutor. Explain the difference between assets and liabilities using everyday examples from small businesses in Bangladesh. Then ask me three practice questions and evaluate my answers.\"",
+        "ChatGPT should support independent learning, not replace it. Follow your institution's academic integrity rules and check important facts against textbooks or other reliable sources.",
+      ]},
+      { heading: "4. Improve proposals and client communication", body: [
+        "Freelancers regularly write proposals, answer inquiries, summarise requirements and keep clients updated. ChatGPT can help structure these messages while you keep your own voice.",
+        "Example prompt: \"I am a beginner freelance graphic designer from Bangladesh. Help me write a professional proposal for a client who needs social media designs. Keep it concise and friendly, focused on the client's requirements. Do not invent experience or portfolio achievements.\"",
+        "Review every proposal before sending. Add your real skills, realistic delivery commitments and relevant work samples. A message written for one client is usually more useful than the same AI-generated text sent to many.",
+      ]},
+      { heading: "5. Use ChatGPT in Bangla and English", body: [
+        "You do not have to write every prompt in English. ChatGPT can respond in Bangla, explain English terms and help you practise bilingual conversations, which is useful for students, small business owners and freelancers improving their professional English.",
+        "Bangla prompt example: \"তুমি আমার ইংরেজি শেখার শিক্ষক হিসেবে কাজ করো। আমি একজন বাংলাদেশি ফ্রিল্যান্সার। ক্লায়েন্টের সাথে ইংরেজিতে কথা বলার জন্য প্রতিদিনের দরকারি ১০টি বাক্য শেখাও। প্রতিটির বাংলা অর্থ ও ব্যবহারের উদাহরণ দাও। এরপর আমাকে অনুশীলন করাও।\"",
+        "You can also ask for a translation that keeps the original meaning and a professional tone. Always review translations yourself, especially for contracts or technical details.",
+      ]},
+      { heading: "6. Verify information and protect your privacy", body: [
+        "ChatGPT can produce incorrect facts, outdated information or references that do not exist, and a confident answer is not necessarily an accurate one. This matters for academic reports, business decisions and client work.",
+        "Example prompt: \"Review this article draft. Identify factual claims that need verification, flag information that may be outdated, and suggest what kinds of authoritative sources I should check. Do not invent citations.\"",
+        "Check important claims against trustworthy sources before you publish or submit. Avoid sharing passwords, private customer information, confidential business documents or sensitive personal details unless you have to.",
+      ]},
+      { heading: "7. Improve results with follow-up prompts", body: [
+        "The first response does not have to be the final one. Ask follow-up questions to improve clarity, change the tone, add examples or correct mistakes.",
+        "Example prompt: \"Rewrite your previous answer in simpler English. Remove repeated sentences, add a practical example from Bangladesh, and organise the explanation into short paragraphs. Keep the original meaning.\"",
+        "A reliable workflow is to generate a first draft, review it, ask for targeted revisions, and finish with a human check. Using ChatGPT well comes down to this habit of clear instructions and careful refinement.",
+      ]},
+    ],
+  },
+  {
+    slug: "chatgpt-alternatives-students-freelancers-bangladesh",
+    title: "ChatGPT Alternatives for Students and Freelancers in Bangladesh: How to Choose",
+    excerpt: "Claude, Gemini, Perplexity, Grok and Microsoft Copilot compared by the kind of work each is generally used for, plus a simple way to test them on your own tasks.",
+    category: "Comparisons",
+    publishedDate: "2026-11-10",
+    readMinutes: 6,
+    heroEmoji: "🧭",
+    faqs: [
+      { q: "What is a suitable ChatGPT alternative for students in Bangladesh?", a: "Claude, Gemini, Perplexity, Grok and Microsoft Copilot can all support learning. The right choice depends on whether you need explanations, writing help, research or productivity support." },
+      { q: "Which ChatGPT alternative is useful for freelancers?", a: "Freelancers can consider Claude for writing, Perplexity for research, Gemini for planning, Grok for brainstorming and Copilot for office-style work. Suitability depends on your own tasks." },
+      { q: "Can these AI assistants understand Bangla?", a: "They may support Bangla, but quality differs by tool, task and the complexity of the language. Test each one with your own Bangla prompts." },
+      { q: "Can I use more than one AI assistant?", a: "Yes. Many people use different assistants for research, drafting, reviewing and planning. Verify important outputs and avoid sharing confidential client information without permission." },
+      { q: "Are all ChatGPT alternatives available in Bangladesh?", a: "Availability, features, integrations and subscription conditions can differ by provider, plan and region. Check each provider's official site for current access information." },
+    ],
+    sections: [
+      { heading: "Why look beyond ChatGPT?", body: [
+        "ChatGPT is widely used for writing, studying, research, coding and everyday tasks, but it is not the only option. Different assistants approach the same work differently, so one may fit a particular task or habit better than another.",
+        "This guide covers five alternatives and how to choose between them. Features, availability and access conditions vary by plan and region, so check each provider's current information before you decide.",
+      ]},
+      { heading: "Claude: writing, analysis and detailed explanations", body: [
+        "Claude, developed by Anthropic, is commonly used for writing, reviewing documents, brainstorming and explaining complex topics. Students use it to organise notes, simplify concepts and outline essays. Freelancers use it for proposals, website copy, emails and project plans.",
+        "It may suit people who like detailed written explanations and editing a draft over several rounds. Verify important facts independently.",
+      ]},
+      { heading: "Google Gemini: learning and everyday productivity", body: [
+        "Google Gemini is Google's AI assistant, used for learning, brainstorming, writing and planning. Students can use it to explore subjects and prepare revision material. Freelancers can use it to outline articles, draft messages and organise their day.",
+        "It may appeal to people who already work with Google services. Which integrations are available depends on the plan and region.",
+      ]},
+      { heading: "Perplexity: research and finding information", body: [
+        "Perplexity is an AI answer and research service. A typical session starts with a question and a search for sources rather than a creative writing task. Students can use it to explore a subject and find material worth reading. Freelancers can use it for industry research and competitor discovery.",
+        "It can be a practical alternative when finding information is the main goal. Check summaries and cited sources against the originals before using them in academic or client work.",
+      ]},
+      { heading: "Grok: conversational brainstorming", body: [
+        "Grok, from xAI, is an assistant built around conversational exploration of ideas. Students can use it to talk through concepts and test their understanding. Freelancers can use it to brainstorm content directions and promotional messages.",
+        "It may suit people who like an exploratory style. As with any AI, answers can be wrong, so check factual claims.",
+      ]},
+      { heading: "Microsoft Copilot: office and document work", body: [
+        "Microsoft Copilot is a family of AI features tied to Microsoft's software and services. It can help with drafting, planning and understanding information, and may be relevant for people who work with documents, presentations and business email.",
+        "Copilot experiences differ between subscriptions, apps and regions, so never assume a specific integration is available to you.",
+      ]},
+      { heading: "How to choose", body: [
+        "Start from your task rather than from popularity. Think about what you do most (writing, research, planning, brainstorming or office work), which language you work in, which tools you already use, how reliable the answers must be, and what you are comfortable sharing.",
+        "The simplest method is to give the same realistic assignment to two or three assistants and compare clarity, accuracy, ease of use and how much editing the result needs. For Bangla work, test with your own Bangla prompts.",
+        "There is no single right answer. Different tools can serve different stages of the same project. To see these tools side by side, visit our comparison page at /compare.",
       ]},
     ],
   },

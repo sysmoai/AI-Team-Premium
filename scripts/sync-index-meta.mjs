@@ -95,7 +95,7 @@ html = existing.test(html)
 const { fallbackBody, BODY_MARK } = await import(
   pathToFileURL(resolve(ROOT, "lib/render-page.js")).href
 );
-EDITS.push([BODY_MARK, fallbackBody(home)]);
+EDITS.push([BODY_MARK, fallbackBody(home, "/")]);
 
 const missing = [];
 for (const [re, to] of EDITS) {

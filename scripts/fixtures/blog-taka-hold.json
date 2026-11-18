@@ -1,0 +1,143 @@
+{
+ "_doc": "C6 editorial hold list. Each entry is ONE exact blog string that still states a Taka amount and is allowed to stay published only until its figure is fact-checked. AITP prices may never be added here. Remove an entry when the sentence is corrected or verified. `text` is the exact published sentence (already public) so the bundle audit can recognise it.",
+ "items": [
+  {
+   "slug": "ai-freelancer-career-roadmap-which-tools-first-bangladesh",
+   "sha256": "5234b6d622d332e37261398d46d049d30c2775773a56ace3f9278cbcc38a3789",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "It depends entirely on how much you use it, so there's no fixed number — but as a rule of thumb, if a ৳499/month tool saves you even one hour on a project you'd have priced at ৳1,000+, it's already worth it. Track your own before/after time on two or three real tasks instead of guessing."
+  },
+  {
+   "slug": "elevenlabs-vs-murf-ai-voiceover-bangladesh",
+   "sha256": "24e54c40d9ce48569761510b135fed6e938ff62186c48f192e5abbbeac0e3437",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "Traditional voiceover: book studio time, hire a voice artist, schedule recording sessions, pay per minute of finished audio, wait for revisions. Cost: ৳2,000-10,000+ per project. Timeline: days to weeks."
+  },
+  {
+   "slug": "ai-tools-social-media-marketing-bangladesh",
+   "sha256": "17bf5888901c87996348959fc2714514bd8d755db4b7f4521af79d2023452e87",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "The professional stack replaces roughly ৳40,000-80,000/mo in outsourced content creation costs — a content writer, a junior designer, and a video editor. The ROI is immediate for any business already spending on content."
+  },
+  {
+   "slug": "how-to-start-ai-automation-agency-bangladesh",
+   "sha256": "bf3507850274c9957fc4c19e1088a044f5fb44628a5990254b76fdf7c1d3ea94",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "Simple automations (WhatsApp auto-reply, invoice generation): ৳5,000-15,000 one-time. Medium complexity (multi-step workflow with conditional logic): ৳15,000-50,000. Complex (custom integrations, API work): ৳50,000-200,000+. Bangladeshi rates are 40-60% lower than US/UK agencies, which is your competitive advantage on Fiverr and Upwork."
+  },
+  {
+   "slug": "how-to-start-ai-automation-agency-bangladesh",
+   "sha256": "aad56b8927e6346b5583df16868b34eb77d26dc2f10e5406b6a6e3ef2253f9d6",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "Example: a Dhaka clothing retailer spends 3 hours daily answering the same WhatsApp questions. You build an automation: customer messages → AI reads and categorises → auto-responds with correct answer → forwards complex queries to the owner. Setup fee: ৳10,000. Monthly maintenance: ৳2,000. Client saves 60+ hours/month. You earn ৳10,000 upfront plus ৳24,000/year recurring."
+  },
+  {
+   "slug": "how-to-start-ai-automation-agency-bangladesh",
+   "sha256": "9ecc9afe97b504a95b7b7f5cd32e0aada870b109b3e4248b5b0e3cb6cc52513a",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "Multiply this by 10 clients and you have a ৳20,000/month recurring business with ৳100,000 in upfront project fees. This is not hypothetical — it's what the first wave of Bangladeshi automation agency owners are doing right now."
+  },
+  {
+   "slug": "how-to-start-ai-automation-agency-bangladesh",
+   "sha256": "1110baf3e7ab24c879d50ddcf1da72ad6d0fdb28d8c2762a0ab0a546105d0d1c",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "Beginner (first 5 clients): ৳5,000-10,000 per automation. You're building a portfolio. Focus on delivering value and getting testimonials, not maximising price."
+  },
+  {
+   "slug": "how-to-start-ai-automation-agency-bangladesh",
+   "sha256": "c1b24b474b3c23bdd7823cb55e0f7a0d3ffa0d3fe395df5965c5192422793ecf",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "Intermediate (5-20 clients, portfolio built): ৳15,000-50,000 per project. You have case studies, testimonials, and a clear process. Charge based on value delivered, not hours worked."
+  },
+  {
+   "slug": "how-to-start-ai-automation-agency-bangladesh",
+   "sha256": "56cc6f0b69517d0d55b744dc7f7a715c48da5b9420595547d4a08a4cafc63d62",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "Advanced (20+ clients, recurring revenue): ৳50,000-200,000+ for complex systems. Add monthly maintenance retainers (৳3,000-10,000/month per client). At 10 retainer clients at ৳5,000/month, you have ৳50,000/month before taking any new project work."
+  },
+  {
+   "slug": "fresh-graduate-ai-career-guide-bangladesh",
+   "sha256": "a8680317d98c990ee6dc78d871a86a500015e06b6f49f9c2aefb717f03439120",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "AI-Enhanced Content Creator (৳25,000-60,000/month): write blogs, social media, ad copy, and email campaigns using AI tools. Companies need people who can produce more content, faster, without sacrificing quality. This is the fastest-growing entry-level AI role."
+  },
+  {
+   "slug": "fresh-graduate-ai-career-guide-bangladesh",
+   "sha256": "917e99051cfa570e56021a4d7e26db145981ad66ab2e24cad7271d424018d982",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "AI Marketing Assistant (৳20,000-45,000/month): run digital marketing campaigns using AI for content, analytics, and optimisation. The role combines traditional marketing knowledge with AI tool proficiency."
+  },
+  {
+   "slug": "fresh-graduate-ai-career-guide-bangladesh",
+   "sha256": "91c045d7e2ef66efbcd41cd34a5b96d5b90e76739a51d9ad79de32c25bdc3201",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "AI Customer Experience Specialist (৳18,000-35,000/month): manage customer communication using AI chatbots and automation, handling complex cases that AI can't resolve. Growing fast in e-commerce and service companies."
+  },
+  {
+   "slug": "fresh-graduate-ai-career-guide-bangladesh",
+   "sha256": "da683754acb1b6ccfbd857a3273ab14b0f63c79cbfa90ecedca4a8b48acdc17d",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "AI Automation Specialist (৳30,000-80,000/month): build automated workflows for businesses using no-code tools. The highest-paying entry-level AI role and the one with the clearest freelance path."
+  },
+  {
+   "slug": "fresh-graduate-ai-career-guide-bangladesh",
+   "sha256": "b9754e843bbe26fd1c49fbaae5bf2779c93d0693d71d4af9e4cb352276ce0a0e",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "AI-Enabled Virtual Assistant (৳15,000-40,000/month freelance): provide VA services to international clients using AI to multiply your output. Bangladeshi VAs who use AI are winning higher-paying clients than those who don't."
+  },
+  {
+   "slug": "make-money-online-ai-bangladesh-students",
+   "sha256": "6485e2e7fece09b18e18757dac1a26304fbebd4ad3edaf6dce54a6c815fb9af9",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "Part-time (10-15 hours/week): ৳5,000-15,000/month doing content writing, basic design, or virtual assistance. Full-time focus (20-30 hours/week): ৳15,000-50,000/month. Top performers doing specialised work (automation, professional design, high-end content): ৳50,000-150,000/month. These are real ranges from actual Bangladeshi freelancers, not aspirational estimates."
+  },
+  {
+   "slug": "make-money-online-ai-bangladesh-students",
+   "sha256": "97d3e714fcf696b6750078753f4038de08746044c487a4185f0c7f9299fa1e27",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "1. AI content writing for blogs and businesses (৳500-2,000/article): many Bangladeshi businesses need English content but don't have writers. You use ChatGPT to draft, then edit for accuracy and voice. One 1,000-word article takes ~1 hour with AI assistance. 2 articles/day = ৳2,000-4,000/day."
+  },
+  {
+   "slug": "make-money-online-ai-bangladesh-students",
+   "sha256": "32afec2b14f909c61178fd47b8a50f58c21da688ff3270b633af9db66f4cd55b",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "2. Social media management for small businesses (৳5,000-15,000/month per client): create and schedule posts using Canva + ChatGPT. One client takes ~5 hours/week. 3 clients = ৳15,000-45,000/month for 15 hours/week."
+  },
+  {
+   "slug": "make-money-online-ai-bangladesh-students",
+   "sha256": "4f1744b2f197476ae514534985b39b5b0d55ac37083625baed92dc085d6ed309",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "3. AI-assisted graphic design on Fiverr (৳1,000-5,000/project): use Midjourney or Ideogram for concept generation, Canva for final designs. Logo design, social media graphics, book covers. Start at low prices, build reviews, raise rates."
+  },
+  {
+   "slug": "make-money-online-ai-bangladesh-students",
+   "sha256": "7ee9593794964d8bda4bbe3ead29391f3dd6477afacc7a8288fb9ea987e32980",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "4. Virtual assistant with AI efficiency (৳15,000-40,000/month): international clients hire Bangladeshi VAs for admin, research, and customer support. Use AI to do the work of 2-3 people — clients pay for output, not hours."
+  },
+  {
+   "slug": "make-money-online-ai-bangladesh-students",
+   "sha256": "864fe88b672d3e031fe55162dc5a7d7537c183b99c0b5b45617a1be8e1ba7a3d",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "5. YouTube automation with AI (variable, ৳0-50,000+/month after 3-6 months): use AI for script writing, voiceover (ElevenLabs), and video creation. Faceless channels in niches like tech reviews, history, or educational content. Slow start, compounding returns."
+  },
+  {
+   "slug": "make-money-online-ai-bangladesh-students",
+   "sha256": "c41b932bfe5bde22b40aee761c064721b7687f2562da578d4af82ecf0c37060b",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "6. Online tutoring with AI support (৳300-800/hour): teach English, math, or coding to students in Bangladesh or abroad. Use AI to prepare lesson plans, create practice problems, and grade assignments. Your human teaching + AI efficiency = competitive advantage."
+  },
+  {
+   "slug": "make-money-online-ai-bangladesh-students",
+   "sha256": "ea7b2ef030d09e5445670c3c2b4660d9eaf5b9123b34562ad0fc919a98dbd580",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "7. AI automation services for local businesses (৳5,000-30,000/project): find a business doing something manually → automate it → charge for the setup. The most scalable option because each automation is a product you can sell to multiple businesses."
+  },
+  {
+   "slug": "complete-ai-freelancing-guide-bangladesh-2026",
+   "sha256": "14034149f48fbcad2fe6129bf97919dc91fc54ea1ec0729819f4f8f31d002a86",
+   "reason": "earnings/savings/cost figure (class D): editorial fact-check pending; not an AITP price",
+   "text": "Don't compete on price — compete on AI-enabled speed and quality. A ৳2,000 article that takes you 30 minutes with AI is better business than a ৳500 article that takes you 2 hours without AI. Your competitive advantage is that AI makes you faster, not cheaper."
+  }
+ ]
+}

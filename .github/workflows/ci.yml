@@ -6,10 +6,10 @@ on:
   pull_request:
     branches: [main, develop]
 
+# Least privilege: no job here writes checks or PR comments (verified: no step uses
+# github-script / gh / the checks API), so contents: read is sufficient.
 permissions:
   contents: read
-  checks: write
-  pull-requests: write
 
 jobs:
   quality-checks:
@@ -52,9 +52,12 @@ jobs:
         run: npm run build
         continue-on-error: false
 
-      - name: ✅ Lint code
-        run: npm run lint 2>/dev/null || echo "No lint script"
-        continue-on-error: true
+      # There is no `lint` script in package.json, so the previous step always echoed
+      # "No lint script" and could never fail. Replaced by the commercial-eligibility
+      # regression suite, which does fail on a leak (price, payment ask, foreign
+      # number, fulfilment claim) and is run again before any deploy.
+      - name: ✅ Commercial eligibility regression tests
+        run: npm run validate:commercial && npm run test:commercial
 
       - name: Start production server for E2E
         shell: bash
@@ -122,7 +125,9 @@ jobs:
 
       - name: 🔍 Check for secrets
         if: always()
-        uses: trufflesecurity/trufflehog@main
+        # Pinned to an immutable commit (release v3.99.9, resolved from the upstream repo's
+        # tag ref on 2026-11-19). `@main` ran whatever the upstream branch held at run time.
+        uses: trufflesecurity/trufflehog@3bd2b5887eb0efb8fa18bfd1d296032924e4ffdc
         with:
           path: ./
           base: ${{ github.event.pull_request.base.sha || github.event.before }}

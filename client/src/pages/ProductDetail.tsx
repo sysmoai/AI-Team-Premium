@@ -17,6 +17,7 @@ import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { SearchableFAQ, UseCaseCards, TrustAndBuySection } from "@/components/product";
 import type { UseCase } from "@/components/product";
 import { ProductSchema, BreadcrumbSchema } from "@/components/seo/JsonLd";
+import { inquiryMessage, orderMessage } from "../../../lib/commercial-eligibility.js";
 import catalog from "../data/products-catalog.json";
 import NotFound from "@/pages/not-found";
 
@@ -79,6 +80,10 @@ interface CatalogProduct {
   priceOnRequest?: boolean;
   commercialStatus?: string;
   accessModel?: string;
+  /** Projected by scripts/build-catalog.mjs from lib/commercial-eligibility.js. */
+  canOrder?: boolean;
+  canQuote?: boolean;
+  publicState?: string;
 }
 
 const products = catalog as unknown as CatalogProduct[];
@@ -237,16 +242,24 @@ function familyDisplayName(variants: CatalogProduct[]) {
   return lead.length >= 3 ? lead : names[0];
 }
 
+// Only an order the eligibility layer allowed asks for payment details; every
+// other state sends a neutral enquiry. The prefill is built here from flags, so a
+// missing whatsappMsg can never fall back to a price or a payment request.
 function whatsappHref(p: CatalogProduct) {
-  const base = p.whatsappMsg || `Hi! I want ${p.name}${p.priceOnRequest ? "" : ` (${formatBDT(p.price)}/mo)`}`;
-  return `${config.whatsappUrl}?text=${encodeURIComponent(`${base} — please share payment details.`)}`;
+  const message = p.canOrder
+    ? p.whatsappMsg || orderMessage(p.name, !p.priceOnRequest && p.price > 0 ? p.price : undefined)
+    : inquiryMessage(p.name);
+  return `${config.whatsappUrl}?text=${encodeURIComponent(message)}`;
 }
+
+// Price string for analytics beacons: empty unless a governed price is shown.
+const priceLabel = (p: CatalogProduct) => (p.canOrder && !p.priceOnRequest && p.price > 0 ? formatBDT(p.price) : "");
 
 // The mobile bottom bar and desktop floating button are the CTAs most visitors
 // actually see on a phone. They used to send the generic "I want help" text,
 // so the chat opened without saying which product the visitor was looking at.
 function familyWhatsAppText(name: string) {
-  return `Hi! I'm looking at ${name} on AI Team Premium. Which plan fits me? Please confirm the current price and payment details.`;
+  return `Hi! I'm looking at ${name} on AI Team Premium. Which plan fits me, and is it currently available?`;
 }
 
 const UNSAFE_PUBLIC_PROMISE = /(warranty|guarantee|replacement|delivery|within\s+\d+|24\/7|instant|trusted|served since|most customers|official provider requires|shared plan safe|private from other users|productivity gains|most students)/i;
@@ -322,9 +335,15 @@ export default function ProductDetail() {
 
   // Hooks must run before any early return, so the metadata falls back to safe
   // strings when the slug doesn't resolve.
-  const anchor = family.length ? family.reduce((a, b) => (a.price <= b.price ? a : b)) : null;
+  const startPrice = family.filter((p) => p.canOrder && !p.priceOnRequest && p.price > 0);
+  // Anchor on the cheapest ORDERABLE variant; non-orderable variants carry
+  // price 0 and would otherwise always win the comparison.
+  const anchor = startPrice.length
+    ? startPrice.reduce((a, b) => (a.price <= b.price ? a : b))
+    : family[0] ?? null;
   const familyName = anchor ? familyDisplayName(family) : "AI Tools";
-  const startPrice = family.filter((p) => !p.priceOnRequest);
+  const anyOrderable = family.some((p) => p.canOrder);
+  const anyQuotable = family.some((p) => p.canQuote);
 
   usePageMeta({
     // Must produce the same string as buildMeta() in scripts/gen-product-routes.mjs.
@@ -415,21 +434,31 @@ export default function ProductDetail() {
               <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3" style={{ fontSize: "0.82rem", color: BRAND.navy, opacity: 0.65 }}>
                 <span className="inline-flex items-center gap-1.5"><Clock size={14} color={accent} /> Timing confirmed before payment</span>
                 <span className="inline-flex items-center gap-1.5"><ShieldCheck size={14} color={accent} /> Support terms confirmed before payment</span>
-                <span className="inline-flex items-center gap-1.5"><Check size={14} color={accent} strokeWidth={3} /> bKash · Nagad · Bank</span>
+                {anyOrderable && <span className="inline-flex items-center gap-1.5"><Check size={14} color={accent} strokeWidth={3} /> bKash · Nagad</span>}
               </div>
 
+              {!anyOrderable && (
+                <p className="mt-6 max-w-xl rounded-xl px-4 py-3" style={{ background: `${accent}12`, color: BRAND.navy, fontSize: "0.85rem", lineHeight: 1.6 }} data-testid="notice-not-orderable">
+                  {anyQuotable
+                    ? "This plan is not open for ordering yet. Availability, the approved access model and the price are confirmed with you on WhatsApp before any payment."
+                    : "This plan is not currently offered."}
+                </p>
+              )}
+
               <div className="mt-8 flex flex-wrap gap-3">
+                {(anchor.canOrder || anchor.canQuote) && (
                 <a
                   href={whatsappHref(anchor)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick(familyName, anchor.tier || "hero", formatBDT(anchor.price), `product-${slug}`)}
+                  onClick={() => trackWhatsAppClick(familyName, anchor.tier || "hero", priceLabel(anchor), `product-${slug}`)}
                   data-testid="button-wa-hero"
                   className="inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5"
                   style={{ background: "#25D366", color: "#fff", fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
                 >
-                  <WhatsAppIcon size={16} color="#fff" /> Order on WhatsApp
+                  <WhatsAppIcon size={16} color="#fff" /> {anchor.canOrder ? "Order on WhatsApp" : "Ask about availability"}
                 </a>
+                )}
                 <a
                   href={config.messenger}
                   target="_blank"
@@ -539,17 +568,19 @@ export default function ProductDetail() {
                     ))}
                 </ul>
 
+                {(p.canOrder || p.canQuote) && (
                 <a
                   href={whatsappHref(p)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackWhatsAppClick(familyName, p.tier || p.name, formatBDT(p.price), `product-${slug}`)}
+                  onClick={() => trackWhatsAppClick(familyName, p.tier || p.name, priceLabel(p), `product-${slug}`)}
                   data-testid={`button-wa-${p.id}`}
                   className="mt-6 inline-flex items-center justify-center gap-2 rounded-full py-3"
                   style={{ background: "#25D366", color: "#fff", fontSize: "0.85rem", fontWeight: 600, textDecoration: "none" }}
                 >
-                  <WhatsAppIcon size={14} color="#fff" /> Order this plan
+                  <WhatsAppIcon size={14} color="#fff" /> {p.canOrder ? "Order this plan" : "Ask about this plan"}
                 </a>
+                )}
               </div>
             ))}
           </div>

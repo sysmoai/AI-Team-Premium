@@ -21,6 +21,7 @@ const SITE = "https://www.aiteampremium.com";
 const catalog = JSON.parse(
   readFileSync(resolve(ROOT, "client/src/data/products-catalog.json"), "utf-8")
 );
+import { decide } from "../lib/commercial-eligibility.js";
 const governance = JSON.parse(
   readFileSync(resolve(ROOT, "data/commercial-governance.json"), "utf-8")
 ).records;
@@ -134,18 +135,14 @@ const esc = (s) => s.replace(/\\/g, "\\\\").replace(/"/g, '\\"');
 // their withdrawn price straight to hand-written site copy. Suppressing a price
 // on a product's own page and then re-surfacing the identical number through an
 // "anchor" used by a DIFFERENT page is the same defect with an extra hop.
+// Cycle 5: an anchor is a number only while lib/commercial-eligibility.js says
+// the record may display a price; otherwise it is null and route-meta omits the
+// price phrase. A missing id is still a hard failure.
 const priceOf = (id) => {
   const p = catalog.find((x) => x.id === id);
   if (!p) throw new Error(`price anchor: no product with id "${id}"`);
-  if (!(p.price > 0)) throw new Error(`price anchor: "${id}" has no published price`);
-  const g = governance[id];
-  if (g && NO_PUBLIC_PURCHASE.has(g.commercial_status)) {
-    throw new Error(
-      `price anchor: "${id}" is quarantined (${g.commercial_status}) — its price must not be used ` +
-        `in hand-written copy. Pick a currently-purchasable anchor product instead.`
-    );
-  }
-  return p.price;
+  const d = decide(governance[id]);
+  return d.canDisplayPrice ? d.publicPrice : null;
 };
 
 // Same blind spot as priceOf() above, at catalog scope: a naive `price > 0`
@@ -153,15 +150,11 @@ const priceOf = (id) => {
 // number feeds the HOMEPAGE'S OWN <title> ("from ৳X/mo") — the single most
 // important line on the site for search — so it is exactly the wrong place to
 // let a withdrawn price back in through a different door.
-const publishable = catalog.filter((p) => {
-  if (!(p.price > 0)) return false;
-  const g = governance[p.id];
-  return !(g && NO_PUBLIC_PURCHASE.has(g.commercial_status));
-});
-if (!publishable.length) throw new Error("price anchor: no publishable (non-quarantined) product in the catalog");
+const publishable = catalog.filter((p) => decide(governance[p.id]).canDisplayPrice);
+// An empty set is legitimate (no record has provider evidence yet): catalogMin is null.
 
 const ANCHORS = {
-  catalogMin: Math.min(...publishable.map((p) => p.price)),
+  catalogMin: publishable.length ? Math.min(...publishable.map((p) => decide(governance[p.id]).publicPrice)) : null,
   // chatgpt-plus-starter-shared / -premium-shared are quarantined
   // (pending_evidence, see docs/audit/AITP_SHARED_ACCESS_AUDIT.md) — there is no
   // legitimate "Shared" anchor to quote right now. Personal is the only

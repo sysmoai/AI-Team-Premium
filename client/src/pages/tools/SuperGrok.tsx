@@ -5,8 +5,8 @@ import { Cpu } from "lucide-react";
 export const TOOL_META = {
   "slug": "supergrok",
   "category": "chat",
-  "priceBdt": 1495,
-  "priceLabel": "from ৳1,495/mo",
+  "priceBdt": 0,
+  "priceLabel": "Price on request",
   "model": "Grok 3 + Big Brain mode",
   "contextWindow": "1M tokens",
   "multimodal": "Text, image, voice, video",

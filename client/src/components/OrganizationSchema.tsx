@@ -69,9 +69,10 @@ export function OrganizationSchema() {
       "image": `${SITE_URL}/favicon.png`,
       "url": SITE_URL,
       "telephone": config.phone,
-      "priceRange": "৳499–৳24,999",
-      "currenciesAccepted": "BDT",
-      "paymentAccepted": "bKash, Nagad, Rocket, Bank Transfer",
+      // Cycle 5: "priceRange" (৳499–৳24,999) and "paymentAccepted" (incl. Rocket and
+      // Bank Transfer) were typed here, outside the governed catalog, and are not
+      // backed by any evidence in the repository. Omitted until the owner confirms
+      // payment methods; schema.org does not require either property.
       "areaServed": { "@type": "Country", "name": "Bangladesh" },
       "address": {
         "@type": "PostalAddress",

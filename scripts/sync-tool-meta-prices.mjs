@@ -58,8 +58,18 @@ for (const file of readdirSync(DIR).filter((f) => f.endsWith(".tsx"))) {
 
   const target = CANONICAL_MAP[`/tools/${slug}`];
   if (!target) {
-    // No catalog counterpart (LinkedIn Premium, the Vault bundle). Leave alone.
-    rows.push({ file, from: "-", to: "-", note: "no catalog entry — skipped" });
+    // No catalog counterpart (LinkedIn Premium, the Vault bundle), so no
+    // governance record can authorise a number. Fail closed: a hand-typed
+    // price here would be quoted on /compare with no approval behind it.
+    const before = Number(src.match(/"priceBdt":\s*(\d+)/)?.[1] ?? 0);
+    const next = src
+      .replace(/"priceBdt":\s*\d+/, `"priceBdt": 0`)
+      .replace(/"priceLabel":\s*"[^"]*"/, `"priceLabel": "Price on request"`);
+    if (next !== src) {
+      writeFileSync(path, next, "utf-8");
+      changed++;
+    }
+    rows.push({ file, from: before || "-", to: "on request", note: "no catalog entry — withheld" });
     continue;
   }
 

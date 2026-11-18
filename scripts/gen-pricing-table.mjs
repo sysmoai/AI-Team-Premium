@@ -30,6 +30,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { orderMessage, inquiryMessage } from "../lib/commercial-eligibility.js";
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const catalog = JSON.parse(
@@ -83,14 +84,16 @@ function rowFor(p) {
   // priceOnRequest tiers carry an internal reference price that must not ship,
   // so they are quoted rather than priced — including in the order message.
   const price = p.priceOnRequest || !(p.price > 0) ? "Price on request" : `${bdt(p.price)}${unit}`;
-  const waText = p.priceOnRequest || !(p.price > 0)
-    ? `Hi, I want ${p.name} — please quote a price.`
-    : `Hi, I want ${p.name} (${bdt(p.price)}${unit}) — please share payment details.`;
+  // Order wording only when lib/commercial-eligibility.js allowed an order (the
+  // catalog projection sets canOrder); everything else is a neutral enquiry.
+  const waText = p.canOrder && p.price > 0
+    ? orderMessage(p.name, p.price)
+    : p.canQuote ? inquiryMessage(p.name) : "";
   return {
     name: p.name,
     price,
     priceBdt: p.priceOnRequest || !(p.price > 0) ? null : p.price,
-    delivery: p.deliverySLA ?? "",
+    canOrder: Boolean(p.canOrder),
     href,
     waText,
   };
@@ -102,8 +105,8 @@ function subtitleFor(items) {
   const priced = items.filter((p) => p.price > 0 && !p.priceOnRequest).map((p) => p.price);
   const n = `${items.length} plan${items.length === 1 ? "" : "s"}`;
   return priced.length
-    ? `${n} · from ${bdt(Math.min(...priced))}/mo · bKash/Nagad`
-    : `${n} · quoted on request · bKash/Nagad`;
+    ? `${n} · from ${bdt(Math.min(...priced))}/mo`
+    : `${n} · availability and price confirmed on WhatsApp`;
 }
 
 const byCat = new Map();
@@ -153,8 +156,8 @@ export const PRICING_SECTIONS = ${JSON.stringify(sections, null, 2)};
 
 export const PRICING_SUMMARY = {
   rows: ${rowCount},
-  priceFrom: ${Math.min(...priced)},
-  priceTo: ${Math.max(...priced)},
+  priceFrom: ${priced.length ? Math.min(...priced) : "null"},
+  priceTo: ${priced.length ? Math.max(...priced) : "null"},
 };
 `;
 
@@ -162,5 +165,5 @@ writeFileSync(resolve(ROOT, "shared/pricing-table.js"), out.replace(/\r\n/g, "\n
 
 console.log(
   `gen:pricing  wrote shared/pricing-table.js — ${sections.length} sections, ${rowCount} rows, ` +
-    `${bdt(Math.min(...priced))}–${bdt(Math.max(...priced))}`
+    (priced.length ? `${bdt(Math.min(...priced))}–${bdt(Math.max(...priced))}` : "no public prices (all price-on-request)")
 );

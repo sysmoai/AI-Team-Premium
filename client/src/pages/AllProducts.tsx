@@ -49,7 +49,7 @@ function categoryFromUrl(): string | null {
 export default function AllProducts() {
   usePageMeta({
     title: "All AI Tools & Services — 129+ Premium Subscriptions",
-    description: "Browse our complete catalog of 129+ AI tools and services — ChatGPT, Claude, Midjourney, Notion, Grammarly, and more. All payable in BDT via bKash and Nagad.",
+    description: "Browse our complete catalog of 129+ AI tools and services — ChatGPT, Claude, Midjourney, Notion, Grammarly, and more. Availability, the approved access model and the current price are confirmed on WhatsApp.",
     path: "/all-products",
   });
 
@@ -83,10 +83,20 @@ export default function AllProducts() {
     });
 
     const sorted = [...result];
-    if (sortBy === "price-asc") sorted.sort((a, b) => a.price - b.price);
-    else if (sortBy === "price-desc") sorted.sort((a, b) => b.price - a.price);
+    // Only an item that may display a price takes part in price ordering; the rest
+    // sort after it (by name) so a hidden internal figure can never order the list.
+    const shown = (p: { price: number; priceOnRequest?: boolean }) => (!p.priceOnRequest && p.price > 0 ? p.price : null);
+    const byPrice = (dir: 1 | -1) => (a: (typeof sorted)[number], b: (typeof sorted)[number]) => {
+      const pa = shown(a), pb = shown(b);
+      if (pa === null && pb === null) return a.name.localeCompare(b.name);
+      if (pa === null) return 1;
+      if (pb === null) return -1;
+      return (pa - pb) * dir;
+    };
+    if (sortBy === "price-asc") sorted.sort(byPrice(1));
+    else if (sortBy === "price-desc") sorted.sort(byPrice(-1));
     else if (sortBy === "name") sorted.sort((a, b) => a.name.localeCompare(b.name));
-    else sorted.sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)) || a.price - b.price);
+    else sorted.sort((a, b) => Number(Boolean(b.featured)) - Number(Boolean(a.featured)) || a.name.localeCompare(b.name));
     return sorted;
   }, [searchTerm, selectedBrand, selectedCategory, selectedAccess, sortBy]);
 
@@ -115,10 +125,10 @@ export default function AllProducts() {
             </h1>
             <p className="text-blue-50 text-base md:text-lg">
               {products.length} subscription plans across {brands.length} brands and {categories.length} categories.
-              Pay with bKash or Nagad. Order on WhatsApp.
+              Ask on WhatsApp: we confirm availability, the access model and the price before any payment.
             </p>
             <p className="text-blue-50 text-sm md:text-base mt-2">
-              বাংলাদেশ থেকে bKash/Nagad-এ পেমেন্ট। ইন্টারন্যাশনাল কার্ড লাগবে না।
+              প্রাপ্যতা, অ্যাক্সেস পদ্ধতি ও দাম পেমেন্টের আগে হোয়াটসঅ্যাপে নিশ্চিত করা হয়।
             </p>
           </div>
         </div>
@@ -229,12 +239,22 @@ export default function AllProducts() {
               <p className="text-3xl font-bold text-purple-600 dark:text-purple-400">{categories.length}</p>
               <p className="text-gray-700 dark:text-gray-300 text-sm font-semibold">Categories</p>
             </div>
-            <div className="p-5 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
-              <p className="text-3xl font-bold text-orange-600 dark:text-orange-400">
-                ৳{Math.min(...products.map((p) => p.price)).toLocaleString()}
-              </p>
-              <p className="text-gray-700 dark:text-gray-300 text-sm font-semibold">Starting from</p>
-            </div>
+            {(() => {
+              // Minimum over displayable prices only. The old Math.min over every SKU
+              // surfaced withdrawn tiers (৳190/৳270/৳310/৳350) and returns Infinity when
+              // the set is empty.
+              const shownPrices = products.filter((p) => !p.priceOnRequest && p.price > 0).map((p) => p.price);
+              return (
+                <div className="p-5 bg-orange-50 dark:bg-orange-900/20 rounded-lg border border-orange-200 dark:border-orange-800">
+                  <p className="text-3xl font-bold text-orange-600 dark:text-orange-400">
+                    {shownPrices.length ? `৳${Math.min(...shownPrices).toLocaleString()}` : "Ask"}
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300 text-sm font-semibold">
+                    {shownPrices.length ? "Starting from" : "Prices confirmed on WhatsApp"}
+                  </p>
+                </div>
+              );
+            })()}
           </div>
         </div>
       </div>

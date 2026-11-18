@@ -95,8 +95,8 @@ const VAULT_FAQS = [
 export const TOOL_META = {
   "slug": "vault",
   "category": "chat",
-  "priceBdt": 1990,
-  "priceLabel": "৳1,990/mo",
+  "priceBdt": 0,
+  "priceLabel": "Price on request",
   "model": "3 AI tools combined",
   "contextWindow": "Varies per tool",
   "multimodal": "Text, image, code, design",
@@ -112,13 +112,11 @@ export const TOOL_META = {
   "bestUseCase": "Heavy AI users, freelancers, startups",
   "bestFor": [
     "ChatGPT Plus, Claude Pro and Gemini Advanced together",
-    "Saves ৳903/month vs buying all three separately",
-    "One payment and one WhatsApp support channel",
-    "Single bKash/Nagad payment",
+    "One WhatsApp contact for questions about all three tools",
     "Best for power users + small agencies"
   ],
   "weaknesses": [
-    "Shared seats only — not personal accounts",
+    "Access model and availability are under evidence review — ask before deciding",
     "Covers these three tools only — other tools are sold separately"
   ]
 } as const;

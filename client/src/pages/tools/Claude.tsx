@@ -10,8 +10,8 @@ import { motion } from "framer-motion";
 export const TOOL_META = {
   "slug": "claude",
   "category": "chat",
-  "priceBdt": 2990,
-  "priceLabel": "from ৳2,990/mo",
+  "priceBdt": 0,
+  "priceLabel": "Price on request",
   "model": "Claude 4 Sonnet + Opus",
   "contextWindow": "200K tokens",
   "multimodal": "Text, image, document analysis",
@@ -34,7 +34,7 @@ export const TOOL_META = {
   ],
   "weaknesses": [
     "No image generation",
-    "Limited availability during peak hours for shared plans"
+    "Usage limits can apply during peak hours"
   ]
 } as const;
 

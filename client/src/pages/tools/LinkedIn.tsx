@@ -95,8 +95,8 @@ const LINKEDIN_FAQS = [
 export const TOOL_META = {
   "slug": "linkedin",
   "category": "writing",
-  "priceBdt": 999,
-  "priceLabel": "৳999/mo",
+  "priceBdt": 0,
+  "priceLabel": "Price on request",
   "model": "LinkedIn AI (writing assist)",
   "contextWindow": "Your profile + network",
   "multimodal": "Text, profile data",

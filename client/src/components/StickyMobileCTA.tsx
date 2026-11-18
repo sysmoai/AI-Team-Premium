@@ -27,7 +27,7 @@ export default function StickyMobileCTABar({ productWhatsAppText, productName }:
         style={{ background: "#25D366", color: "#fff", fontWeight: 700, fontSize: "0.9rem", textDecoration: "none" }}
       >
         <WhatsAppIcon size={17} color="#fff" />
-        {productName ? "Order on WhatsApp" : "WhatsApp"}
+        {productName ? "Ask on WhatsApp" : "WhatsApp"}
       </a>
       <a
         href={config.messenger}

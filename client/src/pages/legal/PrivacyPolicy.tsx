@@ -95,7 +95,7 @@ export default function PrivacyPolicy() {
 
           <div>
             <h2 className="mb-3" style={{ fontSize: "1.15rem", fontWeight: 700 }}>11. Contact Us</h2>
-            <p style={{ opacity: 0.65 }}>For any privacy-related questions or requests, please contact us via WhatsApp at <a href={config.whatsappGeneral} target="_blank" rel="noopener noreferrer" style={{ color: BRAND.blue }}>+880 1533-262758</a> or our <a href="/start-a-project" style={{ color: BRAND.blue }}>contact form</a>. We respond within 5–15 minutes during 9 AM–11 PM BST.</p>
+            <p style={{ opacity: 0.65 }}>For any privacy-related questions or requests, please contact us via WhatsApp at <a href={config.whatsappGeneral} target="_blank" rel="noopener noreferrer" style={{ color: BRAND.blue }}>+880 1533-262758</a> or our <a href="/start-a-project" style={{ color: BRAND.blue }}>contact form</a>.</p>
           </div>
 
         </div>

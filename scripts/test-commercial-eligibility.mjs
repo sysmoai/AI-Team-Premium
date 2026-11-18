@@ -153,6 +153,17 @@ test("projection: purchasable record ships the GOVERNED price, not the catalog p
   assert.deepEqual(auditPublicRecords([p], g, { now: NOW }), []);
 });
 
+test("projection: a purchasable record gets the governed payment FAQ; a non-purchasable one does not", () => {
+  const [buy] = project(gov(good()), [rec()]);
+  const payment = buy.faq.filter((f) => /international credit card/i.test(f.q));
+  assert.equal(payment.length, 1);
+  assert.match(payment[0].a, /bKash and Nagad/);
+  assert.match(payment[0].a, /do not pay before/i);
+  assert.ok(!/instant|minute|hour|warrant|rocket|bank transfer/i.test(payment[0].a), "no invented timing, guarantee or extra payment methods");
+  const [hold] = project(gov(good({ resale_or_seat_evidence: null })), [rec()]);
+  assert.equal(hold.faq.filter((f) => /international credit card/i.test(f.q)).length, 0);
+});
+
 test("projection: missing whatsappMsg never falls back to a raw price (latent fallback defect)", () => {
   for (const g of [gov(good({ commercial_status: "pending_evidence" })), gov(good({ resale_or_seat_evidence: null }))]) {
     const [p] = project(g, [rec({ whatsappMsg: undefined })]);

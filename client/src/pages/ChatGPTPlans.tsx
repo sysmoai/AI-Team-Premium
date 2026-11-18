@@ -14,9 +14,9 @@ import { bnDigits } from "@/lib/bangla-numerals";
 // derives its customer-owned prices from the real catalog (see lib/plans.ts),
 // so deriving the page's own headline number from it, rather than typing a
 // sixth guess, is the fix.
-const CHATGPT_MIN_BDT = Math.min(
-  ...chatgptPlans.filter((p) => !p.quarantined).map((p) => p.priceBDT)
-);
+// null when no plan may currently display a price (never Infinity).
+const CHATGPT_PRICES = chatgptPlans.filter((p) => !p.quarantined && p.priceBDT > 0).map((p) => p.priceBDT);
+const CHATGPT_MIN_BDT: number | null = CHATGPT_PRICES.length ? Math.min(...CHATGPT_PRICES) : null;
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
 import { config } from "@/lib/config";
 import { SupportUpsell } from "@/components/SupportUpsell";
@@ -39,7 +39,7 @@ import { BreadcrumbSchema, FAQSchema } from "@/components/seo/JsonLd";
 
 export default function ChatGPTPlans() {
   usePageMeta({ path: "/chatgpt-plans",
-    title: `ChatGPT Plans in Bangladesh 2026 — Personal from ৳${CHATGPT_MIN_BDT.toLocaleString("en-US")}`,
+    title: CHATGPT_MIN_BDT != null ? `ChatGPT Plans in Bangladesh 2026 — Personal from ৳${CHATGPT_MIN_BDT.toLocaleString("en-US")}` : "ChatGPT Plans in Bangladesh — Availability & Plans",
     description: "বাংলাদেশে সরাসরি bKash/Nagad দিয়ে ChatGPT Plus, Business এবং Pro সাবস্ক্রিপশন কিনুন। Personal-seat pricing দেখুন প্রতিটি প্ল্যানে; shared-seat availability যাচাইয়ের পর confirm করা হবে।"
   });
 
@@ -141,7 +141,7 @@ export default function ChatGPTPlans() {
       <section className="relative py-20 overflow-hidden" style={{ backgroundColor: BRAND.sky }}>
         <div className="container px-4 mx-auto text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-extrabold mb-6" style={{ color: BRAND.navy }}>
-            বাংলাদেশে ChatGPT — <span style={{ color: BRAND.blue }}>৳{bnDigits(CHATGPT_MIN_BDT)}</span> থেকে শুরু
+            বাংলাদেশে ChatGPT{CHATGPT_MIN_BDT != null && <> — <span style={{ color: BRAND.blue }}>৳{bnDigits(CHATGPT_MIN_BDT)}</span> থেকে শুরু</>}
           </h1>
           <p className="text-xl md:text-2xl mb-10 text-slate-600 max-w-3xl mx-auto">
             Get genuine ChatGPT Plus, Team, and Pro subscriptions with local bKash/Nagad payment and fast delivery.

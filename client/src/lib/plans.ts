@@ -25,17 +25,19 @@
 //    ProductSchema, warranty claim, or "Order" CTA — see that file.
 import catalog from "../data/products-catalog.json";
 
-function catalogPrice(id: string): number {
+// Cycle 5: a price exists only when lib/commercial-eligibility.js allowed an order
+// for that catalog record (projected into the catalog as canOrder). Otherwise it is
+// null and the plan is quarantined — derived, not hand-set: `quarantined: false`
+// used to be typed per plan and nothing tied it to the evidence.
+function governedPrice(id: string): number | null {
   const p = (catalog as any[]).find((x) => x.id === id);
   if (!p) throw new Error(`plans.ts: no catalog product with id "${id}"`);
-  if (!(p.price > 0)) throw new Error(`plans.ts: "${id}" has no published price`);
-  if (p.priceOnRequest) throw new Error(`plans.ts: "${id}" is quarantined — cannot anchor a "customer-owned" plan to it`);
-  return p.price;
+  return p.canOrder && !p.priceOnRequest && p.price > 0 ? p.price : null;
 }
 
-const GO_PERSONAL = catalogPrice("chatgpt-go-personal");
-const PLUS_PERSONAL = catalogPrice("chatgpt-plus-personal");
-const PRO_PERSONAL = catalogPrice("chatgpt-pro-personal");
+const GO_PERSONAL = governedPrice("chatgpt-go-personal");
+const PLUS_PERSONAL = governedPrice("chatgpt-plus-personal");
+const PRO_PERSONAL = governedPrice("chatgpt-pro-personal");
 
 const bdt = (n: number) => `৳${n.toLocaleString("en-US")}/month`;
 
@@ -49,7 +51,7 @@ export const chatgptPlans = [
     priceLabel: "Confirm on WhatsApp",
     seats: 8,
     duration: "30 days",
-    deliverySLA: "5–15 minutes",
+    deliverySLA: "Confirmed before payment",
     accessType: "shared",
     deviceRule: "1 device only",
     warranty: "Pending access-model review.",
@@ -66,19 +68,19 @@ export const chatgptPlans = [
     title: "ChatGPT Go — Personal Account",
     plan: "Go",
     tier: "Personal Account",
-    priceBDT: GO_PERSONAL,
-    priceLabel: bdt(GO_PERSONAL),
+    priceBDT: GO_PERSONAL ?? 0,
+    priceLabel: GO_PERSONAL != null ? bdt(GO_PERSONAL) : "Confirm on WhatsApp",
     seats: 1,
     duration: "30 days",
-    deliverySLA: "2–4 hours",
+    deliverySLA: "Confirmed before payment",
     accessType: "customer-owned",
     deviceRule: "No restriction (your account)",
-    warranty: "Tied to your own account management.",
+    warranty: "Terms confirmed before payment.",
     segment: "Budget",
     targetBuyer: "Students wanting private access",
     badge: "Own Account",
     color: "green",
-    quarantined: false,
+    quarantined: GO_PERSONAL === null,
   },
   {
     slug: "plus-shared",
@@ -89,7 +91,7 @@ export const chatgptPlans = [
     priceLabel: "Confirm on WhatsApp",
     seats: 8,
     duration: "30 days",
-    deliverySLA: "5–15 minutes",
+    deliverySLA: "Confirmed before payment",
     accessType: "shared",
     deviceRule: "1 device only",
     warranty: "Pending access-model review.",
@@ -110,7 +112,7 @@ export const chatgptPlans = [
     priceLabel: "Confirm on WhatsApp",
     seats: "2–3",
     duration: "30 days",
-    deliverySLA: "5–15 minutes",
+    deliverySLA: "Confirmed before payment",
     accessType: "shared",
     deviceRule: "1 device only",
     warranty: "Pending access-model review.",
@@ -127,19 +129,19 @@ export const chatgptPlans = [
     title: "ChatGPT Plus — Personal Seat",
     plan: "Plus",
     tier: "Personal Seat",
-    priceBDT: PLUS_PERSONAL,
-    priceLabel: bdt(PLUS_PERSONAL),
+    priceBDT: PLUS_PERSONAL ?? 0,
+    priceLabel: PLUS_PERSONAL != null ? bdt(PLUS_PERSONAL) : "Confirm on WhatsApp",
     seats: 1,
     duration: "30 days",
-    deliverySLA: "5–15 minutes",
+    deliverySLA: "Confirmed before payment",
     accessType: "customer-owned",
     deviceRule: "No restriction (your account)",
-    warranty: "Tied to your own account management.",
+    warranty: "Terms confirmed before payment.",
     segment: "Professional",
     targetBuyer: "Power users",
     badge: "Own Account",
     color: "green",
-    quarantined: false,
+    quarantined: PLUS_PERSONAL === null,
   },
   {
     slug: "business-shared",
@@ -150,7 +152,7 @@ export const chatgptPlans = [
     priceLabel: "Confirm on WhatsApp",
     seats: 7,
     duration: "30 days",
-    deliverySLA: "Up to 12 hours",
+    deliverySLA: "Confirmed before payment",
     accessType: "workspace-invite",
     deviceRule: "Workspace rules apply",
     warranty: "Pending access-model review.",
@@ -171,7 +173,7 @@ export const chatgptPlans = [
     priceLabel: "Confirm on WhatsApp",
     seats: "2–3",
     duration: "30 days",
-    deliverySLA: "Up to 12 hours",
+    deliverySLA: "Confirmed before payment",
     accessType: "workspace-invite",
     deviceRule: "Workspace rules apply",
     warranty: "Pending access-model review.",
@@ -192,7 +194,7 @@ export const chatgptPlans = [
     priceLabel: "Confirm on WhatsApp",
     seats: 1,
     duration: "30 days",
-    deliverySLA: "Up to 12 hours",
+    deliverySLA: "Confirmed before payment",
     accessType: "workspace-invite",
     deviceRule: "Dedicated experience",
     warranty: "Pending access-model review.",
@@ -213,7 +215,7 @@ export const chatgptPlans = [
     priceLabel: "Confirm on WhatsApp",
     seats: "5–6",
     duration: "30 days",
-    deliverySLA: "5–15 minutes",
+    deliverySLA: "Confirmed before payment",
     accessType: "shared",
     deviceRule: "1 device only",
     warranty: "Pending access-model review.",
@@ -230,18 +232,18 @@ export const chatgptPlans = [
     title: "ChatGPT Pro — Personal Account",
     plan: "Pro",
     tier: "Personal Account",
-    priceBDT: PRO_PERSONAL,
-    priceLabel: bdt(PRO_PERSONAL),
+    priceBDT: PRO_PERSONAL ?? 0,
+    priceLabel: PRO_PERSONAL != null ? bdt(PRO_PERSONAL) : "Confirm on WhatsApp",
     seats: 1,
     duration: "30 days",
-    deliverySLA: "2–4 hours",
+    deliverySLA: "Confirmed before payment",
     accessType: "customer-owned",
     deviceRule: "No restriction (your account)",
-    warranty: "Full private access. No sharing.",
+    warranty: "Terms confirmed before payment.",
     segment: "Enterprise",
     targetBuyer: "Enterprise power users",
     badge: "Ultimate",
     color: "red",
-    quarantined: false,
+    quarantined: PRO_PERSONAL === null,
   },
 ];

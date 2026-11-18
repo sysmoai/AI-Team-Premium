@@ -134,7 +134,7 @@ if (products) {
   // Fields AllProducts.tsx reads. `badge` is genuinely optional.
   const REQUIRED = [
     "id", "name", "brand", "brandColor", "category", "price",
-    "tier", "description", "capabilities", "deliverySLA", "whatsappMsg",
+    "tier", "description", "capabilities", "whatsappMsg",
   ];
 
   const problems = [];
@@ -554,7 +554,8 @@ else fail("public brand acronym found — use \"AI Team Premium\"", acronymHits.
   const sellable = products.filter((p) => p.price > 0 && !p.priceOnRequest);
   if (CATALOG_TOTALS.tiers !== products.length)
     bad.push(`nav tier count ${CATALOG_TOTALS.tiers} vs catalog ${products.length}`);
-  const floor = Math.min(...sellable.map((p) => p.price));
+  // null (never Infinity) while no record may display a price.
+  const floor = sellable.length ? Math.min(...sellable.map((p) => p.price)) : null;
   if (CATALOG_TOTALS.priceFrom !== floor)
     bad.push(`nav price floor ৳${CATALOG_TOTALS.priceFrom} vs catalog ৳${floor}`);
   for (const c of NAV_CATEGORIES) {

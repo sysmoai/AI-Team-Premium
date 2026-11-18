@@ -42,7 +42,7 @@ export function Footer() {
             >
               {/* Was a hardcoded ৳৩৪৯ in Bengali numerals against a ৳190 floor.
                   Derived, and in Bengali numerals to match the sentence. */}
-              বাংলাদেশে AI Tools — ৳{toBengaliDigits(CATALOG_TOTALS.priceFrom)} থেকে শুরু
+              {CATALOG_TOTALS.priceFrom != null ? <>বাংলাদেশে AI Tools — ৳{toBengaliDigits(CATALOG_TOTALS.priceFrom)} থেকে শুরু</> : <>বাংলাদেশে AI Tools</>}
             </h3>
             <p className="mt-1.5" style={{ color: "rgba(255,255,255,0.62)", fontSize: "0.85rem" }}>
               Get in touch — fastest response on WhatsApp.

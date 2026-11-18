@@ -10,7 +10,7 @@ interface PriceSummaryBarProps {
 
 export function PriceSummaryBar({ sharedPrice, personalPrice, whatsappText, heroRef }: PriceSummaryBarProps) {
   const [visible, setVisible] = useState(false);
-  const waText = whatsappText ?? "Hi! I want to order from AI Team Premium. Please share payment details.";
+  const waText = whatsappText ?? "Hi! I have a question about AI Team Premium. Is this currently available?";
   const waUrl = `https://wa.me/8801533262758?text=${encodeURIComponent(waText)}`;
 
   useEffect(() => {

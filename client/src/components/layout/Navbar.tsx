@@ -189,7 +189,7 @@ export function Navbar() {
                     Compare tools
                   </Link>
                   <span style={{ color: isDark ? "rgba(255,255,255,0.4)" : "rgba(15,23,42,0.62)", fontSize: "0.74rem" }}>
-                    {CATALOG_TOTALS.tiers} plans from {bdt(CATALOG_TOTALS.priceFrom)}/mo
+                    {CATALOG_TOTALS.tiers} plans{CATALOG_TOTALS.priceFrom != null ? <> from {bdt(CATALOG_TOTALS.priceFrom)}/mo</> : null}
                   </span>
                 </div>
               </div>

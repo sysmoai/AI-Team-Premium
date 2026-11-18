@@ -33,8 +33,8 @@ export function PlanDetail({ slug }: PlanDetailProps) {
     description: !plan
       ? "Get premium ChatGPT subscriptions in Bangladesh."
       : plan.quarantined
-        ? "Availability and current price confirmed after plan verification — ask on WhatsApp. Pay via bKash/Nagad, no international card needed."
-        : `Buy ${plan.title} in Bangladesh for ${plan.priceLabel}. ${plan.deliverySLA} delivery via bKash/Nagad. 30-day replacement warranty. ${plan.targetBuyer}.`,
+        ? "Availability and current price confirmed after plan verification — ask on WhatsApp before any payment."
+        : `${plan.title} in Bangladesh — ${plan.priceLabel}. Availability, the access model and delivery timing are confirmed on WhatsApp before any payment. ${plan.targetBuyer}.`,
     path: plan ? `/chatgpt/${plan.slug}` : "/chatgpt-plans",
   });
 
@@ -75,11 +75,9 @@ export function PlanDetail({ slug }: PlanDetailProps) {
         { q: `Who is ${plan.title} best for?`, a: `${plan.title} is aimed at ${plan.targetBuyer}, subject to the access-model review above.` },
       ]
     : [
-        { q: `How long does ${plan.title} delivery take?`, a: `Our standard delivery time for ${plan.title} is ${plan.deliverySLA}. Once payment is verified via bKash or Nagad on WhatsApp, we send the login details directly to your WhatsApp.` },
-        { q: `How much does ${plan.title} cost in Bangladesh?`, a: `${plan.title} costs ${plan.priceLabel} for a ${plan.duration} subscription from AI Team Premium, payable in BDT via bKash, Nagad, Rocket or Bank Transfer — no international credit card required.` },
-        { q: `Is there a warranty on ${plan.title}?`, a: `Yes. We provide a full 30-day replacement warranty. If the account fails for any non-misuse reason, we replace it within 24 hours. ${plan.warranty}` },
-        { q: `Can I pay for ${plan.title} via bKash or Nagad?`, a: "Yes. AI Team Premium accepts bKash, Nagad, Rocket and Bank Transfer in BDT. Payment numbers are shared privately on WhatsApp after you confirm your order." },
-        { q: `Who is ${plan.title} best for?`, a: `${plan.title} is best for ${plan.targetBuyer}. It includes ${plan.seats} seat${typeof plan.seats === "number" && plan.seats > 1 ? "s" : ""}, ${plan.deviceRule.toLowerCase()}, and ${plan.deliverySLA} delivery.` },
+        { q: `How much does ${plan.title} cost in Bangladesh?`, a: `${plan.title} is listed at ${plan.priceLabel} for a ${plan.duration} subscription. The current price is confirmed on WhatsApp before you pay.` },
+        { q: `How do I order ${plan.title}?`, a: "Message us on WhatsApp. We confirm the offer, the access model and the timing first; payment instructions are shared only after that." },
+        { q: `Who is ${plan.title} best for?`, a: `${plan.title} is aimed at ${plan.targetBuyer}.` },
       ];
 
   return (
@@ -234,15 +232,9 @@ export function PlanDetail({ slug }: PlanDetailProps) {
                   ) : (
                     <>
                       <AccordionItem value="item-1">
-                        <AccordionTrigger>How long does delivery take?</AccordionTrigger>
+                        <AccordionTrigger>How does ordering work?</AccordionTrigger>
                         <AccordionContent>
-                          Our standard delivery time is {plan.deliverySLA}. Once payment is verified via bKash or Nagad, we send the login details or invite link to your WhatsApp.
-                        </AccordionContent>
-                      </AccordionItem>
-                      <AccordionItem value="item-2">
-                        <AccordionTrigger>Is there a warranty?</AccordionTrigger>
-                        <AccordionContent>
-                          Yes, we provide a full {plan.duration} warranty. If the account face any issues, we replace it within 24 hours. {plan.warranty}
+                          We confirm the offer, the access model and the delivery timing with you on WhatsApp first. Payment instructions are shared only after that.
                         </AccordionContent>
                       </AccordionItem>
                     </>

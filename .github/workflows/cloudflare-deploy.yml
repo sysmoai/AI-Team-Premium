@@ -56,6 +56,8 @@ jobs:
         run: npm run validate:commercial
       - name: Route, SEO, quarantine and Worker gate
         run: npm run verify
+      - name: Commercial eligibility regression tests (leak guards + Worker request handling)
+        run: npm run test:commercial
       - uses: actions/upload-artifact@v4
         with:
           name: dist

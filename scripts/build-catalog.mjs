@@ -155,39 +155,15 @@ try {
   process.exit(1);
 }
 
-// Statuses that must never carry a fixed public price or a direct buy action.
-const NO_PUBLIC_PURCHASE = new Set([
-  "pending_evidence",
-  "not_for_resale",
-  "prohibited",
-  "request_price_only",
-  "unavailable",
-  "retired",
-]);
+// Public projection (Cycle 5): every number, assurance and CTA flag in the shipped
+// catalog is produced by lib/public-projection.js from lib/commercial-eligibility.js.
+// Internal reference prices stay in data/commercial-governance.json and the
+// internal products-complete.json; the client imports neither.
+import { createProjector } from "../lib/public-projection.js";
+const project = createProjector(governance);
 
-function applyGovernance(p) {
-  const g = governance[p.id];
-  if (!g) return p; // Unknown to governance: left as-is, and the validator fails on it.
-  const out = { ...p, commercialStatus: g.commercial_status, accessModel: g.access_model };
-  if (NO_PUBLIC_PURCHASE.has(g.commercial_status)) {
-    out.priceOnRequest = true;
-    out.priceOnRequestReason = "Availability and current price confirmed after plan verification.";
-    // Strip any BDT figure from the WhatsApp prefill so a quarantined price
-    // cannot leak through the one surface that bypasses the price components.
-    if (typeof out.whatsappMsg === "string") {
-      out.whatsappMsg = out.whatsappMsg.replace(/\s*\(৳[\d,]+(\/mo)?\)/g, "").replace(/\s+৳[\d,]+/g, "");
-    }
-    // Discount/scarcity badges are savings claims against a price we are no
-    // longer standing behind.
-    if (out.badge && /%\s*off|save|discount/i.test(out.badge)) delete out.badge;
-  }
-  return out;
-}
-
-const cleaned = products
-  .map(clean)
-  .map(normalise)
-  .map(applyGovernance)
+const normalised = products.map(clean).map(normalise);
+const cleaned = project(normalised)
   .filter((p) => (p.status || "Active").toLowerCase() !== "inactive");
 
 const rendered = JSON.stringify(cleaned, null, 2) + "\n";

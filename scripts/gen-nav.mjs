@@ -116,9 +116,9 @@ function buildCategory(cat) {
 
 const totalFamilies = families.size;
 const totalTiers = catalog.length;
-const floor = Math.min(
-  ...catalog.filter((p) => p.price > 0 && !p.priceOnRequest).map((p) => p.price)
-);
+const floorCandidates = catalog.filter((p) => p.price > 0 && !p.priceOnRequest).map((p) => p.price);
+// null (never Infinity) when no record may currently display a price.
+const floor = floorCandidates.length ? Math.min(...floorCandidates) : null;
 
 const out = `// GENERATED FILE — do not edit by hand.
 // Source: client/src/data/products-catalog.json + client/src/lib/categories.ts

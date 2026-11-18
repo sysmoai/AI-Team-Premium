@@ -318,6 +318,16 @@ const DANGLING = /\b(through|from|with|via|by|at)\s+[?.,]/gi;
 const dangling = serialized.match(DANGLING) || [];
 if (dangling.length) failures.push(`brand firewall: ${dangling.length} dangling brand placeholder(s), e.g. "${dangling[0]}"`);
 
+// ---------- 6b. public leak audit (Cycle 5) ----------
+// Independent of the projection code that produced the catalog: re-derives each
+// record's eligibility from governance and fails on any shipped price, payment ask,
+// fulfilment/warranty claim, shared-access claim, foreign phone number or storefront
+// name that eligibility does not allow.
+{
+  const { auditPublicRecords } = await import(pathToFileURL(resolve(ROOT, "lib/public-projection.js")).href);
+  for (const problem of auditPublicRecords(catalog, governance)) failures.push(`public leak audit: ${problem}`);
+}
+
 // ---------- 7. structural integrity ----------
 const seen = new Set();
 for (const p of catalog) {

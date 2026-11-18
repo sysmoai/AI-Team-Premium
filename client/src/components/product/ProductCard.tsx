@@ -2,6 +2,7 @@ import { config } from "@/lib/config";
 import { bestTextOn } from "@/lib/contrast";
 import { categoryLabel } from "@/lib/categories";
 import { langOf } from "@/lib/lang";
+import { inquiryMessage, orderMessage } from "../../../../lib/commercial-eligibility.js";
 
 /** The catalog row shape a card needs. Kept structural so both the full
  *  catalog page and a category page can pass their own product type. */
@@ -16,7 +17,10 @@ export interface ProductCardItem {
   tier?: string;
   badge?: string;
   capabilities?: string[];
-  deliverySLA?: string;
+  /** Set by scripts/build-catalog.mjs from lib/commercial-eligibility.js. */
+  canOrder?: boolean;
+  canQuote?: boolean;
+  publicState?: string;
   whatsappMsg?: string;
   brandColor?: string;
   /** Some tiers must not carry a published price — e.g. a seat-capped plan
@@ -24,10 +28,17 @@ export interface ProductCardItem {
   priceOnRequest?: boolean;
 }
 
+/**
+ * WhatsApp link for a card. The wording is decided by the eligibility layer's
+ * flags, never by the presence of a number: only canOrder produces an order /
+ * payment message, and a price is quoted only when it is a real governed price
+ * (so a missing whatsappMsg can no longer fall back to a raw `৳${price}`).
+ */
 export function productWhatsappHref(product: ProductCardItem) {
-  const message =
-    (product.whatsappMsg || `Hi! I want ${product.name} (৳${product.price}/mo)`) +
-    " — please share payment details.";
+  const hasPrice = Boolean(product.canOrder) && !product.priceOnRequest && product.price > 0;
+  const message = product.canOrder
+    ? product.whatsappMsg || orderMessage(product.name, hasPrice ? product.price : undefined)
+    : inquiryMessage(product.name);
   // The whole message must be encoded. Appending text after the encoded portion
   // corrupts the query string and WhatsApp drops or mangles the message.
   return `${config.whatsappUrl}?text=${encodeURIComponent(message)}`;
@@ -78,10 +89,10 @@ export function ProductCard({ product }: { product: ProductCardItem }) {
           {product.priceOnRequest ? (
             <>
               <p className="text-lg font-bold text-green-700 dark:text-green-400">
-                Request price on WhatsApp
+                Price and availability confirmed on WhatsApp
               </p>
               <p className="text-xs text-gray-600 dark:text-gray-400">
-                হোয়াটসঅ্যাপে দাম জেনে নিন
+                দাম ও প্রাপ্যতা হোয়াটসঅ্যাপে নিশ্চিত করা হয়
               </p>
             </>
           ) : (
@@ -119,21 +130,19 @@ export function ProductCard({ product }: { product: ProductCardItem }) {
           </div>
         )}
 
-        {product.deliverySLA && (
-          <div className="text-sm text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-slate-700/50 p-2 rounded">
-            Delivery: Timing confirmed before payment
-          </div>
+        {product.canOrder || product.canQuote ? (
+          <a
+            href={productWhatsappHref(product)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${product.canOrder ? "Order" : "Ask about"} ${product.name} on WhatsApp`}
+            className="mt-auto w-full bg-green-700 hover:bg-green-800 text-white font-bold py-2.5 px-4 rounded-lg transition flex items-center justify-center gap-2"
+          >
+            {product.canOrder ? "Order on WhatsApp" : "Ask about availability"}
+          </a>
+        ) : (
+          <p className="mt-auto text-xs text-gray-500 dark:text-gray-400">Not currently offered.</p>
         )}
-
-        <a
-          href={productWhatsappHref(product)}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Order ${product.name} on WhatsApp`}
-          className="mt-auto w-full bg-green-700 hover:bg-green-800 text-white font-bold py-2.5 px-4 rounded-lg transition flex items-center justify-center gap-2"
-        >
-          Order on WhatsApp
-        </a>
       </div>
     </div>
   );

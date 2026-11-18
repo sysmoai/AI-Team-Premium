@@ -313,6 +313,10 @@ for (const re of AIPS_PATTERNS) {
   const hits = (serialized.match(new RegExp(re.source, re.flags.includes("i") ? "gi" : "g")) || []).length;
   if (hits) failures.push(`brand firewall: shipped catalog contains ${hits} match(es) for /${re.source}/`);
 }
+// A scrubbed brand must not leave a hole behind ("safe to buy through ?").
+const DANGLING = /\b(through|from|with|via|by|at)\s+[?.,]/gi;
+const dangling = serialized.match(DANGLING) || [];
+if (dangling.length) failures.push(`brand firewall: ${dangling.length} dangling brand placeholder(s), e.g. "${dangling[0]}"`);
 
 // ---------- 7. structural integrity ----------
 const seen = new Set();

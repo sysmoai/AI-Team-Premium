@@ -78,12 +78,26 @@ function isBanned(s) {
   });
 }
 
+// The first three BANNED patterns name another storefront. An FAQ entry or
+// other object written about that storefront ("Is Canva Pro safe to buy
+// through AIPS?", "AIPS manages shared pools…") is a claim about a different
+// business. Scrubbing the name out of it leaves "safe to buy through ?" and
+// silently re-attributes the claim to AITP, so the whole entry is dropped.
+const FOREIGN_BRAND = BANNED.slice(0, 3);
+function mentionsForeignBrand(obj) {
+  return Object.values(obj).some(
+    (v) => typeof v === "string" && FOREIGN_BRAND.some((re) => ((re.lastIndex = 0), re.test(v)))
+  );
+}
+
 function clean(value) {
   if (typeof value === "string") return scrubString(value);
   if (Array.isArray(value)) {
     return value
       // Drop whole bullet points that exist only to make a banned claim.
       .filter((v) => !(typeof v === "string" && isBanned(v) && (note(BANNED[3]), true)))
+      // Drop whole objects (FAQ entries) written about another storefront.
+      .filter((v) => !(v && typeof v === "object" && !Array.isArray(v) && mentionsForeignBrand(v) && (note(FOREIGN_BRAND[0]), true)))
       .map(clean);
   }
   if (value && typeof value === "object") {

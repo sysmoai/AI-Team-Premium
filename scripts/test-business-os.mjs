@@ -247,6 +247,11 @@ test("J: another business's identity or payment number in output fails the gate"
   assert.ok(crossBusinessViolations("0186" + EN_DASH + "538" + EN_DASH + "5348").length > 0, "en dashes");
   assert.ok(crossBusinessViolations(DEV).length > 0, "other-script digits");
   assert.ok(crossBusinessViolations("0" + " ".repeat(60) + "1865385348").length > 0, "long separator padding");
+  assert.ok(crossBusinessViolations("0186\t538\n5348").length > 0, "tab and newline separators");
+  assert.ok(crossBusinessViolations("0186" + String.fromCharCode(0x2028) + "5385348").length > 0, "line separator");
+  assert.ok(crossBusinessViolations("018" + String.fromCharCode(0x2076) + "5385348").length > 0, "superscript digit");
+  assert.ok(crossBusinessViolations("0186" + String.fromCharCode(0x0301) + "5385348").length > 0, "combining mark");
+  assert.deepEqual(crossBusinessViolations("WhatsApp\t+880 1533\n262758"), []);
 });
 
 // ------------------------------------------------------------- CRM + support

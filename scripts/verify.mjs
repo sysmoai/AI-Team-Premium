@@ -1112,6 +1112,15 @@ if (worker && existsSync(indexPath)) {
     const { FALLBACK_LINKS } = await import(pathToFileURL(resolve(ROOT, "lib/render-page.js")).href);
     const sm = readFileSync(resolve(ROOT, "client/public/sitemap.xml"), "utf-8");
     const offMap = FALLBACK_LINKS.map(([h]) => h).filter((h) => !sm.includes(`<loc>https://www.aiteampremium.com${h === "/" ? "/" : h}</loc>`));
+    // Every sitemap URL must be reachable by a plain link from the fallback
+    // bodies of the hub pages (Semrush flagged 187 orphaned sitemap pages).
+    const linked = new Set();
+    for (const hub of ["/", "/all-products", "/blog", "/compare"]) {
+      const r = await (await hit(hub)).text();
+      for (const m of r.matchAll(/href="(\/[^"]*)"/g)) linked.add(m[1]);
+    }
+    const orphans = [...sm.matchAll(/<loc>https:\/\/www\.aiteampremium\.com([^<]*)<\/loc>/g)].map((m) => m[1] || "/").filter((u) => !linked.has(u));
+    if (orphans.length) offMap.push(`orphaned sitemap pages: ${orphans.slice(0, 5).join(", ")}${orphans.length > 5 ? ` (+${orphans.length - 5})` : ""}`);
     const prod = await (await hit("/tools/canva-pro-bangladesh")).text();
     const gone = await (await hit("/no-such-page")).text();
     const bodyBad = [];

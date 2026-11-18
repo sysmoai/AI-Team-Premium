@@ -335,9 +335,13 @@ export default function ProductDetail() {
 
   // Hooks must run before any early return, so the metadata falls back to safe
   // strings when the slug doesn't resolve.
-  const anchor = family.length ? family.reduce((a, b) => (a.price <= b.price ? a : b)) : null;
-  const familyName = anchor ? familyDisplayName(family) : "AI Tools";
   const startPrice = family.filter((p) => p.canOrder && !p.priceOnRequest && p.price > 0);
+  // Anchor on the cheapest ORDERABLE variant; non-orderable variants carry
+  // price 0 and would otherwise always win the comparison.
+  const anchor = startPrice.length
+    ? startPrice.reduce((a, b) => (a.price <= b.price ? a : b))
+    : family[0] ?? null;
+  const familyName = anchor ? familyDisplayName(family) : "AI Tools";
   const anyOrderable = family.some((p) => p.canOrder);
   const anyQuotable = family.some((p) => p.canQuote);
 

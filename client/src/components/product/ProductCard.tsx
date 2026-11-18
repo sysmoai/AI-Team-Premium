@@ -86,7 +86,9 @@ export function ProductCard({ product }: { product: ProductCardItem }) {
         </div>
 
         <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 p-3 rounded-lg">
-          {product.priceOnRequest ? (
+          {product.priceOnRequest && !(product.canOrder || product.canQuote) ? (
+            <p className="text-lg font-bold text-gray-700 dark:text-gray-300">Not currently offered</p>
+          ) : product.priceOnRequest ? (
             <>
               <p className="text-lg font-bold text-green-700 dark:text-green-400">
                 Price and availability confirmed on WhatsApp

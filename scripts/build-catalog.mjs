@@ -96,9 +96,20 @@ function clean(value) {
     return value
       // Drop whole bullet points that exist only to make a banned claim.
       .filter((v) => !(typeof v === "string" && isBanned(v) && (note(BANNED[3]), true)))
-      // Drop whole objects (FAQ entries) written about another storefront.
-      .filter((v) => !(v && typeof v === "object" && !Array.isArray(v) && mentionsForeignBrand(v) && (note(FOREIGN_BRAND[0]), true)))
-      .map(clean);
+      // Drop whole objects (FAQ entries) written about another storefront. Their
+      // text is never kept; an FAQ whose QUESTION is still useful leaves only a
+      // `_recover` marker so lib/public-projection.js can substitute a neutral
+      // educational answer (C6 FAQ recovery). Nothing of the original ships.
+      .map((v) => {
+        if (!(v && typeof v === "object" && !Array.isArray(v) && mentionsForeignBrand(v))) return v;
+        note(FOREIGN_BRAND[0]);
+        const q = typeof v.q === "string" ? v.q : "";
+        if (/\bsafe\b/i.test(q)) return { _recover: "safety" };
+        if (/shared|personal/i.test(q)) return { _recover: "ownership" };
+        return undefined;
+      })
+      .filter((v) => v !== undefined)
+      .map((v) => (v && v._recover ? v : clean(v)));
   }
   if (value && typeof value === "object") {
     const out = {};

@@ -11,7 +11,6 @@
     "price": 0,
     "tier": "Starter Shared",
     "accessType": "shared",
-    "badge": "Best Seller",
     "description": "Budget-friendly shared ChatGPT Plus. GPT-5 series for text, code, vision, search, DALL-E, AI agents.",
     "capabilities": [
       "text",
@@ -53,15 +52,13 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 8 users max",
           "No Sora video",
           "Slower during peak hours",
           "No deep research"
         ],
         "bestFor": "Students & freelancers on a budget",
         "seats": 8,
-        "badge": "Best Seller",
-        "inStock": true
+        "badge": "Best Seller"
       },
       {
         "planName": "Premium Shared",
@@ -84,14 +81,12 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 2-3 users",
           "No Sora video",
           "No Codex agent mode"
         ],
         "bestFor": "Freelancers & small agencies",
         "seats": 3,
-        "badge": "Popular",
-        "inStock": true
+        "badge": "Popular"
       },
       {
         "planName": "Personal",
@@ -124,8 +119,7 @@
           "No Codex"
         ],
         "bestFor": "Professionals who need full privacy",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       }
     ],
     "higherPlanUpsell": {
@@ -138,7 +132,12 @@
         "Maximum usage limits"
       ]
     },
-    "faq": [],
+    "faq": [
+      {
+        "q": "How can I check that a way of getting ChatGPT Plus is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
+      }
+    ],
     "relatedProducts": [
       {
         "slug": "claude-pro-bangladesh",
@@ -240,15 +239,13 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 8 users max",
           "No Sora video",
           "Slower during peak hours",
           "No deep research"
         ],
         "bestFor": "Students & freelancers on a budget",
         "seats": 8,
-        "badge": "Best Seller",
-        "inStock": true
+        "badge": "Best Seller"
       },
       {
         "planName": "Premium Shared",
@@ -271,14 +268,12 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 2-3 users",
           "No Sora video",
           "No Codex agent mode"
         ],
         "bestFor": "Freelancers & small agencies",
         "seats": 3,
-        "badge": "Popular",
-        "inStock": true
+        "badge": "Popular"
       },
       {
         "planName": "Personal",
@@ -311,8 +306,7 @@
           "No Codex"
         ],
         "bestFor": "Professionals who need full privacy",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       }
     ],
     "higherPlanUpsell": {
@@ -325,7 +319,12 @@
         "Maximum usage limits"
       ]
     },
-    "faq": [],
+    "faq": [
+      {
+        "q": "How can I check that a way of getting ChatGPT Plus is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
+      }
+    ],
     "relatedProducts": [
       {
         "slug": "claude-pro-bangladesh",
@@ -427,15 +426,13 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 8 users max",
           "No Sora video",
           "Slower during peak hours",
           "No deep research"
         ],
         "bestFor": "Students & freelancers on a budget",
         "seats": 8,
-        "badge": "Best Seller",
-        "inStock": true
+        "badge": "Best Seller"
       },
       {
         "planName": "Premium Shared",
@@ -458,14 +455,12 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 2-3 users",
           "No Sora video",
           "No Codex agent mode"
         ],
         "bestFor": "Freelancers & small agencies",
         "seats": 3,
-        "badge": "Popular",
-        "inStock": true
+        "badge": "Popular"
       },
       {
         "planName": "Personal",
@@ -498,8 +493,7 @@
           "No Codex"
         ],
         "bestFor": "Professionals who need full privacy",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       }
     ],
     "higherPlanUpsell": {
@@ -512,7 +506,12 @@
         "Maximum usage limits"
       ]
     },
-    "faq": [],
+    "faq": [
+      {
+        "q": "How can I check that a way of getting ChatGPT Plus is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
+      }
+    ],
     "relatedProducts": [
       {
         "slug": "claude-pro-bangladesh",
@@ -614,7 +613,7 @@
     "tier": "Starter Shared",
     "accessType": "shared",
     "badge": "For Teams",
-    "description": "Shared ChatGPT Business seat. Team workspace, admin controls, unlimited GPT-5, Codex agent.",
+    "description": "Team workspace, admin controls, unlimited GPT-5, Codex agent.",
     "capabilities": [
       "text",
       "code",
@@ -741,7 +740,7 @@
     "tier": "Premium Shared",
     "accessType": "shared",
     "badge": "Best Value Pro",
-    "description": "Shared ChatGPT Pro. Unlimited GPT-5.4 Pro mode, Sora video, unlimited deep research, highest performance.",
+    "description": "Unlimited GPT-5.4 Pro mode, Sora video, unlimited deep research, highest performance.",
     "capabilities": [
       "text",
       "code",
@@ -866,13 +865,11 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 8 users",
           "Limited Claude Code hours",
           "No Opus access"
         ],
         "bestFor": "Students & freelancers on a budget",
-        "seats": 8,
-        "inStock": true
+        "seats": 8
       },
       {
         "planName": "Premium Shared",
@@ -895,13 +892,11 @@
           "mcp"
         ],
         "limitations": [
-          "Shared with 2-3 users",
           "No persistent memory",
           "No team admin"
         ],
         "bestFor": "Freelancers & agencies",
-        "seats": 3,
-        "inStock": true
+        "seats": 3
       },
       {
         "planName": "Personal",
@@ -930,8 +925,7 @@
           "Usage rate limits apply"
         ],
         "bestFor": "Professionals who need full privacy",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Max 5x",
@@ -959,8 +953,7 @@
           "Expensive for casual users"
         ],
         "bestFor": "Power users & agencies",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Max 20x",
@@ -989,8 +982,7 @@
           "Expensive for casual users"
         ],
         "bestFor": "Enterprise power users",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Team",
@@ -1017,8 +1009,7 @@
           "Minimum 2 seats"
         ],
         "bestFor": "Teams & companies",
-        "seats": 2,
-        "inStock": true
+        "seats": 2
       }
     ],
     "higherPlanUpsell": {
@@ -1140,13 +1131,11 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 8 users",
           "Limited Claude Code hours",
           "No Opus access"
         ],
         "bestFor": "Students & freelancers on a budget",
-        "seats": 8,
-        "inStock": true
+        "seats": 8
       },
       {
         "planName": "Premium Shared",
@@ -1169,13 +1158,11 @@
           "mcp"
         ],
         "limitations": [
-          "Shared with 2-3 users",
           "No persistent memory",
           "No team admin"
         ],
         "bestFor": "Freelancers & agencies",
-        "seats": 3,
-        "inStock": true
+        "seats": 3
       },
       {
         "planName": "Personal",
@@ -1204,8 +1191,7 @@
           "Usage rate limits apply"
         ],
         "bestFor": "Professionals who need full privacy",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Max 5x",
@@ -1233,8 +1219,7 @@
           "Expensive for casual users"
         ],
         "bestFor": "Power users & agencies",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Max 20x",
@@ -1263,8 +1248,7 @@
           "Expensive for casual users"
         ],
         "bestFor": "Enterprise power users",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Team",
@@ -1291,8 +1275,7 @@
           "Minimum 2 seats"
         ],
         "bestFor": "Teams & companies",
-        "seats": 2,
-        "inStock": true
+        "seats": 2
       }
     ],
     "higherPlanUpsell": {
@@ -1414,13 +1397,11 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 8 users",
           "Limited Claude Code hours",
           "No Opus access"
         ],
         "bestFor": "Students & freelancers on a budget",
-        "seats": 8,
-        "inStock": true
+        "seats": 8
       },
       {
         "planName": "Premium Shared",
@@ -1443,13 +1424,11 @@
           "mcp"
         ],
         "limitations": [
-          "Shared with 2-3 users",
           "No persistent memory",
           "No team admin"
         ],
         "bestFor": "Freelancers & agencies",
-        "seats": 3,
-        "inStock": true
+        "seats": 3
       },
       {
         "planName": "Personal",
@@ -1478,8 +1457,7 @@
           "Usage rate limits apply"
         ],
         "bestFor": "Professionals who need full privacy",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Max 5x",
@@ -1507,8 +1485,7 @@
           "Expensive for casual users"
         ],
         "bestFor": "Power users & agencies",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Max 20x",
@@ -1537,8 +1514,7 @@
           "Expensive for casual users"
         ],
         "bestFor": "Enterprise power users",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Team",
@@ -1565,8 +1541,7 @@
           "Minimum 2 seats"
         ],
         "bestFor": "Teams & companies",
-        "seats": 2,
-        "inStock": true
+        "seats": 2
       }
     ],
     "higherPlanUpsell": {
@@ -1688,13 +1663,11 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 8 users",
           "Limited Claude Code hours",
           "No Opus access"
         ],
         "bestFor": "Students & freelancers on a budget",
-        "seats": 8,
-        "inStock": true
+        "seats": 8
       },
       {
         "planName": "Premium Shared",
@@ -1717,13 +1690,11 @@
           "mcp"
         ],
         "limitations": [
-          "Shared with 2-3 users",
           "No persistent memory",
           "No team admin"
         ],
         "bestFor": "Freelancers & agencies",
-        "seats": 3,
-        "inStock": true
+        "seats": 3
       },
       {
         "planName": "Personal",
@@ -1752,8 +1723,7 @@
           "Usage rate limits apply"
         ],
         "bestFor": "Professionals who need full privacy",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Max 5x",
@@ -1781,8 +1751,7 @@
           "Expensive for casual users"
         ],
         "bestFor": "Power users & agencies",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Max 20x",
@@ -1811,8 +1780,7 @@
           "Expensive for casual users"
         ],
         "bestFor": "Enterprise power users",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Team",
@@ -1839,8 +1807,7 @@
           "Minimum 2 seats"
         ],
         "bestFor": "Teams & companies",
-        "seats": 2,
-        "inStock": true
+        "seats": 2
       }
     ],
     "higherPlanUpsell": {
@@ -1962,13 +1929,11 @@
           "agents"
         ],
         "limitations": [
-          "Shared with 8 users",
           "Limited Claude Code hours",
           "No Opus access"
         ],
         "bestFor": "Students & freelancers on a budget",
-        "seats": 8,
-        "inStock": true
+        "seats": 8
       },
       {
         "planName": "Premium Shared",
@@ -1991,13 +1956,11 @@
           "mcp"
         ],
         "limitations": [
-          "Shared with 2-3 users",
           "No persistent memory",
           "No team admin"
         ],
         "bestFor": "Freelancers & agencies",
-        "seats": 3,
-        "inStock": true
+        "seats": 3
       },
       {
         "planName": "Personal",
@@ -2026,8 +1989,7 @@
           "Usage rate limits apply"
         ],
         "bestFor": "Professionals who need full privacy",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Max 5x",
@@ -2055,8 +2017,7 @@
           "Expensive for casual users"
         ],
         "bestFor": "Power users & agencies",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Max 20x",
@@ -2085,8 +2046,7 @@
           "Expensive for casual users"
         ],
         "bestFor": "Enterprise power users",
-        "seats": 1,
-        "inStock": true
+        "seats": 1
       },
       {
         "planName": "Team",
@@ -2113,8 +2073,7 @@
           "Minimum 2 seats"
         ],
         "bestFor": "Teams & companies",
-        "seats": 2,
-        "inStock": true
+        "seats": 2
       }
     ],
     "higherPlanUpsell": {
@@ -2325,7 +2284,7 @@
     "price": 0,
     "tier": "Shared",
     "accessType": "shared",
-    "description": "Shared Perplexity Pro. AI-powered deep research with citations. 300+ Pro searches/day.",
+    "description": "AI-powered deep research with citations. 300+ Pro searches/day.",
     "capabilities": [
       "text",
       "search",
@@ -2440,7 +2399,7 @@
     "tier": "Shared",
     "accessType": "shared",
     "badge": "Inquire on WhatsApp",
-    "description": "Shared Midjourney Standard.",
+    "description": "15hr fast GPU, unlimited relax mode, image + video gen.",
     "capabilities": [
       "image-gen",
       "video-gen"
@@ -2512,7 +2471,7 @@
     "price": 0,
     "tier": "Personal",
     "accessType": "personal",
-    "description": "Full personal Midjourney Standard.",
+    "description": "Full personal Midjourney Standard. Own account, 15hr fast GPU, unlimited relax, commercial rights.",
     "capabilities": [
       "image-gen",
       "video-gen"
@@ -2548,7 +2507,7 @@
     "price": 0,
     "tier": "Pro Shared",
     "accessType": "shared",
-    "description": "Shared Midjourney Pro.",
+    "description": "30hr fast GPU, stealth mode, 12 concurrent jobs, HD video.",
     "capabilities": [
       "image-gen",
       "image-edit",
@@ -2585,7 +2544,7 @@
     "price": 0,
     "tier": "Pro",
     "accessType": "personal",
-    "description": "Full Midjourney Pro.",
+    "description": "Full Midjourney Pro. 30hr fast GPU, stealth mode, HD video, commercial rights.",
     "capabilities": [
       "image-gen",
       "image-edit",
@@ -2622,7 +2581,7 @@
     "price": 0,
     "tier": "Mega",
     "accessType": "personal",
-    "description": "Midjourney Mega. For high-volume studios.",
+    "description": "Midjourney Mega. 60hr fast GPU, all features. For high-volume studios.",
     "capabilities": [
       "image-gen",
       "image-edit",
@@ -2733,7 +2692,7 @@
     "price": 0,
     "tier": "Shared",
     "accessType": "shared",
-    "description": "Shared Leonardo AI Apprentice. 8,500 tokens/mo, private generations, full commercial rights.",
+    "description": "8,500 tokens/mo, private generations, full commercial rights.",
     "capabilities": [
       "image-gen",
       "image-edit"
@@ -2811,14 +2770,12 @@
           "4k-export"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Content creators, TikTokers, students on budget",
         "seats": 4,
-        "badge": "P0 Hot Add",
-        "inStock": true
+        "badge": "P0 Hot Add"
       },
       {
         "planName": "Premium Personal",
@@ -2845,8 +2802,7 @@
         ],
         "bestFor": "Professional video editors, agencies, serious creators",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
@@ -2857,6 +2813,10 @@
       {
         "q": "What's the difference between shared and personal?",
         "a": "CapCut Pro Monthly is the professional tier for video editors. Official CapCut price varies by region and platform — check the current CapCut checkout. For AI Team Premium's current offer price and available access options, message us on WhatsApp."
+      },
+      {
+        "q": "How can I check that a way of getting CapCut Pro is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [
@@ -2896,7 +2856,6 @@
     "price": 0,
     "tier": "Standard",
     "accessType": "personal",
-    "badge": "Best Seller",
     "description": "Runway Standard. 625 credits/mo, Gen-4 video, image gen, 4K upscale.",
     "capabilities": [
       "video-gen",
@@ -3011,7 +2970,7 @@
     "price": 0,
     "tier": "Shared",
     "accessType": "shared",
-    "description": "Shared HeyGen Creator. AI avatar videos, 700+ stock avatars, voice cloning, 175+ languages. Unlimited videos.",
+    "description": "AI avatar videos, 700+ stock avatars, voice cloning, 175+ languages. Unlimited videos.",
     "capabilities": [
       "video-gen",
       "voice"
@@ -3048,7 +3007,7 @@
     "price": 0,
     "tier": "Starter",
     "accessType": "personal",
-    "description": "ElevenLabs Starter.",
+    "description": "ElevenLabs Starter. 30K characters TTS/mo, instant voice cloning, commercial license.",
     "capabilities": [
       "voice"
     ],
@@ -3156,7 +3115,6 @@
     "price": 0,
     "tier": "Pro",
     "accessType": "personal",
-    "badge": "Best Seller",
     "description": "Suno AI Pro. 2500 credits/mo (~500 songs), v5.5 model, commercial rights.",
     "capabilities": [
       "music"
@@ -3229,7 +3187,7 @@
     "price": 0,
     "tier": "Shared",
     "accessType": "shared",
-    "description": "Shared Udio Pro. 1200 credits/mo, generate up to 8 songs at once, all features. AI music creation.",
+    "description": "1200 credits/mo, generate up to 8 songs at once, all features. AI music creation.",
     "capabilities": [
       "music"
     ],
@@ -3265,7 +3223,6 @@
     "price": 0,
     "tier": "Pro",
     "accessType": "personal",
-    "badge": "Best Seller",
     "description": "GitHub Copilot Pro. Unlimited code completions, 300 premium requests/mo, Claude/GPT-5 models.",
     "capabilities": [
       "code"
@@ -3334,7 +3291,6 @@
     "price": 0,
     "tier": "Pro",
     "accessType": "personal",
-    "badge": "Best Seller",
     "description": "Cursor Pro AI code editor. Claude, GPT-5, Gemini models. Unlimited completions, cloud agents.",
     "capabilities": [
       "code",
@@ -3409,7 +3365,7 @@
     "price": 0,
     "tier": "Shared",
     "accessType": "shared",
-    "description": "Shared v0.dev Pro. AI web app builder by Vercel. Build apps and sites with AI prompts.",
+    "description": "AI web app builder by Vercel. Build apps and sites with AI prompts. Deploy instantly.",
     "capabilities": [
       "code",
       "agents"
@@ -3446,7 +3402,6 @@
     "price": 0,
     "tier": "Core",
     "accessType": "personal",
-    "badge": "Special Deal",
     "description": "Replit Core — Cloud IDE with AI Agent, deploy and host apps. Build anything with AI.",
     "capabilities": [
       "code",
@@ -3484,7 +3439,6 @@
     "price": 0,
     "tier": "Monthly",
     "accessType": "personal",
-    "badge": "Special Offer",
     "description": "Official Notion Business Plan. Notion AI included, teamspaces, SSO, 90-day history.",
     "capabilities": [
       "workspace",
@@ -3600,7 +3554,7 @@
     "price": 0,
     "tier": "Shared",
     "accessType": "shared",
-    "description": "Shared Otter.ai Pro. AI meeting transcription, summaries, action items.",
+    "description": "AI meeting transcription, summaries, action items. 6000 min/mo.",
     "capabilities": [
       "text",
       "workspace"
@@ -3637,7 +3591,7 @@
     "price": 0,
     "tier": "Shared",
     "accessType": "shared",
-    "description": "Shared Gamma Plus. AI presentations, docs, websites. Remove branding, advanced AI image models.",
+    "description": "AI presentations, docs, websites. Remove branding, advanced AI image models.",
     "capabilities": [
       "text",
       "workspace"
@@ -3674,7 +3628,7 @@
     "price": 0,
     "tier": "Shared",
     "accessType": "shared",
-    "description": "Shared Writesonic Individual. AI SEO content writing, 100 credits/mo, GPT-4o access.",
+    "description": "AI SEO content writing, 100 credits/mo, GPT-4o access.",
     "capabilities": [
       "text",
       "search"
@@ -3943,20 +3897,26 @@
           "clarity-improvements"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Students",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       }
     ],
     "faq": [
       {
         "q": "What is Grammarly Premium?",
         "a": "AI-powered writing assistant for grammar, spelling, tone, and clarity. Essential for students, professionals, and content creators in Bangladesh."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Grammarly Premium?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Grammarly Premium is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4025,14 +3985,21 @@
         ],
         "bestFor": "Students, writers, professionals who write in English",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
       {
         "q": "What is Grammarly Premium?",
         "a": "AI-powered writing assistant for grammar, spelling, tone, and clarity. Essential for students, professionals, and content creators in Bangladesh."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Grammarly Premium?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Grammarly Premium is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4100,20 +4067,26 @@
           "translator"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Students",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       }
     ],
     "faq": [
       {
         "q": "What is QuillBot Premium?",
         "a": "AI paraphrasing, summarizing, grammar checking, and plagiarism detection. Perfect for Bangladeshi students writing thesis and assignments in English."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for QuillBot Premium?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting QuillBot Premium is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4185,14 +4158,21 @@
         ],
         "bestFor": "Students, researchers, content writers needing paraphrasing",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
       {
         "q": "What is QuillBot Premium?",
         "a": "AI paraphrasing, summarizing, grammar checking, and plagiarism detection. Perfect for Bangladeshi students writing thesis and assignments in English."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for QuillBot Premium?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting QuillBot Premium is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4260,20 +4240,26 @@
           "social-media-templates"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Social media managers",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       }
     ],
     "faq": [
       {
         "q": "What is Canva Pro?",
         "a": "All-in-one design tool with AI Magic Studio, 100M+ stock assets, brand kit, and background remover. A popular design platform for Bangladeshi creators and SMEs."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Canva Pro?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Canva Pro is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4345,14 +4331,21 @@
         ],
         "bestFor": "Social media managers, marketers, small business owners, students",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
       {
         "q": "What is Canva Pro?",
         "a": "All-in-one design tool with AI Magic Studio, 100M+ stock assets, brand kit, and background remover. A popular design platform for Bangladeshi creators and SMEs."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Canva Pro?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Canva Pro is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4420,20 +4413,26 @@
           "gpt4"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Office workers",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       }
     ],
     "faq": [
       {
         "q": "What is Microsoft Copilot Pro?",
         "a": "AI assistant integrated into Word, Excel, PowerPoint, Outlook, and Teams. GPT-4 powered productivity for professionals and students using Microsoft 365."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Microsoft Copilot Pro?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Microsoft Copilot Pro is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4505,14 +4504,21 @@
         ],
         "bestFor": "Office workers, students, professionals using Microsoft 365",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
       {
         "q": "What is Microsoft Copilot Pro?",
         "a": "AI assistant integrated into Word, Excel, PowerPoint, Outlook, and Teams. GPT-4 powered productivity for professionals and students using Microsoft 365."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Microsoft Copilot Pro?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Microsoft Copilot Pro is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4580,20 +4586,26 @@
           "brand-voice"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Marketing agencies",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       }
     ],
     "faq": [
       {
         "q": "What is Jasper AI Creator?",
         "a": "AI marketing copywriter for blogs, ads, emails, and social media. Built for teams and agencies creating content at scale."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Jasper AI Creator?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Jasper AI Creator is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4665,14 +4677,21 @@
         ],
         "bestFor": "Marketing agencies, content teams, ecommerce sellers",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
       {
         "q": "What is Jasper AI Creator?",
         "a": "AI marketing copywriter for blogs, ads, emails, and social media. Built for teams and agencies creating content at scale."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Jasper AI Creator?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Jasper AI Creator is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4737,20 +4756,26 @@
           "photoshop-integration"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Designers",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       }
     ],
     "faq": [
       {
         "q": "What is Adobe Firefly?",
         "a": "AI image generation, generative fill, and text effects from Adobe. Integrates with Photoshop and Express. Safe for commercial use."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Adobe Firefly?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Adobe Firefly is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4812,20 +4837,26 @@
           "ai-effects"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Content creators",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       }
     ],
     "faq": [
       {
         "q": "What is Pika Labs?",
         "a": "Text-to-video AI generation. Create cinematic videos from prompts. Fast, creative video tool for Bangladeshi creators making Shorts and Reels."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Pika Labs?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Pika Labs is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4891,14 +4922,21 @@
         ],
         "bestFor": "Content creators, TikTokers, video editors making short-form content",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
       {
         "q": "What is Pika Labs?",
         "a": "Text-to-video AI generation. Create cinematic videos from prompts. Fast, creative video tool for Bangladeshi creators making Shorts and Reels."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Pika Labs?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Pika Labs is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -4963,20 +5001,26 @@
           "reels-maker"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "YouTubers",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       }
     ],
     "faq": [
       {
         "q": "What is Opus Clip?",
         "a": "AI-powered video repurposing. Automatically turns long videos into viral Shorts, Reels, and TikTok clips with captions and hooks."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Opus Clip?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Opus Clip is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -5045,14 +5089,21 @@
         ],
         "bestFor": "YouTubers, podcasters, coaches repurposing long content",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
       {
         "q": "What is Opus Clip?",
         "a": "AI-powered video repurposing. Automatically turns long videos into viral Shorts, Reels, and TikTok clips with captions and hooks."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Opus Clip?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Opus Clip is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -5117,20 +5168,26 @@
           "podcast-editing"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Podcasters",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       }
     ],
     "faq": [
       {
         "q": "What is Descript Pro?",
         "a": "AI video and podcast editing. Edit video by editing text. Auto-transcription, overdub voice cloning, and screen recording. Perfect for Bangladeshi podcasters."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Descript Pro?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Descript Pro is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -5199,14 +5256,21 @@
         ],
         "bestFor": "Podcasters, YouTubers, educators creating video content",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
       {
         "q": "What is Descript Pro?",
         "a": "AI video and podcast editing. Edit video by editing text. Auto-transcription, overdub voice cloning, and screen recording. Perfect for Bangladeshi podcasters."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Descript Pro?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Descript Pro is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -5271,20 +5335,26 @@
           "studio-quality"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Video creators",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       }
     ],
     "faq": [
       {
         "q": "What is Murf AI?",
         "a": "AI text-to-speech with 120+ voices in 20+ languages. Studio-quality voiceovers for videos, ads, e-learning, and presentations in Bangla-accented English."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Murf AI?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Murf AI is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -5353,14 +5423,21 @@
         ],
         "bestFor": "Video creators, educators, marketers needing voiceovers",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
       {
         "q": "What is Murf AI?",
         "a": "AI text-to-speech with 120+ voices in 20+ languages. Studio-quality voiceovers for videos, ads, e-learning, and presentations in Bangla-accented English."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Murf AI?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Murf AI is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -5427,14 +5504,12 @@
           "ai-upscaler"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Occasional login refresh needed"
         ],
         "bestFor": "Designers, marketers, content creators needing stock assets",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       },
       {
         "planName": "Premium Plus Shared",
@@ -5457,13 +5532,11 @@
           "ai-upscaler"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account"
         ],
         "bestFor": "Agencies and heavy users needing video + images",
         "seats": 3,
-        "badge": "Premium",
-        "inStock": true
+        "badge": "Premium"
       },
       {
         "planName": "Personal",
@@ -5490,14 +5563,21 @@
         ],
         "bestFor": "Professional designers who need full control",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
       {
         "q": "What is Freepik Premium?",
         "a": "Freepik Premium gives you unlimited downloads of millions of premium vectors, photos, PSD files, and icons — plus AI-powered image generation, reimagine, and upscaling tools."
+      },
+      {
+        "q": "What is the difference between a personal account and a shared login for Freepik Premium?",
+        "a": "A personal account is registered to you: you control the password, the recovery email, the billing relationship with the provider and your own history. With a shared login several people use one account, so others may see your prompts and files, and whoever owns the account controls recovery and can lose it for everyone. Many providers' terms of use do not allow one login to be used by several people, so read the provider's terms before agreeing to any shared arrangement."
+      },
+      {
+        "q": "How can I check that a way of getting Freepik Premium is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -5562,14 +5642,12 @@
           "motion-realism"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Limited generations per day"
         ],
         "bestFor": "Budget creators exploring AI video",
         "seats": 6,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       },
       {
         "planName": "Pro Shared",
@@ -5592,13 +5670,11 @@
           "motion-realism"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account"
         ],
         "bestFor": "Professional creators and agencies",
         "seats": 3,
-        "badge": "Pro",
-        "inStock": true
+        "badge": "Pro"
       },
       {
         "planName": "Personal",
@@ -5624,8 +5700,7 @@
         ],
         "bestFor": "Serious creators needing dedicated access",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
@@ -5636,6 +5711,10 @@
       {
         "q": "Is Kling AI better than Runway?",
         "a": "Different strengths. Kling AI excels at cinematic quality and character consistency — great for storytelling. Runway offers more advanced editing and effects. Many creators use both."
+      },
+      {
+        "q": "How can I check that a way of getting Kling AI is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -5700,14 +5779,12 @@
           "templates"
         ],
         "limitations": [
-          "Shared with other users",
           "No custom avatar creation",
           "Limited video length"
         ],
         "bestFor": "Small businesses and educators on a budget",
         "seats": 5,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       },
       {
         "planName": "Creator Shared",
@@ -5731,13 +5808,11 @@
           "brand-kit"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account"
         ],
         "bestFor": "Agencies and content creators needing custom avatars",
         "seats": 3,
-        "badge": "Creator",
-        "inStock": true
+        "badge": "Creator"
       },
       {
         "planName": "Personal",
@@ -5764,8 +5839,7 @@
         ],
         "bestFor": "Businesses needing dedicated avatar video platform",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
@@ -5776,6 +5850,10 @@
       {
         "q": "Is Synthesia better than HeyGen?",
         "a": "Synthesia is stronger for corporate and educational content with 140+ avatars. HeyGen focuses more on social media and personal branding. Choose based on your use case."
+      },
+      {
+        "q": "How can I check that a way of getting Synthesia is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -5840,14 +5918,12 @@
           "autonomous-coding"
         ],
         "limitations": [
-          "Shared with other users",
           "No dedicated personal account",
           "Cascade usage limits apply"
         ],
         "bestFor": "Developers exploring AI agent coding",
         "seats": 4,
-        "badge": "New",
-        "inStock": true
+        "badge": "New"
       },
       {
         "planName": "Personal",
@@ -5873,8 +5949,7 @@
         ],
         "bestFor": "Professional developers needing dedicated AI IDE",
         "seats": 1,
-        "badge": "Own Account",
-        "inStock": true
+        "badge": "Own Account"
       }
     ],
     "faq": [
@@ -5885,6 +5960,10 @@
       {
         "q": "How is Windsurf different from Cursor?",
         "a": "Windsurf's Cascade agent is more autonomous — it can plan multi-step tasks and execute them. Cursor is more interactive with composer mode. Both are excellent; many developers use both for different workflows."
+      },
+      {
+        "q": "How can I check that a way of getting Windsurf Pro is safe?",
+        "a": "Prefer an account in your own name, with your own recovery email and two-factor authentication turned on. Never share your password or one-time login codes with anyone. Compare what you are offered with the provider's official plans and terms, and ask how access would be supplied before you pay anyone."
       }
     ],
     "relatedProducts": [],
@@ -6610,7 +6689,7 @@
       "multi-language",
       "workspace"
     ],
-    "description": "Worth knowing: the free plan already covers unlimited recording and transcription in many languages, so the paid tier is mainly for team dashboards and CRM sync.",
+    "description": "Meeting recording with instant AI summaries. Worth knowing: the free plan already covers unlimited recording and transcription in many languages, so the paid tier is mainly for team dashboards and CRM sync.",
     "descriptionBN": "মিটিং রেকর্ডিং ও তাৎক্ষণিক AI সারসংক্ষেপ। জেনে রাখুন — ফ্রি প্ল্যানেই আনলিমিটেড রেকর্ডিং ও ট্রান্সক্রিপশন পাওয়া যায়; পেইড মূলত টিম ড্যাশবোর্ড ও CRM-এর জন্য।",
     "useCases": [
       "সেলস কলের নোট ও ফলোআপ",
@@ -7364,7 +7443,7 @@
       "video-messaging",
       "unlimited-length"
     ],
-    "description": "Records your screen and face and turns it into a shareable link with a transcript.",
+    "description": "Records your screen and face and turns it into a shareable link with a transcript. The practical use for a freelancer is replacing a client call with a five-minute video across a timezone gap — no scheduling, and the client can rewatch it.",
     "descriptionBN": "আপনার স্ক্রিন ও ক্যামেরা রেকর্ড করে ট্রান্সক্রিপ্টসহ শেয়ারযোগ্য লিংক বানায়। ফ্রিল্যান্সারের জন্য আসল কাজে লাগে টাইমজোন পার্থক্যের কারণে ক্লায়েন্ট কল বাদ দিয়ে পাঁচ মিনিটের ভিডিও পাঠাতে — মিটিং সেট করতে হয় না, ক্লায়েন্ট বারবার দেখতে পারেন।",
     "useCases": [
       "বিদেশি ক্লায়েন্টকে কাজ বুঝিয়ে দেওয়া, মিটিং ছাড়াই",

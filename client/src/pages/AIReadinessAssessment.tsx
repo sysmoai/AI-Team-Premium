@@ -5,6 +5,10 @@ import { Check, ArrowRight, Lightbulb, Lock, GraduationCap, Workflow, Headphones
 import { Link } from "wouter";
 import { config } from "@/lib/config";
 import { BreadcrumbSchema } from "@/components/seo/JsonLd";
+import { servicePriceLabel } from "@shared/service-eligibility.js";
+
+// Governed by shared/service-governance.json; null until the owner approves a price.
+const AUTOMATION_PRICE = servicePriceLabel("ai-automation");
 
 const CHECKPOINTS = [
   {
@@ -43,7 +47,7 @@ const CHECKPOINTS = [
     title: "Automation & Integration",
     question: "Are your team's repetitive daily tasks automated — or are people still doing them manually?",
     yes: "Excellent — you're already saving hours per week. Regular workflow reviews uncover new automation opportunities as your business grows and tools evolve.",
-    no: "This is where time and money leak. If your team manually copies data between apps, answers the same customer questions repeatedly, or processes orders by hand — automation could save 10-40 hours/week. Starting from ৳5,000.",
+    no: "This is where time and money leak. If your team manually copies data between apps, answers the same customer questions repeatedly, or processes orders by hand — automation can often take over much of this manual work." + (AUTOMATION_PRICE ? ` Projects start ${AUTOMATION_PRICE}.` : " Ask us what a short review of your workflow would involve."),
     link: "/services/ai-automation",
     linkLabel: "Automate Your Workflows",
   },

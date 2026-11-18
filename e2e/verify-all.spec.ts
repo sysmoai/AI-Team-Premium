@@ -246,3 +246,54 @@ test.describe("Withheld prices never render as placeholders or foreign contacts"
     });
   }
 });
+
+test.describe("Cycle 6: hydrated surfaces the C5 suite did not cover", () => {
+  test("compare pair page: no Offer, no price 0 InStock, no bKash-number or delivery promise", async ({ page }) => {
+    await page.goto(`${BASE}/compare/chatgpt-vs-claude`);
+    await page.waitForLoadState("networkidle");
+    const ld = await page.locator('script[type="application/ld+json"]').allTextContents();
+    expect(ld.join(" ")).not.toMatch(/"@type":\s*"(Aggregate)?Offer"/);
+    const html = await page.content();
+    expect(html).not.toMatch(/bKash\/Nagad number|within 5[–-]15 minutes/i);
+    expect(await page.locator("body").innerText()).not.toMatch(/৳\s?\d/);
+  });
+
+  test("blog index lists no held post and states no Taka amount in cards", async ({ page }) => {
+    await page.goto(`${BASE}/blog`);
+    await page.waitForLoadState("networkidle");
+    const html = await page.content();
+    for (const slug of ["complete-guide-ai-subscriptions-bangladesh-pricing", "chatgpt-plus-personal-vs-shared-bangladesh", "bkash-diye-chatgpt-kena-bangla-guide"])
+      expect(html).not.toContain(`/blog/${slug}"`);
+    expect(await page.locator("body").innerText()).not.toMatch(/৳\s?\d/);
+  });
+
+  // SSR status/noindex for these paths is a Worker behaviour and is asserted in
+  // scripts/test-commercial-eligibility.mjs (Worker module test); this Express
+  // build checks what a visitor actually sees after hydration.
+  test("held post and legacy static blog URL show no price or purchase promise after hydration", async ({ page, request }) => {
+    for (const path of ["/blog/complete-guide-ai-subscriptions-bangladesh-pricing", "/blog/bonus/chatgpt-bKash-how-to/", "/blog/students/ai-arts-humanities/"]) {
+      await page.goto(`${BASE}${path}`);
+      await page.waitForLoadState("networkidle");
+      const text = await page.locator("body").innerText();
+      expect(text, path).not.toMatch(/৳\s?\d|bKash\/Nagad number|replacement guarantee|5[–-]15 min/);
+    }
+    const legacyData = await request.get(`${BASE}/blog/blog-data.js`);
+    expect(await legacyData.text()).not.toMatch(/৳\s?\d/);
+  });
+
+  test("pricing card WhatsApp links are real wa.me URLs (were relative 404s)", async ({ page }) => {
+    await page.goto(`${BASE}/pricing`);
+    await page.waitForLoadState("networkidle");
+    const hrefs = await page.locator('[data-testid^="button-order-"]').evaluateAll((els) => els.map((e) => e.getAttribute("href")));
+    expect(hrefs.length).toBeGreaterThan(0);
+    for (const h of hrefs) if (h) expect(h).toMatch(/^https:\/\/wa\.me\/8801533262758\?text=/);
+  });
+
+  test("AI readiness and blog CTA show no ungoverned service price", async ({ page }) => {
+    for (const path of ["/ai-readiness", "/blog"]) {
+      await page.goto(`${BASE}${path}`);
+      await page.waitForLoadState("networkidle");
+      expect(await page.locator("body").innerText(), path).not.toMatch(/৳\s?\d/);
+    }
+  });
+});

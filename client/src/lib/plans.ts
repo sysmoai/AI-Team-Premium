@@ -225,7 +225,8 @@ export const chatgptPlans = [
     color: "red",
     quarantined: true,
     quarantineReason:
-      "Corresponds to catalog record chatgpt-pro-premium-shared. CEO decision F27 (2026-07-26): HOLD, no published price, quote per-enquiry only, \"৳4,500/৳4,990 must not appear anywhere.\" This file previously quoted exactly ৳4,990 in a live title, ProductSchema offer and WhatsApp CTA.",
+      // This string ships to the browser: never repeat the withheld amounts (F27).
+      "Corresponds to catalog record chatgpt-pro-premium-shared. CEO decision F27 (2026-07-26): HOLD, no published price, quote per-enquiry only; the withheld amounts must not appear anywhere.",
   },
   {
     slug: "pro-personal",

@@ -130,7 +130,10 @@ export default function Pricing() {
                   <div className="mt-4 flex flex-col gap-2">
                     <div className="flex gap-2">
                       <a
-                        href={item.waText}
+                        // waText is the prefill MESSAGE, not a URL (it was used as a
+                        // relative href, so every card opened a 404). No message = no link.
+                        href={item.waText ? waBase + enc(item.waText) : undefined}
+                        aria-disabled={item.waText ? undefined : true}
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => trackWhatsAppClick(item.name, undefined, item.canOrder ? item.price : "", "pricing-card")}

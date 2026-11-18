@@ -34,7 +34,7 @@ export const TOOL_META = {
   ],
   "weaknesses": [
     "No image generation",
-    "Limited availability during peak hours for shared plans"
+    "Usage limits can apply during peak hours"
   ]
 } as const;
 

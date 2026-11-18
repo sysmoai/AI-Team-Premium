@@ -154,7 +154,7 @@ function ComparisonDetail({ a, b }: { a: CompareTool; b: CompareTool }) {
   const rec = recommend(a, b);
   const winner: CompareTool | null = rec.kind === "winner" ? (rec.winnerSlug === a.slug ? a : b) : null;
   const title = `${a.name} vs ${b.name} in Bangladesh — Price, Features, Verdict`;
-  const description = `Side-by-side comparison of ${a.name} (${a.priceFromLabel}) and ${b.name} (${b.priceFromLabel}). Specs, Bangla quality, best use cases and which to buy from AI Team Premium.`;
+  const description = `Side-by-side comparison of ${a.name} (${a.priceFromLabel}) and ${b.name} (${b.priceFromLabel}). Specs, Bangla quality, best use cases and which fits your work.`;
   // Canonical, not the requested slug: the reverse order renders this same
   // comparison, and self-canonicalising both would put the two URLs in
   // competition for one query.
@@ -165,7 +165,7 @@ function ComparisonDetail({ a, b }: { a: CompareTool; b: CompareTool }) {
     { q: `Which is better: ${a.name} or ${b.name}?`, a: rec.reason },
     { q: `What is the price difference between ${a.name} and ${b.name} in Bangladesh?`, a: `Current public catalog prices are shown above where available. Confirm the exact plan, access model, availability, fulfillment timing and support terms before payment.` },
     { q: `Can I use ${a.name} and ${b.name} in Bangla?`, a: `${a.name}: ${a.specs.banglaQuality}. ${b.name}: ${b.specs.banglaQuality}.` },
-    { q: `How do I buy ${a.name} or ${b.name} in Bangladesh?`, a: `Message AI Team Premium on WhatsApp (+880 1533-262758) with the tool and plan you want. We send the bKash/Nagad number privately, confirm payment, and deliver login or invite details within 5–15 minutes.` },
+    { q: `How do I buy ${a.name} or ${b.name} in Bangladesh?`, a: `Message AI Team Premium on WhatsApp with the tool and plan you are interested in, and ask whether it is currently available and how it would be supplied. Do not pay anyone before the offer is confirmed in writing.` },
   ];
 
   const rows = specRows(a, b);
@@ -201,14 +201,20 @@ function ComparisonDetail({ a, b }: { a: CompareTool; b: CompareTool }) {
                 "name": t.name,
                 "brand": { "@type": "Brand", "name": t.brand },
                 "url": `https://www.aiteampremium.com${t.toolPath}`,
-                "offers": {
-                  "@type": "Offer",
-                  "priceCurrency": "BDT",
-                  "price": String(t.priceFromBdt),
-                  "availability": "https://schema.org/InStock",
-                  "areaServed": "BD",
-                  "seller": { "@type": "Organization", "name": "AI Team Premium" },
-                },
+                // An Offer is a price + availability claim. TOOL_META carries a
+                // number only when the governed catalog has one (priceBdt 0 =
+                // price on request), so a 0 must never become "free, in stock".
+                ...(t.priceFromBdt > 0
+                  ? {
+                      "offers": {
+                        "@type": "Offer",
+                        "priceCurrency": "BDT",
+                        "price": String(t.priceFromBdt),
+                        "areaServed": "BD",
+                        "seller": { "@type": "Organization", "name": "AI Team Premium" },
+                      },
+                    }
+                  : {}),
               },
             })),
           },

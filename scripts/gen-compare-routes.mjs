@@ -87,7 +87,7 @@ const titleFor = (a, b) =>
 
 const descFor = (a, b) =>
   `Side-by-side comparison of ${NAMES[a]} (${PRICE[a]}) and ${NAMES[b]} (${PRICE[b]}). ` +
-  `Specs, Bangla quality, best use cases and which to buy from AI Team Premium.`;
+  `Specs, Bangla quality, best use cases and which fits your work.`;
 
 const records = [];
 const canonicalPaths = [];

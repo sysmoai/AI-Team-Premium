@@ -137,7 +137,11 @@ test("projection: pending/inquiry-only records ship NO number, NO payment ask, N
   assert.ok(!/payment|৳|bkash/i.test(p.whatsappMsg), p.whatsappMsg);
   assert.ok(!/instant|warrant|replac|minutes|bkash|shared/i.test(JSON.stringify(p)));
   assert.ok(!JSON.stringify(p).includes("1865"));
-  assert.equal(p.faq.length, 1, "only the harmless FAQ survives");
+  // C6: the harmless FAQ survives, and the removed "safe to buy through ?" entry is
+  // replaced by the neutral recovered answer (old expectation: 1 entry; the
+  // unsafe original text must still be gone).
+  assert.deepEqual(p.faq.map((f) => f.q), ["What is it?", "How can I check that a way of getting Synthetic Tool is safe?"]);
+  assert.ok(!JSON.stringify(p.faq).includes("through ?"));
   assert.deepEqual(auditPublicRecords([p], g, { now: NOW }), []);
 });
 
@@ -245,7 +249,10 @@ test("no governance record can become purchasable through the legacy bulk script
   const bulk = Object.values(governance).filter((g) => (g.evidence_ids ?? []).includes("ceo-decision-2026-08-02-bulk"));
   assert.ok(bulk.length > 0);
   assert.equal(bulk.filter((g) => decide(g).canShowOrderCTA).length, 0, "bulk-approved records must stay inquiry-only");
-  assert.equal(purchasable.length, 0, "no record has provider evidence yet, so none may be purchasable");
+  // C6: the old `purchasable.length === 0` was a data snapshot that would fail
+  // the first legitimately evidenced SKU. The rule now lives in
+  // scripts/test-c6-surfaces.ts ("every purchasable real record carries real evidence").
+  void purchasable;
 });
 
 // ------------------------------------------------------------------- Worker
@@ -288,5 +295,16 @@ workerTest("Worker (no deployment): /api/e methods, SSR pages carry no price / p
     assert.ok(!body.includes("1865"), `${path}: foreign number`);
     assert.ok(!/please share payment details/i.test(body), `${path}: payment ask`);
     assert.ok(!/"@type":\s*"Offer"|"offers"/.test(body), `${path}: Offer schema while nothing is purchasable`);
+  }
+
+  // C6: held React posts and the legacy static blog answer 200 + noindex with
+  // the neutral holding page (ASSETS has no file for them any more).
+  for (const path of ["/blog/complete-guide-ai-subscriptions-bangladesh-pricing", "/blog/bonus/chatgpt-bKash-how-to/", "/blog/students/ai-arts-humanities/"]) {
+    const res = await call(path);
+    const body = await res.text();
+    assert.equal(res.status, 200, path);
+    assert.match(res.headers.get("x-robots-tag") ?? "", /noindex/, path);
+    assert.match(body, /noindex/, path);
+    assert.ok(!/৳\s?\d|bKash\/Nagad number|replacement guarantee/.test(body), path);
   }
 });

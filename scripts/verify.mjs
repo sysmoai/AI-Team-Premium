@@ -150,6 +150,10 @@ if (products) {
       return;
     }
     for (const f of REQUIRED) {
+      // The projection deletes the prefill for records that may not even be
+      // enquired about (prohibited, retired, unknown...): require it only when
+      // the page will show a WhatsApp button.
+      if (f === "whatsappMsg" && !(p.canOrder || p.canQuote)) continue;
       const v = p[f];
       if (v === undefined || v === null || v === "") problems.push(`${label}: missing "${f}"`);
     }

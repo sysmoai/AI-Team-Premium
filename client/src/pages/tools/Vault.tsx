@@ -95,8 +95,8 @@ const VAULT_FAQS = [
 export const TOOL_META = {
   "slug": "vault",
   "category": "chat",
-  "priceBdt": 1990,
-  "priceLabel": "৳1,990/mo",
+  "priceBdt": 0,
+  "priceLabel": "Price on request",
   "model": "3 AI tools combined",
   "contextWindow": "Varies per tool",
   "multimodal": "Text, image, code, design",

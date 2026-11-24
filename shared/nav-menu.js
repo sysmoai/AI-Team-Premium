@@ -15,27 +15,27 @@ export const NAV_COLUMNS = [
         "label": "AI Assistants",
         "href": "/category/ai-assistant",
         "count": 11,
-        "priceFrom": 1196,
+        "priceFrom": null,
         "top": [
-          {
-            "name": "Grok",
-            "href": "/tools/supergrok-bangladesh",
-            "priceFrom": 1495
-          },
           {
             "name": "ChatGPT",
             "href": "/tools/chatgpt-plus-bangladesh",
-            "priceFrom": 2990
+            "priceFrom": null
+          },
+          {
+            "name": "ChatGPT",
+            "href": "/tools/chatgpt-business-bangladesh",
+            "priceFrom": null
+          },
+          {
+            "name": "ChatGPT",
+            "href": "/tools/chatgpt-pro-bangladesh",
+            "priceFrom": null
           },
           {
             "name": "Claude",
             "href": "/tools/claude-pro-bangladesh",
-            "priceFrom": 2990
-          },
-          {
-            "name": "Microsoft",
-            "href": "/tools/microsoft-copilot-pro-bangladesh",
-            "priceFrom": 2990
+            "priceFrom": null
           }
         ]
       }
@@ -49,13 +49,8 @@ export const NAV_COLUMNS = [
         "label": "Image Generation",
         "href": "/category/ai-image",
         "count": 8,
-        "priceFrom": 1296,
+        "priceFrom": null,
         "top": [
-          {
-            "name": "Midjourney",
-            "href": "/tools/midjourney-bangladesh",
-            "priceFrom": 4990
-          },
           {
             "name": "Adobe",
             "href": "/tools/adobe-firefly-bangladesh",
@@ -67,9 +62,14 @@ export const NAV_COLUMNS = [
             "priceFrom": null
           },
           {
-            "name": "Photoroom",
-            "href": "/tools/photoroom-bangladesh",
-            "priceFrom": 1296
+            "name": "Midjourney",
+            "href": "/tools/midjourney-bangladesh",
+            "priceFrom": null
+          },
+          {
+            "name": "Ideogram",
+            "href": "/tools/ideogram-bangladesh",
+            "priceFrom": null
           }
         ]
       },
@@ -78,27 +78,27 @@ export const NAV_COLUMNS = [
         "label": "Video Generation",
         "href": "/category/ai-video",
         "count": 13,
-        "priceFrom": 1008,
+        "priceFrom": null,
         "top": [
           {
-            "name": "Pika",
-            "href": "/tools/pika-labs-bangladesh",
-            "priceFrom": 1200
-          },
-          {
-            "name": "Runway",
-            "href": "/tools/runway-bangladesh",
-            "priceFrom": 1794
+            "name": "CapCut",
+            "href": "/tools/capcut-pro-bangladesh",
+            "priceFrom": null
           },
           {
             "name": "Descript",
             "href": "/tools/descript-pro-bangladesh",
-            "priceFrom": 2090
+            "priceFrom": null
+          },
+          {
+            "name": "Kling AI",
+            "href": "/tools/kling-ai-bangladesh",
+            "priceFrom": null
           },
           {
             "name": "Opus",
             "href": "/tools/opus-clip-bangladesh",
-            "priceFrom": 2590
+            "priceFrom": null
           }
         ]
       },
@@ -107,27 +107,27 @@ export const NAV_COLUMNS = [
         "label": "Voice & Music",
         "href": "/category/ai-voice-music",
         "count": 7,
-        "priceFrom": 748,
+        "priceFrom": null,
         "top": [
-          {
-            "name": "Suno",
-            "href": "/tools/suno-ai-bangladesh",
-            "priceFrom": 1495
-          },
           {
             "name": "Murf",
             "href": "/tools/murf-ai-bangladesh",
-            "priceFrom": 2840
+            "priceFrom": null
+          },
+          {
+            "name": "Suno",
+            "href": "/tools/suno-ai-bangladesh",
+            "priceFrom": null
           },
           {
             "name": "ElevenLabs",
             "href": "/tools/elevenlabs-bangladesh",
-            "priceFrom": 748
+            "priceFrom": null
           },
           {
             "name": "Krisp",
             "href": "/tools/krisp-bangladesh",
-            "priceFrom": 1376
+            "priceFrom": null
           }
         ]
       },
@@ -136,26 +136,26 @@ export const NAV_COLUMNS = [
         "label": "Design",
         "href": "/category/ai-design",
         "count": 4,
-        "priceFrom": 1728,
+        "priceFrom": null,
         "top": [
           {
             "name": "Canva",
             "href": "/tools/canva-pro-bangladesh",
-            "priceFrom": 2190
-          },
-          {
-            "name": "Framer",
-            "href": "/tools/framer-bangladesh",
-            "priceFrom": 1728
-          },
-          {
-            "name": "Figma",
-            "href": "/tools/figma-bangladesh",
-            "priceFrom": 2064
+            "priceFrom": null
           },
           {
             "name": "Adobe Creative Cloud",
             "href": "/tools/adobe-creative-cloud-bangladesh",
+            "priceFrom": null
+          },
+          {
+            "name": "Figma",
+            "href": "/tools/figma-bangladesh",
+            "priceFrom": null
+          },
+          {
+            "name": "Framer",
+            "href": "/tools/framer-bangladesh",
             "priceFrom": null
           }
         ]
@@ -170,7 +170,7 @@ export const NAV_COLUMNS = [
         "label": "Workspace",
         "href": "/category/ai-workspace",
         "count": 14,
-        "priceFrom": 1216,
+        "priceFrom": null,
         "top": [
           {
             "name": "Notion",
@@ -178,19 +178,19 @@ export const NAV_COLUMNS = [
             "priceFrom": null
           },
           {
+            "name": "Airtable",
+            "href": "/tools/airtable-bangladesh",
+            "priceFrom": null
+          },
+          {
+            "name": "Beautiful.ai",
+            "href": "/tools/beautiful-ai-bangladesh",
+            "priceFrom": null
+          },
+          {
             "name": "ClickUp",
             "href": "/tools/clickup-bangladesh",
-            "priceFrom": 1216
-          },
-          {
-            "name": "Miro",
-            "href": "/tools/miro-bangladesh",
-            "priceFrom": 1376
-          },
-          {
-            "name": "Fireflies.ai",
-            "href": "/tools/fireflies-ai-bangladesh",
-            "priceFrom": 1728
+            "priceFrom": null
           }
         ]
       },
@@ -199,17 +199,17 @@ export const NAV_COLUMNS = [
         "label": "Coding",
         "href": "/category/ai-code",
         "count": 7,
-        "priceFrom": 1495,
+        "priceFrom": null,
         "top": [
-          {
-            "name": "GitHub",
-            "href": "/tools/github-copilot-bangladesh",
-            "priceFrom": 1495
-          },
           {
             "name": "Cursor",
             "href": "/tools/cursor-bangladesh",
-            "priceFrom": 2990
+            "priceFrom": null
+          },
+          {
+            "name": "GitHub",
+            "href": "/tools/github-copilot-bangladesh",
+            "priceFrom": null
           },
           {
             "name": "Windsurf",
@@ -217,9 +217,9 @@ export const NAV_COLUMNS = [
             "priceFrom": null
           },
           {
-            "name": "Replit",
-            "href": "/tools/replit-bangladesh",
-            "priceFrom": 3390
+            "name": "Bolt.new",
+            "href": "/tools/bolt-new-bangladesh",
+            "priceFrom": null
           }
         ]
       },
@@ -228,22 +228,22 @@ export const NAV_COLUMNS = [
         "label": "Writing",
         "href": "/category/ai-writing",
         "count": 4,
-        "priceFrom": 1490,
+        "priceFrom": null,
         "top": [
-          {
-            "name": "QuillBot",
-            "href": "/tools/quillbot-premium-bangladesh",
-            "priceFrom": 1490
-          },
           {
             "name": "Grammarly",
             "href": "/tools/grammarly-premium-bangladesh",
-            "priceFrom": 2090
+            "priceFrom": null
           },
           {
             "name": "Jasper",
             "href": "/tools/jasper-ai-bangladesh",
-            "priceFrom": 5830
+            "priceFrom": null
+          },
+          {
+            "name": "QuillBot",
+            "href": "/tools/quillbot-premium-bangladesh",
+            "priceFrom": null
           },
           {
             "name": "Writesonic",
@@ -262,17 +262,17 @@ export const NAV_COLUMNS = [
         "label": "Automation",
         "href": "/category/automation",
         "count": 2,
-        "priceFrom": 1552,
+        "priceFrom": null,
         "top": [
           {
             "name": "Make",
             "href": "/tools/make-bangladesh",
-            "priceFrom": 1552
+            "priceFrom": null
           },
           {
             "name": "Zapier",
             "href": "/tools/zapier-bangladesh",
-            "priceFrom": 3440
+            "priceFrom": null
           }
         ]
       },
@@ -281,22 +281,22 @@ export const NAV_COLUMNS = [
         "label": "SEO & Marketing",
         "href": "/category/seo",
         "count": 3,
-        "priceFrom": 4992,
+        "priceFrom": null,
         "top": [
           {
             "name": "Ahrefs",
             "href": "/tools/ahrefs-bangladesh",
-            "priceFrom": 4992
-          },
-          {
-            "name": "Surfer SEO",
-            "href": "/tools/surfer-seo-bangladesh",
-            "priceFrom": 8432
+            "priceFrom": null
           },
           {
             "name": "Semrush",
             "href": "/tools/semrush-bangladesh",
-            "priceFrom": 20176
+            "priceFrom": null
+          },
+          {
+            "name": "Surfer SEO",
+            "href": "/tools/surfer-seo-bangladesh",
+            "priceFrom": null
           }
         ]
       },
@@ -305,12 +305,12 @@ export const NAV_COLUMNS = [
         "label": "Learning",
         "href": "/category/ai-learning",
         "count": 1,
-        "priceFrom": 2304,
+        "priceFrom": null,
         "top": [
           {
             "name": "Coursera",
             "href": "/tools/coursera-plus-bangladesh",
-            "priceFrom": 2304
+            "priceFrom": null
           }
         ]
       },
@@ -319,27 +319,27 @@ export const NAV_COLUMNS = [
         "label": "Bundles",
         "href": "/category/bundles",
         "count": 4,
-        "priceFrom": 449,
+        "priceFrom": null,
         "top": [
           {
             "name": "Bundles",
             "href": "/tools/student-package-bangladesh",
-            "priceFrom": 449
+            "priceFrom": null
           },
           {
             "name": "Bundles",
             "href": "/tools/freelancer-bundle-bangladesh",
-            "priceFrom": 3999
+            "priceFrom": null
           },
           {
             "name": "Bundles",
             "href": "/tools/business-package-bangladesh",
-            "priceFrom": 15000
+            "priceFrom": null
           },
           {
             "name": "Bundles",
             "href": "/tools/b2b-implementation-bangladesh",
-            "priceFrom": 25000
+            "priceFrom": null
           }
         ]
       }
@@ -353,5 +353,5 @@ export const NAV_CATEGORIES = NAV_COLUMNS.flatMap((c) => c.categories);
 export const CATALOG_TOTALS = {
   families: 78,
   tiers: 129,
-  priceFrom: 449,
+  priceFrom: null,
 };

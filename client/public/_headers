@@ -2,6 +2,7 @@
 # Keep the security set identical to SECURITY_HEADERS in lib/render-page.js
 # (npm run verify enforces this).
 /*
+  Strict-Transport-Security: max-age=2592000
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin

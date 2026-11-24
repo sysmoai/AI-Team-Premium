@@ -7,8 +7,15 @@ import { Link } from "wouter";
 import { Clock, ArrowRight, MessageCircle, BookOpen, Zap } from "lucide-react";
 import { config } from "@/lib/config";
 import { trackWhatsAppClick, trackMessengerClick } from "@/lib/analytics";
-import { BLOG_POSTS } from "@/data/blog-posts";
+import { BLOG_POSTS as ALL_BLOG_POSTS } from "@/data/blog-posts";
+import { QUARANTINED_BLOG_SLUGS as HELD_BLOG_SLUGS } from "@shared/content-quarantine.js";
+// Posts on editorial hold keep their URL (noindex holding page) but are not listed.
+const BLOG_POSTS = ALL_BLOG_POSTS.filter((p) => !HELD_BLOG_SLUGS.has(p.slug));
 import { categorySlug } from "@/pages/BlogCategory";
+import { servicePriceLabel } from "@shared/service-eligibility.js";
+
+// Governed by shared/service-governance.json; null until the owner approves a price.
+const TRAINING_PRICE = servicePriceLabel("live-ai-training-session");
 
 const CATEGORIES = Array.from(new Set(BLOG_POSTS.map((p) => p.category)))
   .map((name) => ({ name, slug: categorySlug(name), count: BLOG_POSTS.filter((p) => p.category === name).length }))
@@ -193,7 +200,7 @@ export default function Blog() {
             Book a Live AI Coaching Session
           </h2>
           <p className="mb-8" style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.95rem", lineHeight: 1.8 }}>
-            Get Bangla-language guidance from AI experts — personalized for your needs, starting from ৳799/hour. Perfect for students, freelancers, and teams.
+            Get Bangla-language guidance from AI experts — personalized for your needs{TRAINING_PRICE ? `, ${TRAINING_PRICE}` : ""}. Ask on WhatsApp about current availability and what a session covers. For students, freelancers, and teams.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a

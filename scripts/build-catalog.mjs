@@ -78,13 +78,38 @@ function isBanned(s) {
   });
 }
 
+// The first three BANNED patterns name another storefront. An FAQ entry or
+// other object written about that storefront ("Is Canva Pro safe to buy
+// through AIPS?", "AIPS manages shared pools…") is a claim about a different
+// business. Scrubbing the name out of it leaves "safe to buy through ?" and
+// silently re-attributes the claim to AITP, so the whole entry is dropped.
+const FOREIGN_BRAND = BANNED.slice(0, 3);
+function mentionsForeignBrand(obj) {
+  return Object.values(obj).some(
+    (v) => typeof v === "string" && FOREIGN_BRAND.some((re) => ((re.lastIndex = 0), re.test(v)))
+  );
+}
+
 function clean(value) {
   if (typeof value === "string") return scrubString(value);
   if (Array.isArray(value)) {
     return value
       // Drop whole bullet points that exist only to make a banned claim.
       .filter((v) => !(typeof v === "string" && isBanned(v) && (note(BANNED[3]), true)))
-      .map(clean);
+      // Drop whole objects (FAQ entries) written about another storefront. Their
+      // text is never kept; an FAQ whose QUESTION is still useful leaves only a
+      // `_recover` marker so lib/public-projection.js can substitute a neutral
+      // educational answer (C6 FAQ recovery). Nothing of the original ships.
+      .map((v) => {
+        if (!(v && typeof v === "object" && !Array.isArray(v) && mentionsForeignBrand(v))) return v;
+        note(FOREIGN_BRAND[0]);
+        const q = typeof v.q === "string" ? v.q : "";
+        if (/\bsafe\b/i.test(q)) return { _recover: "safety" };
+        if (/shared|personal/i.test(q)) return { _recover: "ownership" };
+        return undefined;
+      })
+      .filter((v) => v !== undefined)
+      .map((v) => (v && v._recover ? v : clean(v)));
   }
   if (value && typeof value === "object") {
     const out = {};
@@ -141,39 +166,15 @@ try {
   process.exit(1);
 }
 
-// Statuses that must never carry a fixed public price or a direct buy action.
-const NO_PUBLIC_PURCHASE = new Set([
-  "pending_evidence",
-  "not_for_resale",
-  "prohibited",
-  "request_price_only",
-  "unavailable",
-  "retired",
-]);
+// Public projection (Cycle 5): every number, assurance and CTA flag in the shipped
+// catalog is produced by lib/public-projection.js from lib/commercial-eligibility.js.
+// Internal reference prices stay in data/commercial-governance.json and the
+// internal products-complete.json; the client imports neither.
+import { createProjector } from "../lib/public-projection.js";
+const project = createProjector(governance);
 
-function applyGovernance(p) {
-  const g = governance[p.id];
-  if (!g) return p; // Unknown to governance: left as-is, and the validator fails on it.
-  const out = { ...p, commercialStatus: g.commercial_status, accessModel: g.access_model };
-  if (NO_PUBLIC_PURCHASE.has(g.commercial_status)) {
-    out.priceOnRequest = true;
-    out.priceOnRequestReason = "Availability and current price confirmed after plan verification.";
-    // Strip any BDT figure from the WhatsApp prefill so a quarantined price
-    // cannot leak through the one surface that bypasses the price components.
-    if (typeof out.whatsappMsg === "string") {
-      out.whatsappMsg = out.whatsappMsg.replace(/\s*\(৳[\d,]+(\/mo)?\)/g, "").replace(/\s+৳[\d,]+/g, "");
-    }
-    // Discount/scarcity badges are savings claims against a price we are no
-    // longer standing behind.
-    if (out.badge && /%\s*off|save|discount/i.test(out.badge)) delete out.badge;
-  }
-  return out;
-}
-
-const cleaned = products
-  .map(clean)
-  .map(normalise)
-  .map(applyGovernance)
+const normalised = products.map(clean).map(normalise);
+const cleaned = project(normalised)
   .filter((p) => (p.status || "Active").toLowerCase() !== "inactive");
 
 const rendered = JSON.stringify(cleaned, null, 2) + "\n";

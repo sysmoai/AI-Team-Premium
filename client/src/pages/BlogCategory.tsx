@@ -2,7 +2,10 @@ import { Layout } from "@/components/layout/Layout";
 import { BRAND, THEME_COLORS } from "@/components/brand/LogoIcons";
 import { useDarkMode } from "@/hooks/use-dark-mode";
 import { usePageMeta } from "@/hooks/use-page-meta";
-import { BLOG_POSTS } from "@/data/blog-posts";
+import { BLOG_POSTS as ALL_BLOG_POSTS } from "@/data/blog-posts";
+import { QUARANTINED_BLOG_SLUGS as HELD_BLOG_SLUGS } from "@shared/content-quarantine.js";
+// Posts on editorial hold keep their URL (noindex holding page) but are not listed.
+const BLOG_POSTS = ALL_BLOG_POSTS.filter((p) => !HELD_BLOG_SLUGS.has(p.slug));
 import { BreadcrumbSchema } from "@/components/seo/JsonLd";
 import { Link } from "wouter";
 import { ArrowRight, ArrowLeft, Clock, BookOpen } from "lucide-react";

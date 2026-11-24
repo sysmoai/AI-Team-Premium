@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>AITP Ops — local synthetic demo</title>
+<style>
+  :root { --bg:#f8fafc; --fg:#0f172a; --muted:#475569; --line:#cbd5e1; --warn:#b45309; --ok:#047857; --bad:#b91c1c; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0b1220; --fg:#e2e8f0; --muted:#94a3b8; --line:#334155; --warn:#f59e0b; --ok:#34d399; --bad:#f87171; } }
+  body { margin:0; font:14px/1.5 system-ui, sans-serif; background:var(--bg); color:var(--fg); }
+  header { padding:12px 16px; border-bottom:1px solid var(--line); }
+  .banner { color:var(--warn); font-weight:700; }
+  main { display:grid; gap:12px; padding:16px; max-width:960px; margin:0 auto; }
+  section { border:1px solid var(--line); border-radius:8px; padding:12px; }
+  h2 { font-size:15px; margin:0 0 8px; }
+  label { display:inline-flex; gap:6px; align-items:center; margin:4px 12px 4px 0; color:var(--muted); }
+  input, select, button { font:inherit; padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:transparent; color:var(--fg); }
+  button { cursor:pointer; }
+  pre { white-space:pre-wrap; word-break:break-word; background:rgba(127,127,127,.08); padding:8px; border-radius:6px; max-height:220px; overflow:auto; }
+  .ok { color:var(--ok); } .bad { color:var(--bad); }
+</style>
+</head>
+<body>
+<header>
+  <div class="banner">LOCAL SYNTHETIC DEMO — not production. Test-only login, in-memory data, synthetic customers and bank lines.</div>
+  <div>AI Team Premium Business OS · signed in as <span id="me">nobody</span></div>
+</header>
+<main>
+  <section>
+    <h2>1 · Test-only staff login</h2>
+    <select id="subject">
+      <option>syn-sales_support</option><option>syn-finance_reviewer</option><option>syn-fulfillment_operator</option>
+      <option>syn-business_owner</option><option>syn-auditor</option><option>syn-revoked</option>
+    </select>
+    <button onclick="login()">Sign in (synthetic)</button>
+  </section>
+  <section>
+    <h2>2 · Quote (price comes from governance, not this form)</h2>
+    <label>Customer <input id="cust" value="syn-cust-1"></label>
+    <label>Qty <input id="qty" type="number" value="2" min="1" max="50" style="width:5em"></label>
+    <button onclick="quote()">Prepare quote</button>
+    <button onclick="askAccept()">Ask customer to accept</button>
+  </section>
+  <section>
+    <h2>3 · Customer side (simulated inbox)</h2>
+    <button onclick="customerAccept()">Customer opens link and accepts</button>
+  </section>
+  <section>
+    <h2>4 · Order, payment, fulfilment</h2>
+    <button onclick="order()">Create order</button>
+    <button onclick="report()">Record customer payment report</button>
+    <button onclick="bankLine()">Import signed bank line</button>
+    <button onclick="verify()">Verify payment</button>
+    <select id="to"><option>ASSIGNED</option><option>FULFILLING</option><option>DELIVERED</option><option>CLOSED</option></select>
+    <button onclick="move()">Transition</button>
+    <button onclick="track()">Customer tracks order</button>
+  </section>
+  <section>
+    <h2>5 · Finance and audit</h2>
+    <button onclick="call('GET','/ops/api/finance')">Finance (UNKNOWN-aware)</button>
+    <button onclick="call('GET','/ops/api/audit/chain')">Verify event chain</button>
+  </section>
+  <section><h2>Log</h2><pre id="log"></pre></section>
+</main>
+<script>
+const S = { quote:null, order:null, settlement:null, token:null };
+const log = (x, ok) => { const el = document.getElementById("log"); el.innerHTML = `<span class="${ok ? "ok" : "bad"}">${new Date().toLocaleTimeString()} ${escapeHtml(JSON.stringify(x))}</span>\n` + el.innerHTML; };
+const escapeHtml = (s) => s.replace(/[&<>"]/g, (c) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c]));
+async function call(method, path, body, headers = {}) {
+  const r = await fetch(path, { method, headers: { "content-type": "application/json", "x-requested-with": "aitp-ops", ...headers }, body: body ? JSON.stringify(body) : undefined });
+  const j = await r.json().catch(() => ({}));
+  log({ status: r.status, path, ...j }, r.ok);
+  return r.ok ? j : null;
+}
+async function login() { const s = document.getElementById("subject").value; await call("POST", "/demo/login", { subject: s }); const me = await call("GET", "/ops/api/me"); document.getElementById("me").textContent = me ? `${me.id} (${me.roles.join(", ") || "no active grant"})` : "denied"; }
+async function quote() { const q = await call("POST", "/ops/api/quotes", { offerId: "syn-training", quantity: Number(qty.value), termsVersion: "syn-terms-v1", customerRef: cust.value, price: 1 }); if (q) S.quote = q.id; }
+async function askAccept() { await call("POST", `/ops/api/quotes/${S.quote}/request-acceptance`); }
+async function customerAccept() { const r = await fetch(`/demo/customer-inbox?customerRef=${encodeURIComponent(cust.value)}`); const inbox = await r.json(); const m = inbox.filter((x) => x.quoteId === S.quote && x.token).at(-1); if (!m) return log({ error: "no acceptance request in the customer inbox" }); await call("POST", "/c/api/accept", { token: m.token, customerRef: cust.value, termsVersion: m.termsVersion }); }
+async function order() { const o = await call("POST", "/ops/api/orders", { quoteId: S.quote }, { "idempotency-key": `idem-ui-${S.quote}` }); if (o) S.order = o.id; }
+async function report() { await call("POST", `/ops/api/orders/${S.order}/payment-report`, { method: "synthetic-wallet", reference: "SYN-REF" }); }
+async function bankLine() { const r = await fetch("/demo/bank/statement-line", { method: "POST", headers: { "content-type": "application/json", "x-requested-with": "aitp-ops" }, body: JSON.stringify({ amountPoisha: Number(qty.value) * 100000 }) }); const line = await r.json(); const s = await call("POST", "/ops/api/settlements/import", line); if (s) S.settlement = s.settlementId; }
+async function verify() { await call("POST", `/ops/api/orders/${S.order}/verify-payment`, { settlementId: S.settlement }); }
+async function move() { const to = document.getElementById("to").value; await call("POST", `/ops/api/orders/${S.order}/transition`, { to, evidence: to === "DELIVERED" ? { checklistComplete: true, customerAccepted: true } : undefined }); }
+async function track() { const r = await fetch(`/demo/customer-inbox?customerRef=${encodeURIComponent(cust.value)}`); const m = (await r.json()).filter((x) => x.orderId === S.order && x.token).at(-1); if (m) await call("GET", `/c/api/track/${m.token}`); }
+</script>
+</body>
+</html>

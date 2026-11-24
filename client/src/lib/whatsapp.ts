@@ -32,7 +32,7 @@ const PAGE_MESSAGES: Record<string, string> = {
   "/tools/supergrok":    "Hi! I want SuperGrok (xAI) from AI Team Premium. Is it available? How do I order?",
   "/tools/grok":         "Hi! I want Grok Premium from AI Team Premium. What are the plans and pricing?",
   "/tools/midjourney":   "Hi! I want Midjourney from AI Team Premium. How do I subscribe?",
-  "/tools/grammarly":    "Hi! I want Grammarly Premium from AI Team Premium. Please share payment details.",
+  "/tools/grammarly":    "Hi! I have a question about Grammarly Premium from AI Team Premium. Is it currently available?",
   "/tools/canva":        "Hi! I want Canva Pro from AI Team Premium. How do I get access?",
   "/tools/perplexity":   "Hi! I want Perplexity Pro from AI Team Premium. How do I subscribe?",
   "/tools/copilot":      "Hi! I want GitHub Copilot from AI Team Premium. What plans are available?",

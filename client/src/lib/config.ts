@@ -22,8 +22,8 @@ export const config = {
   officialPricingUrl: "https://chatgpt.com/pricing/",
 
   whatsappPlanTemplates: {
-    "plus-shared":            "Hi! I want to order 'ChatGPT Plus Shared' from AI Team Premium. Please share payment details (bKash/Nagad).",
-    "plus-premium-shared":    "Hi! I want to order 'ChatGPT Plus Premium Shared'. How do I pay and get access?",
+    "plus-shared":            "Hi! I have a question about 'ChatGPT Plus Shared' from AI Team Premium. Is it currently available?",
+    "plus-premium-shared":    "Hi! I have a question about 'ChatGPT Plus Premium Shared'. Is it currently available?",
     "plus-personal-seat":     "Hi! I want my own ChatGPT Plus account — 'Plus Personal Seat'. Is it available?",
     "business-shared":        "Hi! I want the 'ChatGPT Business Shared' plan. Please guide me.",
     "business-premium-shared":"Hi! I want 'ChatGPT Business Premium Shared'. What are the next steps?",
@@ -40,12 +40,12 @@ export const config = {
   },
 
   whatsappToolTemplates: {
-    "claude-shared": "Hi! I want to order Claude Pro Shared from AI Team Premium. Please share payment details.",
+    "claude-shared": "Hi! I have a question about Claude Pro Shared from AI Team Premium. Is it currently available?",
     "claude-personal": "Hi! I want my own Claude Pro Personal account. Is it available?",
     "gemini": "Hi! I want Gemini Advanced from AI Team Premium. How do I order?",
     "google-ai-pro": "Hi! I want Google AI Pro. Please guide me through the process.",
     "supergrok": "Hi! I want SuperGrok. What's the next step?",
-    "perplexity": "Hi! I want Perplexity Pro. Please share payment details.",
+    "perplexity": "Hi! I have a question about Perplexity Pro. Is it currently available?",
     "midjourney": "Hi! I want Midjourney. How do I get started?",
     "leonardo": "Hi! I want Leonardo AI. Please provide payment options.",
     "runway": "Hi! I want Runway ML. Is it available now?",

@@ -95,8 +95,8 @@ const CANVA_FAQS = [
 export const TOOL_META = {
   "slug": "canva",
   "category": "image",
-  "priceBdt": 2190,
-  "priceLabel": "from ৳2,190/mo",
+  "priceBdt": 0,
+  "priceLabel": "Price on request",
   "model": "Canva Magic Studio (multi-model)",
   "contextWindow": "N/A (design tool)",
   "multimodal": "Text, image, video, templates",

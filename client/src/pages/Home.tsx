@@ -10,6 +10,7 @@ import { config } from "@/lib/config";
 import { SERVICE, serviceInquiryHref } from "@/lib/service-links";
 import { FAQSchema, JsonLd, BreadcrumbSchema } from "@/components/seo/JsonLd";
 import { BLOG_POSTS } from "@/data/blog-posts";
+import { QUARANTINED_BLOG_SLUGS } from "@shared/content-quarantine.js";
 import { useReveal } from "@/hooks/use-reveal";
 import { trackWhatsAppClick, trackMessengerClick, trackHeroClick } from "@/lib/analytics";
 import {
@@ -108,9 +109,11 @@ const TRAINING_TRACKS = [
 // codebase in one session. None derived from anything. Now derived once,
 // from the same real, currently-purchasable catalog data every other fixed
 // page on the site uses.
-const HOME_CHATGPT_MIN = Math.min(
-  ...chatgptPlans.filter((p) => !p.quarantined).map((p) => p.priceBDT)
-);
+// null (never Infinity / ৳∞) while no plan may display a price. Math.min over an empty
+// set is Infinity — this rendered "৳∞ থেকে শুরু" in the hero once every plan was
+// correctly withheld.
+const HOME_CHATGPT_PRICES = chatgptPlans.filter((p) => !p.quarantined && p.priceBDT > 0).map((p) => p.priceBDT);
+const HOME_CHATGPT_MIN: number | null = HOME_CHATGPT_PRICES.length ? Math.min(...HOME_CHATGPT_PRICES) : null;
 
 export default function Home() {
   usePageMeta({
@@ -155,7 +158,7 @@ export default function Home() {
               <LogoStacked size="xl" iconColor={BRAND.white} textColor={BRAND.white} animated />
             </div>
             <h1 style={{ color: BRAND.white, fontSize: "clamp(2rem, 5vw, 3.5rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em" }}>
-              বাংলাদেশে ChatGPT — ৳{bnDigits(HOME_CHATGPT_MIN)} থেকে শুরু
+              বাংলাদেশে ChatGPT{HOME_CHATGPT_MIN != null ? <> — ৳{bnDigits(HOME_CHATGPT_MIN)} থেকে শুরু</> : null}
               <br />
               <span style={{ color: BRAND.blue }}>Premium AI & Digital Solutions</span>
             </h1>
@@ -173,7 +176,7 @@ export default function Home() {
                 style={{ background: "#25D366", color: BRAND.white, fontSize: "0.9rem", fontWeight: 600, textDecoration: "none" }}
               >
                 <WhatsAppIcon size={18} color="#fff" />
-                Order on WhatsApp
+                Ask on WhatsApp
               </a>
               <a
                 href={config.messenger}
@@ -243,7 +246,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: GraduationCap, title: "Students", tagline: `৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}/mo থেকে শুরু`, tools: "ChatGPT · Grammarly · Perplexity", desc: "Assignment writing, research summaries, IELTS prep, thesis — let AI do the heavy lifting while you focus on understanding.", color: "#15803D", link: "/tools/chatgpt-plus-bangladesh" },
+              { icon: GraduationCap, title: "Students", tagline: HOME_CHATGPT_MIN != null ? `৳${HOME_CHATGPT_MIN.toLocaleString("en-US")}/mo থেকে শুরু` : "দাম WhatsApp-এ নিশ্চিত করা হয়", tools: "ChatGPT · Grammarly · Perplexity", desc: "Assignment writing, research summaries, IELTS prep, thesis — let AI do the heavy lifting while you focus on understanding.", color: "#15803D", link: "/tools/chatgpt-plus-bangladesh" },
               { icon: Briefcase, title: "Freelancers", tagline: "Fiverr & Upwork-এ এগিয়ে থাকুন", tools: "Claude Pro · Canva Pro · Midjourney", desc: "Faster proposals, better content, stunning visuals — outperform competitors on Fiverr and Upwork with AI-powered work.", color: BRAND.blue, link: "/all-products" },
               { icon: Building2, title: "Businesses", tagline: "Team-wide AI দক্ষতা", tools: "ChatGPT Team · Copilot · Gemini", desc: "Equip your entire team with AI tools. Boost productivity, automate reports, and get live Bangla AI training for your staff.", color: "#7C3AED", link: "/tools/chatgpt-business-bangladesh" },
               { icon: Video, title: "Content Creators", tagline: "ভাইরাল কন্টেন্ট বানান", tools: "Midjourney · ElevenLabs · Canva", desc: "AI-generated images, voice-overs in Bangla, thumbnail design — create professional content without a studio or equipment.", color: "#F59E0B", link: "/tools/midjourney-bangladesh" },
@@ -264,6 +267,8 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Hidden while no plan is eligible: a heading over an empty grid. */}
+      {featuredPlans.length > 0 && (
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="text-center mb-16" data-reveal>
@@ -286,7 +291,7 @@ export default function Home() {
                   </p>
                   <div className="mt-auto pt-5 flex gap-2">
                     <a
-                      href={`https://wa.me/8801533262758?text=Hi%2C+I+want+to+buy+${encodeURIComponent(o.title)}`}
+                      href={`https://wa.me/8801533262758?text=${encodeURIComponent(`Hi! I have a question about ${o.title}. Is it currently available?`)}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => trackWhatsAppClick(o.title, undefined, o.priceLabel, "home-offer")}
@@ -294,7 +299,7 @@ export default function Home() {
                       className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-full px-3 py-2.5 transition-all"
                       style={{ background: "#25D366", color: BRAND.white, fontSize: "0.78rem", fontWeight: 600, textDecoration: "none" }}
                     >
-                      <WhatsAppIcon size={13} color="#fff" /> Order on WhatsApp
+                      <WhatsAppIcon size={13} color="#fff" /> Ask on WhatsApp
                     </a>
                     <a
                       href={config.messenger}
@@ -319,6 +324,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      )}
 
       {/* POPULAR AI TOOLS */}
       <section className="py-24" style={{ background: BRAND.sky }}>
@@ -423,12 +429,12 @@ export default function Home() {
           <div className="text-center mb-14" data-reveal>
             <p className="mb-3 uppercase text-blue-600 dark:text-blue-400" style={{ fontSize: "0.72rem", letterSpacing: "0.18em", fontWeight: 600 }}>How It Works</p>
             <h2 className="text-slate-900 dark:text-white" style={{ fontSize: "2.2rem", fontWeight: 700, lineHeight: 1.15 }}>৩ ধাপে AI Subscription নিন</h2>
-            <p className="mt-4 max-w-md mx-auto text-slate-900/70 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.65 }}>No credit card setup, no registration. Just WhatsApp → Pay → Get access.</p>
+            <p className="mt-4 max-w-md mx-auto text-slate-900/70 dark:text-slate-300" style={{ fontSize: "0.9rem", lineHeight: 1.65 }}>No registration. Ask on WhatsApp first — nothing is paid before an offer is confirmed.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             {[
               { step: "01", icon: MessageCircle, color: "#25D366", title: "Message on WhatsApp", desc: "Tell us which AI tool you want. We confirm the current offer details in Bangla or English before payment." },
-              { step: "02", icon: CreditCard, color: BRAND.blue, title: "Pay via bKash or Nagad", desc: "We share the bKash/Nagad number privately. Pay in BDT. No international card, no hidden fees, no registration." },
+              { step: "02", icon: CreditCard, color: BRAND.blue, title: "Check before you decide", desc: "We tell you whether the tool is currently available and how it would be supplied. Pay only after the offer is confirmed in writing." },
               { step: "03", icon: Zap, color: "#F59E0B", title: "Confirm & Fulfill", desc: "After the offer and payment are confirmed, fulfillment follows the timing agreed for that specific order. Setup guidance is provided where applicable." },
             ].map((s, i) => (
               <div data-reveal="item" data-reveal-delay={i * 140} key={s.step} className="flex flex-col items-center text-center">
@@ -453,7 +459,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 rounded-full px-8 py-4 transition-all font-bold text-white"
               style={{ background: "#25D366", fontSize: "1rem" }}
             >
-              <WhatsAppIcon size={18} color="#fff" /> Order on WhatsApp
+              <WhatsAppIcon size={18} color="#fff" /> Ask on WhatsApp
             </a>
           </div>
         </div>
@@ -549,7 +555,8 @@ export default function Home() {
             <p className="mt-4 max-w-lg mx-auto" style={{ color: BRAND.navy, opacity: 0.5, fontSize: "0.9rem", lineHeight: 1.65 }}>Pricing, comparisons, and practical AI guides for students, freelancers and businesses.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {BLOG_POSTS.slice(0, 3).map((post, i) => (
+            {/* Cycle 5: never feature a quarantined post (issue #20) or one whose card text states a price. */}
+            {BLOG_POSTS.filter((p) => !QUARANTINED_BLOG_SLUGS.has(p.slug) && !/৳|BDT|\bTk\b/.test(`${p.title} ${p.excerpt}`)).slice(0, 3).map((post, i) => (
               <Link data-reveal="item" data-reveal-delay={i * 90} key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: "none" }} data-testid={`card-home-blog-${post.slug}`}>
                 <div className="rounded-2xl p-6 h-full flex flex-col hover-elevate card-lift cursor-pointer" style={{ background: BRAND.white, border: "1px solid rgba(37,99,235,0.06)" }}>
                   <div className="text-2xl mb-3">{post.heroEmoji}</div>

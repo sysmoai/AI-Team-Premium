@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { openSqlite, migrate } from "./sqlite-adapter.mjs";
-import { createBusinessOs, grantsFrom } from "../../lib/business-os/orders.js";
+import { createBusinessOs, grantsFrom, openOutboxPayload } from "../../lib/business-os/orders.js";
 import { issueSession, resolveActor } from "../../lib/business-os/identity.js";
 import { newKey, ed25519Generate, exportPublicJwk, ed25519Sign, canonicalJson } from "../../lib/business-os/crypto.js";
 
@@ -20,7 +20,7 @@ export const SYN_ROLES = ["business_owner", "sales_support", "finance_reviewer",
 export async function setup({ file = ":memory:", faults, clock } = {}) {
   const adapter = openSqlite(file, { faults });
   migrate(adapter);
-  const keys = { quoteKey: newKey(), sessionKey: newKey(), checkpointKey: newKey() };
+  const keys = { quoteKey: newKey(), outboxKey: newKey(), sessionKey: newKey(), checkpointKey: newKey() };
   const now = clock ?? (() => new Date());
   const os = createBusinessOs({ adapter, keys, clock: now, synthetic: true });
   const g = (subject, role, extra = {}) => adapter.db.prepare("INSERT INTO staff_grants (id, business_id, subject, role, active, granted_by, granted_at, expires_at, revoked_at) VALUES (?,?,?,?,?,?,?,?,?)")
@@ -43,7 +43,8 @@ export async function setup({ file = ":memory:", faults, clock } = {}) {
   };
   const line = (over = {}) => ({ sourceId: "syn-bank-export", receivingAccountRef: "syn-acct-001", transactionId: "SYN-TX-" + Math.random().toString(36).slice(2, 10), statementRef: "syn-stmt-1", currency: "BDT", amountPoisha: 200000, txAt: new Date(now().getTime() - 60000).toISOString(), status: "settled", ...over });
   const deps = { governance: GOVERNANCE, services: [SYN_SERVICE], paymentPolicy: SYN_POLICY };
-  const customerInbox = async () => (await adapter.all("SELECT * FROM outbox WHERE recipient_channel = 'customer' ORDER BY created_at")).map((m) => JSON.parse(m.payload));
+  // plays the customer channel: opens undelivered messages with the outbox key (a DB reader cannot)
+  const customerInbox = async () => Promise.all((await adapter.all("SELECT * FROM outbox WHERE recipient_channel = 'customer' AND status = 'PENDING' ORDER BY created_at")).map((m) => openOutboxPayload(m, keys.outboxKey)));
   const tokenFor = async (quoteId) => (await customerInbox()).filter((p) => p.quoteId === quoteId && p.token).at(-1)?.token;
   /** quote → customer acceptance (via the customer channel) → returns quote id */
   const acceptedQuote = async (customerRef = "syn-cust-1") => {

@@ -11,7 +11,7 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { setup, SYN_POLICY, REAL_SERVICES } from "./business-os/harness.mjs";
 import { openSqlite, migrate, fakeD1 } from "./business-os/sqlite-adapter.mjs";
-import { createBusinessOs, grantsFrom } from "../lib/business-os/orders.js";
+import { createBusinessOs, grantsFrom, openOutboxPayload } from "../lib/business-os/orders.js";
 import { d1Adapter } from "../lib/business-os/d1-adapter.js";
 import { AuthzError, check } from "../lib/business-os/rbac.js";
 import { issueSession, resolveActor, IdentityError } from "../lib/business-os/identity.js";
@@ -119,7 +119,7 @@ test("QA5: duplicate idempotency keys never create duplicate orders (sequential)
 async function race(file, h, quoteId, keys) {
   const barrier = new SharedArrayBuffer(4);
   const run = (key) => new Promise((res, rej) => {
-    const w = new Worker(new URL("./business-os/concurrency-worker.mjs", import.meta.url), { workerData: { file, quoteKeyHex: toHex(h.keys.quoteKey), sessionKeyHex: toHex(h.keys.sessionKey), quoteId, idempotencyKey: key, barrier } });
+    const w = new Worker(new URL("./business-os/concurrency-worker.mjs", import.meta.url), { workerData: { file, quoteKeyHex: toHex(h.keys.quoteKey), outboxKeyHex: toHex(h.keys.outboxKey), sessionKeyHex: toHex(h.keys.sessionKey), quoteId, idempotencyKey: key, barrier } });
     w.once("message", res); w.once("error", rej);
   });
   return Promise.all(keys.map(run));
@@ -136,8 +136,24 @@ test("QA5: real concurrency — two connections, same key → one order; differe
   assert.equal(diff.filter((r) => r.ok).length, 1, JSON.stringify(diff));
   assert.ok(diff.some((r) => !r.ok && /QUOTE_ALREADY_CONVERTED|QUOTE_NOT_ACCEPTED/.test(r.code)), JSON.stringify(diff));
   assert.equal((await h.adapter.first("SELECT count(*) n FROM orders")).n, 2);
-  assert.equal((await h.os.verifyChain()).ok, true);
+  assert.equal((await h.os.verifyChain(h.A.auditor)).ok, true);
   h.adapter.close();
+});
+
+test("QA5: deterministic lost race — the winner commits between the loser's reads and its batch", async () => {
+  for (const [winnerKey, loserKey] of [["idem-det-0001", "idem-det-0001"], ["idem-det-0002", "idem-det-0003"]]) {
+    const h = await setup();
+    const qid = await h.acceptedQuote();
+      let won = null;
+      const adapter = { ...h.adapter, first: async (sql, p) => {
+        if (!won && /FROM chain_head/.test(sql)) won = await h.os.createOrder(h.A.sales_support, { quoteId: qid, idempotencyKey: winnerKey });
+        return h.adapter.first(sql, p);
+      } };
+      const loser = createBusinessOs({ adapter, keys: h.keys, synthetic: true }).createOrder(h.A.sales_support, { quoteId: qid, idempotencyKey: loserKey });
+      if (winnerKey === loserKey) assert.equal((await loser).id, won.id, "same key returns the winner's order");
+      else await rejectsCode(loser, "QUOTE_ALREADY_CONVERTED");
+      assert.equal((await h.adapter.first("SELECT count(*) n FROM orders")).n, 1);
+  }
 });
 
 // ------------------------------------------------------- 6. P1-C finance truth
@@ -227,6 +243,53 @@ test("QA10: notification failure never loses the order; bounded retries then dea
   assert.ok((await h.adapter.all("SELECT * FROM outbox WHERE status = 'DEAD_LETTER'")).every((m) => m.attempts === 3), "no retry after dead-letter");
 });
 
+// ------------------------------------------- security review (after 336c611)
+test("SEC: customer one-time links are never readable from the database and are erased after delivery", async () => {
+  const h = await setup();
+  const q = await h.os.registerQuote(h.A.sales_support, svcReq(), h.deps);
+  await h.os.requestCustomerAcceptance(h.A.sales_support, q.id);
+  const secret = (await h.tokenFor(q.id)).split(".")[1];
+  const dump = async () => JSON.stringify(await Promise.all(["outbox", "acceptance_challenges", "audit_log", "orders"].map((t) => h.adapter.all(`SELECT * FROM ${t}`))));
+  assert.ok(!(await dump()).includes(secret), "acceptance secret not in any table");
+  await h.os.confirmCustomerAcceptance({ token: await h.tokenFor(q.id), customerRef: "syn-cust-1", termsVersion: "syn-terms-v1" });
+  const o = await h.os.createOrder(h.A.sales_support, { quoteId: q.id, idempotencyKey: "idem-seal-001" });
+  const track = (await h.customerInbox()).find((m) => m.orderId === o.id).token;
+  assert.ok(!(await dump()).includes(track), "tracking token not in any table");
+  const row = await h.adapter.first("SELECT * FROM outbox WHERE kind = 'tracking_link'");
+  await assert.rejects(openOutboxPayload(row, h.keys.quoteKey), "wrong key cannot open");
+  await assert.rejects(openOutboxPayload({ ...row, id: "M-other" }, h.keys.outboxKey), "ciphertext bound to its message");
+  await h.os.dispatchOutbox(async (m) => { throw new Error("provider echoed " + JSON.stringify(m.payload)); }, { maxAttempts: 9 });
+  assert.ok(!(await dump()).includes(track), "provider error text is not stored");
+  const got = [];
+  await h.os.dispatchOutbox(async (m) => { got.push(m); });
+  assert.equal(got.find((m) => m.kind === "tracking_link").payload.token, track, "delivery still gets the link");
+  assert.ok((await h.adapter.all("SELECT * FROM outbox")).every((m) => m.status === "SENT" && m.payload === "{}"));
+  const ins = (payload, status) => h.adapter.db.prepare("INSERT INTO outbox (id, kind, recipient_channel, payload, status, created_at) VALUES ('M-x','k','customer',?,?,'t')").run(payload, status);
+  assert.throws(() => ins('{"token":"plain"}', "PENDING"), /CHECK constraint/);
+  assert.throws(() => ins('{"sealed":"aa.bb"}', "SENT"), /CHECK constraint/);
+  assert.throws(() => createBusinessOs({ adapter: h.adapter, keys: { quoteKey: h.keys.quoteKey } }), /OUTBOX_KEY_REQUIRED/);
+  assert.throws(() => createBusinessOs({ adapter: h.adapter, keys: { quoteKey: h.keys.quoteKey, outboxKey: h.keys.quoteKey } }), /OUTBOX_KEY_MUST_BE_SEPARATE/);
+});
+test("SEC: dead-lettered customer messages are erased too", async () => {
+  const h = await setup();
+  const q = await h.os.registerQuote(h.A.sales_support, svcReq(), h.deps);
+  await h.os.requestCustomerAcceptance(h.A.sales_support, q.id);
+  await h.os.dispatchOutbox(async () => { throw new Error("down"); }, { maxAttempts: 1 });
+  const m = await h.adapter.first("SELECT * FROM outbox");
+  assert.deepEqual([m.status, m.payload, m.last_error], ["DEAD_LETTER", "{}", "DELIVERY_FAILED"]);
+});
+test("SEC: audit operations need audit capabilities; checkpoints are owner-only", async () => {
+  const h = await setup();
+  const cp = await h.os.exportCheckpoint(h.A.business_owner, h.keys.checkpointKey);
+  for (const [a, code] of [[undefined, "ANONYMOUS"], [{ id: "x", businessId: "U05", grants: [{ role: "auditor", active: true }] }, "FORGED_ACTOR"], [h.A.sales_support, "FORBIDDEN"], [h.A.finance_reviewer, "FORBIDDEN"]]) {
+    await rejectsCode(h.os.verifyChain(a), code);
+    await rejectsCode(h.os.exportCheckpoint(a, h.keys.checkpointKey), code);
+    await rejectsCode(h.os.verifyAgainstCheckpoint(a, cp, h.keys.checkpointKey), code);
+  }
+  await rejectsCode(h.os.exportCheckpoint(h.A.auditor, h.keys.checkpointKey), "FORBIDDEN");
+  assert.equal((await h.os.verifyAgainstCheckpoint(h.A.auditor, cp, h.keys.checkpointKey)).ok, true);
+});
+
 // --------------------------------------------------------- 11. tracking tokens
 test("QA11: a customer tracking token reveals only its own order", async () => {
   const h = await setup();
@@ -254,14 +317,14 @@ test("P1-D: events are append-only; full-history rewrite is caught by an externa
   const h = await setup();
   const o = await h.os.createOrder(h.A.sales_support, { quoteId: await h.acceptedQuote(), idempotencyKey: "idem-h-0001" });
   await h.os.recordCustomerPaymentReport(h.A.sales_support, o.id, { method: "synthetic-wallet" });
-  assert.equal((await h.os.verifyChain()).ok, true);
+  assert.equal((await h.os.verifyChain(h.A.auditor)).ok, true);
   const db = h.adapter.db;
   assert.throws(() => db.prepare("UPDATE order_events SET actor = 'x' WHERE chain_seq = 1").run(), /append-only/);
   assert.throws(() => db.prepare("DELETE FROM order_events").run(), /append-only/);
   assert.throws(() => db.prepare("UPDATE chain_head SET count = 0, hash = 'GENESIS'").run(), /chain head/);
   assert.throws(() => db.prepare("INSERT INTO order_events (chain_seq, order_id, type, actor, at, prev_hash, hash) VALUES (99, NULL, 'x', 'x', 't', 'bad', 'h')").run(), /chain head moved/);
-  const cp = await h.os.exportCheckpoint(h.keys.checkpointKey);
-  assert.equal((await h.os.verifyAgainstCheckpoint(cp, h.keys.checkpointKey)).ok, true);
+  const cp = await h.os.exportCheckpoint(h.A.business_owner, h.keys.checkpointKey);
+  assert.equal((await h.os.verifyAgainstCheckpoint(h.A.auditor, cp, h.keys.checkpointKey)).ok, true);
   // A privileged operator drops the triggers and rewrites the WHOLE chain consistently.
   for (const t of ["events_no_update", "events_no_delete", "chain_head_forward_only", "events_compare_and_set"]) db.exec(`DROP TRIGGER ${t}`);
   let prev = "GENESIS";
@@ -273,9 +336,9 @@ test("P1-D: events are append-only; full-history rewrite is caught by an externa
     prev = hash;
   }
   db.prepare("UPDATE chain_head SET hash = ? WHERE id = 1").run(prev);
-  assert.equal((await h.os.verifyChain()).ok, true, "internally consistent after the rewrite");
-  assert.deepEqual(await h.os.verifyAgainstCheckpoint(cp, h.keys.checkpointKey), { ok: false, reason: "HISTORY_REWRITTEN" });
-  assert.equal((await h.os.verifyAgainstCheckpoint({ ...cp, head: "0".repeat(64) }, h.keys.checkpointKey)).reason, "CHECKPOINT_SIGNATURE");
+  assert.equal((await h.os.verifyChain(h.A.auditor)).ok, true, "internally consistent after the rewrite");
+  assert.deepEqual(await h.os.verifyAgainstCheckpoint(h.A.auditor, cp, h.keys.checkpointKey), { ok: false, reason: "HISTORY_REWRITTEN" });
+  assert.equal((await h.os.verifyAgainstCheckpoint(h.A.auditor, { ...cp, head: "0".repeat(64) }, h.keys.checkpointKey)).reason, "CHECKPOINT_SIGNATURE");
 });
 
 // ---------------------------------------- D1 adapter path + migration safety
@@ -284,15 +347,16 @@ test("D1 adapter contract: the same flow works through d1Adapter(fake D1 binding
   migrate(local);
   const h = await setup();
   const d1 = d1Adapter(fakeD1(local));
-  const os = createBusinessOs({ adapter: d1, keys: { quoteKey: h.keys.quoteKey }, synthetic: true });
+  const os = createBusinessOs({ adapter: d1, keys: { quoteKey: h.keys.quoteKey, outboxKey: h.keys.outboxKey }, synthetic: true });
   local.db.prepare("INSERT INTO staff_grants (id, business_id, subject, role, active, granted_by, granted_at) VALUES ('g1','U05','syn-sales_support','sales_support',1,'boot','t')").run();
   const actor = await resolveActor(await issueSession(h.keys.sessionKey, { subject: "syn-sales_support" }), { sessionKey: h.keys.sessionKey, grants: grantsFrom(d1) });
+  const auditor = h.A.auditor;
   const q = await os.registerQuote(actor, svcReq(), h.deps);
   await os.requestCustomerAcceptance(actor, q.id);
-  const msg = JSON.parse((await local.first("SELECT payload FROM outbox WHERE recipient_channel = 'customer'")).payload);
+  const msg = await openOutboxPayload(await local.first("SELECT * FROM outbox WHERE recipient_channel = 'customer'"), h.keys.outboxKey);
   await os.confirmCustomerAcceptance({ token: msg.token, customerRef: "syn-cust-1", termsVersion: "syn-terms-v1" });
   assert.equal((await os.createOrder(actor, { quoteId: q.id, idempotencyKey: "idem-d1-0001" })).state, "PAYMENT_REVIEW");
-  assert.equal((await os.verifyChain()).ok, true);
+  assert.equal((await os.verifyChain(auditor)).ok, true);
 });
 test("Migrations: applied once; a failing migration rolls back completely", () => {
   const a = openSqlite(":memory:");
@@ -331,7 +395,7 @@ test("Vertical slice: staff → service → quote → customer acceptance → or
   assert.equal(contributionFromRows(await h.os.financeRows(h.A.finance_reviewer)).ordersCounted, 0, "synthetic slice never reaches real KPIs");
   const types = (await h.adapter.all("SELECT type FROM order_events WHERE order_id = ? ORDER BY chain_seq", [o.id])).map((r) => r.type);
   assert.deepEqual(types, ["order.created", "payment.customer_reported", "state.PAYMENT_VERIFIED", "state.ASSIGNED", "state.FULFILLING", "state.DELIVERED", "state.CLOSED"]);
-  assert.equal((await h.os.verifyChain()).ok, true);
+  assert.equal((await h.os.verifyChain(h.A.auditor)).ok, true);
 });
 
 // --------------------------------------------- carried over from C7 (operations)

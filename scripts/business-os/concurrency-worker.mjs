@@ -6,10 +6,10 @@ import { createBusinessOs, grantsFrom } from "../../lib/business-os/orders.js";
 import { issueSession, resolveActor } from "../../lib/business-os/identity.js";
 import { fromHex } from "../../lib/business-os/crypto.js";
 
-const { file, quoteKeyHex, sessionKeyHex, quoteId, idempotencyKey, barrier } = workerData;
+const { file, quoteKeyHex, outboxKeyHex, sessionKeyHex, quoteId, idempotencyKey, barrier } = workerData;
 const adapter = openSqlite(file, { wal: false });
 const sessionKey = fromHex(sessionKeyHex);
-const os = createBusinessOs({ adapter, keys: { quoteKey: fromHex(quoteKeyHex) }, synthetic: true });
+const os = createBusinessOs({ adapter, keys: { quoteKey: fromHex(quoteKeyHex), outboxKey: fromHex(outboxKeyHex) }, synthetic: true });
 const actor = await resolveActor(await issueSession(sessionKey, { subject: "syn-sales_support" }), { sessionKey, grants: grantsFrom(adapter) });
 const flag = new Int32Array(barrier);
 Atomics.add(flag, 0, 1);

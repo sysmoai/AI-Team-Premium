@@ -1,7 +1,7 @@
 // LOCAL-ONLY Workers-runtime self-test for the Business OS library.
 // Never deployed: its wrangler config has no routes, no account, and it is not
 // referenced by the site's wrangler.jsonc. Runs against a LOCAL D1 (miniflare).
-import { createBusinessOs, grantsFrom } from "../../../lib/business-os/orders.js";
+import { createBusinessOs, grantsFrom, openOutboxPayload } from "../../../lib/business-os/orders.js";
 import { d1Adapter } from "../../../lib/business-os/d1-adapter.js";
 import { issueSession, resolveActor } from "../../../lib/business-os/identity.js";
 import { newKey, ed25519Generate, exportPublicJwk, ed25519Sign, canonicalJson, sha256Hex } from "../../../lib/business-os/crypto.js";
@@ -17,7 +17,7 @@ async function selftest(env) {
   const step = (name, ok, extra) => out.steps.push({ name, ok, ...(extra ?? {}) });
   const adapter = d1Adapter(env.DB);
   const run = randomish();
-  const keys = { quoteKey: newKey(), sessionKey: newKey() };
+  const keys = { quoteKey: newKey(), outboxKey: newKey(), sessionKey: newKey() };
   const os = createBusinessOs({ adapter, keys, synthetic: true });
   const now = new Date().toISOString();
   for (const [s, r] of [[`syn-owner-${run}`, "business_owner"], [`syn-sales-${run}`, "sales_support"], [`syn-fin-${run}`, "finance_reviewer"]])
@@ -31,8 +31,10 @@ async function selftest(env) {
   const q = await os.registerQuote(sales, { offer: { kind: "service", id: "syn-training" }, quantity: 2, termsVersion: "syn-terms-v1", customerRef: `syn-cust-${run}`, price: 1 }, { governance: governanceFile.records, services: [SVC], paymentPolicy: POLICY });
   step("server price", q.totalBdt === 2000);
   await os.requestCustomerAcceptance(sales, q.id);
-  const msg = await env.DB.prepare("SELECT payload FROM outbox WHERE recipient_channel = 'customer' AND payload LIKE ? ").bind(`%${q.id}%`).first();
-  const token = JSON.parse(msg.payload).token;
+  // the newest customer message; only this run's outbox key can open it
+  const msg = await env.DB.prepare("SELECT * FROM outbox WHERE recipient_channel = 'customer' ORDER BY rowid DESC LIMIT 1").first();
+  const token = (await openOutboxPayload(msg, keys.outboxKey)).token;
+  step("acceptance secret not readable from D1", !msg.payload.includes(token.split(".")[1]));
   let staffForge = false;
   try { await env.DB.prepare("UPDATE quotes SET state = 'ACCEPTED' WHERE id = ?").bind(q.id).run(); } catch { staffForge = true; }
   step("D1 trigger blocks acceptance without customer", staffForge);
@@ -55,7 +57,7 @@ async function selftest(env) {
   step("sales cannot verify payment", noPerm);
   const v = await os.verifyPayment(fin, o.id, settlementId);
   step("verified with signed settlement", v.state === "PAYMENT_VERIFIED");
-  const chain = await os.verifyChain();
+  const chain = await os.verifyChain(owner);
   step("hash chain intact", chain.ok === true, { count: chain.count });
   step("UNKNOWN finance", contribution([{ id: "x", paymentVerified: true }]).contributionBdt === "UNKNOWN");
   step("WebCrypto sha256", (await sha256Hex("abc")).startsWith("ba7816bf"));

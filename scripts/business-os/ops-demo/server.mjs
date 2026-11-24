@@ -63,7 +63,7 @@ export async function startDemo({ port = 8787, host = "127.0.0.1" } = {}) {
     ["POST", /^\/ops\/api\/orders\/([\w-]+)\/verify-payment$/, async (req, res, b, url, m) => json(res, 200, await h.os.verifyPayment(await staff(req), m[1], b.settlementId))],
     ["POST", /^\/ops\/api\/orders\/([\w-]+)\/transition$/, async (req, res, b, url, m) => json(res, 200, await h.os.transition(await staff(req), m[1], b.to, { evidence: b.evidence, note: b.note }))],
     ["GET", /^\/ops\/api\/finance$/, async (req, res) => json(res, 200, { ...contributionFromRows(await h.os.financeRows(await staff(req))), note: "Synthetic demo orders are excluded from real totals by design." })],
-    ["GET", /^\/ops\/api\/audit\/chain$/, async (req, res) => { await staff(req); json(res, 200, await h.os.verifyChain()); }],
+    ["GET", /^\/ops\/api\/audit\/chain$/, async (req, res) => json(res, 200, await h.os.verifyChain(await staff(req)))],
     // ---- customer API
     ["POST", /^\/c\/api\/accept$/, async (req, res, b) => json(res, 200, await h.os.confirmCustomerAcceptance({ token: b.token, customerRef: b.customerRef, termsVersion: b.termsVersion }))],
     ["GET", /^\/c\/api\/track\/([^/]+)$/, async (req, res, b, url, m) => { const t = await h.os.track(m[1]); t ? json(res, 200, t) : json(res, 404, { error: "NOT_FOUND" }); }],

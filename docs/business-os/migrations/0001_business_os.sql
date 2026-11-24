@@ -214,7 +214,10 @@ CREATE TABLE outbox (
   recipient_channel TEXT NOT NULL CHECK (recipient_channel IN ('customer','staff')),
   payload TEXT NOT NULL, attempts INTEGER NOT NULL DEFAULT 0,
   status TEXT NOT NULL DEFAULT 'PENDING' CHECK (status IN ('PENDING','SENT','DEAD_LETTER')),
-  last_error TEXT, created_at TEXT NOT NULL
+  last_error TEXT, created_at TEXT NOT NULL,
+  -- customer payloads (one-time links) are stored only encrypted, and nothing is kept after delivery ends
+  CHECK (recipient_channel <> 'customer' OR payload = '{}' OR payload LIKE '{"sealed":"%"}'),
+  CHECK (status = 'PENDING' OR payload = '{}')
 );
 
 CREATE TABLE tickets (

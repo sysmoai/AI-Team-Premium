@@ -27,6 +27,7 @@ try {
   await click("Customer tracks order");
   await asSubject("syn-finance_reviewer");
   await click("Finance (UNKNOWN-aware)");
+  await asSubject("syn-auditor");
   await click("Verify event chain");
   const log = await page.locator("#log").innerText();
   const lines = log.split("\n").filter(Boolean);

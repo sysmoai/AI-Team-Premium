@@ -76,7 +76,11 @@ test("ops demo: full vertical slice over HTTP with synthetic data", async () => 
     const finance = await fin.call("GET", "/ops/api/finance");
     assert.equal(finance.body.ordersCounted, 0, "synthetic demo never enters real KPIs");
     assert.equal((await sales.call("GET", "/ops/api/finance")).status, 403);
-    assert.equal((await fin.call("GET", "/ops/api/audit/chain")).body.ok, true);
+    assert.equal((await anon.call("GET", "/ops/api/audit/chain")).status, 401);
+    assert.equal((await fin.call("GET", "/ops/api/audit/chain")).status, 403, "audit needs audit.read");
+    const aud = client(d.url);
+    await aud.call("POST", "/demo/login", { subject: "syn-auditor" });
+    assert.equal((await aud.call("GET", "/ops/api/audit/chain")).body.ok, true);
 
     const revoked = client(d.url);
     await revoked.call("POST", "/demo/login", { subject: "syn-revoked" });
